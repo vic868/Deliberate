@@ -1,2 +1,1 @@
-# Deliberate
-深思熟虑
+# Deliberate  深思熟虑
