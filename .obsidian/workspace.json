@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "ff8ddfc7b34a2d6c",
+    "id": "2236cb386f0528e7",
     "type": "split",
     "children": [
       {
-        "id": "c9a70b3ecf963340",
+        "id": "78931375fdefe8b0",
         "type": "tabs",
         "children": [
           {
-            "id": "293c34907a22eb06",
+            "id": "8460ba4852756eb8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI 学习规划/README.md",
+                "file": "大数据学习规划/01-学习路径总览.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "01-学习路径总览"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "263319bd5d47e198",
+    "id": "6e5481e3ff8ecf5f",
     "type": "split",
     "children": [
       {
-        "id": "b0b0a1f64353bea3",
+        "id": "148a61dd5fab3180",
         "type": "tabs",
         "children": [
           {
-            "id": "727e8916adb902fe",
+            "id": "cc3b7b9ee066aafc",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -50,7 +50,7 @@
             }
           },
           {
-            "id": "719a7706e35ff521",
+            "id": "f3a62052136e9910",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -67,7 +67,7 @@
             }
           },
           {
-            "id": "0602d486a1e746c7",
+            "id": "1e0ca2432362e88b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -83,23 +83,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 291.59765625
   },
   "right": {
-    "id": "bf2f8f819a69e66e",
+    "id": "9eefc4235c20d1c4",
     "type": "split",
     "children": [
       {
-        "id": "9ed9fa2c88d8c687",
+        "id": "0d46811a3431ac35",
         "type": "tabs",
         "children": [
           {
-            "id": "95ad58a8ade43159",
+            "id": "780858d0fd5d027e",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI 学习规划/README.md",
+                "file": "pmp/pmp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,12 +113,12 @@
             }
           },
           {
-            "id": "13baf7331118dd2c",
+            "id": "f7a3a44e2310f464",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AI 学习规划/README.md",
+                "file": "pmp/pmp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -127,7 +127,7 @@
             }
           },
           {
-            "id": "7cefafac6ccbcab9",
+            "id": "08af2745575fdd4e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -142,7 +142,7 @@
             }
           },
           {
-            "id": "ddd190d8029b3f32",
+            "id": "2f6c4d152182228c",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -156,12 +156,12 @@
             }
           },
           {
-            "id": "3bff2fb05e0a566b",
+            "id": "b5073f1a0572f380",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI 学习规划/README.md",
+                "file": "pmp/pmp.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -171,7 +171,17 @@
             }
           },
           {
-            "id": "8600e534ac642a80",
+            "id": "d803930995f51b4a",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "d19df4a8561fbd45",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -181,21 +191,21 @@
             }
           },
           {
-            "id": "32d5b611f4a50db1",
+            "id": "2ec76568de0fee75",
             "type": "leaf",
             "state": {
-              "type": "git-view",
+              "type": "copilot-chat-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "message-square",
+              "title": "Copilot"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 913.05078125
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -206,21 +216,55 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "simple-mind-map:新建思维导图": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "zk-prefixer:创建时间戳笔记": false,
+      "copilot:Open Copilot Chat": false,
+      "drawio:Launch draw.io editor": false
     }
   },
-  "active": "727e8916adb902fe",
+  "active": "8460ba4852756eb8",
   "lastOpenFiles": [
-    "AI 学习规划/面试准备.md",
-    "AI 学习规划/实战项目.md",
-    "AI 学习规划/技术栈地图.md",
-    "AI 学习规划/05-项目与求职阶段.md",
-    "AI 学习规划/04-高级架构阶段.md",
-    "AI 学习规划/03-Java开发阶段.md",
+    "MindMap 2026-09-20 10.16.11.smm.md",
+    "大数据学习规划/01-学习路径总览.md",
+    "AI 学习规划/论文精读/李沐论文精读系列一-四篇经典论文.md",
     "AI 学习规划/02-基础阶段.md",
     "AI 学习规划/01-学习路径总览.md",
-    "README.md",
-    "AI 学习规划/README.md",
-    "AI 学习规划"
+    "AI 学习规划/MoE",
+    "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
+    "AI 学习规划/论文精读",
+    "网络修复-Clash超时/修复清单.md",
+    "202608181619.md",
+    "AI 学习规划/Transformer 面试题/23-怎样缓解Transformer的性能瓶颈.md",
+    "AI 学习规划/Transformer 面试题/22-Transformer模型的性能瓶颈在哪.md",
+    "AI 学习规划/Transformer 面试题/11-多头注意力需要降维吗.md",
+    "AI 学习规划/Transformer 面试题/10-head能否无限增多.md",
+    "AI 学习规划/Transformer 面试题/09-为什么Transformer采用多头注意力机制.md",
+    "AI 学习规划/Transformer 面试题/08-让K和Q变成同一个矩阵的影响.md",
+    "AI 学习规划/Transformer 面试题/07-K和Q可以使用同一个值吗.md",
+    "AI 学习规划/Transformer 面试题/06-self-attention中的K和Q是用来做什么的.md",
+    "AI 学习规划/Transformer 面试题/05-计算attention用的是点乘还是加法.md",
+    "AI 学习规划/Transformer 面试题/04-Transformer的位置编码是怎样的.md",
+    "AI 学习规划/Transformer 面试题/03-Transformer的哪个部分最占用显存.md",
+    "AI 学习规划/Transformer 面试题/26-了解ViLT吗.md",
+    "AI 学习规划/Transformer 面试题/25-了解ViT吗.md",
+    "AI 学习规划/Transformer 面试题/21-如何评估Transformer的性能和效果.md",
+    "AI 学习规划/Transformer 面试题/17-什么是自回归属性autoregressive-property.md",
+    "AI 学习规划/Transformer 面试题/14-了解梯度裁剪Gradient-Clipping吗.md",
+    "AI 学习规划/Transformer 面试题/02-使用Transformer解决了RNN面临的什么问题.md",
+    "AI 学习规划/Transformer 面试题/01-聊一聊Transformer的架构和基本原理.md",
+    "大数据学习规划",
+    "AI 学习/00-学习路线",
+    "未命名 1.base",
+    "未命名.base",
+    "pmp/01-过程组/PMP_第02章_思维导图.html",
+    "pmp/01-过程组/PMP 五大过程组与十大知识领域.html",
+    "pmp/01-过程组/知识点-第02章-思维导图.html",
+    "pmp/03-错题/附件/光环云课堂-模拟一错题.pdf",
+    "未命名.canvas"
   ]
 }

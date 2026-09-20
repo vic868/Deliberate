@@ -1,4 +1,12 @@
 [
   "obsidian-git",
-  "calendar"
+  "obsidian-excalidraw-plugin",
+  "calendar",
+  "simple-mind-map",
+  "obsidian-textgenerator-plugin",
+  "copilot",
+  "obsidian-html-plugin",
+  "dataview",
+  "mermaid-popup",
+  "drawio"
 ]

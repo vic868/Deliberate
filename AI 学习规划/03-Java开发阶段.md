@@ -1,75 +1,71 @@
-# 阶段二 Java + AI 开发（第 2-4 周）
+---
+title: 阶段二 Java + AI 开发
+tags: [AI, 学习规划, Java, RAG]
+status: 未开始
+周期: 2 周
+上一阶段: "[[02-基础阶段]]"
+下一阶段: "[[04-高级架构阶段]]"
+---
 
-> 核心目标：把 AI 能力接进 Java 工程，做出企业级 RAG 应用。
-> 这是**差异化主战场**——多数做 AI 的人是 Python 转的，企业需要懂 Spring 生态的人把 AI 接到业务系统。
+# 阶段二 Java + AI 开发（2 周）
 
-## 技术选型（建议）
+> [!quote] 本阶段目标
+> 把 AI 能力接进 Java 工程，做出企业级 RAG 应用。**这是差异化主战场。**
 
-| 方案 | 定位 | 建议 |
-| --- | --- | --- |
-| **Spring AI** | Spring 官方框架，和 Boot 生态无缝集成 | **主学**（简历价值最高） |
-| **LangChain4j** | Java 版 LangChain，生态丰富 | 副学，做对比与补充 |
-| LangChain (Python) | 概念最流行 | 只学概念，不必用 Java 重做 |
-| RAGFlow / Dify | 低代码平台 | 了解即可，理解工程化思路 |
+> [!important] 技术选型
+> **Spring AI 为主，LangChain4j 砍掉。**
+> 理由：投的是 Java 团队，Spring 全家桶是你既有优势，学最快、面试最加分。
 
-> 核心决策：**Spring AI 为主**。理由：你投的是 Java 为主的团队，Spring 全家桶是你的既有优势，学起来最快，面试最加分。
+## RAG 全链路（Mermaid 图）
 
-## 第 2 周 框架入门
-
-### 学习目标
-- [ ] 用 Spring AI 接入 LLM：对话、流式输出、系统 Prompt
-- [ ] 用 Spring AI 的 Tool / Function Calling
-- [ ] 用 LangChain4j 复现一遍同样的能力，对比体验
-- [ ] 了解 SSE / WebSocket 前端流式输出
-
-### 交付
-- **Spring Boot + LLM 聊天服务**：
-  - POST 接口返回完整回答
-  - SSE 流式输出（打字机效果）
-  - 多轮对话 + 记忆管理（会话级上下文）
-  - 一个 Function Calling 示例（如查天气/算汇率）
-
-## 第 3 周 RAG 核心（重头戏）
-
-### 原理一条线
-```
-文档 → 加载 → 切分(chunk) → 向量化(Embedding) → 存入向量库
-  → 用户提问 → 向量化 → 检索 Top-K → Rerank → 注入Prompt → 模型回答 → 返回引用
+```mermaid
+flowchart LR
+    A[文档<br>PDF/MD] --> B[加载]
+    B --> C[切分 chunk]
+    C --> D[向量化<br>Embedding]
+    D --> E[(向量库<br>pgvector)]
+    F[用户提问] --> G[向量化]
+    G --> H[检索 Top-K<br>BM25+向量]
+    E --> H
+    H --> I[Rerank 重排]
+    I --> J[注入 Prompt]
+    J --> K[LLM 回答]
+    K --> L[返回+引用溯源]
 ```
 
-### 学习目标
-- [ ] Embedding 模型选型（bge-m3、text-embedding-3 等）
-- [ ] 向量数据库选型对比：pgvector / Milvus / Chroma / Qdrant
-  - 建议：**pgvector**（用现有 PostgreSQL，轻量）或 **Milvus**（生产级）
-- [ ] Chunking 策略：按长度、按段落、按语义；chunk 重叠
-- [ ] 元数据过滤、权限隔离（企业必备）
-- [ ] 检索：向量相似度、关键词（BM25）混合检索
+## Week 1 · Spring AI 入门
 
-### 交付
-- **本地知识库问答系统**：上传 PDF/Markdown → 问答，带引用来源
-- 架构图 + 一篇《我的 RAG 架构》笔记
+> [!example] 交付：Spring Boot + LLM 聊天服务
 
-## 第 4 周 RAG 进阶与评估
+- [ ] 对话接口 + 流式输出（SSE，打字机效果）
+- [ ] 多轮对话 + 会话记忆
+- [ ] Function Calling（查天气/算汇率）
+- [ ] 系统 Prompt 配置
 
-### 学习目标
-- [ ] Rerank 重排序（bge-reranker），提升检索精度
-- [ ] 混合检索（向量 + 关键词）与查询改写（HyDE）
-- [ ] 防幻觉：引用溯源、置信度阈值、拒答话术
-- [ ] 知识库更新：增量更新、删除失效、版本管理
-- [ ] **评估**：建立 50+ 测试问答对，量化"召回率 / 准确率 / 引用正确率"，对比优化前后
+## Week 2 · RAG 全链路
 
-### 交付
-- RAG 系统打磨到"能演示、能讲清指标"
-- 一篇《RAG 优化记录》：问题 → 方案 → 指标变化
+> [!example] 交付：本地知识库问答系统（带引用来源）
 
-## 第 4 周末：阶段小结
-- [ ] 把两个交付整理进 [[实战项目]]：`企业知识库 RAG 问答系统`
-- [ ] 写好 README：架构图 + 技术亮点 + 量化指标
-- [ ] 录一段 2 分钟演示视频
+| 主题 | 要点 |
+| --- | --- |
+| Embedding 选型 | bge-m3 / text-embedding-3 |
+| 向量库选型 | pgvector（轻量，用现有 PG） |
+| Chunking | 按段落/语义切分 + 重叠 |
+| 检索 | 向量 + BM25 混合 |
+| Rerank | bge-reranker |
+| 防幻觉 | 置信度阈值 + 引用溯源 + 拒答 |
+| 权限 | 元数据过滤做文档级隔离 |
+| **评估** | 30+ 测试对，量化：命中率/准确率/引用正确率 |
 
-## 验收标准
-- [ ] 能独立从 0 搭一个带评估指标的 RAG 系统
-- [ ] 面试被问"怎么优化 RAG"能有 3 个以上具体手段
+## 🔧 技术栈
+
+#Java #SpringBoot #SpringAI #pgvector #RAG #Embedding #Rerank #SSE
+
+## ✅ 验收标准
+
+- [ ] 从 0 独立搭一个带评估指标的 RAG 系统
+- [ ] "怎么优化 RAG"能讲出 3 个以上手段
 - [ ] 能讲清"为什么 RAG 而不是微调"
 
-回到 [[01-学习路径总览]]
+---
+上一页：[[02-基础阶段]] · 下一页：[[04-高级架构阶段]]
