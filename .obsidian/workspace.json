@@ -37,12 +37,12 @@
             "id": "73b801d771122300",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "drawio-file-view",
               "state": {
-                "file": "架构/系统架构.excalidraw.md"
+                "file": "Untitled Diagram 1790089424009.drawio"
               },
-              "icon": "excalidraw-icon",
-              "title": "系统架构.excalidraw"
+              "icon": "pencil-ruler",
+              "title": "Untitled Diagram 1790089424009"
             }
           }
         ],
@@ -108,7 +108,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 402.88671875
+    "width": 402.88671875,
+    "collapsed": true
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -281,9 +282,9 @@
   },
   "active": "73b801d771122300",
   "lastOpenFiles": [
+    "架构/系统架构.excalidraw.md",
     "架构/Untitled Diagram 1790241846562.drawio",
     "面试准备/冠顿/01-管理面与负责人题.md",
-    "架构/系统架构.excalidraw.md",
     "excalidraw-lib/algorithms-and-data-structures-arrays-matrices-trees.excalidrawlib",
     "架构",
     "面试准备/冠顿/00-JD与匹配分析.md",
