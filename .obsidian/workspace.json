@@ -11,42 +11,15 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "面试准备/冠顿/01-管理面与负责人题.md",
-                "mode": "preview",
-                "source": true
+                "file": "架构/系统架构.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "01-管理面与负责人题"
-            }
-          },
-          {
-            "id": "f4987410b8c23434",
-            "type": "leaf",
-            "state": {
-              "type": "drawio-file-view",
-              "state": {
-                "file": "架构/Untitled Diagram 1790241846562.drawio"
-              },
-              "icon": "pencil-ruler",
-              "title": "Untitled Diagram 1790241846562"
-            }
-          },
-          {
-            "id": "73b801d771122300",
-            "type": "leaf",
-            "state": {
-              "type": "drawio-file-view",
-              "state": {
-                "file": "Untitled Diagram 1790089424009.drawio"
-              },
-              "icon": "pencil-ruler",
-              "title": "Untitled Diagram 1790089424009"
+              "icon": "excalidraw-icon",
+              "title": "系统架构.excalidraw"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 402.88671875,
-    "collapsed": true
+    "width": 402.88671875
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -280,11 +252,12 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "73b801d771122300",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "架构/系统架构.excalidraw.md",
-    "架构/Untitled Diagram 1790241846562.drawio",
     "面试准备/冠顿/01-管理面与负责人题.md",
+    "架构/Untitled Diagram 1790241846562.drawio",
+    "Untitled Diagram 1790089424009.drawio",
+    "架构/系统架构.excalidraw.md",
     "excalidraw-lib/algorithms-and-data-structures-arrays-matrices-trees.excalidrawlib",
     "架构",
     "面试准备/冠顿/00-JD与匹配分析.md",
@@ -322,7 +295,6 @@
     "Untitled Diagram 1790089566239.drawio",
     "Untitled Diagram 1790089611176.drawio",
     "Untitled Diagram 1790089506143.drawio",
-    "Untitled Diagram 1790089424009.drawio",
     "未命名.canvas",
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.svg",
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally.svg",
