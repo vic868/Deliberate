@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
+                "file": "1-java/1-juc/JUC核心类结构总览图.md.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -236,12 +236,11 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875,
-    "collapsed": true
+    "width": 729.546875
   },
   "left-ribbon": {
     "hiddenItems": {
