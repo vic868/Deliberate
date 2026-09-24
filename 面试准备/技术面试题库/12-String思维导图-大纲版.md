@@ -1,0 +1,161 @@
+# String 面试专题
+
+> 这是 [[12-String专题思维导图]] 的**导入版**：每个节点都是完整答案，不是关键词。
+> **重新生成脑图**：删掉旧的 `12-String思维导图-大纲版.smm.md`，再用 simple-mind-map 导入本文件，即可得到详细版脑图。
+
+- 一 不可变性
+  - 实现方式
+    - 类被 final 修饰 不可被继承 子类无法破坏
+    - 字段 private final byte 数组 外部拿不到引用
+    - 不提供任何修改 value 的方法
+    - 构造时对传入数组做防御性拷贝
+  - 设计动机
+    - 字符串使用频率极高 需要能被安全共享
+    - 只有不可变才能放进常量池复用同一份对象
+  - 五大好处
+    - 常量池复用 省内存
+    - 天然线程安全 无需加锁
+    - hashCode 可缓存 作为 key 查找快
+    - 适合做 HashMap 的 key 哈希值不会变
+    - 安全 类加载 网络地址 连接串不被篡改
+  - 真的绝对不可变吗
+    - 反射加 setAccessible 可以改 value 数组
+    - JDK8 完全没有限制 直接成功
+    - JDK9 引入模块系统 java.lang 只有 exports 没有 opens
+    - JDK9 到 15 只打印非法反射访问警告 仍然放行
+    - JDK16 起默认拒绝 抛 InaccessibleObjectException
+    - JDK17 彻底移除 illegal-access 开关
+    - 绕过办法 加 add-opens java.base/java.lang 指向 ALL-UNNAMED
+    - 命名模块要写成自己的模块名
+    - 但改了会污染常量池 所有字面量共用同一个对象
+    - 连带坑 JDK8 是 char 数组 JDK9 起变成 byte 数组加 coder
+    - 另一条路 sun.misc.Unsafe 同样受限且已被弃用
+    - 常见 add-opens 清单 java.lang java.util java.nio java.util.concurrent java.lang.reflect java.text javax.crypto
+- 二 字符串常量池
+  - 池的位置
+    - JDK6 在永久代 容易 OOM
+    - JDK7 起移到堆中
+  - 字面量创建
+    - 编译期直接放入常量池
+    - 相同字面量复用同一个对象
+  - new String 创建
+    - 池中已有 只创建 1 个堆对象
+    - 池中没有 创建 2 个 池里一个堆里一个
+  - intern 方法
+    - 返回常量池中的引用
+    - JDK6 池中没有会复制一份进去
+    - JDK7 起池中没有直接存堆对象的引用
+  - 常量折叠
+    - 编译期能确定的拼接会被折叠
+    - 含变量的拼接不会折叠
+    - final 变量算编译期常量 会折叠
+- 三 创建与拼接
+  - 三种创建方式
+    - 直接赋字面量 只用常量池 0 或 1 个对象
+    - new String 堆加常量池 1 或 2 个对象
+    - 字符数组或字节数组构造 堆里 1 个 内部拷贝数组
+  - 加号拼接的编译结果
+    - JDK8 生成 StringBuilder 再 toString
+    - JDK9 起改用 invokedynamic 加 StringConcatFactory
+  - 循环内拼接
+    - 每轮都 new StringBuilder 产生大量临时对象
+    - 正确做法 手动 StringBuilder 并预设容量
+  - 其他拼接方式
+    - concat 每次都会新建对象
+    - String join 适合集合拼接
+    - String format 可读性好但性能差 别放循环里
+- 四 StringBuilder 与 StringBuffer
+  - 核心区别
+    - String 不可变 每次修改都产生新对象
+    - StringBuilder 可变 非线程安全 速度最快
+    - StringBuffer 可变 方法加 synchronized 线程安全
+  - 底层结构
+    - JDK9 起是 byte 数组加 byte coder
+    - Latin 1 范围用 1 字节 否则用 2 字节
+  - 扩容机制
+    - 默认容量 16
+    - 扩容为 原容量乘 2 再加 2
+    - 扩容要复制整个数组 频繁扩容伤性能
+    - 能预估长度就预设容量
+  - 怎么选
+    - 单线程拼接用 StringBuilder
+    - 多线程共享用 StringBuffer
+    - 少量拼接直接用加号更简洁
+- 五 常用方法与坑
+  - equals
+    - 判断顺序 先比引用 再比长度 最后逐字符比较
+    - 与双等号的区别 双等号只比引用
+  - hashCode
+    - 31 进制多项式 s0乘31的n减1次方 依次累加
+    - 选 31 因为奇素数 可优化成位移减法 且碰撞少
+    - 结果缓存在 hash 字段 只算一次
+  - substring
+    - JDK6 共享原数组 截取小段仍持有整个大数组 内存泄漏
+    - JDK7 起改为复制新数组 问题修复
+  - split
+    - 参数是正则 点号竖线加号需要转义
+    - 尾随空串默认被丢弃 limit 为负则保留
+    - 高频错误 按点号切分必须写成两个反斜杠加点
+  - replace 系列
+    - replace 支持字符和字面量替换
+    - replaceAll 和 replaceFirst 走正则
+  - trim 与 strip
+    - trim 只去 ASCII 空白 也就是码点小于等于空格
+    - strip 按 Unicode 空白判断 JDK11 起
+  - isEmpty 与 isBlank
+    - isEmpty 判断长度为 0
+    - isBlank 全空白也算空 JDK11 起
+  - 其他常用
+    - indexOf 与 contains 查找 找不到返回负一
+    - startsWith 与 endsWith 前后缀
+    - toCharArray 与 getBytes 转换 必须指定字符集
+    - valueOf 与 parseXxx 类型转换
+    - matches 整串正则匹配
+- 六 编码与内存
+  - char 与 byte
+    - char 是 UTF 16 码元 占 2 字节
+    - 中文在 UTF 8 占 3 字节 在 GBK 占 2 字节
+    - 一个 emoji 的 length 是 2 因为是代理对
+    - length 返回码元数 不是字符数
+  - 乱码根因
+    - 编码和解码用的字符集不一致
+    - getBytes 不传字符集会使用平台默认
+    - 按字节截断了多字节字符
+  - 紧凑字符串
+    - JDK9 起 Latin 1 范围用 1 字节存储
+    - 否则用 UTF 16 两字节 用 coder 标识
+  - G1 字符串去重
+    - 参数 UseStringDeduplication
+    - 底层数组相同的 String 共享同一份
+    - 只去重数组 不合并对象本身
+  - 内存估算
+    - 对象头加字段加数组内容加对齐
+    - 十字符英文串约 56 字节 开销大于内容
+- 七 高频陷阱题
+  - 字面量与 new
+    - 字面量与 new 比双等号是 false
+    - 与 intern 结果比双等号是 true
+    - equals 比较为 true
+  - 常量折叠三连
+    - 字面量拼接相等
+    - 含变量拼接不相等
+    - final 变量拼接相等
+  - 与 null 拼接
+    - 结果是 null 加后缀 不会抛异常
+  - split 结果长度
+    - 尾随空串默认丢弃
+    - limit 传负一则保留空串
+    - 点号切分要转义 否则长度为 0
+  - switch 遇到 null
+    - 抛出 NullPointerException
+- 八 实战建议
+  - 拼接
+    - 循环内必须用 StringBuilder
+    - 能预估长度就预设容量
+  - 安全
+    - 密码等敏感信息用 char 数组 用完置零
+    - String 不可变且可能进常量池 无法主动清除
+  - 性能
+    - 避免在循环里做正则匹配
+    - 日志拼接先判断日志级别
+    - 大量小字符串考虑去重

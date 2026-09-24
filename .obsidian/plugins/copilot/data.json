@@ -1,52 +1,43 @@
 {
-  "userId": "700cddb9-8066-4462-b22f-37ded0dd79ec",
+  "userId": "6def1328-090d-4205-98f6-c6b184c43d28",
+  "isPaidUser": false,
   "isPlusUser": false,
+  "entitlementToken": "",
+  "entitlementExpiresAt": 0,
   "plusLicenseKey": "",
   "openAIApiKey": "",
   "openAIOrgId": "",
   "huggingfaceApiKey": "",
   "cohereApiKey": "",
   "anthropicApiKey": "",
-  "azureOpenAIApiKey": "",
-  "azureOpenAIApiInstanceName": "",
-  "azureOpenAIApiDeploymentName": "",
-  "azureOpenAIApiVersion": "",
-  "azureOpenAIApiEmbeddingDeploymentName": "",
   "googleApiKey": "",
   "openRouterAiApiKey": "",
   "xaiApiKey": "",
   "mistralApiKey": "",
   "deepseekApiKey": "",
-  "amazonBedrockApiKey": "",
-  "amazonBedrockRegion": "",
   "siliconflowApiKey": "",
-  "githubCopilotAccessToken": "",
-  "githubCopilotToken": "",
-  "githubCopilotTokenExpiresAt": 0,
   "defaultChainType": "llm_chain",
   "defaultModelKey": "google/gemini-2.5-flash|openrouterai",
-  "embeddingModelKey": "openai/text-embedding-3-small|openrouterai",
-  "temperature": 0.1,
-  "maxTokens": 6000,
   "contextTurns": 15,
   "userSystemPrompt": "",
   "openAIProxyBaseUrl": "",
-  "openAIEmbeddingProxyBaseUrl": "",
   "stream": true,
+  "copilotFolder": "copilot",
+  "copilotRootHistory": [
+    "copilot"
+  ],
+  "upgradedToV8FromLegacy": false,
   "defaultSaveFolder": "copilot/copilot-conversations",
   "defaultConversationTag": "copilot-conversation",
   "autosaveChat": true,
-  "generateAIChatTitleOnSave": true,
   "autoAddActiveContentToContext": true,
   "defaultOpenArea": "view",
   "defaultSendShortcut": "enter",
   "customPromptsFolder": "copilot/copilot-custom-prompts",
-  "indexVaultToVectorStore": "ON MODE SWITCH",
   "qaExclusions": "copilot",
   "qaInclusions": "",
   "chatNoteContextPath": "",
   "chatNoteContextTags": [],
-  "enableIndexSync": true,
   "debug": false,
   "maxSourceChunks": 30,
   "enableInlineCitations": true,
@@ -59,7 +50,6 @@
       "isBuiltIn": true,
       "core": true,
       "plusExclusive": true,
-      "projectEnabled": false,
       "capabilities": [
         "vision"
       ],
@@ -71,7 +61,6 @@
       "enabled": true,
       "isBuiltIn": true,
       "core": true,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -104,10 +93,9 @@
       "provider": "openrouterai",
       "enabled": true,
       "isBuiltIn": true,
-      "projectEnabled": true,
       "capabilities": [
-        "reasoning",
-        "vision"
+        "vision",
+        "reasoning"
       ],
       "apiKey": ""
     },
@@ -117,8 +105,8 @@
       "enabled": true,
       "isBuiltIn": true,
       "capabilities": [
-        "reasoning",
-        "vision"
+        "vision",
+        "reasoning"
       ],
       "apiKey": ""
     },
@@ -127,10 +115,9 @@
       "provider": "google",
       "enabled": true,
       "isBuiltIn": true,
-      "projectEnabled": true,
       "capabilities": [
-        "reasoning",
-        "vision"
+        "vision",
+        "reasoning"
       ],
       "apiKey": ""
     },
@@ -139,7 +126,6 @@
       "provider": "google",
       "enabled": true,
       "isBuiltIn": true,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -150,7 +136,6 @@
       "provider": "google",
       "enabled": true,
       "isBuiltIn": true,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -162,8 +147,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "reasoning",
-        "vision"
+        "vision",
+        "reasoning"
       ],
       "apiKey": ""
     },
@@ -173,7 +158,6 @@
       "enabled": false,
       "isBuiltIn": true,
       "core": false,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -185,7 +169,6 @@
       "enabled": false,
       "isBuiltIn": true,
       "core": false,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -197,7 +180,6 @@
       "enabled": false,
       "isBuiltIn": true,
       "core": false,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -209,7 +191,6 @@
       "enabled": false,
       "isBuiltIn": true,
       "core": false,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -221,7 +202,6 @@
       "enabled": false,
       "isBuiltIn": true,
       "core": false,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -233,7 +213,6 @@
       "enabled": false,
       "isBuiltIn": true,
       "core": false,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -245,7 +224,6 @@
       "enabled": false,
       "isBuiltIn": true,
       "core": false,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
@@ -257,8 +235,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "reasoning",
-        "vision"
+        "vision",
+        "reasoning"
       ],
       "apiKey": ""
     },
@@ -268,8 +246,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "reasoning",
-        "vision"
+        "vision",
+        "reasoning"
       ],
       "apiKey": ""
     },
@@ -279,8 +257,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "reasoning",
-        "vision"
+        "vision",
+        "reasoning"
       ],
       "apiKey": ""
     },
@@ -289,21 +267,17 @@
       "provider": "google",
       "enabled": false,
       "isBuiltIn": true,
-      "projectEnabled": true,
       "capabilities": [
         "vision"
       ],
       "apiKey": ""
     },
     {
-      "name": "deepseek-v4-flash",
+      "name": "deepseek-chat",
       "provider": "deepseek",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
-      "apiKey": "",
-      "baseUrl": "https://api.deepseek.com",
-      "displayName": "deepseek-v4-flash",
-      "maxTokens": 15900
+      "apiKey": ""
     },
     {
       "name": "deepseek-reasoner",
@@ -335,154 +309,34 @@
       "apiKey": ""
     }
   ],
-  "activeEmbeddingModels": [
-    {
-      "name": "copilot-plus-small",
-      "provider": "copilot-plus",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "core": true,
-      "plusExclusive": true,
-      "apiKey": ""
-    },
-    {
-      "name": "copilot-plus-large",
-      "provider": "copilot-plus-jina",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "core": true,
-      "plusExclusive": true,
-      "believerExclusive": true,
-      "dimensions": 1024,
-      "apiKey": ""
-    },
-    {
-      "name": "copilot-plus-multilingual",
-      "provider": "copilot-plus-jina",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "core": true,
-      "plusExclusive": true,
-      "dimensions": 512,
-      "apiKey": ""
-    },
-    {
-      "name": "openai/text-embedding-3-small",
-      "provider": "openrouterai",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "core": true,
-      "apiKey": ""
-    },
-    {
-      "name": "text-embedding-3-small",
-      "provider": "openai",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "core": true,
-      "apiKey": ""
-    },
-    {
-      "name": "gemini-embedding-001",
-      "provider": "google",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "core": true,
-      "apiKey": ""
-    },
-    {
-      "name": "gemini-embedding-2-preview",
-      "provider": "google",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "core": true,
-      "apiKey": ""
-    },
-    {
-      "name": "Qwen/Qwen3-Embedding-0.6B",
-      "provider": "siliconflow",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "core": true,
-      "baseUrl": "https://api.siliconflow.com/v1",
-      "apiKey": ""
-    },
-    {
-      "name": "text-embedding-3-large",
-      "provider": "openai",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "apiKey": ""
-    },
-    {
-      "name": "embed-multilingual-light-v3.0",
-      "provider": "cohereai",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "apiKey": ""
-    },
-    {
-      "name": "text-embedding-004",
-      "provider": "google",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "apiKey": ""
-    },
-    {
-      "name": "azure-openai",
-      "provider": "azure openai",
-      "enabled": true,
-      "isBuiltIn": true,
-      "isEmbeddingModel": true,
-      "apiKey": ""
-    }
-  ],
-  "embeddingRequestsPerMin": 60,
-  "embeddingBatchSize": 16,
-  "disableIndexOnMobile": true,
-  "showSuggestedPrompts": true,
-  "showRelevantNotes": true,
-  "numPartitions": 1,
   "lexicalSearchRamLimit": 100,
   "promptUsageTimestamps": {},
   "promptSortStrategy": "timestamp",
   "chatHistorySortStrategy": "recent",
-  "projectListSortStrategy": "recent",
   "projectsFolder": "copilot/projects",
   "defaultConversationNoteName": "{$topic}@{$date}_{$time}",
   "inlineEditCommands": [],
   "projectList": [],
   "lastDismissedVersion": null,
+  "lastShownStartupVersion": "4.0.11",
   "passMarkdownImages": true,
   "enableAutonomousAgent": true,
   "enableCustomPromptTemplating": true,
-  "enableSemanticSearchV3": false,
   "enableSelfHostMode": false,
   "enableMiyo": false,
+  "enableMiyoSearchSkill": false,
   "miyoSearchAll": false,
-  "selfHostModeValidatedAt": null,
-  "selfHostValidationCount": 0,
-  "selfHostUrl": "",
-  "selfHostApiKey": "",
+  "relevantNotesLiveUpdate": true,
   "miyoServerUrl": "",
   "selfHostSearchProvider": "firecrawl",
   "firecrawlApiKey": "",
   "perplexityApiKey": "",
+  "parallelApiKey": "",
+  "exaApiKey": "",
   "supadataApiKey": "",
+  "docProcessorBackend": "plus",
   "enableLexicalBoosts": true,
-  "suggestedDefaultCommands": true,
-  "autonomousAgentMaxIterations": 4,
+  "suggestedDefaultCommands": false,
   "autonomousAgentEnabledToolIds": [
     "localSearch",
     "readNote",
@@ -500,14 +354,311 @@
   "maxRecentConversations": 30,
   "enableSavedMemory": true,
   "quickCommandIncludeNoteContext": true,
-  "autoIncludeTextSelection": false,
-  "autoAddSelectionToContext": false,
-  "autoAcceptEdits": true,
+  "autoAcceptEdits": false,
   "diffViewMode": "split",
   "userSystemPromptsFolder": "copilot/system-prompts",
   "defaultSystemPromptTitle": "",
   "autoCompactThreshold": 128000,
   "convertedDocOutputFolder": "",
-  "_keychainOnly": true,
-  "_keychainVaultId": "77d003f0"
+  "agentMode": {
+    "byok": {},
+    "activeBackend": "opencode",
+    "backends": {},
+    "debugFullFrames": true,
+    "notificationSound": true,
+    "notificationSoundId": "piano",
+    "welcomeDismissed": false,
+    "skills": {
+      "folder": "copilot/skills"
+    }
+  },
+  "providers": {
+    "ef113fb9-83ca-44a6-8f40-e7ebef0e747b": {
+      "providerType": "anthropic",
+      "displayName": "Claude",
+      "origin": {
+        "kind": "agent",
+        "agentType": "claude"
+      },
+      "requiresApiKey": false,
+      "providerId": "ef113fb9-83ca-44a6-8f40-e7ebef0e747b",
+      "addedAt": 1789302244993,
+      "apiKeyKeychainId": null
+    }
+  },
+  "configuredModels": [
+    {
+      "providerId": "ef113fb9-83ca-44a6-8f40-e7ebef0e747b",
+      "info": {
+        "id": "default",
+        "displayName": "Default (recommended)",
+        "description": "Use the default model (currently Opus 4.8 (1M context)) · $5/$25 per Mtok"
+      },
+      "configuredModelId": "f08df31e-934f-4ae7-a95f-2b52e026d8ef",
+      "configuredAt": 1789302247392
+    },
+    {
+      "providerId": "ef113fb9-83ca-44a6-8f40-e7ebef0e747b",
+      "info": {
+        "id": "opus[1m]",
+        "displayName": "Opus",
+        "description": "Opus 4.8 with 1M context · Best for everyday, complex tasks · $5/$25 per Mtok"
+      },
+      "configuredModelId": "c913bd3f-b69f-4070-8287-7825543552c7",
+      "configuredAt": 1789302247393
+    },
+    {
+      "providerId": "ef113fb9-83ca-44a6-8f40-e7ebef0e747b",
+      "info": {
+        "id": "sonnet",
+        "displayName": "Sonnet",
+        "description": "Sonnet 5 · Efficient for routine tasks · $3/$15 per Mtok"
+      },
+      "configuredModelId": "0f46fbd8-1755-4b6e-ab77-f79574f6f383",
+      "configuredAt": 1789302247393
+    },
+    {
+      "providerId": "ef113fb9-83ca-44a6-8f40-e7ebef0e747b",
+      "info": {
+        "id": "haiku",
+        "displayName": "Haiku",
+        "description": "Haiku 4.5 · Fastest for quick answers · $1/$5 per Mtok"
+      },
+      "configuredModelId": "0ce87e17-791f-4907-bbbb-a09dfbd7102e",
+      "configuredAt": 1789302247393
+    }
+  ],
+  "backends": {
+    "claude": {
+      "enabledModels": [
+        "f08df31e-934f-4ae7-a95f-2b52e026d8ef",
+        "c913bd3f-b69f-4070-8287-7825543552c7",
+        "0f46fbd8-1755-4b6e-ab77-f79574f6f383",
+        "0ce87e17-791f-4907-bbbb-a09dfbd7102e"
+      ]
+    }
+  },
+  "copilotPlusCatalog": {
+    "models": [
+      {
+        "id": "copilot-plus-flash",
+        "displayName": "Copilot Plus Flash",
+        "description": "The default model: fastest responses and the most quota.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [],
+        "modalities": {
+          "input": [
+            "text",
+            "image"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 1048576
+        }
+      },
+      {
+        "id": "kimi-k2.6",
+        "displayName": "Kimi K2.6",
+        "description": "Good for long-running reasoning tasks.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [],
+        "modalities": {
+          "input": [
+            "text"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 262144
+        }
+      },
+      {
+        "id": "glm-5.2",
+        "displayName": "GLM-5.2",
+        "description": "A frontier open-weight model.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [
+          "none",
+          "high"
+        ],
+        "modalities": {
+          "input": [
+            "text"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 1048576
+        }
+      },
+      {
+        "id": "glm-5.3-flash",
+        "displayName": "GLM-5.3-Flash",
+        "description": "Fast, cost-efficient coding and long-horizon agent tasks.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [],
+        "modalities": {
+          "input": [
+            "text",
+            "image"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 1048576
+        }
+      },
+      {
+        "id": "kimi-k2.7-code",
+        "displayName": "Kimi K2.7 Code",
+        "description": "Optimized for coding tasks.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [
+          "none",
+          "high"
+        ],
+        "modalities": {
+          "input": [
+            "text",
+            "image"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 262144
+        }
+      },
+      {
+        "id": "deepseek-v4-pro",
+        "displayName": "DeepSeek V4 Pro",
+        "description": "A top-tier model for the hardest reasoning and agentic tasks.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [],
+        "modalities": {
+          "input": [
+            "text"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 1048576
+        }
+      },
+      {
+        "id": "deepseek-v4-flash-0731",
+        "displayName": "DeepSeek V4 Flash 0731",
+        "description": "The July 2026 DeepSeek V4 Flash snapshot: fast, cheap, and broadly capable.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [
+          "none",
+          "high"
+        ],
+        "modalities": {
+          "input": [
+            "text"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 1048576
+        }
+      },
+      {
+        "id": "deepseek-v4.1-flash",
+        "displayName": "DeepSeek V4.1 Flash",
+        "description": "Fast multimodal reasoning for coding and agentic tasks.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [],
+        "modalities": {
+          "input": [
+            "text",
+            "image"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 1048576
+        }
+      },
+      {
+        "id": "mimo-v2.5",
+        "displayName": "MiMo V2.5",
+        "description": "Cost-effective and capable for everyday use.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [
+          "none",
+          "high"
+        ],
+        "modalities": {
+          "input": [
+            "text"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 262144
+        }
+      },
+      {
+        "id": "minimax-m3",
+        "displayName": "MiniMax M3",
+        "description": "Long-context model for coding and agentic tasks.",
+        "toolCall": true,
+        "reasoning": true,
+        "reasoningEfforts": [],
+        "modalities": {
+          "input": [
+            "text"
+          ],
+          "output": [
+            "text"
+          ]
+        },
+        "limits": {
+          "context": 524288
+        }
+      }
+    ],
+    "defaultEnabledIds": [
+      "copilot-plus-flash",
+      "glm-5.2",
+      "glm-5.3-flash",
+      "deepseek-v4-pro",
+      "deepseek-v4.1-flash",
+      "minimax-m3"
+    ]
+  },
+  "autoIncludeTextSelection": false,
+  "autoAddSelectionToContext": false,
+  "_keychainVaultId": "b6357bc4",
+  "settingsVersion": 14,
+  "miyoConnectionMode": "local"
 }

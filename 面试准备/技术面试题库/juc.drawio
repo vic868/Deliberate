@@ -1,0 +1,34 @@
+<mxfile host="embed.diagrams.net">
+  <diagram id="string-family-demo" name="String家族">
+    <mxGraphModel dx="2550" dy="1800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wzWcOS3fMSnDOP8o7zoQ-2" edge="1" parent="1" source="VicEDbzWaWidhCtUpcCe-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="wzWcOS3fMSnDOP8o7zoQ-1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VicEDbzWaWidhCtUpcCe-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;AbstractQueuedSynchronizer&lt;/b&gt;" vertex="1">
+          <mxGeometry height="100" width="430" x="-520" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="DKuPXBluX3gD96TiBNCE-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Abstr" vertex="1">
+          <mxGeometry height="30" width="60" x="-30" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="f-HDVVtKIlzT4iyPEPno-2" edge="1" parent="1" source="wzWcOS3fMSnDOP8o7zoQ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="f-HDVVtKIlzT4iyPEPno-1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wzWcOS3fMSnDOP8o7zoQ-1" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="核心组件" vertex="1">
+          <mxGeometry height="60" width="120" x="145" y="-90" as="geometry" />
+        </mxCell>
+        <mxCell id="D3mmqlKUN70lRGSEBUL8-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;autosizeText=1;" value="" vertex="1">
+          <mxGeometry height="160" width="160" x="-930" y="-680" as="geometry" />
+        </mxCell>
+        <mxCell id="f-HDVVtKIlzT4iyPEPno-1" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="345" y="-90" as="geometry" />
+        </mxCell>
+        <mxCell id="9SzonGNsLckRgTCd9cIT-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="30" width="60" x="-1730" y="-1210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

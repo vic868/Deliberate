@@ -1,24 +1,22 @@
 {
   "main": {
-    "id": "2236cb386f0528e7",
+    "id": "5324373015726ba8",
     "type": "split",
     "children": [
       {
-        "id": "78931375fdefe8b0",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "8460ba4852756eb8",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "大数据学习规划/01-学习路径总览.md",
-                "mode": "source",
-                "source": false
+                "file": "面试准备/技术面试题库/juc.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "01-学习路径总览"
+              "icon": "excalidraw-icon",
+              "title": "juc.excalidraw"
             }
           }
         ]
@@ -27,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "6e5481e3ff8ecf5f",
+    "id": "12a94078a83b0d28",
     "type": "split",
     "children": [
       {
-        "id": "148a61dd5fab3180",
+        "id": "ee2a54fbfac72969",
         "type": "tabs",
         "children": [
           {
-            "id": "cc3b7b9ee066aafc",
+            "id": "69b72e3490e469f5",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -50,7 +48,7 @@
             }
           },
           {
-            "id": "f3a62052136e9910",
+            "id": "632db339f3eaaf2f",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -67,7 +65,7 @@
             }
           },
           {
-            "id": "1e0ca2432362e88b",
+            "id": "c25762394d9463a8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -83,23 +81,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.59765625
+    "width": 402.88671875
   },
   "right": {
-    "id": "9eefc4235c20d1c4",
+    "id": "a9504c882bd2a911",
     "type": "split",
     "children": [
       {
-        "id": "0d46811a3431ac35",
+        "id": "7457bdaf37653120",
         "type": "tabs",
         "children": [
           {
-            "id": "780858d0fd5d027e",
+            "id": "00eb7ef7b7bc1fcb",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pmp/pmp.md",
+                "file": "docs/STUDIO_FRAMEWORK_BRANCH.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,12 +111,12 @@
             }
           },
           {
-            "id": "f7a3a44e2310f464",
+            "id": "f479b33834bb5860",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pmp/pmp.md",
+                "file": "docs/STUDIO_FRAMEWORK_BRANCH.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -127,7 +125,7 @@
             }
           },
           {
-            "id": "08af2745575fdd4e",
+            "id": "29bcb76ed22f7fa3",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -142,7 +140,7 @@
             }
           },
           {
-            "id": "2f6c4d152182228c",
+            "id": "152ebe599d882336",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -156,12 +154,12 @@
             }
           },
           {
-            "id": "b5073f1a0572f380",
+            "id": "ecf36b4732fa4f93",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "pmp/pmp.md",
+                "file": "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -171,17 +169,7 @@
             }
           },
           {
-            "id": "d803930995f51b4a",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
-          },
-          {
-            "id": "d19df4a8561fbd45",
+            "id": "95b8fb0c81f559be",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -191,80 +179,124 @@
             }
           },
           {
-            "id": "2ec76568de0fee75",
+            "id": "2b4ca0a4f5848692",
             "type": "leaf",
             "state": {
-              "type": "copilot-chat-view",
+              "type": "juggl_nodes",
               "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
+              "icon": "ag-node-list",
+              "title": "Juggl nodes"
+            }
+          },
+          {
+            "id": "8d47cb5a04084f9c",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_style",
+              "state": {},
+              "icon": "ag-style",
+              "title": "Juggl style"
+            }
+          },
+          {
+            "id": "8963ab70719a7bd9",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw-sidepanel",
+              "state": {},
+              "icon": "excalidraw-icon",
+              "title": "Excalidraw 侧边面板"
+            }
+          },
+          {
+            "id": "691fc47be85d9973",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
-    "width": 913.05078125
+    "width": 729.546875
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:打开快速切换": false,
+      "homepage:Open homepage": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "obsidian-git:Open Git source control": false,
+      "obsidian42-brat:BRAT": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "zhihu:Open Zhihu side view": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-git:Open Git source control": false,
+      "copilot:Open Copilot Agent Chat": false,
+      "agent-client:Open agent client": false,
       "simple-mind-map:新建思维导图": false,
       "obsidian-textgenerator-plugin:Generate Text!": false,
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
-      "markdown-importer:打开 Markdown 格式转换器": false,
-      "zk-prefixer:创建时间戳笔记": false,
-      "copilot:Open Copilot Chat": false,
-      "drawio:Launch draw.io editor": false
+      "juggl:Juggl global graph": false,
+      "obsidian-omnivore:Omnivore": false,
+      "drawio-editor:Create new drawio diagram": false
     }
   },
-  "active": "8460ba4852756eb8",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "MindMap 2026-09-20 10.16.11.smm.md",
-    "大数据学习规划/01-学习路径总览.md",
-    "AI 学习规划/论文精读/李沐论文精读系列一-四篇经典论文.md",
-    "AI 学习规划/02-基础阶段.md",
-    "AI 学习规划/01-学习路径总览.md",
-    "AI 学习规划/MoE",
+    "面试准备/技术面试题库/juc.drawio",
+    "面试准备/冠顿/03-监控告警Trace与SLO.md",
     "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
-    "AI 学习规划/论文精读",
-    "网络修复-Clash超时/修复清单.md",
-    "202608181619.md",
-    "AI 学习规划/Transformer 面试题/23-怎样缓解Transformer的性能瓶颈.md",
-    "AI 学习规划/Transformer 面试题/22-Transformer模型的性能瓶颈在哪.md",
-    "AI 学习规划/Transformer 面试题/11-多头注意力需要降维吗.md",
-    "AI 学习规划/Transformer 面试题/10-head能否无限增多.md",
-    "AI 学习规划/Transformer 面试题/09-为什么Transformer采用多头注意力机制.md",
-    "AI 学习规划/Transformer 面试题/08-让K和Q变成同一个矩阵的影响.md",
-    "AI 学习规划/Transformer 面试题/07-K和Q可以使用同一个值吗.md",
-    "AI 学习规划/Transformer 面试题/06-self-attention中的K和Q是用来做什么的.md",
-    "AI 学习规划/Transformer 面试题/05-计算attention用的是点乘还是加法.md",
-    "AI 学习规划/Transformer 面试题/04-Transformer的位置编码是怎样的.md",
-    "AI 学习规划/Transformer 面试题/03-Transformer的哪个部分最占用显存.md",
-    "AI 学习规划/Transformer 面试题/26-了解ViLT吗.md",
-    "AI 学习规划/Transformer 面试题/25-了解ViT吗.md",
-    "AI 学习规划/Transformer 面试题/21-如何评估Transformer的性能和效果.md",
-    "AI 学习规划/Transformer 面试题/17-什么是自回归属性autoregressive-property.md",
-    "AI 学习规划/Transformer 面试题/14-了解梯度裁剪Gradient-Clipping吗.md",
-    "AI 学习规划/Transformer 面试题/02-使用Transformer解决了RNN面临的什么问题.md",
-    "AI 学习规划/Transformer 面试题/01-聊一聊Transformer的架构和基本原理.md",
-    "大数据学习规划",
-    "AI 学习/00-学习路线",
-    "未命名 1.base",
-    "未命名.base",
-    "pmp/01-过程组/PMP_第02章_思维导图.html",
-    "pmp/01-过程组/PMP 五大过程组与十大知识领域.html",
-    "pmp/01-过程组/知识点-第02章-思维导图.html",
-    "pmp/03-错题/附件/光环云课堂-模拟一错题.pdf",
-    "未命名.canvas"
+    "面试准备/冠顿/06-幂等.md",
+    "面试准备/冠顿/00-JD与匹配分析.md",
+    "面试准备/智控/03-技术题库.md",
+    "AI 学习规划/04-高级架构阶段.md",
+    "面试准备/智控-Java面试准备.md",
+    "面试准备/技术面试题库/Juc/AbstractQueuedSynchronizer（AQS）源码原理与实战分析.md",
+    "面试准备/冠顿/04-事务一致性.md",
+    "面试准备/冠顿/05-并发.md",
+    "面试准备/冠顿/09-数据库性能.md",
+    "面试准备/冠顿/08-消息.md",
+    "面试准备/冠顿/07-缓存.md",
+    "面试准备/技术面试题库/juc.excalidraw.md",
+    "面试准备/技术面试题库/AbstractQueuedSynchronizer.md",
+    "面试准备/技术面试题库/Drawing 2026-09-22 23.02.12.excalidraw.md",
+    "面试准备/技术面试题库/02-并发与多线程.md",
+    "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
+    "Excalidraw/Scripts/Downloaded/Mindmap format.md",
+    "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
+    "Excalidraw/Scripts/Downloaded/Mindmap connector.md",
+    "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
+    "Excalidraw/Scripts/Downloaded/Mindmap Builder.md",
+    "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.svg",
+    "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.md",
+    "Excalidraw/Scripts/Downloaded/Color Scheme Manager.svg",
+    "Excalidraw/Scripts/Downloaded/Color Scheme Manager.md",
+    "面试准备/技术面试题库/Juc",
+    "Excalidraw/Libraries/local-library.excalidrawlib",
+    "类图示例/drawio嵌入示例.md",
+    "面试准备/技术面试题库/16-JUC框架全景-ProcessOn.md",
+    "面试准备/技术面试题库/attachments/JUC-ProcessOn.png",
+    "面试准备/技术面试题库/Drawing 2026-09-22 23.10.00.excalidraw.md",
+    "Untitled Diagram 1790089566239.drawio",
+    "Untitled Diagram 1790089611176.drawio",
+    "Untitled Diagram 1790089506143.drawio",
+    "Untitled Diagram 1790089424009.drawio",
+    "面试准备/技术面试题库/attachments",
+    "未命名.canvas",
+    "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.svg",
+    "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally.svg",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
+    "risk-control-front/doc/images/strategy-test.png",
+    "risk-control-front/doc/images/business.png"
   ]
 }
