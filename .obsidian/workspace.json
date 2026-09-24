@@ -11,15 +11,30 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1-java/0-知识点/1-面向对象.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "1-面向对象"
+            }
+          },
+          {
+            "id": "8f23614b751a9943",
+            "type": "leaf",
+            "state": {
               "type": "excalidraw",
               "state": {
-                "file": "架构/微博整体架构.excalidraw.md"
+                "file": "Excalidraw/Drawing 2026-09-24 21.18.11.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "微博整体架构.excalidraw"
+              "title": "Drawing 2026-09-24 21.18.11.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -252,9 +267,12 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "8f23614b751a9943",
   "lastOpenFiles": [
-    "1-java/3-",
+    "1-java/0-知识点/1-面向对象.md",
+    "Excalidraw/Drawing 2026-09-24 21.18.11.excalidraw.md",
+    "架构/微博整体架构.excalidraw.md",
+    "1-java/0-知识点",
     "1-java/1-juc",
     "1-java/2-collection",
     "6-ai",
@@ -265,8 +283,6 @@
     "1-java",
     "面试准备/冠顿/01-管理面与负责人题.md",
     "架构/Untitled Diagram 1790241846562.drawio",
-    "Untitled Diagram 1790089424009.drawio",
-    "架构/微博整体架构.excalidraw.md",
     "面试准备/冠顿/00-JD与匹配分析.md",
     "AI 学习规划/实战项目.md",
     "AI 学习规划/模板-每日打卡.md",
@@ -293,7 +309,6 @@
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.md",
     "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.svg",
-    "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.md",
     "Excalidraw/Scripts/Downloaded/Color Scheme Manager.svg",
     "面试准备/技术面试题库/attachments/JUC-ProcessOn.png",
     "未命名.canvas",
