@@ -25,12 +25,14 @@
             "id": "8f23614b751a9943",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md"
+                "file": "1-java/1-juc/JUC核心类结构总览图.md.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "juc类图.excalidraw"
+              "icon": "lucide-file",
+              "title": "JUC核心类结构总览图.md"
             }
           }
         ],
@@ -267,10 +269,11 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "8f23614b751a9943",
   "lastOpenFiles": [
-    "1-java/0-知识点/1-面向对象.md",
     "1-java/1-juc/juc类图.excalidraw.md",
+    "1-java/1-juc/JUC核心类结构总览图.md.md",
+    "1-java/0-知识点/1-面向对象.md",
     "架构/微博整体架构.excalidraw.md",
     "1-java/0-知识点",
     "1-java/1-juc",
@@ -307,7 +310,6 @@
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.md",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
-    "Excalidraw/Scripts/Downloaded/Mindmap Builder.md",
     "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.svg",
     "Excalidraw/Scripts/Downloaded/Color Scheme Manager.svg",
     "面试准备/技术面试题库/attachments/JUC-ProcessOn.png",
