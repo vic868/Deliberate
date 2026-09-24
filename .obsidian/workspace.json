@@ -250,8 +250,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875,
-    "collapsed": true
+    "width": 729.546875
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -275,7 +274,8 @@
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
       "juggl:Juggl global graph": false,
       "obsidian-omnivore:Omnivore": false,
-      "drawio-editor:Create new drawio diagram": false
+      "drawio-editor:Create new drawio diagram": false,
+      "hybrid-git-sync:Sync Now": false
     }
   },
   "active": "73b801d771122300",
