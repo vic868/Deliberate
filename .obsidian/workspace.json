@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "架构/系统架构.excalidraw.md"
+                "file": "架构/微博整体架构.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "系统架构.excalidraw"
+              "title": "微博整体架构.excalidraw"
             }
           }
         ]
@@ -252,12 +252,12 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
     "面试准备/冠顿/01-管理面与负责人题.md",
     "架构/Untitled Diagram 1790241846562.drawio",
     "Untitled Diagram 1790089424009.drawio",
-    "架构/系统架构.excalidraw.md",
+    "架构/微博整体架构.excalidraw.md",
     "excalidraw-lib/algorithms-and-data-structures-arrays-matrices-trees.excalidrawlib",
     "架构",
     "面试准备/冠顿/00-JD与匹配分析.md",
