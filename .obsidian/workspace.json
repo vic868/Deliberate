@@ -11,15 +11,42 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "面试准备/冠顿/01-管理面与负责人题.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "01-管理面与负责人题"
+            }
+          },
+          {
+            "id": "f4987410b8c23434",
+            "type": "leaf",
+            "state": {
+              "type": "drawio-file-view",
+              "state": {
+                "file": "架构/Untitled Diagram 1790241846562.drawio"
+              },
+              "icon": "pencil-ruler",
+              "title": "Untitled Diagram 1790241846562"
+            }
+          },
+          {
+            "id": "73b801d771122300",
+            "type": "leaf",
+            "state": {
               "type": "excalidraw",
               "state": {
-                "file": "面试准备/技术面试题库/juc.excalidraw.md"
+                "file": "架构/系统架构.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "juc.excalidraw"
+              "title": "系统架构.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -219,16 +246,18 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 8
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875
+    "width": 729.546875,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:打开快速切换": false,
       "homepage:Open homepage": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
@@ -236,7 +265,6 @@
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
       "obsidian42-brat:BRAT": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "zhihu:Open Zhihu side view": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-git:Open Git source control": false,
@@ -250,13 +278,21 @@
       "drawio-editor:Create new drawio diagram": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "73b801d771122300",
   "lastOpenFiles": [
+    "架构/Untitled Diagram 1790241846562.drawio",
+    "面试准备/冠顿/01-管理面与负责人题.md",
+    "架构/系统架构.excalidraw.md",
+    "excalidraw-lib/algorithms-and-data-structures-arrays-matrices-trees.excalidrawlib",
+    "架构",
+    "面试准备/冠顿/00-JD与匹配分析.md",
+    "AI 学习规划/实战项目.md",
+    "AI 学习规划/模板-每日打卡.md",
+    "面试准备/技术面试题库/juc.excalidraw.md",
     "面试准备/技术面试题库/juc.drawio",
     "面试准备/冠顿/03-监控告警Trace与SLO.md",
     "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
     "面试准备/冠顿/06-幂等.md",
-    "面试准备/冠顿/00-JD与匹配分析.md",
     "面试准备/智控/03-技术题库.md",
     "AI 学习规划/04-高级架构阶段.md",
     "面试准备/智控-Java面试准备.md",
@@ -266,7 +302,6 @@
     "面试准备/冠顿/09-数据库性能.md",
     "面试准备/冠顿/08-消息.md",
     "面试准备/冠顿/07-缓存.md",
-    "面试准备/技术面试题库/juc.excalidraw.md",
     "面试准备/技术面试题库/AbstractQueuedSynchronizer.md",
     "面试准备/技术面试题库/Drawing 2026-09-22 23.02.12.excalidraw.md",
     "面试准备/技术面试题库/02-并发与多线程.md",
@@ -279,23 +314,16 @@
     "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.svg",
     "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.md",
     "Excalidraw/Scripts/Downloaded/Color Scheme Manager.svg",
-    "Excalidraw/Scripts/Downloaded/Color Scheme Manager.md",
     "面试准备/技术面试题库/Juc",
     "Excalidraw/Libraries/local-library.excalidrawlib",
-    "类图示例/drawio嵌入示例.md",
-    "面试准备/技术面试题库/16-JUC框架全景-ProcessOn.md",
     "面试准备/技术面试题库/attachments/JUC-ProcessOn.png",
-    "面试准备/技术面试题库/Drawing 2026-09-22 23.10.00.excalidraw.md",
     "Untitled Diagram 1790089566239.drawio",
     "Untitled Diagram 1790089611176.drawio",
     "Untitled Diagram 1790089506143.drawio",
     "Untitled Diagram 1790089424009.drawio",
-    "面试准备/技术面试题库/attachments",
     "未命名.canvas",
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.svg",
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally.svg",
-    "Excalidraw/Scripts/Downloaded",
-    "Excalidraw/Scripts",
     "risk-control-front/doc/images/strategy-test.png",
     "risk-control-front/doc/images/business.png"
   ]
