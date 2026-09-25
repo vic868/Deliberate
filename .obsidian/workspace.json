@@ -37,12 +37,14 @@
             "id": "ccc7e74f47f4595c",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md"
+                "file": "1-java/1-juc/JUC核心类结构总览图.md.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "juc类图.excalidraw"
+              "icon": "lucide-file",
+              "title": "JUC核心类结构总览图.md"
             }
           },
           {
@@ -212,7 +214,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md",
+                "file": "1-java/1-juc/JUC核心类结构总览图.md.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -305,13 +307,13 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "ccc7e74f47f4595c",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/1-juc/juc类图.excalidraw.md",
     "4-db/MYSQL.excalidraw.md",
     "MindMap 2026-09-25 14.13.34.smm.md",
     "1-java/0-知识点/3-抽象.md",
     "1-java/0-知识点/1-面向对象.md",
-    "1-java/1-juc/juc类图.excalidraw.md",
     "1-java/1-juc/JUC核心类结构总览图.md.md",
     "架构/微博整体架构.excalidraw.md",
     "1-java/0-知识点/2-基础知识.md",
