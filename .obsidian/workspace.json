@@ -51,12 +51,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "面试准备/专业技能/05-大数据与流计算.md",
+                "file": "面试准备/专业技能/03-高并发中间件.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "05-大数据与流计算"
+              "title": "03-高并发中间件"
             }
           }
         ],
@@ -200,7 +200,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "面试准备/专业技能/05-大数据与流计算.md",
+                "file": "面试准备/专业技能/03-高并发中间件.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -294,6 +294,7 @@
   },
   "active": "1ccbfe2b73b36593",
   "lastOpenFiles": [
+    "面试准备/专业技能/05-大数据与流计算.md",
     "面试准备/专业技能/02-Java核心与微服务.md",
     "面试准备/专业技能/03-高并发中间件.md",
     "面试准备/专业技能/04-数据库调优.md",
@@ -330,7 +331,6 @@
     "面试准备/冠顿/01-管理面与负责人题.md",
     "面试准备/冠顿/00-JD与匹配分析.md",
     "AI 学习规划/实战项目.md",
-    "AI 学习规划/模板-每日打卡.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
