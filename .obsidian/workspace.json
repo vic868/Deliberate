@@ -37,12 +37,14 @@
             "id": "8f23614b751a9943",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "1-java/java 版本.smm.md"
+                "file": "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "java 版本.smm"
+              "icon": "lucide-file",
+              "title": "00-JD整理与学习清单"
             }
           },
           {
@@ -200,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/java 版本.smm.md",
+                "file": "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -293,8 +295,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "8f23614b751a9943",
   "lastOpenFiles": [
+    "面试准备/简历/00-AI经历怎么讲与简历改写策略.md",
+    "1-java/java 版本.smm.md",
     "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
     "面试准备/AI运维与架构岗",
     "架构/微博整体架构.excalidraw.md",
@@ -304,7 +308,6 @@
     "1-java/1-juc/JUC核心类结构总览图.md.md",
     "1-java/1-juc/juc类图.excalidraw.md",
     "4-db/MYSQL.excalidraw.md",
-    "1-java/java 版本.smm.md",
     "1-java/0-知识点/3-抽象.md",
     "1-java/0-知识点/1-面向对象.md",
     "1-java/0-知识点/2-基础知识.md",
@@ -331,7 +334,6 @@
     "面试准备/冠顿/06-幂等.md",
     "面试准备/智控/03-技术题库.md",
     "AI 学习规划/04-高级架构阶段.md",
-    "面试准备/智控-Java面试准备.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
