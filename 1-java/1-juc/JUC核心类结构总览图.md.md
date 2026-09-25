@@ -132,45 +132,26 @@ ScheduledThreadPoolExecutor ┼────────────────�
           
         
     - 用 **`Lock` / `AQS`** 替代基于 `Thread` 配合 `synchronized` 的低级锁机制；
-        
-          
-        
     - 用 **`BlockingQueue`** 替代基于 `Thread.sleep()` 或原始 `wait/notify` 的线程等待。
-        
-          
-        
 
 ### 2. 角色定位不同：它是“执行者/竞争者”，而不是“类继承树的一部分”
 
 在 JUC 的对象模型中，`Thread` 与 `Lock`、`AQS`、`Queue` **并不是“继承（is-a）”或“接口实现”的关系**，而是“被操作者 / 协同者”：
-
-  
-
 - **在 AQS / AOS 中**：
     
     `AbstractOwnableSynchronizer` 内部仅仅是维护了一个引用属性：
-    
-      
-    
-    Java
-    
-    ```
+    ```Java
     private transient Thread exclusiveOwnerThread; // 组合/关联关系
     ```
-    
+
     `Thread` 只是被锁记录的一个“所有者身份标签”，用于实现可重入判断和死锁排查。
-    
-      
     
 - **在 AQS 同步队列 / 条件队列中**：
     
     进入双向或单向排队队列的也不是 `Thread` 本身，而是 AQS 内部的 `Node` 包装对象：
     
-      
     
-    Java
-    
-    ```
+    ```Java
     static final class Node {
         volatile Thread thread; // 包装具体的等待线程
         ...
