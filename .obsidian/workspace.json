@@ -39,12 +39,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
-                "mode": "preview",
+                "file": "3-mq/未命名.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "00-JD整理与学习清单"
+              "title": "未命名"
             }
           },
           {
@@ -202,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
+                "file": "3-mq/未命名.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -295,11 +295,16 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "8f23614b751a9943",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "3-mq/1-RocketMq",
+    "面试准备/专业技能/01-AI应用工程化.md",
+    "3-mq/未命名.md",
+    "3-mq/2-Kafka",
+    "3-mq/0-Rabbitmq",
+    "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
     "面试准备/简历/00-AI经历怎么讲与简历改写策略.md",
     "1-java/java 版本.smm.md",
-    "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
     "面试准备/AI运维与架构岗",
     "架构/微博整体架构.excalidraw.md",
     "未命名 1.md",
@@ -322,8 +327,6 @@
     "5-bigdata",
     "4-db",
     "3-mq",
-    "2-redis",
-    "1-java",
     "面试准备/冠顿/01-管理面与负责人题.md",
     "面试准备/冠顿/00-JD与匹配分析.md",
     "AI 学习规划/实战项目.md",
@@ -331,9 +334,6 @@
     "面试准备/技术面试题库/juc.excalidraw.md",
     "面试准备/冠顿/03-监控告警Trace与SLO.md",
     "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
-    "面试准备/冠顿/06-幂等.md",
-    "面试准备/智控/03-技术题库.md",
-    "AI 学习规划/04-高级架构阶段.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
