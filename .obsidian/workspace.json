@@ -40,7 +40,7 @@
               "type": "markdown",
               "state": {
                 "file": "1-java/1-juc/JUC核心类结构总览图.md.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
@@ -307,7 +307,7 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "ccc7e74f47f4595c",
   "lastOpenFiles": [
     "1-java/1-juc/juc类图.excalidraw.md",
     "4-db/MYSQL.excalidraw.md",
