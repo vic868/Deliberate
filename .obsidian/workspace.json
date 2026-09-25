@@ -11,14 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "1-java/0-知识点/1-面向对象.md",
-                "mode": "source",
-                "source": true
+                "file": "1-java/1-juc/juc类图.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "1-面向对象"
+              "icon": "excalidraw-icon",
+              "title": "juc类图.excalidraw"
             }
           },
           {
@@ -37,16 +35,17 @@
             "id": "1ccbfe2b73b36593",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md"
+                "file": "1-java/0-知识点/2-基础知识.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "juc类图.excalidraw"
+              "icon": "lucide-file",
+              "title": "2-基础知识"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -278,16 +277,17 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "1ccbfe2b73b36593",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "1-java/1-juc/JUC核心类结构总览图.md.md",
+    "1-java/1-juc/juc类图.excalidraw.md",
+    "1-java/0-知识点/1-面向对象.md",
+    "架构/微博整体架构.excalidraw.md",
+    "1-java/0-知识点/2-基础知识.md",
     "面试准备/技术面试题库/AbstractQueuedSynchronizer.md",
     "面试准备/技术面试题库/16-JUC框架全景-ProcessOn.md",
     "面试准备/技术面试题库/15-Java并发专题.md",
-    "1-java/1-juc/juc类图.excalidraw.md",
     "2-redis/0-Redis.excalidraw.md",
-    "架构/微博整体架构.excalidraw.md",
-    "1-java/1-juc/JUC核心类结构总览图.md.md",
-    "1-java/0-知识点/1-面向对象.md",
     "1-java/0-知识点",
     "1-java/1-juc",
     "1-java/2-collection",
@@ -315,7 +315,6 @@
     "面试准备/冠顿/09-数据库性能.md",
     "面试准备/冠顿/08-消息.md",
     "面试准备/冠顿/07-缓存.md",
-    "面试准备/技术面试题库/Drawing 2026-09-22 23.02.12.excalidraw.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
