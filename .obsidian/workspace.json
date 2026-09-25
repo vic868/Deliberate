@@ -34,6 +34,18 @@
             }
           },
           {
+            "id": "ccc7e74f47f4595c",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "4-db/MYSQL.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "MYSQL.excalidraw"
+            }
+          },
+          {
             "id": "8f23614b751a9943",
             "type": "leaf",
             "state": {
@@ -60,7 +72,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -200,7 +212,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MindMap 2026-09-25 14.13.34.smm.md",
+                "file": "4-db/MYSQL.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -293,10 +305,11 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "94f8c4d6dde9ab7e",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "1-java/0-知识点/3-抽象.md",
     "MindMap 2026-09-25 14.13.34.smm.md",
+    "4-db/MYSQL.excalidraw.md",
+    "1-java/0-知识点/3-抽象.md",
     "1-java/0-知识点/1-面向对象.md",
     "1-java/1-juc/juc类图.excalidraw.md",
     "1-java/1-juc/JUC核心类结构总览图.md.md",
@@ -330,7 +343,6 @@
     "面试准备/技术面试题库/Juc/AbstractQueuedSynchronizer（AQS）源码原理与实战分析.md",
     "面试准备/冠顿/04-事务一致性.md",
     "面试准备/冠顿/05-并发.md",
-    "面试准备/冠顿/09-数据库性能.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
