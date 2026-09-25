@@ -27,36 +27,22 @@
             "state": {
               "type": "smm",
               "state": {
-                "file": "MindMap 2026-09-25 14.13.34.smm.md"
+                "file": "1-java/java 版本.smm.md"
               },
               "icon": "smm-icon",
-              "title": "MindMap 2026-09-25 14.13.34.smm"
-            }
-          },
-          {
-            "id": "ccc7e74f47f4595c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1-java/1-juc/JUC核心类结构总览图.md.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "JUC核心类结构总览图.md"
+              "title": "java 版本.smm"
             }
           },
           {
             "id": "8f23614b751a9943",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "smm",
               "state": {
-                "file": "架构/微博整体架构.excalidraw.md"
+                "file": "1-java/java 版本.smm.md"
               },
-              "icon": "excalidraw-icon",
-              "title": "微博整体架构.excalidraw"
+              "icon": "smm-icon",
+              "title": "java 版本.smm"
             }
           },
           {
@@ -214,7 +200,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/1-juc/JUC核心类结构总览图.md.md",
+                "file": "1-java/java 版本.smm.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -307,15 +293,18 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "ccc7e74f47f4595c",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "架构/微博整体架构.excalidraw.md",
+    "未命名 1.md",
+    "未命名.md",
+    "未命名.canvas",
+    "1-java/1-juc/JUC核心类结构总览图.md.md",
     "1-java/1-juc/juc类图.excalidraw.md",
     "4-db/MYSQL.excalidraw.md",
-    "MindMap 2026-09-25 14.13.34.smm.md",
+    "1-java/java 版本.smm.md",
     "1-java/0-知识点/3-抽象.md",
     "1-java/0-知识点/1-面向对象.md",
-    "1-java/1-juc/JUC核心类结构总览图.md.md",
-    "架构/微博整体架构.excalidraw.md",
     "1-java/0-知识点/2-基础知识.md",
     "面试准备/技术面试题库/AbstractQueuedSynchronizer.md",
     "面试准备/技术面试题库/16-JUC框架全景-ProcessOn.md",
@@ -343,15 +332,12 @@
     "AI 学习规划/04-高级架构阶段.md",
     "面试准备/智控-Java面试准备.md",
     "面试准备/技术面试题库/Juc/AbstractQueuedSynchronizer（AQS）源码原理与实战分析.md",
-    "面试准备/冠顿/04-事务一致性.md",
-    "面试准备/冠顿/05-并发.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
     "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.svg",
     "Excalidraw/Scripts/Downloaded/Color Scheme Manager.svg",
     "面试准备/技术面试题库/attachments/JUC-ProcessOn.png",
-    "未命名.canvas",
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.svg",
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally.svg",
     "risk-control-front/doc/images/strategy-test.png",
