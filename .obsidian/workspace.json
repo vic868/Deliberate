@@ -49,10 +49,14 @@
             "id": "1ccbfe2b73b36593",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "面试准备/专业技能/05-大数据与流计算.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "05-大数据与流计算"
             }
           }
         ],
@@ -196,6 +200,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "面试准备/专业技能/05-大数据与流计算.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -289,6 +294,10 @@
   },
   "active": "1ccbfe2b73b36593",
   "lastOpenFiles": [
+    "面试准备/专业技能/02-Java核心与微服务.md",
+    "面试准备/专业技能/03-高并发中间件.md",
+    "面试准备/专业技能/04-数据库调优.md",
+    "面试准备/简历/01-酒店送物机器人-项目描述.md",
     "1-java/0-知识点/2-基础知识.md",
     "Untitled Diagram 1790329924103.drawio",
     "1-java/1-juc/juc类图.excalidraw.md",
@@ -322,9 +331,6 @@
     "面试准备/冠顿/00-JD与匹配分析.md",
     "AI 学习规划/实战项目.md",
     "AI 学习规划/模板-每日打卡.md",
-    "面试准备/技术面试题库/juc.excalidraw.md",
-    "面试准备/冠顿/03-监控告警Trace与SLO.md",
-    "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
