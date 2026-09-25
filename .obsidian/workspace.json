@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md"
+                "file": "1-java/0-知识点/3-抽象.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "juc类图.excalidraw"
+              "icon": "lucide-file",
+              "title": "3-抽象"
             }
           },
           {
@@ -185,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md",
+                "file": "1-java/0-知识点/3-抽象.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -280,9 +282,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "1-java/1-juc/JUC核心类结构总览图.md.md",
-    "1-java/1-juc/juc类图.excalidraw.md",
     "1-java/0-知识点/1-面向对象.md",
+    "1-java/0-知识点/3-抽象.md",
+    "1-java/1-juc/juc类图.excalidraw.md",
+    "1-java/1-juc/JUC核心类结构总览图.md.md",
     "架构/微博整体架构.excalidraw.md",
     "1-java/0-知识点/2-基础知识.md",
     "面试准备/技术面试题库/AbstractQueuedSynchronizer.md",
@@ -315,7 +318,6 @@
     "面试准备/冠顿/05-并发.md",
     "面试准备/冠顿/09-数据库性能.md",
     "面试准备/冠顿/08-消息.md",
-    "面试准备/冠顿/07-缓存.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
