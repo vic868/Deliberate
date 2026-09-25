@@ -22,6 +22,18 @@
             }
           },
           {
+            "id": "94f8c4d6dde9ab7e",
+            "type": "leaf",
+            "state": {
+              "type": "smm",
+              "state": {
+                "file": "MindMap 2026-09-25 14.13.34.smm.md"
+              },
+              "icon": "smm-icon",
+              "title": "MindMap 2026-09-25 14.13.34.smm"
+            }
+          },
+          {
             "id": "8f23614b751a9943",
             "type": "leaf",
             "state": {
@@ -47,7 +59,8 @@
               "title": "2-基础知识"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -187,7 +200,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/0-知识点/3-抽象.md",
+                "file": "MindMap 2026-09-25 14.13.34.smm.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -280,10 +293,11 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "94f8c4d6dde9ab7e",
   "lastOpenFiles": [
-    "1-java/0-知识点/1-面向对象.md",
     "1-java/0-知识点/3-抽象.md",
+    "MindMap 2026-09-25 14.13.34.smm.md",
+    "1-java/0-知识点/1-面向对象.md",
     "1-java/1-juc/juc类图.excalidraw.md",
     "1-java/1-juc/JUC核心类结构总览图.md.md",
     "架构/微博整体架构.excalidraw.md",
@@ -317,7 +331,6 @@
     "面试准备/冠顿/04-事务一致性.md",
     "面试准备/冠顿/05-并发.md",
     "面试准备/冠顿/09-数据库性能.md",
-    "面试准备/冠顿/08-消息.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
