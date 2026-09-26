@@ -568,7 +568,7 @@
     "COLOR": "#ff0000"
   },
   "embeddableMarkdownDefaults": {
-    "useObsidianDefaults": false,
+    "useObsidianDefaults": true,
     "backgroundMatchCanvas": false,
     "backgroundMatchElement": true,
     "backgroundColor": "#fff",
