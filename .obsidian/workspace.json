@@ -63,12 +63,14 @@
             "id": "44dd13928e0c4241",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/SpringAI.excalidraw.md"
+                "file": "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "SpringAI.excalidraw"
+              "icon": "lucide-file",
+              "title": "0-多模态“教学演播室”前端交互方案："
             }
           }
         ],
@@ -212,7 +214,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/SpringAI.excalidraw.md",
+                "file": "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -304,10 +306,12 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "44dd13928e0c4241",
   "lastOpenFiles": [
-    "面试准备/专业技能/03-高并发中间件.md",
     "6-ai/SpringAI.excalidraw.md",
+    "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
+    "6-ai/1.1-多模态“教学演播室”前端交互方案：",
+    "面试准备/专业技能/03-高并发中间件.md",
     "面试准备/专业技能/05-大数据与流计算.md",
     "面试准备/专业技能/02-Java核心与微服务.md",
     "面试准备/专业技能/04-数据库调优.md",
@@ -340,9 +344,7 @@
     "1-java/1-juc",
     "1-java/2-collection",
     "6-ai",
-    "5-bigdata",
     "面试准备/冠顿/01-管理面与负责人题.md",
-    "面试准备/冠顿/00-JD与匹配分析.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
