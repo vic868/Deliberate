@@ -11,13 +11,40 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "excalidraw",
+              "state": {
+                "file": "架构/微博整体架构.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "微博整体架构.excalidraw"
+            }
+          },
+          {
+            "id": "55910ad4c8ed8579",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "7-分布式/幂等.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "幂等.excalidraw"
+            }
+          },
+          {
+            "id": "03b750cd44f9405e",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "7-分布式/Drawing 2026-09-26 22.27.04.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-09-26 22.27.04.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -249,10 +276,14 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "691fc47be85d9973",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "1-java/java 版本.smm.md",
+    "7-分布式/幂等.excalidraw.md",
+    "7-分布式/Drawing 2026-09-26 22.27.04.excalidraw.md",
     "架构/微博整体架构.excalidraw.md",
+    "7-分布式/未命名",
+    "架构/Untitled Diagram 1790241846562.drawio",
+    "1-java/java 版本.smm.md",
     "7-分布式",
     "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/3-IO",
@@ -271,7 +302,6 @@
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
     "6-ai/SpringAI.excalidraw.md",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/<!DOCTYPE html>.html",
-    "6-ai/1.1-多模态“教学演播室”前端交互方案：",
     "面试准备/专业技能/03-高并发中间件.md",
     "面试准备/专业技能/05-大数据与流计算.md",
     "面试准备/专业技能/02-Java核心与微服务.md",
@@ -279,14 +309,12 @@
     "面试准备/简历/01-酒店送物机器人-项目描述.md",
     "1-java/0-知识点/2-基础知识.md",
     "3-mq/未命名.md",
-    "3-mq/1-RocketMq",
     "面试准备/专业技能/01-AI应用工程化.md",
     "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
     "面试准备/简历/00-AI经历怎么讲与简历改写策略.md",
     "未命名 1.md",
     "未命名.md",
     "未命名.canvas",
-    "4-db/MYSQL.excalidraw.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
