@@ -39,10 +39,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md"
+                "file": "1-java/1-juc/juc.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "juc类图.excalidraw"
+              "title": "juc.excalidraw"
             }
           }
         ],
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md",
+                "file": "1-java/1-juc/juc.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -278,8 +278,19 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "8f23614b751a9943",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/java 版本.smm.md",
+    "1-java/1-juc/juc.excalidraw.md",
+    "面试准备/技术面试题库/juc.drawio",
+    "面试准备/技术面试题库/Juc/AbstractQueuedSynchronizer（AQS）源码原理与实战分析.md",
+    "Untitled Diagram 1790329924103.drawio",
+    "Untitled Diagram 1790089611176.drawio",
+    "README.md",
+    "Untitled Diagram 1790089424009.drawio",
+    "PMP学习/PMP场景整理.md",
+    "1-java/1-juc/juc类图.excalidraw.md",
+    "1-java/1-juc/JUC核心类结构总览图.md.md",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/教学演播室.html",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
     "6-ai/SpringAI.excalidraw.md",
@@ -291,10 +302,6 @@
     "面试准备/专业技能/04-数据库调优.md",
     "面试准备/简历/01-酒店送物机器人-项目描述.md",
     "1-java/0-知识点/2-基础知识.md",
-    "Untitled Diagram 1790329924103.drawio",
-    "1-java/1-juc/juc类图.excalidraw.md",
-    "1-java/1-juc/JUC核心类结构总览图.md.md",
-    "1-java/java 版本.smm.md",
     "3-mq/未命名.md",
     "3-mq/1-RocketMq",
     "面试准备/专业技能/01-AI应用工程化.md",
@@ -302,7 +309,6 @@
     "3-mq/0-Rabbitmq",
     "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
     "面试准备/简历/00-AI经历怎么讲与简历改写策略.md",
-    "面试准备/AI运维与架构岗",
     "架构/微博整体架构.excalidraw.md",
     "未命名 1.md",
     "未命名.md",
@@ -311,11 +317,6 @@
     "1-java/0-知识点/3-抽象.md",
     "1-java/0-知识点/1-面向对象.md",
     "面试准备/技术面试题库/AbstractQueuedSynchronizer.md",
-    "面试准备/技术面试题库/16-JUC框架全景-ProcessOn.md",
-    "面试准备/技术面试题库/15-Java并发专题.md",
-    "2-redis/0-Redis.excalidraw.md",
-    "1-java/0-知识点",
-    "1-java/1-juc",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
