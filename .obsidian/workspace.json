@@ -11,54 +11,13 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1-java/0-知识点/3-抽象.md",
-                "mode": "source",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "3-抽象"
-            }
-          },
-          {
-            "id": "94f8c4d6dde9ab7e",
-            "type": "leaf",
-            "state": {
-              "type": "smm",
-              "state": {
-                "file": "1-java/java 版本.smm.md"
-              },
-              "icon": "smm-icon",
-              "title": "java 版本.smm"
-            }
-          },
-          {
-            "id": "89c27a99657bffa4",
-            "type": "leaf",
-            "state": {
-              "type": "smm",
-              "state": {
-                "file": "1-java/java 版本.smm.md"
-              },
-              "icon": "smm-icon",
-              "title": "java 版本.smm"
-            }
-          },
-          {
-            "id": "8f23614b751a9943",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "1-java/1-juc/juc.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "juc.excalidraw"
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -262,8 +221,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875,
-    "collapsed": true
+    "width": 729.546875
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -291,12 +249,12 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "89c27a99657bffa4",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "1-java/java 版本.smm.md",
     "架构/微博整体架构.excalidraw.md",
     "7-分布式",
     "1-java/3-IO/0-IO.excalidraw.md",
-    "1-java/java 版本.smm.md",
     "1-java/3-IO",
     "2-redis/0-Redis.excalidraw.md",
     "1-java/1-juc/juc.excalidraw.md",
