@@ -37,12 +37,12 @@
             "id": "89c27a99657bffa4",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "smm",
               "state": {
-                "file": "架构/微博整体架构.excalidraw.md"
+                "file": "1-java/java 版本.smm.md"
               },
-              "icon": "excalidraw-icon",
-              "title": "微博整体架构.excalidraw"
+              "icon": "smm-icon",
+              "title": "java 版本.smm"
             }
           },
           {
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "架构/微博整体架构.excalidraw.md",
+                "file": "1-java/java 版本.smm.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -293,6 +293,8 @@
   },
   "active": "89c27a99657bffa4",
   "lastOpenFiles": [
+    "架构/微博整体架构.excalidraw.md",
+    "7-分布式",
     "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/java 版本.smm.md",
     "1-java/3-IO",
@@ -321,15 +323,12 @@
     "3-mq/未命名.md",
     "3-mq/1-RocketMq",
     "面试准备/专业技能/01-AI应用工程化.md",
-    "3-mq/2-Kafka",
     "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
     "面试准备/简历/00-AI经历怎么讲与简历改写策略.md",
-    "架构/微博整体架构.excalidraw.md",
     "未命名 1.md",
     "未命名.md",
     "未命名.canvas",
     "4-db/MYSQL.excalidraw.md",
-    "1-java/0-知识点/3-抽象.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
