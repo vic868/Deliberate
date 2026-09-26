@@ -39,10 +39,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "1-java/3-IO/0-IO.excalidraw.md"
+                "file": "架构/微博整体架构.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "0-IO.excalidraw"
+              "title": "微博整体架构.excalidraw"
             }
           },
           {
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/3-IO/0-IO.excalidraw.md",
+                "file": "架构/微博整体架构.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -262,7 +262,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875
+    "width": 729.546875,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -290,10 +291,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "89c27a99657bffa4",
   "lastOpenFiles": [
-    "1-java/java 版本.smm.md",
     "1-java/3-IO/0-IO.excalidraw.md",
+    "1-java/java 版本.smm.md",
     "1-java/3-IO",
     "2-redis/0-Redis.excalidraw.md",
     "1-java/1-juc/juc.excalidraw.md",
