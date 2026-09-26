@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 讲师板书演播室 - 教尺动态指向版</title>
+  <title>AI 讲师声画同步教学工作台</title>
   <style>
     :root {
       --bg: #090d16;
@@ -11,7 +11,7 @@
       --card-border: #1e293b;
       --accent: #38bdf8;
       --highlight: #facc15;
-      --highlight-glow: rgba(250, 204, 21, 0.4);
+      --highlight-glow: rgba(250, 204, 21, 0.45);
       --text-main: #f8fafc;
       --text-sub: #94a3b8;
     }
@@ -20,40 +20,35 @@
     body { background-color: var(--bg); color: var(--text-main); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
 
     header {
-      padding: 16px 24px;
+      padding: 14px 24px;
       background: #0f172a;
       border-bottom: 1px solid var(--card-border);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .header-title { font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-    .badge { font-size: 0.75rem; background: #0284c7; padding: 3px 8px; border-radius: 12px; }
+    .header-title { font-size: 1.05rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+    .badge { font-size: 0.72rem; background: #0284c7; padding: 2px 8px; border-radius: 12px; }
 
     /* 舞台主区 */
-    .stage {
-      display: flex;
-      flex: 1;
-      position: relative;
-      overflow: hidden;
-    }
+    .stage { display: flex; flex: 1; position: relative; overflow: hidden; }
 
     /* 左侧：黑板区 */
     .board-container {
-      flex: 1.2;
-      padding: 30px;
+      flex: 1.25;
+      padding: 24px;
       position: relative;
       overflow-y: auto;
-      background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.04), transparent 50%);
+      background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05), transparent 50%);
       border-right: 1px solid var(--card-border);
     }
-    .board-title { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 20px; }
+    .board-title { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 16px; }
 
     .diagram-stack {
       display: flex;
       flex-direction: column;
       gap: 16px;
-      max-width: 650px;
+      max-width: 640px;
       margin: 0 auto;
       position: relative;
     }
@@ -62,138 +57,148 @@
       background: var(--card-bg);
       border: 1.5px solid var(--card-border);
       border-radius: 12px;
-      padding: 18px 24px;
-      transition: all 0.4s ease;
+      padding: 16px 20px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
     }
     .node-card.active-focus {
       border-color: var(--highlight);
       box-shadow: 0 0 25px var(--highlight-glow);
-      background: #1e2438;
+      background: #1a2236;
       transform: translateX(12px);
     }
     .node-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-    .node-name { font-size: 1rem; font-weight: 600; color: #fff; }
-    .node-tag { font-size: 0.75rem; background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 4px; }
+    .node-name { font-size: 0.98rem; font-weight: 600; color: #fff; }
+    .node-tag { font-size: 0.72rem; background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 4px; }
     .node-desc { font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
 
-    /* ================= 教学尺与动态教鞭 ================= */
+    /* ================= 动态教鞭 ================= */
     #pointerStick {
       position: absolute;
-      width: 140px;
-      height: 8px;
+      width: 130px;
+      height: 7px;
       background: linear-gradient(90deg, #ca8a04 0%, #facc15 80%, #ffffff 100%);
       border-radius: 4px;
-      box-shadow: 0 0 14px rgba(250, 204, 21, 0.8);
+      box-shadow: 0 0 12px rgba(250, 204, 21, 0.8);
       pointer-events: none;
-      transition: top 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: top 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
       z-index: 99;
       transform-origin: right center;
-      transform: rotate(-20deg);
+      transform: rotate(-18deg);
     }
-
-    /* 教尺前端聚光灯光芒 */
     #pointerStick::after {
       content: "";
       position: absolute;
-      left: -8px;
-      top: -6px;
-      width: 20px;
-      height: 20px;
+      left: -6px;
+      top: -5px;
+      width: 17px;
+      height: 17px;
       background: #ffffff;
       border-radius: 50%;
-      box-shadow: 0 0 16px 6px #facc15;
-      animation: tapPulse 1.2s infinite ease-in-out;
+      box-shadow: 0 0 14px 4px #facc15;
+      animation: tapPulse 1s infinite alternate;
     }
-
     @keyframes tapPulse {
-      0%, 100% { transform: scale(0.9); opacity: 0.8; }
-      50% { transform: scale(1.3); opacity: 1; }
+      0% { transform: scale(0.85); opacity: 0.7; }
+      100% { transform: scale(1.25); opacity: 1; }
     }
 
-    /* 右侧：讲师讲授视区 */
+    /* 右侧：讲师区 */
     .teacher-container {
       flex: 0.85;
-      background: #0a0f1d;
+      background: #0b1120;
       padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
+      overflow-y: auto;
     }
 
-    /* 讲师形象卡片 */
     .teacher-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 16px;
+      padding: 14px 18px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
     .teacher-avatar-wrapper {
-      position: relative;
-      width: 58px;
-      height: 58px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       background: linear-gradient(135deg, #0284c7, #38bdf8);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       border: 2px solid var(--accent);
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
     }
+    .teacher-status { font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+
+    /* 模拟声波跳动 */
     .speaking-wave {
       display: flex;
       gap: 3px;
       align-items: center;
-      height: 12px;
+      height: 14px;
       margin-top: 4px;
     }
     .wave-bar {
       width: 3px;
       height: 100%;
-      background: var(--accent);
+      background: #94a3b8;
       border-radius: 2px;
-      animation: soundWave 0.8s ease-in-out infinite alternate;
+      transition: height 0.2s;
     }
-    .wave-bar:nth-child(2) { animation-delay: 0.2s; height: 70%; }
-    .wave-bar:nth-child(3) { animation-delay: 0.4s; height: 40%; }
-    @keyframes soundWave { 0% { height: 20%; } 100% { height: 100%; } }
+    .is-speaking .wave-bar {
+      background: var(--accent);
+      animation: soundWave 0.5s ease-in-out infinite alternate;
+    }
+    .is-speaking .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .is-speaking .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes soundWave { 0% { height: 25%; } 100% { height: 100%; } }
 
-    /* 实时讲授台词 */
+    /* 讲授语录 */
     .speech-box {
       background: #111827;
       border-left: 4px solid var(--highlight);
       border-radius: 8px;
-      padding: 16px 20px;
+      padding: 16px;
       line-height: 1.8;
       font-size: 0.95rem;
-      min-height: 110px;
+      min-height: 100px;
+      color: #cbd5e1;
+    }
+    .karaoke-active {
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
     }
 
-    /* 考点/重点提取卡片 */
+    /* 重点速记卡片 */
     .takeaway-box {
       background: rgba(250, 204, 21, 0.05);
       border: 1px dashed var(--highlight);
       border-radius: 10px;
-      padding: 16px;
+      padding: 14px 16px;
     }
     .takeaway-header { font-size: 0.85rem; font-weight: 700; color: var(--highlight); margin-bottom: 8px; }
-    .takeaway-item { font-size: 0.88rem; color: #fef08a; margin-bottom: 6px; display: flex; gap: 8px; }
+    .takeaway-item { font-size: 0.88rem; color: #fef08a; margin-bottom: 6px; display: flex; gap: 8px; line-height: 1.5; }
 
-    /* 底部控制台 */
+    /* 底部控制器 */
     footer {
-      padding: 14px 24px;
+      padding: 12px 24px;
       background: #0f172a;
       border-top: 1px solid var(--card-border);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+    .btn-group { display: flex; gap: 10px; }
     .btn {
-      padding: 8px 18px;
+      padding: 8px 16px;
       border-radius: 6px;
       border: none;
       cursor: pointer;
@@ -203,34 +208,35 @@
     }
     .btn-prev { background: #334155; color: white; }
     .btn-next { background: #0284c7; color: white; box-shadow: 0 0 10px rgba(2, 132, 199, 0.4); }
-    .btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .btn-audio { background: #10b981; color: white; }
+    .btn:disabled { opacity: 0.35; cursor: not-allowed; }
   </style>
 </head>
 <body>
 
   <header>
     <div class="header-title">
-      <span>AI 讲师交互工作台</span>
+      <span>🎙️ AI 讲师全景演播室</span>
       <span class="badge">Spring AI 架构串讲</span>
     </div>
-    <div id="stepCounter" style="font-size: 0.9rem; color: var(--text-sub);">第 1 / 3 讲</div>
+    <div id="stepCounter" style="font-size: 0.88rem; color: var(--text-sub);">第 1 / 3 讲</div>
   </header>
 
   <div class="stage">
     <!-- 电子黑板区 -->
     <div class="board-container" id="boardScrollArea">
-      <div class="board-title">💡 观察动态教尺指示重点</div>
+      <div class="board-title">💡 老师教尺所指处即为核心考点</div>
       
-      <!-- 动态教鞭元素 -->
+      <!-- 动态教尺 -->
       <div id="pointerStick"></div>
 
       <div class="diagram-stack">
         <div class="node-card" id="card_layer1">
           <div class="node-header">
-            <span class="node-name">1. 客户端交互与编排层 (Client & Advisor)</span>
+            <span class="node-name">1. 客户端编排层 (Client & Advisors)</span>
             <span class="node-tag">ChatClient</span>
           </div>
-          <div class="node-desc">采用 Fluent API 链式调用；Advisors 机制类似 AOP 切面增强，负责无缝拦截并注入多轮上下文与 RAG 检索知识。</div>
+          <div class="node-desc">采用 Fluent API 链式调用[cite: 2]；Advisors 机制采用类似 AOP 切面拦截设计，无缝注入对话记忆与 RAG 检索知识[cite: 2]。</div>
         </div>
 
         <div class="node-card" id="card_layer2">
@@ -238,28 +244,29 @@
             <span class="node-name">2. 模型抽象与工具协议层 (Model & Tools)</span>
             <span class="node-tag">ChatModel / MCP</span>
           </div>
-          <div class="node-desc">抹平 OpenAI、DeepSeek 等底层厂商调用差异；集成 MCP 上下文协议作为客户端或服务端直接接入外部生态。</div>
+          <div class="node-desc">统一 ChatModel 抽象抹平底层服务商差异[cite: 2]；全面支持 MCP（模型上下文协议）以 Client/Server 模式调起外部工具生态[cite: 2]。</div>
         </div>
 
         <div class="node-card" id="card_layer3">
           <div class="node-header">
-            <span class="node-name">3. 数据与模块化检索层 (Modular RAG)</span>
+            <span class="node-name">3. 数据与检索流水线 (Modular RAG)</span>
             <span class="node-tag">ETL & VectorStore</span>
           </div>
-          <div class="node-desc">包含 DocumentReader 切词、Embedding 向量化；并在检索前后完成 QueryTransformer 重写与 Ranker 上下文压缩。</div>
+          <div class="node-desc">标准 ETL 流水线（Reader/Transformer/Writer）[cite: 2]；模块化检索涵盖检索前查询重写与检索后重排序压缩[cite: 2]。</div>
         </div>
       </div>
     </div>
 
-    <!-- 右侧讲授区 -->
+    <!-- 右侧讲师讲授区 -->
     <div class="teacher-container">
       <div class="teacher-box">
-        <div class="teacher-avatar-wrapper">
-          👩‍🏫
-        </div>
+        <div class="teacher-avatar-wrapper">👩‍🏫</div>
         <div>
-          <div style="font-weight: 600; font-size: 0.95rem;">AI 架构讲师</div>
-          <div class="speaking-wave">
+          <div class="teacher-status">
+            <span>AI 架构讲师</span>
+            <span id="speechBadge" style="font-size: 0.7rem; color: #38bdf8;">[准备就绪]</span>
+          </div>
+          <div class="speaking-wave" id="speakingWave">
             <div class="wave-bar"></div>
             <div class="wave-bar"></div>
             <div class="wave-bar"></div>
@@ -267,85 +274,94 @@
         </div>
       </div>
 
-      <div class="speech-box" id="speechText">
-        加载中...
-      </div>
+      <!-- 实时讲授台词 -->
+      <div class="speech-box" id="speechText">点击下方“播放本节语音”开始听课...</div>
 
+      <!-- 黄金速记卡片 -->
       <div class="takeaway-box">
-        <div class="takeaway-header">⚡ 核心抓重点（速记）</div>
+        <div class="takeaway-header">⚡ 核心抓重点（3秒扫读）</div>
         <div id="takeawaysContainer"></div>
       </div>
     </div>
   </div>
 
   <footer>
-    <span style="font-size: 0.85rem; color: var(--text-sub);">提示：点击“下一步”，教尺将自动移动到下一个重点卡片</span>
-    <div>
-      <button class="btn btn-prev" id="btnPrev" onclick="step(-1)">◀ 上一个重点</button>
-      <button class="btn btn-next" id="btnNext" onclick="step(1)">下一个重点 ▶</button>
+    <span style="font-size: 0.85rem; color: var(--text-sub);">
+      🔊 原生 Web Speech 引擎驱动 · 自动随音画同步敲击
+    </span>
+    <div class="btn-group">
+      <button class="btn btn-audio" id="btnPlayVoice" onclick="playCurrentStepVoice()">▶ 播放本节讲解</button>
+      <button class="btn btn-prev" id="btnPrev" onclick="step(-1)">◀ 上一节</button>
+      <button class="btn btn-next" id="btnNext" onclick="step(1)">下一节 ▶</button>
     </div>
   </footer>
 
   <script>
-    // 讲课教学数据（与你的 Spring AI 笔记内容严格对应）
+    // 教学课程数据（来自你笔记中的 Spring AI 核心架构设计）[cite: 2]
     const teachingSteps = [
       {
         targetCardId: "card_layer1",
-        speech: "同学们请注意看我的教尺！首先第一层是【客户端交互与编排层】。大家一定要记住 Advisors 这个切面概念，它就相当于 Spring 里的 AOP，无需改动业务逻辑就能把聊天记忆自动拼入请求！",
+        speech: "同学们好！请看我的教尺指向的最上层：客户端交互与编排层。这里的关键是 Advisors 机制，它本质就是 Spring 的 AOP 切面，能在提问前后无缝注入会话记忆与知识库！",
         takeaways: [
-          "ChatClient 采用 Fluent API 风格构建调用",
-          "Advisors 切面机制：自动挂载多轮会话记忆与知识库"
+          "ChatClient 采用链式 Fluent API 风格构建请求[cite: 2]",
+          "Advisors 切面机制：类似 AOP 环绕增强，用于自动挂载记忆与 RAG[cite: 2]"
         ]
       },
       {
         targetCardId: "card_layer2",
-        speech: "现在我们把教尺移到第二层——【模型与工具层】。这一层的核心价值是解耦：通过统一的 ChatModel 抽象，随时可以在不同模型之间无感切换，并且通过 MCP 协议快速调用外部工具！",
+        speech: "好，现在教尺移到第二层：模型抽象与协议层。Spring AI 抽象出统一的 ChatModel，让你平滑迁移模型；更重要的是原生支持 MCP 协议，让大模型能直接连外部工具！",
         takeaways: [
-          "统一接口抹平厂商差异（OpenAI / DeepSeek / Ollama）",
-          "全面引入 MCP 原生协议支持，支持工具回调"
+          "ChatModel 统一抽象，彻底解耦底层不同厂商协议[cite: 2]",
+          "全面引入 MCP 原生协议，支持 Client 与 Server 两种模式调用工具[cite: 2]"
         ]
       },
       {
         targetCardId: "card_layer3",
-        speech: "最后看下方教尺指着的【模块化 RAG 检索层】。千万不要把 RAG 当成简单的文档切片，Spring AI 的 ETL 管道涵盖了解析、向量化，并在检索前做意图识别重写、在检索后做重排序！",
+        speech: "最后我们看底部的模块化 RAG 检索层。这里不是简单的文档匹配，而是标准的 ETL 流水线，并且支持检索前的意图重写和检索后的上下文压缩重排！",
         takeaways: [
-          "标准 ETL 流水线：Reader -> Transformer -> VectorWriter",
-          "模块化 RAG：前置查询重写 + 后置上下文压缩重排"
+          "ETL 流水线标准三步走：DocumentReader、切词向量化与 VectorStoreWriter[cite: 2]",
+          "模块化 RAG：前置查询重写 + 后置上下文压缩与结果重排[cite: 2]"
         ]
       }
     ];
 
     let currentIndex = 0;
-    let typingTimer = null;
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
 
-    function updateLesson(index) {
+    // 更新界面状态
+    function updateLesson(index, autoPlayVoice = false) {
+      if (synth) synth.cancel(); // 停止当前正在播放的声音
+      setSpeakingUI(false);
+
       currentIndex = index;
       const data = teachingSteps[currentIndex];
 
-      // 1. 更新顶部进度与按钮状态
+      // 1. 进度指示与按钮
       document.getElementById("stepCounter").innerText = `第 ${currentIndex + 1} / ${teachingSteps.length} 讲`;
       document.getElementById("btnPrev").disabled = currentIndex === 0;
       document.getElementById("btnNext").disabled = currentIndex === teachingSteps.length - 1;
 
-      // 2. 更新高亮卡片
+      // 2. 节点高亮与教尺定位
       document.querySelectorAll(".node-card").forEach(c => c.classList.remove("active-focus"));
       const targetCard = document.getElementById(data.targetCardId);
       if (targetCard) {
         targetCard.classList.add("active-focus");
-        
-        // 3. 动态计算教尺位置，并平滑移动指向目标
         movePointerStickTo(targetCard);
       }
 
-      // 4. 讲授词打字机效果
-      typeSpeech(data.speech);
-
-      // 5. 更新重点卡片
+      // 3. 渲染台词与速记卡片
+      document.getElementById("speechText").innerHTML = data.speech;
       const takeawayBox = document.getElementById("takeawaysContainer");
       takeawayBox.innerHTML = data.takeaways.map(t => `<div class="takeaway-item"><span>👉</span><span>${t}</span></div>`).join('');
+
+      // 4. 是否自动播放语音
+      if (autoPlayVoice) {
+        playCurrentStepVoice();
+      }
     }
 
-    // 移动教尺
+    // 计算并移动教尺
     function movePointerStickTo(cardElement) {
       const stick = document.getElementById("pointerStick");
       const boardContainer = document.getElementById("boardScrollArea");
@@ -353,40 +369,80 @@
       const cardRect = cardElement.getBoundingClientRect();
       const containerRect = boardContainer.getBoundingClientRect();
 
-      // 将教尺定位在卡片的右侧稍偏上位置，尺尖正好触碰到卡片右边缘
-      const topPos = cardRect.top - containerRect.top + boardContainer.scrollTop + (cardRect.height / 2) - 10;
+      const topPos = cardRect.top - containerRect.top + boardContainer.scrollTop + (cardRect.height / 2) - 8;
       const leftPos = cardRect.right - containerRect.left - 20;
 
       stick.style.top = `${topPos}px`;
       stick.style.left = `${leftPos}px`;
     }
 
-    // 打字机
-    function typeSpeech(text) {
-      const el = document.getElementById("speechText");
-      el.innerHTML = "";
-      clearInterval(typingTimer);
-      let i = 0;
-      typingTimer = setInterval(() => {
-        if (i < text.length) {
-          el.innerHTML += text.charAt(i);
-          i++;
-        } else {
-          clearInterval(typingTimer);
-        }
-      }, 20);
+    // 核心：TTS 语音合成与高光联动
+    function playCurrentStepVoice() {
+      if (!('speechSynthesis' in window)) {
+        alert("当前浏览器不支持 Web Speech API，建议使用 Chrome/Edge 浏览器。");
+        return;
+      }
+
+      synth.cancel(); // 清空队列
+      const data = teachingSteps[currentIndex];
+      currentUtterance = new SpeechSynthesisUtterance(data.speech);
+      
+      // 设置音色为中文
+      currentUtterance.lang = "zh-CN";
+      currentUtterance.rate = 1.0; // 语速
+      currentUtterance.pitch = 1.05; // 语调微调，使其亲切像老师
+
+      // 开始朗读
+      currentUtterance.onstart = () => {
+        setSpeakingUI(true);
+      };
+
+      // 朗读结束
+      currentUtterance.onend = () => {
+        setSpeakingUI(false);
+      };
+
+      // 发生错误
+      currentUtterance.onerror = () => {
+        setSpeakingUI(false);
+      };
+
+      synth.speak(currentUtterance);
+    }
+
+    // 切换讲师说话状态的动画 UI
+    function setSpeakingUI(isSpeaking) {
+      const wave = document.getElementById("speakingWave");
+      const badge = document.getElementById("speechBadge");
+      const speechBox = document.getElementById("speechText");
+      const btn = document.getElementById("btnPlayVoice");
+
+      if (isSpeaking) {
+        wave.classList.add("is-speaking");
+        badge.innerText = "[讲解中 🎙️]";
+        badge.style.color = "var(--highlight)";
+        speechBox.classList.add("karaoke-active");
+        btn.innerText = "⏸ 正在播放中...";
+      } else {
+        wave.classList.remove("is-speaking");
+        badge.innerText = "[就绪]";
+        badge.style.color = "var(--accent)";
+        speechBox.classList.remove("karaoke-active");
+        btn.innerText = "▶ 重新播放语音";
+      }
     }
 
     function step(delta) {
       const nextIdx = currentIndex + delta;
       if (nextIdx >= 0 && nextIdx < teachingSteps.length) {
-        updateLesson(nextIdx);
+        // 翻页时自动播放下一章节的语音
+        updateLesson(nextIdx, true);
       }
     }
 
-    // 初始化运行
+    // 页面启动
     window.onload = () => {
-      updateLesson(0);
+      updateLesson(0, false);
       window.addEventListener("resize", () => {
         const targetCard = document.getElementById(teachingSteps[currentIndex].targetCardId);
         if (targetCard) movePointerStickTo(targetCard);
