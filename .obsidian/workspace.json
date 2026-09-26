@@ -44,35 +44,9 @@
               "icon": "excalidraw-icon",
               "title": "juc类图.excalidraw"
             }
-          },
-          {
-            "id": "1ccbfe2b73b36593",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "面试准备/专业技能/03-高并发中间件.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "03-高并发中间件"
-            }
-          },
-          {
-            "id": "44dd13928e0c4241",
-            "type": "leaf",
-            "state": {
-              "type": "html-view",
-              "state": {
-                "file": "6-ai/1.1-多模态“教学演播室”前端交互方案：/教学演播室.html"
-              },
-              "icon": "code-glyph",
-              "title": "教学演播室"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -212,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/1.1-多模态“教学演播室”前端交互方案：/教学演播室.html",
+                "file": "1-java/1-juc/juc类图.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -304,10 +278,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "44dd13928e0c4241",
+  "active": "8f23614b751a9943",
   "lastOpenFiles": [
-    "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/教学演播室.html",
+    "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
     "6-ai/SpringAI.excalidraw.md",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/<!DOCTYPE html>.html",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：",
