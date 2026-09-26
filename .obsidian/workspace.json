@@ -186,6 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "1-java/1-juc/juc.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -277,7 +278,7 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "0081b9cf2f00a877",
+  "active": "8f23614b751a9943",
   "lastOpenFiles": [
     "1-java/1-juc/juc.excalidraw.md",
     "1-java/1-juc/JUC核心类结构总览图.md.md",
