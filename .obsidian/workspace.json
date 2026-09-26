@@ -37,10 +37,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "7-分布式/Drawing 2026-09-26 22.27.04.excalidraw.md"
+                "file": "7-分布式/分布式锁.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Drawing 2026-09-26 22.27.04.excalidraw"
+              "title": "分布式锁.excalidraw"
             }
           }
         ],
@@ -279,7 +279,7 @@
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
     "7-分布式/幂等.excalidraw.md",
-    "7-分布式/Drawing 2026-09-26 22.27.04.excalidraw.md",
+    "7-分布式/分布式锁.excalidraw.md",
     "架构/微博整体架构.excalidraw.md",
     "7-分布式/未命名",
     "架构/Untitled Diagram 1790241846562.drawio",
