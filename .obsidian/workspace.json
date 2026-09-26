@@ -63,14 +63,12 @@
             "id": "44dd13928e0c4241",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "html-view",
               "state": {
-                "file": "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
-                "mode": "source",
-                "source": true
+                "file": "6-ai/1.1-多模态“教学演播室”前端交互方案：/教学演播室.html"
               },
-              "icon": "lucide-file",
-              "title": "0-多模态“教学演播室”前端交互方案："
+              "icon": "code-glyph",
+              "title": "教学演播室"
             }
           }
         ],
@@ -214,7 +212,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
+                "file": "6-ai/1.1-多模态“教学演播室”前端交互方案：/教学演播室.html",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -306,10 +304,12 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "44dd13928e0c4241",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
     "6-ai/SpringAI.excalidraw.md",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
+    "6-ai/1.1-多模态“教学演播室”前端交互方案：/教学演播室.html",
+    "6-ai/1.1-多模态“教学演播室”前端交互方案：/<!DOCTYPE html>.html",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：",
     "面试准备/专业技能/03-高并发中间件.md",
     "面试准备/专业技能/05-大数据与流计算.md",
@@ -342,9 +342,6 @@
     "2-redis/0-Redis.excalidraw.md",
     "1-java/0-知识点",
     "1-java/1-juc",
-    "1-java/2-collection",
-    "6-ai",
-    "面试准备/冠顿/01-管理面与负责人题.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
