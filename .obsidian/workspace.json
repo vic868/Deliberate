@@ -34,6 +34,18 @@
             }
           },
           {
+            "id": "89c27a99657bffa4",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "1-java/3-IO/0-IO.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "0-IO.excalidraw"
+            }
+          },
+          {
             "id": "8f23614b751a9943",
             "type": "leaf",
             "state": {
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/1-juc/juc.excalidraw.md",
+                "file": "1-java/3-IO/0-IO.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -278,12 +290,15 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "8f23614b751a9943",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/java 版本.smm.md",
+    "1-java/3-IO/0-IO.excalidraw.md",
+    "1-java/3-IO",
+    "2-redis/0-Redis.excalidraw.md",
     "1-java/1-juc/juc.excalidraw.md",
     "1-java/1-juc/JUC核心类结构总览图.md.md",
     "1-java/1-juc/juc类图.excalidraw.md",
-    "1-java/java 版本.smm.md",
     "面试准备/技术面试题库/juc.drawio",
     "面试准备/技术面试题库/Juc/AbstractQueuedSynchronizer（AQS）源码原理与实战分析.md",
     "Untitled Diagram 1790329924103.drawio",
@@ -306,7 +321,6 @@
     "3-mq/1-RocketMq",
     "面试准备/专业技能/01-AI应用工程化.md",
     "3-mq/2-Kafka",
-    "3-mq/0-Rabbitmq",
     "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
     "面试准备/简历/00-AI经历怎么讲与简历改写策略.md",
     "架构/微博整体架构.excalidraw.md",
@@ -315,8 +329,6 @@
     "未命名.canvas",
     "4-db/MYSQL.excalidraw.md",
     "1-java/0-知识点/3-抽象.md",
-    "1-java/0-知识点/1-面向对象.md",
-    "面试准备/技术面试题库/AbstractQueuedSynchronizer.md",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
