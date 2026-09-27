@@ -37,16 +37,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
+                "file": "3-mq/未命名.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0.1-JUC核心类结构总览图.md"
+              "title": "未命名"
+            }
+          },
+          {
+            "id": "b6fdecb8d1740720",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "1.1-Disruptor核心架构组件.excalidraw"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -280,10 +292,12 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "1-java/1-juc/juc类图.excalidraw.md",
-    "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
-    "1-java/1-juc/0-juc.excalidraw.md",
+    "3-mq/未命名.md",
+    "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
     "1-java/1-juc/1-Disruptor.md",
+    "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
+    "1-java/1-juc/juc类图.excalidraw.md",
+    "1-java/1-juc/0-juc.excalidraw.md",
     "1-java/硬核技术-业务阵地.md",
     "7-分布式/分布式锁.excalidraw.md",
     "7-分布式/幂等.excalidraw.md",
@@ -312,10 +326,8 @@
     "面试准备/专业技能/04-数据库调优.md",
     "面试准备/简历/01-酒店送物机器人-项目描述.md",
     "1-java/0-知识点/2-基础知识.md",
-    "3-mq/未命名.md",
     "面试准备/专业技能/01-AI应用工程化.md",
     "面试准备/AI运维与架构岗/00-JD整理与学习清单.md",
-    "面试准备/简历/00-AI经历怎么讲与简历改写策略.md",
     "未命名.canvas",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
