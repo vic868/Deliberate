@@ -868,13 +868,13 @@ CPU唤醒阻塞线程的开销比非公平锁大。 ^ABHU3rSg
 可重入锁又名递归锁，是指在同一个线程在外层方法获取锁的时候，再进入该线程的内层方法会自动获取锁（前提锁对象得是同一个对象或者class），不会因为之前已经获取过还没释放而阻塞。Java中ReentrantLock和synchronized都是可重入锁，可重入锁的一个优点是可一定程度避免死锁。 ^p0mNj2Xx
 
 ## Element Links
-RhkWLtul: [[juc.excalidraw#Code Block]]
+RhkWLtul: [[0-juc.excalidraw#Code Block]]
 
-vnWT9Xdc: [[juc.excalidraw#Code Block]]
+vnWT9Xdc: [[0-juc.excalidraw#Code Block]]
 
-nud4K1cQ: [[juc.excalidraw#Code Block]]
+nud4K1cQ: [[0-juc.excalidraw#Code Block]]
 
-EYtpjnU6: [[1-java/1-juc/juc.excalidraw.md#结构图核心脉络解析]]
+EYtpjnU6: [[0-juc.excalidraw#结构图核心脉络解析]]
 
 %%
 ## Drawing

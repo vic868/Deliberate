@@ -7,7 +7,7 @@ status: 进行中
 
 # 🗺️ 16 · JUC 框架全景（ProcessOn 思维导图）
 
-> 返回 [[00-总览与使用说明]] · 姊妹篇：[[15-Java并发专题]]（原理详解）· [[02-并发与多线程]]（速查）· [[juc.excalidraw]]（自己的手绘图）
+> 返回 [[00-总览与使用说明]] · 姊妹篇：[[15-Java并发专题]]（原理详解）· [[02-并发与多线程]]（速查）· [[0-juc.excalidraw]]（自己的手绘图）
 
 > [!info] 来源与定位
 > - 原图：[ProcessOn · JUC 思维导图模板](https://www.processon.com/view/5da7bfcbe4b0ea86c2b3dbae)（2019 年模板，内容框架与 skywang12345《Java 多线程系列》一致）
@@ -150,12 +150,12 @@ RUNNING → SHUTDOWN → STOP → TIDYING → TERMINATED
 1. **先用这张图建框架**：JUC 四大块（原子类 / 锁 / 线程池 / 集合）的类与继承关系
 2. **再进 [[15-Java并发专题]] 深挖原理**：JMM、AQS 源码、线程池源码、CHM 1.8
 3. **自查两张图差集**：这张图没有的（但面试常问）→ happens-before、CompletableFuture、虚拟线程（JDK21）、StampedLock → 都在 15 里
-4. 你自己的手绘版 → [[juc.excalidraw]]（线程基础部分，可把这张图的四分支补画进去）
+4. 你自己的手绘版 → [[0-juc.excalidraw]]（线程基础部分，可把这张图的四分支补画进去）
 
 ## 📥 待补充
 - [ ] 把四大分支各自手画一遍（照着上图默画，比看十遍有效）
 
 ## 🔗 关联
-[[15-Java并发专题]] · [[02-并发与多线程]] · [[juc.excalidraw]] · [[面试准备/专业技能/05-并发]]
+[[15-Java并发专题]] · [[02-并发与多线程]] · [[0-juc.excalidraw]] · [[面试准备/专业技能/05-并发]]
 
 #面试 #JUC #并发 #思维导图 #待补
