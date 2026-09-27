@@ -262,7 +262,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875
+    "width": 729.546875,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -290,7 +291,7 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "b6fdecb8d1740720",
   "lastOpenFiles": [
     "3-mq/未命名.md",
     "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
