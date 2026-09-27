@@ -51,10 +51,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "1-java/1-juc/0-juc.excalidraw.md"
+                "file": "7-分布式/分布式事务.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "0-juc.excalidraw"
+              "title": "分布式事务.excalidraw"
             }
           }
         ],
@@ -291,17 +291,18 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "b6fdecb8d1740720",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "7-分布式/分布式锁.excalidraw.md",
+    "7-分布式/分布式事务.excalidraw.md",
+    "1-java/1-juc/0-juc.excalidraw.md",
     "Pasted Image 20260927115138_252.png",
     "1-java/1-juc/juc类图.excalidraw.md",
     "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
     "3-mq/未命名.md",
     "1-java/1-juc/1-Disruptor.md",
     "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
-    "1-java/1-juc/0-juc.excalidraw.md",
     "1-java/硬核技术-业务阵地.md",
-    "7-分布式/分布式锁.excalidraw.md",
     "7-分布式/幂等.excalidraw.md",
     "架构/微博整体架构.excalidraw.md",
     "7-分布式/未命名",
@@ -338,7 +339,6 @@
     "面试准备/技术面试题库/attachments/JUC-ProcessOn.png",
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.svg",
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally.svg",
-    "risk-control-front/doc/images/strategy-test.png",
-    "risk-control-front/doc/images/business.png"
+    "risk-control-front/doc/images/strategy-test.png"
   ]
 }
