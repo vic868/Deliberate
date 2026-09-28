@@ -75,10 +75,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Drawing 2026-09-28 18.22.19.excalidraw.md"
+                "file": "3-mq/2-Kafka/1-kafka.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Drawing 2026-09-28 18.22.19.excalidraw"
+              "title": "1-kafka.excalidraw"
             }
           }
         ],
@@ -317,8 +317,10 @@
   },
   "active": "d7d77f0a8a1f008a",
   "lastOpenFiles": [
+    "Pasted Image 20260928182321_802.png",
+    "3-mq/未命名.md",
+    "3-mq/2-Kafka/1-kafka.excalidraw.md",
     "8-spring/spring.excalidraw.md",
-    "Excalidraw/Drawing 2026-09-28 18.22.19.excalidraw.md",
     "7-分布式/分布式事务.excalidraw.md",
     "8-spring",
     "1-java/未命名",
@@ -327,7 +329,6 @@
     "Pasted Image 20260927115138_252.png",
     "1-java/1-juc/juc类图.excalidraw.md",
     "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
-    "3-mq/未命名.md",
     "1-java/1-juc/1-Disruptor.md",
     "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
     "1-java/硬核技术-业务阵地.md",
@@ -353,7 +354,6 @@
     "面试准备/专业技能/05-大数据与流计算.md",
     "面试准备/专业技能/02-Java核心与微服务.md",
     "面试准备/专业技能/04-数据库调优.md",
-    "面试准备/简历/01-酒店送物机器人-项目描述.md",
     "未命名.canvas",
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
