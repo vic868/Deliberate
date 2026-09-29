@@ -89,12 +89,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
+                "file": "服务器巡检-192.168.0.103/巡检报告.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Java集合详解：深入理解LinkedHashMap和LRU缓存"
+              "title": "巡检报告"
             }
           }
         ],
@@ -333,6 +333,9 @@
   },
   "active": "e395a81a50a67652",
   "lastOpenFiles": [
+    "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
+    "服务器巡检-192.168.0.103/巡检报告.md",
+    "服务器巡检-192.168.0.103",
     "JavaTutorial/docs/Java/basic/string和包装类.md",
     "JavaTutorial/docs/Java/basic/JavaIO流.md",
     "JavaTutorial/docs/Java/basic/Java中的Class类和Object类.md",
@@ -358,8 +361,6 @@
     "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：JNDI，OSGI，Tomcat类加载器实现.md",
     "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：GC调优思路与常用工具.md",
     "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：再谈四种引用及GC实践.md",
-    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：虚拟机字节码执行引擎.md",
-    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：深入理解JVM类加载机制.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
@@ -368,7 +369,6 @@
     "JavaTutorial/src/main",
     "JavaTutorial/src",
     "JavaTutorial/pom.xml",
-    "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘",
     "Pasted Image 20260928182321_802.png",
     "Pasted Image 20260927115138_252.png",
     "未命名.canvas",
