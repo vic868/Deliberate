@@ -89,12 +89,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "服务器巡检-192.168.0.103/巡检报告.md",
+                "file": "服务器巡检-192.168.0.103/修复清单.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "巡检报告"
+              "title": "修复清单"
             }
           }
         ],
@@ -333,8 +333,8 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "服务器巡检-192.168.0.103/修复清单.md",
     "服务器巡检-192.168.0.103/巡检报告.md",
+    "服务器巡检-192.168.0.103/修复清单.md",
     "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
     "服务器巡检-192.168.0.103",
     "JavaTutorial/docs/Java/basic/string和包装类.md",
