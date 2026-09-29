@@ -89,10 +89,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "6-ai/2.1-AI 概念/Drawing 2026-09-29 13.09.41.excalidraw.md"
+                "file": "1-java/3-IO/0-IO.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Drawing 2026-09-29 13.09.41.excalidraw"
+              "title": "0-IO.excalidraw"
             }
           }
         ],
@@ -331,8 +331,9 @@
   },
   "active": "e395a81a50a67652",
   "lastOpenFiles": [
-    "6-ai/SpringAI.excalidraw.md",
+    "1-java/1-juc/0-juc.excalidraw.md",
     "6-ai/2.1-AI 概念/Drawing 2026-09-29 13.09.41.excalidraw.md",
+    "6-ai/SpringAI.excalidraw.md",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka常见命令及配置总结.md",
     "6-ai/2.1-AI 概念",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka 快速上手（Java版）.md",
@@ -357,7 +358,6 @@
     "JavaTutorial/docs/Java/concurrency/Java并发指南：JMM中的final关键字解析.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：JUC中常用的Unsafe和Locksupport.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：JUC的核心类AQS详解.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：并发基础与Java多线程.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
