@@ -87,12 +87,14 @@
             "id": "e395a81a50a67652",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "1-java/3-IO/0-IO.excalidraw.md"
+                "file": "JavaTutorial/docs/Java/concurrency/Java并发指南：JMM中的final关键字解析.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "0-IO.excalidraw"
+              "icon": "lucide-file",
+              "title": "Java并发指南：JMM中的final关键字解析"
             }
           }
         ],
@@ -331,6 +333,11 @@
   },
   "active": "e395a81a50a67652",
   "lastOpenFiles": [
+    "AI 学习规划/04-高级架构阶段.md",
+    "AI 学习规划/05-项目与求职阶段.md",
+    "AI 学习规划/技术栈地图.md",
+    "AI 学习规划/模板-每日打卡.md",
+    "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/1-juc/0-juc.excalidraw.md",
     "6-ai/2.1-AI 概念/Drawing 2026-09-29 13.09.41.excalidraw.md",
     "6-ai/SpringAI.excalidraw.md",
@@ -353,11 +360,6 @@
     "JavaTutorial/docs/Java/concurrency/Java并发指南：Java读写锁ReentrantReadWriteLock源码分析.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：ForkJoin并发框架与工作窃取算法剖析.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：AQS中的公平锁与非公平锁，Condtion.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：AQS共享模式与并发工具类的实现.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：深入理解Java内存模型JMM.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：JMM中的final关键字解析.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：JUC中常用的Unsafe和Locksupport.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：JUC的核心类AQS详解.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
