@@ -75,12 +75,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：基于NIO的网络编程框架Netty.md",
+                "file": "JavaTutorial/docs/mq/kafka/消息队列kafka详解：如何实现死信队列.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Java网络编程与NIO详解：基于NIO的网络编程框架Netty"
+              "title": "消息队列kafka详解：如何实现死信队列"
             }
           }
         ],
@@ -319,6 +319,7 @@
   },
   "active": "d7d77f0a8a1f008a",
   "lastOpenFiles": [
+    "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：基于NIO的网络编程框架Netty.md",
     "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：浅谈Linux中Selector的实现原理.md",
     "JavaTutorial/docs/Java/JVM/JVM总结.md",
     "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：JVM常用参数以及调优实践.md",
@@ -344,7 +345,6 @@
     "JavaTutorial/docs/Java/basic/Java8新特性终极指南.md",
     "JavaTutorial/docs/Java/basic/多线程.md",
     "JavaTutorial/docs/backend/后端技术杂谈：OpenStack的基石KVM.md",
-    "JavaTutorial/docs/backend/后端技术杂谈：搜索引擎基础倒排索引.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
