@@ -89,12 +89,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaTutorial/docs/Java/concurrency/Java并发指南：JMM中的final关键字解析.md",
+                "file": "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Java并发指南：JMM中的final关键字解析"
+              "title": "Java集合详解：深入理解LinkedHashMap和LRU缓存"
             }
           }
         ],
@@ -333,6 +333,12 @@
   },
   "active": "e395a81a50a67652",
   "lastOpenFiles": [
+    "JavaTutorial/docs/Java/basic/string和包装类.md",
+    "JavaTutorial/docs/Java/basic/JavaIO流.md",
+    "JavaTutorial/docs/Java/basic/Java中的Class类和Object类.md",
+    "JavaTutorial/docs/Java/basic/Java集合框架梳理.md",
+    "JavaTutorial/docs/Java/basic/解读Java中的回调.md",
+    "JavaTutorial/docs/Java/concurrency/Java并发指南：JMM中的final关键字解析.md",
     "AI 学习规划/04-高级架构阶段.md",
     "AI 学习规划/05-项目与求职阶段.md",
     "AI 学习规划/技术栈地图.md",
@@ -354,12 +360,6 @@
     "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：再谈四种引用及GC实践.md",
     "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：虚拟机字节码执行引擎.md",
     "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：深入理解JVM类加载机制.md",
-    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：垃圾回收器详解.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：Java中的锁Lock和synchronized.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：Java内存模型JMM总结.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：Java读写锁ReentrantReadWriteLock源码分析.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：ForkJoin并发框架与工作窃取算法剖析.md",
-    "JavaTutorial/docs/Java/concurrency/Java并发指南：AQS中的公平锁与非公平锁，Condtion.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
