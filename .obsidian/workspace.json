@@ -82,9 +82,21 @@
               "icon": "lucide-file",
               "title": "消息队列kafka详解：Kafka常见命令及配置总结"
             }
+          },
+          {
+            "id": "e395a81a50a67652",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "6-ai/2.1-AI 概念/Drawing 2026-09-29 13.09.41.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-09-29 13.09.41.excalidraw"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -317,9 +329,12 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "e395a81a50a67652",
   "lastOpenFiles": [
-    "6-ai/2.1-超级助理",
+    "6-ai/SpringAI.excalidraw.md",
+    "6-ai/2.1-AI 概念/Drawing 2026-09-29 13.09.41.excalidraw.md",
+    "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka常见命令及配置总结.md",
+    "6-ai/2.1-AI 概念",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka 快速上手（Java版）.md",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：如何实现死信队列.md",
     "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：基于NIO的网络编程框架Netty.md",
@@ -343,8 +358,6 @@
     "JavaTutorial/docs/Java/concurrency/Java并发指南：JUC中常用的Unsafe和Locksupport.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：JUC的核心类AQS详解.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：并发基础与Java多线程.md",
-    "JavaTutorial/docs/Java/collection/Java集合类总结.md",
-    "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
@@ -354,7 +367,6 @@
     "JavaTutorial/src",
     "JavaTutorial/pom.xml",
     "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘",
-    "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring组件分析",
     "Pasted Image 20260928182321_802.png",
     "Pasted Image 20260927115138_252.png",
     "未命名.canvas",
