@@ -75,12 +75,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaTutorial/docs/Java/concurrency/Java并发指南：Java中的锁Lock和synchronized.md",
+                "file": "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：基于NIO的网络编程框架Netty.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Java并发指南：Java中的锁Lock和synchronized"
+              "title": "Java网络编程与NIO详解：基于NIO的网络编程框架Netty"
             }
           }
         ],
@@ -319,6 +319,16 @@
   },
   "active": "d7d77f0a8a1f008a",
   "lastOpenFiles": [
+    "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：浅谈Linux中Selector的实现原理.md",
+    "JavaTutorial/docs/Java/JVM/JVM总结.md",
+    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：JVM常用参数以及调优实践.md",
+    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：JNDI，OSGI，Tomcat类加载器实现.md",
+    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：GC调优思路与常用工具.md",
+    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：再谈四种引用及GC实践.md",
+    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：虚拟机字节码执行引擎.md",
+    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：深入理解JVM类加载机制.md",
+    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：垃圾回收器详解.md",
+    "JavaTutorial/docs/Java/concurrency/Java并发指南：Java中的锁Lock和synchronized.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：Java内存模型JMM总结.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：Java读写锁ReentrantReadWriteLock源码分析.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：ForkJoin并发框架与工作窃取算法剖析.md",
@@ -335,10 +345,6 @@
     "JavaTutorial/docs/Java/basic/多线程.md",
     "JavaTutorial/docs/backend/后端技术杂谈：OpenStack的基石KVM.md",
     "JavaTutorial/docs/backend/后端技术杂谈：搜索引擎基础倒排索引.md",
-    "JavaTutorial/docs/backend/后端技术杂谈：搜索引擎工作原理.md",
-    "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
-    "JavaTutorial/docs/backend/后端技术杂谈：白话虚拟化技术.md",
-    "3-mq/2-Kafka/1-kafka.excalidraw.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
@@ -347,12 +353,6 @@
     "JavaTutorial/src/main",
     "JavaTutorial/src",
     "JavaTutorial/pom.xml",
-    "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘/Spring探秘之组合注解的处理.md",
-    "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘/Spring探秘之循环依赖的解决（二）：源码分析.md",
-    "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘/Spring探秘之监听器注解EventListener.md",
-    "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘/Spring探秘之循环依赖的解决（一）：理论基石.md",
-    "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘/Spring探秘之Spring事件机制.md",
-    "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘/Spring探秘之AOP的执行顺序.md",
     "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring重要机制探秘",
     "JavaTutorial/docs/Spring全家桶/Spring源码分析/Spring组件分析",
     "Pasted Image 20260928182321_802.png",
