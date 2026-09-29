@@ -75,12 +75,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaTutorial/docs/mq/kafka/消息队列kafka详解：如何实现死信队列.md",
-                "mode": "source",
+                "file": "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka常见命令及配置总结.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "消息队列kafka详解：如何实现死信队列"
+              "title": "消息队列kafka详解：Kafka常见命令及配置总结"
             }
           }
         ],
@@ -319,6 +319,8 @@
   },
   "active": "d7d77f0a8a1f008a",
   "lastOpenFiles": [
+    "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka 快速上手（Java版）.md",
+    "JavaTutorial/docs/mq/kafka/消息队列kafka详解：如何实现死信队列.md",
     "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：基于NIO的网络编程框架Netty.md",
     "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：浅谈Linux中Selector的实现原理.md",
     "JavaTutorial/docs/Java/JVM/JVM总结.md",
@@ -343,8 +345,6 @@
     "JavaTutorial/docs/Java/collection/Java集合类总结.md",
     "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
     "JavaTutorial/docs/Java/basic/Java8新特性终极指南.md",
-    "JavaTutorial/docs/Java/basic/多线程.md",
-    "JavaTutorial/docs/backend/后端技术杂谈：OpenStack的基石KVM.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
