@@ -87,18 +87,28 @@
             "id": "e395a81a50a67652",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "服务器巡检-192.168.0.103/修复清单.md",
-                "mode": "preview",
-                "source": true
+                "file": "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "修复清单"
+              "icon": "excalidraw-icon",
+              "title": "0.1-ai.excalidraw"
+            }
+          },
+          {
+            "id": "ca5ab23cc32d0925",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "6-ai/2.2-高可用的服务架构/AI 架构.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "AI 架构.excalidraw"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -331,10 +341,17 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "ca5ab23cc32d0925",
   "lastOpenFiles": [
-    "服务器巡检-192.168.0.103/巡检报告.md",
+    "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
+    "6-ai/2.2-高可用的服务架构/AI 架构.excalidraw.md",
+    "6-ai/2.2-高可用的服务架构",
+    "AI 学习规划/实战项目.md",
+    "AI 学习规划/README.md",
+    "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
+    "AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "服务器巡检-192.168.0.103/修复清单.md",
+    "服务器巡检-192.168.0.103/巡检报告.md",
     "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
     "服务器巡检-192.168.0.103",
     "JavaTutorial/docs/Java/basic/string和包装类.md",
@@ -349,18 +366,12 @@
     "AI 学习规划/模板-每日打卡.md",
     "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/1-juc/0-juc.excalidraw.md",
-    "6-ai/2.1-AI 概念/Drawing 2026-09-29 13.09.41.excalidraw.md",
     "6-ai/SpringAI.excalidraw.md",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka常见命令及配置总结.md",
     "6-ai/2.1-AI 概念",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka 快速上手（Java版）.md",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：如何实现死信队列.md",
     "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：基于NIO的网络编程框架Netty.md",
-    "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：浅谈Linux中Selector的实现原理.md",
-    "JavaTutorial/docs/Java/JVM/JVM总结.md",
-    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：JVM常用参数以及调优实践.md",
-    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：JNDI，OSGI，Tomcat类加载器实现.md",
-    "JavaTutorial/docs/Java/JVM/深入理解JVM虚拟机：GC调优思路与常用工具.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
@@ -368,7 +379,6 @@
     "JavaTutorial/src/main/java",
     "JavaTutorial/src/main",
     "JavaTutorial/src",
-    "JavaTutorial/pom.xml",
     "Pasted Image 20260928182321_802.png",
     "Pasted Image 20260927115138_252.png",
     "未命名.canvas",
