@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "00-Transformer入门总览"
             }
           }
         ]
@@ -252,13 +256,13 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/2.2-高可用的服务架构/AI 架构.excalidraw.md",
+    "AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
+    "6-ai/2.2-高可用的服务架构/AI 架构.excalidraw.md",
     "6-ai/2.2-高可用的服务架构",
     "AI 学习规划/实战项目.md",
     "AI 学习规划/README.md",
     "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
-    "AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "服务器巡检-192.168.0.103/修复清单.md",
     "服务器巡检-192.168.0.103/巡检报告.md",
     "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
