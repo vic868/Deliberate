@@ -25,12 +25,14 @@
             "id": "ba5814a2dd4bc365",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "8-spring/spring 版本.smm.md"
+                "file": "27张支付架构图，我本来是留着做内训舍不得发的.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "spring 版本.smm"
+              "icon": "lucide-file",
+              "title": "27张支付架构图，我本来是留着做内训舍不得发的"
             }
           }
         ],
@@ -269,6 +271,8 @@
   },
   "active": "ba5814a2dd4bc365",
   "lastOpenFiles": [
+    "8-spring/spring 版本.smm.md",
+    "27张支付架构图，我本来是留着做内训舍不得发的.md",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hue/hue.ini",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hue",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/startup.sh",
@@ -279,12 +283,10 @@
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hadoop",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/docker-compose.yml",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker",
-    "服务器巡检-192.168.0.106/deploy",
     "大数据学习规划/BigData.excalidraw.md",
     "大数据学习规划/每日进度.md",
     "大数据学习规划/05-求职与面试.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
-    "8-spring/spring 版本.smm.md",
     "8-spring/spring-logback/LOGBACK_SETUP.md",
     "7-分布式/幂等.excalidraw.md",
     "Pasted Image 20261006163236_959.png",
