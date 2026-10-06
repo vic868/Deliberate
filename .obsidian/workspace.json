@@ -25,12 +25,12 @@
             "id": "ba5814a2dd4bc365",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "smm",
               "state": {
-                "file": "大数据学习规划/BigData.excalidraw.md"
+                "file": "8-spring/spring 版本.smm.md"
               },
-              "icon": "excalidraw-icon",
-              "title": "BigData.excalidraw"
+              "icon": "smm-icon",
+              "title": "spring 版本.smm"
             }
           }
         ],
@@ -267,8 +267,9 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "ba5814a2dd4bc365",
   "lastOpenFiles": [
+    "大数据学习规划/BigData.excalidraw.md",
     "大数据学习规划/每日进度.md",
     "大数据学习规划/05-求职与面试.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
@@ -303,7 +304,6 @@
     "JavaTutorial/docs/Java/basic/解读Java中的回调.md",
     "JavaTutorial/docs/Java/concurrency/Java并发指南：JMM中的final关键字解析.md",
     "AI 学习规划/04-高级架构阶段.md",
-    "AI 学习规划/05-项目与求职阶段.md",
     "6-ai/2.1-AI 概念",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
