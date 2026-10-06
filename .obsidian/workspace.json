@@ -25,12 +25,12 @@
             "id": "ba5814a2dd4bc365",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "excalidraw",
               "state": {
-                "file": "8-spring/spring 版本.smm.md"
+                "file": "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md"
               },
-              "icon": "smm-icon",
-              "title": "spring 版本.smm"
+              "icon": "excalidraw-icon",
+              "title": "0.1-ai.excalidraw"
             }
           }
         ],
@@ -267,10 +267,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "ba5814a2dd4bc365",
   "lastOpenFiles": [
-    "8-spring/spring-logback/LOGBACK_SETUP.md",
     "8-spring/spring 版本.smm.md",
+    "8-spring/spring-logback/LOGBACK_SETUP.md",
     "7-分布式/幂等.excalidraw.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261006162516_406.png",
