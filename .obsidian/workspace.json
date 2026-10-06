@@ -11,17 +11,14 @@
             "id": "e62a40fc8d263144",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "8-spring/spring-logback/未命名.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "服务器巡检-192.168.0.106/巡检报告.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "未命名"
+              "icon": "lucide-file",
+              "title": "巡检报告"
             }
           }
         ]
@@ -257,7 +254,7 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "e62a40fc8d263144",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
     "服务器巡检-192.168.0.106/巡检报告.md",
     "8-spring/spring-logback/未命名.canvas",
