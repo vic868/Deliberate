@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大数据学习规划/每日进度.md",
-                "mode": "source",
+                "file": "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "每日进度"
+              "title": "部署记录-Hadoop+Hue"
             }
           }
         ]
@@ -257,6 +257,7 @@
   "active": "46849d2238604982",
   "lastOpenFiles": [
     "8-spring/spring-logback/LOGBACK_SETUP.md",
+    "大数据学习规划/每日进度.md",
     "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
     "大数据学习规划/02-Flink补课.md",
     "8-spring/spring 版本.smm.md",
@@ -272,7 +273,6 @@
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/docker-compose.yml",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker",
     "大数据学习规划/BigData.excalidraw.md",
-    "大数据学习规划/每日进度.md",
     "大数据学习规划/05-求职与面试.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "7-分布式/幂等.excalidraw.md",
