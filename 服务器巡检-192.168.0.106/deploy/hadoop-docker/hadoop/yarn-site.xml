@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <property><name>yarn.resourcemanager.hostname</name><value>hadoop</value></property>
+  <property><name>yarn.nodemanager.aux-services</name><value>mapreduce_shuffle</value></property>
+  <!-- 给 YARN 的资源预算：主机 6C/48G，留给系统和其他服务余量 -->
+  <property><name>yarn.nodemanager.resource.memory-mb</name><value>8192</value></property>
+  <property><name>yarn.nodemanager.resource.cpu-vcores</name><value>4</value></property>
+  <property><name>yarn.scheduler.minimum-allocation-mb</name><value>1024</value></property>
+  <!-- 聚合日志到 HDFS，作业跑完 Hue/History 里也能看日志 -->
+  <property><name>yarn.log-aggregation-enable</name><value>true</value></property>
+</configuration>
