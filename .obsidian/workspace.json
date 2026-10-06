@@ -27,10 +27,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md"
+                "file": "大数据学习规划/BigData.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "0.1-ai.excalidraw"
+              "title": "BigData.excalidraw"
             }
           }
         ],
@@ -267,8 +267,11 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "ba5814a2dd4bc365",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "大数据学习规划/每日进度.md",
+    "大数据学习规划/05-求职与面试.md",
+    "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "8-spring/spring 版本.smm.md",
     "8-spring/spring-logback/LOGBACK_SETUP.md",
     "7-分布式/幂等.excalidraw.md",
@@ -287,7 +290,6 @@
     "4-db/MYSQL.excalidraw.md",
     "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
     "AI 学习规划/Transformer 面试题/Transformer 面试题.md",
-    "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "6-ai/2.2-高可用的服务架构/AI 架构.excalidraw.md",
     "6-ai/2.2-高可用的服务架构",
     "AI 学习规划/实战项目.md",
@@ -302,8 +304,6 @@
     "JavaTutorial/docs/Java/concurrency/Java并发指南：JMM中的final关键字解析.md",
     "AI 学习规划/04-高级架构阶段.md",
     "AI 学习规划/05-项目与求职阶段.md",
-    "AI 学习规划/技术栈地图.md",
-    "AI 学习规划/模板-每日打卡.md",
     "6-ai/2.1-AI 概念",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
