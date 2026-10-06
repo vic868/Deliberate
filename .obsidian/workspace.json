@@ -11,15 +11,30 @@
             "id": "e62a40fc8d263144",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "7-分布式/幂等.excalidraw.md"
+                "file": "8-spring/spring-logback/LOGBACK_SETUP.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "幂等.excalidraw"
+              "icon": "lucide-file",
+              "title": "LOGBACK_SETUP"
+            }
+          },
+          {
+            "id": "ba5814a2dd4bc365",
+            "type": "leaf",
+            "state": {
+              "type": "smm",
+              "state": {
+                "file": "8-spring/spring 版本.smm.md"
+              },
+              "icon": "smm-icon",
+              "title": "spring 版本.smm"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -252,14 +267,16 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "e62a40fc8d263144",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "8-spring/spring-logback/LOGBACK_SETUP.md",
+    "8-spring/spring 版本.smm.md",
+    "7-分布式/幂等.excalidraw.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261006162516_406.png",
     "Pasted Image 20261006162206_107.png",
     "Pasted Image 20261006161751_533.png",
     "架构/微博整体架构.excalidraw.md",
-    "8-spring/spring-logback/LOGBACK_SETUP.md",
     "8-spring/spring-logback/未命名.canvas",
     "服务器巡检-192.168.0.106/巡检报告.md",
     "8-spring/spring-logback",
@@ -287,7 +304,6 @@
     "AI 学习规划/05-项目与求职阶段.md",
     "AI 学习规划/技术栈地图.md",
     "AI 学习规划/模板-每日打卡.md",
-    "1-java/3-IO/0-IO.excalidraw.md",
     "6-ai/2.1-AI 概念",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
@@ -300,7 +316,6 @@
     "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap connector.svg",
     "Excalidraw/Scripts/Downloaded/Mindmap Builder.svg",
-    "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.svg",
-    "Excalidraw/Scripts/Downloaded/Color Scheme Manager.svg"
+    "Excalidraw/Scripts/Downloaded/Ellipse Selected Elements.svg"
   ]
 }
