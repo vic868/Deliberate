@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "f285783fb2aad70d",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "e62a40fc8d263144",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "8-spring/spring.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "spring.excalidraw"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -252,8 +250,11 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "e62a40fc8d263144",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.103/修复清单.md",
+    "服务器巡检-192.168.0.103/巡检报告.md",
+    "8-spring/spring.excalidraw.md",
     "4-db/MYSQL.excalidraw.md",
     "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
     "AI 学习规划/Transformer 面试题/Transformer 面试题.md",
@@ -262,8 +263,6 @@
     "6-ai/2.2-高可用的服务架构",
     "AI 学习规划/实战项目.md",
     "AI 学习规划/README.md",
-    "服务器巡检-192.168.0.103/修复清单.md",
-    "服务器巡检-192.168.0.103/巡检报告.md",
     "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
     "服务器巡检-192.168.0.103",
     "JavaTutorial/docs/Java/basic/string和包装类.md",
@@ -282,7 +281,6 @@
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka常见命令及配置总结.md",
     "6-ai/2.1-AI 概念",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka 快速上手（Java版）.md",
-    "JavaTutorial/docs/mq/kafka/消息队列kafka详解：如何实现死信队列.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
