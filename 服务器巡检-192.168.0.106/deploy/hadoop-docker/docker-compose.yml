@@ -1,0 +1,44 @@
+services:
+  hadoop:
+    image: apache/hadoop:3.3.6
+    container_name: hadoop
+    hostname: hadoop
+    entrypoint: ["/opt/startup.sh"]
+    volumes:
+      - ./startup.sh:/opt/startup.sh:ro
+      - ./hadoop/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./hadoop/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+      - ./hadoop/yarn-site.xml:/opt/hadoop/etc/hadoop/yarn-site.xml
+      - ./hadoop/mapred-site.xml:/opt/hadoop/etc/hadoop/mapred-site.xml
+      - ./data/namenode:/hadoop/dfs/name
+      - ./data/datanode:/hadoop/dfs/data
+    ports:
+      - "8020:8020"    # HDFS RPC（9000 被 Portainer 占用，改用 8020）
+      - "9870:9870"    # NameNode Web UI
+      - "8088:8088"    # YARN ResourceManager UI
+      - "19888:19888"  # MapReduce JobHistory UI
+    networks: [hadoop-net]
+    mem_limit: 16g
+    cpus: 4
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "hdfs dfsadmin -report 2>/dev/null | grep -q 'Live datanodes (1)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+
+  hue:
+    image: gethue/hue:latest
+    container_name: hue
+    depends_on: [hadoop]
+    volumes:
+      - ./hue/hue.ini:/usr/share/hue/desktop/conf/z-hue-overrides.ini
+    ports:
+      - "8888:8888"    # Hue Web UI
+    networks: [hadoop-net]
+    restart: unless-stopped
+
+networks:
+  hadoop-net:
+    name: hadoop-net

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- 9000 被 Portainer 占用，NameNode RPC 改用 8020 -->
+  <property><name>fs.defaultFS</name><value>hdfs://hadoop:8020</value></property>
+
+  <!-- 允许 Hue 容器代理用户访问 HDFS -->
+  <property><name>hadoop.proxyuser.hue.hosts</name><value>*</value></property>
+  <property><name>hadoop.proxyuser.hue.groups</name><value>*</value></property>
+  <property><name>hadoop.proxyuser.admin.hosts</name><value>*</value></property>
+  <property><name>hadoop.proxyuser.admin.groups</name><value>*</value></property>
+</configuration>
