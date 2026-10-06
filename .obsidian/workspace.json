@@ -11,104 +11,13 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "架构/微博整体架构.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "微博整体架构.excalidraw"
-            }
-          },
-          {
-            "id": "55910ad4c8ed8579",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "7-分布式/幂等.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "幂等.excalidraw"
-            }
-          },
-          {
-            "id": "03b750cd44f9405e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "3-mq/未命名.md",
-                "mode": "source",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "未命名"
-            }
-          },
-          {
-            "id": "b6fdecb8d1740720",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "7-分布式/分布式事务.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "分布式事务.excalidraw"
-            }
-          },
-          {
-            "id": "c363d7675da252f9",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "8-spring/spring.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "spring.excalidraw"
-            }
-          },
-          {
-            "id": "d7d77f0a8a1f008a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka常见命令及配置总结.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "消息队列kafka详解：Kafka常见命令及配置总结"
-            }
-          },
-          {
-            "id": "e395a81a50a67652",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "0.1-ai.excalidraw"
-            }
-          },
-          {
-            "id": "ca5ab23cc32d0925",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "6-ai/2.2-高可用的服务架构/AI 架构.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "AI 架构.excalidraw"
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -341,10 +250,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "ca5ab23cc32d0925",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "6-ai/2.2-高可用的服务架构/AI 架构.excalidraw.md",
+    "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "6-ai/2.2-高可用的服务架构",
     "AI 学习规划/实战项目.md",
     "AI 学习规划/README.md",
