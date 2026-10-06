@@ -87,7 +87,10 @@ docker compose down / up -d       # 停/起
 > 镜像以 `hadoop`（uid 1000）运行，root 建的目录它写不了 → NN 格式化报 `Cannot create directory /hadoop/dfs/name/current`。**修复：`chown -R 1000:1000 data/namenode data/datanode`。**
 
 > [!note] 3. Docker Hub 直连被重置
-> 配置的镜像源失效后 daemon 回落直连 104.26.x.x 持续 reset。**解法：显式镜像源前缀拉取再 retag**（本机可用：`docker.m.daocloud.io`（hadoop）、`docker.1ms.run`（hue）；daocloud 对 gethue/hue 返回 403）。另：这台机器 SSH 并发连接会被拒，拉大文件时 SSH 还可能超时，用 `nohup` 脱离会话跑长任务。
+> 配置的镜像源失效后 daemon 回落直连 104.26.x.x 持续 reset。**解法：显式镜像源前缀拉取再 retag**（本机可用：`docker.m.daocloud.io`（hadoop/hive）、`docker.1ms.run`（hue）；daocloud 对 gethue/hue 返回 403）。另：这台机器 SSH 并发连接会被拒，拉大文件时 SSH 还可能超时，用 `nohup` 脱离会话跑长任务。
+
+> [!warning] 4. Hue 连 Hive 报 `failed to resolve sockaddr for hive:10000`
+> hue.ini 里写的 `hive_server_host = hive`，但 compose 里容器名是 `hive-server`，网络里根本没有叫 `hive` 的主机名（DNS 解析失败）。**解法：给 hive-server 服务加网络别名**——compose 里 `networks.hadoop-net.aliases: [hive]`。注意：容器内 `localhost` 的 beeline 测试验证不到这个问题，跨容器连接必须用别名/服务名测。
 
 ## 六、部署验证结果（2026-10-06）
 
