@@ -55,6 +55,8 @@ docker network: hadoop-net (bridge)
 | NameNode UI | http://192.168.0.106:9870 | 无鉴权 |
 | YARN UI | http://192.168.0.106:8088 | 无鉴权 |
 | JobHistory | http://192.168.0.106:19888 | 无鉴权 |
+| HiveServer2 (JDBC) | `jdbc:hive2://192.168.0.106:10000` | hive / 无密码（auth=NONE） |
+| MySQL metastore | mysql 容器 3306 / 库 `metastore` | hive / Hive@2026 |
 
 ## 四、命令行用法（宿主机别名，root 和 vic 的 .bashrc 已加）
 
@@ -97,8 +99,22 @@ docker compose down / up -d       # 停/起
 - [x] 四个 Web UI（9870/8088/19888/8888）全部 HTTP 302/200
 - [x] Hue 超级用户 admin 创建并验证（is_superuser=True）
 
+### Hive 部分（2026-10-06 晚追加）
+
+- [x] apache/hive:4.0.0 镜像（daocloud 拉取）；mysql 容器接入 hadoop-net，metastore 库 + hive 用户已建
+- [x] hive-metastore：INIT_SCHEMA 自动初始化成功，9083 就绪
+- [x] hive-server：10000 就绪，Tez 引擎跑在 YARN 上
+- [x] **beeline 端到端**：建库 testdb → 建表 t1 → INSERT → SELECT 返回 `1, hello-hive` ✓
+- [x] hue.ini 增加 `[beeswax]`（hive_server_host=hive:10000）并重启 Hue，beeswax 应用加载 ✓
+- [x] 用户已从浏览器实际使用 Hue 的 Hive 元数据浏览页（hue 日志可见 connector_id=hive 请求）
+
+> [!note] Hive 使用提示
+> Hive 4.0 的执行引擎是 **Tez**（不再支持 MR），INSERT/CTAS 会起 Tez AM 容器跑在 YARN 上，所以作业记录同时在 YARN 8088 可见。beeline 直连示例：
+> `beeline -u "jdbc:hive2://192.168.0.106:10000" -n hive`
+> Hue 里：左上 Query Editors → Hive，选 testdb 库即可写查询。
+
 ## 七、后续可玩（与现有生态整合）
 
 - Kafka → Flink（k3s 里已在跑）→ HDFS 落地的实时管道
 - HBase（/opt/hbase 容器）可考虑迁到 HDFS 做底层存储
-- Hue 里装 Hive connector 需要先部署 metastore（可选）
+- Hive 已就绪：Hue 里直接写 HiveSQL； metastore 也可供 Spark/Dinky 等共用
