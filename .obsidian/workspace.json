@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "4-db/MYSQL.excalidraw.md"
+                "file": "8-spring/spring.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "MYSQL.excalidraw"
+              "title": "spring.excalidraw"
             }
           }
         ]
@@ -254,6 +254,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "4-db/MYSQL.excalidraw.md",
     "AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
     "AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
@@ -282,7 +283,6 @@
     "6-ai/2.1-AI 概念",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：Kafka 快速上手（Java版）.md",
     "JavaTutorial/docs/mq/kafka/消息队列kafka详解：如何实现死信队列.md",
-    "JavaTutorial/docs/Java/network/Java网络编程与NIO详解：基于NIO的网络编程框架Netty.md",
     "JavaTutorial/src/main/java/md/mdToc.java",
     "JavaTutorial/src/main/java/md/codeFormat.java",
     "JavaTutorial/src/main/java/md",
