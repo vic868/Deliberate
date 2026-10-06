@@ -39,6 +39,44 @@ services:
     networks: [hadoop-net]
     restart: unless-stopped
 
+  hive-metastore:
+    image: apache/hive:4.0.0
+    container_name: hive-metastore
+    depends_on: [hadoop]
+    environment:
+      SERVICE_NAME: metastore
+      DB_DRIVER: mysql
+      INIT_SCHEMA: "true"
+      SERVICE_OPTS: >-
+        -Djavax.jdo.option.ConnectionDriverName=com.mysql.cj.jdbc.Driver
+        -Djavax.jdo.option.ConnectionURL=jdbc:mysql://mysql:3306/metastore?useSSL=false&allowPublicKeyRetrieval=true
+        -Djavax.jdo.option.ConnectionUserName=hive
+        -Djavax.jdo.option.ConnectionPassword=Hive@2026
+        -Dfs.defaultFS=hdfs://hadoop:8020
+    ports:
+      - "9083:9083"    # metastore thrift
+    volumes:
+      - ./hive/lib/mysql-connector-j-8.0.33.jar:/opt/hive/lib/mysql-connector-j-8.0.33.jar:ro
+    networks: [hadoop-net]
+    restart: unless-stopped
+
+  hive-server:
+    image: apache/hive:4.0.0
+    container_name: hive-server
+    depends_on: [hadoop, hive-metastore]
+    environment:
+      SERVICE_NAME: hiveserver2
+      SERVICE_OPTS: >-
+        -Dhive.metastore.uris=thrift://hive-metastore:9083
+        -Dfs.defaultFS=hdfs://hadoop:8020
+    ports:
+      - "10000:10000"  # HiveServer2 thrift（Hue 连这个）
+      - "10002:10002"  # HiveServer2 Web UI
+    volumes:
+      - ./hive/lib/mysql-connector-j-8.0.33.jar:/opt/hive/lib/mysql-connector-j-8.0.33.jar:ro
+    networks: [hadoop-net]
+    restart: unless-stopped
+
 networks:
   hadoop-net:
     name: hadoop-net
