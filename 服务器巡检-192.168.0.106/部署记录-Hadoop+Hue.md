@@ -1,4 +1,4 @@
-# 部署记录：Hadoop 3.3.6 + Hue（全 Docker）
+# 部署记录：Hadoop 3.3.6 + Hue + Hive（全 Docker）
 
 > 部署日期：2026-10-06 · 机器：192.168.0.106 · 方案：B（全 Docker + 宿主机别名）
 > 关联：[[巡检报告]] · 配置备份在本 vault `服务器巡检-192.168.0.106/deploy/hadoop-docker/`
@@ -9,11 +9,14 @@
 
 ```text
 docker network: hadoop-net (bridge)
-├── hadoop 容器  apache/hadoop:3.3.6（镜像自带 JDK 8，符合 3.3.6 要求）
+├── hadoop   容器  apache/hadoop:3.3.6（自带 JDK 8，符合 3.3.6 要求）
 │     NameNode + DataNode + ResourceManager + NodeManager + JobHistoryServer
 │     单容器伪分布式，自定义 /opt/startup.sh 拉起全部进程
-└── hue 容器     gethue/hue:4.11.0（Web 图形界面）
-      经 z-hue-overrides.ini 连接 HDFS(WebHDFS)/YARN/JobHistory
+├── hue      容器  gethue/hue:4.11.0（Web 图形界面）
+│     经 z-hue-overrides.ini 连接 HDFS(WebHDFS)/YARN/JobHistory/HiveServer2
+├── hive-metastore 容器  apache/hive:4.0.0  → metastore 库在 mysql 容器里（MySQL 版）
+├── hive-server    容器  apache/hive:4.0.0  → HiveServer2，Tez 引擎跑在 YARN 上
+└── mysql    容器  （原有 mysql:8.0，docker network connect 接入 hadoop-net）
 ```
 
 **宿主机端口分配**（9000 被 Portainer 占用，NN RPC 改用 8020）：
@@ -25,6 +28,9 @@ docker network: hadoop-net (bridge)
 | 8088 | YARN ResourceManager UI |
 | 19888 | MapReduce JobHistory UI |
 | 8888 | **Hue Web UI** |
+| 10000 | HiveServer2 thrift（JDBC/beeline 连接入口） |
+| 10002 | HiveServer2 Web UI |
+| 9083 | Hive metastore thrift |
 
 ## 二、文件布局（全部在 /opt/hadoop-docker/）
 
@@ -36,7 +42,8 @@ docker network: hadoop-net (bridge)
 ├── hadoop/hdfs-site.xml        # replication=1、权限关闭、数据目录
 ├── hadoop/yarn-site.xml        # NM 8G / 4 vcores、日志聚合
 ├── hadoop/mapred-site.xml      # yarn 框架、HADOOP_MAPRED_HOME
-├── hue/hue.ini                 # → 挂载为容器 z-hue-overrides.ini
+├── hue/hue.ini                 # → 挂载为容器 z-hue-overrides.ini（含 [beeswax] Hive 配置）
+├── hive/lib/mysql-connector-j-8.0.33.jar   # metastore 的 MySQL 驱动（阿里云 maven 下载）
 └── data/namenode|datanode/     # HDFS 数据（chown 1000:1000 ← 容器内 hadoop 用户）
 ```
 
