@@ -11,10 +11,14 @@
             "id": "e62a40fc8d263144",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "服务器巡检-192.168.0.103/巡检报告.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "巡检报告"
             }
           }
         ]
