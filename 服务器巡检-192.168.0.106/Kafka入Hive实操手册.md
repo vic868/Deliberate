@@ -166,7 +166,7 @@ for DTDIR in /tmp/split/dt=*; do
     -e "SET hive.merge.tezfiles=true;
         INSERT OVERWRITE TABLE dwd.flink_demo_di PARTITION (dt='${DT}')
         SELECT orderId, userId, product, amount, city, platform,
-               FROM_UNIXTIME(\`timestamp\`/1000) AS event_time
+               FROM_UNIXTIME(CAST(`timestamp`/1000 AS BIGINT)) AS event_time
         FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY orderId ORDER BY \`timestamp\` DESC) AS rn
               FROM ods.flink_demo_di WHERE dt='${DT}') t
         WHERE rn = 1;" 2>/dev/null >/dev/null
@@ -247,6 +247,7 @@ GROUP BY city ORDER BY gmv DESC;
 | `database is locked` | Hue 元数据 sqlite 并发 | 已迁 MySQL |
 | 查询报 `Timestamp`/字段 NULL | JSON key 和列名不一致 | JsonSerDe 按名字映射，列名必须等于 key |
 | 对账行数不等 | 有重复 orderId | 正常，DWD 去重后看 DWD 数 |
+| 对账/转换报 `from_unixtime takes only int/long types. Got DOUBLE` | Hive 除法 `/1000` 产生 DOUBLE，Hive 4 的 from_unixtime 不收 DOUBLE | `CAST(\`timestamp\`/1000 AS BIGINT)` 再传入；**别把 beeline 的 stderr 全部 /dev/null**，至少打到日志文件 |
 | 容器内 9092 超时 | 9092 是 EXTERNAL listener | 容器内操作一律 29092 |
 
 ---
