@@ -248,6 +248,7 @@ GROUP BY city ORDER BY gmv DESC;
 | 查询报 `Timestamp`/字段 NULL | JSON key 和列名不一致 | JsonSerDe 按名字映射，列名必须等于 key |
 | 对账行数不等 | 有重复 orderId | 正常，DWD 去重后看 DWD 数 |
 | 对账/转换报 `from_unixtime takes only int/long types. Got DOUBLE` | Hive 除法 `/1000` 产生 DOUBLE，Hive 4 的 from_unixtime 不收 DOUBLE | `CAST(\`timestamp\`/1000 AS BIGINT)` 再传入；**别把 beeline 的 stderr 全部 /dev/null**，至少打到日志文件 |
+| SUM(amount) 出 `511058.11999999994` 多位小数 | DOUBLE 是二进制浮点，0.2 无法精确表示，单条被显示舍入掩盖，SUM 累积放大 | 展示层 `ROUND(SUM(amount),2)`；治本：金额列用 **DECIMAL(12,2)**（DWD 建表规范），ODS 可保持原样 |
 | 容器内 9092 超时 | 9092 是 EXTERNAL listener | 容器内操作一律 29092 |
 
 ---
