@@ -239,7 +239,9 @@ GROUP BY city ORDER BY gmv DESC;
 |---|---|---|
 | `sudo: cannot execute xxx.sh: Permission denied` | 新建脚本默认 `644` 没有 **x 执行位**；而且脚本是给解释器读的文本，**有 x 没 r 也一样报错**（exec 需要 r+x） | `chmod +x 脚本`。另外 root 下 `sudo` 多余；`VAR=1 sudo cmd` 会被 sudo 的 `env_reset` 把变量丢掉——要传环境变量用 `sudo VAR=1 cmd` 或干脆不用 sudo |
 | 建外表报 `file:/xxx is not a directory or unable to create one` | LOCATION 被解析到**容器本地文件系统**——compose 里的 `-Dfs.defaultFS` 对 DDL 不生效，且 HDFS 目录没建 | 已修：挂载 `core-site.xml` 进 hive 容器（compose 已加）+ 手册第 3 步先 `hdfs dfs -mkdir`。**建外部表前目录必须存在** |
-| 首次跑没有历史数据 | consumer group 默认从 latest 开始 | 第一次带 `BACKFILL=1` |
+| 首次跑没有历史数据（0 条） | group 默认从 latest 开始；且一旦 group 有了已提交位点，`--from-beginning` 就被忽略——首次不带 BACKFILL 的运行会把位点提交到末尾，"毒化"该组 | 重置位点（组无活跃成员时）：`kafka-consumer-groups.sh --reset-offsets --to-earliest --execute --group hive_loader --topic flink-demo`，然后再 `BACKFILL=1` 重跑 |
+| `TimeoutException ... terminating consumer process` | `--timeout-ms` 空闲超时的正常退出方式 | 不是故障，脚本就是靠它结束的 |
+| consumer-groups 显示 LAG=0 但 Hive 没数据 | 位点≠已入仓：LAG 只说明 Kafka 消费完了，加载/转换可能还没跑 | 看 staging 目录和 dwd 行数对账 |
 | `InaccessibleObjectException`（本地跑 Flink 1.14 时） | JDK17 模块封装 | 用 `start.sh`（15 个 add-opens 已配全） |
 | Hue 连 Hive 报 sockaddr | 主机名解析问题 | 服务名/别名一致（已修） |
 | `database is locked` | Hue 元数据 sqlite 并发 | 已迁 MySQL |
