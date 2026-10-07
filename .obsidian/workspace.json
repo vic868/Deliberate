@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "服务器巡检-192.168.0.106/巡检报告.md",
+                "file": "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "巡检报告"
+              "title": "Kafka入Hive实操手册"
             }
           }
         ]
@@ -256,6 +256,7 @@
   },
   "active": "46849d2238604982",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.106/巡检报告.md",
     "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
     "服务器巡检-192.168.0.106/Kafka消息入Hive方案.md",
     "服务器巡检-192.168.0.106/Hive数据加载方案.md",
@@ -288,7 +289,6 @@
     "Pasted Image 20261006161751_533.png",
     "架构/微博整体架构.excalidraw.md",
     "8-spring/spring-logback/未命名.canvas",
-    "服务器巡检-192.168.0.106/巡检报告.md",
     "服务器巡检-192.168.0.103/修复清单.md",
     "8-spring/spring.excalidraw.md",
     "4-db/MYSQL.excalidraw.md",

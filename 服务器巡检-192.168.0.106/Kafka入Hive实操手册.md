@@ -249,6 +249,7 @@ GROUP BY city ORDER BY gmv DESC;
 | 对账行数不等 | 有重复 orderId | 正常，DWD 去重后看 DWD 数 |
 | 对账/转换报 `from_unixtime takes only int/long types. Got DOUBLE` | Hive 除法 `/1000` 产生 DOUBLE，Hive 4 的 from_unixtime 不收 DOUBLE | `CAST(\`timestamp\`/1000 AS BIGINT)` 再传入；**别把 beeline 的 stderr 全部 /dev/null**，至少打到日志文件 |
 | SUM(amount) 出 `511058.11999999994` 多位小数 | DOUBLE 是二进制浮点，0.2 无法精确表示，单条被显示舍入掩盖，SUM 累积放大 | 展示层 `ROUND(SUM(amount),2)`；治本：金额列用 **DECIMAL(12,2)**（DWD 建表规范），ODS 可保持原样 |
+| Dinky 提交报 `CatalogStoreHolder cannot be null` | Dinky 1.2.4 的 1.14 构建内嵌执行器 + Flink 1.20 类 → API 断层（1.19+ 要求必填 CatalogStoreHolder） | 首选 sql-client 直跑（版本一致）；长期：换 `dinky-release-1.20-1.2.4` 构建（官方有）或升级 1.2.5 |
 | 容器内 9092 超时 | 9092 是 EXTERNAL listener | 容器内操作一律 29092 |
 
 ---
@@ -256,6 +257,9 @@ GROUP BY city ORDER BY gmv DESC;
 ## 第 6 步（进阶）：路径 B —— Flink 直写 HDFS
 
 跑通路径 A 后再玩。要做的事：
+
+> [!danger] Dinky 1.2.4（1.14 构建）驱动 Flink 1.20 会 NPE（实测）
+> 在 Dinky 里提交 FlinkSQL 报 `CatalogStoreHolder cannot be null`——Dinky Pod 内嵌 Flink 1.14 变体（`extends/flink1.14`），其执行器构建 CatalogManager 时不设置 1.19+ 新增的必填项 CatalogStoreHolder。**别用 Dinky 的 Local 模式跑这个任务**（本机实测 NPE），用下面 sql-client 直跑（版本零错配）；要继续用 Dinky 就换 `dinky-release-1.20-1.2.4`（官方有 1.20 构建）重建镜像，或升级 1.2.5。
 
 1. **补 Hadoop 依赖**：`flink-shaded-hadoop-2-uber-2.8.3-10.0.jar` 已在宿主机 `/opt/flink/usrlib/`，通过 usrlib 中转法进 lib 并重启的**完整已验证步骤**见 [[Flink-on-K8s-vs-YARN]] 的"实操记录"一节（JM/TM 都要生效，重启会杀 session 上已有作业）
 2. **Flink SQL**（Dinky http://192.168.0.106:30888 或 `kubectl exec ... sql-client.sh`）：
