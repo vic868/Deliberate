@@ -51,6 +51,7 @@ Kafka→Flink 落盘 ─┘        ↓                            ↓
 │   └─ 大表/定时   → 部署 DataX（json 配置，mysql→hdfs 直写）
 ├─ Kafka 流
 │   └─ Flink FileSink 按 dt 滚动写 staging → 同文件路径（分区注册脚本共用）
+│      ★ 完整落地版见 [[Kafka消息入Hive方案]]（建库建表 SQL、Flink 作业全文、验证流程）
 └─ 几行造数
     └─ Hue 里 INSERT VALUES（永远不用于批量）
 ```
