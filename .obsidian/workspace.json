@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
+                "file": "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Kafka入Hive实操手册"
+              "title": "部署记录-Hadoop+Hue"
             }
           }
         ]
@@ -256,12 +256,12 @@
   },
   "active": "46849d2238604982",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.106/Hive数据加载方案.md",
+    "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive/conf/core-site.xml",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive/conf",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive",
     "服务器巡检-192.168.0.106/Kafka消息入Hive方案.md",
-    "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
-    "服务器巡检-192.168.0.106/Hive数据加载方案.md",
     "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
     "服务器巡检-192.168.0.103/巡检报告.md",
     "8-spring/spring-logback/LOGBACK_SETUP.md",
@@ -276,7 +276,6 @@
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hadoop/yarn-site.xml",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hadoop/hdfs-site.xml",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hadoop/core-site.xml",
-    "服务器巡检-192.168.0.106/deploy/hadoop-docker/hadoop",
     "大数据学习规划/BigData.excalidraw.md",
     "大数据学习规划/05-求职与面试.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
