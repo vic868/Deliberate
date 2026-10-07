@@ -256,6 +256,7 @@
   },
   "active": "46849d2238604982",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.106/deploy/hadoop-docker/flink-client-hdfs-site.xml",
     "服务器巡检-192.168.0.106/Flink-on-K8s-vs-YARN.md",
     "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
     "服务器巡检-192.168.0.106/巡检报告.md",
@@ -296,7 +297,6 @@
     "AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "6-ai/2.2-高可用的服务架构/AI 架构.excalidraw.md",
     "AI 学习规划/实战项目.md",
-    "AI 学习规划/README.md",
     "Pasted Image 20260928182321_802.png",
     "Pasted Image 20260927115138_252.png",
     "未命名.canvas",

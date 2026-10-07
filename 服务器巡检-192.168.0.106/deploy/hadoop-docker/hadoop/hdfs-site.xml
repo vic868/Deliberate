@@ -2,6 +2,8 @@
 <configuration>
   <!-- 单机伪分布式：副本数 1 -->
   <property><name>dfs.replication</name><value>1</value></property>
+  <!-- 容器化关键：DN 对外宣告宿主机地址，否则注册的是 docker 内网 IP，外部客户端不可路由 -->
+  <property><name>dfs.datanode.hostname</name><value>192.168.0.106</value></property>
   <property><name>dfs.namenode.name.dir</name><value>/hadoop/dfs/name</value></property>
   <property><name>dfs.datanode.data.dir</name><value>/hadoop/dfs/data</value></property>
   <!-- 学习环境关闭 HDFS 权限校验，省去 permission hell -->

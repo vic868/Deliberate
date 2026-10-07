@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 放入 Flink Pod classpath（usrlib → lib），让客户端按副本=1 写、并使用 DN 宣告的主机名 -->
+<configuration>
+  <property><name>dfs.replication</name><value>1</value></property>
+  <property><name>dfs.client.use.datanode.hostname</name><value>true</value></property>
+</configuration>
