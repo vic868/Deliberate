@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "服务器巡检-192.168.0.106/Hive数据加载方案.md",
+                "file": "服务器巡检-192.168.0.106/Kafka消息入Hive方案.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Hive数据加载方案"
+              "title": "Kafka消息入Hive方案"
             }
           }
         ]
@@ -256,9 +256,9 @@
   },
   "active": "46849d2238604982",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.106/Hive数据加载方案.md",
     "服务器巡检-192.168.0.106/Kafka消息入Hive方案.md",
     "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
-    "服务器巡检-192.168.0.106/Hive数据加载方案.md",
     "服务器巡检-192.168.0.103/巡检报告.md",
     "8-spring/spring-logback/LOGBACK_SETUP.md",
     "大数据学习规划/每日进度.md",
