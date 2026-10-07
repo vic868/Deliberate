@@ -180,6 +180,15 @@ echo "对账: $(docker exec -i hive-server beeline -u 'jdbc:hive2://localhost:10
 
 cron 定时（学习期可先手动跑）：
 
+```shell
+crontab -e  #编辑，保存后直接生效
+
+crontab -l #查看
+```
+
+
+```
+
 ```cron
 20 * * * * /opt/hadoop-docker/scripts/load_kafka.sh >> /var/log/load_kafka.log 2>&1
 ```
