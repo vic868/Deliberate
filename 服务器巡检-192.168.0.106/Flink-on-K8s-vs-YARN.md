@@ -127,6 +127,11 @@ hdfs dfs -ls /data/staging/flink-demo      # 出现新文件即成功
 > [!warning] 两个注意点
 > ① `cp` 只在**容器启动时**执行一次——往 usrlib 加新 jar 后必须重启 Deployment 才生效，重启会杀 session 上所有作业（先 savepoint）
 > ② flink-shaded-hadoop-uber（Hadoop 2.8.3 客户端）连 Hadoop 3.3.6 服务端协议兼容；三方依赖（guava 等）已被 relocate，与 connector 的冲突概率低
+> ② flink-shaded-hadoop-uber（Hadoop 2.8.3 客户端）连 Hadoop 3.3.6 服务端协议兼容；三方依赖（guava 等）已被 relocate，与 connector 的冲突概率低
+
+> [!danger] 实测第 2 事故：k3s Pod 写 HDFS 报 `could only be written to 0 of the 1 minReplication nodes. ... 1 node(s) are excluded`
+> 原理：写 HDFS 时客户端要**直连 DataNode**（NN 回答"写到 hadoop:9866"）。两个断点：k3s Pod 的 DNS 解析不了 `hadoop`（docker 网络别名）；hadoop 容器没发布 DN 的数据端口 9866。路径 A 没踩这坑，是因为 `hdfs dfs` 在 hadoop 容器**内部**执行。
+> **修复（2026-10-07 已验证）**：① compose 的 hadoop 服务补发布 `9866:9866`（+9864）；② 两个 flink Deployment 加 `hostAliases: hadoop → 192.168.0.106`；③ `docker compose up -d hadoop` + flink 两 Deployment `rollout restart`。失败写入留下的 0 字节 `.inprogress` 孤儿文件用 `hdfs dfs -rm` 清理。
 
 ### 路线 2：体验 Flink on YARN（你的 YARN 是现成的）
 
