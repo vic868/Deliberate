@@ -140,6 +140,11 @@ hdfs dfs -ls /data/staging/flink-demo      # 出现新文件即成功
 > 原理：写 HDFS 时客户端要**直连 DataNode**（NN 回答"写到 hadoop:9866"）。两个断点：k3s Pod 的 DNS 解析不了 `hadoop`（docker 网络别名）；hadoop 容器没发布 DN 的数据端口 9866。路径 A 没踩这坑，是因为 `hdfs dfs` 在 hadoop 容器**内部**执行。
 > **修复（2026-10-07 已验证）**：① compose 的 hadoop 服务补发布 `9866:9866`（+9864）；② 两个 flink Deployment 加 `hostAliases: hadoop → 192.168.0.106`；③ `docker compose up -d hadoop`；④ **`kubectl apply -f` 应用 yaml**（⚠️ 我第一次只 `rollout restart`——Pod 按集群旧 spec 重建，hostAliases 根本没生效，白修一轮；apply 才会把改动推进集群并自动滚动重建）。失败写入留下的 0 字节 `.inprogress` 孤儿文件用 `hdfs dfs -rm` 清理。最终验证：`kubectl exec` 进 Pod 用 `/dev/tcp/hadoop/9866` 测连通。
 
+> [!danger] 实测第 3 事故：host 网络迁移后，容器/Pod 连不上 NN（`Retrying connect to server: hadoop/192.168.0.106:8020`）
+> hadoop 改 host 网络后，访问路径从"容器→docker 网络"变成"容器/Pod→宿主机 IP"，**这会经过宿主机防火墙的 INPUT 链**——而 UFW 是 active + 默认 DROP，8020/9866/9870 没有放行规则（宿主机本机测试能通是因为 conntrack ESTABLISHED 捷径，容器/Pod 的新连接不行）。
+> **修复**：`ufw allow from 172.16.0.0/12 to any port 8020,9866,9870 proto tcp` + `ufw allow from 10.42.0.0/16 to any port 8020,9866,9870 proto tcp`（docker 网段 + k3s Pod 网段）。
+> **方法论**：换网络模式 = 换防火墙路径，迁移后必须重新验证每一跳的连通性（本机/容器/Pod 三个视角）。
+
 ### 路线 2：体验 Flink on YARN（你的 YARN 是现成的）
 
 ```bash
