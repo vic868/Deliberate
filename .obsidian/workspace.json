@@ -11,12 +11,14 @@
             "id": "46849d2238604982",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/1-kafka.excalidraw.md"
+                "file": "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "1-kafka.excalidraw"
+              "icon": "lucide-file",
+              "title": "Kafka入Hive实操手册"
             }
           }
         ]
@@ -254,6 +256,7 @@
   },
   "active": "46849d2238604982",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/1-kafka.excalidraw.md",
     "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
     "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
     "服务器巡检-192.168.0.106/Hive数据加载方案.md",
