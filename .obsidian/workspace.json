@@ -256,6 +256,7 @@
   },
   "active": "46849d2238604982",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.106/Dinky修复方案.md",
     "5-bigdata/dsh-latest-macos-arm64.dmg",
     "5-bigdata/dsh-latest-macos-arm64.dmg.crdownload",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/flink-client-hdfs-site.xml",
@@ -279,7 +280,6 @@
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hue/hue.ini",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hue",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/startup.sh",
-    "服务器巡检-192.168.0.106/deploy/hadoop-docker/hadoop/mapred-site.xml",
     "大数据学习规划/BigData.excalidraw.md",
     "大数据学习规划/05-求职与面试.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
