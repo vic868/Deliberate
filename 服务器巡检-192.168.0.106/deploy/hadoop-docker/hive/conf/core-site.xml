@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- hive-server / hive-metastore 容器共用，挂载到 /opt/hive/conf/core-site.xml -->
+<configuration>
+  <property><name>fs.defaultFS</name><value>hdfs://hadoop:8020</value></property>
+  <property><name>hadoop.tmp.dir</name><value>/tmp/hadoop-hive</value></property>
+</configuration>

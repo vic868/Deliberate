@@ -61,6 +61,7 @@ services:
       - "9083:9083"    # metastore thrift
     volumes:
       - ./hive/lib/mysql-connector-j-8.0.33.jar:/opt/hive/lib/mysql-connector-j-8.0.33.jar:ro
+      - ./hive/conf/core-site.xml:/opt/hive/conf/core-site.xml:ro
     networks: [hadoop-net]
     restart: unless-stopped
 
@@ -78,6 +79,7 @@ services:
       - "10002:10002"  # HiveServer2 Web UI
     volumes:
       - ./hive/lib/mysql-connector-j-8.0.33.jar:/opt/hive/lib/mysql-connector-j-8.0.33.jar:ro
+      - ./hive/conf/core-site.xml:/opt/hive/conf/core-site.xml:ro
     networks:
       hadoop-net:
         aliases:
