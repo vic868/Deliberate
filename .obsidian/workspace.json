@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
+                "file": "服务器巡检-192.168.0.106/Hive数据加载方案.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "部署记录-Hadoop+Hue"
+              "title": "Hive数据加载方案"
             }
           }
         ]
@@ -254,11 +254,13 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "46849d2238604982",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.103/巡检报告.md",
+    "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
+    "服务器巡检-192.168.0.106/Hive数据加载方案.md",
     "8-spring/spring-logback/LOGBACK_SETUP.md",
     "大数据学习规划/每日进度.md",
-    "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
     "大数据学习规划/02-Flink补课.md",
     "8-spring/spring 版本.smm.md",
     "27张支付架构图，我本来是留着做内训舍不得发的.md",
@@ -283,7 +285,6 @@
     "架构/微博整体架构.excalidraw.md",
     "8-spring/spring-logback/未命名.canvas",
     "服务器巡检-192.168.0.106/巡检报告.md",
-    "服务器巡检-192.168.0.103/巡检报告.md",
     "服务器巡检-192.168.0.103/修复清单.md",
     "8-spring/spring.excalidraw.md",
     "4-db/MYSQL.excalidraw.md",
@@ -296,7 +297,6 @@
     "JavaTutorial/docs/Java/basic/string和包装类.md",
     "JavaTutorial/docs/Java/basic/JavaIO流.md",
     "JavaTutorial/docs/Java/basic/Java中的Class类和Object类.md",
-    "JavaTutorial/docs/Java/basic/Java集合框架梳理.md",
     "Pasted Image 20260928182321_802.png",
     "Pasted Image 20260927115138_252.png",
     "未命名.canvas",
