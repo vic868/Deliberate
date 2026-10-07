@@ -198,7 +198,9 @@ crontab -l #查看
 
 ```bash
 # 首次（补历史 222 万条，约 1-3 分钟）
-BACKFILL=1 sudo /opt/hadoop-docker/scripts/load_kafka.sh
+# 注意：你已是 root，不用 sudo；且 BACKFILL=1 要放在命令前（sudo 默认会重置环境变量）
+chmod +x /opt/hadoop-docker/scripts/load_kafka.sh    # 新建脚本先补执行位
+BACKFILL=1 /opt/hadoop-docker/scripts/load_kafka.sh
 
 # 之后（每小时 cron 自动跑，也可手动）
 /opt/hadoop-docker/scripts/load_kafka.sh
@@ -235,6 +237,7 @@ GROUP BY city ORDER BY gmv DESC;
 
 | 报错/现象 | 为什么 | 怎么办 |
 |---|---|---|
+| `sudo: cannot execute xxx.sh: Permission denied` | 新建脚本默认 `644` 没有 **x 执行位**；而且脚本是给解释器读的文本，**有 x 没 r 也一样报错**（exec 需要 r+x） | `chmod +x 脚本`。另外 root 下 `sudo` 多余；`VAR=1 sudo cmd` 会被 sudo 的 `env_reset` 把变量丢掉——要传环境变量用 `sudo VAR=1 cmd` 或干脆不用 sudo |
 | 建外表报 `file:/xxx is not a directory or unable to create one` | LOCATION 被解析到**容器本地文件系统**——compose 里的 `-Dfs.defaultFS` 对 DDL 不生效，且 HDFS 目录没建 | 已修：挂载 `core-site.xml` 进 hive 容器（compose 已加）+ 手册第 3 步先 `hdfs dfs -mkdir`。**建外部表前目录必须存在** |
 | 首次跑没有历史数据 | consumer group 默认从 latest 开始 | 第一次带 `BACKFILL=1` |
 | `InaccessibleObjectException`（本地跑 Flink 1.14 时） | JDK17 模块封装 | 用 `start.sh`（15 个 add-opens 已配全） |
