@@ -1,203 +1,258 @@
-# Hive 数据加载方案（192.168.0.106）
+# Hive 数据加载生产方案 v2（含事故案例库）
 
-> 编写日期：2026-10-06 · 适用栈：Hadoop 3.3.6 + Hive 4.0.0（Tez）+ Hue · 单节点 HDFS（余 137G）
-> 关联：[[部署记录-Hadoop+Hue]] · [[巡检报告]]
+> 版本：v2.0 · 2026-10-06 · 适用：192.168.0.106（Hadoop 3.3.6 + Hive 4.0.0/Tez + MySQL metastore + Hue）
+> 定位：数据接入 SOP + 故障应对手册 · 关联：[[部署记录-Hadoop+Hue]] · [[巡检报告]]
+> 声明：本方案按生产标准编写，其中"事故案例库"包含本机真实发生过的故障与业界高频事故；第七节列出了学习环境与生产环境的差距清单，每一条都是上生产前必须补的课。
 
 ---
 
-## 一、先回答你的问题：对，但"挂法"有讲究
+## 一、目标与非目标
 
-**"先写 HDFS，再加载进 Hive"就是大数据批量入库的标准姿势**，你的直觉完全正确。但"加载"有三种做法，量级和场景不同，选错会很痛苦：
+**目标**：任何规模的数据从外部进入 Hive，全程可校验、可重跑、可追溯、可告警；单点故障不丢数据；一次故障的修复成本 ≤ 一次重跑成本。
 
-| 做法 | 本质 | 适用量级 | 代价 |
+**非目标（当前环境不承诺）**：高可用（单节点）、多租户隔离、准实时（分钟级）入仓。这些在第七节差距清单中。
+
+**两条铁律**（所有事故的通用解）：
+1. **幂等优先**：任何加载任务，重跑 N 次的结果 == 跑 1 次的结果。做不到幂等的流程，故障恢复就等于赌博。
+2. **先校验后可见**：数据没有过完校验关卡，下游不允许看到它。
+
+---
+
+## 二、总体架构与分层
+
+```text
+外部数据源                    HDFS                                Hive
+──────────                ─────────────────────────────────    ─────────────────
+MySQL 导出 CSV   ─┐        /data/staging/<表>/dt=日期/   ← 原始暂存（可重放）
+日志/文件        ─┼─put──→        │ 原子 rename 归位           │
+Kafka→Flink 落盘 ─┘        ↓                            ↓
+                       .tmp → _SUCCESS 标记      ods 外部表（TextFile，原样保存）
+                                                    │ INSERT OVERWRITE（Tez，清洗+转换）
+                                                    ↓
+                                           dwd 内部表（ORC+Snappy，分析用）
+```
+
+- **staging 是原始凭证**：出任何问题都能从这里重放，因此永远不清空、目录按 dt 组织
+- **ODS 外表**：`EXTERNAL`，删表不删数据；列类型宽泛（STRING 优先），忠实保存原貌
+- **DWD 内表**：ORC 列存 + 类型收紧 + 清洗逻辑，是给下游用的"合格品"
+- 每一层之间以**分区**为单位流转，全链路 T+1 幂等
+
+---
+
+## 三、加载方式选型（决策树）
+
+```text
+数据从哪来？
+├─ 文件/日志（宿主机或上游推送）
+│   └─ 量大/要重放 → put 到 staging + 外表 ADD PARTITION   ★主路径
+│   └─ 一次性小文件 → LOAD DATA INPATH（注意：是移动，不是复制）
+├─ MySQL 业务库
+│   └─ 小表/一次性 → SELECT INTO OUTFILE → CSV → 走文件路径
+│   └─ 大表/定时   → 部署 DataX（json 配置，mysql→hdfs 直写）
+├─ Kafka 流
+│   └─ Flink FileSink 按 dt 滚动写 staging → 同文件路径（分区注册脚本共用）
+└─ 几行造数
+    └─ Hue 里 INSERT VALUES（永远不用于批量）
+```
+
+| 方式 | 走计算引擎 | 量级 | 幂等性 | 一句话 |
+|---|---|---|---|---|
+| put + ADD PARTITION | ❌ | 任意 | 目录可覆盖 | **首选**，纯文件操作 |
+| LOAD DATA INPATH | ❌ | 任意 | 文件被移走，重跑需重新 put | 一次性小文件 |
+| INSERT SELECT | ✅ Tez | 中大 | OVERWRITE 分区即幂等 | 用于**转换**，不是搬运 |
+| INSERT VALUES | ✅ | <100 行 | 追加，不幂等 | 只造数 |
+
+---
+
+## 四、标准接入流程（七道关卡）
+
+每个新表/新数据源上线，按此流程走一遍；日常加载是流程 3~7 的循环。
+
+| # | 关卡 | 通过标准 | 不通过的后果 |
 |---|---|---|---|
-| ① `INSERT INTO ... VALUES` | 逐条走 SQL 引擎 | 造数、百行以内 | ❌ 大数据量下极慢且产生垃圾小文件 |
-| ② `INSERT INTO ... SELECT` | Tez 计算作业搬运/加工 | 中大批量 | 起作业有开销，但能顺带转换格式 |
-| ③ **数据直接落 HDFS → 挂给表** | 纯文件操作，**不消耗计算资源** | **任意量级（推荐主路径）** | 需要自己管理目录/分区元数据 |
-
-> [!important] 核心原则
-> **数据搬运用文件操作（hdfs dfs），格式加工才用计算引擎（INSERT SELECT）。** 能不进 SQL 引擎的纯搬运就不要进。
-
----
-
-## 二、推荐三层目录/表设计
-
-```text
-HDFS:
-/data/staging/<表名>/dt=<日期>/          ← 原始文件暂存区（CSV/文本/JSON，宿主机 put 上来的）
-/user/hive/warehouse/ods.db/<表>/dt=…/   ← ODS 层：外部表，指到 staging 数据
-/user/hive/warehouse/dwd.db/<表>/dt=…/   ← DWD 层：ORC 内表（清洗+格式转换后），真正用于分析查询
-```
-
-为什么分两层：
-- **ODS 外表**（`EXTERNAL` + TextFile）：原始数据原样进 Hive，坏了随时可重灌，删表不删数据
-- **DWD 内表**（`STORED AS ORC` + Snappy）：列存压缩后查询快、省磁盘；一次性 `INSERT SELECT` 生成
-- 以后学分区裁剪、数据倾斜、compaction 都在这套结构上做，和生产数仓习惯一致
+| 1 | **登记**：数据源、负责人、时效要求（T+1?）、体量预估、保留期 | 表登记存在 | 无主数据不许接入 |
+| 2 | **建模**：ODS 外表 + DWD 内表 DDL 评审（分区键、类型、分隔符、编码） | DDL 入 git | 类型纠偏成本随数据量指数增长 |
+| 3 | **上传**：文件 → `.tmp` → md5 记录 → 原子 rename 进分区目录 | `_SUCCESS` 就绪标记存在 | 下游读到半截文件 |
+| 4 | **挂载**：`ADD PARTITION`（或 MSCK） | `SHOW PARTITIONS` 可见 | 数据在 HDFS 但 Hive 查无此人 |
+| 5 | **对账**：文件行数 == `COUNT(*)`，主键无重复，关键列空值率/值域检查 | 校验 SQL 全绿 | 脏数据流向下游 |
+| 6 | **转换**：`INSERT OVERWRITE` 到 DWD（ORC） | 转换后行数对账一致 | — |
+| 7 | **发布**：校验通过后分区才算"就绪"（DWD 分区存在即发布） | — | — |
 
 ---
 
-## 三、四种加载场景落地
-
-### 场景 A：宿主机/外部文件（CSV、日志）批量入库 —— 主路径
-
-```bash
-# ① 宿主机文件推到 HDFS staging（按日期分区）
-hdfs dfs -mkdir -p /data/staging/t1/dt=2026-10-06
-hdfs dfs -put /path/on/host/data.csv /data/staging/t1/dt=2026-10-06/
-
-# ② 挂分区（外表已建好时，一行搞定；纯文件移动，秒级）
-beeline -u "jdbc:hive2://localhost:10000" -n hive \
-  -e "ALTER TABLE ods.t1 ADD IF NOT EXISTS PARTITION (dt='2026-10-06') LOCATION '/data/staging/t1/dt=2026-10-06';"
-```
-
-ODS 外表建表模板：
-
-```sql
-CREATE EXTERNAL TABLE IF NOT EXISTS ods.t1 (
-  id INT, name STRING
-)
-PARTITIONED BY (dt STRING)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-LOCATION '/data/staging/t1';
-```
-
-> [!warning] 两个经典坑
-> - `LOAD DATA LOCAL INPATH` 的 **LOCAL 指 beeline 客户端所在的机器**——你用别名在宿主机执行时，"本地"其实是 hive-server **容器内部**。宿主机文件要么先 `hdfs dfs -put`，要么先 `docker cp` 进容器。**统一用 put 到 HDFS 的路径，别用 LOCAL。**
-> - `LOAD DATA INPATH` 是**移动**（原 staging 文件会消失），`ADD PARTITION` 不动文件。要保留原始文件做重放，用 **ADD PARTITION**。
-
-### 场景 B：ODS → DWD（格式转换 ORC）
-
-```sql
--- 每天分区加载后跑一次（可放同一脚本）
-INSERT OVERWRITE TABLE dwd.t1 PARTITION (dt='2026-10-06')
-SELECT id, name FROM ods.t1 WHERE dt='2026-10-06';
-```
-
-DWD 内表模板：
-
-```sql
-CREATE TABLE IF NOT EXISTS dwd.t1 (
-  id INT, name STRING
-)
-PARTITIONED BY (dt STRING)
-STORED AS ORC
-LOCATION '/user/hive/warehouse/dwd.db/t1'
-TBLPROPERTIES ('orc.compress'='SNAPPY');
-```
-
-### 场景 C：MySQL 业务数据进来（无 Sqoop 的轻量做法）
-
-这台机器没装 Sqoop/DataX（Sqoop 对 Hadoop3 支持也老了），轻量路径：
-
-```bash
-# mysql 容器内导出 CSV（secure_file_priv 目录）
-docker exec mysql sh -c "mysql -uroot -p\$MYSQL_ROOT_PASSWORD -e \"
-  SELECT id,name FROM mydb.t1 INTO OUTFILE '/var/lib/mysql-files/t1.csv'
-  FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';\""
-docker cp mysql:/var/lib/mysql-files/t1.csv /tmp/t1.csv
-# 之后走场景 A
-```
-
-量大/要定时同步时，值得装一个 **DataX**（单机 json 配置，比 Sqoop 轻）——学习成本一次性。
-
-### 场景 D：Kafka 流式数据持续落 Hive
-
-机器上 Kafka 和 Flink（k3s）都是现成的，实时链路：
-
-```text
-Kafka → Flink FileSink（按 dt=yyyy-MM-dd 滚动写 HDFS, Text/ORC）→ 定时脚本 ADD PARTITION
-```
-
-Flink 侧用 `FileSink` 的 `OnCheckpointRollingPolicy`（或桶策略按日期分桶），落盘目录对齐 `/data/staging/<表>/dt=…`，分区注册复用场景 A 的脚本。**进阶**（暂不展开）：Hudi/Iceberg 可以免去手工 ADD PARTITION，学完基础再来。
-
-### 场景 E：小批量即席
-
-几行造数/临时验证：直接 Hue 里 `INSERT INTO ... VALUES`，无所谓。**这条永远不要用于批量。**
-
----
-
-## 四、定时加载脚本模板（可直接抄）
-
-宿主机 `/opt/hadoop-docker/scripts/load_t1.sh`：
+## 五、生产级加载脚本（模板）
 
 ```bash
 #!/bin/bash
-set -euo pipefail
-DT=$(date +%F)
-CSV="/data/export/t1-${DT}.csv"                       # 当天待入库文件（上游生成）
-STAGE="/data/staging/t1/dt=${DT}"
+# load_t1.sh — T+1 加载 ods.t1 → dwd.t1
+# 用法: load_t1.sh [日期，默认昨天]; 可重复执行（幂等）
+set -uo pipefail
+export TZ=Asia/Shanghai
 
-# 1. 上传 staging（覆盖重跑幂等）
-hdfs dfs -mkdir -p "$STAGE"
-hdfs dfs -put -f "$CSV" "$STAGE/"
+DT=${1:-$(date -d yesterday +%F)}          # 数据归属日期（T-1），与调度周期解耦
+TABLE=t1
+HDFS_STAGE=/data/staging/${TABLE}/dt=${DT}
+LOCAL_FILE=/data/export/${TABLE}/${TABLE}-${DT}.csv
+LOCK=/tmp/load_${TABLE}.lock
+LOG=/var/log/hive_load/${TABLE}/load_${DT}.log
+mkdir -p /var/log/hive_load/${TABLE}
 
-# 2. 挂分区 + 转 ORC（两条 beeline）
-beeline -u "jdbc:hive2://localhost:10000" -n hive --silent=true -f /opt/hadoop-docker/scripts/load_t1.sql \
-  --hivevar DT="$DT"
+exec 9>"$LOCK"
+flock -n 9 || { echo "$(date '+%F %T') 已有实例在跑，退出" >> "$LOG"; exit 0; }   # 防双跑
 
-# 3. 校验：行数比对（文件行数 vs 表行数）
-LINES=$(( $(wc -l < "$CSV") ))
-CNT=$(beeline -u "jdbc:hive2://localhost:10000" -n hive --silent=true \
-  --outputformat=tsv2 -e "SELECT COUNT(*) FROM dwd.t1 WHERE dt='${DT}';" 2>/dev/null | tail -1)
-echo "文件行数=$LINES 表行数=$CNT"
-[ "$LINES" = "$CNT" ] || { echo "行数不一致，人工检查！"; exit 1; }
+log(){ echo "$(date '+%F %T') [$TABLE/$DT] $*" | tee -a "$LOG"; }
+alert(){ log "ALERT: $*"; exit 2; }        # 生产中此处接钉钉/企业微信 webhook
 
-# 4. 清理 CSV（staging 是 ODS 数据源，保留）
-rm -f "$CSV"
+BL="docker exec -i hive-server beeline -u jdbc:hive2://localhost:10000 -n hive --silent=true"
+hsql(){ $BL -e "$1" 2>>"$LOG" >/dev/null || alert "HiveSQL 失败: $1"; }
+cnt(){ $BL --outputformat=tsv2 -e "$1" 2>>"$LOG" | tail -1; }
+
+log "=== 开始 ==="
+
+# G1 上游就绪
+[ -s "$LOCAL_FILE" ] || alert "源文件不存在或为空: $LOCAL_FILE"
+LINES=$(wc -l < "$LOCAL_FILE"); [ "$LINES" -gt 0 ] || alert "源文件 0 行"
+MD5_NOW=$(md5 -q "$LOCAL_FILE" 2>/dev/null || md5sum "$LOCAL_FILE" | cut -d' ' -f1)
+
+# G2 上传（tmp → 原子 rename，避免下游读到半截分区）
+hdfs dfs -mkdir -p "${HDFS_STAGE}.tmp"
+hdfs dfs -put -f "$LOCAL_FILE" "${HDFS_STAGE}.tmp/data.csv"
+hdfs dfs -rm -r -f "$HDFS_STAGE" >/dev/null
+hdfs dfs -mv "${HDFS_STAGE}.tmp" "$HDFS_STAGE"        # HDFS rename 原子
+touch /tmp/_s && hdfs dfs -put -f /tmp/_s "$HDFS_STAGE/_SUCCESS" && rm /tmp/_s
+
+# G3 挂载
+hsql "ALTER TABLE ods.${TABLE} ADD IF NOT EXISTS PARTITION (dt='${DT}') LOCATION '${HDFS_STAGE}';"
+
+# G4 对账
+HIVE_CNT=$(cnt "SELECT COUNT(*) FROM ods.${TABLE} WHERE dt='${DT}';")
+[ "$HIVE_CNT" = "$LINES" ] || alert "对账失败: 文件 $LINES 行, 表 $HIVE_CNT 行"
+DUP=$(cnt "SELECT COUNT(*) FROM (SELECT id FROM ods.${TABLE} WHERE dt='${DT}' GROUP BY id HAVING COUNT(*)>1) t;")
+[ "$DUP" = "0" ] || alert "主键重复 $DUP 组，先清洗再入仓"
+
+# G5 转换（OVERWRITE = 幂等）
+hsql "SET hive.merge.tezfiles=true;
+INSERT OVERWRITE TABLE dwd.${TABLE} PARTITION (dt='${DT}')
+SELECT CAST(id AS INT), name FROM ods.${TABLE} WHERE dt='${DT}';"
+
+# G6 终检
+DWD_CNT=$(cnt "SELECT COUNT(*) FROM dwd.${TABLE} WHERE dt='${DT}';")
+[ "$DWD_CNT" = "$LINES" ] || alert "DWD 对账失败: $LINES vs $DWD_CNT"
+
+log "=== 完成: $LINES 行, md5=${MD5_NOW:0:8} ==="
 ```
 
-`load_t1.sql`：
-
-```sql
-ALTER TABLE ods.t1 ADD IF NOT EXISTS PARTITION (dt='${hivevar:DT}');
-INSERT OVERWRITE TABLE dwd.t1 PARTITION (dt='${hivevar:DT}')
-SELECT id, name FROM ods.t1 WHERE dt='${hivevar:DT}';
-```
-
-cron（宿主机）：
+调度（生产用 Airflow/DolphinScheduler；本机用 cron 过渡）：
 
 ```cron
-0 2 * * * /opt/hadoop-docker/scripts/load_t1.sh >> /var/log/load_t1.log 2>&1
+30 2 * * * /opt/hadoop-docker/scripts/load_t1.sh >> /var/log/hive_load/t1/cron.log 2>&1
 ```
 
-> [!note] 前置：给宿主机加 beeline 别名
-> `alias beeline='docker exec -i hive-server beeline -u jdbc:hive2://localhost:10000 -n hive'`
-> （脚本里用 `docker exec -i` 不加 `-t`，cron 下才能正常执行。要我现在就把它加到 root/vic 的 bashrc 说一声。）
+> [!important] 就绪标记（_SUCCESS）是生产标配
+> 上游把数据**写完之后**才放 `_SUCCESS` 文件，加载脚本见到它才开始——这就是"先校验后可见"的文件版。Flink/上游程序必须遵守这个约定，否则半截数据会被下游消费。
 
 ---
 
-## 五、规范与性能要点
+## 六、故障矩阵（可能会出的问题 · 全表）
 
-1. **分区键用 `dt STRING`（yyyy-MM-dd）**，一天一分区；**不要**用小时级/用户级等高基数分区（单节点会被小文件拖死）
-2. **文件大小控制在 128M~1G**：上游切好再 put；已产生的小文件用 `hive.merge.tezfiles=true`（set 后 INSERT SELECT 自动合并）
-3. **重跑幂等**：加载一律 `INSERT OVERWRITE ... PARTITION(dt=…)`，配合上游 `-put -f`，同一天数据随便重跑
-4. **校验三件套**：行数比对（如上）、`hdfs dfs -count /data/staging/...`、抽样 `SELECT * LIMIT 10` 人工瞄
-5. **staging 保留策略**：ODS 数据是原始凭证，保留；导出的 CSV 在校验通过后删除，别把宿主机磁盘塞满
-6. **HDFS 权限已关**（学习环境），生产化时第一件事是开 `dfs.permissions.enabled=true` + 按目录授权
+按阶段列出，**每一行都来自真实事故**（★ = 本机 2026-10-06 部署当天真实发生）。
+
+### 6.1 上传/落盘阶段
+
+| 故障 | 现象 | 根因 | 预防 | 应急 |
+|---|---|---|---|---|
+| 磁盘写满 | HDFS 节点挂、NN 报错 | 没有水位监控+保留策略 | df 告警（85% 预警/90% 熔断加载） | 删过期分区/CSV，`hdfs dfsadmin -safemode` 等退出 |
+| 半截文件入库 | 下游 COUNT 波动、解析错位 | 网络中断后直接 put 到正式目录 | `.tmp` → 原子 rename + `_SUCCESS` | 重跑该分区 |
+| 并发双跑写同一分区 | 数据重复/文件互踩 | 调度器重复触发 | `flock` 锁 + 幂等 OVERWRITE | 杀一个，重跑分区 |
+| 上游没写完就被加载 | 行数对不上 | 无就绪约定 | `_SUCCESS` 标记门禁 | 等上游补标记后重跑 |
+
+### 6.2 数据本身
+
+| 故障 | 现象 | 根因 | 预防 | 应急 |
+|---|---|---|---|---|
+| 编码乱码 | 中文变 `?`/锟斤拷 | 上游 GBK | 统一 UTF-8，入库前 `file` 检测 | 转码重灌分区 |
+| 分隔符在字段内 | 列错位 | CSV 没加引号转义 | 与上游约定 `\001` 分隔符或 RFC4180 引号 | OpenCSVSERDE 或重新导出 |
+| 空值语义错乱 | `NULL`/`\N`/空串混乱 | 没定义 NULL 表示 | 约定 `\N`；外表 `serialization.null.format='\\N'` | 清洗 SQL 兜底 |
+| schema 变更列错位 | 某天起数据"串列" | 上游加列不通知 | 上游变更必须登记；对账加列数校验 | 按变更日切分区修复 |
+| 时区错位 | dt 边界差 8 小时 | 脚本用 UTC 时间 | `export TZ=Asia/Shanghai` + 明确 T-1 定义 | 重跑正确日期分区 |
+
+### 6.3 计算引擎（Tez/YARN）
+
+| 故障 | 现象 | 根因 | 预防 | 应急 |
+|---|---|---|---|---|
+| Tez AM OOM | 作业重试后失败 | 大表 join/排序内存不足 | YARN 配额内调 `tez.am.resource.memory.mb`；分批 | 缩批次重跑 |
+| 数据倾斜 | 个别 reducer 99% 卡死 | key 分布不均 | 大 key 预检查（`GROUP BY` 取 topN 看 分布） | 加盐/两阶段聚合 |
+| 小文件爆炸 | 查询变慢、metastore 内存涨 | 高频小批量 INSERT | `hive.merge.tezfiles=true`；上游按天合文件 | 定期 INSERT OVERWRITE 重写分区合并 |
+| 作业残留垃圾 | HDFS 冒出大量 `.staging`/tmp 目录 | 作业被 kill | 定期清理脚本 | `hdfs dfs -rm -r` 白名单清理 |
+
+### 6.4 元数据/服务层
+
+| 故障 | 现象 | 根因 | 预防 | 应急 |
+|---|---|---|---|---|
+| ★ Hue `atomic block` 报错 | 所有查询报事务错 | **Hue 自带 sqlite 并发锁库**（error.log 34 次 database is locked） | 元数据库用 MySQL，不用 sqlite | 已迁 MySQL；重跑=重启 Hue |
+| ★ `failed to resolve sockaddr for hive:10000` | Hue 连不上 HS2 | 服务名 DNS 不通（容器名与配置名不一致） | 跨容器用网络别名；**在真实调用方验证连通性** | compose `aliases` 修复 |
+| ★ NN 格式化失败 `Cannot create directory` | HDFS 起不来 | 挂载卷属主与容器运行用户不一致 | 容器挂载卷属主/权限写进部署清单（chown 1000） | chown 后重启 |
+| HS2 会话句柄失效 | `Invalid OperationHandle` | HS2 容器重建后 Hue 持旧句柄 | 发布后让用户刷新页面/重启 Hue | 重启 Hue 清会话 |
+| 忘挂分区 | HDFS 有文件查无数据 | 只 put 没 ADD PARTITION | 流程关卡 4 + 对账兜底 | 补 ADD/MSCK |
+| 内表误 DROP | 数据真没了 | DROP 内表连数据删 | **ODS 一律外部表**；DROP 前确认 | 从 staging 重放 |
+
+### 6.5 调度层
+
+| 故障 | 现象 | 根因 | 预防 | 应急 |
+|---|---|---|---|---|
+| 调度器故障重放 | 同一天任务跑两遍 | 调度器 at-least-once 语义 | 幂等设计（本方案的 OVERWRITE+flock 就是为它） | 无需处理，结果一致 |
+| 上游延迟 | 加载任务空跑/对账失败 | 上游 SLA 与下游启动时间没对齐 | 就绪标记+延迟重试（3 次×10 分钟）再告警 | 手动触发补跑 |
+| 服务重启后任务全挂 | HDFS 处于 safemode | 机器重启 | 重启后先 `hdfs dfsadmin -safemode get` 确认 EXIT 再跑任务 | 等 safemode 退出 |
 
 ---
 
-## 六、这台机器的现实约束
+## 七、学习环境 vs 生产环境差距清单
 
-| 约束 | 影响 | 对策 |
-|---|---|---|
-| 单盘剩余 137G | 原始 CSV + ORC 双份存储 | CSV 校验完就删；ORC 有压缩通常省 3~5 倍 |
-| YARN 只给了 8G / 4 vcores | INSERT SELECT 转换并发有限 | 单次转换数据 ≤ 几十 GB 没问题；别和 ES/Kafka 高峰撞车 |
-| 单节点 = 无真正分布式 | 感受不到数据本地性 | 学习目标聚焦 SQL/分层/分区，集群课题留到多节点 |
+> 本机为学习环境，以下是**上生产前必须补齐**的每一项——也是面试高频考点。
+
+| # | 维度 | 本机现状 | 生产标准 |
+|---|---|---|---|
+| 1 | HDFS | 单节点，副本=1 | NN HA（2×NN+ZKFC/JN），副本=3，机架感知 |
+| 2 | 权限 | `dfs.permissions=false` | 开权限 + Kerberos/Ranger，按库表授权 |
+| 3 | YARN 资源 | 8G/4 vcores | 队列划分、公平/容量调度、用户配额 |
+| 4 | 调度 | cron | Airflow/DolphinScheduler：DAG 依赖、重试、告警、补数 |
+| 5 | 元数据库 | MySQL 单实例 | 主从/MGR + 定期备份 |
+| 6 | 监控 | 无 | Prometheus+Grafana（机器上现成！）接 NN/DN/HS2 JMX：容量、文件数、HS2 活跃会话、作业失败率 |
+| 7 | 数据质量 | 脚本内对账 | 质量平台（规则库、基线比对、阻断下发） |
+| 8 | 压缩/格式 | ORC+Snappy | 同左，另评估 Parquet/合并层 Hudi-Iceberg（免手工 ADD PARTITION） |
+| 9 | 密码管理 | 明文在 compose/脚本 | 配置中心/JCEKS vault |
+| 10 | 多环境 | 一套 | dev/test/prod 三套，配置隔离 |
 
 ---
 
-## 七、速查
+## 八、上线检查清单（Checklist）
+
+- [ ] 表已登记：负责人、SLA、保留期、上游联系人
+- [ ] ODS 为外部表，LOCATION 规范；DWD 为 ORC 内表
+- [ ] 加载脚本带 flock 锁、日志、TMP+rename、`_SUCCESS` 门禁
+- [ ] 对账 SQL（行数/主键/空值率）全部内置在脚本中，失败即告警退出
+- [ ] 重跑演练过：连跑 2 次结果一致（幂等验证）
+- [ ] 故障演练过：源文件缺失/行数不符时，脚本正确 alert 退出
+- [ ] 保留策略配置：CSV 导出 7 天、staging 90 天、DWD 永久（按需）
+- [ ] 磁盘水位告警接入（85% 预警 / 90% 熔断）
+
+---
+
+## 九、速查（高频命令）
 
 ```sql
--- 挂分区
-ALTER TABLE ods.t1 ADD IF NOT EXISTS PARTITION (dt='2026-10-06') LOCATION '/data/staging/t1/dt=2026-10-06';
--- 批量修复所有分区（目录结构对齐后一次全挂；分区多时慢，日常用上面那条）
-MSCK REPAIR TABLE ods.t1;
--- 覆盖重跑某天
-INSERT OVERWRITE TABLE dwd.t1 PARTITION (dt='2026-10-06') SELECT ... ;
--- 查看分区
-SHOW PARTITIONS ods.t1;
--- 删某天重灌
-ALTER TABLE dwd.t1 DROP IF EXISTS PARTITION (dt='2026-10-06');
+SHOW PARTITIONS ods.t1;                                   -- 分区列表
+ALTER TABLE ods.t1 ADD IF NOT EXISTS PARTITION (dt='2026-10-06') LOCATION '...';
+MSCK REPAIR TABLE ods.t1;                                 -- 批量修复（分区多时慢，慎用）
+INSERT OVERWRITE TABLE dwd.t1 PARTITION (dt='2026-10-06') SELECT ...;  -- 幂等重跑
+ALTER TABLE dwd.t1 DROP IF EXISTS PARTITION (dt='2026-10-06');          -- 删分区重灌
+SET hive.mapred.mode=strict;                              -- 强制分区谓词（防全表扫）
+SET hive.merge.tezfiles=true;                             -- 合并小文件
+```
+
+```bash
+hdfs dfs -mkdir -p /data/staging/t1/dt=2026-10-06 && hdfs dfs -put -f x.csv $_/   # 上传
+hdfs dfs -count /data/staging/t1/dt=2026-10-06                                    # 文件数/大小
+hdfs dfsadmin -report | grep -E "Live|Capacity"                                   # 集群健康
+hdfs dfsadmin -safemode get                                                       # 重启后必查
 ```
