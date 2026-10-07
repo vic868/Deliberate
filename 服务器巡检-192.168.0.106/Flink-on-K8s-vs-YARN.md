@@ -83,6 +83,51 @@ hadoop classpath 天然存在               需要自带 hadoop client（lib/usr
 2. lib 只留 hadoop uber jar + kafka connector + mysql connector
 3. 加 jar → `rollout restart` → 作业从 savepoint 恢复（学一下 savepoint 命令）
 
+### 实操记录：usrlib 中转法补 hadoop 依赖（2026-10-07 已验证 ✓）
+
+> 背景：K8s 里 `flink:1.20.0` 官方镜像**不带 hadoop 客户端**，filesystem connector 写 HDFS 会报 `ClassNotFoundException: org.apache.hadoop.fs.FileSystem`。补依赖用的就是你 yaml 里的 usrlib 中转法。
+
+**原理**：你的 `flink-deployment.yaml` 把宿主机 `/opt/flink/usrlib` 挂进 Pod（hostPath），且两个 Deployment 的启动 args 都有这行——
+
+```yaml
+args: ["cp /opt/flink/usrlib/*.jar /opt/flink/lib/ 2>/dev/null;", "exec /docker-entrypoint.sh ..."]
+```
+
+即**容器每次启动时把 usrlib 的所有 jar 拷进 `lib/`**。usrlib=补给站，lib=战场。
+
+| 目录 | 官方语义 | 你的用法 |
+|---|---|---|
+| `lib/` | 集群级依赖：所有作业父 classpath，JM/TM 全加载 | hadoop 这类基础设施 jar 的最终归宿 |
+| `usrlib/` | K8s Application Mode 放"用户作业 jar" | 借道当补给站（cp 进 lib 后生效） |
+
+**操作步骤**：
+
+```bash
+# ① jar 放进宿主机 usrlib
+mv flink-shaded-hadoop-2-uber-2.8.3-10.0.jar /opt/flink/usrlib/
+
+# ② 确认 JM 和 TM 两段 Deployment 的 args 都有 cp 行
+grep -B2 "cp /opt/flink/usrlib" /opt/flink/flink-deployment.yaml
+
+# ③ 修 kubectl：k3s 二进制是多路复用器（按调用名切角色），必须先过 kubectl 子命令
+#    错误示范：k3s -n flink rollout restart ...  → flag provided but not defined: -n
+ln -sf /home/vic/.local/bin/k3s /usr/local/bin/kubectl      # 裸 kubectl 可用
+echo 'alias kubectl="k3s kubectl"' >> /root/.bashrc
+
+# ④ 滚动重启（cp 重新执行；⚠️ session 上所有作业会被杀，之后去 Dinky 重新提交）
+kubectl -n flink rollout restart deploy/flink-jobmanager deploy/flink-taskmanager
+
+# ⑤ 验证 jar 已进 lib
+kubectl -n flink exec deploy/flink-jobmanager -- ls /opt/flink/lib | grep hadoop
+
+# ⑥ 验证 filesystem 写 HDFS（Dinky 或 sql-client 重跑 INSERT 后）
+hdfs dfs -ls /data/staging/flink-demo      # 出现新文件即成功
+```
+
+> [!warning] 两个注意点
+> ① `cp` 只在**容器启动时**执行一次——往 usrlib 加新 jar 后必须重启 Deployment 才生效，重启会杀 session 上所有作业（先 savepoint）
+> ② flink-shaded-hadoop-uber（Hadoop 2.8.3 客户端）连 Hadoop 3.3.6 服务端协议兼容；三方依赖（guava 等）已被 relocate，与 connector 的冲突概率低
+
 ### 路线 2：体验 Flink on YARN（你的 YARN 是现成的）
 
 ```bash
