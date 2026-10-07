@@ -93,6 +93,9 @@ docker compose down / up -d       # 停/起
 > [!warning] 4. Hue 连 Hive 报 `failed to resolve sockaddr for hive:10000`
 > hue.ini 里写的 `hive_server_host = hive`，但 compose 里容器名是 `hive-server`，网络里根本没有叫 `hive` 的主机名（DNS 解析失败）。**解法：给 hive-server 服务加网络别名**——compose 里 `networks.hadoop-net.aliases: [hive]`。注意：容器内 `localhost` 的 beeline 测试验证不到这个问题，跨容器连接必须用别名/服务名测。
 
+> [!note] 6. 刷新 Hue 报 `Solr server could not be contacted properly: localhost:8983 Connection refused`
+> Hue 默认启用的 Search 应用在探测 Solr，而这套栈没部署 Solr。**解法：hue.ini `[desktop]` 段加 `app_blacklist = search,oozie,pig,sqoop`**，把没有服务端支撑的应用禁掉（以后要用了从黑名单移除即可）。
+
 > [!danger] 5. Hue 执行查询报 `An error occurred in the current transaction... atomic block`
 > 根因是 Hue 自带的 **sqlite 元数据库在编辑器并发请求下 `database is locked`**（error.log 里 34 次），事务被打断后 Django 的 `validate_no_broken_transaction` 把后续所有查询拦下。**解法：Hue 元数据库迁到 MySQL**——
 > ① mysql 建 `hue` 库 + `hue` 用户；② compose 里 hue 服务加环境变量 `DESKTOP_DB_CONFIG=django.db.backends.mysql:hue:hue_test:hue:<密码>:mysql:3306`（冒号分隔 7 字段，这是镜像认的官方机制）；③ `hue dumpdata` 备份 sqlite 数据 → 重建容器（启动自动向 mysql 迁移，84 张表）→ `hue loaddata` 恢复。
