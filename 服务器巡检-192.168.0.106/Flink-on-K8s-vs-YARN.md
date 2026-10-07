@@ -117,7 +117,7 @@ docker exec hadoop bash -c "export HADOOP_CLASSPATH=\$(hadoop classpath) && \
 
 ```bash
 # K8s session（你的现状）
-$K -n flink rollout restart deploy/flink-jobmanager deploy/flink-taskmanager   # 加 jar 后重启
+$K kubectl -n flink rollout restart deploy/flink-jobmanager deploy/flink-taskmanager   # 加 jar 后重启
 $K -n flink exec deploy/flink-jobmanager -- flink list                          # 查看作业
 $K -n flink exec deploy/flink-jobmanager -- flink savepoint <jobId> [path]      # 保存点
 
