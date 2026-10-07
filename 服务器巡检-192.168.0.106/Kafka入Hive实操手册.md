@@ -249,7 +249,8 @@ GROUP BY city ORDER BY gmv DESC;
 | 对账行数不等 | 有重复 orderId | 正常，DWD 去重后看 DWD 数 |
 | 对账/转换报 `from_unixtime takes only int/long types. Got DOUBLE` | Hive 除法 `/1000` 产生 DOUBLE，Hive 4 的 from_unixtime 不收 DOUBLE | `CAST(\`timestamp\`/1000 AS BIGINT)` 再传入；**别把 beeline 的 stderr 全部 /dev/null**，至少打到日志文件 |
 | SUM(amount) 出 `511058.11999999994` 多位小数 | DOUBLE 是二进制浮点，0.2 无法精确表示，单条被显示舍入掩盖，SUM 累积放大 | 展示层 `ROUND(SUM(amount),2)`；治本：金额列用 **DECIMAL(12,2)**（DWD 建表规范），ODS 可保持原样 |
-| Dinky 提交报 `CatalogStoreHolder cannot be null` | Dinky 1.2.4 的 1.14 构建内嵌执行器 + Flink 1.20 类 → API 断层（1.19+ 要求必填 CatalogStoreHolder） | 首选 sql-client 直跑（版本一致）；长期：换 `dinky-release-1.20-1.2.4` 构建（官方有）或升级 1.2.5 |
+| Dinky 提交报 `CatalogStoreHolder cannot be null`
+| Flink 作业反复重启，日志 `Failed to deserialize consumer record due to` | `earliest-offset` 扫全史时撞上 topic 里混着的旧非 JSON 消息（wordcount 实验等），且作业从失败点循环重启（checkpoint 未成功→位点不前进→永远撞同一条） | kafka_src 加 `'json.ignore-parse-errors'='true'`；**查根因用 REST `/jobs/<id>/exceptions` 看第一次失败**——`Checkpoint Coordinator is suspending` 只是重启噪音 | | Dinky 1.2.4 的 1.14 构建内嵌执行器 + Flink 1.20 类 → API 断层（1.19+ 要求必填 CatalogStoreHolder） | 首选 sql-client 直跑（版本一致）；长期：换 `dinky-release-1.20-1.2.4` 构建（官方有）或升级 1.2.5 |
 | 容器内 9092 超时 | 9092 是 EXTERNAL listener | 容器内操作一律 29092 |
 
 ---
@@ -271,7 +272,9 @@ CREATE TABLE kafka_src (orderId STRING, userId STRING, product STRING,
   'connector'='kafka', 'topic'='flink-demo',
   'properties.bootstrap.servers'='192.168.0.106:9092',
   'properties.group.id'='flink_hdfs_sink',
-  'scan.startup.mode'='earliest-offset', 'format'='json');
+  'scan.startup.mode'='earliest-offset',
+  'json.ignore-parse-errors'='true',   -- ★ 2026-10-07 事故修复：跳过 topic 里混着的旧非 JSON 消息
+  'format'='json');
 CREATE TABLE hdfs_ods (orderId STRING, userId STRING, product STRING,
   amount DOUBLE, city STRING, platform STRING, `timestamp` BIGINT,
   dt STRING) PARTITIONED BY (dt) WITH (
