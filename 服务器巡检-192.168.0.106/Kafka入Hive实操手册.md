@@ -227,6 +227,7 @@ GROUP BY city ORDER BY gmv DESC;
 
 | 报错/现象 | 为什么 | 怎么办 |
 |---|---|---|
+| 建外表报 `file:/xxx is not a directory or unable to create one` | LOCATION 被解析到**容器本地文件系统**——compose 里的 `-Dfs.defaultFS` 对 DDL 不生效，且 HDFS 目录没建 | 已修：挂载 `core-site.xml` 进 hive 容器（compose 已加）+ 手册第 3 步先 `hdfs dfs -mkdir`。**建外部表前目录必须存在** |
 | 首次跑没有历史数据 | consumer group 默认从 latest 开始 | 第一次带 `BACKFILL=1` |
 | `InaccessibleObjectException`（本地跑 Flink 1.14 时） | JDK17 模块封装 | 用 `start.sh`（15 个 add-opens 已配全） |
 | Hue 连 Hive 报 sockaddr | 主机名解析问题 | 服务名/别名一致（已修） |
