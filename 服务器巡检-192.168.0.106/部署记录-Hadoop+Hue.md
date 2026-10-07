@@ -129,6 +129,7 @@ docker compose down / up -d       # 停/起
 
 - **数据加载方案已整理：[[Hive数据加载方案]]**（staging→ODS 外表→DWD ORC 分层、定时脚本模板、MySQL/Kafka 数据源路径）
 - **Kafka→Hive 链路方案已整理：[[Kafka消息入Hive方案]]**（Flink FileSink → staging → 分区注册，含建库建表 SQL 与 Flink 作业全文）
+- **Kafka→Hive 实操手册已整理：[[Kafka入Hive实操手册]]**（flink-demo 实战、零改造路径 A / Flink 直写路径 B、逐步检查点、自测清单）
 - Kafka → Flink（k3s 里已在跑）→ HDFS 落地的实时管道
 - HBase（/opt/hbase 容器）可考虑迁到 HDFS 做底层存储
 - Hive 已就绪：Hue 里直接写 HiveSQL； metastore 也可供 Spark/Dinky 等共用
