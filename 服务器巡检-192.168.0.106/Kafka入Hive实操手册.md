@@ -187,7 +187,6 @@ crontab -l #查看
 ```
 
 
-```
 
 ```cron
 20 * * * * /opt/hadoop-docker/scripts/load_kafka.sh >> /var/log/load_kafka.log 2>&1
