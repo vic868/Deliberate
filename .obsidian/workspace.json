@@ -256,6 +256,7 @@
   },
   "active": "46849d2238604982",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.106/Kafka消息入Hive方案.md",
     "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
     "服务器巡检-192.168.0.106/Hive数据加载方案.md",
     "服务器巡检-192.168.0.103/巡检报告.md",
@@ -296,7 +297,6 @@
     "JavaTutorial/docs/Java/collection/Java集合详解：深入理解LinkedHashMap和LRU缓存.md",
     "JavaTutorial/docs/Java/basic/string和包装类.md",
     "JavaTutorial/docs/Java/basic/JavaIO流.md",
-    "JavaTutorial/docs/Java/basic/Java中的Class类和Object类.md",
     "Pasted Image 20260928182321_802.png",
     "Pasted Image 20260927115138_252.png",
     "未命名.canvas",
