@@ -283,6 +283,50 @@ SELECT *, DATE_FORMAT(TO_TIMESTAMP_LTZ(`timestamp`,3), 'yyyy-MM-dd') AS dt FROM 
 3. 之后分区注册/转换/对账与路径 A 完全相同（脚本复用）
 4. 注意 Flink 里 HDFS 地址写 IP：`hdfs://192.168.0.106:8020`（`hadoop` 别名对 k3s Pod 不可见）
 
+> [!danger] 首跑实测报错：`NoOffsetForPartitionException: Undefined offset with no reset policy for partitions: [flink-demo-0]`（2026-10-07）
+> 原因：`scan.startup.mode='group-offsets'` 要求 group 有**已提交位点**，新 group `flink_hdfs_sink` 没有任何位点且消费端没配 reset 策略 → Kafka 直接抛异常。**修正（三选一，推荐第一种）：**
+>
+> ```sql
+> -- ① 补历史：从最早开始（推荐，能一并入仓存量消息）
+> 'scan.startup.mode' = 'earliest-offset',
+>
+> -- ② 只消费新消息
+> 'scan.startup.mode' = 'latest-offset',
+>
+> -- ③ 保留 group-offsets 但加兜底
+> 'properties.auto.offset.reset' = 'earliest',
+> ```
+>
+> **操作序列**：先取消失败的作业（`SHOW JOBS;` → `CANCEL JOB '<jobId>';`，或 Flink UI 30081 上 cancel）→ 按修正版重建 kafka_src → 重新 INSERT。
+
+> [!warning] 布局冲突：路径 B 不要和路径 A 混用同一个 staging 根目录
+> Flink 产出的是 `dt=…/hr=…` **子目录**，路径 A 写的是 `dt=…/data.jsonl` **直接文件**——混在同一个 Hive 分区目录里，Hive 默认不递归子目录，会互相看不见。**修正：路径 B 用独立目录 + 双级分区表：**
+
+```sql
+-- 路径 B 专用表（dt+hr 双级分区，与 Flink 落盘目录 dt=…/hr=… 一一对应）
+CREATE EXTERNAL TABLE IF NOT EXISTS ods.flink_demo_hi (
+  orderId STRING, userId STRING, product STRING, amount DOUBLE,
+  city STRING, platform STRING, `timestamp` BIGINT
+) PARTITIONED BY (dt STRING, hr STRING)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.JsonSerDe'
+LOCATION '/data/staging/flink-demo-stream';
+
+CREATE TABLE IF NOT EXISTS dwd.flink_demo_hi (
+  orderId STRING, userId STRING, product STRING, amount DECIMAL(12,2),
+  city STRING, platform STRING, event_time TIMESTAMP
+) PARTITIONED BY (dt STRING, hr STRING)
+STORED AS ORC LOCATION '/user/hive/warehouse/dwd.db/flink_demo_hi'
+TBLPROPERTIES ('orc.compress'='SNAPPY');
+
+-- Flink 滚动落盘后（checkpoint 周期到了再看目录）挂分区 + 转换（幂等）：
+ALTER TABLE ods.flink_demo_hi ADD IF NOT EXISTS
+  PARTITION (dt='2026-10-07', hr='15');
+INSERT OVERWRITE TABLE dwd.flink_demo_hi PARTITION (dt='2026-10-07', hr='15')
+SELECT orderId, userId, product, CAST(amount AS DECIMAL(12,2)), city, platform,
+       FROM_UNIXTIME(CAST(`timestamp`/1000 AS BIGINT))
+FROM ods.flink_demo_hi WHERE dt='2026-10-07' AND hr='15';
+```
+
 ---
 
 ## 附：本手册学到的东西清单（自测）
