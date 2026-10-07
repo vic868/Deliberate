@@ -271,7 +271,7 @@ CREATE TABLE kafka_src (orderId STRING, userId STRING, product STRING,
   'connector'='kafka', 'topic'='flink-demo',
   'properties.bootstrap.servers'='192.168.0.106:9092',
   'properties.group.id'='flink_hdfs_sink',
-  'scan.startup.mode'='group-offsets', 'format'='json');
+  'scan.startup.mode'='earliest-offset', 'format'='json');
 CREATE TABLE hdfs_ods (orderId STRING, userId STRING, product STRING,
   amount DOUBLE, city STRING, platform STRING, `timestamp` BIGINT,
   dt STRING) PARTITIONED BY (dt) WITH (
