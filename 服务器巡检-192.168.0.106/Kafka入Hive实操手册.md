@@ -257,7 +257,7 @@ GROUP BY city ORDER BY gmv DESC;
 
 跑通路径 A 后再玩。要做的事：
 
-1. **补 Hadoop 依赖**：下载 `flink-shaded-hadoop-2-uber-2.8.3-10.0.jar` 放进 Flink 镜像 `/opt/flink/lib/`（k3s 里要么重建 `flink-custom` 镜像，要么给 deploy 挂 hostPath 卷），JM/TM 都要
+1. **补 Hadoop 依赖**：`flink-shaded-hadoop-2-uber-2.8.3-10.0.jar` 已在宿主机 `/opt/flink/usrlib/`，通过 usrlib 中转法进 lib 并重启的**完整已验证步骤**见 [[Flink-on-K8s-vs-YARN]] 的"实操记录"一节（JM/TM 都要生效，重启会杀 session 上已有作业）
 2. **Flink SQL**（Dinky http://192.168.0.106:30888 或 `kubectl exec ... sql-client.sh`）：
 
 ```sql
