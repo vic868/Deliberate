@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "9-k8s/0-K8s网络请求全过程.md",
+                "file": "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-K8s网络请求全过程"
+              "title": "1-SpringBoot上K8s与入口证书管理"
             }
           }
         ]
@@ -256,8 +256,8 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
     "9-k8s/0-K8s网络请求全过程.md",
+    "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
     "9-k8s",
     "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
     "1-java/java 版本.smm.md",
