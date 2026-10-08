@@ -70,11 +70,11 @@ CREATE DATABASE IF NOT EXISTS ods;   -- Operational Data Store：原样暂存
 CREATE DATABASE IF NOT EXISTS dwd;   -- Data Warehouse Detail：清洗后的明细
 
 -- ② ODS 外部表：列名必须和 JSON 的 key 完全一致（JsonSerDe 按名字映射）
-CREATE EXTERNAL TABLE IF NOT EXISTS ods.flink_demo_di (
+CREATE EXTERNAL TABLE IF NOT EXISTS ods.flink_demo (
   `orderId`  STRING,
   `userId`   STRING,
   product    STRING,
-  amount     DOUBLE,
+  amount     DECIMAL(12,2),,
   city       STRING,
   platform   STRING,
   `timestamp` BIGINT          -- 毫秒时间戳，原样存 BIGINT（解析放 DWD）
@@ -84,18 +84,18 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.JsonSerDe'
 LOCATION '/data/staging/flink-demo';
 
 -- ③ DWD 内表：类型收紧 + 事件时间解析好
-CREATE TABLE IF NOT EXISTS dwd.flink_demo_di (
+CREATE TABLE IF NOT EXISTS dwd.flink_demo (
   orderId     STRING,
   userId      STRING,
   product     STRING,
-  amount      DOUBLE,
+  amount      DECIMAL(12,2),
   city        STRING,
   platform    STRING,
   event_time  TIMESTAMP
 )
 PARTITIONED BY (dt STRING)
 STORED AS ORC
-LOCATION '/user/hive/warehouse/dwd.db/flink_demo_di'
+LOCATION '/user/hive/warehouse/dwd.db/flink_demo'
 TBLPROPERTIES ('orc.compress'='SNAPPY');
 ```
 
