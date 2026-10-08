@@ -272,7 +272,7 @@ CREATE TABLE kafka_src (orderId STRING, userId STRING, product STRING,
   'connector'='kafka', 'topic'='flink-demo',
   'properties.bootstrap.servers'='192.168.0.106:9092',
   'properties.group.id'='flink_hdfs_sink',
-  'scan.startup.mode'='earliest-offset',
+  'scan.startup.mode'='latest-offset',
   'json.ignore-parse-errors'='true',   -- ★ 2026-10-07 事故修复：跳过 topic 里混着的旧非 JSON 消息
   'format'='json');
 CREATE TABLE hdfs_ods (orderId STRING, userId STRING, product STRING,
