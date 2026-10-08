@@ -252,6 +252,7 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "9-k8s/0-K8s网络请求全过程.md",
     "9-k8s",
     "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
     "1-java/java 版本.smm.md",
@@ -279,7 +280,6 @@
     "3-mq/2-Kafka/1-kafka.excalidraw.md",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive/conf/core-site.xml",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive/conf",
-    "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive",
     "服务器巡检-192.168.0.103/巡检报告.md",
     "8-spring/spring-logback/LOGBACK_SETUP.md",
     "大数据学习规划/每日进度.md",
