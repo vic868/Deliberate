@@ -158,3 +158,35 @@ cp flink-1.20.0/opt/flink-table-planner_2.12-1.20.0.jar dinky-release-1.20-1.2.4
 1. **`extends/flink<版本>/` 是"用户自备区"**：官方包只带自家 jar，`flink/`（发行版）和驱动按需自备——迁移时对照旧环境的该目录清单
 2. **Flink 的 planner 分两套**：lib 默认是 loader，完整版在 opt/——Dinky 这类要扩展解析器的平台必须补完整版
 3. **每补一个 jar 都要重建镜像 + import + 重新提交验证**，一次只改一个变量，报错逐层剥
+
+---
+
+## 十、第四层坑：Dinky 类路径缺 Kafka 连接器（v6 修复，2026-10-07）
+
+### 现象
+
+语法检查（explain）报：
+
+```
+Cannot discover a connector using option: 'connector'='kafka'
+Available factory identifiers are: blackhole, datagen, dinky-mock, filesystem, print, printnet
+```
+
+### 根因
+
+**SQL 编译发生在 Dinky 自己的 JVM 里**（explain/提交前编译），Kafka 连接器必须在 **Dinky 的 classpath** 里。而会话集群 TM 里的 kafka connector（flink-sql-connector-kafka-3.4.0-1.20.jar）是另一套 JVM——**TM 有 ≠ Dinky 有**（与 DN 地址问题同族：每一跳的 classpath/DNS 都要单独验证）。
+
+且对照发现：**1.14 变体的 dinky/ 四件套（catalog×2/client/connector-jdbc）本来也不含 kafka 连接器**——之前从没通过 Dinky 跑过 Kafka 作业，缺口今天才暴露。
+
+### 修复（v6）
+
+```bash
+cp /opt/flink/usrlib/flink-sql-connector-kafka-3.4.0-1.20.jar \
+   /opt/dinky-build/dinky-release-1.20-1.2.4/extends/flink1.20/dinky/
+# 重建镜像 v6 → ctr import → set image（同前流程）
+```
+
+### 方法论补充
+
+**"编译在哪、类就在哪"**：Remote 模式下，SQL 的解析/编译在 Dinky JVM 完成，运行在 TM JVM——**两边的 classpath 都要有所需 connector**。以后每换一种数据源（jdbc/hive/pulsar…），都要问一句"Dinky 的 classpath 有了吗"。
+
