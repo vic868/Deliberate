@@ -133,6 +133,7 @@ docker compose down / up -d       # 停/起
 - **部署模式对比已整理：[[Flink-on-K8s-vs-YARN]]**（加 jar 重启痛点的根治方案、12 维度对比、四形态姿势对照）
 - **Dinky 修复方案已整理：[[Dinky修复方案]]**（1.14→1.20 变体迁移、三层根因链、已修复验证）
 - **端到端串联视图：[[数据流全链路执行手册]]**（Kafka→Flink→HDFS→ODS→DWD 五跳，含现状快照与一键复现命令）
+- **标准化与选型：[[Kafka入湖标准流程与方案选型]]**（八步法 + 4 个变量、SeaTunnel/Kafka Connect/Paimon 等成熟方案对比与决策树）
 - Kafka → Flink（k3s 里已在跑）→ HDFS 落地的实时管道
 - HBase（/opt/hbase 容器）可考虑迁到 HDFS 做底层存储
 - Hive 已就绪：Hue 里直接写 HiveSQL； metastore 也可供 Spark/Dinky 等共用

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "服务器巡检-192.168.0.106/数据流全链路执行手册.md",
+                "file": "服务器巡检-192.168.0.106/Kafka入湖标准流程与方案选型.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "数据流全链路执行手册"
+              "title": "Kafka入湖标准流程与方案选型"
             }
           }
         ]
@@ -256,11 +256,12 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "服务器巡检-192.168.0.106/数据流全链路执行手册.md",
+    "服务器巡检-192.168.0.106/Kafka入湖标准流程与方案选型.md",
     "服务器巡检-192.168.0.106/deploy/scripts/ods_to_dwd.sh",
     "服务器巡检-192.168.0.106/deploy/scripts",
     "服务器巡检-192.168.0.106/Kafka入Hive实操手册.md",
     "7-分布式/分布式事务.excalidraw.md",
-    "服务器巡检-192.168.0.106/数据流全链路执行手册.md",
     "Pasted Image 20261008135513_165.png",
     "Pasted Image 20261008134509_484.png",
     "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
@@ -284,7 +285,6 @@
     "大数据学习规划/02-Flink补课.md",
     "8-spring/spring 版本.smm.md",
     "27张支付架构图，我本来是留着做内训舍不得发的.md",
-    "服务器巡检-192.168.0.106/deploy/hadoop-docker/hue/hue.ini",
     "大数据学习规划/BigData.excalidraw.md",
     "大数据学习规划/05-求职与面试.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
