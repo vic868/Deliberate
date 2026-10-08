@@ -97,3 +97,64 @@ ENV FLINK_VERSION=1.20          # ★ 硬编码，不依赖 build-arg 传递
 2. **三层配置优先级**：镜像 ENV < Deployment env < 命令行——排查时按这个顺序找"谁覆盖了谁"
 3. **改文件 ≠ 改集群**：`kubectl apply` 才推进集群，`rollout restart` 只按旧 spec 重启（本次和上次两次踩中，务必形成肌肉记忆）
 4. **发行版缺驱动**：按变体构建的发行版经常缺数据库驱动，迁移时对照旧环境的 lib 清单补齐
+
+
+---
+
+## 七、第二阶段：extends/flink1.20 空目录（v4 修复）
+
+### 现象
+
+变体迁移后 Dinky 能启动，但**保存任务后关联接口 500**：`NoClassDefFoundError: org/apache/flink/configuration/ConfigOption`、`CollectionUtils`。前端表现为"配置了 FlinkSQL 刷新后就没有了"。
+
+> [!important] 澄清
+> **SQL 实际已保存进 MySQL**（`dinky.dinky_task` statement 882 字符、update_time 即保存时刻）。"丢失"是保存成功后关联接口 500 的界面假象。
+
+### 根因
+
+Dinky 服务 classpath（bin/auto.sh 161 行）：
+
+```bash
+CLASS_PATH="...:${EXTENDS_HOME}/flink${FLINK_VERSION}/dinky/*:${EXTENDS_HOME}/flink${FLINK_VERSION}/flink/*:..."
+```
+
+**官方 tarball 的 `extends/flink1.20/` 里 `dinky/`（3 个 dinky 专属 jar）已带好，但 `flink/` 是空的——设计上要求用户自行放入 Flink 1.20 发行版 jar**。整个 Flink 1.20 类库缺失 → 类初始化连锁失败。
+
+（对照：1.14 能跑是因为当年已放入 14 个 jar）
+
+### 修复（v4）
+
+下载 flink-1.20.0 发行版，精选 12 个 jar 放入 `extends/flink1.20/flink/`：flink-dist / table-api-java-uber / table-planner-loader / table-runtime / cep / connector-files / csv / json + log4j 全套（1.20 无 scala_2.12）。
+
+---
+
+## 八、第三层坑：Remote 模式 `NoClassDefFoundError: ExtendedParser`（v5 修复）
+
+改 1.20 变体 + Remote 模式后，提交报：
+
+```
+NoClassDefFoundError: org.apache.flink.table.planner.parse.ExtendedParser
+  at org.dinky.operations.CustomNewParserImpl.<init>
+```
+
+根因：`ExtendedParser` 在 **Flink 完整版 planner**（`flink-table-planner_2.12-1.20.0.jar`）里，而它**不在 lib/——在发行版的 opt/ 目录**。Flink 官方设计：lib 默认只放 planner-loader，完整 planner 需要用户从 opt/ 按需补入。Dinky 的自定义解析器继承 ExtendedParser，必须要完整版。
+
+修复：
+
+```bash
+cd /opt/dinky-build
+tar xzf flink-1.20.0-bin.tgz flink-1.20.0/opt/
+cp flink-1.20.0/opt/flink-table-planner_2.12-1.20.0.jar dinky-release-1.20-1.2.4/extends/flink1.20/flink/
+# 重建镜像 v5 → ctr import → set image（同前流程）
+```
+
+> [!note] 若报 `More than one PlannerFactory` 冲突
+> 此时 `flink/` 里同时有 planner-loader 和完整 planner。若运行时报工厂冲突，移除 planner-loader 那个 jar 重建即可。
+
+---
+
+## 九、两个阶段的共同方法论
+
+1. **`extends/flink<版本>/` 是"用户自备区"**：官方包只带自家 jar，`flink/`（发行版）和驱动按需自备——迁移时对照旧环境的该目录清单
+2. **Flink 的 planner 分两套**：lib 默认是 loader，完整版在 opt/——Dinky 这类要扩展解析器的平台必须补完整版
+3. **每补一个 jar 都要重建镜像 + import + 重新提交验证**，一次只改一个变量，报错逐层剥
