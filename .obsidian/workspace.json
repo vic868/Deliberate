@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "1-java/java 版本.smm.md"
+                "file": "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "java 版本.smm"
+              "icon": "lucide-file",
+              "title": "Nacos-Seata学习环境建设方案"
             }
           }
         ]
@@ -254,6 +256,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "1-java/java 版本.smm.md",
     "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
     "1-java/0-知识点/3-抽象.md",
     "1-java/0-知识点/2-基础知识.md",
@@ -296,7 +299,6 @@
     "Pasted Image 20261006161751_533.png",
     "架构/微博整体架构.excalidraw.md",
     "8-spring/spring-logback/未命名.canvas",
-    "服务器巡检-192.168.0.103/修复清单.md",
     "Pasted Image 20260928182321_802.png",
     "Pasted Image 20260927115138_252.png",
     "未命名.canvas",
