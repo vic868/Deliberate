@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "7-分布式/分布式事务.excalidraw.md"
+                "file": "5-bigdata/1-doris/1-架构与原理.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "分布式事务.excalidraw"
+              "icon": "lucide-file",
+              "title": "1-架构与原理"
             }
           }
         ]
@@ -252,13 +254,17 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "5-bigdata/1-doris/9-对比StarRocks与ClickHouse.md",
+    "5-bigdata/1-doris/0-Doris总览.md",
+    "7-分布式/分布式事务.excalidraw.md",
+    "5-bigdata/1-doris/7-湖仓一体.md",
+    "5-bigdata/1-doris/8-运维与调优.md",
     "5-bigdata/1-doris/3-表设计.md",
     "5-bigdata/1-doris/6-数据导入与FlinkCDC.md",
     "5-bigdata/1-doris/2-数据模型.md",
     "5-bigdata/1-doris/5-查询优化.md",
-    "5-bigdata/1-doris/0-Doris总览.md",
     "5-bigdata/0-flink/9-部署与运维.md",
     "5-bigdata/1-doris/10-面试高频题.md",
     "5-bigdata/1-doris/1-架构与原理.md",
@@ -276,10 +282,6 @@
     "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
     "3-mq/2-Kafka/3-生产者原理.md",
     "大数据学习规划/03-实时数仓与存储.md",
-    "大数据学习规划/02-Flink补课.md",
-    "3-mq/2-Kafka/2-架构与核心概念.md",
-    "3-mq/2-Kafka/5-日志存储与副本机制.md",
-    "3-mq/2-Kafka/4-消费者与Rebalance.md",
     "5-bigdata/1-doris",
     "5-bigdata/0-flink",
     "Pasted Image 20261009203105_072.png",
