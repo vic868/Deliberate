@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/5-事务与Exactly-Once.md",
+                "file": "3-mq/2-Kafka/8-性能优化与高吞吐原理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "5-事务与Exactly-Once"
+              "title": "8-性能优化与高吞吐原理"
             }
           }
         ]
@@ -256,12 +256,19 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
-    "3-mq/2-Kafka/2-架构与核心概念.md",
-    "3-mq/2-Kafka/5-事务与Exactly-Once.md",
+    "大数据学习规划/02-Flink补课.md",
+    "3-mq/2-Kafka/7-运维与集群调优.md",
     "3-mq/2-Kafka/10-面试高频题.md",
+    "3-mq/2-Kafka/8-性能优化与高吞吐原理.md",
+    "3-mq/2-Kafka/3-消费者与Rebalance.md",
     "3-mq/2-Kafka/1-Kafka总览.md",
+    "3-mq/2-Kafka/4-消费者与Rebalance.md",
+    "3-mq/2-Kafka/6-事务与Exactly-Once.md",
+    "3-mq/2-Kafka/7-性能优化与高吞吐原理.md",
     "3-mq/2-Kafka/9-SpringBoot实战.md",
+    "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
+    "3-mq/2-Kafka/5-事务与Exactly-Once.md",
+    "3-mq/2-Kafka/2-架构与核心概念.md",
     "3-mq/未命名.md",
     "Pasted Image 20261009203105_072.png",
     "Pasted Image 20261009202948_985.png",
@@ -285,20 +292,13 @@
     "Pasted Image 20261008135513_165.png",
     "Pasted Image 20261008134509_484.png",
     "服务器巡检-192.168.0.106/部署记录-Hadoop+Hue.md",
-    "服务器巡检-192.168.0.106/Hive数据加载方案.md",
-    "服务器巡检-192.168.0.106/Kafka消息入Hive方案.md",
-    "服务器巡检-192.168.0.106/Dinky修复方案.md",
-    "服务器巡检-192.168.0.106/巡检报告.md",
     "SDLC（软件开发生命周期）完全指南，概念，模型，绘制 - ProcessOn知识社区.pdf",
     "5-bigdata/dsh-latest-macos-arm64.dmg",
     "5-bigdata/dsh-latest-macos-arm64.dmg.crdownload",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/flink-client-hdfs-site.xml",
-    "服务器巡检-192.168.0.106/Flink-on-K8s-vs-YARN.md",
     "5-bigdata/flink-shaded-hadoop-2-uber-2.8.3-10.0.jar",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive/conf/core-site.xml",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive/conf",
-    "服务器巡检-192.168.0.103/巡检报告.md",
-    "8-spring/spring-logback/LOGBACK_SETUP.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261006162516_406.png",
     "Pasted Image 20261006162206_107.png",

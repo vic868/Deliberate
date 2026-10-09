@@ -1,7 +1,7 @@
-# Kafka 事务与 Exactly-Once
+# 🔒 六、Kafka 事务与 Exactly-Once
 
 > 本篇回答四个问题：Kafka 的三种投递语义分别在什么条件下成立？幂等生产者为什么是事务的地基？事务的 `transactional.id` / Transaction Coordinator / `__transaction_state` 三者是怎么协作完成两阶段提交的？为什么开了 `read_committed` 之后消费者会"变慢"，这个慢到底慢在哪里？
-> 前置阅读：[[2-架构与核心概念]]、[[2-生产者原理]]、[[3-消费者与Rebalance]]、[[4-日志存储与副本机制]]。实战集成见 [[9-SpringBoot实战]]，面试速答见 [[10-面试高频题]]。
+> 前置阅读：[[2-架构与核心概念]]、[[3-生产者原理]]、[[4-消费者与Rebalance]]、[[5-日志存储与副本机制]]。实战集成见 [[9-SpringBoot实战]]，面试速答见 [[10-面试高频题]]。
 
 ---
 
@@ -693,9 +693,9 @@ Flink 的 Kafka connector 提供了两阶段提交的实现（`FlinkKafkaProduce
 ## 相关笔记
 
 - [[1-Kafka总览]] —— 系列索引
-- [[2-生产者原理]] —— 幂等生产者、`acks`、重试与 in-flight 的细节
-- [[3-消费者与Rebalance]] —— `isolation.level`、位移提交、`max.poll.interval.ms`
-- [[4-日志存储与副本机制]] —— 控制批次（control batch）在日志中的形态、`__transaction_state` 的副本
-- [[6-运维与集群调优]] —— 事务相关指标监控、`transaction.state.log.*` 的容量规划
+- [[3-生产者原理]] —— 幂等生产者、`acks`、重试与 in-flight 的细节
+- [[4-消费者与Rebalance]] —— `isolation.level`、位移提交、`max.poll.interval.ms`
+- [[5-日志存储与副本机制]] —— 控制批次（control batch）在日志中的形态、`__transaction_state` 的副本
+- [[7-运维与集群调优]] —— 事务相关指标监控、`transaction.state.log.*` 的容量规划
 - [[9-SpringBoot实战]] —— `KafkaTransactionManager`、`@Transactional`、错误处理器
 - [[10-面试高频题]] —— 本篇面试问题的精简版
