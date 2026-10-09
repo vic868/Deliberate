@@ -1,5 +1,5 @@
 ---
-title: JUC 并发工具
+title: Java JUC 并发工具
 tags: [Java, 并发, AQS]
 status: 进行中
 created: 2026-10-09

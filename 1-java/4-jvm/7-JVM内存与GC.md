@@ -1,5 +1,5 @@
 ---
-title: JVM 内存与 GC
+title: Java JVM 内存与 GC
 tags: [Java, JVM, GC, 虚拟机]
 status: 进行中
 created: 2026-10-09

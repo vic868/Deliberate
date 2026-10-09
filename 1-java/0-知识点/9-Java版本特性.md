@@ -1,5 +1,5 @@
 ---
-title: Java 版本特性
+title: Java 版本特性（8 → 25）
 tags: [Java, 版本, 新特性, Lambda]
 status: 进行中
 created: 2026-10-09

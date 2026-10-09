@@ -1,5 +1,5 @@
 ---
-title: JVM 调优与故障排查
+title: Java JVM 调优与故障排查
 tags: [Java, JVM, 调优, 排查]
 status: 进行中
 created: 2026-10-09
