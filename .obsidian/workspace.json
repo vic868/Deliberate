@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/1-doris/1-架构与原理.md",
+                "file": "5-bigdata/1-doris/7-湖仓一体.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1-架构与原理"
+              "title": "7-湖仓一体"
             }
           }
         ]
@@ -256,6 +256,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/1-doris/9-对比StarRocks与ClickHouse.md",
     "5-bigdata/1-doris/0-Doris总览.md",
     "7-分布式/分布式事务.excalidraw.md",
@@ -267,7 +268,6 @@
     "5-bigdata/1-doris/5-查询优化.md",
     "5-bigdata/0-flink/9-部署与运维.md",
     "5-bigdata/1-doris/10-面试高频题.md",
-    "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
     "5-bigdata/0-flink/11-端到端一致性.md",
     "5-bigdata/0-flink/10-面试高频题.md",
