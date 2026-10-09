@@ -1,3 +1,10 @@
+---
+title: Kafka 事务与 Exactly-Once
+tags: [MQ, Kafka, 事务, Exactly-Once]
+status: 进行中
+created: 2026-10-09
+---
+
 # 🔒 六、Kafka 事务与 Exactly-Once
 
 > 本篇回答四个问题：Kafka 的三种投递语义分别在什么条件下成立？幂等生产者为什么是事务的地基？事务的 `transactional.id` / Transaction Coordinator / `__transaction_state` 三者是怎么协作完成两阶段提交的？为什么开了 `read_committed` 之后消费者会"变慢"，这个慢到底慢在哪里？

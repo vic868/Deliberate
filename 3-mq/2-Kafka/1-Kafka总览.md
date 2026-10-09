@@ -17,7 +17,7 @@ created: 2026-10-09
 
 | # | 笔记 | 一句话定位 | 核心内容 |
 |---|---|---|---|
-| — | **[[0-概念脑图]]**（Excalidraw） | 概念脑图速览 | MQ 概念、Kafka 定位、Topic/Partition/Segment 等基础图示 |
+| — | **[[0-概念脑图.excalidraw\|概念脑图]]** | 概念脑图速览 | MQ 概念、Kafka 定位、Topic/Partition/Segment 等基础图示 |
 | 1 | **[[1-Kafka总览]]** | 你现在看的这篇 | 导航、速查表、学习路径、版本演进 |
 | 2 | **[[2-架构与核心概念]]** | 建立整体地图 | 角色、Topic/Partition/Replica、Controller、KRaft、核心 API |
 | 3 | **[[3-生产者原理]]** | 消息怎么发出去 | 发送主流程、RecordAccumulator、分区器、acks、幂等、顺序性 |

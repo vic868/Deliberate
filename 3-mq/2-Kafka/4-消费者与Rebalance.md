@@ -1,4 +1,11 @@
-# Kafka 消费者与 Rebalance
+---
+title: Kafka 消费者与 Rebalance
+tags: [MQ, Kafka, 消费者, Rebalance]
+status: 进行中
+created: 2026-10-09
+---
+
+# 🧵 四、Kafka 消费者与 Rebalance
 
 > 本文回答四个问题：**消息是如何被"组"消费掉的**（消费模型与并行度上限）、**位移（offset）存在哪、什么时候提交**（重复消费与漏消费的根源）、**Rebalance 为什么发生、为什么危险、怎么治**（协议演进与参数取舍）、以及**消费滞后（Lag）怎么读、持续增长怎么排查**。
 > 建议先看 [[2-架构与核心概念]] 建立 Topic / Partition / Replica / ISR 的概念；位移与事务的边界问题对照 [[6-事务与Exactly-Once]]；服务端存储细节见 [[5-日志存储与副本机制]]；生产端对照 [[3-生产者原理]]；Spring 落地见 [[9-SpringBoot实战]]；面试速查见 [[10-面试高频题]]。总览索引：[[1-Kafka总览]]。
@@ -792,6 +799,7 @@ package com.example.kafka;
 
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
+import org.apache.kafka.common.errors.InterruptException;
 import org.apache.kafka.common.errors.WakeupException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
