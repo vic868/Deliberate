@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/0-知识点/0-Java总览.md",
+                "file": "1-java/4-jvm/0-JVM总览.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-Java总览"
+              "title": "0-JVM总览"
             }
           }
         ]
@@ -254,12 +254,18 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "8bee7db2dd38cd18",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/4-jvm/6-JVM参数与调优实战.md",
+    "1-java/4-jvm/7-JVM故障排查实战.md",
+    "1-java/4-jvm/0-JVM总览.md",
+    "1-java/4-jvm/7-JVM内存与GC.md",
+    "1-java/0-知识点/13-Spring源码骨架.md",
+    "1-java/0-知识点/10-面试高频题.md",
     "1-java/0-知识点/3-泛型反射与注解.md",
-    "1-java/0-知识点/0-Java总览.md",
-    "1-java/0-知识点/1-语言基础与面向对象.md",
     "1-java/0-知识点/2-面向对象与设计模式.md",
+    "1-java/0-知识点/1-语言基础与面向对象.md",
+    "1-java/0-知识点/0-Java总览.md",
     "_dvtest/good.md",
     "_dvtest/bad.md",
     "_dvtest",
@@ -267,8 +273,6 @@
     "1-java/1-juc/0-juc.excalidraw.md",
     "1-java/1-juc/6-JUC并发工具.md",
     "1-java/0-知识点/9-Java版本特性.md",
-    "1-java/0-知识点/10-面试高频题.md",
-    "1-java/0-知识点/13-Spring源码骨架.md",
     "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
     "1-java/1-juc/1-Disruptor.md",
     "1-java/3-IO/3-IO与网络编程.md",
@@ -279,11 +283,7 @@
     "1-java/2-collection/1-集合框架.md",
     "1-java/0-知识点/3-抽象.md",
     "1-java/0-知识点/2-基础知识.md",
-    "1-java/4-jvm/8-JVM调优与故障排查.md",
-    "1-java/硬核技术-业务阵地.md",
-    "1-java/4-jvm/7-JVM内存与GC.md",
     "1-java/4-jvm",
-    "5-bigdata/1-doris/3-表设计.md",
     "5-bigdata/1-doris",
     "5-bigdata/0-flink",
     "Pasted Image 20261009203105_072.png",

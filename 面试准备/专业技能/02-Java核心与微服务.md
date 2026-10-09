@@ -28,8 +28,8 @@ status: 进行中
 > | synchronized 锁升级、JMM、volatile、ThreadLocal | [[4-多线程与内存模型]] |
 > | 线程池源码与参数、Executors 的坑 | [[5-线程池]] |
 > | AQS、ReentrantLock、LongAdder、CompletableFuture | [[6-JUC并发工具]] |
-> | JVM 内存、GC 收集器、类加载 | [[7-JVM内存与GC]] |
-> | OOM/CPU 飙高排查、调参 | [[8-JVM调优与故障排查]] |
+> | JVM 内存、GC 收集器、类加载 | [[1-JVM内存区域与对象布局]] |
+> | OOM/CPU 飙高排查、调参 | [[7-JVM故障排查实战]] |
 > | Java 8 → 25 特性、虚拟线程 | [[9-Java版本特性]] |
 > | 十大必答题 + 快问快答 + 陷阱 | [[10-面试高频题]] |
 > | Spring refresh 十二步、三级缓存、事务链路 | [[13-Spring源码骨架]] |
