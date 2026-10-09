@@ -230,7 +230,7 @@ TLAB 不是独立区域，而是**Eden 内部按线程切分出来的分配缓�
 | 规范（JVMS） | **方法区 Method Area** | 逻辑上属于堆，存类结构、运行时常量池、字段与方法数据、方法代码；**不要求被 GC**（但 HotSpot 会回收） |
 | HotSpot 实现（JDK 7-） | **永久代 PermGen** | 位于**堆内**，受 `-XX:PermSize`/`-XX:MaxPermSize` 限制，随 Full GC 回收 |
 | HotSpot 实现（JDK 8+） | **元空间 Metaspace** | 位于**本地内存（堆外）**，受 `-XX:MetaspaceSize`/`-XX:MaxMetaspaceSize` 约束 |
-| 独立的一部分 | **压缩类空间 Compressed Class Space** | JDK 8+ 为压缩的 Klass 指针准备的连续虚拟地址区，默认 1GB（本机实测 `CompressedClassSpaceSize` = 1073741824） |
+| 独立的一部分 | **压缩类空间 Compressed Class Space** | JDK 8+ 为压缩的 Klass 指针准备的连续虚拟地址区，默认 1GB（本机实测 `CompressedClassSpaceSize` 为 1073741824 字节） |
 | 独立的一部分 | **CodeCache** | JIT 编译后的机器码，不属于元空间，见 [[5-JIT编译与运行时优化]] |
 
 ### 4.2 两次关键迁移
@@ -891,7 +891,7 @@ public class NativeResource implements AutoCloseable {
 | 唯一不会 OOM 的区域 | 程序计数器 | §1.2 |
 | 栈溢出的两种表现 | `StackOverflowError`（深度）/ `unable to create new native thread`（线程栈内存） | §2.5 |
 | 分代默认比例 | 新生代占堆 1/3，Eden:S0:S1 = 8:1:1（NewRatio=2, SurvivorRatio=8） | §3.1 |
-| 元空间默认上限 | 无上限（实测 `MaxMetaspaceSize` = 最大值），泄漏会吃光机器内存 | §4.4 |
+| 元空间默认上限 | 无上限（实测 `MaxMetaspaceSize` 取 uintx 最大值），泄漏会吃光机器内存 | §4.4 |
 | `intern()` 版本差异 | JDK 6 复制进永久代；JDK 7+ 只登记堆中已有对象的引用 | §5.2 |
 | 指针碰撞 vs 空闲列表 | 取决于 GC 是否压缩整理；CMS 老年代用空闲列表 | §7.2 |
 | 空对象大小 | 16 字节（12 字节头 + 4 字节对齐填充） | §9.6 |

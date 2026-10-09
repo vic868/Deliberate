@@ -1,5 +1,5 @@
 ---
-title: JIT 编译与运行时优化
+title: JVM JIT 编译与运行时优化
 tags: [JVM, JIT, 性能优化, 面试]
 status: 进行中
 created: 2026-10-09

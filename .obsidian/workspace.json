@@ -256,6 +256,7 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/4-jvm/2-GC机制深度.md",
     "1-java/4-jvm/5-JIT编译与运行时优化.md",
     "1-java/4-jvm/1-JVM内存区域与对象布局.md",
     "1-java/4-jvm/3-类加载机制与字节码.md",
@@ -282,7 +283,6 @@
     "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/0-知识点/1-面向对象.md",
     "1-java/1-juc/5-线程池.md",
-    "1-java/1-juc/4-多线程与内存模型.md",
     "1-java/4-jvm",
     "5-bigdata/1-doris",
     "5-bigdata/0-flink",
