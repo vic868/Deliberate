@@ -112,13 +112,34 @@ created: 2026-10-09
 
 ## 六、Doris 在实时数仓中的位置
 
-```
-MySQL/业务库 ──CDC──┐
-                     ├──▶ Kafka ──▶ Flink（清洗/去重/聚合/维表） ──┬──▶ Doris（DWS/ADS：高并发查询、报表、API）
-日志/埋点 ───────────┘                                             │        ▲
-                                                                   └──▶ 数据湖 Iceberg/Paimon（ODS/DWD 明细、低成本）
-                                                                            │
-                                                              Doris External Catalog 直接查湖
+```mermaid
+flowchart LR
+  subgraph COL["采集"]
+    direction TB
+    MYSQL["MySQL / 业务库"]
+    LOG["日志 / 埋点"]
+    KAFKA["Kafka"]
+  end
+  subgraph COMP["计算"]
+    FLINK["Flink（清洗 / 去重 / 聚合 / 维表）"]
+  end
+  subgraph STORE["存储"]
+    direction TB
+    DORIS["Doris（DWS/ADS：高并发查询、报表、API）"]
+    LAKE["数据湖 Iceberg/Paimon（ODS/DWD 明细、低成本）"]
+  end
+  MYSQL -- CDC --> KAFKA
+  LOG --> KAFKA
+  KAFKA --> FLINK
+  FLINK --> DORIS
+  FLINK --> LAKE
+  LAKE -->|"Doris External Catalog 直接查湖"| DORIS
+  classDef src fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef compute fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef store fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  class MYSQL,LOG,KAFKA src
+  class FLINK compute
+  class DORIS,LAKE store
 ```
 
 - **上游**：[[5-bigdata/0-flink/7-FlinkCDC与实时数仓|Flink CDC 与实时数仓]]、[[5-bigdata/0-flink/11-端到端一致性|端到端一致性]]

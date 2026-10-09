@@ -33,14 +33,18 @@ created: 2026-10-09
 
 这是理解全部容错机制的主线。
 
-```text
-   ┌──────────┐      ┌──────────────────────┐      ┌──────────┐
-   │  Source  │ ───► │  Flink 内部状态计算   │ ───► │   Sink   │
-   │ 可重放？  │      │  能一致性快照？       │      │ 事务/幂等？│
-   └──────────┘      └──────────────────────┘      └──────────┘
-        │                       │                        │
-   决定"能不能              决定"恢复后             决定"重复会不会
-   从位点重放"              从哪继续"               泄漏到外部"
+```mermaid
+flowchart LR
+  SRC["Source<br/>可重放？<br/>决定「能不能从位点重放」"]
+  MID["Flink 内部状态计算<br/>能一致性快照？<br/>决定「恢复后从哪继续」"]
+  SNK["Sink<br/>事务 / 幂等？<br/>决定「重复会不会泄漏到外部」"]
+  SRC --> MID --> SNK
+  classDef src fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef mid fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef snk fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  class SRC src
+  class MID mid
+  class SNK snk
 ```
 
 | 环节 | 需要的能力 | 缺失的后果 |
@@ -295,10 +299,15 @@ execution.checkpointing.mode: AT_LEAST_ONCE
 
 这形成一个恶性循环：
 
-```text
-反压 ──► barrier 传播变慢 ──► 对齐等待时间变长 ──► checkpoint 耗时增加
-  ▲                                                        │
-  └────────── 对齐期间缓冲区堆积、处理停滞 ◄────────────────┘
+```mermaid
+flowchart LR
+  A["反压"] --> B["barrier 传播变慢"] --> C["对齐等待时间变长"] --> D["checkpoint 耗时增加"]
+  D --> E["对齐期间缓冲区堆积、处理停滞"]
+  E --> A
+  classDef cyc fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef back fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  class A,B,C,D cyc
+  class E back
 ```
 
 | 对齐引发的问题 | 表现 |

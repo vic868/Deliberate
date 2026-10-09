@@ -20,15 +20,19 @@ created: 2026-10-09
 
 Flink 的桥是把两边都抽象成同一个东西——**动态表（Dynamic Table）**：
 
-```text
-        流（Stream）                        表（Table）
-            │                                  │
-            │  ① 流 → 动态表：一条记录 = 表的一次变更（insert/update/delete）
-            ▼                                  ▼
-        动态表 ──► ② 在动态表上做连续查询（Continuous Query）──► 结果动态表
-            ▲                                  │
-            │                                  │  ③ 结果动态表 → 流：把变更日志发出去
-            └──────────────────────────────────┘
+```mermaid
+flowchart LR
+  ST["流（Stream）"]
+  DT["动态表"]
+  RQ["结果动态表"]
+  OUT["流（把变更日志发出去）"]
+  ST -->|"① 流 → 动态表：一条记录 = 表的一次变更（insert/update/delete）"| DT
+  DT -->|"② 在动态表上做连续查询（Continuous Query）"| RQ
+  RQ -->|"③ 结果动态表 → 流"| OUT
+  classDef stream fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef table fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  class ST,OUT stream
+  class DT,RQ table
 ```
 
 三个转换的准确含义：
@@ -743,11 +747,21 @@ LEFT JOIN dim_product FOR SYSTEM_TIME AS OF o.proc_time AS p
 
 **执行流程（关键：每行查一次外部系统）：**
 
-```text
-订单流一条记录 → 取出 product_id → 查缓存
-                                     ├─ 命中 → 直接返回（不发外部请求）
-                                     └─ 未命中 → 发一次外部查询（JDBC/HBase/Redis）
-                                                 → 写缓存 → 返回
+```mermaid
+flowchart TB
+  A["订单流一条记录 → 取出 product_id → 查缓存"]
+  H["命中 → 直接返回（不发外部请求）"]
+  M["未命中 → 发一次外部查询（JDBC/HBase/Redis）"]
+  W["写缓存 → 返回"]
+  A --> H
+  A --> M
+  M --> W
+  classDef q fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef hit fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  classDef miss fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  class A q
+  class H hit
+  class M,W miss
 ```
 
 ### 7.2 缓存参数对比

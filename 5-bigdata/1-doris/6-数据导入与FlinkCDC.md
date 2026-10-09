@@ -122,17 +122,21 @@ columns: order_id,user_id,amount,dt=now(),src='mysql'
 
 **所以"不重"的完整逻辑是：**
 
-```
-批次数据  ──────►  label = f(批次标识)
-                      │
-   失败重试 ──────────┘  label 不变
-                      │
-                      ▼
-              Doris 判重（label 已存在）
-                      │
-          ┌───────────┴───────────┐
-          │                       │
-     已成功 → 忽略（幂等）      未成功 → 重新导入
+```mermaid
+flowchart TB
+  B["批次数据"] -->|"label = f(批次标识)"| L["label"]
+  R["失败重试（label 不变）"] --> L
+  L --> D["Doris 判重（label 已存在）"]
+  D --> OK["已成功 → 忽略（幂等）"]
+  D --> NO["未成功 → 重新导入"]
+  classDef inp fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef lbl fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef good fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  classDef bad fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  class B,R inp
+  class L,D lbl
+  class OK good
+  class NO bad
 ```
 
 > [!danger] 三个把幂等搞坏的致命操作
@@ -525,16 +529,29 @@ DorisExecutionOptions execOptions = DorisExecutionOptions.builder()
 | **`AT_LEAST_ONCE`**（默认） | 攒批 → Stream Load，靠 **label 幂等**去重 | 可能重放，但同 label 被 Doris 判重 → **最终不重** | **Unique / Aggregate**（Duplicate 会重复！） |
 | **`EXACTLY_ONCE`** | 攒批 → **preCommit（2PC）** → checkpoint 完成后 **commit** | checkpoint 失败则 abort，**数据从未可见** → 严格一次 | Unique / Aggregate + 支持事务 |
 
-```
-AT_LEAST_ONCE（label 幂等）:
-  批次 ──► Stream Load(label=L) ──► 成功
-  失败重放 ──► Stream Load(label=L) ──► "Label Already Exists" ──► 视为成功 ──► 不重 ✅
-
-EXACTLY_ONCE（2PC）:
-  批次 ──► preCommit(label=L, txn=T)  [数据未可见]
-            │
-     checkpoint 成功 ──► commit(txn=T)   ──► 数据可见 ✅
-     checkpoint 失败 ──► (txn 超时自动 abort) ──► 数据不存在 ✅
+```mermaid
+flowchart TB
+  subgraph AL["AT_LEAST_ONCE（label 幂等）"]
+    direction TB
+    A1["批次 ──► Stream Load(label=L) ──► 成功"]
+    A2["失败重放 ──► Stream Load(label=L) ──► 'Label Already Exists' ──► 视为成功 ──► 不重 ✅"]
+  end
+  subgraph EO["EXACTLY_ONCE（2PC）"]
+    direction TB
+    E1["批次 ──► preCommit(label=L, txn=T)  [数据未可见]"]
+    E2["checkpoint 成功 ──► commit(txn=T) ──► 数据可见 ✅"]
+    E3["checkpoint 失败 ──► (txn 超时自动 abort) ──► 数据不存在 ✅"]
+    E1 --> E2
+    E1 --> E3
+  end
+  classDef al fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef eo fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef good fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  classDef bad fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  class AL al
+  class EO eo
+  class A1,A2,E2 good
+  class E1,E3 bad
 ```
 
 > [!important] 该选哪个？这是一个权衡
@@ -764,17 +781,26 @@ public class MysqlCdcToDoris {
 
 ### 5.1 完整链路图
 
-```
-MySQL (binlog)
-   │  Debezium / Flink CDC
-   ▼
-Flink CDC Source  ──►  转换/清洗/打宽/去重  ──►  DorisSink
-   (initial + 增量)         (Flink SQL / DataStream)      │
-                                                    Stream Load (label)
-                                                          ▼
-                                                    Doris Unique 表 (MoW)
-                                                          │
-                                                    BI / 大屏 / 点查
+```mermaid
+flowchart TB
+  MYSQL["MySQL (binlog)"]
+  CDC["Flink CDC Source<br/>(initial + 增量)"]
+  TRANS["转换/清洗/打宽/去重<br/>(Flink SQL / DataStream)"]
+  SINK["DorisSink"]
+  SL["Stream Load (label)"]
+  TBL["Doris Unique 表 (MoW)"]
+  BI["BI / 大屏 / 点查"]
+  MYSQL -->|"Debezium / Flink CDC"| CDC
+  CDC --> TRANS --> SINK
+  SINK --> SL --> TBL --> BI
+  classDef src fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef proc fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef store fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  classDef serve fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  class MYSQL src
+  class CDC,TRANS,SINK,SL proc
+  class TBL store
+  class BI serve
 ```
 
 ### 5.2 为什么 CDC 场景必须选 Unique 模型
@@ -811,14 +837,18 @@ CDC 的 DELETE 事件怎么变成 Doris 的删除？**通过一行带删除标�
 
 **机制**：Doris 的 Unique 表有一个隐藏列 **`__DORIS_DELETE_SIGN__`**。写入一条主键相同、且该列为 `1` 的记录，就表示"删除这个主键"。
 
-```
-Flink CDC 收到 DELETE (order_id = 100) 
-        │
-        ▼
-connector 生成一条记录：{ order_id: 100, __DORIS_DELETE_SIGN__: 1 }
-        │
-        ▼
-Stream Load 写入 Doris → Unique 表按 order_id 覆盖 → 该行被标记删除
+```mermaid
+flowchart TB
+  A["Flink CDC 收到 DELETE (order_id = 100)"]
+  B["connector 生成一条记录：{ order_id: 100, __DORIS_DELETE_SIGN__: 1 }"]
+  C["Stream Load 写入 Doris → Unique 表按 order_id 覆盖 → 该行被标记删除"]
+  A --> B --> C
+  classDef a fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef b fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef c fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  class A a
+  class B b
+  class C c
 ```
 
 **Flink 侧的开关**：
@@ -983,19 +1013,24 @@ ADMIN SHOW CONFIG LIKE 'streaming_load_rpc_max_alive_time_sec';
 
 ### 7.4 导入与 Compaction 的关系（重点）
 
-```
-导入 ──► 产生新版本 ──► 表上的版本数增加
-                            │
-                            ▼
-                    Compaction 负责合并小版本
-                            │
-        ┌───────────────────┴───────────────────┐
-        │                                       │
-   Compaction 跟得上                      Compaction 跟不上
-        │                                       │
-   版本数稳定，查询快                    版本数堆积 → 查询要合并更多版本 → 变慢
-                                                → CommitAndPublish 变慢 → 导入变慢
-                                                → 更多导入堆积（恶性循环）
+```mermaid
+flowchart TB
+  A["导入"] --> B["产生新版本"] --> C["表上的版本数增加"]
+  C --> D["Compaction 负责合并小版本"]
+  D --> E["Compaction 跟得上"]
+  D --> F["Compaction 跟不上"]
+  E --> E1["版本数稳定，查询快"]
+  F --> F1["版本数堆积 → 查询要合并更多版本 → 变慢"]
+  F1 --> F2["CommitAndPublish 变慢 → 导入变慢"]
+  F2 --> F3["更多导入堆积（恶性循环）"]
+  classDef flow fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef good fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  classDef bad fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  classDef worse fill:#ffebee,stroke:#c62828,color:#b71c1c
+  class A,B,C,D flow
+  class E,E1 good
+  class F,F1 bad
+  class F2,F3 worse
 ```
 
 **这是一条正反馈的恶化链路**，也是"导入高峰期集群整体变慢"的最常见根因：

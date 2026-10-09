@@ -39,15 +39,26 @@ created: 2026-10-09
 
 ### 1.3 关键限制：闭环之外没有 exactly-once
 
-```text
-   [Kafka input-topic] --poll--> [你的处理逻辑] --send--> [Kafka output-topic]
-            |                                                        |
-            +------------ 位移提交（也写进同一个事务） ------------+
-                                  ↑
-                        这一段是原子的 ✅
-
-   [Kafka input-topic] --poll--> [处理] --JDBC insert--> [MySQL]   ← 无法纳入事务 ❌
-                                        --HTTP--> [下游服务]        ← 无法纳入事务 ❌
+```mermaid
+flowchart LR
+  subgraph OK["这一段是原子的 ✅"]
+    direction LR
+    I1["Kafka input-topic"] -->|poll| H1["你的处理逻辑"]
+    H1 -->|send| O1["Kafka output-topic"]
+    CM["位移提交（也写进同一个事务）"]
+    I1 -.-> CM
+    O1 -.-> CM
+  end
+  subgraph BAD["无法纳入事务 ❌"]
+    direction LR
+    I2["Kafka input-topic"] -->|poll| H2["处理"]
+    H2 -->|"JDBC insert"| MYSQL["MySQL"]
+    H2 -->|HTTP| DOWN["下游服务"]
+  end
+  classDef ok fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  classDef bad fill:#ffebee,stroke:#c62828,color:#b71c1c
+  class I1,H1,O1,CM ok
+  class I2,H2,MYSQL,DOWN bad
 ```
 
 > [!note] 结论性的三句话
@@ -135,14 +146,18 @@ ProducerStateManager (每个分区一份)
 
 Transaction Coordinator 不是一个独立进程，而是 **broker 上的一种角色**：当某个 broker 成为 `__transaction_state` 内部 topic 某个分区的 leader 时，它就承担该分区的协调者职责。
 
-```text
-Producer --FindCoordinator(key=transactional.id, keyType=1)--> 任意 Broker
-                                                                  |
-                                        返回: 该 transactional.id 对应的 Coordinator
-                                                                  |
-Producer <----------- InitProducerId / AddPartitionsToTxn / EndTxn ----------> Transaction Coordinator
-                                                                  |
-                                                     读写 __transaction_state
+```mermaid
+sequenceDiagram
+  participant P as Producer
+  participant B as 任意 Broker
+  participant TC as Transaction Coordinator
+  participant TS as __transaction_state
+
+  P->>B: FindCoordinator(key=transactional.id, keyType=1)
+  B-->>P: 返回: 该 transactional.id 对应的 Coordinator
+  P->>TC: InitProducerId / AddPartitionsToTxn / EndTxn
+  TC-->>P: InitProducerId / AddPartitionsToTxn / EndTxn
+  TC->>TS: 读写 __transaction_state
 ```
 
 - 定位方式：对 `transactional.id` 做哈希 → 映射到 `__transaction_state` 的某个分区 → 该分区的 leader 就是 Coordinator。
@@ -292,29 +307,36 @@ abortTransaction():
 
 ### 4.7 时序总览
 
-```text
-Producer                TransactionCoordinator          Partition Leader        GroupCoordinator
-   |                            |                            |                       |
-   |--InitProducerId----------->| 分配PID, epoch+1           |                       |
-   |<--(pid=1001, epoch=4)------|                            |                       |
-   |                            |                            |                       |
-   |--beginTransaction()  【本地】                            |                       |
-   |                            |                            |                       |
-   |--AddPartitionsToTxn------->| 登记 out-topic-0           |                       |
-   |<--OK-----------------------|                            |                       |
-   |--Produce(transactional)---------------------------------->| 追加进日志（不可见）   |
-   |<--ACK-----------------------------------------------------|                       |
-   |                            |                            |                       |
-   |--AddOffsetsToTxn---------->| 登记 __consumer_offsets-N  |                       |
-   |<--OK-----------------------|                            |                       |
-   |--TxnOffsetCommit(offsets, groupMetadata)---------------------------------------->| 位移挂起
-   |<--OK------------------------------------------------------------------------------|
-   |                            |                            |                       |
-   |--EndTxn(commit=true)------>| 持久化 PrepareCommit        |                       |
-   |                            |---WriteTxnMarkers(COMMIT)-->| 写入 COMMIT 控制批次   |
-   |                            |<--OK------------------------|                       |
-   |                            | 持久化 CompleteCommit       |                       |
-   |<--OK-----------------------|                            |                       |
+```mermaid
+sequenceDiagram
+  participant P as Producer
+  participant TC as TransactionCoordinator
+  participant PL as Partition Leader
+  participant GC as GroupCoordinator
+
+  P->>TC: InitProducerId
+  Note over TC: 分配PID, epoch+1
+  TC-->>P: (pid=1001, epoch=4)
+  P->>P: beginTransaction() 【本地】
+  P->>TC: AddPartitionsToTxn
+  Note over TC: 登记 out-topic-0
+  TC-->>P: OK
+  P->>PL: Produce(transactional)
+  Note over PL: 追加进日志（不可见）
+  PL-->>P: ACK
+  P->>TC: AddOffsetsToTxn
+  Note over TC: 登记 __consumer_offsets-N
+  TC-->>P: OK
+  P->>GC: TxnOffsetCommit(offsets, groupMetadata)
+  Note over GC: 位移挂起
+  GC-->>P: OK
+  P->>TC: EndTxn(commit=true)
+  Note over TC: 持久化 PrepareCommit
+  TC->>PL: WriteTxnMarkers(COMMIT)
+  Note over PL: 写入 COMMIT 控制批次
+  PL-->>TC: OK
+  Note over TC: 持久化 CompleteCommit
+  TC-->>P: OK
 ```
 
 ---

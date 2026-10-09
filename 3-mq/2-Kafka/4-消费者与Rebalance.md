@@ -62,10 +62,17 @@ flowchart LR
 
 再叠加一个组，就变成广播：
 
-```text
-   order-topic ──┬──> Consumer Group order-cg     (3 消费者, 分摊 3 个分区)
-                 │
-                 └──> Consumer Group bi-cg        (1 消费者, 独占 3 个分区, 各存一份位移)
+```mermaid
+flowchart LR
+  T["order-topic"]
+  G1["Consumer Group order-cg<br/>（3 消费者, 分摊 3 个分区）"]
+  G2["Consumer Group bi-cg<br/>（1 消费者, 独占 3 个分区, 各存一份位移）"]
+  T --> G1
+  T --> G2
+  classDef topic fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef cg fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  class T topic
+  class G1,G2 cg
 ```
 
 ### 1.3 并行度的硬上限
@@ -360,15 +367,26 @@ try {
 | **心跳存活** | **协调器**（broker 端） | `session.timeout.ms`（默认 45s） | 进程/网络是否还能通信（后台心跳线程负责） | 协调器把成员**踢出组**，触发 rebalance；日志 `Removing member ... on heartbeat expiration` |
 | **poll 存活** | 每个 **consumer 客户端自己** | `max.poll.interval.ms`（默认 5min） | 应用是否还在推进（业务处理是否卡住） | 客户端**主动**发 LeaveGroup 离开组、抛 `CommitFailedException`；日志 `Consumer poll timeout has expired` |
 
-```text
-        ┌─────────────────── 消费者进程 ────────────────────┐
-        │                                                  │
-        │   [后台心跳线程]  ──Heartbeat──> coordinator       │  判据 1：session.timeout.ms
-        │        (KIP-62 引入, 不受业务阻塞影响)             │
-        │                                                  │
-        │   [用户线程] poll() ─> 处理 ─> 处理 ─> poll()      │  判据 2：max.poll.interval.ms
-        │        └────── 这个间隔超了，自己退组 ──────┘      │
-        └──────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+  subgraph PROC["消费者进程"]
+    direction TB
+    HB["[后台心跳线程]<br/>(KIP-62 引入, 不受业务阻塞影响)"]
+    CO["coordinator"]
+    UT["[用户线程] poll() -> 处理 -> 处理 -> poll()"]
+    HB -->|Heartbeat| CO
+    UT --> LEAVE["这个间隔超了，自己退组"]
+  end
+  C1["判据 1：session.timeout.ms"]
+  C2["判据 2：max.poll.interval.ms"]
+  HB -.-> C1
+  UT -.-> C2
+  classDef proc fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef thread fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef crit fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  class PROC proc
+  class HB,UT,CO,LEAVE thread
+  class C1,C2 crit
 ```
 
 **为什么必须分成两个判据？** 因为两者的失败模式不同：
@@ -406,24 +424,23 @@ try {
 
 以**协调器**为中心的协议，共三个阶段：
 
-```text
-   消费者 C1, C2                                    GroupCoordinator
-        │                                                  │
-        │  ① JoinGroup(memberId="", protocols=[Range, ...]) │
-        ├─────────────────────────────────────────────────>│
-        │                                                  │ 收集所有成员,
-        │  <── JoinGroup 响应: generation=G,               │ 选出第一个加入者
-        │      leaderId=C1, members=[C1,C2]（只有 leader 有成员列表）│ 为 group leader
-        │                                                  │
-        │  ② C1(leader) 在客户端跑分配算法                   │
-        │     SyncGroup(assignment={C1:[P0], C2:[P1]})      │
-        ├─────────────────────────────────────────────────>│
-        │  <── SyncGroup 响应: C1 得到自己的分配             │ 把 leader 的方案
-        │  <── SyncGroup 响应: C2 得到自己的分配             │ 下发给所有成员
-        │                                                  │
-        │  ③ 开始 fetch；定期 Heartbeat(generation=G)        │
-        ├─────────────────────────────────────────────────>│
-        │  <── 心跳返回 REBALANCE_IN_PROGRESS → 重新 ①       │
+```mermaid
+sequenceDiagram
+  participant CC as 消费者 C1, C2
+  participant GC as GroupCoordinator
+
+  Note over CC,GC: ① JoinGroup
+  CC->>GC: JoinGroup(memberId='', protocols=[Range, ...])
+  Note over GC: 收集所有成员, 选出第一个加入者<br/>为 group leader
+  GC-->>CC: JoinGroup 响应: generation=G, leaderId=C1, members=[C1,C2]<br/>（只有 leader 有成员列表）
+  Note over CC: ② C1(leader) 在客户端跑分配算法
+  CC->>GC: SyncGroup(assignment={C1:[P0], C2:[P1]})
+  Note over GC: 把 leader 的方案下发给所有成员
+  GC-->>CC: SyncGroup 响应: C1 得到自己的分配
+  GC-->>CC: SyncGroup 响应: C2 得到自己的分配
+  Note over CC,GC: ③ 开始 fetch；定期 Heartbeat(generation=G)
+  CC->>GC: Heartbeat(generation=G)
+  GC-->>CC: 心跳返回 REBALANCE_IN_PROGRESS → 重新 ①
 ```
 
 关键细节：
@@ -691,10 +708,17 @@ try {
 
 **模型 B：单 consumer 拉取 + 线程池处理**
 
-```text
-   [poll 线程] ──records──> [有界阻塞队列] ──> [处理线程池] ──> 业务
-        │                                            │
-        └────────── 位移提交？这里是最容易踩坑的地方 ──┘
+```mermaid
+flowchart LR
+  P1["[poll 线程]"] -->|records| Q["[有界阻塞队列]"] --> P2["[处理线程池]"] --> BIZ["业务"]
+  P1 -.-> N["位移提交？这里是最容易踩坑的地方"]
+  P2 -.-> N
+  classDef t fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef q fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef note fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  class P1,P2,BIZ t
+  class Q q
+  class N note
 ```
 
 | 危险 | 说明 |

@@ -147,12 +147,42 @@ created: 2026-10-09
 
 ## 七、与「实时数仓」链路的关系
 
-```
-MySQL/业务库 ──CDC──┐
-                     ├──▶ Kafka ──▶ Flink（清洗/去重/聚合/维表） ──▶ Doris/StarRocks/ClickHouse
-日志/埋点 ───────────┘                    │                              │
-                                          ├──▶ 数据湖（Iceberg/Paimon）   └──▶ BI / 实时 API / AI 特征
-                                          └──▶ 告警 / 下游服务
+```mermaid
+flowchart LR
+  subgraph COL["采集"]
+    direction TB
+    MYSQL["MySQL / 业务库"]
+    LOG["日志 / 埋点"]
+    KAFKA["Kafka"]
+  end
+  subgraph COMP["计算"]
+    FLINK["Flink<br/>清洗 / 去重 / 聚合 / 维表"]
+  end
+  subgraph STORE["存储"]
+    direction TB
+    OLAP["Doris / StarRocks / ClickHouse"]
+    LAKE["数据湖（Iceberg / Paimon）"]
+  end
+  subgraph SERVE["服务"]
+    direction TB
+    BI["BI / 实时 API / AI 特征"]
+    ALERT["告警 / 下游服务"]
+  end
+  MYSQL -- CDC --> KAFKA
+  LOG --> KAFKA
+  KAFKA --> FLINK
+  FLINK --> OLAP
+  FLINK --> LAKE
+  FLINK --> ALERT
+  OLAP --> BI
+  classDef src fill:#e8eaf6,stroke:#3949ab,color:#1a237e
+  classDef compute fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+  classDef store fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+  classDef serve fill:#fff3e0,stroke:#ef6c00,color:#e65100
+  class MYSQL,LOG,KAFKA src
+  class FLINK compute
+  class OLAP,LAKE store
+  class BI,ALERT serve
 ```
 
 - 采集：**Flink CDC** 抓业务库变更 → 见 [[7-FlinkCDC与实时数仓]]
