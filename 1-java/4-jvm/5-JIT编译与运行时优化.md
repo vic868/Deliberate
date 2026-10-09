@@ -141,11 +141,23 @@ JDK 7 起 **分层编译（Tiered Compilation）默认开启**。它把"编译"�
 
 **典型迁移路径**：
 
-```text
-   0 ──(调用次数/回边数达标)──▶ 3 ──(Profile 足够 + 热度更高)──▶ 4
-                                   │
-                                   ├─▶ 2（C2 队列繁忙时的过渡）
-                                   └─▶ 1（方法足够简单，不需要 Profile，直接跳过 3）
+```mermaid
+flowchart LR
+  L0["0 解释执行"]
+  L1["1 C1（不做 Profiling）"]
+  L2["2 C1 + 轻量 Profile"]
+  L3["3 C1 + 完整 Profile"]
+  L4["4 C2 编译"]
+  L0 -->|调用次数 / 回边数达标| L3
+  L3 -->|Profile 足够 + 热度更高| L4
+  L3 -->|C2 队列繁忙时的过渡| L2
+  L3 -->|方法足够简单，不需要 Profile，直接跳过 3| L1
+  classDef interp fill:#eceff1,stroke:#546e7a
+  classDef c1 fill:#e3f2fd,stroke:#1976d2
+  classDef c2 fill:#e8f5e9,stroke:#2e7d32
+  class L0 interp
+  class L1,L2,L3 c1
+  class L4 c2
 ```
 
 **两个关键推论**：
@@ -246,15 +258,12 @@ flowchart TB
 
 **解法：热度衰减（Counter Decay）**。JVM 在**安全点**（safepoint）周期性地把计数器**减半**（不是清零，是折半）。折半的周期由 `-XX:CounterHalfLifeTime` 控制（单位秒，默认约 30 秒量级）。
 
-```text
-调用计数
-  10000 ┤        ╭╮
-        │       ╱  ╲
-   5000 ┤      ╱    ╲          ← 每过半衰期折半
-        │     ╱      ╲
-   2500 ┤    ╱        ╲＿＿＿
-        │   ╱                ╲＿＿＿
-      0 └──┴──────────────────────────────▶ 时间
+```mermaid
+xychart-beta
+  title "调用计数随时间变化：每过半衰期折半"
+  x-axis "时间" [0, 1, 2, 3, 4, 5]
+  y-axis "调用计数" 0 --> 10000
+  line [0, 10000, 5000, 2500, 1250, 625]
 ```
 
 **实战含义**：
@@ -329,16 +338,21 @@ flowchart LR
 
 **编译队列积压时会发生什么**：
 
-```text
-   方法达到阈值 → 提交编译任务 → 进编译队列
-                                      │
-                       ┌──────────────┴──────────────┐
-                       ▼                             ▼
-              队列空闲，很快编译完成           队列积压 → 方法继续解释执行
-                                                       │
-                                              分层编译会自动降级策略：
-                                              - 优先走 level 2（轻量 Profile）
-                                              - 减少 C2 任务，多做 C1
+```mermaid
+flowchart TD
+  A["方法达到阈值 → 提交编译任务 → 进编译队列"]
+  B["队列空闲，很快编译完成"]
+  C["队列积压 → 方法继续解释执行"]
+  D["分层编译会自动降级策略：<br/>- 优先走 level 2（轻量 Profile）<br/>- 减少 C2 任务，多做 C1"]
+  A --> B
+  A --> C
+  C --> D
+  classDef submit fill:#e3f2fd,stroke:#1976d2
+  classDef ok fill:#e8f5e9,stroke:#2e7d32
+  classDef backlog fill:#fff3e0,stroke:#f57c00
+  class A submit
+  class B ok
+  class C,D backlog
 ```
 
 **这意味着：编译线程不足时，"热点"会被延迟优化，表现为吞吐上不去、CPU 却不高。** 在容器化环境（CPU limit 很小时）特别容易碰到——JVM 看到的核数是宿主的，编译线程数可能过多，反而与应用线程抢 CPU。
@@ -509,13 +523,27 @@ java -XX:+UnlockDiagnosticVMOptions -XX:+PrintInlining -jar app.jar
 
 **三个经典应用**：
 
-```text
-逃逸分析
-   │
-   ├──▶ 不逃逸 ──▶ ① 标量替换：把对象拆成字段，字段放寄存器/栈，连对象头都不分配
-   │              └▶ ② 锁消除：独占的锁直接删掉 monitorenter/monitorexit
-   │
-   └──▶ 逃逸   ──▶ 正常堆分配（TLAB）
+```mermaid
+flowchart TD
+  EA["逃逸分析"]
+  NO["不逃逸"]
+  YES["逃逸"]
+  R1["① 标量替换<br/>把对象拆成字段，字段放寄存器 / 栈，连对象头都不分配"]
+  R2["② 锁消除<br/>独占的锁直接删掉 monitorenter / monitorexit"]
+  R3["正常堆分配（TLAB）"]
+  EA --> NO
+  EA --> YES
+  NO --> R1
+  NO --> R2
+  YES --> R3
+  classDef root fill:#e8eaf6,stroke:#3949ab
+  classDef branch fill:#e3f2fd,stroke:#1976d2
+  classDef opt fill:#e8f5e9,stroke:#2e7d32
+  classDef normal fill:#fff3e0,stroke:#f57c00
+  class EA root
+  class NO,YES branch
+  class R1,R2 opt
+  class R3 normal
 ```
 
 | 参数 | 默认 | 说明 |
@@ -759,16 +787,14 @@ JIT 认识一批"特殊方法"，遇到时**直接替换成最优机器指令**�
 
 **同一段代码，在不同时间点执行，性能可能差 5~20 倍。** 原因链条：
 
-```text
-t=0        解释执行（慢）        ← 第一次调用
-   │
-t=几十次   C1 编译（中等）       ← 达到 Tier3 阈值
-   │
-t=几千次   C2 编译（快）         ← 达到 Tier4 阈值 + Profile 充分
-   │
-t=上万次   优化充分生效           ← 内联到位、逃逸分析生效、Profile 稳定
-   │
-（其间）  Profile 变化 → 去优化 → 回到解释器 → 重新预热（抖动）
+```mermaid
+timeline
+  title JIT 预热时间线
+  t=0 : 解释执行（慢）<br/>第一次调用
+  t=几十次 : C1 编译（中等）<br/>达到 Tier3 阈值
+  t=几千次 : C2 编译（快）<br/>达到 Tier4 阈值 + Profile 充分
+  t=上万次 : 优化充分生效<br/>内联到位、逃逸分析生效、Profile 稳定
+  （其间） : Profile 变化 → 去优化 → 回到解释器 → 重新预热（抖动）
 ```
 
 | 阶段 | 现象 | 观测 |
@@ -941,20 +967,22 @@ java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -XX:CompileCommand=print,
 
 **为什么会有去优化**：C2 的激进优化建立在**推测（speculation）**之上——"这个调用点只有一个实现类"、"这个分支从没走过"、"这个数组访问不会越界"。一旦推测被现实推翻，就必须**放弃已编译代码，回到解释器或较低层级**，这个过程叫去优化。
 
-```text
-   C2 编译时: "调用点只有一个实现类 Foo" → 内联 Foo，插入 guard
-                     │
-                     ▼
-   运行期: 突然加载了新的实现类 Bar，调用点收到 Bar 实例
-                     │
-                     ▼
-   guard 失败 → uncommon trap → 去优化
-                     │
-                     ▼
-   栈帧变回解释执行（状态从编译代码"反向映射"回解释器栈帧）
-                     │
-                     ▼
-   重新收集 Profile → 可能重新编译成双态/巨态版本
+```mermaid
+flowchart TD
+  A["C2 编译时：「调用点只有一个实现类 Foo」<br/>→ 内联 Foo，插入 guard"]
+  B["运行期：突然加载了新的实现类 Bar<br/>调用点收到 Bar 实例"]
+  C["guard 失败 → uncommon trap → 去优化"]
+  D["栈帧变回解释执行<br/>状态从编译代码「反向映射」回解释器栈帧"]
+  E["重新收集 Profile<br/>→ 可能重新编译成双态 / 巨态版本"]
+  A --> B --> C --> D --> E
+  classDef compiled fill:#e8f5e9,stroke:#2e7d32
+  classDef runtime fill:#e3f2fd,stroke:#1976d2
+  classDef deopt fill:#ffebee,stroke:#c62828
+  classDef rejit fill:#fff3e0,stroke:#f57c00
+  class A compiled
+  class B runtime
+  class C,D deopt
+  class E rejit
 ```
 
 **触发的典型原因**：
@@ -1001,42 +1029,31 @@ uncommon trap occurred in com.demo.OrderService::calc
 
 ### 6.5 "同一个方法跑一会儿突然变慢"的排查清单
 
-```text
-现象：某接口 p99 从 20ms 涨到 200ms，且持续不恢复（或周期性抖动）
-   │
-   ├─ ① 去优化（Deoptimization）
-   │     · 特征：PrintCompilation 里出现 made not entrant，同一方法反复编译
-   │     · 常见触发：动态加载了新实现类、热部署、Instrumentation retransform
-   │     · 验证：-XX:+TraceDeoptimization
-   │
-   ├─ ② Code Cache 满 / 编译器被禁用
-   │     · 特征：日志出现 "CodeCache is full. Compiler has been disabled."
-   │     · 验证：jcmd <pid> Compiler.codecache 看 max_used 是否逼近上限
-   │     · 结果：所有方法退回解释执行 → 性能断崖
-   │
-   ├─ ③ 调用点变 megamorphic
-   │     · 特征：上线新业务分支/新实现类后变慢；PrintInlining 里出现 megamorphic
-   │     · 验证：-XX:+PrintInlining 找 "not monomorphic"
-   │
-   ├─ ④ 热度衰减导致重新预热
-   │     · 特征：每天高峰初期慢，稳定后恢复
-   │     · 机制：CounterHalfLifeTime 让计数折半，低谷期后需重新升温
-   │
-   ├─ ⑤ GC 变化（不是 JIT，但表现一样）
-   │     · 特征：GC 日志里 Full GC / Mixed GC 频率上升；老年代增长
-   │     · 验证：-Xlog:gc* 对比变慢前后的停顿与频率
-   │
-   ├─ ⑥ 锁膨胀 / 竞争加剧（不是 JIT 优化，是相反方向）
-   │     · 特征：线程 BLOCKED 增多；jstack 看到同一监视器
-   │     · 注意：JIT 的锁消除是"减少锁"，竞争加剧是"锁更多线程"
-   │
-   ├─ ⑦ 编译线程抢 CPU
-   │     · 特征：火焰图里 C2 CompilerThread 占用显著；应用线程被抢占
-   │     · 验证：jcmd Thread.print | grep Compiler；perf/jfr 看编译事件
-   │
-   └─ ⑧ 外部因素
-         · 连接池耗尽、下游变慢、容器 CPU throttling、内存 swap
-         · 验证：容器指标、下游延迟、CPU throttling 计数
+```mermaid
+flowchart TD
+  P["现象：某接口 p99 从 20ms 涨到 200ms<br/>且持续不恢复（或周期性抖动）"]
+  D1["① 去优化（Deoptimization）<br/>· 特征：PrintCompilation 里出现 made not entrant，同一方法反复编译<br/>· 常见触发：动态加载了新实现类、热部署、Instrumentation retransform<br/>· 验证：-XX:+TraceDeoptimization"]
+  D2["② Code Cache 满 / 编译器被禁用<br/>· 特征：日志出现「CodeCache is full. Compiler has been disabled.」<br/>· 验证：jcmd &lt;pid&gt; Compiler.codecache 看 max_used 是否逼近上限<br/>· 结果：所有方法退回解释执行 → 性能断崖"]
+  D3["③ 调用点变 megamorphic<br/>· 特征：上线新业务分支 / 新实现类后变慢；PrintInlining 里出现 megamorphic<br/>· 验证：-XX:+PrintInlining 找「not monomorphic」"]
+  D4["④ 热度衰减导致重新预热<br/>· 特征：每天高峰初期慢，稳定后恢复<br/>· 机制：CounterHalfLifeTime 让计数折半，低谷期后需重新升温"]
+  D5["⑤ GC 变化（不是 JIT，但表现一样）<br/>· 特征：GC 日志里 Full GC / Mixed GC 频率上升；老年代增长<br/>· 验证：-Xlog:gc* 对比变慢前后的停顿与频率"]
+  D6["⑥ 锁膨胀 / 竞争加剧（不是 JIT 优化，是相反方向）<br/>· 特征：线程 BLOCKED 增多；jstack 看到同一监视器<br/>· 注意：JIT 的锁消除是「减少锁」，竞争加剧是「锁更多线程」"]
+  D7["⑦ 编译线程抢 CPU<br/>· 特征：火焰图里 C2 CompilerThread 占用显著；应用线程被抢占<br/>· 验证：jcmd Thread.print ｜ grep Compiler；perf/jfr 看编译事件"]
+  D8["⑧ 外部因素<br/>· 连接池耗尽、下游变慢、容器 CPU throttling、内存 swap<br/>· 验证：容器指标、下游延迟、CPU throttling 计数"]
+  P --> D1
+  P --> D2
+  P --> D3
+  P --> D4
+  P --> D5
+  P --> D6
+  P --> D7
+  P --> D8
+  classDef root fill:#ffebee,stroke:#c62828
+  classDef jit fill:#e3f2fd,stroke:#1976d2
+  classDef notjit fill:#fff3e0,stroke:#f57c00
+  class P root
+  class D1,D2,D3,D4,D7 jit
+  class D5,D6,D8 notjit
 ```
 
 **排查顺序建议**：先看 **GC 日志**（最常见）→ 再看 **Code Cache 的 `max_used`**（最容易漏）→ 再看 **去优化次数**（最隐蔽）→ 最后怀疑 JIT 之外的系统因素。
@@ -1140,14 +1157,21 @@ jcmd <pid> JFR.stop name=jit
 
 用 `async-profiler` / `perf` 采样时，会看到：
 
-```text
-C2 CompilerThread0
-  └─ Compile::Code_Gen
-     └─ PhaseIdealLoop::optimize
-        └─ ...
-C2 CompilerThread1
-  └─ ...
-CodeCache Sweeper
+```mermaid
+flowchart TD
+  T0["C2 CompilerThread0"]
+  G["Compile::Code_Gen"]
+  O["PhaseIdealLoop::optimize"]
+  E1["…"]
+  T1["C2 CompilerThread1"]
+  E2["…"]
+  S["CodeCache Sweeper"]
+  T0 --> G --> O --> E1
+  T1 --> E2
+  classDef thread fill:#e3f2fd,stroke:#1976d2
+  classDef frame fill:#eceff1,stroke:#546e7a
+  class T0,T1,S thread
+  class G,O,E1,E2 frame
 ```
 
 | 现象 | 解读 | 处理 |

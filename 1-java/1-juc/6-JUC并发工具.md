@@ -431,18 +431,22 @@ private boolean doAcquireNanos(int arg, long nanosTimeout) throws InterruptedExc
 
 **两把队列物理分离**：
 
-```
-        同一个 AQS 实例
-  ┌──────────────────────────────────────────────────┐
-  │ 同步队列 head ←→ Node ←→ Node ←→ … ←→ tail        │ ← 抢锁失败 / signal 后转入
-  └──────────────────────────────────────────────────┘
-              ▲                        │
-  transferForSignal│                   │await: addConditionWaiter
-              │                        ▼
-  ┌──────────────────────────────────────────────────┐
-  │ 条件队列 firstWaiter → Node → Node … （单向）      │ ← 每个 ConditionObject 一条
-  │ 节点 waitStatus = CONDITION                       │
-  └──────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+  subgraph AQS["同一个 AQS 实例"]
+    direction TB
+    SYN["同步队列（双向）<br/>head ←→ Node ←→ Node ←→ … ←→ tail"]
+    COND["条件队列（单向）<br/>firstWaiter → Node → Node …<br/>每个 ConditionObject 一条<br/>节点 waitStatus = CONDITION"]
+    SYN -->|await: addConditionWaiter| COND
+    COND -->|transferForSignal| SYN
+  end
+  IN["抢锁失败 / signal 后转入"] -.-> SYN
+  classDef reg fill:#e3f2fd,stroke:#1976d2
+  classDef cond fill:#fff3e0,stroke:#f57c00
+  classDef note fill:#eceff1,stroke:#546e7a
+  class SYN reg
+  class COND cond
+  class IN note
 ```
 
 | | 同步队列 | 条件队列 |
