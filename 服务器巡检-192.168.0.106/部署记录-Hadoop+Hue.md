@@ -7,9 +7,14 @@
 
 ## 一、架构
 
+> [!warning] 2026-10-07 变更：hadoop 已改为 `network_mode: host`
+> 为了 **DataNode 以宿主机 IP（192.168.0.106）注册**，让 k3s Pod 和外部客户端能直连，hadoop 容器**脱离了 hadoop-net**，改用 host 网络；
+> hue / hive-metastore / hive-server 则通过 `extra_hosts: hadoop:192.168.0.106` 回连宿主机。
+> **副作用：host 网络的端口不再经 docker-proxy，因此受 UFW 管辖** → 见 [[#八、故障记录：局域网无法访问 Hadoop（2026-10-09）]]。
+
 ```text
-docker network: hadoop-net (bridge)
-├── hadoop   容器  apache/hadoop:3.3.6（自带 JDK 8，符合 3.3.6 要求）
+docker network: hadoop-net (bridge)  +  hadoop 容器走 host 网络
+├── hadoop   容器  apache/hadoop:3.3.6（自带 JDK 8，符合 3.3.6 要求）· network_mode: host
 │     NameNode + DataNode + ResourceManager + NodeManager + JobHistoryServer
 │     单容器伪分布式，自定义 /opt/startup.sh 拉起全部进程
 ├── hue      容器  gethue/hue:4.11.0（Web 图形界面）
@@ -22,16 +27,22 @@ docker network: hadoop-net (bridge)
 
 **宿主机端口分配**（9000 被 Portainer 占用，NN RPC 改用 8020）：
 
-| 端口 | 服务 |
-|---|---|
-| 8020 | HDFS RPC（`fs.defaultFS = hdfs://hadoop:8020`） |
-| 9870 | NameNode Web UI |
-| 8088 | YARN ResourceManager UI |
-| 19888 | MapReduce JobHistory UI |
-| 8888 | **Hue Web UI** |
-| 10000 | HiveServer2 thrift（JDBC/beeline 连接入口） |
-| 10002 | HiveServer2 Web UI |
-| 9083 | Hive metastore thrift |
+| 端口 | 服务 | 网络方式（决定是否受 UFW 管） |
+|---|---|---|
+| 8020 | HDFS RPC（`fs.defaultFS = hdfs://hadoop:8020`） | host 网络 · **受 UFW** |
+| 9864 | DataNode HTTP（WebHDFS 重定向目标） | host 网络 · **受 UFW** |
+| 9866 | DataNode 数据传输 | host 网络 · **受 UFW** |
+| 9867 | DataNode HTTPS | host 网络 · **受 UFW** |
+| 9870 | NameNode Web UI | host 网络 · **受 UFW** |
+| 8088 | YARN ResourceManager UI | host 网络 · **受 UFW** |
+| 19888 | MapReduce JobHistory UI | host 网络 · **受 UFW** |
+| 8888 | **Hue Web UI** | docker-proxy · 绕过 UFW |
+| 10000 | HiveServer2 thrift（JDBC/beeline 连接入口） | docker-proxy · 绕过 UFW |
+| 10002 | HiveServer2 Web UI | docker-proxy · 绕过 UFW |
+| 9083 | Hive metastore thrift | docker-proxy · 绕过 UFW |
+
+> [!tip] 一句话判断法
+> `ss -lntp` 看到 **`docker-proxy`** → 不受防火墙管；看到 **`java`**（host 网络/裸部署）→ 受 UFW 管，必须 `ufw allow`。
 
 ## 二、文件布局（全部在 /opt/hadoop-docker/）
 
@@ -138,3 +149,69 @@ docker compose down / up -d       # 停/起
 - Kafka → Flink（k3s 里已在跑）→ HDFS 落地的实时管道
 - HBase（/opt/hbase 容器）可考虑迁到 HDFS 做底层存储
 - Hive 已就绪：Hue 里直接写 HiveSQL； metastore 也可供 Spark/Dinky 等共用
+
+---
+
+## 八、故障记录：局域网无法访问 Hadoop（2026-10-09）
+
+### 现象
+
+Mac（192.168.0.102）访问 NameNode UI / YARN UI 全部不通；但 **Hue（8888）、HiveServer2（10000）、metastore（9083）、MySQL（3306）都正常**。
+
+### 排查链路
+
+| 步骤 | 结果 | 结论 |
+|---|---|---|
+| ping / SSH 22 | 通 | 机器和网络没问题 |
+| 端口扫描 | 8020/9870/8088/19888 全 closed；8888/10000/9083/3306 OPEN | 只挂「一部分」，高度可疑 |
+| `docker ps -a` | hadoop 容器 **Up 2 days (healthy)** | 容器根本没挂 |
+| `docker compose ps` | hadoop 那行 **PORTS 为空**，hive/hue 都有映射 | 疑点 |
+| `docker inspect hadoop` | **`NetworkMode=host`** | 关键 |
+| 宿主机 `ss -lntp` | 9870/8020/8088/19888 **全在监听**（java 直接监听，非 docker-proxy） | **Hadoop 完全健康** |
+| 宿主机 `curl localhost:9870` | **302** | 服务端没问题 |
+| `ufw status verbose` | active · default **deny (incoming)**；8020/9866/9870 只放行 `172.16.0.0/12` + `10.42.0.0/16`；**8088/19888 一条规则都没有** | ✅ **根因** |
+
+### 根因
+
+`hadoop` 服务已改为 **`network_mode: host`**（2026-10-07 20:03 改，目的是让 DataNode 以宿主机 IP 注册，便于 k3s Pod 与外部客户端直连）。
+改动之后：
+
+- **bridge + 发布端口**：走 `docker-proxy`，写入 DOCKER 链，**绕过 UFW** → 之前局域网能访问
+- **host 网络**：进程直接在宿主机上 `bind`，**逃不过 UFW 的 default deny** → 局域网被拦
+
+> [!important] 通用规律（**值得记牢**）
+> **判断一个端口能不能被局域网访问，先看它是 `docker-proxy` 还是 `java` 在监听**：
+> - `docker-proxy` → 绕过 UFW，**不受防火墙管辖**
+> - 原生进程（host 网络 / 直接部署）→ **受 UFW 管辖**
+>
+> 这也解释了 [[巡检报告]] 里「Docker 发布端口绕过 UFW 全部暴露在局域网」那条——同一个机制的两面。
+
+### 修复（保留 host 网络，补 UFW 规则）
+
+```bash
+ufw allow from 192.168.0.0/24 to any port 8020  proto tcp comment 'HDFS NN RPC from LAN'
+ufw allow from 192.168.0.0/24 to any port 9864  proto tcp comment 'HDFS DN http/webhdfs from LAN'
+ufw allow from 192.168.0.0/24 to any port 9866  proto tcp comment 'HDFS DN data xfer from LAN'
+ufw allow from 192.168.0.0/24 to any port 9867  proto tcp comment 'HDFS DN http from LAN'
+ufw allow from 192.168.0.0/24 to any port 9870  proto tcp comment 'NameNode Web UI from LAN'
+ufw allow from 192.168.0.0/24 to any port 8088  proto tcp comment 'YARN RM UI from LAN'
+ufw allow from 192.168.0.0/24 to any port 19888 proto tcp comment 'JobHistory UI from LAN'
+```
+
+> [!warning] 坑中坑：DataNode 的 **9864** 最容易漏
+> 只放行 9866/9867 是**不够**的。WebHDFS 的 `OPEN` 会 **307 重定向到 DataNode 的 `9864`**（HTTP 端口），
+> 漏掉它就会出现「**UI 能打开、RPC 能连，但一读文件就失败**」这种最难查的半通状态。
+> 判断方法：`ss -lntp | grep -E ':(9864|9866|9867)'` 看 DataNode 到底监听哪几个。
+
+### 验证结果
+
+- [x] 9870 / 8088 / 19888 → HTTP 302 ✓
+- [x] 8020（HDFS RPC）、9866（DN 数据传输）→ OPEN ✓
+- [x] WebHDFS `LISTSTATUS` 返回 JSON ✓
+- [x] **端到端读真实文件**：`/data/staging/flink-demo/dt=2026-10-07/1791353363.jsonl`（1.24 MB）→ HTTP 200，耗时 **0.139s** ✓
+
+### 待观察（次要）
+
+`hdfs dfsadmin -report` 显示 **Under replicated blocks: 130**。
+配置是 `replication=1` 单副本，正常不该长期存在欠副本，怀疑与「bridge → host」切换后 DataNode 注册 IP 变化、旧副本位置失效有关。
+建议找时间 `hdfs fsck / -blocks` 核一次。
