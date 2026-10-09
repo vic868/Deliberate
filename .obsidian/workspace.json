@@ -11,14 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "5-bigdata/0-flink/9-部署与运维.md",
-                "mode": "preview",
-                "source": true
+                "file": "7-分布式/分布式事务.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "9-部署与运维"
+              "icon": "excalidraw-icon",
+              "title": "分布式事务.excalidraw"
             }
           }
         ]
@@ -254,13 +252,19 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "5-bigdata/1-doris/3-表设计.md",
+    "5-bigdata/1-doris/6-数据导入与FlinkCDC.md",
+    "5-bigdata/1-doris/2-数据模型.md",
+    "5-bigdata/1-doris/5-查询优化.md",
+    "5-bigdata/1-doris/0-Doris总览.md",
+    "5-bigdata/0-flink/9-部署与运维.md",
+    "5-bigdata/1-doris/10-面试高频题.md",
+    "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
     "5-bigdata/0-flink/11-端到端一致性.md",
-    "5-bigdata/1-doris/0-Doris总览.md",
     "5-bigdata/0-flink/10-面试高频题.md",
-    "5-bigdata/0-flink/9-部署与运维.md",
     "5-bigdata/0-flink/4-容错与ExactlyOnce.md",
     "5-bigdata/0-flink/3-状态管理.md",
     "5-bigdata/0-flink/1-架构与运行时.md",
@@ -276,14 +280,8 @@
     "3-mq/2-Kafka/2-架构与核心概念.md",
     "3-mq/2-Kafka/5-日志存储与副本机制.md",
     "3-mq/2-Kafka/4-消费者与Rebalance.md",
-    "3-mq/2-Kafka/3-消费者与Rebalance.md",
-    "3-mq/2-Kafka/8-性能优化与高吞吐原理.md",
     "5-bigdata/1-doris",
     "5-bigdata/0-flink",
-    "3-mq/2-Kafka/7-运维与集群调优.md",
-    "3-mq/2-Kafka/10-面试高频题.md",
-    "3-mq/2-Kafka/1-Kafka总览.md",
-    "3-mq/2-Kafka/6-事务与Exactly-Once.md",
     "Pasted Image 20261009203105_072.png",
     "Pasted Image 20261009202948_985.png",
     "Pasted Image 20261009152014_855.png",
