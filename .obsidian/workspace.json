@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/1-doris/7-湖仓一体.md",
+                "file": "1-java/0-知识点/3-抽象.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "7-湖仓一体"
+              "title": "3-抽象"
             }
           }
         ]
@@ -256,15 +256,18 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "5-bigdata/1-doris/1-架构与原理.md",
+    "1-java/0-知识点/2-基础知识.md",
+    "1-java/0-知识点/1-面向对象.md",
+    "5-bigdata/1-doris/3-表设计.md",
+    "5-bigdata/1-doris/2-数据模型.md",
     "5-bigdata/1-doris/9-对比StarRocks与ClickHouse.md",
+    "5-bigdata/1-doris/7-湖仓一体.md",
+    "5-bigdata/1-doris/4-建表与分区分桶.md",
+    "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/1-doris/0-Doris总览.md",
     "7-分布式/分布式事务.excalidraw.md",
-    "5-bigdata/1-doris/7-湖仓一体.md",
     "5-bigdata/1-doris/8-运维与调优.md",
-    "5-bigdata/1-doris/3-表设计.md",
     "5-bigdata/1-doris/6-数据导入与FlinkCDC.md",
-    "5-bigdata/1-doris/2-数据模型.md",
     "5-bigdata/1-doris/5-查询优化.md",
     "5-bigdata/0-flink/9-部署与运维.md",
     "5-bigdata/1-doris/10-面试高频题.md",
@@ -279,9 +282,6 @@
     "5-bigdata/0-flink/0-Flink总览.md",
     "3-mq/未命名.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
-    "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
-    "3-mq/2-Kafka/3-生产者原理.md",
-    "大数据学习规划/03-实时数仓与存储.md",
     "5-bigdata/1-doris",
     "5-bigdata/0-flink",
     "Pasted Image 20261009203105_072.png",

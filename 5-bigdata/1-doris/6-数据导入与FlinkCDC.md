@@ -1,5 +1,5 @@
 ---
-title: 数据导入与 Flink CDC
+title: Doris 数据导入与 Flink CDC
 tags: [Doris, 数据导入, FlinkCDC, StreamLoad]
 status: 进行中
 created: 2026-10-09
