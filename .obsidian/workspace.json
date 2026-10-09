@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3-mq/未命名.md",
+                "file": "5-bigdata/0-flink/9-部署与运维.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "9-部署与运维"
             }
           }
         ]
@@ -254,9 +254,19 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/10-面试高频题.md",
+    "5-bigdata/0-flink/3-状态管理.md",
+    "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
+    "5-bigdata/0-flink/1-架构与运行时.md",
+    "5-bigdata/0-flink/9-部署与运维.md",
+    "5-bigdata/0-flink/2-时间与窗口.md",
+    "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/0-Flink总览.md",
+    "3-mq/未命名.md",
+    "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
+    "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
     "3-mq/2-Kafka/3-生产者原理.md",
     "大数据学习规划/03-实时数仓与存储.md",
     "大数据学习规划/02-Flink补课.md",
@@ -274,22 +284,12 @@
     "3-mq/2-Kafka/7-性能优化与高吞吐原理.md",
     "3-mq/2-Kafka/9-SpringBoot实战.md",
     "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
-    "3-mq/2-Kafka/5-事务与Exactly-Once.md",
-    "3-mq/未命名.md",
     "Pasted Image 20261009203105_072.png",
     "Pasted Image 20261009202948_985.png",
     "Pasted Image 20261009152014_855.png",
     "Pasted Image 20261009151249_453.png",
     "Pasted Image 20261009150831_843.png",
-    "面试准备/简历/04-如何从0到1搭建服务-话术.md",
-    "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
-    "9-k8s/0-K8s网络请求全过程.md",
     "9-k8s",
-    "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
-    "1-java/java 版本.smm.md",
-    "1-java/0-知识点/3-抽象.md",
-    "1-java/0-知识点/2-基础知识.md",
-    "服务器巡检-192.168.0.106/Kafka入湖标准流程与方案选型.md",
     "服务器巡检-192.168.0.106/deploy/scripts/ods_to_dwd.sh",
     "服务器巡检-192.168.0.106/deploy/scripts",
     "Pasted Image 20261008135513_165.png",
