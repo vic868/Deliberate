@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/0-知识点/2-面向对象与设计模式.md",
+                "file": "1-java/1-juc/4-多线程与内存模型.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2-面向对象与设计模式"
+              "title": "4-多线程与内存模型"
             }
           }
         ]
@@ -256,11 +256,18 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
+    "1-java/1-juc/4-多线程与内存模型.md",
+    "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
+    "1-java/1-juc/0-juc.excalidraw.md",
+    "1-java/0-知识点/13-Spring源码骨架.md",
+    "1-java/0-知识点/10-面试高频题.md",
+    "1-java/0-知识点/9-Java版本特性.md",
+    "1-java/0-知识点/3-泛型反射与注解.md",
+    "1-java/0-知识点/2-面向对象与设计模式.md",
     "1-java/0-知识点/1-语言基础与面向对象.md",
     "1-java/0-知识点/0-Java总览.md",
     "1-java/1-juc/5-线程池.md",
-    "1-java/1-juc/4-多线程与内存模型.md",
-    "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
     "1-java/2-collection/1-集合框架.md",
     "1-java/3-IO/3-IO与网络编程.md",
     "1-java/4-jvm/1-JVM内存区域与对象布局.md",
@@ -271,17 +278,10 @@
     "1-java/4-jvm/6-JVM参数与调优实战.md",
     "1-java/4-jvm/7-JVM故障排查实战.md",
     "1-java/4-jvm/7-JVM内存与GC.md",
-    "1-java/0-知识点/13-Spring源码骨架.md",
-    "1-java/0-知识点/10-面试高频题.md",
-    "1-java/0-知识点/3-泛型反射与注解.md",
-    "1-java/0-知识点/2-面向对象与设计模式.md",
     "_dvtest/good.md",
     "_dvtest/bad.md",
     "_dvtest",
-    "1-java/1-juc/0-juc.excalidraw.md",
     "1-java/1-juc/6-JUC并发工具.md",
-    "1-java/0-知识点/9-Java版本特性.md",
-    "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
     "1-java/1-juc/1-Disruptor.md",
     "1-java/4-jvm",
     "5-bigdata/1-doris",

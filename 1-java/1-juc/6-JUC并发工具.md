@@ -141,12 +141,24 @@ public final void acquire(int arg) {
 }
 ```
 
-```
-lock() → acquire(1)
-   ├─ ① tryAcquire(1) ── 成功 ──► 返回（"快路径"，完全不进队列）
-   └─ 失败
-        ├─ ② addWaiter(EXCLUSIVE)  → 入同步队列尾部
-        └─ ③ acquireQueued(node,1) → 自旋 + park，直到轮到自己
+```mermaid
+flowchart TD
+  L["lock() → acquire(1)"]
+  T1["① tryAcquire(1)"]
+  OK["成功 → 返回（「快路径」，完全不进队列）"]
+  F["失败"]
+  AW["② addWaiter(EXCLUSIVE)<br/>→ 入同步队列尾部"]
+  AQ["③ acquireQueued(node, 1)<br/>→ 自旋 + park，直到轮到自己"]
+  L --> T1
+  T1 -->|成功| OK
+  T1 -->|失败| F
+  F --> AW --> AQ
+  classDef entry fill:#e8eaf6,stroke:#3949ab
+  classDef fast fill:#e8f5e9,stroke:#2e7d32
+  classDef slow fill:#fff3e0,stroke:#f57c00
+  class L entry
+  class T1,OK fast
+  class F,AW,AQ slow
 ```
 
 **① 快路径**（`ReentrantLock.NonfairSync`）：
@@ -1357,13 +1369,25 @@ public long sum() {                                          // 弱一致
 
 **什么是伪共享**：两个线程分别更新**两个不同的变量**，但这两个变量落在**同一个缓存行（cache line，x86 通常 64 字节）**里。逻辑上无共享，但硬件一致性协议（MESI）以**缓存行为单位**传播失效，于是每次写都会把对方副本打掉——性能表现和"真共享"一样糟。
 
-```
-        同一个 64 字节缓存行
-┌──────────────────────────────────────────────┐
-│  Cell[0].value │ 填充 │  Cell[1].value │ 填充 │
-└──────────────────────────────────────────────┘
-   ThreadA 一直写这格         ThreadB 一直写这格
-        └──── 缓存行来回失效，吞吐暴跌 ────┘
+```mermaid
+flowchart LR
+  subgraph CL["同一个 64 字节缓存行"]
+    direction LR
+    C0["Cell[0].value"] --> P0["填充"] --> C1["Cell[1].value"] --> P1["填充"]
+  end
+  TA["ThreadA：一直写这格"]
+  TB["ThreadB：一直写这格"]
+  BAD["缓存行来回失效，吞吐暴跌"]
+  TA --> C0
+  TB --> C1
+  C0 --- BAD
+  C1 --- BAD
+  classDef line fill:#e3f2fd,stroke:#1976d2
+  classDef thr fill:#e8f5e9,stroke:#2e7d32
+  classDef bad fill:#ffebee,stroke:#c62828
+  class C0,P0,C1,P1 line
+  class TA,TB thr
+  class BAD bad
 ```
 
 `Striped64.Cell` 的解法就是类上的 `@sun.misc.Contended`（JDK 9+ 为 `jdk.internal.vm.annotation.Contended`）。
@@ -1417,11 +1441,21 @@ public class AtomicStampedReference<V> {
 
 ### 8.1 `ConcurrentHashMap` 1.7：`Segment` 分段锁
 
-```
-ConcurrentHashMap (1.7)
-└── Segment<K,V>[] segments          // 默认 16 个，构造后不可变（并发度）
-    └── Segment extends ReentrantLock   // ★ 每个 Segment 就是一把可重入锁
-        └── HashEntry<K,V>[] table      // 每个 Segment 自己的哈希表
+```mermaid
+flowchart TB
+  CHM["ConcurrentHashMap（1.7）"]
+  SEG["Segment&lt;K,V&gt;[] segments<br/>默认 16 个，构造后不可变（并发度）"]
+  LOCK["Segment extends ReentrantLock<br/>★ 每个 Segment 就是一把可重入锁"]
+  TAB["HashEntry&lt;K,V&gt;[] table<br/>每个 Segment 自己的哈希表"]
+  CHM --> SEG --> LOCK --> TAB
+  classDef map fill:#e8eaf6,stroke:#3949ab
+  classDef seg fill:#e3f2fd,stroke:#1976d2
+  classDef lock fill:#fff3e0,stroke:#f57c00
+  classDef tab fill:#e8f5e9,stroke:#2e7d32
+  class CHM map
+  class SEG seg
+  class LOCK lock
+  class TAB tab
 ```
 
 | 要点 | 说明 |
