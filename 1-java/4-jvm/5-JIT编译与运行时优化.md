@@ -141,11 +141,23 @@ JDK 7 起 **分层编译（Tiered Compilation）默认开启**。它把"编译"�
 
 **典型迁移路径**：
 
-```text
-   0 ──(调用次数/回边数达标)──▶ 3 ──(Profile 足够 + 热度更高)──▶ 4
-                                   │
-                                   ├─▶ 2（C2 队列繁忙时的过渡）
-                                   └─▶ 1（方法足够简单，不需要 Profile，直接跳过 3）
+```mermaid
+flowchart LR
+  L0["0 解释执行"]
+  L1["1 C1（不做 Profiling）"]
+  L2["2 C1 + 轻量 Profile"]
+  L3["3 C1 + 完整 Profile"]
+  L4["4 C2 编译"]
+  L0 -->|调用次数 / 回边数达标| L3
+  L3 -->|Profile 足够 + 热度更高| L4
+  L3 -->|C2 队列繁忙时的过渡| L2
+  L3 -->|方法足够简单，不需要 Profile，直接跳过 3| L1
+  classDef interp fill:#eceff1,stroke:#546e7a
+  classDef c1 fill:#e3f2fd,stroke:#1976d2
+  classDef c2 fill:#e8f5e9,stroke:#2e7d32
+  class L0 interp
+  class L1,L2,L3 c1
+  class L4 c2
 ```
 
 **两个关键推论**：
@@ -234,16 +246,13 @@ flowchart TB
 | `-XX:Tier4InvocationThreshold` | 5000 | 调用 5000 次 → 进 level 4（C2） |
 | `-XX:Tier4BackEdgeThreshold` | 140000 | 回边 14 万次 → 进 level 4 |
 | `-XX:Tier4CompileThreshold` | 15000 | 综合热度 15000 → level 4 |
-| `-XX:Tier4MinInvocationThreshold` | 600 | 进 level 4 的调用次数下限 |
-
-> [!note] 不要死记这些数字
-> 不同 JDK 版本、不同 CPU 架构上默认值会有差异。**面试要答的是"机制"而不是"数字"**：方法是"调用次数或回边次数达到分层阈值后，从解释器升到 C1，再升到 C2"。
-> 如果一定要说数字，就说"服务端默认 `CompileThreshold` 是 1 万次左右（关闭分层时）"，比硬背 `Tier3InvocationThreshold=200` 更安全。
-
-### 3.3 计数器热度衰减
-
-**问题**：如果调用计数只增不减，一个启动时被调用 1 万次、之后再也不用的方法，会在很久以后突然被编译——浪费编译资源。
-
+```mermaid
+xychart-beta
+  title "调用计数随时间变化：每过半衰期折半"
+  x-axis "时间" [0, 1, 2, 3, 4, 5]
+  y-axis "调用计数" 0 --> 10000
+  line [0, 10000, 5000, 2500, 1250, 625]
+```
 **解法：热度衰减（Counter Decay）**。JVM 在**安全点**（safepoint）周期性地把计数器**减半**（不是清零，是折半）。折半的周期由 `-XX:CounterHalfLifeTime` 控制（单位秒，默认约 30 秒量级）。
 
 ```text
@@ -320,17 +329,22 @@ flowchart LR
 ## 四、编译线程与 Code Cache
 
 ### 4.1 编译线程数与编译队列
-
-| 参数 | 作用 | 默认 |
-|---|---|---|
-| `-XX:CICompilerCount` | 编译线程总数（C1 + C2 共享） | 由 CPU 核数推导；分层编译下**至少 2**，典型是"核数的对数级别"（如 8 核上常见 3~5） |
-| `-XX:+BackgroundCompilation` | 后台编译（默认开），编译不阻塞应用线程 | true |
-| `-XX:-BackgroundCompilation` | 同步编译，方法在编译完成前被阻塞（**只用于调试**） | false |
-
-**编译队列积压时会发生什么**：
-
-```text
-   方法达到阈值 → 提交编译任务 → 进编译队列
+```mermaid
+flowchart TD
+  A["方法达到阈值 → 提交编译任务 → 进编译队列"]
+  B["队列空闲，很快编译完成"]
+  C["队列积压 → 方法继续解释执行"]
+  D["分层编译会自动降级策略：<br/>- 优先走 level 2（轻量 Profile）<br/>- 减少 C2 任务，多做 C1"]
+  A --> B
+  A --> C
+  C --> D
+  classDef submit fill:#e3f2fd,stroke:#1976d2
+  classDef ok fill:#e8f5e9,stroke:#2e7d32
+  classDef backlog fill:#fff3e0,stroke:#f57c00
+  class A submit
+  class B ok
+  class C,D backlog
+```
                                       │
                        ┌──────────────┴──────────────┐
                        ▼                             ▼
@@ -495,14 +509,28 @@ java -XX:+UnlockDiagnosticVMOptions -XX:+PrintInlining -jar app.jar
 | `virtual call, no profile data` | ❌ 没有类型 Profile，无法去虚化 | 让调用点更"单态"（见 §5.5） |
 | `call site not monomorphic` / megamorphic | ❌ 调用点类型太多 | 重构调用点 |
 | `recursive` / `recursion too deep` | 递归限制 | 一般无需处理 |
-| `not an osr compilation` / `callee is too large` | OSR 相关的拒绝 | 理解即可 |
-
-### 5.2 逃逸分析（Escape Analysis）
-
-**做什么**：C2 在编译时分析一个对象（或它的引用）**是否会"逃出"当前方法或线程**。
-
-| 逃逸状态 | 定义 | 可做的优化 |
-|---|---|---|
+```mermaid
+flowchart TD
+  EA["逃逸分析"]
+  NO["不逃逸"]
+  YES["逃逸"]
+  R1["① 标量替换<br/>把对象拆成字段，字段放寄存器 / 栈，连对象头都不分配"]
+  R2["② 锁消除<br/>独占的锁直接删掉 monitorenter / monitorexit"]
+  R3["正常堆分配（TLAB）"]
+  EA --> NO
+  EA --> YES
+  NO --> R1
+  NO --> R2
+  YES --> R3
+  classDef root fill:#e8eaf6,stroke:#3949ab
+  classDef branch fill:#e3f2fd,stroke:#1976d2
+  classDef opt fill:#e8f5e9,stroke:#2e7d32
+  classDef normal fill:#fff3e0,stroke:#f57c00
+  class EA root
+  class NO,YES branch
+  class R1,R2 opt
+  class R3 normal
+```
 | **不逃逸（NoEscape）** | 对象只在方法内部使用，不被返回、不被存入堆结构、不被其他线程看到 | **标量替换**、**锁消除** |
 | **方法内逃逸（ArgEscape）** | 对象作为参数传给其他方法，但那些方法不会让它逃出去 | 有限优化 |
 | **全局逃逸（GlobalEscape）** | 对象被返回、被赋给静态字段、被其他线程持有 | **无法优化**，只能正常堆分配 |
@@ -731,17 +759,15 @@ System.out.println("cost = " + cost);   // 只打印耗时，不打印 sum
 ```
 
 JIT 的逻辑链：`sum` 从未被使用 → 整个循环对程序状态无影响 → **整个循环被消除**。测出来"耗时 0.3ms"，实际什么都没算。
-
-**这就是 §5.8 要讲 JMH 的根本原因。**
-
-### 5.8 内置函数（Intrinsics）——顺带一提
-
-JIT 认识一批"特殊方法"，遇到时**直接替换成最优机器指令**，而不是调用方法本身：
-
-| 类别 | 例子 |
-|---|---|
-| 数组操作 | `System.arraycopy`、`Arrays.copyOf`、`Arrays.equals` |
-| 数学 | `Math.sqrt`、`Math.abs`、`Integer.numberOfLeadingZeros`、`Math.fma` |
+```mermaid
+timeline
+  title JIT 预热时间线
+  t=0 : 解释执行（慢）<br/>第一次调用
+  t=几十次 : C1 编译（中等）<br/>达到 Tier3 阈值
+  t=几千次 : C2 编译（快）<br/>达到 Tier4 阈值 + Profile 充分
+  t=上万次 : 优化充分生效<br/>内联到位、逃逸分析生效、Profile 稳定
+  （其间） : Profile 变化 → 去优化 → 回到解释器 → 重新预热（抖动）
+```
 | 字符串 | `String.indexOf`、`String.equals`、`StringLatin1` 系列 |
 | 并发 | `Unsafe.compareAndSwapInt`、`AtomicInteger.compareAndSet`、`Thread.onSpinWait` |
 | 位运算 | `Long.rotateLeft`、`Integer.reverseBytes` |
@@ -915,21 +941,23 @@ java -XX:+PrintCompilation -XX:+PrintCodeCache -jar app.jar
 | 是否被无限重编译 | 同一方法名大量重复出现 → 通常伴随去优化抖动 |
 
 **常用组合命令**：
-
-```bash
-# 只看 C2 编译 + 只看带 OSR 的
-java -XX:+PrintCompilation -jar app.jar | grep -E '%| 4 '
-
-# 统计去优化次数
-java -XX:+PrintCompilation -jar app.jar 2>&1 | grep -c 'made not entrant'
-
-# 完整 JIT 日志（给 JITWatch 用，输出是 XML）
-java -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=hotspot.log -jar app.jar
-
-# 看内联决策
-java -XX:+UnlockDiagnosticVMOptions -XX:+PrintInlining -jar app.jar
-
-# 看汇编（需要 hsdis 插件，见下）
+```mermaid
+flowchart TD
+  A["C2 编译时：「调用点只有一个实现类 Foo」<br/>→ 内联 Foo，插入 guard"]
+  B["运行期：突然加载了新的实现类 Bar<br/>调用点收到 Bar 实例"]
+  C["guard 失败 → uncommon trap → 去优化"]
+  D["栈帧变回解释执行<br/>状态从编译代码「反向映射」回解释器栈帧"]
+  E["重新收集 Profile<br/>→ 可能重新编译成双态 / 巨态版本"]
+  A --> B --> C --> D --> E
+  classDef compiled fill:#e8f5e9,stroke:#2e7d32
+  classDef runtime fill:#e3f2fd,stroke:#1976d2
+  classDef deopt fill:#ffebee,stroke:#c62828
+  classDef rejit fill:#fff3e0,stroke:#f57c00
+  class A compiled
+  class B runtime
+  class C,D deopt
+  class E rejit
+```
 java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -XX:CompileCommand=print,com.demo.Hot::loop -jar app.jar
 ```
 
@@ -973,43 +1001,32 @@ java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -XX:CompileCommand=print,
 
 ```bash
 # 打印去优化详细信息（需诊断开关）
-java -XX:+UnlockDiagnosticVMOptions -XX:+TraceDeoptimization -jar app.jar
-
-# 只需次数，看 PrintCompilation 里的 "made not entrant"
-java -XX:+PrintCompilation -jar app.jar 2>&1 | grep -c 'made not entrant'
+```mermaid
+flowchart TD
+  P["现象：某接口 p99 从 20ms 涨到 200ms<br/>且持续不恢复（或周期性抖动）"]
+  D1["① 去优化（Deoptimization）<br/>· 特征：PrintCompilation 里出现 made not entrant，同一方法反复编译<br/>· 常见触发：动态加载了新实现类、热部署、Instrumentation retransform<br/>· 验证：-XX:+TraceDeoptimization"]
+  D2["② Code Cache 满 / 编译器被禁用<br/>· 特征：日志出现「CodeCache is full. Compiler has been disabled.」<br/>· 验证：jcmd &lt;pid&gt; Compiler.codecache 看 max_used 是否逼近上限<br/>· 结果：所有方法退回解释执行 → 性能断崖"]
+  D3["③ 调用点变 megamorphic<br/>· 特征：上线新业务分支 / 新实现类后变慢；PrintInlining 里出现 megamorphic<br/>· 验证：-XX:+PrintInlining 找「not monomorphic」"]
+  D4["④ 热度衰减导致重新预热<br/>· 特征：每天高峰初期慢，稳定后恢复<br/>· 机制：CounterHalfLifeTime 让计数折半，低谷期后需重新升温"]
+  D5["⑤ GC 变化（不是 JIT，但表现一样）<br/>· 特征：GC 日志里 Full GC / Mixed GC 频率上升；老年代增长<br/>· 验证：-Xlog:gc* 对比变慢前后的停顿与频率"]
+  D6["⑥ 锁膨胀 / 竞争加剧（不是 JIT 优化，是相反方向）<br/>· 特征：线程 BLOCKED 增多；jstack 看到同一监视器<br/>· 注意：JIT 的锁消除是「减少锁」，竞争加剧是「锁更多线程」"]
+  D7["⑦ 编译线程抢 CPU<br/>· 特征：火焰图里 C2 CompilerThread 占用显著；应用线程被抢占<br/>· 验证：jcmd Thread.print ｜ grep Compiler；perf/jfr 看编译事件"]
+  D8["⑧ 外部因素<br/>· 连接池耗尽、下游变慢、容器 CPU throttling、内存 swap<br/>· 验证：容器指标、下游延迟、CPU throttling 计数"]
+  P --> D1
+  P --> D2
+  P --> D3
+  P --> D4
+  P --> D5
+  P --> D6
+  P --> D7
+  P --> D8
+  classDef root fill:#ffebee,stroke:#c62828
+  classDef jit fill:#e3f2fd,stroke:#1976d2
+  classDef notjit fill:#fff3e0,stroke:#f57c00
+  class P root
+  class D1,D2,D3,D4,D7 jit
+  class D5,D6,D8 notjit
 ```
-
-`TraceDeoptimization` 输出形态（示意）：
-
-```text
-DEOPT PACKING thread 0x...  compiled method (c2)   115   6  com.demo.OrderService::calc (28 bytes)
-     total frame size in caller: 64
-     scope 0 (sp)  com.demo.OrderService::calc @ 5
-     scope 1 (sp)  com.demo.PriceRule::apply @ 12
-DEOPT UNPACKING thread 0x...  pc=0x... does not match
-     ...
-     reason: no such class loaded
-     reason: constraint
-uncommon trap occurred in com.demo.OrderService::calc
-```
-
-**关键：去优化不是 bug，是设计特性。** 它是"激进优化但保证语义正确"的代价与保险。问题在于**频繁去优化**会造成性能抖动。
-
-> [!warning] 无限去优化循环
-> 如果一个方法被反复"编译 → 去优化 → 重编译 → 再去优化"，会消耗大量 CPU 且性能一直不稳定。HotSpot 有保护机制：当同一方法的去优化次数超过上限（`-XX:PerMethodRecompilationCutoff` / `-XX:PerBytecodeRecompilationCutoff` 控制）后，**该方法会被永久放弃 C2 编译，永远解释执行**——在日志里表现为 `made zombie`。
-> **这是"某个方法突然一直很慢"的一个真实根因**，尤其在用 Mock/代理框架的测试环境和热部署频繁的环境里。
-
-### 6.5 "同一个方法跑一会儿突然变慢"的排查清单
-
-```text
-现象：某接口 p99 从 20ms 涨到 200ms，且持续不恢复（或周期性抖动）
-   │
-   ├─ ① 去优化（Deoptimization）
-   │     · 特征：PrintCompilation 里出现 made not entrant，同一方法反复编译
-   │     · 常见触发：动态加载了新实现类、热部署、Instrumentation retransform
-   │     · 验证：-XX:+TraceDeoptimization
-   │
-   ├─ ② Code Cache 满 / 编译器被禁用
    │     · 特征：日志出现 "CodeCache is full. Compiler has been disabled."
    │     · 验证：jcmd <pid> Compiler.codecache 看 max_used 是否逼近上限
    │     · 结果：所有方法退回解释执行 → 性能断崖
@@ -1123,15 +1140,22 @@ jcmd <pid> JFR.stop name=jit
 |---|---|---|
 | `jdk.Compilation` | 每次编译：方法名、层级、是否 OSR、编译耗时、字节码大小 | **编译开销分析**：哪个方法编译最久 |
 | `jdk.CompilerConfiguration` | 编译器配置：线程数、层级、Code Cache 大小 | 环境核对 |
-| `jdk.CompilerPhase` | C2 各优化阶段的耗时 | 深入分析编译慢的原因 |
-| `jdk.CompilerInlining` | 内联决策 | 替代 `PrintInlining` 的低开销方案 |
-| `jdk.Deoptimization` | 去优化：方法、原因、次数 | **定位性能抖动** |
-| `jdk.CodeCacheConfiguration` | 代码缓存配置与使用 | 容量规划 |
-| `jdk.CodeCacheFull` | **代码缓存满事件** | **直接告警项** |
-| `jdk.CodeSweeperStatistics` | 清扫统计 | 判断是否在反复清扫 |
-| `jdk.CompilerStatistics` | 编译次数/耗时汇总 | 趋势观察 |
-
-> [!important] 生产上最该配的两个 JIT 告警
+```mermaid
+flowchart TD
+  T0["C2 CompilerThread0"]
+  G["Compile::Code_Gen"]
+  O["PhaseIdealLoop::optimize"]
+  E1["…"]
+  T1["C2 CompilerThread1"]
+  E2["…"]
+  S["CodeCache Sweeper"]
+  T0 --> G --> O --> E1
+  T1 --> E2
+  classDef thread fill:#e3f2fd,stroke:#1976d2
+  classDef frame fill:#eceff1,stroke:#546e7a
+  class T0,T1,S thread
+  class G,O,E1,E2 frame
+```
 > 1. **`jdk.CodeCacheFull`** —— 出现即意味着 JIT 即将/已经停摆，是明确的性能悬崖前兆
 > 2. **`jdk.Deoptimization` 的频率** —— 突然升高说明运行期形态发生了剧变（新类加载、热部署、Mock 注入）
 > 用 JDK Mission Control（JMC）打开 `.jfr` 文件即可看到这些事件的图形化展示。

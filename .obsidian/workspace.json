@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/4-jvm/1-JVM内存区域与对象布局.md",
+                "file": "1-java/2-collection/1-集合框架.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1-JVM内存区域与对象布局"
+              "title": "1-集合框架"
             }
           }
         ]
@@ -256,10 +256,11 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "1-java/3-IO/3-IO与网络编程.md",
+    "1-java/4-jvm/1-JVM内存区域与对象布局.md",
     "1-java/4-jvm/0-JVM总览.md",
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/4-jvm/5-JIT编译与运行时优化.md",
-    "1-java/4-jvm/1-JVM内存区域与对象布局.md",
     "1-java/4-jvm/3-类加载机制与字节码.md",
     "1-java/4-jvm/6-JVM参数与调优实战.md",
     "1-java/4-jvm/7-JVM故障排查实战.md",
@@ -279,7 +280,6 @@
     "1-java/0-知识点/9-Java版本特性.md",
     "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
     "1-java/1-juc/1-Disruptor.md",
-    "1-java/3-IO/3-IO与网络编程.md",
     "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/0-知识点/1-面向对象.md",
     "1-java/1-juc/5-线程池.md",
