@@ -27,26 +27,37 @@ created: 2026-10-09
 
 ### 1.2 消费者与消费组关系图
 
-```text
-                        Topic: order-topic (3 partitions, 1 份日志)
-        ┌─────────────────┬─────────────────┬─────────────────┐
-        │   Partition 0   │   Partition 1   │   Partition 2   │
-        └────────┬────────┴────────┬────────┴────────┬────────┘
-                 │                 │                 │
-   ┌─────────────┴─────────────────┴─────────────────┴─────────────┐
-   │                  Consumer Group: order-cg                     │
-   │                                                              │
-   │   ┌─────────────┐      ┌─────────────┐      ┌─────────────┐   │
-   │   │ Consumer C1 │      │ Consumer C2 │      │ Consumer C3 │   │
-   │   │   owns P0   │      │   owns P1   │      │   owns P2   │   │
-   │   └──────┬──────┘      └──────┬──────┘      └──────┬──────┘   │
-   │          │ commit offset      │                    │          │
-   │          └───────────┬────────┴────────────────────┘          │
-   └──────────────────────┼────────────────────────────────────────┘
-                          ▼
-              __consumer_offsets (50 分区, RF=3)
-              key   = groupId + topic + partition
-              value = committed offset（下一条要读的位置）
+```mermaid
+flowchart LR
+    subgraph TOPIC["Topic: order-topic（3 partitions, 1 份日志）"]
+        direction LR
+        P0["Partition 0"]
+        P1["Partition 1"]
+        P2["Partition 2"]
+    end
+
+    subgraph CG["Consumer Group: order-cg"]
+        C1["Consumer C1<br/>owns P0"]
+        C2["Consumer C2<br/>owns P1"]
+        C3["Consumer C3<br/>owns P2"]
+    end
+
+    P0 --> C1
+    P1 --> C2
+    P2 --> C3
+
+    C1 -- "commit offset" --> OFF
+    C2 --> OFF
+    C3 --> OFF
+
+    OFF["__consumer_offsets（50 分区, RF=3）<br/>key = groupId + topic + partition<br/>value = committed offset（下一条要读的位置）"]
+
+    classDef topic fill:#e3f2fd,stroke:#1976d2
+    classDef consumer fill:#e8f5e9,stroke:#388e3c
+    classDef offset fill:#fff3e0,stroke:#f57c00
+    class P0,P1,P2 topic
+    class C1,C2,C3 consumer
+    class OFF offset
 ```
 
 再叠加一个组，就变成广播：

@@ -897,13 +897,21 @@ Client                                Server
 
 ### 9.2 四次挥手与 TIME_WAIT
 
-```text
-Client (主动关闭)                        Server (被动关闭)
-   |──── FIN (seq=u) ──────────────────▶|   ESTABLISHED → CLOSE_WAIT
-   |◀─── ACK (ack=u+1) ─────────────────|   （服务端可能还有数据要发）
-   |◀─── FIN (seq=w) ───────────────────|   CLOSE_WAIT → LAST_ACK
-   |──── ACK (ack=w+1) ────────────────▶|   LAST_ACK → CLOSED
-   TIME_WAIT（等 2MSL）→ CLOSED
+```mermaid
+sequenceDiagram
+  autonumber
+  participant C as Client (主动关闭)
+  participant S as Server (被动关闭)
+  Note over C,S: 此前为 ESTABLISHED
+  C->>S: FIN, seq=u
+  Note over S: ESTABLISHED → CLOSE_WAIT
+  S-->>C: ACK, ack=u+1
+  Note over S: 服务端可能还有数据要发
+  S-->>C: FIN, seq=w
+  Note over S: CLOSE_WAIT → LAST_ACK
+  C->>S: ACK, ack=w+1
+  Note over S: LAST_ACK → CLOSED
+  Note over C: TIME_WAIT（等 2MSL）→ CLOSED
 ```
 
 **为什么是四次？** TCP 是**半关闭**的：一方发 FIN 只表示"我没有数据要发了"，不代表"我也不能收了"。服务端收到 FIN 后必须先回 ACK（此时连接处于 `CLOSE_WAIT`，仍可继续发送剩余数据），等自己的数据也发完才发 FIN。**因为 ACK 与 FIN 不能合并，所以是四次。**（如果服务端恰好也没有数据要发，ACK 与 FIN 可能被延迟确认机制合并，实际表现为三次——这也是抓包偶尔看到"三次挥手"的原因。）

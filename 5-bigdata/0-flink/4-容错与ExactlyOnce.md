@@ -132,27 +132,23 @@ Flink 的容错机制源于 **Chandy-Lamport 分布式快照算法**（1985）�
 
 **传播**：barrier 像一条"特殊的数据记录"在数据流里向下游流动，**与普通记录共享同一条通道、保持相对顺序**（这正是依赖 FIFO 的地方）。
 
-```text
-JobManager / CheckpointCoordinator
-        │  注入 barrier(n)
-        ▼
-   ┌─────────┐   ┌─────────┐   ┌─────────┐
-   │ Source  │──►│  map    │──►│  sink   │
-   └─────────┘   └─────────┘   └─────────┘
-        │             │              │
-   收到 barrier  收到 barrier   收到 barrier
-   → 快照 source  → 快照算子     → 快照 sink
-     状态(位点)     状态           状态(2PC 事务)
-        │             │              │
-        └─────────────┴──────────────┘
-                      │ 逐级向上 ack
-                      ▼
-              CheckpointCoordinator
-              （收齐所有 subtask 的 ack）
-                      │
-                      ▼
-              标记 checkpoint 为 completed
-              （触发 notifyCheckpointComplete）
+```mermaid
+sequenceDiagram
+  participant JM as JobManager / CheckpointCoordinator
+  participant SRC as Source
+  participant MAP as map
+  participant SNK as sink
+
+  JM->>SRC: 注入 barrier(n)
+  Note over SRC: 收到 barrier → 快照 source 状态（位点）
+  SRC->>MAP: barrier(n)
+  Note over MAP: 收到 barrier → 快照算子状态
+  MAP->>SNK: barrier(n)
+  Note over SNK: 收到 barrier → 快照 sink 状态（2PC 事务）
+  SRC-->>JM: 逐级向上 ack
+  MAP-->>JM: 逐级向上 ack
+  SNK-->>JM: 逐级向上 ack
+  Note over JM: 收齐所有 subtask 的 ack<br/>标记 checkpoint 为 completed<br/>（触发 notifyCheckpointComplete）
 ```
 
 普通数据流经过 barrier 时是这样的：
@@ -205,29 +201,28 @@ JobManager / CheckpointCoordinator
 
 假设某算子有两个输入 A 和 B：
 
-```text
-时刻 1：A 的 barrier 先到
-   A: ──────────────[BARRIER n]──► ┌─────────────┐
-                                   │   算子      │
-   B: ────────────────────────►    └─────────────┘
-                                   
-   → 算子收到 A 的 barrier，立刻【阻塞通道 A】
-     （A 后续的数据被缓存，不处理——因为它们属于快照 n+1）
-   → 继续处理通道 B 的数据（它们属于快照 n，必须计入状态）
+```mermaid
+sequenceDiagram
+  participant A as 输入通道 A
+  participant OP as 算子（两个输入 A 和 B）
+  participant B as 输入通道 B
 
-时刻 2：继续从 B 收数据，同时 A 的数据在缓冲区堆积
-   A: ──────────────[BARRIER n]──► │ 阻塞，缓存后续数据 │
-                                   │ 继续处理 B 的数据   │
-   B: ──────────────────►          └─────────────┘
-
-时刻 3：B 的 barrier 到达
-   A: ──────────────[BARRIER n]──► ┌─────────────┐
-                                   │ 两个 barrier │
-   B: ──────────────[BARRIER n]──► │ 都到齐了     │
-                                   └─────────────┘
-   → 快照本地状态
-   → 向下游广播 barrier n
-   → 解除阻塞，继续处理 A 缓存的、以及 B 后续的数据
+  rect rgb(227,242,253)
+    Note over A,B: 时刻 1：A 的 barrier 先到
+    A->>OP: [BARRIER n]
+    B->>OP: 数据
+    Note over OP: 收到 A 的 barrier，立刻【阻塞通道 A】<br/>A 后续的数据被缓存，不处理（属于快照 n+1）<br/>继续处理通道 B 的数据（属于快照 n，必须计入状态）
+  end
+  rect rgb(255,243,224)
+    Note over A,B: 时刻 2：继续从 B 收数据，同时 A 的数据在缓冲区堆积
+    B->>OP: 数据
+    Note over OP: 阻塞，缓存后续数据<br/>继续处理 B 的数据
+  end
+  rect rgb(232,245,233)
+    Note over A,B: 时刻 3：B 的 barrier 到达
+    B->>OP: [BARRIER n]
+    Note over OP: 两个 barrier 都到齐了<br/>快照本地状态<br/>向下游广播 barrier n<br/>解除阻塞，继续处理 A 缓存的、以及 B 后续的数据
+  end
 ```
 
 **关键点复述（防止记反）：**
