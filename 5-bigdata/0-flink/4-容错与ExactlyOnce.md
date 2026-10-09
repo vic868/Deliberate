@@ -7,7 +7,8 @@ created: 2026-10-09
 
 # 🛡️ 四、容错机制与 Exactly-Once
 
-> 本篇回答六个问题：at-most-once / at-least-once / exactly-once 在流处理里到底由谁决定，为什么说它是"端到端"概念？Chandy-Lamport 分布式快照是怎么落地的，barrier 对齐（alignment）为什么是 exactly-once 的必需品，而它又为什么会引发反压？Unaligned Checkpoint 用"把 in-flight 数据一起快照"解决了什么问题，代价是什么？两阶段提交（2PC）的 `preCommit` 和 `commit` 分别在什么时刻发生，为什么 Kafka Sink 的事务超时配置必须和 checkpoint 间隔挂钩？幂等写入和事务写入怎么选，"幂等 + at-least-once"为什么是工程上最常见的折中？checkpoint 超时、恢复后重复数据激增、2PC 事务超时这三类故障怎么定位？
+> 本篇回答四个问题：at-most-once / at-least-once / exactly-once 在流处理里到底由谁决定，为什么说它是"端到端"概念？Chandy-Lamport 分布式快照是怎么落地的，barrier 对齐（alignment）为什么是 exactly-once 的必需品，而它又为什么会引发反压？Unaligned Checkpoint 用"把 in-flight 数据一起快照"解决了什么问题，代价是什么？checkpoint 超时、恢复后重复数据激增这两类故障怎么定位？
+> **端到端 EOS 的工程落地**（两阶段提交的 preCommit/commit 时机、Kafka Sink 事务超时与 checkpoint 间隔的匹配、幂等 vs 事务的选型、链路配置与验证）见 [[11-端到端一致性]]；本篇只保留结论性对照（§7）。
 > 前置阅读：[[0-Flink总览]]、[[1-架构与运行时]]、[[3-状态管理]]。相关：[[5-Checkpoint与Savepoint]]（checkpoint/savepoint 的完整参数与运维细节）、[[6-背压与性能调优]]（对齐与反压的相互作用）、[[8-FlinkSQL与TableAPI]]（SQL 层的 exactly-once 配置）、[[9-部署与运维]]、[[10-面试高频题]]。
 
 ---
@@ -642,9 +643,13 @@ restart-strategy.type: none
 
 ---
 
-## 七、端到端 Exactly-Once
+## 七、端到端 Exactly-Once：只讲结论与分工
 
-### 7.1 三个前提
+> [!important] 本篇与 [[11-端到端一致性]] 的分工
+> 本篇讲**快照机制与语义原理**（Chandy-Lamport、Barrier 对齐、非对齐快照、重启恢复），以及"端到端 EOS 需要哪些前提"。
+> **各环节的具体配置、参数陷阱、链路清单、降级矩阵与验证方法**，统一放在 [[11-端到端一致性]]，避免两篇重复。
+
+### 7.1 三个前提（缺一不可）
 
 | 前提 | 具体要求 | Flink 侧对应能力 |
 | --- | --- | --- |
@@ -652,468 +657,43 @@ restart-strategy.type: none
 | **② 状态能快照** | 内部状态可一致性快照、可恢复 | Checkpoint 机制（见第二~五章） |
 | **③ Sink 支持事务或幂等** | 要么 2PC，要么幂等写入 | `TwoPhaseCommitSinkFunction` / 新版 `Sink` API 的 `Committer` / 幂等 upsert |
 
-> [!note] 三者缺一不可
-> 只有 ①② 满足 → 内部 exactly-once，外部 at-least-once。
-> 只有 ②③ 满足 → source 位点不可靠，可能丢数据。
-> 只有 ①③ 满足 → 状态不一致，恢复后计算结果错误。
+> 只有 ①② → 内部 exactly-once，外部 at-least-once；只有 ②③ → source 位点不可靠可能丢数据；只有 ①③ → 状态不一致，恢复后结果错误。
 
-### 7.2 两阶段提交（2PC）原理
+### 7.2 两条 Sink 路线：一句话抓住本质
 
-2PC 的目标：**让"写外部系统"这个动作可以延迟到 checkpoint 确认完成之后再真正生效**。
+| 路线 | 本质 | 代价 | 详见 |
+| --- | --- | --- | --- |
+| **两阶段提交（事务）** | 把"写外部系统"**延迟到 checkpoint 完成之后**才真正生效：checkpoint 期间推进到 preCommit（对外不可见），checkpoint 全局完成后才 commit | **可见性延迟**（preCommit→commit 窗口内数据不可见），依赖外部系统支持事务 | [[11-端到端一致性]] §4 |
+| **幂等写入** | 不做事务，靠**主键 upsert / 覆盖写**让重复写幂等；配合 at-least-once 达到最终一致 | 要求业务有稳定主键且可覆盖；是"最终一致"而非严格一次 | [[11-端到端一致性]] §5 |
 
-```text
-第一阶段（preCommit / 预提交）：
-  在 checkpoint 期间，sink 把当前事务的数据 flush 到外部系统，
-  但【不提交】——数据对外部系统的读者还不可见（或处于未提交状态）。
-  同时把这个事务的句柄写进 sink 的 state（随 checkpoint 一起持久化）。
-
-第二阶段（commit / 提交）：
-  当 checkpoint 被确认【完成】后，Flink 回调 sink 的
-  notifyCheckpointComplete()，此时才真正 commit 事务，
-  数据对外部系统可见。
-
-如果 checkpoint 没完成就故障了：
-  恢复后从更早的 checkpoint 恢复 →
-  这个未提交的事务根本不在恢复出来的状态里 →
-  它的数据对外部永远不可见 → 相当于没发生过（abort）
-```
-
-**为什么这样是对的？**
+**为什么 2PC 是对的**（三种情况的结局）：
 
 | 情况 | 结果 |
 | --- | --- |
-| checkpoint 完成 → commit 成功 | 数据可见，且 source 位点也已推进 → 不会重放 ✅ |
-| checkpoint 完成 → commit 前故障 | 恢复后从该 checkpoint 恢复，state 里有这个待提交事务 → 重新 commit ✅ |
-| checkpoint 未完成 → 故障 | 那个事务不在恢复状态的来源里 → 不会被提交（abort）→ 数据被丢弃，但 source 会重放它 ✅ |
+| checkpoint 完成 → commit 成功 | 数据可见，且 source 位点已推进 → 不会重放 ✅ |
+| checkpoint 完成 → commit 前故障 | 恢复后 state 中仍有待提交事务 → 重新 commit ✅ |
+| checkpoint 未完成 → 故障 | 该事务不在恢复状态来源里 → 不会提交（abort），但 source 会重放它 ✅ |
 
-> [!important] "迟到但正确"比"早到但可能错"重要
-> 2PC 的本质是**牺牲一部分可见性延迟，换取原子性**。preCommit 之后到 commit 之前的这段窗口里，数据在外部系统是"不可见/未提交"的。这个窗口的长度至少是"checkpoint 从开始到完成的时间"，通常是秒级到分钟级。
-> **这是端到端 exactly-once 的延迟代价**，也是为什么很多业务最终选择幂等而不是事务。
+> [!note] 延迟 vs 一致性的取舍
+> 2PC 的本质是**用可见性延迟换原子性**；这个窗口至少是"checkpoint 从开始到完成的耗时"（常为秒级到分钟级）。这也是很多业务最终选**幂等**而不是事务的现实原因。
 
-### 7.3 `TwoPhaseCommitSinkFunction` 的生命周期
+### 7.3 三条典型链路（概要）
 
-```java
-public abstract class TwoPhaseCommitSinkFunction<IN, TXN, CONTEXT>
-        extends RichSinkFunction<IN>
-        implements CheckpointedFunction, CheckpointListener {
-
-    // ---- 必须实现的四个抽象方法 ----
-    protected abstract TXN beginTransaction() throws Exception;
-    protected abstract void preCommit(TXN transaction) throws Exception;
-    protected abstract void commit(TXN transaction);
-    protected abstract void abort(TXN transaction);
-
-    // ---- 恢复时的钩子，有默认实现 ----
-    protected void recoverAndCommit(TXN transaction) { commit(transaction); }
-    protected void recoverAndAbort(TXN transaction) { abort(transaction); }
-
-    // ---- 框架调用的时机 ----
-    // invoke()              → 在当前事务里写数据（写不下就 preCommit 旧事务 + beginTransaction）
-    // snapshotState()       → 对当前事务 preCommit，并把它加入 pending 事务状态  ← 第一阶段
-    // notifyCheckpointComplete() → commit 该 checkpoint 对应的所有 pending 事务     ← 第二阶段
-    // initializeState()     → 恢复 pending 事务（这些属于已完成的 checkpoint → recoverAndCommit）
-    // close()               → 中止未提交事务
-}
-```
-
-**完整生命周期时序：**
-
-```text
-时间 →
-  invoke(r1) ─ 开启事务 T1，写入 r1
-  invoke(r2) ─ 写入 T1
-  ┌───────────── checkpoint #1 触发 ─────────────┐
-  │ snapshotState()：                             │
-  │   preCommit(T1)   ← T1 的数据已发送到外部系统  │
-  │                     但未提交（不可见）        │
-  │   state.add(T1)   ← 事务句柄进 checkpoint      │
-  └───────────────────────────────────────────────┘
-  invoke(r3) ─ 开启事务 T2（T1 已经 preCommit 了），写入 r3
-  ┌──── checkpoint #1 完成（收到所有 ack）────┐
-  │ notifyCheckpointComplete(1)：              │
-  │   commit(T1)   ← 真正的提交！数据可见       │
-  └────────────────────────────────────────────┘
-  invoke(r4) ─ 写入 T2
-  ... 循环 ...
-
-故障恢复场景：
-  从 checkpoint #1 恢复（假设 #2 没完成）
-    → state 里有 T1
-    → recoverAndCommit(T1)  ✅（因为 #1 是已完成的 checkpoint）
-  假设故障发生在 #1 完成前、从 #0 恢复
-    → state 里没有 T1（T1 是 #1 期间才加的）
-    → T1 永远不会被 commit → 相当于 abort ✅
-```
-
-> [!warning] `invoke` 里的事务切换逻辑
-> `TwoPhaseCommitSinkFunction` 默认的 `invoke` 会在事务达到一定条件（如数据量、时间）时执行 `preCommit` 并开启新事务。**这个"提前 preCommit"的机制是有意义的**：它把大事务拆小，避免单个事务持续时间超过外部系统的事务超时限制。
-> 但这也带来一个坑：**如果 `preCommit` 的阈值设置不当，`commit` 会在 `notifyCheckpointComplete` 之前发生**（对于某些外部系统，preCommit 就已经让数据可见了）。所以实现 `preCommit` 时必须明确外部系统的语义——**preCommit 绝不能等价于 commit**。
-
-**1.15+ 的新 Sink API**：`TwoPhaseCommitSinkFunction` 已标记为废弃，推荐用新的 Sink API（`Sink` / `SinkWriter` / `Committer`）：
-
-```java
-// 新 API 的结构（概念示意）
-Sink<IN> sink = Sink
-        .<IN>builder()
-        .setWriter(...)                  // SinkWriter：负责写
-        .setCommitter(...)               // Committer：负责提交（在 checkpoint 完成时被调用）
-        .build();
-```
-
-新 API 把"sink 的写入逻辑"和"提交逻辑"彻底分离，`Committer` 只做提交，职责更清晰，也更利于和连接器的 checkpoint 生命周期对齐。**新写连接器应该用新 API；读老代码时看到 `TwoPhaseCommitSinkFunction` 也不要意外。**
-
-### 7.4 Kafka Sink 的事务实现
-
-Kafka 的事务能力（producer 的 `transactional.id` + `commitTransaction` + 消费者 `isolation.level=read_committed`）天然适合做 2PC 的底层。
-
-**映射关系：**
-
-| 2PC 阶段 | Kafka 实现 |
-| --- | --- |
-| `beginTransaction()` | `producer.beginTransaction()` |
-| 写入数据 | `producer.send(...)`（在事务内） |
-| `preCommit(txn)` | `producer.flush()` —— 把缓冲区数据发送到 broker，但**不提交事务**。此时数据对 `read_committed` 消费者不可见 |
-| `commit(txn)` | `producer.commitTransaction()` —— 数据可见 |
-| `abort(txn)` | `producer.abortTransaction()` |
-| `transactional.id` | 由 `transactionalIdPrefix` + subtask 索引构成，**必须稳定且唯一**，用于跨重启的身份延续和僵尸实例隔离（fencing） |
-
-**Flink 1.15+ 的 `KafkaSink` 配置：**
-
-```java
-KafkaSink<String> sink = KafkaSink.<String>builder()
-        .setBootstrapServers("kafka:9092")
-        .setRecordSerializer(KafkaRecordSerializationSchema.builder()
-                .setTopic("output-topic")
-                .setValueSerializationSchema(new SimpleStringSchema())
-                .build())
-        .setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE)
-        .setTransactionalIdPrefix("my-flink-job-")     // ⚠️ 见下方说明
-        .setProperty("transaction.timeout.ms", "900000")   // 15 分钟
-        .build();
-
-stream.sinkTo(sink);
-```
-
-```yaml
-# 也可以用 SQL 层配置（见 [[8-FlinkSQL与TableAPI]]）
-# 'sink.delivery-guarantee' = 'exactly-once'
-# 'sink.transactional-id-prefix' = 'my-flink-job-'
-```
-
-| 配置 | 说明 |
-| --- | --- |
-| `DeliveryGuarantee.EXACTLY_ONCE` | 启用事务写入 |
-| `DeliveryGuarantee.AT_LEAST_ONCE` | 不开启事务（默认通常也是这个级别） |
-| `DeliveryGuarantee.NONE` | 不做任何保证 |
-| `transactionalIdPrefix` | 事务 ID 前缀。**不同作业必须用不同的前缀**，同一作业的不同版本也应考虑区分，否则会互相 fencing |
-| `transaction.timeout.ms` | ⚠️ **必须满足两个约束**（见下） |
-
-> [!danger] `transaction.timeout.ms` 与 checkpoint 间隔的硬约束
-> 这是 Kafka exactly-once 最容易配错、也最容易在生产上炸的地方。
->
-> **约束一：`transaction.timeout.ms` <= broker 的 `transaction.max.timeout.ms`**
-> broker 端默认上限通常是 15 分钟。producer 侧设得比它大，broker 会直接拒绝，报类似：
-> ```
-> The transaction timeout is larger than the maximum value allowed by the broker
-> ```
->
-> **约束二：`transaction.timeout.ms` 必须显著大于 checkpoint 间隔 + checkpoint 耗时**
-> 因为事务从 `preCommit`（checkpoint 开始时）到 `commit`（checkpoint 完成后）之间必须保持"活着"。如果这个窗口超过了 `transaction.timeout.ms`：
-> ```
-> TransactionalId ... : transaction timeout expired   （broker 主动 abort 事务）
-> → 之后 commitTransaction() 失败
-> → 报 InvalidTxnStateException / ProducerFencedException
-> → 作业反复重启
-> ```
->
-> **实践规则：**
-> ```text
-> transaction.timeout.ms  >  checkpoint interval + checkpoint duration + 安全余量
-> 同时  transaction.timeout.ms  <=  broker 的 transaction.max.timeout.ms
-> ```
-> 例：checkpoint 间隔 1 分钟、耗时最长 2 分钟 → 事务至少需要 3 分钟以上的存活窗口，可以设成 10 分钟（小于 broker 的 15 分钟上限）。**如果 checkpoint 间隔是 10 分钟，那这个组合基本不可行**，必须缩短 checkpoint 间隔或调大 broker 上限。
-
-> [!warning] `transactionalIdPrefix` 的 fencing 语义
-> Kafka 用 `transactional.id` 做**僵尸实例隔离**：同一个 `transactional.id` 的新 producer 一旦初始化，旧 producer 就会被"隔离"（fenced），它后续的操作会抛 `ProducerFencedException`。
->
-> **这是好事**（保证僵尸实例不会写入脏数据），但前提是 `transactional.id` 的构造正确：
-> - ✅ **同一作业 + 同一 subtask** → 重启前后 `transactional.id` 相同 → 新实例能隔离旧实例
-> - ❌ **不同作业用了相同前缀** → 两个作业会互相 fencing，表现为"随机地某一方反复报 `ProducerFencedException` 重启" → **这种故障很难查，因为两边看起来都是随机的**
->
-> **规则：每个作业的 `transactionalIdPrefix` 必须全局唯一**（建议加上作业名或环境标识）。
-
-### 7.5 为什么 Kafka Sink 能而 ClickHouse Sink 不能
-
-| Sink | 是否有原生事务 | 结论 |
+| 链路 | 推荐方案 | 关键前提 |
 | --- | --- | --- |
-| Kafka | ✅ 有 `transactional.id` + `commitTransaction` | 可以做到 2PC，端到端 exactly-once |
-| 支持事务的关系库（MySQL/PG） | ✅ 有 BEGIN/COMMIT | 可以 2PC，但要注意连接必须在 checkpoint 之间保持 |
-| Doris | ✅ 有 Stream Load 的 2PC（`sink.enable-2pc`） | 可以 2PC（需 Doris 版本支持） |
-| ClickHouse | ❌ 没有事务 | **只能幂等**（`ReplacingMergeTree` + 主键） |
-| HDFS/对象存储文件 | ⚠️ 靠"临时文件 + rename 原子改名"模拟 | 可以做（rename 是原子的） |
-| Elasticsearch | ❌ 无事务 | 幂等（按 `_id` 覆盖） |
-| Redis | ❌ 无事务（MULTI 不是分布式事务） | 幂等（SET 覆盖；`INCR` 不幂等！） |
-| HTTP 接口 | ❌ | 幂等（业务侧唯一键）+ at-least-once |
+| Kafka → Flink → **Kafka** | 事务（`DeliveryGuarantee.EXACTLY_ONCE` + `transactionalIdPrefix`） | 下游消费者必须 `isolation.level=read_committed`，否则会读到未提交/被 abort 的数据 |
+| Kafka → Flink → **Doris/StarRocks** | 幂等 upsert（Unique 模型） | 业务主键稳定且可覆盖写 |
+| MySQL CDC → Flink → Kafka/Doris | 位点进 checkpoint + 下游主键幂等 | 源库 binlog 保留期足够，避免位点失效 |
 
-> [!important] 结论
-> **端到端 exactly-once 不是 Flink 单方面能给的能力，它需要外部系统的配合。** 当外部系统不支持事务时，唯一的出路是幂等——这就是下一章的内容。
+> [!danger] 最常见的隐性降级
+> 以为"开了 checkpoint 就是 exactly-once"，但 Sink 只是普通 `INSERT`（非 Replacing/非事务）——平时一切正常，**只在故障重启后出现重复**，而故障可能几个月才发生一次。
+> **规范**：在作业文档里明确写清"本作业的端到端语义、依赖哪些前提、前提被破坏会怎样"。
+
+> **完整工程细节**（Kafka Sink 事务参数与超时匹配、各存储幂等实现、EOS 验证方法、降级矩阵）见 [[11-端到端一致性]]。
 
 ---
 
-## 八、Sink 幂等 vs 事务
-
-### 8.1 幂等写入
-
-**幂等**：同一个操作执行多次，对外部系统的影响和只执行一次相同。
-
-实现方式：**用业务主键做 upsert**，让"重复写入"变成"覆盖同一行"。
-
-| 存储 | 幂等实现 | 注意点 |
-| --- | --- | --- |
-| **Doris** | Unique Key 模型（按主键 upsert） | 需要保证主键就是业务的唯一标识 |
-| **ClickHouse** | `ReplacingMergeTree` + `ORDER BY` 主键 | ⚠️ **去重发生在后台 merge 时**，查询期间可能读到重复行；要精确读需要 `FINAL` 或 `OPTIMIZE`。**这是最容易踩的坑** |
-| **MySQL / PG** | `INSERT ... ON DUPLICATE KEY UPDATE` / `INSERT ... ON CONFLICT DO UPDATE` | 需要唯一索引 |
-| **Elasticsearch** | 指定 `_id`（同 ID 覆盖） | 版本冲突需要重试 |
-| **HBase** | RowKey put（同 key 覆盖） | 天然幂等 |
-| **Kafka** | ❌ 只能靠下游幂等 | 用 compacted topic + 主键作为 key 可以缓解（但 compact 是异步的） |
-| **Redis** | `SET k v` 幂等；**`INCR` 不幂等** | 计数器类操作不能直接幂等 |
-
-> [!danger] "幂等"的三个前提，缺一不可
-> 1. **有稳定的业务主键**。如果主键里包含随机数、时间戳、UUID，那每次重放都会生成"新行"，幂等失效。
-> 2. **是覆盖写而不是累加写**。`SET total = 100` 幂等；`INCR total` 不幂等。**累加类语义必须先做聚合（把结果算成一个确定值），再覆盖写。**
-> 3. **写入本身是原子的（或至少能收敛）**。部分写入 + 重试可能产生中间态，需要外部系统支持行级原子性。
-
-### 8.2 对比表与选型
-
-| 维度 | 事务写入（2PC） | 幂等写入 |
-| --- | --- | --- |
-| 原理 | preCommit + checkpoint 完成后 commit | 主键覆盖，重复写等于没写 |
-| 是否需要外部系统支持事务 | ✅ 必须 | ❌ 不需要（只需唯一键/主键） |
-| 对外部系统的要求 | 支持事务、事务有超时、能按 ID fencing | 支持主键 upsert |
-| 数据可见延迟 | **更高**：要等 checkpoint 完成才可见 | **更低**：写完即可见 |
-| 抗重复能力 | 强（未提交的事务直接不可见） | 取决于主键设计（设计不好会失效） |
-| 抗乱序能力 | 强（事务隔离） | **弱**：后到的旧数据可能覆盖新数据（需要版本号/时间戳判断） |
-| 吞吐/延迟代价 | 较大（事务开销 + 可见性延迟） | 很小 |
-| 实现复杂度 | 高（事务生命周期、超时、fencing、恢复） | 低（只要保证主键正确） |
-| 失败模式 | 事务超时、fencing、`ProducerFencedException` | 主键设计错误导致的静默数据错误 |
-| 典型实现 | Kafka Sink（`EXACTLY_ONCE`）、Doris 2PC | Doris Unique Key、ClickHouse ReplacingMergeTree、MySQL upsert |
-| 适用 | 计费、账务、对账、金融级链路 | 绝大多数实时数仓链路、大屏、报表 |
-
-> [!tip] 选型口诀
-> **能幂等的就幂等，不能幂等的才上事务。**
-> 原因：幂等的实现成本和运行时成本都远低于事务，而且**不依赖外部系统的特殊能力**（现实中的存储绝大多数不支持分布式事务）。事务只在"必须绝对不重且无法设计出稳定主键"时才必要。
-> 补充一句面试加分项：**幂等方案要注意乱序**。重放的数据可能比已经写入的数据"更旧"，如果无条件覆盖会写入过期值。解法是在数据里带版本号/时间戳，写入时做条件更新（如 Doris 的 `SEQUENCE` 列、ClickHouse 的 `version` 列）。
-
-### 8.3 "幂等 + at-least-once"：最常见的工程折中
-
-这是生产中使用最广的组合，值得单独讲清楚。
-
-```text
-Kafka (at-least-once) ──► Flink (checkpoint, AT_LEAST_ONCE 或 EXACTLY_ONCE) ──► Doris (Unique Key upsert)
-```
-
-**为什么它能达到"最终一致"？**
-
-| 环节 | 行为 |
-| --- | --- |
-| Flink 故障恢复 | 从最近的 checkpoint 恢复，重放 [checkpoint 位点, 故障时刻] 的数据 |
-| 重放时 | 同一批数据可能被处理两次 → 写出两次 |
-| Sink 幂等 | 两次写入的是**同一个主键**，第二次是覆盖 → 外部只看到一份 ✅ |
-| 结果 | 最终一致（可能短暂地"看不到"某条数据，但不会重复、不会错） |
-
-| 优点 | 说明 |
-| --- | --- |
-| 实现简单 | 不需要事务、不需要改外部系统 |
-| 延迟低 | 写完即可见，没有 preCommit→commit 的窗口 |
-| 兼容性强 | 几乎所有存储都支持主键 upsert |
-| 成本低 | 事务开销为零，吞吐更高 |
-| 容错好 | 幂等天然吸收任意次重放 |
-
-| 前提/风险 | 说明 |
-| --- | --- |
-| 必须有稳定主键 | 主键设计错误 → 幂等失效 → 静默产生重复数据（最难查的故障） |
-| 必须处理乱序 | 后到的旧数据覆盖新数据 → 需要版本号/时间戳条件写入 |
-| 中间态可能可见 | 大屏在恢复期间可能短暂显示偏小/偏大的值（但因为会立即被覆盖修正，影响可控） |
-| 计数类指标不适用 | `SUM` 类结果如果按明细行 upsert 是可以的，但如果直接 `INCR` 一个计数器就不行 |
-
-> [!important] 面试回答的完整姿势
-> 被问到"你们怎么保证 exactly-once"时，最好的回答不是"我们开了 exactly-once"，而是：
-> **"我们的 Kafka Source 可重放，用 checkpoint 保证内部状态精确一次；Sink 端我们用的是 Doris Unique Key 模型做幂等 upsert，所以整体是 at-least-once + 幂等，达到最终一致。之所以不用 Kafka 的 2PC 事务，是因为我们要写 Doris 而不是 Kafka，而且幂等方案延迟更低、不依赖外部事务能力。为了防乱序，我们在数据里带了版本号做条件更新。"**
-> 这个回答覆盖了：**语义分层、方案选型理由、乱序处理、成本权衡** —— 比背概念高一个层次。
-
----
-
-## 九、端到端链路示例
-
-### 9.1 链路：Kafka → Flink（有状态计算）→ Kafka
-
-**目标**：真正的端到端 exactly-once（Kafka 事务）。
-
-```java
-public class KafkaToKafkaExactlyOnce {
-
-    public static void main(String[] args) throws Exception {
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-
-        // ---- ① Checkpoint 配置 ----
-        env.enableCheckpointing(60_000);                       // 1 分钟一次
-        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
-        env.getCheckpointConfig().setCheckpointTimeout(300_000);
-        env.getCheckpointConfig().setMinPauseBetweenCheckpoints(30_000);
-        env.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
-        env.getCheckpointConfig().setTolerableCheckpointFailureNumber(3);
-        env.getCheckpointConfig().setExternalizedCheckpointCleanup(
-                ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
-        env.getCheckpointConfig().setCheckpointStorage("hdfs:///flink/checkpoints");
-
-        // ---- ② 状态后端 ----
-        env.setStateBackend(new EmbeddedRocksDBStateBackend(true));  // 增量 checkpoint
-
-        // ---- ③ Source：可重放，offset 进 checkpoint ----
-        KafkaSource<OrderEvent> source = KafkaSource.<OrderEvent>builder()
-                .setBootstrapServers("kafka:9092")
-                .setTopics("order-topic")
-                .setGroupId("order-job")
-                .setStartingOffsets(OffsetsInitializer.committedOffsets(OffsetResetStrategy.EARLIEST))
-                .setValueOnlyDeserializer(new OrderEventDeserializer())
-                // commit.offsets.on.checkpoint 默认开启：
-                // Flink 会在 checkpoint 完成时把 offset 提交到 Kafka 的消费者组
-                .setProperty("commit.offsets.on.checkpoint", "true")
-                .build();
-
-        DataStream<OrderEvent> orders = env.fromSource(
-                source,
-                WatermarkStrategy.<OrderEvent>forBoundedOutOfOrderness(Duration.ofSeconds(5))
-                        .withTimestampAssigner((e, ts) -> e.getOrderTime())
-                        .withIdleness(Duration.ofMinutes(1)),
-                "order-source")
-                .uid("order-source");
-
-        // ---- ④ 有状态计算 ----
-        SingleOutputStreamOperator<OrderResult> result = orders
-                .keyBy(OrderEvent::getUserId)
-                .window(TumblingEventTimeWindows.of(Time.minutes(5)))
-                .allowedLateness(Time.minutes(2))
-                .aggregate(new OrderAggregate(), new OrderWindowResult())
-                .uid("order-window");
-
-        // ---- ⑤ Sink：Kafka 事务（端到端 exactly-once）----
-        KafkaSink<OrderResult> sink = KafkaSink.<OrderResult>builder()
-                .setBootstrapServers("kafka:9092")
-                .setRecordSerializer(KafkaRecordSerializationSchema.builder()
-                        .setTopic("order-result-topic")
-                        .setValueSerializationSchema(new OrderResultSerializationSchema())
-                        .build())
-                .setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE)
-                .setTransactionalIdPrefix("order-job-v1-")     // ⚠️ 全局唯一
-                // transaction.timeout.ms 必须 > checkpoint 间隔 + 耗时，
-                // 且 <= broker 的 transaction.max.timeout.ms
-                .setProperty("transaction.timeout.ms", "600000")   // 10 分钟
-                .build();
-
-        result.sinkTo(sink).uid("order-kafka-sink");
-
-        // ---- ⑥ 重启策略 ----
-        env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, Time.seconds(10)));
-
-        env.execute("kafka-to-kafka-exactly-once");
-    }
-}
-```
-
-**配置清单（逐项解释"为什么"）：**
-
-| 配置 | 值 | 为什么 |
-| --- | --- | --- |
-| `enableCheckpointing` | 60s | 间隔越短，故障重放越少；但不能太短，否则开销大 |
-| `CheckpointingMode` | EXACTLY_ONCE | 启用 barrier 对齐，保证快照是合法切面 |
-| `CheckpointStorage` | HDFS | 生产必须持久化存储。JM 内存 checkpoint 会在 JM 挂掉时全丢 |
-| `StateBackend` | RocksDB + 增量 | 状态可能超内存，增量 checkpoint 降低成本 |
-| `commit.offsets.on.checkpoint` | true | offset 提交到 Kafka 消费者组，便于外部监控消费进度（也便于切换到其他消费者） |
-| `setStartingOffsets` | committedOffsets | 优先从**已提交的 offset** 恢复；这是 Flink 恢复的正确起点 |
-| `DeliveryGuarantee` | EXACTLY_ONCE | 启用 Kafka 事务 |
-| `transactionalIdPrefix` | 全局唯一 | 避免不同作业互相 fencing |
-| `transaction.timeout.ms` | > checkpoint interval + duration | 保证事务在 preCommit→commit 窗口内不超时 |
-| `RestartStrategy` | fixed-delay 3 次 | 不要无限重启；坏数据导致的确定性故障应该暴露出来 |
-
-> [!warning] `read_committed`：下游消费者必须配
-> Kafka Sink 写了未提交事务的数据，**只有配置了 `isolation.level=read_committed` 的消费者才看不到**。默认的 `read_uncommitted` 消费者会读到未提交甚至最终被 abort 的数据！
-> **检查清单**：你的下游消费者（包括另一个 Flink 作业、Spark、业务服务）是否都配了 `isolation.level=read_committed`？如果有任何一个没配，端到端 exactly-once 就漏了。
-> 另外注意：`read_committed` 消费者的读取上界是 **LSO（Last Stable Offset）**，长事务会造成队头阻塞（Kafka 侧的细节见 [[6-事务与Exactly-Once]]）。
-
-### 9.2 链路：Kafka → Flink → Doris（幂等方案）
-
-**目标**：最终一致（at-least-once + 幂等），这是实时数仓最主流的方案。
-
-```java
-// Doris Sink（Flink-Doris-Connector）
-DorisSink dorisSink = DorisSink.builder()
-        .setDorisReadOptions(DorisReadOptions.builder().build())
-        .setDorisExecutionOptions(DorisExecutionOptions.builder()
-                .setLabelPrefix("order-result-" + jobId)     // 幂等标签
-                .setDeletable(false)
-                // 可选：开启 2PC（需要 Doris 版本支持）
-                // .enable2PC()
-                .build())
-        .setDorisOptions(DorisOptions.builder()
-                .setFenodes("doris-fe:8030")
-                .setTableIdentifier("db.order_result")
-                .setUsername("root")
-                .setPassword("***")
-                .build())
-        .build();
-
-result.sinkTo(dorisSink);
-```
-
-```sql
--- Doris 表必须建为 Unique Key 模型，主键是业务唯一标识
-CREATE TABLE db.order_result (
-    user_id       VARCHAR(64),
-    window_start  DATETIME,
-    window_end    DATETIME,
-    order_cnt     BIGINT,
-    total_amount  DECIMAL(20, 2)
-)
-UNIQUE KEY(user_id, window_start, window_end)     -- ✅ 幂等的关键
-DISTRIBUTED BY HASH(user_id) BUCKETS 16
-PROPERTIES ("replication_num" = "3");
-```
-
-| 配置 | 要点 |
-| --- | --- |
-| Doris 表模型 | **Unique Key**，主键必须包含业务唯一标识（如 `user_id + window_start + window_end`） |
-| `labelPrefix` | 用于 Doris 的导入事务标识。**同一作业重启后必须能生成相同的 label 才能保证幂等**——通常用"作业 ID + checkpoint ID + subtask"构造 |
-| Flink 侧 | `AT_LEAST_ONCE` 或 `EXACTLY_ONCE` 都可以（幂等由 Doris 保证），但 checkpoint 必须开 |
-| 乱序防护 | 如果重放的数据可能"更旧"，用 Doris 的 `SEQUENCE` 列做条件更新；或者在主键里带上版本信息 |
-| 窗口结果多次输出 | 因为 `allowedLateness` 会让同一窗口输出多次，Doris 的 Unique Key upsert 正好能吸收（**这也是为什么"窗口 + upsert 存储"是天生一对**） |
-
-> [!important] 为什么这是实时数仓的主流
-> 1. **延迟低**：不需要等 checkpoint 完成，数据写完即可见；
-> 2. **兼容性好**：不依赖 Doris 的事务能力（`enable2pc` 可选）；
-> 3. **天然处理窗口的多次输出**：Unique Key upsert 让"同一个窗口的修正结果覆盖旧结果"变得自然；
-> 4. **成本低**：事务开销为零。
->
-> 代价是：**必须保证主键设计正确**。主键设计错了（比如把 `window_end` 漏了，或者主键包含时间戳），幂等就失效，而这类 bug 往往在故障恢复后才暴露，非常难查。
-
-### 9.3 外部系统不支持事务时的降级方案
-
-| 降级手段 | 做法 | 效果 |
-| --- | --- | --- |
-| **幂等（首选）** | 主键 upsert、覆盖写、条件更新 | 最终一致，延迟低 |
-| **业务侧去重表** | 下游系统自己维护"已处理 ID"表，处理前先查 | 效果好但增加下游负担和延迟 |
-| **数据带唯一 ID + 下游去重** | 每条记录带全局唯一 ID，下游按 ID 去重 | 通用，但下游必须有去重能力 |
-| **改成 at-least-once + 离线对账** | 接受重复，用离线批次任务做最终修正 | 简单粗暴，适合容忍窗口较大的场景 |
-| **只有状态精确一次，sink 不保证** | 明确告知业务方"sink 侧可能重复" | 诚实但需要业务接受 |
-| **换 sink** | 把不幂等的存储换成幂等的存储（如 ClickHouse 换 Doris，或加一层 Kafka 中转） | 成本高但根治 |
-
-> [!danger] 最危险的降级是"没意识到自己降级了"
-> 很多团队以为"我们开了 checkpoint 就是 exactly-once"，但 sink 是个普通的 ClickHouse `INSERT`（MergeTree，非 Replacing）。平时跑起来完全正常，**只有在故障重启后才会出现重复数据**——而故障可能是几个月才发生一次，到那时已经没人记得当初的设计了。
-> **建议**：在作业的文档/注释里明确写清"本作业的端到端语义是什么、依赖什么前提、如果前提被破坏会怎样"。这是技术负责人应该建立的规范。
-
----
-
-## 十、常见故障与排查
+## 八、常见故障与排查
 
 ### 10.1 Checkpoint 超时 / 失败
 
@@ -1229,7 +809,7 @@ stream.keyBy(...)
 
 ---
 
-## 十一、必答问题
+## 九、必答问题
 
 > [!question] 必答：Flink 怎么保证精确一次？
 >
