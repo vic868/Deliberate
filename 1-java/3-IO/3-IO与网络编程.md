@@ -219,7 +219,7 @@ public class User implements Serializable {
 - `Serializable` 是**标记接口**（没有方法），只用于告知 JVM 允许序列化。
 - **`serialVersionUID` 的作用**：反序列化时，JVM 用流里的 UID 与本地类的 UID 比对，不一致就抛 `java.io.InvalidClassException: ... local class incompatible: stream classdesc serialVersionUID = ..., local class serialVersionUID = ...`。
 - **不显式声明会怎样**：JVM 根据**类名、修饰符、接口、字段、方法、构造器**等结构自动算出一个 UID。于是**加一个方法、改一个字段类型，UID 就变了**，历史数据（缓存、RPC 报文、Session、MQ 消息）全部反序列化失败。
-- **结论**：任何要序列化的类都必须显式写 `serialVersionUID`，哪怕只是 `= 1L`。
+- **结论**：任何要序列化的类都必须显式写 `serialVersionUID`，哪怕只是 ` = 1L`。
 - **反序列化不调用本类的构造器**：对象由 JVM 直接分配，字段从流中恢复；若要校验/初始化，需要 `readObject(ObjectInputStream)`；`readResolve()` 可用于维持单例语义（枚举天然免疫序列化破坏单例，见 [[2-面向对象与设计模式]]）。
 - `transient` 字段恢复后是**默认值**（对象是 `null`，`int` 是 `0`）—— 这是"密码/连接池/Logger 不该序列化"的标准做法。
 
