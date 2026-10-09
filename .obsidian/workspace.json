@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/0-flink/9-部署与运维.md",
+                "file": "5-bigdata/0-flink/11-端到端一致性.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "9-部署与运维"
+              "title": "11-端到端一致性"
             }
           }
         ]
@@ -257,10 +257,12 @@
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "5-bigdata/0-flink/10-面试高频题.md",
+    "5-bigdata/0-flink/9-部署与运维.md",
+    "5-bigdata/0-flink/4-容错与ExactlyOnce.md",
+    "5-bigdata/0-flink/11-端到端一致性.md",
     "5-bigdata/0-flink/3-状态管理.md",
     "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
     "5-bigdata/0-flink/1-架构与运行时.md",
-    "5-bigdata/0-flink/9-部署与运维.md",
     "5-bigdata/0-flink/2-时间与窗口.md",
     "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/0-Flink总览.md",
@@ -282,8 +284,6 @@
     "3-mq/2-Kafka/1-Kafka总览.md",
     "3-mq/2-Kafka/6-事务与Exactly-Once.md",
     "3-mq/2-Kafka/7-性能优化与高吞吐原理.md",
-    "3-mq/2-Kafka/9-SpringBoot实战.md",
-    "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
     "Pasted Image 20261009203105_072.png",
     "Pasted Image 20261009202948_985.png",
     "Pasted Image 20261009152014_855.png",
