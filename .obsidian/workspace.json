@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/1-kafka.excalidraw.md"
+                "file": "3-mq/2-Kafka/5-事务与Exactly-Once.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "1-kafka.excalidraw"
+              "icon": "lucide-file",
+              "title": "5-事务与Exactly-Once"
             }
           }
         ]
@@ -254,6 +256,13 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
+    "3-mq/2-Kafka/2-架构与核心概念.md",
+    "3-mq/2-Kafka/5-事务与Exactly-Once.md",
+    "3-mq/2-Kafka/10-面试高频题.md",
+    "3-mq/2-Kafka/1-Kafka总览.md",
+    "3-mq/2-Kafka/9-SpringBoot实战.md",
+    "3-mq/未命名.md",
     "Pasted Image 20261009203105_072.png",
     "Pasted Image 20261009202948_985.png",
     "Pasted Image 20261009152014_855.png",
@@ -286,20 +295,13 @@
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/flink-client-hdfs-site.xml",
     "服务器巡检-192.168.0.106/Flink-on-K8s-vs-YARN.md",
     "5-bigdata/flink-shaded-hadoop-2-uber-2.8.3-10.0.jar",
-    "3-mq/2-Kafka/1-kafka.excalidraw.md",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive/conf/core-site.xml",
     "服务器巡检-192.168.0.106/deploy/hadoop-docker/hive/conf",
     "服务器巡检-192.168.0.103/巡检报告.md",
     "8-spring/spring-logback/LOGBACK_SETUP.md",
-    "大数据学习规划/每日进度.md",
-    "大数据学习规划/02-Flink补课.md",
-    "8-spring/spring 版本.smm.md",
-    "27张支付架构图，我本来是留着做内训舍不得发的.md",
-    "大数据学习规划/BigData.excalidraw.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261006162516_406.png",
     "Pasted Image 20261006162206_107.png",
-    "Pasted Image 20261006161751_533.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
