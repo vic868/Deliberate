@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/4-jvm/0-JVM总览.md",
+                "file": "1-java/4-jvm/1-JVM内存区域与对象布局.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-JVM总览"
+              "title": "1-JVM内存区域与对象布局"
             }
           }
         ]
@@ -256,13 +256,13 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/4-jvm/0-JVM总览.md",
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/4-jvm/5-JIT编译与运行时优化.md",
     "1-java/4-jvm/1-JVM内存区域与对象布局.md",
     "1-java/4-jvm/3-类加载机制与字节码.md",
     "1-java/4-jvm/6-JVM参数与调优实战.md",
     "1-java/4-jvm/7-JVM故障排查实战.md",
-    "1-java/4-jvm/0-JVM总览.md",
     "1-java/4-jvm/7-JVM内存与GC.md",
     "1-java/0-知识点/13-Spring源码骨架.md",
     "1-java/0-知识点/10-面试高频题.md",
