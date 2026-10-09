@@ -640,13 +640,21 @@ try (FileInputStream in = new FileInputStream("a.txt");
 }
 ```
 
-```text
-传统 read + write 的数据流
-  磁盘 ──DMA──▶ 内核 page cache ──CPU──▶ 用户缓冲区 ──CPU──▶ socket 内核缓冲区 ──DMA──▶ 网卡
-                 （拷贝 1）            （拷贝 2）          （拷贝 3）          （拷贝 4）
-
-  上下文切换：用户→内核(read) → 用户(read 返回) → 内核(write) → 用户(write 返回) = 4 次
-  系统调用：2 次（read、write）
+```mermaid
+sequenceDiagram
+  autonumber
+  participant D as 磁盘
+  participant PC as 内核 page cache
+  participant UB as 用户缓冲区
+  participant SK as socket 内核缓冲区
+  participant NIC as 网卡
+  Note over D,NIC: 传统 read + write 的数据流：共 4 次拷贝
+  D->>PC: 拷贝 1（DMA）
+  PC->>UB: 拷贝 2（CPU）
+  UB->>SK: 拷贝 3（CPU）
+  SK->>NIC: 拷贝 4（DMA）
+  Note over D,NIC: 上下文切换 4 次：用户→内核（read）→ 用户（read 返回）→ 内核（write）→ 用户（write 返回）
+  Note over D,NIC: 系统调用 2 次（read、write）
 ```
 
 **关键浪费**：数据被搬到用户态，**用户程序什么都没做**（只是原样转发），纯粹为了让 CPU 搬一次家。
@@ -660,10 +668,18 @@ MappedByteBuffer mbb = new RandomAccessFile("a.txt", "r").getChannel()
 socketChannel.write(mbb);        // 共享内存区 → socket 缓冲区（仍是一次 CPU 拷贝）
 ```
 
-```text
- 磁盘 ──DMA──▶ 内核 page cache ══(mmap，用户与内核共享同一块物理内存)══▶ socket 缓冲区 ──DMA──▶ 网卡
-                    （拷贝 1，DMA）              （拷贝 2，CPU）                      （拷贝 3，DMA）
- 上下文切换：仍是 4 次（read+write 两次系统调用）
+```mermaid
+sequenceDiagram
+  autonumber
+  participant D as 磁盘
+  participant PC as 内核 page cache
+  participant SK as socket 缓冲区
+  participant NIC as 网卡
+  Note over D,NIC: mmap：用户与内核共享同一块物理内存，省掉「内核 → 用户」的一次 CPU 拷贝
+  D->>PC: 拷贝 1（DMA）
+  PC->>SK: 拷贝 2（CPU）
+  SK->>NIC: 拷贝 3（DMA）
+  Note over D,NIC: 上下文切换：仍是 4 次（read + write 两次系统调用）
 ```
 
 省掉了"内核 buffer → 用户 buffer"的那一次 CPU 拷贝（因为 mmap 之后用户和内核看的是**同一页物理内存**），但**上下文切换次数没变**。
@@ -677,12 +693,18 @@ SocketChannel out = ...;
 in.transferTo(0, in.size(), out);
 ```
 
-```text
-sendfile（Linux）
- 磁盘 ──DMA──▶ 内核 page cache ──CPU──▶ socket 缓冲区 ──DMA──▶ 网卡
-                    （拷贝 1，DMA）        （拷贝 2，CPU）      （拷贝 3，DMA）
- 上下文切换：2 次（只有 1 次系统调用）
- 用户态：完全不参与
+```mermaid
+sequenceDiagram
+  autonumber
+  participant D as 磁盘
+  participant PC as 内核 page cache
+  participant SK as socket 缓冲区
+  participant NIC as 网卡
+  Note over D,NIC: sendfile（Linux）：数据完全不进用户态
+  D->>PC: 拷贝 1（DMA）
+  PC->>SK: 拷贝 2（CPU）
+  SK->>NIC: 拷贝 3（DMA）
+  Note over D,NIC: 上下文切换 2 次（只有 1 次系统调用）；用户态完全不参与
 ```
 
 如果网卡与驱动支持 **SG-DMA（scatter-gather DMA）**，内核只需把"文件描述符 + 偏移 + 长度"这组描述符传给网卡，网卡直接从 page cache 读数据 → **CPU 完全不参与数据搬运，只剩 2 次 DMA 拷贝，这才是严格意义的零拷贝**。
@@ -804,9 +826,20 @@ ChannelFuture f = b.bind(9000).sync();
 
 **`ChannelPipeline` 是责任链**：`HeadContext` ↔ 若干 `ChannelHandler` ↔ `TailContext`。
 
-```text
-入站（Inbound，数据进来）：Head → Decoder → BusinessHandler → Tail
-出站（Outbound，数据出去）：Tail → Encoder → BusinessHandler → Head
+```mermaid
+flowchart LR
+  subgraph IN["入站 Inbound：数据进来"]
+    direction LR
+    H1["Head"] --> D1["Decoder"] --> B1["BusinessHandler"] --> T1["Tail"]
+  end
+  subgraph OUT["出站 Outbound：数据出去"]
+    direction LR
+    T2["Tail"] --> E2["Encoder"] --> B2["BusinessHandler"] --> H2["Head"]
+  end
+  classDef inbound fill:#e8f5e9,stroke:#2e7d32
+  classDef outbound fill:#fff3e0,stroke:#f57c00
+  class H1,D1,B1,T1 inbound
+  class T2,E2,B2,H2 outbound
 ```
 
 - `ctx.writeAndFlush(msg)`：从**当前 Handler 的下一个出站 Handler** 开始向后（出站方向）传播 —— 局部发送。
@@ -878,12 +911,19 @@ pipeline.addLast(new LengthFieldBasedFrameDecoder(1024 * 1024, 4, 4, 0, 8));
 
 ### 9.1 TCP 三次握手
 
-```text
-Client                                Server
-   |──── SYN (seq=x) ────────────────▶|   CLOSED → SYN_RCVD
-   |◀─── SYN+ACK (seq=y, ack=x+1) ────|   （服务端确认客户端能发，同时自己也想发）
-   |──── ACK (ack=y+1) ──────────────▶|   SYN_RCVD → ESTABLISHED
-   ESTABLISHED
+```mermaid
+sequenceDiagram
+  autonumber
+  participant C as Client
+  participant S as Server
+  Note over C,S: CLOSED
+  C->>S: SYN (seq=x)
+  Note over S: CLOSED → SYN_RCVD
+  S-->>C: SYN+ACK (seq=y, ack=x+1)
+  Note over C,S: 服务端确认客户端能发，同时自己也想发
+  C->>S: ACK (ack=y+1)
+  Note over S: SYN_RCVD → ESTABLISHED
+  Note over C,S: ESTABLISHED
 ```
 
 **为什么是三次而不是两次？**

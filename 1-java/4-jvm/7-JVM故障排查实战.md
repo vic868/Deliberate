@@ -59,14 +59,25 @@ created: 2026-10-09
 
 ### 1.4 容器里的内存账（K8s 场景必须算）
 
-```
-容器 limit (例如 2Gi)
- ├── JVM 堆 (-Xmx)            例如 1.2Gi
- ├── Metaspace                 例如 256Mi
- ├── 线程栈 (线程数 × -Xss)     例如 200 × 1Mi = 200Mi
- ├── 直接内存 / Netty          例如 128Mi
- ├── JIT code cache / 符号表    ~100Mi
- └── 其他 native 开销
+```mermaid
+flowchart TD
+  L["容器 limit（例如 2Gi）"]
+  H["JVM 堆（-Xmx）<br/>例如 1.2Gi"]
+  M["Metaspace<br/>例如 256Mi"]
+  T["线程栈（线程数 × -Xss）<br/>例如 200 × 1Mi = 200Mi"]
+  D["直接内存 / Netty<br/>例如 128Mi"]
+  C["JIT code cache / 符号表<br/>~100Mi"]
+  N["其他 native 开销"]
+  L --> H
+  L --> M
+  L --> T
+  L --> D
+  L --> C
+  L --> N
+  classDef limit fill:#e8eaf6,stroke:#3949ab
+  classDef inside fill:#e3f2fd,stroke:#1976d2
+  class L limit
+  class H,M,T,D,C,N inside
 ```
 
 > [!important] 结论

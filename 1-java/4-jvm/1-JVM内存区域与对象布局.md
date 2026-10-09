@@ -18,22 +18,26 @@ created: 2026-10-09
 
 ### 1.1 一张图看清分区
 
-```
-┌──────────────────────────── JVM 运行时数据区（JVMS 规范定义） ───────────────────────────┐
-│  线程私有（随线程生灭）              │  线程共享（随 JVM 生灭）                          │
-│  ┌────────────────────────┐         │  ┌──────────────────────────────────────────┐  │
-│  │ 程序计数器 PC           │         │  │ 堆 Heap                                   │  │
-│  │  → 当前字节码行号        │         │  │  → 对象实例、数组                          │  │
-│  ├────────────────────────┤         │  │  → 新生代(Eden + S0 + S1) + 老年代         │  │
-│  │ 虚拟机栈 VM Stack       │         │  ├──────────────────────────────────────────┤  │
-│  │  → 栈帧 Frame           │         │  │ 方法区 Method Area                         │  │
-│  │    局部变量表/操作数栈/  │         │  │  → JDK7-: 永久代（堆内）                    │  │
-│  │    动态链接/返回地址     │         │  │  → JDK8+ : 元空间（本地内存）               │  │
-│  ├────────────────────────┤         │  │  → 类元信息、运行时常量池、静态变量         │  │
-│  │ 本地方法栈 Native Stack │         │  └──────────────────────────────────────────┘  │
-│  │  → native 方法栈帧      │         │                                                │
-│  └────────────────────────┘         │  另有：直接内存（不属于运行时数据区）           │
-└────────────────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+  subgraph PRIV["线程私有（随线程生灭）"]
+    direction TB
+    PC["程序计数器 PC<br/>→ 当前字节码行号"]
+    VS["虚拟机栈 VM Stack<br/>→ 栈帧 Frame<br/>局部变量表 / 操作数栈 / 动态链接 / 返回地址"]
+    NS["本地方法栈 Native Stack<br/>→ native 方法栈帧"]
+  end
+  subgraph SHARED["线程共享（随 JVM 生灭）"]
+    direction TB
+    HEAP["堆 Heap<br/>→ 对象实例、数组<br/>→ 新生代（Eden + S0 + S1）+ 老年代"]
+    MA["方法区 Method Area<br/>→ JDK7-：永久代（堆内）<br/>→ JDK8+：元空间（本地内存）<br/>→ 类元信息、运行时常量池、静态变量"]
+  end
+  DM["直接内存<br/>另有：不属于运行时数据区"]
+  classDef priv fill:#e3f2fd,stroke:#1976d2
+  classDef shared fill:#fff3e0,stroke:#f57c00
+  classDef note fill:#eceff1,stroke:#546e7a
+  class PC,VS,NS priv
+  class HEAP,MA shared
+  class DM note
 ```
 
 ### 1.2 每个区域：存什么 / 会不会 OOM / 抛什么错
@@ -80,14 +84,22 @@ JVMS（Java 虚拟机规范）定义的五块区域只覆盖 JVM 自己管理的
 
 ### 2.1 栈帧的完整结构
 
-```
-        ┌─────────────────────────── 栈帧 Frame ───────────────────────────┐
-栈顶 →  │  局部变量表 Local Variable Table   ← 参数 + 局部变量，以 slot 为单位 │
-        │  操作数栈 Operand Stack            ← 字节码运算的工作区，深度编译期确定 │
-        │  动态链接 Dynamic Linking          ← 指向常量池中本方法的符号引用      │
-        │  方法返回地址 Return Address       ← 正常/异常退出后回到调用者的位置    │
-        │  附加信息（行号表、StackMapTable…） ← 调试与字节码验证用              │
-        └──────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+  TOP["栈顶（栈帧在这里入栈）"]
+  subgraph F["栈帧 Frame"]
+    direction TB
+    LVT["局部变量表 Local Variable Table<br/>← 参数 + 局部变量，以 slot 为单位"]
+    OS["操作数栈 Operand Stack<br/>← 字节码运算的工作区，深度编译期确定"]
+    DL["动态链接 Dynamic Linking<br/>← 指向常量池中本方法的符号引用"]
+    RA["方法返回地址 Return Address<br/>← 正常 / 异常退出后回到调用者的位置"]
+    EXTRA["附加信息（行号表、StackMapTable …）<br/>← 调试与字节码验证用"]
+  end
+  TOP --> LVT
+  classDef frame fill:#e3f2fd,stroke:#1976d2
+  classDef slot fill:#e8f5e9,stroke:#2e7d32
+  class LVT slot
+  class OS,DL,RA,EXTRA frame
 ```
 
 一个方法从调用到结束，对应栈帧的**入栈 → 执行 → 出栈**；栈深度 = 当前线程调用链长度。
@@ -189,17 +201,24 @@ java -XX:+PrintFlagsFinal -version | grep -i ThreadStackSize
 
 ### 3.1 Eden : S0 : S1
 
-```
-                    堆 Heap（-Xms/-Xmx）
-┌──────────────────────────────────────────────────────────────────────┐
-│  新生代 Young（1/3）                          │  老年代 Old（2/3）        │
-│ ┌───────────────────────┬─────┬─────┐        │                        │
-│ │ Eden（8/10）           │ S0  │ S1  │        │  长期存活对象、大对象    │
-│ │ ┌─────────────────┐   │(1/10)│(1/10)│       │                        │
-│ │ │ TLAB │ TLAB │ …  │   │     │     │        │                        │
-│ │ └─────────────────┘   │     │     │        │                        │
-│ └───────────────────────┴─────┴─────┘        │                        │
-└──────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+  subgraph HEAP["堆 Heap（-Xms / -Xmx）"]
+    direction LR
+    subgraph YOUNG["新生代 Young（1/3）"]
+      direction TB
+      EDEN["Eden（8/10）<br/>内部再按线程切成 TLAB │ TLAB │ …"]
+      S0["S0（1/10）"]
+      S1["S1（1/10）"]
+    end
+    OLD["老年代 Old（2/3）<br/>长期存活对象、大对象"]
+  end
+  classDef eden fill:#e8f5e9,stroke:#2e7d32
+  classDef surv fill:#e3f2fd,stroke:#1976d2
+  classDef old fill:#fff3e0,stroke:#f57c00
+  class EDEN eden
+  class S0,S1 surv
+  class OLD old
 ```
 
 | 参数 | 含义 | 本机 JDK 17 默认 |
@@ -379,12 +398,21 @@ java -XX:MaxDirectMemorySize=256m -jar app.jar
 
 释放链路（JDK 8）：
 
-```
-ByteBuffer.allocateDirect(cap)
-  └─ Bits.reserveMemory(size, cap)      // 记账：totalCapacity += size，超过上限则 OOM
-  └─ Unsafe.allocateMemory(size)        // 真正的 malloc
-  └─ Cleaner.create(this, new Deallocator(base, size, cap))
-        // Deallocator 是静态内部类，持有 base 地址而不是 ByteBuffer 本身
+```mermaid
+flowchart TD
+  A["ByteBuffer.allocateDirect(cap)"]
+  B["Bits.reserveMemory(size, cap)<br/>记账：totalCapacity += size，超过上限则 OOM"]
+  C["Unsafe.allocateMemory(size)<br/>真正的 malloc"]
+  D["Cleaner.create(this, new Deallocator(base, size, cap))"]
+  E["Deallocator 是静态内部类<br/>持有 base 地址而不是 ByteBuffer 本身"]
+  A --> B
+  A --> C
+  A --> D
+  D -.- E
+  classDef api fill:#e3f2fd,stroke:#1976d2
+  classDef detail fill:#eceff1,stroke:#546e7a
+  class A api
+  class B,C,D,E detail
 ```
 
 关键点：
@@ -422,18 +450,24 @@ ByteBuffer.allocateDirect(cap)
 
 ### 7.1 六个步骤
 
+```mermaid
+flowchart TD
+  S1["① 类加载检查<br/>new 指令 → 常量池定位类的符号引用<br/>→ 检查是否已加载 / 解析 / 初始化"]
+  S2["② 分配内存<br/>对象所需大小在类加载完成后就已确定<br/>→ 指针碰撞（内存规整）或空闲列表（内存不规整）<br/>→ 并发安全由 CAS 重试 或 TLAB 保证"]
+  S3["③ 零值初始化<br/>把分配到的内存全部置 0（不含对象头）<br/>→ 这就是「成员变量可以不赋初值直接用」的原因"]
+  S4["④ 设置对象头<br/>Mark Word（hashCode / GC 年龄 / 锁状态）、Klass Pointer、数组长度"]
+  S5["⑤ 执行 &lt;init&gt; 构造方法<br/>父类构造 → 实例变量显式初始化 / 实例代码块 → 构造体"]
+  S6["⑥ 引用入栈<br/>把引用压入操作数栈（字节码层面 dup + astore）"]
+  S1 --> S2 --> S3 --> S4 --> S5 --> S6
+  classDef load fill:#e3f2fd,stroke:#1976d2
+  classDef mem fill:#e8f5e9,stroke:#2e7d32
+  classDef head fill:#fff3e0,stroke:#f57c00
+  class S1 load
+  class S2,S3 mem
+  class S4,S5,S6 head
 ```
-① 类加载检查       new 指令 → 常量池定位类的符号引用 → 检查是否已加载/解析/初始化
-                   （未加载则先触发类加载，见 [[3-类加载机制与字节码]]）
-② 分配内存         对象所需大小在类加载完成后就已确定
-                   → 指针碰撞（内存规整）或空闲列表（内存不规整）
-                   → 并发安全由 CAS 重试 或 TLAB 保证
-③ 零值初始化       把分配到的内存全部置 0（不含对象头）
-                   → 这就是"成员变量可以不赋初值直接用"的原因
-④ 设置对象头       Mark Word（hashCode/GC 年龄/锁状态）、Klass Pointer、数组长度
-⑤ 执行 <init>      构造方法：父类构造 → 实例变量显式初始化/实例代码块 → 构造体
-⑥ 引用入栈         把引用压入操作数栈（字节码层面 dup + astore）
-```
+
+未加载则先触发类加载，见 [[3-类加载机制与字节码]]。
 
 > [!tip] 「零值初始化」与「显式初始化」的区分
 > 第 ③ 步是 JVM 层面的零值（`int` 为 0、引用为 null）；第 ⑤ 步才是 `private int a = 1;` 这类显式赋值。
@@ -497,15 +531,32 @@ InstanceKlass::allocate_instance
 
 ### 8.3 分配路径与"TLAB 浪费（refill）"
 
-```
-线程分配对象 obj(size)
-├── size > TLAB 剩余空间？
-│   ├── 否 → fast path：top += size，返回（无锁）
-│   └── 是 → slow path
-│         ├── size > TLAB 最大容量（大对象）？→ 直接走 Eden 共享分配 / 老年代
-│         ├── 剩余空间 < 容忍阈值（默认最多浪费 Eden 的 1%）→ 丢弃剩余，申请新 TLAB（refill）
-│         │      └── 被丢弃的零头就是 tlab_waste，无法给别的线程用（无锁的代价）
-│         └── 剩余空间还够浪费 → 本次对象退到 Eden 共享分配（加锁）
+```mermaid
+flowchart TD
+  A["线程分配对象 obj(size)"]
+  Q1{"size &gt; TLAB 剩余空间？"}
+  FAST["否 → fast path<br/>top += size，返回（无锁）"]
+  SLOW["是 → slow path"]
+  Q2{"size &gt; TLAB 最大容量（大对象）？"}
+  Q3{"剩余空间 &lt; 容忍阈值<br/>默认最多浪费 Eden 的 1%"}
+  REFILL["丢弃剩余，申请新 TLAB（refill）"]
+  WASTE["被丢弃的零头就是 tlab_waste<br/>无法给别的线程用（无锁的代价）"]
+  EDEN["本次对象退到 Eden 共享分配（加锁）"]
+  BIG["直接走 Eden 共享分配 / 老年代"]
+  A --> Q1
+  Q1 -->|否| FAST
+  Q1 -->|是| SLOW
+  SLOW --> Q2
+  Q2 -->|是| BIG
+  Q2 -->|否| Q3
+  Q3 -->|是| REFILL --> WASTE
+  Q3 -->|否| EDEN
+  classDef fast fill:#e8f5e9,stroke:#2e7d32
+  classDef slow fill:#fff3e0,stroke:#f57c00
+  classDef waste fill:#ffebee,stroke:#c62828
+  class FAST fast
+  class SLOW,BIG,EDEN,REFILL slow
+  class WASTE waste
 ```
 
 关键理解：
@@ -734,11 +785,17 @@ static class Entry extends WeakReference<ThreadLocal<?>> {
 
 引用链（泄漏路径）：
 
-```
-Thread（线程池中长期存活）
-  └─ ThreadLocalMap
-       └─ Entry[] table
-            └─ Entry(key = WeakReference<ThreadLocal>，value = 强引用 → 业务对象)
+```mermaid
+flowchart TD
+  T["Thread<br/>线程池中长期存活"]
+  M["ThreadLocalMap"]
+  TBL["Entry[] table"]
+  E["Entry<br/>key = WeakReference&lt;ThreadLocal&gt;<br/>value = 强引用 → 业务对象"]
+  T --> M --> TBL --> E
+  classDef owner fill:#e3f2fd,stroke:#1976d2
+  classDef weak fill:#fff3e0,stroke:#f57c00
+  class T,M,TBL owner
+  class E weak
 ```
 
 - `ThreadLocal` 实例被业务代码置为 null/被回收后，Entry 的 key 变 null（"stale entry"），但 **value 仍被 Entry 强引用** → value 无法回收；
@@ -811,18 +868,27 @@ public class NativeResource implements AutoCloseable {
 
 ### 14.1 `finalize()` 的两次标记流程
 
-```
-① 可达性分析发现对象不可达
-      ↓
-② 判断：是否需要执行 finalize？
-   ├─ 没重写 finalize，或已被调用过 → 直接回收
-   └─ 重写了且未执行 → 放入 F-Queue
-      ↓
-③ 由 JVM 创建的 FinalizerThread（低优先级）执行 finalize()
-      ↓
-④ GC 对 F-Queue 中的对象做第二次小规模标记
-   ├─ 对象在 finalize 里重新被 GC Roots 引用（"复活"）→ 移出待回收集合，本次不回收
-   └─ 否则 → 真正回收
+```mermaid
+flowchart TD
+  A["① 可达性分析发现对象不可达"]
+  Q{"② 是否需要执行 finalize？"}
+  N1["没重写 finalize，或已被调用过"]
+  N2["重写了且未执行 → 放入 F-Queue"]
+  F3["③ 由 JVM 创建的 FinalizerThread（低优先级）执行 finalize()"]
+  F4["④ GC 对 F-Queue 中的对象做第二次小规模标记"]
+  R1["对象在 finalize 里重新被 GC Roots 引用（复活）<br/>→ 移出待回收集合，本次不回收"]
+  R2["否则 → 真正回收"]
+  A --> Q
+  Q -->|是，需要执行| N2 --> F3 --> F4
+  Q -->|否，不需要| N1 --> R2
+  F4 --> R1
+  F4 --> R2
+  classDef gc fill:#e3f2fd,stroke:#1976d2
+  classDef revive fill:#e8f5e9,stroke:#2e7d32
+  classDef dead fill:#ffebee,stroke:#c62828
+  class A,Q,N1,N2,F3,F4 gc
+  class R1 revive
+  class R2 dead
 ```
 
 ### 14.2 为什么"不保证执行"且"不推荐"

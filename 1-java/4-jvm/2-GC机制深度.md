@@ -31,13 +31,26 @@ created: 2026-10-09
 
 ### 1.2 由假说推出的整套设计
 
-```
-弱分代假说 ──► 新生代：存活少 ──► 标记-复制（只复制存活对象）
-                    │                  └─ Appel 式回收：Eden + 2 个 Survivor，把空间浪费压到 10%
-                    │                  └─ 需要一个"分配担保"兜底：存活对象太多时进老年代
-强分代假说 ──► 老年代：存活多 ──► 标记-清除（CMS）或 标记-整理（Serial Old/Parallel Old）
-跨代引用假说 ─► 老年代 → 新生代的引用很少 ──► 记忆集（卡表）记录，写屏障维护
-                    └─ Minor GC 时把脏卡里的对象并入 GC Roots，避免全堆扫描
+```mermaid
+flowchart LR
+  W["弱分代假说"]
+  S["强分代假说"]
+  X["跨代引用假说"]
+  W --> W1["新生代：存活少"]
+  W1 --> W2["标记-复制（只复制存活对象）"]
+  W2 --> W3["Appel 式回收：Eden + 2 个 Survivor<br/>把空间浪费压到 10%"]
+  W2 --> W4["需要一个「分配担保」兜底<br/>存活对象太多时进老年代"]
+  S --> S1["老年代：存活多"]
+  S1 --> S2["标记-清除（CMS）<br/>或 标记-整理（Serial Old / Parallel Old）"]
+  X --> X1["老年代 → 新生代的引用很少"]
+  X1 --> X2["记忆集（卡表）记录，写屏障维护"]
+  X2 --> X3["Minor GC 时把脏卡里的对象并入 GC Roots<br/>避免全堆扫描"]
+  classDef hyp fill:#e8eaf6,stroke:#3949ab
+  classDef gen fill:#e3f2fd,stroke:#1976d2
+  classDef impl fill:#fff3e0,stroke:#f57c00
+  class W,S,X hyp
+  class W1,S1,X1 gen
+  class W2,W3,W4,S2,X2,X3 impl
 ```
 
 ### 1.3 分代之后的新问题：跨代引用
@@ -129,20 +142,42 @@ created: 2026-10-09
 
 ### 3.2 标记-复制（Mark-Copy）与 Appel 式回收
 
-```
-把内存分成两块，每次只用一块：
-  from 区（正在用） ──GC──► 把存活对象复制到 to 区 ──► 清空 from 区 ──► 角色互换
+```mermaid
+flowchart LR
+  A["把内存分成两块，每次只用一块"]
+  B["from 区（正在用）"]
+  C["把存活对象复制到 to 区"]
+  D["清空 from 区"]
+  E["角色互换（from / to 互换）"]
+  A --> B
+  B -->|GC| C
+  C --> D --> E
+  classDef mem fill:#e3f2fd,stroke:#1976d2
+  classDef step fill:#e8f5e9,stroke:#2e7d32
+  class A,B mem
+  class C,D,E step
 ```
 
 朴素实现的致命缺陷：**空间利用率只有 50%**。新生代用 **Appel 式回收**改良：
 
-```
-新生代（占堆 1/3）
-┌──────────────────────────────┬──────────┬──────────┐
-│  Eden（80%）                  │ S0（10%）│ S1（10%）│
-└──────────────────────────────┴──────────┴──────────┘
-Minor GC：Eden + 一个 Survivor 的存活对象 → 复制到另一个（空的）Survivor
-          放不下的（或年龄够的）→ 晋升老年代（这就是"分配担保"的由来）
+```mermaid
+flowchart TD
+  subgraph Y["新生代（占堆 1/3）"]
+    direction LR
+    E["Eden（80%）"]
+    S0["S0（10%）"]
+    S1["S1（10%）"]
+  end
+  G["Minor GC<br/>Eden + 一个 Survivor 的存活对象<br/>→ 复制到另一个（空的）Survivor"]
+  P["放不下的（或年龄够的）<br/>→ 晋升老年代（这就是「分配担保」的由来）"]
+  E --> G
+  S0 --> G
+  S1 --> G
+  G --> P
+  classDef young fill:#e8f5e9,stroke:#2e7d32
+  classDef proc fill:#e3f2fd,stroke:#1976d2
+  class E,S0,S1 young
+  class G,P proc
 ```
 
 | 维度 | 评价 |
@@ -200,10 +235,20 @@ Minor GC：Eden + 一个 Survivor 的存活对象 → 复制到另一个（空�
 | **灰色** | 自己被访问过，但它引用的对象还没全部扫描完（在待处理队列里） |
 | **黑色** | 自己及它引用的所有对象都已扫描完（安全存活） |
 
-```
-初始：所有对象为白，GC Roots 直接引用的对象入灰队列
-循环：取一个灰色对象 → 把它引用的白色对象变灰 → 自己变黑
-结束：灰队列为空。此时黑色 + 灰色 = 存活；白色 = 垃圾
+```mermaid
+flowchart TD
+  S1["初始：所有对象为白<br/>GC Roots 直接引用的对象入灰队列"]
+  S2["循环：取一个灰色对象<br/>→ 把它引用的白色对象变灰<br/>→ 自己变黑"]
+  S3["结束：灰队列为空<br/>黑色 + 灰色 = 存活；白色 = 垃圾"]
+  S1 --> S2
+  S2 -->|灰队列非空| S2
+  S2 -->|灰队列为空| S3
+  classDef white fill:#fafafa,stroke:#90a4ae
+  classDef gray fill:#cfd8dc,stroke:#546e7a
+  classDef black fill:#90a4ae,stroke:#37474f
+  class S1 white
+  class S2 gray
+  class S3 black
 ```
 
 ### 4.2 并发标记带来的两类问题
@@ -230,13 +275,27 @@ Minor GC：Eden + 一个 Survivor 的存活对象 → 复制到另一个（空�
 
 下面用一个例子把两个条件讲透：
 
-```
-初始（并发标记进行到一半）：
-    Root ──► A(黑) ──► B(灰) ──► C(白)
-                           │
-用户线程执行：B.next = null;   A.next = C;
-    （删除灰→白的引用，同时新增黑→白的引用）
-结果：C 只被 A(黑) 引用，而 A 已经"扫描完毕"不会再被访问 → C 永远不被标黑 → 被当作垃圾回收
+```mermaid
+flowchart TD
+  R["Root"]
+  A["A（黑）"]
+  B["B（灰）"]
+  C["C（白）"]
+  R --> A
+  A -->|初始：A.next = B| B
+  B -->|初始：B.next = C| C
+  A -.->|用户线程：A.next = C<br/>新增黑 → 白的引用| C
+  B -.->|用户线程：B.next = null<br/>删除灰 → 白的引用| C
+  RES["结果：C 只被 A（黑）引用，而 A 已经「扫描完毕」不会再被访问<br/>→ C 永远不被标黑 → 被当作垃圾回收"]
+  C --> RES
+  classDef black fill:#90a4ae,stroke:#37474f
+  classDef gray fill:#cfd8dc,stroke:#546e7a
+  classDef white fill:#fafafa,stroke:#90a4ae
+  classDef res fill:#ffebee,stroke:#c62828
+  class A black
+  class B gray
+  class C white
+  class RES res
 ```
 
 ### 4.4 增量更新（Incremental Update）：CMS 的选择
@@ -329,13 +388,24 @@ void oop_field_store(oop* field, oop new_value) {
 
 G1 把堆切成 Region，跨 Region 引用就是"跨代引用"的一般化。G1 的记忆集是 **RSet（Remembered Set）**，每个 Region 一份：
 
-```
-Region A（老年代）                 Region B（Eden）
-┌──────────────┐                 ┌──────────────┐
-│ obj1 → ──────┼────────────────►│ obj2          │
-└──────────────┘                 └──────────────┘
-        │                                ▲
-        └─ 写屏障维护 ─► B 的 RSet 里记录："A 中某张卡引用了 B"
+```mermaid
+flowchart LR
+  subgraph RA["Region A（老年代）"]
+    OBJ1["obj1"]
+  end
+  subgraph RB["Region B（Eden）"]
+    OBJ2["obj2"]
+  end
+  OBJ1 -->|跨代引用| OBJ2
+  WB["写屏障维护<br/>→ B 的 RSet 里记录：「A 中某张卡引用了 B」"]
+  OBJ1 -.-> WB
+  WB -.-> RB
+  classDef old fill:#fff3e0,stroke:#f57c00
+  classDef young fill:#e8f5e9,stroke:#2e7d32
+  classDef wb fill:#e3f2fd,stroke:#1976d2
+  class OBJ1 old
+  class OBJ2 young
+  class WB wb
 ```
 
 | 问题 | 答案 |
@@ -366,14 +436,17 @@ Region A（老年代）                 Region B（Eden）
 
 HotSpot 采用**主动式中断（Voluntary/Active Interruption）**：
 
-```
-GC 线程（VMThread）设置"需要进入安全点"的标志
-        ↓
-各线程执行到安全点轮询指令时，读一个特殊的内存页（polling page）
-        ↓
-发现标志被设置 → 主动挂起自己（进入 blocked at safepoint 状态）
-        ↓
-VMThread 等到所有线程都挂起 → 开始 GC
+```mermaid
+flowchart TD
+  A["GC 线程（VMThread）设置「需要进入安全点」的标志"]
+  B["各线程执行到安全点轮询指令时<br/>读一个特殊的内存页（polling page）"]
+  C["发现标志被设置<br/>→ 主动挂起自己（进入 blocked at safepoint 状态）"]
+  D["VMThread 等到所有线程都挂起 → 开始 GC"]
+  A --> B --> C --> D
+  classDef vm fill:#e3f2fd,stroke:#1976d2
+  classDef thread fill:#fff3e0,stroke:#f57c00
+  class A,D vm
+  class B,C thread
 ```
 
 - 用内存页保护（page fault / 只读映射）实现轮询，比每条指令都判断标志便宜得多。
@@ -417,11 +490,21 @@ public static long hotLoop() {
 
 **解法：安全区域**——一段"引用关系不会发生变化"的代码区间。
 
-```
-线程进入安全区域 → 标记自己"在安全区域"（此时 GC 可以放心开始）
-线程要离开安全区域 → 先检查"是否处于 STW 中"
-        ├─ 是 → 等待，直到 STW 结束（安全点解除）
-        └─ 否 → 继续执行
+```mermaid
+flowchart TD
+  A["线程进入安全区域<br/>→ 标记自己「在安全区域」（此时 GC 可以放心开始）"]
+  B["线程要离开安全区域<br/>→ 先检查「是否处于 STW 中」"]
+  Y["是 → 等待，直到 STW 结束（安全点解除）"]
+  N["否 → 继续执行"]
+  A --> B
+  B -->|是| Y
+  B -->|否| N
+  classDef enter fill:#e8f5e9,stroke:#2e7d32
+  classDef check fill:#e3f2fd,stroke:#1976d2
+  classDef wait fill:#fff3e0,stroke:#f57c00
+  class A enter
+  class B check
+  class Y,N wait
 ```
 
 典型的安全区域：`Thread.sleep`、`Object.wait`、阻塞 IO 的等待期。这也是"GC 日志中 STW 时间往往大于 GC 本身工作时间"的一个次要来源。
@@ -538,14 +621,18 @@ CMS（Concurrent Mark Sweep）是"以最短停顿为目标"的老年代收集器
 
 **Concurrent Mode Failure 的完整剧情**：
 
-```
-老年代占用到 92% → CMS 启动并发收集
-        ↓（并发标记+清除期间，用户线程继续分配，老年代继续涨）
-老年代被填满 → CMS 还没来得及清完 → 无法继续
-        ↓
-退化为 Serial Old 的 Full GC（单线程 + 标记-整理 + 全程 STW）
-        ↓
-业务出现秒级停顿，GC 日志出现 (concurrent mode failure)
+```mermaid
+flowchart TD
+  A["老年代占用到 92%<br/>→ CMS 启动并发收集"]
+  B["并发标记 + 清除期间，用户线程继续分配，老年代继续涨"]
+  C["老年代被填满<br/>CMS 还没来得及清完 → 无法继续"]
+  D["退化为 Serial Old 的 Full GC<br/>单线程 + 标记-整理 + 全程 STW"]
+  E["业务出现秒级停顿<br/>GC 日志出现 (concurrent mode failure)"]
+  A --> B --> C --> D --> E
+  classDef warn fill:#fff3e0,stroke:#f57c00
+  classDef bad fill:#ffebee,stroke:#c62828
+  class A,B warn
+  class C,D,E bad
 ```
 
 #### 7.4.3 其他关键参数
@@ -567,11 +654,30 @@ CMS（Concurrent Mark Sweep）是"以最短停顿为目标"的老年代收集器
 
 #### 7.5.1 Region 与 Humongous
 
-```
-堆 = 约 2048 个等大 Region（1MB ~ 32MB，2 的幂；本机默认堆下实测 G1HeapRegionSize = 2MB）
-┌────┬────┬────┬────┬────┬────┬────┬────┐
-│ E  │ E  │ S  │ O  │ O  │ H  │ H  │Free│    E=Eden S=Survivor O=Old H=Humongous
-└────┴────┴────┴────┴────┴────┴────┴────┘   Region 的角色是动态的，不再是固定分代边界
+```mermaid
+flowchart LR
+  subgraph HEAP["堆 = 约 2048 个等大 Region<br/>1MB ~ 32MB，2 的幂；本机默认堆下实测 G1HeapRegionSize = 2MB"]
+    direction LR
+    E1["E"]
+    E2["E"]
+    S1["S"]
+    O1["O"]
+    O2["O"]
+    H1["H"]
+    H2["H"]
+    F1["Free"]
+  end
+  LEG["E = Eden　S = Survivor　O = Old　H = Humongous<br/>Region 的角色是动态的，不再是固定分代边界"]
+  classDef eden fill:#e8f5e9,stroke:#2e7d32
+  classDef surv fill:#e3f2fd,stroke:#1976d2
+  classDef old fill:#fff3e0,stroke:#f57c00
+  classDef hum fill:#f3e5f5,stroke:#7b1fa2
+  classDef free fill:#eceff1,stroke:#546e7a
+  class E1,E2 eden
+  class S1 surv
+  class O1,O2 old
+  class H1,H2 hum
+  class F1,LEG free
 ```
 
 | 概念 | 规则 |
@@ -584,14 +690,17 @@ CMS（Concurrent Mark Sweep）是"以最短停顿为目标"的老年代收集器
 
 #### 7.5.2 可预测停顿模型（G1 的核心卖点）
 
-```
--XX:MaxGCPauseMillis（默认 200ms，实测）
-        ↓
-G1 用"衰减均值"（decaying average）记录**每个 Region 的历史回收耗时与回收收益**
-        ↓
-每次 GC 在停顿目标内，从可回收 Region 中优先挑**垃圾占比最高（收益最大）**的那些组成回收集合 CSet
-        ↓
-→ 于是"停顿时间可控"：目标 200ms 就尽量不超过 200ms，而不是"堆越大停顿越长"
+```mermaid
+flowchart TD
+  A["-XX:MaxGCPauseMillis（默认 200ms，实测）"]
+  B["G1 用「衰减均值」（decaying average）记录<br/>每个 Region 的历史回收耗时与回收收益"]
+  C["每次 GC 在停顿目标内<br/>从可回收 Region 中优先挑垃圾占比最高（收益最大）的那些<br/>组成回收集合 CSet"]
+  D["→ 于是「停顿时间可控」<br/>目标 200ms 就尽量不超过 200ms<br/>而不是「堆越大停顿越长」"]
+  A --> B --> C --> D
+  classDef target fill:#e3f2fd,stroke:#1976d2
+  classDef algo fill:#e8f5e9,stroke:#2e7d32
+  class A target
+  class B,C,D algo
 ```
 
 关键理解：
@@ -601,25 +710,31 @@ G1 用"衰减均值"（decaying average）记录**每个 Region 的历史回收�
 
 #### 7.5.3 完整流程：Young GC / 并发标记 / Mixed GC / Full GC
 
-```
-① Young GC（STW）
-   回收所有 Eden + Survivor Region；存活对象复制到新的 Survivor 或晋升到 Old
-   新生代 Region 数量的上下界：-XX:G1NewSizePercent（默认 5）
-                              -XX:G1MaxNewSizePercent（默认 60）
-
-② 并发标记周期（老年代占用超过 IHOP 时启动）
-   2.1 初始标记 Initial Mark（STW，**搭 Young GC 的车**完成）：标记 GC Roots 直接可达对象
-   2.2 根区域扫描 Root Region Scanning（并发，必须在下次 Young GC 前完成）
-   2.3 并发标记 Concurrent Marking（并发，**SATB** 保证不漏标）
-   2.4 重新标记 Remark（STW，处理 SATB 缓冲区，完成存活标记）
-   2.5 清理 Cleanup（STW，部分并行）：统计各 Region 存活比例、把完全空闲的 Region 归还，
-       并决定是否进入 Mixed GC
-
-③ Mixed GC（STW，一个并发标记周期内可分多次执行）
-   回收**整个新生代** + **部分老年代 Region**（按垃圾占比从高到低选）
-
-④ Full GC
-   兜底，能不用就不用
+```mermaid
+flowchart TD
+  Y["① Young GC（STW）<br/>回收所有 Eden + Survivor Region<br/>存活对象复制到新的 Survivor 或晋升到 Old<br/>新生代 Region 数量的上下界：<br/>-XX:G1NewSizePercent（默认 5）<br/>-XX:G1MaxNewSizePercent（默认 60）"]
+  subgraph CM["② 并发标记周期（老年代占用超过 IHOP 时启动）"]
+    direction TB
+    M1["2.1 初始标记 Initial Mark（STW，搭 Young GC 的车完成）<br/>标记 GC Roots 直接可达对象"]
+    M2["2.2 根区域扫描 Root Region Scanning<br/>并发，必须在下次 Young GC 前完成"]
+    M3["2.3 并发标记 Concurrent Marking<br/>并发，SATB 保证不漏标"]
+    M4["2.4 重新标记 Remark（STW）<br/>处理 SATB 缓冲区，完成存活标记"]
+    M5["2.5 清理 Cleanup（STW，部分并行）<br/>统计各 Region 存活比例、把完全空闲的 Region 归还<br/>并决定是否进入 Mixed GC"]
+    M1 --> M2 --> M3 --> M4 --> M5
+  end
+  MX["③ Mixed GC（STW，一个并发标记周期内可分多次执行）<br/>回收整个新生代 + 部分老年代 Region（按垃圾占比从高到低选）"]
+  FG["④ Full GC<br/>兜底，能不用就不用"]
+  Y --> M1
+  M5 --> MX
+  MX --> FG
+  classDef young fill:#e8f5e9,stroke:#2e7d32
+  classDef mark fill:#e3f2fd,stroke:#1976d2
+  classDef mixed fill:#fff3e0,stroke:#f57c00
+  classDef full fill:#ffebee,stroke:#c62828
+  class Y young
+  class M1,M2,M3,M4,M5 mark
+  class MX mixed
+  class FG full
 ```
 
 | 关键参数 | 默认 | 作用 |
@@ -672,13 +787,21 @@ G1 用"衰减均值"（decaying average）记录**每个 Region 的历史回收�
 
 ZGC 在**从堆中读取引用**的地方插入检查：指针颜色是否是"当前视图"？
 
-```
-读引用 oop p
-   ├─ 颜色正确（Remapped，指向对象当前位置）→ 直接返回（快路径，几乎零成本）
-   └─ 颜色过期（对象已被转移 / 正在被标记）
-         ├─ 通过转发表（forwarding table）或对象头里的转发指针找到新地址
-         ├─ 把新地址写回引用字段（自愈）
-         └─ 必要时协助完成转移（help relocate）
+```mermaid
+flowchart TD
+  A["读引用 oop p"]
+  OK["颜色正确（Remapped，指向对象当前位置）<br/>→ 直接返回（快路径，几乎零成本）"]
+  BAD["颜色过期（对象已被转移 / 正在被标记）"]
+  P1["通过转发表（forwarding table）或对象头里的转发指针找到新地址"]
+  P2["把新地址写回引用字段（自愈）"]
+  P3["必要时协助完成转移（help relocate）"]
+  A --> OK
+  A --> BAD
+  BAD --> P1 --> P2 --> P3
+  classDef fast fill:#e8f5e9,stroke:#2e7d32
+  classDef slow fill:#fff3e0,stroke:#f57c00
+  class A,OK fast
+  class BAD,P1,P2,P3 slow
 ```
 
 要点：
@@ -934,14 +1057,19 @@ jstat -gccause <pid> 1000      # 附带上次/本次 GC 原因
 
 ### 9.1 吞吐量 / 停顿 / 内存占用的三角
 
-```
-                吞吐量 Throughput
-                     ▲
-                    ╱ ╲
-                   ╱   ╲        任何收集器/配置只能同时优化两个
-                  ╱     ╲
-                 ╱       ╲
-      停顿 Latency ◄───────► 内存占用 Footprint
+```mermaid
+flowchart TD
+  T["吞吐量 Throughput"]
+  L["停顿 Latency"]
+  F["内存占用 Footprint"]
+  T --- L
+  L --- F
+  F --- T
+  N["任何收集器 / 配置只能同时优化两个"]
+  classDef tri fill:#e3f2fd,stroke:#1976d2
+  classDef note fill:#fff3e0,stroke:#f57c00
+  class T,L,F tri
+  class N note
 ```
 
 | 目标 | 手段 | 代价 |
