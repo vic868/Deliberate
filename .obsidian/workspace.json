@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "8-spring/0-Spring总览.md",
+                "file": "面试准备/简历/04-如何从0到1搭建服务-话术.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-Spring总览"
+              "title": "04-如何从0到1搭建服务-话术"
             }
           }
         ]
@@ -255,18 +255,24 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "面试准备/得逸信息/00-JD与匹配分析.md",
+    "面试准备/得逸信息",
+    "面试准备/简历/03-SpringAIAlibaba-RAG-Demo-答辩准备.md",
+    "面试准备/简历/02-回收站点积分平台-项目描述.md",
+    "面试准备/简历/01-酒店送物机器人-项目描述.md",
+    "面试准备/简历/00-AI经历怎么讲与简历改写策略.md",
+    "8-spring/5-SpringMVC请求全流程.md",
+    "8-spring/0-Spring总览.md",
     "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
     "7-分布式/2-分布式事务.md",
     "8-spring/8-Spring实战与踩坑.md",
     "8-spring/6-SpringBoot自动装配.md",
     "8-spring/4-声明式事务.md",
     "8-spring/2-Bean生命周期与依赖注入.md",
-    "8-spring/5-SpringMVC请求全流程.md",
     "8-spring/7-Spring进阶专题.md",
     "8-spring/1-Spring架构与IoC容器.md",
     "8-spring/3-AOP原理与实战.md",
     "8-spring/9-Spring面试高频题.md",
-    "8-spring/0-Spring总览.md",
     "7-分布式/1-分布式理论基础.md",
     "7-分布式/0-分布式总览.md",
     "5-bigdata/1-doris/2-数据模型.md",
@@ -277,11 +283,6 @@
     "Pasted Image 20261010134525_953.png",
     "7-分布式/9-分布式面试高频题.md",
     "3-mq/2-Kafka/2-架构与核心概念.md",
-    "7-分布式/3-分布式锁.md",
-    "7-分布式/5-一致性哈希与负载均衡.md",
-    "7-分布式/8-微服务架构与注册配置中心.md",
-    "7-分布式/4-分布式ID与雪花算法.md",
-    "7-分布式/6-缓存一致性与高可用.md",
     "AI 学习规划/1-AI 工具",
     "_dvtest",
     "1-java/4-jvm",
@@ -298,7 +299,6 @@
     "Pasted Image 20261008135513_165.png",
     "Pasted Image 20261008134509_484.png",
     "SDLC（软件开发生命周期）完全指南，概念，模型，绘制 - ProcessOn知识社区.pdf",
-    "5-bigdata/dsh-latest-macos-arm64.dmg",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261006162516_406.png",
     "8-spring/spring-logback/未命名.canvas",
