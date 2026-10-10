@@ -38,7 +38,20 @@ status: 进行中
 > | 十大必答题 + 快问快答 + 陷阱 | [[10-面试高频题]] |
 > | Spring refresh 十二步、三级缓存、事务链路 | [[13-Spring源码骨架]] |
 >
-> 入口：[[0-Java总览]] · **JVM 专题入口**：[[0-JVM总览]]（`4-jvm/` 共 7 篇）· 源码深度专题：[[面试准备/技术面试题库/13-Spring源码专题]]
+> 入口：[[0-Java总览]] · **JVM 专题入口**：[[0-JVM总览]]（`4-jvm/` 共 7 篇）· **Spring 专题入口**：[[0-Spring总览]]（`8-spring/` 共 10 篇）· 源码深度专题：[[面试准备/技术面试题库/13-Spring源码专题]]
+
+> [!important] Spring 体系详解（`8-spring/`，被追问原理时看这里）
+> | 主题 | 深度笔记 |
+> |---|---|
+> | 模块架构、IoC/DI、BeanFactory vs ApplicationContext、父子容器、BeanDefinition | [[1-Spring架构与IoC容器]] |
+> | Bean 生命周期、三种注入方式、作用域与线程安全 | [[2-Bean生命周期与依赖注入]] |
+> | AOP 原理、五种通知、切点表达式、JDK vs CGLIB、失效场景 | [[3-AOP原理与实战]] |
+> | `@Transactional` 属性、传播行为、失效场景、事务提交后发消息 | [[4-声明式事务]] |
+> | DispatcherServlet 九大组件、请求全流程、参数绑定、拦截器 vs 过滤器 | [[5-SpringMVC请求全流程]] |
+> | 自动装配原理、条件注解、配置优先级、自定义 starter | [[6-SpringBoot自动装配]] |
+> | 扩展点全景、事件机制、Bean 线程安全、`@Async`、缓存、定时任务 | [[7-Spring进阶专题]] |
+> | 启动/运行/性能问题排查、日志 TraceId、反模式清单 | [[8-Spring实战与踩坑]] |
+> | 12 道必答题 + 快问快答 + 陷阱 | [[9-Spring面试高频题]] |
 
 ---
 
