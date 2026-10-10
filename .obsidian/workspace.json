@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "面试准备/得逸信息/03-公司情报与决策建议.md",
+                "file": "面试准备/得逸信息/04-技术深挖题库与追问链.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "03-公司情报与决策建议"
+              "title": "04-技术深挖题库与追问链"
             }
           }
         ]
@@ -255,7 +255,16 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "面试准备/得逸信息/03-公司情报与决策建议.md",
     "面试准备/得逸信息/02-数仓方案与建模深度题.md",
+    "面试准备/得逸信息/01-供应商外包团队管理.md",
+    "Pasted Image 20261009150831_843.png",
+    "Pasted Image 20261009151249_453.png",
+    "Pasted Image 20261008134509_484.png",
+    "Pasted Image 20261006162516_406.png",
+    "Pasted Image 20261006162206_107.png",
+    "Pasted Image 20260928182321_802.png",
+    "Pasted Image 20260927115138_252.png",
     "5-bigdata/3-StarRocks/7-运维调优与面试题.md",
     "5-bigdata/3-StarRocks/6-导入与实时链路.md",
     "5-bigdata/3-StarRocks/5-查询加速与数据湖.md",
@@ -265,7 +274,6 @@
     "5-bigdata/3-StarRocks/1-架构与存算分离.md",
     "5-bigdata/3-StarRocks/0-StarRocks总览.md",
     "5-bigdata/3-StarRocks",
-    "面试准备/得逸信息/01-供应商外包团队管理.md",
     "面试准备/得逸信息/05-薪资与社保基数谈判.md",
     "面试准备/得逸信息/00-JD与匹配分析.md",
     "1-java/10-数据仓库/0-数据仓库总览.md",
@@ -279,11 +287,9 @@
     "1-java/10-数据仓库",
     "面试准备/得逸信息/04-技术深挖题库与追问链.md",
     "面试准备/得逸信息/README.md",
-    "面试准备/得逸信息/03-公司情报与决策建议.md",
     "面试准备/简历/04-如何从0到1搭建服务-话术.md",
     "面试准备/得逸信息",
     "面试准备/简历/03-SpringAIAlibaba-RAG-Demo-答辩准备.md",
-    "面试准备/简历/02-回收站点积分平台-项目描述.md",
     "Pasted Image 20261010134525_953.png",
     "AI 学习规划/1-AI 工具",
     "_dvtest",
@@ -292,15 +298,8 @@
     "5-bigdata/0-flink",
     "Pasted Image 20261009203105_072.png",
     "Pasted Image 20261009202948_985.png",
-    "Pasted Image 20261009152014_855.png",
-    "Pasted Image 20261009151249_453.png",
-    "Pasted Image 20261009150831_843.png",
     "9-k8s",
     "服务器巡检-192.168.0.106/deploy/scripts/ods_to_dwd.sh",
-    "Pasted Image 20261008135513_165.png",
-    "Pasted Image 20261008134509_484.png",
-    "Pasted Image 20261006163236_959.png",
-    "Pasted Image 20261006162516_406.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
