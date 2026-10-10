@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/1-doris/3-表设计.md",
+                "file": "面试准备/Qbit/00-JD与匹配分析.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "3-表设计"
+              "title": "00-JD与匹配分析"
             }
           }
         ]
@@ -255,6 +255,7 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "5-bigdata/1-doris/3-表设计.md",
     "面试准备/Qbit/04-追问链模拟与口播稿.md",
     "Qbit趣比汇-雇主尽调报告.md",
     "面试准备/Qbit/README.md",
@@ -270,7 +271,6 @@
     "5-bigdata/1-doris/4-Doris设计初衷与核心目标.md",
     "5-bigdata/3-StarRocks/9-StarRocks细节设计的目的.md",
     "5-bigdata/1-doris/5-Doris细节设计的目的.md",
-    "5-bigdata/1-doris/3-表设计.md",
     "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/1-doris/0-Doris总览.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
