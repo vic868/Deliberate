@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/6-JUC并发工具.md",
+                "file": "3-mq/2-Kafka/1-Kafka总览.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "6-JUC并发工具"
+              "title": "1-Kafka总览"
             }
           }
         ]
@@ -256,6 +256,8 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
+    "1-java/1-juc/6-JUC并发工具.md",
     "1-java/1-juc/5-线程池.md",
     "1-java/1-juc/4-多线程与内存模型.md",
     "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
@@ -281,8 +283,6 @@
     "_dvtest/good.md",
     "_dvtest/bad.md",
     "_dvtest",
-    "1-java/1-juc/6-JUC并发工具.md",
-    "1-java/1-juc/1-Disruptor.md",
     "1-java/4-jvm",
     "5-bigdata/1-doris",
     "5-bigdata/0-flink",
