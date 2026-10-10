@@ -364,9 +364,21 @@ classDiagram
   classDef iface fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
   classDef impl fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
   classDef abs fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
-  class BeanFactory,HierarchicalBeanFactory,ListableBeanFactory,AutowireCapableBeanFactory,ConfigurableBeanFactory,ConfigurableListableBeanFactory,ApplicationContext,ConfigurableApplicationContext iface
-  class DefaultListableBeanFactory,AnnotationConfigApplicationContext,ClassPathXmlApplicationContext,AnnotationConfigWebApplicationContext impl
-  class AbstractApplicationContext,AbstractRefreshableApplicationContext,GenericApplicationContext abs
+  class BeanFactory iface
+  class HierarchicalBeanFactory iface
+  class ListableBeanFactory iface
+  class AutowireCapableBeanFactory iface
+  class ConfigurableBeanFactory iface
+  class ConfigurableListableBeanFactory iface
+  class ApplicationContext iface
+  class ConfigurableApplicationContext iface
+  class DefaultListableBeanFactory impl
+  class AnnotationConfigApplicationContext impl
+  class ClassPathXmlApplicationContext impl
+  class AnnotationConfigWebApplicationContext impl
+  class AbstractApplicationContext abs
+  class AbstractRefreshableApplicationContext abs
+  class GenericApplicationContext abs
 ```
 
 这张图要读出的关键信息：

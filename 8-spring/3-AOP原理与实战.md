@@ -7,9 +7,9 @@ created: 2026-10-10
 
 # 🎯 三、AOP 原理与实战
 
-> 本篇回答四个问题：**AOP 到底解决了什么问题**（横切关注点为什么会烂在业务代码里）、**AOP 的八個核心概念之间是什么关系**（尤其是 JoinPoint 与 Pointcut 的区别）、**Spring AOP 用什么机制实现**（JDK 动态代理 vs CGLIB、代理什么时候创建、为什么必须是代理）、以及**生产环境里 AOP 会在哪些场景下静默失效**。
+> 本篇回答四个问题：**AOP 到底解决了什么问题**（横切关注点为什么会烂在业务代码里）、**AOP 的八个核心概念之间是什么关系**（尤其是 JoinPoint 与 Pointcut 的区别）、**Spring AOP 用什么机制实现**（JDK 动态代理 vs CGLIB、代理什么时候创建、为什么必须是代理）、以及**生产环境里 AOP 会在哪些场景下静默失效**。
 > 定位：本篇是**体系详解版**，讲 WHY、讲配置、讲真实踩坑。**速答骨架（源码级、refresh 12 步、三级缓存）见 [[面试准备/技术面试题库/13-Spring源码专题]]**，本篇不重复源码调用链；**AOP 与循环依赖交织的报错问题见 [[面试准备/技术面试题库/14-Spring循环依赖专题]]**。
-> 关联：[[0-Spring总览]]（MOC）、[[1-Spring架构与IoC容器]]（容器是 AOP 的土壤）、[[2-Bean生命周期与依赖注入]]（代理在 `postProcessAfterInitialization` 生成）、[[4-声明式事务]]（`@Transactional` 就是 AOP 最大的应用）、[[8-Spring实战与踩坑]]（TraceId 透传与异步丢上下文）、[[9-Spring面试高频题]]。
+> 关联：[[0-Spring总览]]（MOC）、[[1-Spring架构与IoC容器]]（容器是 AOP 的土壤）、[[2-Bean生命周期与依赖注入]]（代理在 `postProcessAfterInitialization` 生成）、[[4-声明式事务]]（`@Transactional` 就是 AOP 最大的应用）、[[5-SpringMVC请求全流程]]（`RequestContextHolder` 与拦截器 vs 切面的分工）、[[8-Spring实战与踩坑]]（TraceId 透传与异步丢上下文）、[[9-Spring面试高频题]]。
 
 ---
 
