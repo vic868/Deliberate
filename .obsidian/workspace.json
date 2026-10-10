@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/1-doris/4-Doris设计初衷与核心目标.md",
+                "file": "5-bigdata/1-doris/2-数据模型.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "4-Doris设计初衷与核心目标"
+              "title": "2-数据模型"
             }
           }
         ]
@@ -255,10 +255,13 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "5-bigdata/1-doris/12-Doris细节设计的目的.md",
+    "5-bigdata/1-doris/11-Doris设计初衷与核心目标.md",
+    "5-bigdata/1-doris/4-Doris设计初衷与核心目标.md",
+    "5-bigdata/3-StarRocks/9-StarRocks细节设计的目的.md",
     "5-bigdata/3-StarRocks/8-StarRocks设计初衷与核心目标.md",
     "5-bigdata/1-doris/5-Doris细节设计的目的.md",
     "5-bigdata/1-doris/2-数据模型.md",
-    "5-bigdata/1-doris/4-Doris设计初衷与核心目标.md",
     "5-bigdata/1-doris/3-表设计.md",
     "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/1-doris/0-Doris总览.md",
@@ -286,9 +289,6 @@
     "Pasted Image 20260927115138_252.png",
     "5-bigdata/3-StarRocks/7-运维调优与面试题.md",
     "5-bigdata/3-StarRocks/6-导入与实时链路.md",
-    "5-bigdata/3-StarRocks/5-查询加速与数据湖.md",
-    "5-bigdata/3-StarRocks/4-物化视图与透明改写.md",
-    "5-bigdata/3-StarRocks/3-CBO优化器与统计信息.md",
     "5-bigdata/3-StarRocks",
     "1-java/10-数据仓库",
     "面试准备/得逸信息",

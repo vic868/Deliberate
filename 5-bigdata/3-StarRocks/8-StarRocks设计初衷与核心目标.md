@@ -10,7 +10,7 @@ created: 2026-10-10
 > [!abstract] 这篇笔记回答一个问题
 > **"StarRocks 为什么要从 Doris 分出来？它想解决 Doris 没解决好的什么问题？"**
 >
-> [[5-bigdata/1-doris/4-Doris设计初衷与核心目标|Doris 设计初衷]] 讲的是**共同的时代背景与靶心**；
+> [[5-bigdata/1-doris/11-Doris设计初衷与核心目标|Doris 设计初衷]] 讲的是**共同的时代背景与靶心**；
 > 这一篇讲的是 **StarRocks 的差异化选择**——
 > 在同一个大方向下，它**在哪几件事上选了更激进的路线**，以及**为此付出了什么**。
 >
@@ -80,7 +80,7 @@ flowchart TB
   CBO --> C1{"统计信息准吗？"}
   C1 -->|"准确"| C2["✅ 选到真正最优的计划"]
   C1 -->|"过期/缺失"| C3["⚠️ 也会选错<br/>（所以统计信息是关键）"]
-  C2 --> GOAL["⭐ 目标：<br/><b>让优化决策基于"数据实际长什么样"</b>"]
+  C2 --> GOAL["⭐ 目标：<br/><b>让优化决策基于数据实际分布</b>"]
   C3 --> FIX["所以 StarRocks 持续投入：<br/>直方图 → 多列统计 → Predicate Column"]
   FIX --> GOAL
   classDef q fill:#e8eaf6,stroke:#3949ab,color:#1a237e
@@ -278,8 +278,8 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-  SR["StarRocks 的差异化选择"] --> L1["主线一：<b>把"加速"做成系统能力</b>"]
-  SR --> L2["主线二：<b>把"数据边界"打开</b>"]
+  SR["StarRocks 的差异化选择"] --> L1["主线一：<b>把加速做成系统能力</b>"]
+  SR --> L2["主线二：<b>把数据边界打开</b>"]
   L1 --> A1["CBO + 统计信息<br/>（计划选得对）"]
   L1 --> A2["异步 MV + <b>透明改写</b><br/>（业务不改 SQL 就加速）"]
   L1 --> A3["Colocate / 全局字典<br/>Flat JSON / Skew Join V2"]
@@ -375,4 +375,4 @@ flowchart TB
 
 ---
 > 关联：[[0-StarRocks总览]] · [[1-架构与存算分离]] · [[2-表类型与主键模型]] · [[3-CBO优化器与统计信息]] · [[4-物化视图与透明改写]] · [[9-StarRocks细节设计的目的]]
-> 对照：[[5-bigdata/1-doris/4-Doris设计初衷与核心目标]] · [[5-bigdata/1-doris/9-对比StarRocks与ClickHouse]]
+> 对照：[[5-bigdata/1-doris/11-Doris设计初衷与核心目标]] · [[5-bigdata/1-doris/9-对比StarRocks与ClickHouse]]
