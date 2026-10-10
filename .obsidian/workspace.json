@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "面试准备/得逸信息/02-数仓方案与建模深度题.md",
+                "file": "面试准备/得逸信息/03-公司情报与决策建议.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "02-数仓方案与建模深度题"
+              "title": "03-公司情报与决策建议"
             }
           }
         ]
@@ -255,6 +255,7 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "面试准备/得逸信息/02-数仓方案与建模深度题.md",
     "5-bigdata/3-StarRocks/7-运维调优与面试题.md",
     "5-bigdata/3-StarRocks/6-导入与实时链路.md",
     "5-bigdata/3-StarRocks/5-查询加速与数据湖.md",
@@ -279,7 +280,6 @@
     "面试准备/得逸信息/04-技术深挖题库与追问链.md",
     "面试准备/得逸信息/README.md",
     "面试准备/得逸信息/03-公司情报与决策建议.md",
-    "面试准备/得逸信息/02-数仓方案与建模深度题.md",
     "面试准备/简历/04-如何从0到1搭建服务-话术.md",
     "面试准备/得逸信息",
     "面试准备/简历/03-SpringAIAlibaba-RAG-Demo-答辩准备.md",
