@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "7-分布式/1-分布式理论基础.md",
+                "file": "7-分布式/2-分布式事务.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1-分布式理论基础"
+              "title": "2-分布式事务"
             }
           }
         ]
@@ -255,9 +255,9 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "7-分布式/1-分布式理论基础.md",
     "7-分布式/0-分布式总览.md",
     "5-bigdata/1-doris/2-数据模型.md",
-    "7-分布式/1-分布式理论基础.md",
     "1-java/java 版本.smm.md",
     "1-java/硬核技术-业务阵地.md",
     "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
