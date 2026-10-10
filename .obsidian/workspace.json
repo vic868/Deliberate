@@ -252,8 +252,11 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "8bee7db2dd38cd18",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "AI 学习规划/1-AI 工具/0-AI工具总览.md",
+    "AI 学习规划/1-AI 工具/AI对话助手与API价格.md",
+    "AI 学习规划/1-AI 工具/AI编程工具与订阅总览.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
     "AI 学习规划/1-AI 工具",
     "3-mq/2-Kafka/1-Kafka总览.md",
@@ -278,8 +281,6 @@
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/4-jvm/5-JIT编译与运行时优化.md",
     "1-java/4-jvm/3-类加载机制与字节码.md",
-    "1-java/4-jvm/6-JVM参数与调优实战.md",
-    "1-java/4-jvm/7-JVM故障排查实战.md",
     "_dvtest",
     "1-java/4-jvm",
     "5-bigdata/1-doris",
