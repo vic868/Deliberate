@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 402.88671875
+    "width": 208.4453125
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -225,8 +225,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875,
-    "collapsed": true
+    "width": 729.546875
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -254,7 +253,7 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "691fc47be85d9973",
   "lastOpenFiles": [
     "3-mq/2-Kafka/1-Kafka总览.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
