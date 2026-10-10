@@ -225,7 +225,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875
+    "width": 729.546875,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -253,8 +254,9 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "691fc47be85d9973",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "AI 学习规划/未命名",
     "3-mq/2-Kafka/1-Kafka总览.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
     "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
@@ -280,7 +282,6 @@
     "1-java/4-jvm/3-类加载机制与字节码.md",
     "1-java/4-jvm/6-JVM参数与调优实战.md",
     "1-java/4-jvm/7-JVM故障排查实战.md",
-    "1-java/4-jvm/7-JVM内存与GC.md",
     "_dvtest",
     "1-java/4-jvm",
     "5-bigdata/1-doris",
