@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "面试准备/得逸信息/05-薪资与社保基数谈判.md",
+                "file": "5-bigdata/1-doris/1-架构与原理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "05-薪资与社保基数谈判"
+              "title": "1-架构与原理"
             }
           }
         ]
@@ -255,6 +255,11 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "5-bigdata/1-doris/0-Doris总览.md",
+    "5-bigdata/1-doris/1-架构与原理.md",
+    "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
+    "8-spring/spring-logback/LOGBACK_SETUP.md",
+    "面试准备/得逸信息/05-薪资与社保基数谈判.md",
     "1-1-管理/06-团队管理-授权1on1与向上汇报.md",
     "1-1-管理/05-技术转管理-角色转变与面试叙事.md",
     "1-1-管理/04-PMP-过程组知识领域速查.md",
@@ -283,13 +288,8 @@
     "5-bigdata/3-StarRocks/1-架构与存算分离.md",
     "5-bigdata/3-StarRocks/0-StarRocks总览.md",
     "5-bigdata/3-StarRocks",
-    "面试准备/得逸信息/05-薪资与社保基数谈判.md",
     "面试准备/得逸信息/00-JD与匹配分析.md",
     "1-java/10-数据仓库/0-数据仓库总览.md",
-    "1-java/10-数据仓库/7-数仓面试高频题.md",
-    "1-java/10-数据仓库/6-数仓建模实战案例.md",
-    "1-java/10-数据仓库/5-ETL调度与数据同步.md",
-    "1-java/10-数据仓库/4-数据质量管理与对账.md",
     "1-java/10-数据仓库",
     "面试准备/得逸信息",
     "Pasted Image 20261010134525_953.png",
