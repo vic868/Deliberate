@@ -11,12 +11,14 @@
             "id": "8bee7db2dd38cd18",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/0-概念脑图.excalidraw.md"
+                "file": "3-mq/2-Kafka/2-架构与核心概念.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "0-概念脑图.excalidraw"
+              "icon": "lucide-file",
+              "title": "2-架构与核心概念"
             }
           }
         ]
@@ -81,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 208.4453125
+    "width": 282.08984375
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -254,13 +256,14 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/1-Kafka总览.md",
+    "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "AI 学习规划/1-AI 工具/0-AI工具总览.md",
+    "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
     "AI 学习规划/1-AI 工具/AI对话助手与API价格.md",
     "AI 学习规划/1-AI 工具/AI编程工具与订阅总览.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
     "AI 学习规划/1-AI 工具",
-    "3-mq/2-Kafka/1-Kafka总览.md",
-    "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
     "1-java/1-juc/6-JUC并发工具.md",
     "1-java/1-juc/5-线程池.md",
     "1-java/1-juc/4-多线程与内存模型.md",
@@ -280,7 +283,6 @@
     "1-java/4-jvm/0-JVM总览.md",
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/4-jvm/5-JIT编译与运行时优化.md",
-    "1-java/4-jvm/3-类加载机制与字节码.md",
     "_dvtest",
     "1-java/4-jvm",
     "5-bigdata/1-doris",
