@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/0-flink/0-Flink总览.md",
+                "file": "5-bigdata/0-flink/1-架构与运行时.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-Flink总览"
+              "title": "1-架构与运行时"
             }
           }
         ]
@@ -255,6 +255,7 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/0-Flink总览.md",
     "5-bigdata/1-doris/6-数据导入与FlinkCDC.md",
     "1-2-风控/1-风控是什么与为什么.md",
     "面试准备/Qbit/README.md",
@@ -282,7 +283,6 @@
     "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/1-doris/0-Doris总览.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
-    "8-spring/spring-logback/LOGBACK_SETUP.md",
     "1-1-管理",
     "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009151249_453.png",
