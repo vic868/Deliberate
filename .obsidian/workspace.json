@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/1-doris/1-架构与原理.md",
+                "file": "5-bigdata/1-doris/4-Doris设计初衷与核心目标.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1-架构与原理"
+              "title": "4-Doris设计初衷与核心目标"
             }
           }
         ]
@@ -255,8 +255,11 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
-    "5-bigdata/1-doris/0-Doris总览.md",
+    "5-bigdata/1-doris/2-数据模型.md",
+    "5-bigdata/1-doris/4-Doris设计初衷与核心目标.md",
+    "5-bigdata/1-doris/3-表设计.md",
     "5-bigdata/1-doris/1-架构与原理.md",
+    "5-bigdata/1-doris/0-Doris总览.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
     "8-spring/spring-logback/LOGBACK_SETUP.md",
     "面试准备/得逸信息/05-薪资与社保基数谈判.md",
@@ -286,10 +289,7 @@
     "5-bigdata/3-StarRocks/3-CBO优化器与统计信息.md",
     "5-bigdata/3-StarRocks/2-表类型与主键模型.md",
     "5-bigdata/3-StarRocks/1-架构与存算分离.md",
-    "5-bigdata/3-StarRocks/0-StarRocks总览.md",
     "5-bigdata/3-StarRocks",
-    "面试准备/得逸信息/00-JD与匹配分析.md",
-    "1-java/10-数据仓库/0-数据仓库总览.md",
     "1-java/10-数据仓库",
     "面试准备/得逸信息",
     "Pasted Image 20261010134525_953.png",
