@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "面试准备/得逸信息/00-JD与匹配分析.md",
+                "file": "面试准备/得逸信息/01-供应商外包团队管理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "00-JD与匹配分析"
+              "title": "01-供应商外包团队管理"
             }
           }
         ]
@@ -253,8 +253,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "面试准备/得逸信息/05-薪资与社保基数谈判.md",
+    "面试准备/得逸信息/00-JD与匹配分析.md",
     "1-java/10-数据仓库/0-数据仓库总览.md",
     "1-java/10-数据仓库/7-数仓面试高频题.md",
     "1-java/10-数据仓库/6-数仓建模实战案例.md",
@@ -270,7 +272,6 @@
     "面试准备/得逸信息/02-数仓方案与建模深度题.md",
     "面试准备/简历/04-如何从0到1搭建服务-话术.md",
     "面试准备/得逸信息/01-供应商外包团队管理.md",
-    "面试准备/得逸信息/00-JD与匹配分析.md",
     "面试准备/得逸信息",
     "面试准备/简历/03-SpringAIAlibaba-RAG-Demo-答辩准备.md",
     "面试准备/简历/02-回收站点积分平台-项目描述.md",
@@ -282,7 +283,6 @@
     "7-分布式/2-分布式事务.md",
     "8-spring/8-Spring实战与踩坑.md",
     "8-spring/6-SpringBoot自动装配.md",
-    "8-spring/4-声明式事务.md",
     "Pasted Image 20261010134525_953.png",
     "AI 学习规划/1-AI 工具",
     "_dvtest",
