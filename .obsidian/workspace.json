@@ -253,8 +253,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "1-2-风控/1-风控是什么与为什么.md",
+    "1-2-风控/0-风控知识体系总览.md",
     "1-2-风控",
     "面试准备/Qbit/00-JD与匹配分析.md",
     "5-bigdata/1-doris/3-表设计.md",
@@ -281,7 +283,6 @@
     "1-1-管理/05-技术转管理-角色转变与面试叙事.md",
     "1-1-管理/04-PMP-过程组知识领域速查.md",
     "1-1-管理/03-管理思维模型速查.md",
-    "1-1-管理/02-结构化思维-5W1H与任务拆解.md",
     "1-1-管理",
     "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009151249_453.png",
@@ -298,7 +299,6 @@
     "_dvtest",
     "1-java/4-jvm",
     "5-bigdata/1-doris",
-    "5-bigdata/0-flink",
     "Pasted Image 20261009203105_072.png",
     "Pasted Image 20261009202948_985.png",
     "8-spring/spring-logback/未命名.canvas",
