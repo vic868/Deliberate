@@ -11,14 +11,10 @@
             "id": "8bee7db2dd38cd18",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "7-分布式/0-分布式总览.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "0-分布式总览"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
             }
           }
         ]
@@ -225,8 +221,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875,
-    "collapsed": true
+    "width": 729.546875
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -256,6 +251,8 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "7-分布式/1-分布式理论基础.md",
+    "7-分布式/0-分布式总览.md",
     "1-java/java 版本.smm.md",
     "1-java/硬核技术-业务阵地.md",
     "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
@@ -269,8 +266,6 @@
     "7-分布式/4-分布式ID与雪花算法.md",
     "7-分布式/6-缓存一致性与高可用.md",
     "7-分布式/2-分布式事务.md",
-    "7-分布式/1-分布式理论基础.md",
-    "7-分布式/0-分布式总览.md",
     "3-mq/2-Kafka/1-Kafka总览.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "AI 学习规划/1-AI 工具/0-AI工具总览.md",
