@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "7-分布式/2-分布式事务.md",
+                "file": "8-spring/0-Spring总览.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2-分布式事务"
+              "title": "0-Spring总览"
             }
           }
         ]
@@ -253,8 +253,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "1-java/1-juc/1.1-Disruptor核心架构组件.excalidraw.md",
+    "7-分布式/2-分布式事务.md",
     "8-spring/8-Spring实战与踩坑.md",
     "8-spring/6-SpringBoot自动装配.md",
     "8-spring/4-声明式事务.md",
@@ -280,8 +282,6 @@
     "7-分布式/8-微服务架构与注册配置中心.md",
     "7-分布式/4-分布式ID与雪花算法.md",
     "7-分布式/6-缓存一致性与高可用.md",
-    "7-分布式/2-分布式事务.md",
-    "3-mq/2-Kafka/1-Kafka总览.md",
     "AI 学习规划/1-AI 工具",
     "_dvtest",
     "1-java/4-jvm",
