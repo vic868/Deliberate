@@ -25,14 +25,12 @@
             "id": "408e98210b939591",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "5-bigdata/0-flink/6-背压与性能调优.md",
-                "mode": "preview",
-                "source": true
+                "file": "5-bigdata/0-flink/0-flink.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "6-背压与性能调优"
+              "icon": "excalidraw-icon",
+              "title": "0-flink.excalidraw"
             }
           }
         ],
@@ -270,6 +268,7 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/12-Tuple与Tuple4.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
     "5-bigdata/0-flink/0-Flink总览.md",
@@ -299,7 +298,6 @@
     "面试准备/Qbit/00-JD与匹配分析.md",
     "5-bigdata/1-doris/3-表设计.md",
     "Qbit趣比汇-雇主尽调报告.md",
-    "面试准备/Qbit/02-风控系统架构与技术深挖题.md",
     "面试准备/Qbit",
     "1-1-管理",
     "Pasted Image 20261009150831_843.png",
