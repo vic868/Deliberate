@@ -27,10 +27,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Drawing 2026-10-11 11.22.29.excalidraw.md"
+                "file": "5-bigdata/0-flink/0-flink.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Drawing 2026-10-11 11.22.29.excalidraw"
+              "title": "0-flink.excalidraw"
             }
           }
         ],
@@ -266,10 +266,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "408e98210b939591",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
     "5-bigdata/0-flink/3-状态管理.md",
-    "Excalidraw/Drawing 2026-10-11 11.22.29.excalidraw.md",
+    "5-bigdata/0-flink/0-flink.excalidraw.md",
     "5-bigdata/0-flink/1-架构与运行时.md",
     "5-bigdata/0-flink/2-时间与窗口.md",
     "1-2-风控/5-风控体系与合规框架.md",
