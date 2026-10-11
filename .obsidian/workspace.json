@@ -25,12 +25,14 @@
             "id": "408e98210b939591",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "5-bigdata/0-flink/0-flink.excalidraw.md"
+                "file": "5-bigdata/0-flink/12-Tuple与Tuple4.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "0-flink.excalidraw"
+              "icon": "lucide-file",
+              "title": "12-Tuple与Tuple4"
             }
           }
         ],
@@ -268,11 +270,14 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
+    "5-bigdata/0-flink/12-Tuple与Tuple4.md",
+    "5-bigdata/0-flink/0-Flink总览.md",
+    "5-bigdata/0-flink/0-flink.excalidraw.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
     "5-bigdata/0-flink/3-状态管理.md",
-    "5-bigdata/0-flink/0-flink.excalidraw.md",
     "5-bigdata/0-flink/1-架构与运行时.md",
     "5-bigdata/0-flink/2-时间与窗口.md",
     "1-2-风控/5-风控体系与合规框架.md",
@@ -280,7 +285,6 @@
     "1-2-风控/9-合规风险与案例.md",
     "1-2-风控/8-牌照与准入.md",
     "1-2-风控/7-合规运营实务.md",
-    "5-bigdata/0-flink/0-Flink总览.md",
     "5-bigdata/1-doris/6-数据导入与FlinkCDC.md",
     "1-2-风控/1-风控是什么与为什么.md",
     "面试准备/Qbit/README.md",
@@ -297,7 +301,6 @@
     "Qbit趣比汇-雇主尽调报告.md",
     "面试准备/Qbit/02-风控系统架构与技术深挖题.md",
     "面试准备/Qbit",
-    "5-bigdata/1-doris/2-数据模型.md",
     "1-1-管理",
     "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009151249_453.png",
@@ -309,7 +312,6 @@
     "5-bigdata/3-StarRocks",
     "1-java/10-数据仓库",
     "面试准备/得逸信息",
-    "Pasted Image 20261010134525_953.png",
     "AI 学习规划/1-AI 工具",
     "_dvtest",
     "1-java/4-jvm",
