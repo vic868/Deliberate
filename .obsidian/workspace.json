@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-2-风控/5-风控体系与合规框架.md",
+                "file": "5-bigdata/0-flink/3-状态管理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "5-风控体系与合规框架"
+              "title": "3-状态管理"
             }
           }
         ]
@@ -255,11 +255,11 @@
   },
   "active": "8bee7db2dd38cd18",
   "lastOpenFiles": [
+    "1-2-风控/5-风控体系与合规框架.md",
     "1-2-风控/6-合规总览与工作体系.md",
     "5-bigdata/0-flink/2-时间与窗口.md",
     "1-2-风控/9-合规风险与案例.md",
     "1-2-风控/8-牌照与准入.md",
-    "1-2-风控/5-风控体系与合规框架.md",
     "1-2-风控/7-合规运营实务.md",
     "5-bigdata/0-flink/1-架构与运行时.md",
     "5-bigdata/0-flink/0-Flink总览.md",
