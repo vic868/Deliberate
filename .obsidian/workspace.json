@@ -25,12 +25,14 @@
             "id": "408e98210b939591",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "5-bigdata/0-flink/0-flink.excalidraw.md"
+                "file": "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "0-flink.excalidraw"
+              "icon": "lucide-file",
+              "title": "13-生产部署Checklist逐项解析"
             }
           }
         ],
@@ -238,7 +240,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875
+    "width": 729.546875,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -268,12 +271,12 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/0-flink.excalidraw.md",
     "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
     "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/12-Tuple与Tuple4.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
     "5-bigdata/0-flink/0-Flink总览.md",
-    "5-bigdata/0-flink/0-flink.excalidraw.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
