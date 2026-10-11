@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "3-状态管理"
             }
+          },
+          {
+            "id": "408e98210b939591",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2026-10-11 11.22.29.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-10-11 11.22.29.excalidraw"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -253,15 +266,17 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "8bee7db2dd38cd18",
+  "active": "408e98210b939591",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/3-状态管理.md",
+    "Excalidraw/Drawing 2026-10-11 11.22.29.excalidraw.md",
+    "5-bigdata/0-flink/1-架构与运行时.md",
+    "5-bigdata/0-flink/2-时间与窗口.md",
     "1-2-风控/5-风控体系与合规框架.md",
     "1-2-风控/6-合规总览与工作体系.md",
-    "5-bigdata/0-flink/2-时间与窗口.md",
     "1-2-风控/9-合规风险与案例.md",
     "1-2-风控/8-牌照与准入.md",
     "1-2-风控/7-合规运营实务.md",
-    "5-bigdata/0-flink/1-架构与运行时.md",
     "5-bigdata/0-flink/0-Flink总览.md",
     "5-bigdata/1-doris/6-数据导入与FlinkCDC.md",
     "1-2-风控/1-风控是什么与为什么.md",
@@ -281,8 +296,6 @@
     "面试准备/Qbit",
     "5-bigdata/1-doris/2-数据模型.md",
     "5-bigdata/3-StarRocks/8-StarRocks设计初衷与核心目标.md",
-    "5-bigdata/1-doris/12-Doris细节设计的目的.md",
-    "5-bigdata/1-doris/11-Doris设计初衷与核心目标.md",
     "1-1-管理",
     "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009151249_453.png",
