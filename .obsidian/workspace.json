@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/虚拟线程-java（详细整理版）.md",
+                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "虚拟线程-java（详细整理版）"
+              "title": "深入理解JVM GC：G1与ZGC实战"
             }
           }
         ],
@@ -355,10 +355,13 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
-    "1-java/1-juc/虚拟线程-java.md",
+    "1-java/4-jvm/7-JVM故障排查实战.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
     "1-java/1-juc/虚拟线程-java（详细整理版）.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md.crdownload",
+    "1-java/1-juc/虚拟线程-java.md",
     "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
     "3-mq/2-Kafka/10-面试高频题.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
@@ -381,8 +384,6 @@
     "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
     "1-java/Java面试别再死背八股了.md",
     "1-java/从Java 8到21，你错过了什么？.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.smm.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
@@ -402,7 +403,6 @@
     "面试准备/得逸信息",
     "AI 学习规划/1-AI 工具",
     "_dvtest",
-    "1-java/4-jvm",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
