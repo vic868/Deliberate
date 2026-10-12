@@ -357,6 +357,7 @@
   },
   "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
+    "1-java/1-juc/虚拟线程-java.md",
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
     "3-mq/2-Kafka/理解 kafka 基本盘.md",
@@ -382,7 +383,6 @@
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（思维导图）.smm.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.smm.md",
-    "5-bigdata/0-flink/6-背压与性能调优.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
