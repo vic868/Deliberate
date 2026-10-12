@@ -39,12 +39,14 @@
             "id": "e0dad9b3ff383371",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/juc类图.excalidraw.md"
+                "file": "1-java/Java面试别再死背八股了（详细整理版）.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "juc类图.excalidraw"
+              "icon": "lucide-file",
+              "title": "Java面试别再死背八股了（详细整理版）"
             }
           }
         ],
@@ -353,8 +355,11 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
+    "1-java/1-juc/6-JUC并发工具.md",
+    "1-java/Java面试别再死背八股了（详细整理版）.md",
+    "1-java/1-juc/juc类图.excalidraw.md",
     "1-java/1-juc/0-juc.excalidraw.md",
     "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
     "1-java/Java面试别再死背八股了.md",
@@ -379,9 +384,6 @@
     "1-2-风控/8-牌照与准入.md",
     "1-java/硬核技术-业务阵地.md",
     "1-2-风控/7-合规运营实务.md",
-    "1-java/4-jvm/7-JVM故障排查实战.md",
-    "1-java/4-jvm/0-JVM总览.md",
-    "8-spring/1-Spring架构与IoC容器.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
