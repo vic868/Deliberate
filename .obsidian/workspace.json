@@ -357,8 +357,9 @@
   },
   "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
-    "5-bigdata/0-flink/4-容错与ExactlyOnce.md",
+    "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
     "5-bigdata/0-flink/14-开发常用API速查.md",
+    "5-bigdata/0-flink/4-容错与ExactlyOnce.md",
     "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
     "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
     "3-mq/2-Kafka/4-消费者与Rebalance.md",
@@ -383,7 +384,6 @@
     "3-mq/2-Kafka/Kafka 温习一下.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
     "2-redis/一次讲透Redis.md",
-    "1-java/1-juc/4-多线程与内存模型.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
