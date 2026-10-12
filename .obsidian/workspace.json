@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
+                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "深入理解JVM GC：G1与ZGC实战"
+              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）"
             }
           }
         ],
@@ -357,8 +357,9 @@
   },
   "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
-    "1-java/4-jvm/7-JVM故障排查实战.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+    "1-java/4-jvm/7-JVM故障排查实战.md",
     "1-java/1-juc/虚拟线程-java（详细整理版）.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md.crdownload",
     "1-java/1-juc/虚拟线程-java.md",
@@ -383,7 +384,6 @@
     "1-java/1-juc/0-juc.excalidraw.md",
     "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
     "1-java/Java面试别再死背八股了.md",
-    "1-java/从Java 8到21，你错过了什么？.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
