@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2-redis/一次讲透Redis（详细整理版）.md",
+                "file": "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "一次讲透Redis（详细整理版）"
+              "title": "Kafka 温习一下（详细整理版）"
             }
           }
         ],
@@ -357,9 +357,10 @@
   },
   "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
+    "2-redis/一次讲透Redis（详细整理版）.md",
+    "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 温习一下.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
-    "2-redis/一次讲透Redis（详细整理版）.md",
     "2-redis/一次讲透Redis.md",
     "1-java/1-juc/4-多线程与内存模型.md",
     "1-java/1-juc/你怎么理解AQS我不懂.md",
@@ -382,7 +383,6 @@
     "1-java/4-jvm/5-JIT编译与运行时优化.md",
     "1-java/4-jvm/6-JVM参数与调优实战.md",
     "5-bigdata/0-flink/0-flink.excalidraw.md",
-    "1-2-风控/2-反洗钱AML.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
