@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/从Java 8到21，你错过了什么？.md",
+                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "从Java 8到21，你错过了什么？"
+              "title": "Flink入门：1条河讲透实时数据处理"
             }
           }
         ],
@@ -271,8 +271,9 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
-    "1-2-风控/2-反洗钱AML.md",
     "1-java/从Java 8到21，你错过了什么？.md",
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
+    "1-2-风控/2-反洗钱AML.md",
     "1-2-风控/4-如何制定风控策略.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "1-2-风控/1-风控是什么与为什么.md",
@@ -297,7 +298,6 @@
     "10-数据仓库/3-指标体系与口径治理.md",
     "10-数据仓库/1-数仓概念与分层架构.md",
     "10-数据仓库/0-数据仓库总览.md",
-    "1-1-管理/01-管理表达-把大白话说得高大上.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
