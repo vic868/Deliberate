@@ -25,7 +25,7 @@ created: 2026-10-12
 > | **Scala API** | 存在 | ⭐ **整体移除** |
 > | **其它移除** | — | `IterativeStream`、`keyBy(0)`/`keyBy("f")`、`readTextFile/writeAsText`、`env.setStateBackend`、`env.setRestartStrategy`、env 上的 Kryo 注册方法 |
 >
-> 依据：[Flink 2.0 Release Notes](https://nightlies.apache.org/flink/flink-docs-release-2.0/release-notes/flink-2.0/)、[Flink 2.x Migration Guide](https://github.com/aws/agent-toolkit-for-aws/blob/ed19c44c46c9c3a12ef0ff5bbf88161b75d3efbe/skills/specialized-skills/analytics-skills/developing-applications-on-managed-service-for-apache-flink/references/flink-2x-migration.md)。逐项迁移对照见 [附录 A](#附录-a10--2x-迁移逐项对照)。
+> 依据：[Flink 2.0 Release Notes](https://nightlies.apache.org/flink/flink-docs-release-2.0/release-notes/flink-2.0/)、[Flink 2.x Migration Guide](https://github.com/aws/agent-toolkit-for-aws/blob/ed19c44c46c9c3a12ef0ff5bbf88161b75d3efbe/skills/specialized-skills/analytics-skills/developing-applications-on-managed-service-for-apache-flink/references/flink-2x-migration.md)。逐项迁移对照见 [附录 A](#附录-a1x--2x-迁移逐项对照)。
 
 ---
 
@@ -59,6 +59,61 @@ flowchart TD
 
 > [!tip] 选型口诀
 > **能用 SQL 表达就用 SQL**（自动优化、状态管理更省心）；**SQL 表达不了才下沉到 DataStream**；两者可以互转（§十），不必二选一。
+
+---
+
+## 案例导读：一个作业贯穿全篇
+
+> 单纯列 API 容易"看了就忘"。所以本篇**用同一个作业把所有 API 串起来**——每章末尾的「**用例子看**」都会回到它。
+> **作业名**：`order-stats-job`（电商实时订单看板 + 大额告警）
+
+### 业务需求（6 条）
+
+| # | 需求 | 用到的 API |
+| --- | --- | --- |
+| 1 | 从 Kafka 读订单，按**事件时间**处理（容忍 5 秒乱序） | `KafkaSource` + `WatermarkStrategy` |
+| 2 | 过滤掉脏数据（金额 ≤ 0） | `filter` |
+| 3 | 按用户分组，**1 分钟滚动窗口**统计消费额 | `keyBy` + `window` + `aggregate` |
+| 4 | 维护每个用户的**累计消费**，30 分钟无数据就清空状态 | `ValueState` + 定时器 + TTL |
+| 5 | **大额订单（> 5000）** 实时告警（旁路输出） | `sideOutput` |
+| 6 | **迟到数据**旁路输出，不静默丢弃 | `allowedLateness` + `sideOutputLateData` |
+| 7 | 结果补上**用户等级**（异步查维表） | `AsyncDataStream` |
+| 8 | 结果写 Kafka + 本地打印便于调试 | `sinkTo` + `print` |
+
+### 样例数据（故意设计得"什么情况都覆盖"）
+
+| 到达顺序 | orderId | userId | amount | 事件时间 | 备注 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | o1 | u1 | 120.00 | 10:00:05 | 正常 |
+| 2 | o2 | u2 | 80.00 | 10:00:20 | 正常 |
+| 3 | o3 | u1 | **-5.00** | 10:00:40 | ⚠️ 脏数据 → 被 `filter` 丢弃 |
+| 4 | o4 | u1 | **6000.00** | 10:01:10 | ⚠️ 大额 → 走**侧输出告警**；同时它的水位推进**触发了第一个窗口** |
+| 5 | o6 | u3 | 300.00 | 10:01:30 | 正常 |
+| 6 | o5 | u2 | 200.00 | **10:00:50** | ⚠️ **迟到**（到达时水位已过 10:01:00）→ 走**迟到侧输出** |
+
+### 端到端数据流（这张图是全文的地图）
+
+```mermaid
+flowchart LR
+    K["Kafka topic: orders<br/>3 个分区"] --> SRC["① KafkaSource<br/>+ 水位策略<br/>乱序容忍 5s"]
+    SRC --> F["② filter<br/>amount 大于 0"]
+    F --> KB["③ keyBy(userId)<br/>⭐ 按用户分组"]
+    KB --> W["④ 1 分钟滚动窗口<br/>+ sideOutputLateData"]
+    W --> AGG["⑤ aggregate<br/>sum(amount)"]
+    AGG --> ASY["⑥ Async I/O<br/>补用户等级"]
+    ASY --> S1["⑦ KafkaSink<br/>order-stats"]
+    ASY --> S2["print 调试"]
+    W -.->|"⭐ 迟到数据"| LATE["侧输出 late-data<br/>→ 补偿/告警"]
+    F -.->|"⭐ amount 大于 5000"| BIG["侧输出 big-order<br/>→ 风控告警"]
+    style W fill:#fff3cd,stroke:#e0a800
+    style LATE fill:#f8d7da
+    style BIG fill:#f8d7da
+```
+
+> [!tip] 怎么用这条案例
+> ① 先看 [§三 的「用例子看」](#用例子看6-条订单是怎么被一步步处理的) —— **一条数据从进到出被怎么处理**；
+> ② 再看 [§十三 完整实战](#十三完整实战把所有-api-串成一个作业) —— **完整可运行代码**；
+> ③ 中间任何一章的「用例子看」都可以单独回看。
 
 ---
 
@@ -213,6 +268,46 @@ DataStream<String> stream = env.fromSource(
         kafka, WatermarkStrategy.noWatermarks(), "kafka-source");
 ```
 
+### 用例子看：Kafka 3 个分区怎么读、水位怎么生成
+
+以 [案例导读](#案例导读一个作业贯穿全篇) 的 `orders`（3 分区）为例：
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant P0 as Partition 0
+    participant P1 as Partition 1
+    participant P2 as Partition 2
+    participant SRC as KafkaSource（并行度 3）
+    participant WM as 水位生成器
+
+    P0->>SRC: o1(u1,120,@10:00:05)
+    P1->>SRC: o2(u2, 80,@10:00:20)
+    P2->>SRC: o3(u1, -5,@10:00:40)
+    SRC->>WM: 提取每条事件的 ts 作为事件时间
+    Note over WM: 分区内水位 = 本分区最大事件时间 − 5s<br/>⭐ 算子整体水位 = 各分区水位的【最小值】
+    WM-->>SRC: watermark = min(10:00:00, 10:00:15, 10:00:35) = 10:00:00
+    P0->>SRC: o4(u1,6000,@10:01:10)
+    WM-->>SRC: ⭐ 水位跳到 10:01:05（受最慢分区影响仍取 min）
+    Note over SRC: 水位跨过 10:01:00 → 触发窗口 [10:00, 10:01)
+```
+
+**关键配置逐行解释**（对照 §2.1 的代码）：
+
+| 配置 | 例子中的值 | 为什么这么设 |
+| --- | --- | --- |
+| `setTopics("orders")` | 订阅 3 个分区的 topic | 分区数决定**读取并行度的上限** |
+| `setStartingOffsets(...)` | `committedOffsets(EARLIEST)` | ⭐ 生产必须用这个：**优先续上次位点**，没有才回退 |
+| `setGroupId("order-job")` | 消费组，用于提交位点 | 位点提交到 `__consumer_offsets` |
+| `forBoundedOutOfOrderness(Duration.ofSeconds(5))` | 容忍 5 秒乱序 | ⭐ 按"到达时间 − 事件时间"的 **P99** 定 |
+| `withTimestampAssigner((e, ts) -> e.getEventTime())` | 用事件自带的 `ts` | 决定**窗口按哪个时间切** |
+| `withIdleness(Duration.ofMinutes(1))` | 1 分钟无数据标记空闲 | ⭐ 防止**某个分区空转拖住全局水位**（例子中 P2 若长期无数据，水位会卡住） |
+| `env.getConfig().setAutoWatermarkInterval(200)` | 默认 200ms | 水位不是每条都发，而是**周期性生成** |
+
+> [!warning] 例子里的一个典型陷阱
+> 如果 **Partition 2 一直没有新数据**，它的水位就停在旧值 → `min(...)` 导致**整个算子的水位卡住** → 窗口永远不触发。
+> 这就是必须配 `withIdleness()` 的原因——**多分区场景下"空闲分区拖死水位"是最常见的事故**。
+
 ### 2.2 便捷 Source（测试/示例用）
 
 | 方法 | 用途 | 版本提示 |
@@ -278,6 +373,81 @@ flowchart TB
 | `forward` | 同并行度直传 | ✗ | ✗ | 上下游并行度必须一致 |
 | `shuffle` | 随机分区 | ✗ | ✅ | — |
 | `partitionCustom` | 自定义分区器 | ✗ | ✅ | ⚠️ 2.x 移除字段位置重载 |
+
+### 用例子看：6 条订单是怎么被一步步处理的
+
+#### ① 先看 `keyBy` 把数据路由到哪里
+
+假设作业**并行度为 2**（两个子任务），`keyBy(userId)` 后：
+
+```mermaid
+flowchart LR
+    subgraph SRC["输入（3 条正常数据）"]
+        direction TB
+        A1["o1 · u1 · 120"]
+        A2["o2 · u2 · 80"]
+        A3["o6 · u3 · 300"]
+    end
+    A1 -->|"hash(u1) % 2 = 0"| T1["子任务 0<br/>⭐ 拿到全部 u1 的数据"]
+    A2 -->|"hash(u2) % 2 = 1"| T2["子任务 1<br/>⭐ 拿到全部 u2 的数据"]
+    A3 -->|"hash(u3) % 2 = 1"| T2
+    T1 --> N["✅ 同一个用户的订单必定进同一个子任务<br/>→ 才能做有状态聚合（这就是 keyBy 的意义）"]
+    T2 --> N
+```
+
+> 💡 **核心**：`keyBy` 保证"**同一 key 的数据一定在同一并行子任务上处理**"，这是所有 Keyed State 的前提。分区数 ≠ key 数，多个 key 会共享一个子任务。
+
+#### ② 再看每条事件到达后发生了什么（⭐ 这张表把水位/窗口/状态/侧输出全串起来了）
+
+| 到达 | 事件 | 事件时间 | 最大事件时间 | 当前水位（−5s） | 发生了什么 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | o1 · u1 · 120 | 10:00:05 | 10:00:05 | 10:00:00 | 通过 `filter` → `keyBy(u1)` → 计入窗口 `[10:00,10:01)`，**u1 累计 120** |
+| 2 | o2 · u2 · 80 | 10:00:20 | 10:00:20 | 10:00:15 | 计入窗口，**u2 累计 80** |
+| 3 | o3 · u1 · **−5** | 10:00:40 | 10:00:40 | 10:00:35 | ⚠️ **被 `filter` 丢弃**（金额 ≤ 0），不进窗口 |
+| 4 | o4 · u1 · **6000** | 10:01:10 | 10:01:10 | **10:01:05** | ① 水位跨过 `10:01:00` → ⭐ **窗口 `[10:00,10:01)` 触发**，输出 `u1=120`、`u2=80`；② 该订单计入窗口 `[10:01,10:02)`；③ **金额 > 5000 → 侧输出告警** |
+| 5 | o6 · u3 · 300 | 10:01:30 | 10:01:30 | 10:01:25 | 计入窗口 `[10:01,10:02)`，**u3 累计 300** |
+| 6 | o5 · u2 · 200 | **10:00:50** | — | 10:01:25 | ⚠️ **迟到**：它属于窗口 `[10:00,10:01)`，但该窗口已在第 4 步触发且 `allowedLateness=0` → ⭐ **进侧输出 `late-data`**，不静默丢弃 |
+
+```mermaid
+flowchart TB
+    subgraph T0["t=10:00:05 ~ 10:00:35（水位还没到 10:01:00）"]
+        direction LR
+        E1["o1 u1 120"] --> W1["窗口[10:00,10:01)<br/>u1: 120"]
+        E2["o2 u2 80"] --> W1b["窗口[10:00,10:01)<br/>u2: 80"]
+        E3["o3 u1 -5"] --> X1["🗑️ filter 丢弃"]
+    end
+    subgraph T1["t=10:01:10 o4 到达 → 水位跳到 10:01:05"]
+        direction LR
+        E4["o4 u1 6000"] --> TRIG["⭐ 水位跨过 10:01:00<br/>窗口[10:00,10:01) 触发！"]
+        TRIG --> OUT1["输出：u1=120<br/>u2=80"]
+        E4 --> W2["窗口[10:01,10:02)<br/>u1: 6000"]
+        E4 -.->|"amount 大于 5000"| BIG["侧输出：大额告警"]
+    end
+    subgraph T2["t=10:01:30 之后"]
+        E5["o6 u3 300"] --> W2b["窗口[10:01,10:02)<br/>u3: 300"]
+        E6["o5 u2 200<br/>（事件时间 10:00:50）"] -.->|"⭐ 迟到"| LATE["侧输出：late-data"]
+    end
+```
+
+> [!important] 从这张表能学到的 4 件事
+> ① **窗口不会"到点自动触发"**——它靠**水位推进**触发（第 4 条事件才把窗口顶出去）；
+> ② **水位 = 最大事件时间 − 容忍度**，且多分区取 `min`；
+> ③ **迟到数据的判定基准是水位**，不是"到达时间晚不晚"；
+> ④ **侧输出是"不丢数据"的关键**——大额告警和迟到数据都不该被主流程吞掉。
+
+#### ③ 最终输出长什么样
+
+```
+=========== 窗口 [10:00, 10:01) 触发 ===========
+u1  120.00   （o1；o3 被过滤）
+u2   80.00   （o2；o5 迟到未计入）
+=========== 侧输出 ===========
+[big-order]  u1  6000.00  @10:01:10    ← 大额告警
+[late-data]  u2   200.00  @10:00:50    ← 迟到数据（可补偿）
+=========== 窗口 [10:01, 10:02) 待水位推进后触发 ===========
+u1  6000.00
+u3   300.00
+```
 
 ### 3.2 分组聚合三种写法
 
@@ -352,6 +522,45 @@ flowchart LR
     D --> E["④ WindowFunction<br/>reduce / aggregate / process"]
     E --> F["⑤ 迟到数据处理<br/>allowedLateness + sideOutput"]
 ```
+
+### 用例子看：同一批订单被三种窗口切出来是什么样
+
+还是案例里的数据（o1@10:00:05、o2@10:00:20、o3@10:00:40、o5@10:00:50、o4@10:01:10、o6@10:01:30）：
+
+```mermaid
+flowchart TB
+    subgraph TL["⏱️ 事件时间轴"]
+        direction LR
+        T1["10:00:00"] --> T2["10:00:30"] --> T3["10:01:00"] --> T4["10:01:30"] --> T5["10:02:00"]
+    end
+    EV["事件落点：<br/>o1 ─┘10:00:05<br/>o2 10:00:20<br/>o3 10:00:40<br/>o5 10:00:50<br/>o4 10:01:10<br/>o6 10:01:30"]
+```
+
+| 窗口类型 | 切法 | 上面数据会被切成 | 特点 |
+| --- | --- | --- | --- |
+| **滚动 Tumbling**（例子用的）<br/>`TumblingEventTimeWindows.of(Duration.ofMinutes(1))` | 1 分钟一段，**不重叠** | `[10:00,10:01)`：o1 o2 o3 o5<br/>`[10:01,10:02)`：o4 o6 | ⭐ 每事件**只属于一个窗口**；最常用 |
+| **滑动 Sliding**<br/>`of(Duration.ofMinutes(1), Duration.ofSeconds(30))` | 每 30 秒起一个 1 分钟窗口，**有重叠** | `[10:00:00,10:01:00)`：o1 o2 o3 o5<br/>`[10:00:30,10:01:30)`：o3 o5 o4 o6<br/>`[10:01:00,10:02:00)`：o4 o6 | ⚠️ **一个事件属于多个窗口** → 计算结果数 = 窗口数，状态 ×N |
+| **会话 Session**<br/>`EventTimeSessionWindows.withGap(Duration.ofSeconds(30))` | 按**活跃间隔**切：gap 内没数据就结束 | o1~o5 间隔都 < 30s → 一个会话 `[10:00:05,10:01:20)`（含 o1 o2 o3 o5 o4）<br/>o6 距 o5 有 40s > 30s → 另一个会话 | 窗口**大小不固定**，由数据驱动 |
+
+```mermaid
+flowchart LR
+    subgraph ROLL["滚动：切西瓜（不重叠）"]
+        R1["[10:00,10:01)"] --- R2["[10:01,10:02)"]
+    end
+    subgraph SLIDE["滑动：两张网错开铺（重叠）"]
+        S1["窗口A 10:00~10:01"] -.->|重叠 30s| S2["窗口B 10:00:30~10:01:30"]
+        S2 -.-> S3["窗口C 10:01~10:02"]
+    end
+    subgraph SESS["会话：按『说话停顿』切"]
+        SS1["会话1<br/>10:00:05~10:01:20"]
+        SS2["会话2<br/>10:01:30~…"]
+        SS1 -.->|"停顿 40s 大于 gap 30s"| SS2
+    end
+```
+
+> [!warning] 选了滑动窗口要意识到的事
+> 例子中 o3、o5、o4 都落在**两个窗口**里 → **它们会被计算两次**（这是滑动窗口的语义，不是 bug）。
+> 副作用：① 输出条数变多；② 状态量约为滚动窗口的 **窗口大小 / 滑动步长** 倍。所以滑动窗口要谨慎用于大状态场景。
 
 ### 4.2 窗口分配器速查（⚠️ `Time` → `Duration`）
 
@@ -463,6 +672,50 @@ flowchart LR
 > ② **`ValueState<Map<K,V>>` 是大坑**：Flink 2.x 迁移时这类泛型集合状态**序列化不兼容**，且内存效率差 → **改用 `MapState`**；
 > ③ **TTL 只管"读过/写过"的 key**，不会让 Checkpoint 立刻变小（[[13-生产部署Checklist逐项解析]]）。
 
+### 用例子看：状态和定时器在数据流里怎么变
+
+需求 4 是"维护每个用户的**累计消费**，30 分钟无数据就清空"。用 `ValueState<BigDecimal>` + 定时器实现：
+
+```mermaid
+flowchart TB
+    A["o1 u1 120 到达"] --> B["countState(u1).value() = null<br/>→ update(120.0)<br/>注册定时器 t=事件时间+30min"]
+    B --> C["o4 u1 6000 到达"]
+    C --> D["countState(u1).value() = 120.0<br/>→ update(6120.0)<br/>⭐ 重置定时器（删旧的、注册新的）"]
+    D --> E["10:01:10 + 30min = 10:31:10 之前<br/>u1 再没有数据"]
+    E --> F["⏰ 水位推进到 10:31:10<br/>→ onTimer 回调"]
+    F --> G["输出 u1 累计 6120.0<br/>⭐ countState(u1).clear() 清理状态"]
+    style F fill:#fff3cd,stroke:#e0a800
+    style G fill:#d4edda
+```
+
+**状态值的逐条演化**（这就是"有状态计算"的本质）：
+
+| 到达事件 | `countState(u1)` | `countState(u2)` | `countState(u3)` | 说明 |
+| --- | --- | --- | --- | --- |
+| （初始） | 空 | 空 | 空 | 每个 key 独立一份状态 |
+| o1 u1 120 | **120.0** | 空 | 空 | 首次写入 |
+| o2 u2 80 | 120.0 | **80.0** | 空 | 互不影响 |
+| o3 u1 −5 | 120.0 | 80.0 | 空 | ⚠️ 已被 filter 丢弃，**不会进来** |
+| o4 u1 6000 | **6120.0** | 80.0 | 空 | 累加 |
+| o6 u3 300 | 6120.0 | 80.0 | **300.0** | 新 key 出现 → **状态条目 +1** |
+| ⏰ 30min 后 | **被 clear** | 保留 | 保留 | 只有 u1 超时（其他用户后续还有数据） |
+
+```mermaid
+flowchart LR
+    subgraph STATES["Keyed State 是『按 key 分片的']"]
+        direction TB
+        S1["u1 → ValueState: 6120.0<br/>+ 定时器 10:31:10"]
+        S2["u2 → ValueState: 80.0<br/>+ 定时器 10:30:50"]
+        S3["u3 → ValueState: 300.0<br/>+ 定时器 10:31:30"]
+    end
+    STATES --> NOTE["⚠️ key 越多 → 状态条目越多<br/>这正是 CEP/去重/Join 状态膨胀的同源问题<br/>→ 必须配 TTL 或超时清理"]
+```
+
+> [!important] 三个必须记住的点
+> ① **状态是"按 key 分片"的**：`u1` 的状态和 `u2` 的状态互不可见（这就是 `getRuntimeContext()` 能直接拿到"当前 key 的状态"的原因）；
+> ② ⭐ **定时器要"重置"**：每条新数据都应删掉旧定时器、注册新定时器，否则会在错误的时间触发；
+> ③ ⭐ **`onTimer` 里必须 `clear()`**：不清理就永远留着 → 状态只增不减。**"任何长期运行的作业都必须有状态退出机制"**（详见 [[3-状态管理]]、[[13-生产部署Checklist逐项解析]]）。
+
 ### 5.3 广播状态（BroadcastState）
 
 | 场景 | 模式 |
@@ -534,6 +787,51 @@ stream.sinkTo(fileSink);
 stream.print("debug");           // 或 .printToErr()
 ```
 
+### 用例子看：写 Kafka 的"两阶段提交"到底在做什么
+
+需求 8 要把窗口结果写回 Kafka，并且要求 **Exactly-Once**。下面是它和 Checkpoint 配合的完整过程：
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant JM as JobManager<br/>（Checkpoint 协调器）
+    participant SINK as KafkaSink
+    participant KAFKA as Kafka（事务）
+    participant APP as 上游算子（窗口聚合）
+
+    Note over SINK,KAFKA: ① 预提交阶段
+    APP->>SINK: 窗口[10:00,10:01) 结果：u1=120, u2=80
+    SINK->>KAFKA: beginTransaction()（开启事务）
+    SINK->>KAFKA: send(u1=120)、send(u2=80)<br/>⭐ 消息写入但【未提交】，下游消费者看不到
+    JM->>SINK: 注入 barrier（触发 Checkpoint）
+    SINK->>KAFKA: ⭐ flush + 预提交（pre-commit）事务
+    SINK-->>JM: 反馈：我的状态快照完成
+    Note over JM: 等所有算子都反馈完成
+
+    Note over JM,KAFKA: ② 提交阶段
+    JM-->>SINK: ⭐ Checkpoint 全局成功
+    SINK->>KAFKA: commitTransaction()（真正提交）
+    Note over KAFKA: 此刻下游才能读到这两条结果 ✅
+
+    Note over SINK,KAFKA: ③ 失败会怎样
+    JM-->>SINK: Checkpoint 失败 / 作业重启
+    SINK->>KAFKA: ⭐ abortTransaction()（回滚未提交消息）
+    Note over KAFKA: 消息被丢弃 → 从上次成功的 Checkpoint 重放<br/>✅ 不重（没提交）+ 不丢（会重算重发）
+```
+
+| 关键点 | 说明 |
+| --- | --- |
+| ⭐ **必须配 `transactionalIdPrefix`** | 否则无法开启事务，直接报错 |
+| ⭐ **事务超时必须 ≤ broker 上限** | `transaction.timeout.ms`（默认 15min）要 ≤ broker 的 `transaction.max.timeout.ms`（默认 15min），否则事务被 broker 终止 |
+| **提交时机** | 由 **Checkpoint 成功**驱动（不是每条消息都提交）→ 所以 `Checkpoint 间隔` = **数据可见延迟** |
+| **消费端要求** | 下游要读已提交数据，需 `isolation.level=read_committed` |
+| ❌ 不支持事务的 Sink | 只能靠**幂等写**（`INSERT ... ON DUPLICATE KEY UPDATE`）——例如 JDBC |
+
+> [!warning] 端到端 Exactly-Once 的三段式（缺一不可）
+> **① Source 位点可重放**（Kafka offset 随 Checkpoint 保存）+ **② 内部状态快照**（Checkpoint 开启）+ **③ Sink 事务或幂等**。
+> 例子里的 `orders → 窗口聚合 → order-stats` 满足这三条，所以是真正的端到端 EOS。
+> 详见 [[11-端到端一致性]]、[[4-容错与ExactlyOnce]]。
+
 ### 7.2 常见 Sink 与一致性
 
 | Sink | 写法 | Exactly-Once | 备注 |
@@ -601,6 +899,58 @@ public class AsyncDatabaseRequest extends RichAsyncFunction<Order, Enriched> {
 
 ---
 
+### 用例子看：补"用户等级"这件事，同步和异步差多少
+
+需求 7 要给每条结果补上用户等级（查维表，**单次耗时 50ms**）。假设一波来了 100 条结果：
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant OP as 算子线程
+    participant DB as 维表（MySQL，每次 50ms）
+
+    Note over OP,DB: ❌ 同步查询：一条一条排队
+    OP->>DB: 查 u1（等 50ms）
+    DB-->>OP: 等级 A
+    OP->>DB: 查 u2（等 50ms）
+    DB-->>OP: 等级 B
+    OP->>DB: 查 u3（等 50ms）
+    DB-->>OP: 等级 C
+    Note over OP: 100 条 × 50ms = 5 秒（且期间算子一直阻塞）<br/>💥 吞吐被下游拖死，还会引发背压
+
+    Note over OP,DB: ✅ 异步查询：100 个请求并发发出
+    OP->>DB: 同时发出 u1,u2,u3 … 共 100 个请求
+    DB-->>OP: 50ms 后陆续全部返回
+    Note over OP: 总耗时 ≈ 50ms（并发度受 capacity 限制）<br/>✅ 吞吐提升约 100 倍
+```
+
+| 对比项 | 同步（`map` + JDBC） | ⭐ 异步（`AsyncDataStream`） |
+| --- | --- | --- |
+| 100 条 × 50ms | **约 5 秒**（串行） | **约 50ms**（并发） |
+| 线程占用 | 算子线程全程阻塞 | 算子线程**不阻塞**，只发请求 |
+| 背压风险 | 高（下游慢 → 拖垮上游） | 低 |
+| 前提 | — | ⭐ **必须是异步客户端**（Netty/CompletableFuture） |
+
+```mermaid
+flowchart LR
+    subgraph SYNC["❌ 同步"]
+        direction LR
+        S1["事件1"] -->|50ms| S2["事件2"] -->|50ms| S3["事件3"] -->|50ms| S4["…"]
+    end
+    subgraph ASYNC["✅ 异步 unorderedWait capacity=100"]
+        direction LR
+        A1["事件1"] --> P["并发发出<br/>（不等结果）"]
+        A2["事件2"] --> P
+        A3["事件3"] --> P
+        P -->|"50ms 后一起回来"| R["结果（顺序可能乱）"]
+    end
+```
+
+> [!warning] 用异步 I/O 时最容易踩的两个坑
+> ① ⭐ **`capacity` 必须 ≤ 下游连接池大小**：设 100 但连接池只有 10，请求会在池子里排队，等于白开并发；
+> ② ⭐ **同步客户端套异步 I/O 是无效的**：如果 `asyncInvoke` 里调用的是阻塞 JDBC，那么它照样占住线程，异步框架救不了你——**必须换异步客户端**（如 R2DBC、异步 HTTP 客户端）。
+> 另外**一定要实现 `timeout()`** 做降级，否则下游抖动会把算子拖死。
+
 ## 九、容错配置 API
 
 ```java
@@ -645,6 +995,55 @@ restart-strategy:
 > 生产配置清单详见 [[13-生产部署Checklist逐项解析]]。
 
 ---
+
+### 用例子看：作业挂了，数据会不会丢/重
+
+假设例子作业在**窗口 `[10:01,10:02)` 还没触发时**崩了：
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant JOB as order-stats-job
+    participant CK as Checkpoint 存储<br/>（S3）
+    participant KAFKA as Kafka
+
+    Note over JOB: t=10:01:25 触发 Checkpoint #7
+    JOB->>CK: 保存快照：<br/>① Kafka 位点（orders 各分区 offset）<br/>② 窗口状态：窗口[10:01,10:02) 的 u1=6000<br/>③ Keyed State：u1 累计 6120
+    CK-->>JOB: ✅ Checkpoint #7 成功
+    Note over JOB: 继续处理…… t=10:01:40
+    JOB--xJOB: 💥 某个 TaskManager 挂了
+
+    Note over JOB: 按重启策略重启（如 fixed-delay 3 次）
+    JOB->>CK: ⭐ 找最近一次成功的 Checkpoint（#7）
+    CK-->>JOB: 返回快照
+    JOB->>JOB: 恢复状态：窗口状态、Keyed State、Kafka 位点
+    JOB->>KAFKA: 从 Checkpoint #7 记录的位点【重新消费】
+    Note over JOB,KAFKA: t=10:01:25 ~ 10:01:40 的数据会【重放】<br/>但状态已恢复到 #7 → 计算结果正确（不重不丢）
+```
+
+| 问题 | 答案 |
+| --- | --- |
+| 会丢数据吗 | ❌ 不会：**位点也随 Checkpoint 保存**，恢复后从上次成功位点重放 |
+| 会重复吗 | ⚠️ 内部计算不会（状态已回滚到一致点）；**但 Sink 端可能重复** → 靠**事务或幂等**解决 |
+| 回退多少数据 | ≈ `Checkpoint 间隔` + 处理延迟 —— 所以**间隔太大 = 恢复时要重算很久** |
+| 为什么间隔不能太小 | 太频繁会抢资源、拖慢吞吐；推荐 **≥ 1min**，且 `max-concurrent-checkpoints=1` |
+
+```mermaid
+flowchart LR
+    A["正常运行"] -->|"每隔 60s"| B["Checkpoint<br/>（保存状态+位点）"]
+    B --> A
+    A -->|"💥 故障"| C["重启（重启策略）"]
+    C --> D["从最近成功 Checkpoint 恢复状态"]
+    D --> E["从保存的位点重放数据"]
+    E --> A
+    B -.->|"⭐ 没 Checkpoint = 只能从头重跑"| F["⚠️ 这就是为什么 Checkpoint 是生产必开项"]
+```
+
+> [!important] 三个配置的因果链（用例子理解）
+> `enableCheckpointing(60_000)` → 决定**故障时最多回退 1 分钟的数据**；
+> `setCheckpointTimeout(10min)` → 大状态要给它足够时间（≥ 间隔 × 3）；
+> `setMinPauseBetweenCheckpoints(30s)` → 避免 Checkpoint 连轴转把流量挤掉。
+> 生产配置清单见 [[13-生产部署Checklist逐项解析]]，原理见 [[5-Checkpoint与Savepoint]]。
 
 ## 十、Table/SQL API 与 DataStream 互转
 
@@ -807,7 +1206,177 @@ parallelism:
 
 ---
 
-## 附录 A：1.0 → 2.x 迁移逐项对照
+## 十三、完整实战：把所有 API 串成一个作业
+
+把 [案例导读](#案例导读一个作业贯穿全篇) 的 6 条需求写成一个作业——**这就是前面各章 API 的组合方式**。
+
+### 13.1 作业 DAG（带并行度）
+
+```mermaid
+flowchart LR
+    K["Kafka: orders<br/>3 分区"] --> SRC["KafkaSource<br/>(p=2)"]
+    SRC --> FIL["filter<br/>amount 大于 0"]
+    FIL --> PROC["process<br/>⭐ 大额旁路"]
+    PROC --> KB["keyBy(userId)"]
+    KB --> WIN["窗口 1min<br/>+ 迟到侧输出"]
+    WIN --> AGG["aggregate"]
+    AGG --> ASY["Async I/O 补等级"]
+    ASY --> SK["KafkaSink (EOS)"]
+    PROC --> KB2["keyBy(userId)"]
+    KB2 --> CUM["process<br/>累计 + 定时清理"]
+    CUM --> ALERT["Alerts"]
+    PROC -.->|"侧输出"| BIG["big-order 告警"]
+    WIN -.->|"侧输出"| LATE["late-data 补偿"]
+    CUM --> SAVE["(Keyed State + 定时器)"]
+```
+
+### 13.2 完整代码（骨架，各章已有细节实现）
+
+```java
+public class OrderStatsJob {
+
+    // 侧输出标签：必须定义为 static final，便于跨算子复用
+    public static final OutputTag<Order> BIG_ORDER = new OutputTag<>("big-order") {};
+    public static final OutputTag<Order> LATE_DATA = new OutputTag<>("late-data") {};
+
+    public static void main(String[] args) throws Exception {
+
+        // ================= ① 环境与容错（§一、§九）=================
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        env.setParallelism(2);
+        env.enableCheckpointing(60_000, CheckpointingMode.EXACTLY_ONCE);
+        CheckpointConfig cp = env.getCheckpointConfig();
+        cp.setMinPauseBetweenCheckpoints(30_000);          // 别让 CK 连轴转
+        cp.setCheckpointTimeout(10 * 60_000);              // 大状态给足时间
+        cp.setMaxConcurrentCheckpoints(1);                 // ⭐ 必须 1
+        cp.setTolerableCheckpointFailureNumber(3);         // 容忍偶发失败
+        cp.setExternalizedCheckpointRetention(
+                ExternalizedCheckpointRetention.RETAIN_ON_CANCELLATION);
+        // 重启策略（2.x 走配置）：config.yaml → restart-strategy.type: fixed-delay
+
+        // ================= ② Source + 水位（§二、§六）=================
+        KafkaSource<Order> source = KafkaSource.<Order>builder()
+                .setBootstrapServers("kafka-1:9092")
+                .setTopics("orders")
+                .setGroupId("order-stats-job")
+                // ⭐ 生产：优先续上次位点，没有才回退最早
+                .setStartingOffsets(OffsetsInitializer.committedOffsets(
+                        OffsetResetStrategy.EARLIEST))
+                .setDeserializer(KafkaRecordDeserializationSchema.of(
+                        new OrderJsonDeserializer()))
+                .build();
+
+        DataStream<Order> orders = env.fromSource(
+                source,
+                WatermarkStrategy.<Order>forBoundedOutOfOrderness(Duration.ofSeconds(5))
+                        .withTimestampAssigner((o, ts) -> o.getEventTime())
+                        .withIdleness(Duration.ofMinutes(1)),   // ⭐ 防空闲分区拖住水位
+                "kafka-orders");
+
+        // ================= ③ 过滤脏数据 + 大额告警旁路（§三）=================
+        SingleOutputStreamOperator<Order> valid = orders
+                // 需求 2：丢掉金额 ≤ 0 的脏数据（例子里 o3）
+                .filter(o -> o.getAmount().compareTo(BigDecimal.ZERO) > 0)
+                // 需求 5：大额订单走侧输出告警（例子里 o4），主流程继续
+                .process(new ProcessFunction<Order, Order>() {
+                    @Override
+                    public void processElement(Order o, Context ctx, Collector<Order> out) {
+                        if (o.getAmount().compareTo(new BigDecimal("5000")) > 0) {
+                            ctx.output(BIG_ORDER, o);      // → 告警流
+                        }
+                        out.collect(o);                    // → 主流程
+                    }
+                });
+
+        // ================= ④ 窗口聚合 + 迟到侧输出（§四）=================
+        SingleOutputStreamOperator<UserWindowStat> stats = valid
+                .keyBy(Order::getUserId)                                   // 需求 3
+                .window(TumblingEventTimeWindows.of(Duration.ofMinutes(1)))
+                .allowedLateness(Duration.ZERO)                            // 例子设为 0
+                .sideOutputLateData(LATE_DATA)                             // ⭐ 需求 6：o5 → 迟到流
+                .aggregate(new AmountAggregator(), new StatWindowFunction());
+
+        // ================= ⑤ 异步补用户等级（§八）=================
+        DataStream<EnrichedStat> enriched = AsyncDataStream.unorderedWait(
+                stats,
+                new UserLevelAsyncFunction(),      // ⚠️ 必须是异步客户端 + 实现 timeout 降级
+                2, TimeUnit.SECONDS,               // 超时
+                100);                              // ⭐ capacity（要 ≤ 下游连接池）
+
+        // ================= ⑥ 累计消费 + 定时清理（§五）=================
+        DataStream<Alert> alerts = valid
+                .keyBy(Order::getUserId)
+                .process(new CumulativeAmountFunction());   // ValueState + 定时器 + TTL
+
+        // ================= ⑦ Sink（§七）=================
+        // 主结果：写 Kafka，端到端 Exactly-Once
+        enriched.sinkTo(KafkaSink.<EnrichedStat>builder()
+                .setBootstrapServers("kafka-1:9092")
+                .setRecordSerializer(KafkaRecordSerializerSchema.<EnrichedStat>builder()
+                        .setTopic("order-stats")
+                        .setValueSerializationSchema(new EnrichedStatSchema())
+                        .build())
+                .setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE)
+                .setTransactionalIdPrefix("order-stats-tx-")   // ⭐ EOS 必填
+                .build());
+
+        // 侧输出各自落地（不丢数据）
+        valid.getSideOutput(BIG_ORDER).sinkTo(bigOrderSink);
+        stats.getSideOutput(LATE_DATA).sinkTo(lateDataSink);
+
+        // 调试用（生产去掉）
+        enriched.print("stat");
+
+        // ================= ⑧ 触发执行（§一）=================
+        env.execute("order-stats-job");
+    }
+}
+```
+
+### 13.3 同一需求的 SQL 版本（对比看更清楚）
+
+```sql
+-- 需求 1~3 + 6：直接一条 INSERT 搞定（窗口 TVF）
+INSERT INTO order_stats
+SELECT
+    user_id,
+    window_start,
+    window_end,
+    SUM(amount) AS total
+FROM TABLE(
+    TUMBLE(TABLE orders, DESCRIPTOR(ts), INTERVAL '1' MINUTE)   -- ⭐ 窗口 TVF
+)
+WHERE amount > 0                                                 -- 需求 2：过滤脏数据
+GROUP BY user_id, window_start, window_end;
+```
+
+| 需求 | DataStream 写法 | SQL 写法 | 差异 |
+| --- | --- | --- | --- |
+| 过滤脏数据 | `.filter(...)` | `WHERE amount > 0` | 等价 |
+| 窗口聚合 | `.window(...).aggregate(...)` | ⭐ `TABLE(TUMBLE(...))` + `GROUP BY` | SQL 更短，且自带算子优化 |
+| 大额旁路告警 | `process` + `ctx.output` | 另一个 `INSERT` + `WHERE amount > 5000` | SQL 要写两条作业 |
+| 迟到数据旁路 | `sideOutputLateData` | ⚠️ SQL 无直接对应 | DataStream 更灵活 |
+| 累计 + 定时清理 | `ValueState` + 定时器 | `GROUP BY` + `table.exec.state.ttl` | SQL 省心但控制力弱 |
+| 异步补维表 | `AsyncDataStream` | ⭐ **Lookup Join**（`FOR SYSTEM_TIME AS OF`） | SQL 更简单 |
+
+> [!tip] 结论（结合 [§〇 的选型](#〇api-全景选-datastream-还是-tablesql)）
+> **主干的过滤 + 窗口聚合用 SQL 写（更短、自动优化）；需要"旁路 + 超时 + 精细状态"的部分下沉到 DataStream。**
+> 两者用 `toChangelogStream` / `fromChangelogStream` 互转（[§十](#十tablesql-api-与-datastream-互转)）。
+
+### 13.4 从这个例子能学到的 6 件事
+
+| # | 结论 | 对应章节 |
+| --- | --- | --- |
+| 1 | **窗口靠水位触发，不是到点自动触发** | §三 用例子看、§六 |
+| 2 | **迟到数据的判定基准是水位**，侧输出是"不丢"的关键 | §三 用例子看、§四 |
+| 3 | **`keyBy` 保证同 key 同子任务**，这是有状态计算的前提 | §三 用例子看 |
+| 4 | **状态按 key 分片，必须有退出机制**（TTL / 定时器 clear） | §五 用例子看 |
+| 5 | **端到端 EOS = Source 可重放 + 状态快照 + Sink 事务/幂等** | §七 用例子看、§九 用例子看 |
+| 6 | **SQL 写主干、DataStream 补细节**是最实用的组合 | §〇、§十、§十三 |
+
+---
+
+## 附录 A：1.x → 2.x 迁移逐项对照
 
 ```mermaid
 flowchart LR
@@ -816,7 +1385,7 @@ flowchart LR
     B -->|"SinkFunction / addSink"| D["⭐ 改 sinkTo(Sink V2)"]
     B -->|"Time.seconds()"| E["⭐ 改 Duration.ofSeconds()"]
     B -->|"open(Configuration)"| F["⭐ 改 open(OpenContext)"]
-    B -->|"keyBy(0) / keyBy(\"f\")"| G["⭐ 改 KeySelector"]
+    B -->|"keyBy(0) 或 keyBy(字段名)"| G["⭐ 改 KeySelector"]
     B -->|"readTextFile / writeAsText"| H["⭐ 改 FileSource / FileSink"]
     B -->|"DataSet API"| I["⭐ 改 DataStream 或 SQL"]
     B -->|"setStateBackend / setRestartStrategy"| J["⭐ 改配置项"]
