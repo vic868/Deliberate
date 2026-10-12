@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
+                "file": "1-java/1-juc/虚拟线程-java（详细整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "理解 kafka 基本盘（详细整理版）"
+              "title": "虚拟线程-java（详细整理版）"
             }
           }
         ],
@@ -317,7 +317,7 @@
         "y": 39,
         "width": 1800,
         "height": 1130,
-        "maximize": false,
+        "maximize": true,
         "zoom": 0
       },
       {
@@ -350,22 +350,25 @@
         "y": 39,
         "width": 1800,
         "height": 1130,
-        "maximize": false,
+        "maximize": true,
         "zoom": 0
       }
     ]
   },
-  "active": "e0dad9b3ff383371",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
     "1-java/1-juc/虚拟线程-java.md",
-    "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
+    "1-java/1-juc/虚拟线程-java（详细整理版）.md",
     "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
-    "3-mq/2-Kafka/理解 kafka 基本盘.md",
+    "3-mq/2-Kafka/10-面试高频题.md",
+    "3-mq/2-Kafka/1-Kafka总览-bak.md",
+    "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
+    "2-redis/一次讲透Redis（详细整理版）.md",
+    "3-mq/2-Kafka/理解 kafka 基本盘.md",
     "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题.md",
-    "2-redis/一次讲透Redis（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 温习一下.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
     "2-redis/一次讲透Redis.md",
@@ -380,9 +383,6 @@
     "1-java/从Java 8到21，你错过了什么？.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.smm.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（思维导图）.smm.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.smm.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
