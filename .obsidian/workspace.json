@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10-数据仓库/7-数仓面试高频题.md",
+                "file": "10-数据仓库/5-ETL调度与数据同步.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "7-数仓面试高频题"
+              "title": "5-ETL调度与数据同步"
             }
           }
         ],
@@ -271,6 +271,8 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
+    "大数据学习规划/02-Flink补课.md",
+    "10-数据仓库/7-数仓面试高频题.md",
     "10-数据仓库/6-数仓建模实战案例.md",
     "10-数据仓库/5-ETL调度与数据同步.md",
     "1-java/4-jvm/2-GC机制深度.md",
@@ -295,8 +297,6 @@
     "5-bigdata/0-flink/0-flink.excalidraw.md",
     "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/12-Tuple与Tuple4.md",
-    "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
-    "5-bigdata/0-flink/0-Flink总览.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
