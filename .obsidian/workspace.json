@@ -4,53 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "30a5aaae814b848c",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "8bee7db2dd38cd18",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5-bigdata/0-flink/3-状态管理.md",
-                "mode": "preview",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "3-状态管理"
-            }
-          },
-          {
-            "id": "408e98210b939591",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Flink入门：1条河讲透实时数据处理（详细整理版）"
-            }
-          },
-          {
-            "id": "e0dad9b3ff383371",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5-bigdata/0-flink/14-开发常用API速查.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "14-开发常用API速查"
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -313,11 +280,11 @@
           }
         ],
         "direction": "vertical",
-        "x": 0,
+        "x": 214,
         "y": 39,
-        "width": 1800,
+        "width": 1523,
         "height": 1130,
-        "maximize": true,
+        "maximize": false,
         "zoom": 0
       },
       {
@@ -346,17 +313,18 @@
           }
         ],
         "direction": "vertical",
-        "x": 0,
+        "x": 214,
         "y": 39,
-        "width": 1800,
+        "width": 1523,
         "height": 1130,
-        "maximize": true,
+        "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "e0dad9b3ff383371",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
     "5-bigdata/0-flink/14-开发常用API速查.md",
     "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
@@ -383,7 +351,6 @@
     "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题.md",
     "3-mq/2-Kafka/Kafka 温习一下.md",
-    "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
