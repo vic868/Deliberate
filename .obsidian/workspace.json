@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/4-jvm/7-JVM故障排查实战.md",
+                "file": "1-2-风控/7-合规运营实务.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "7-JVM故障排查实战"
+              "title": "7-合规运营实务"
             }
           }
         ],
@@ -271,6 +271,7 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
+    "1-java/4-jvm/7-JVM故障排查实战.md",
     "1-java/4-jvm/0-JVM总览.md",
     "8-spring/1-Spring架构与IoC容器.md",
     "8-spring/0-Spring总览.md",
@@ -296,7 +297,6 @@
     "面试准备/Qbit/04-追问链模拟与口播稿.md",
     "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/1-doris/0-Doris总览.md",
-    "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
