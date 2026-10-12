@@ -357,6 +357,7 @@
   },
   "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/kafka 问题优化和建议.md",
     "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题.md",
@@ -382,7 +383,6 @@
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
     "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
     "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
-    "1-java/4-jvm/5-JIT编译与运行时优化.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
