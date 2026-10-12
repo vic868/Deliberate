@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10-数据仓库/5-ETL调度与数据同步.md",
+                "file": "10-数据仓库/6-数仓建模实战案例.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "5-ETL调度与数据同步"
+              "title": "6-数仓建模实战案例"
             }
           }
         ],
@@ -271,6 +271,7 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
+    "10-数据仓库/5-ETL调度与数据同步.md",
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/4-jvm/3-类加载机制与字节码.md",
     "1-java/4-jvm/1-JVM内存区域与对象布局.md",
@@ -299,7 +300,6 @@
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
     "5-bigdata/0-flink/3-状态管理.md",
-    "5-bigdata/0-flink/1-架构与运行时.md",
     "1-2-风控",
     "面试准备/Qbit",
     "1-1-管理",
