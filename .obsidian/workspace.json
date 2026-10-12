@@ -355,8 +355,9 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
+    "2-redis/一次讲透Redis.md",
     "1-java/1-juc/4-多线程与内存模型.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
     "1-java/1-juc/你怎么理解AQS我不懂.md",
@@ -383,7 +384,6 @@
     "1-2-风控/4-如何制定风控策略.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "1-2-风控/1-风控是什么与为什么.md",
-    "1-2-风控/0-风控知识体系总览.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
