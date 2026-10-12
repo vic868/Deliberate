@@ -43,7 +43,7 @@ source: https://www.bilibili.com/video/BV11yux66EfG/
 | 10:02 | 坑一：数据倾斜 | 十二 · 1 |
 | 10:56 | 坑二：Watermark 怎么设（P99 法） | 十二 · 2 |
 | 11:52 | 坑三：状态膨胀与 TTL | 十二 · 3 |
-| 13:00 | 生产上线前检查清单（并行度/网络缓冲/反压） | 十三 |
+| 13:00 | 生产上线前性能调优检查表（6 项：并行度／网络缓冲／CK 间隔超时／State Backend／反压／GC） | 十三 |
 | 13:46 | 知识地图：骨架与肌肉、下一步实战 | 十四 |
 
 > [!tip] 阅读方式
@@ -518,23 +518,70 @@ env.getConfig().setStateTtlConfig(ttl);   // DataStream API
 
 ## 十三、生产上线前检查清单
 
-视频说"**六条，每条都很关键**"，重点展开了以下几条（完整 10 项清单见 [[13-生产部署Checklist逐项解析]]）：
+视频给出的是**六条「性能调优检查表」**（见原片 PPT《生产上线前 · 性能调优检查表》）。注意：**语音字幕里只念到了第 1、2、5 条**，第 3、4、6 条打在屏幕上但没被解说，因此不在原始字幕稿中——这里按 PPT 补全：
 
-### 13.1 并行度
+| # | 检查项 | 一句话要点（PPT 原文） | 关键配置 |
+| --- | --- | --- | --- |
+| 1 | **并行度设置** | 算子并行度匹配数据量与集群资源 | `parallelism.default` |
+| 2 | **网络缓冲区** | —— | `taskmanager.network.memory.fraction` |
+| 3 | **Checkpoint 间隔与超时** | 间隔 ≥ 1min，超时 ≥ 间隔 × 3 | `execution.checkpointing.interval` / `.timeout` |
+| 4 | **State Backend 选型** | 大状态用 RocksDB + 增量 Checkpoint | `state.backend` / `state.backend.incremental` |
+| 5 | **反压监控** | 关注 Web UI 反压指示器，第一信号 | Web UI 指标 |
+| 6 | **GC 调优** | 使用 G1GC，避免 Full GC 停顿 | `env.java.opts.taskmanager` |
 
-- 概念见 [[#三、架构：把 Flink 想象成一座工厂]]（加工位）；
-- 上线前确认：各算子并行度是否匹配数据量，是否有算子被"卡脖子"。
+> [!note] 与库内笔记的分工
+> 本节是**入门级的六条速览**；[[13-生产部署Checklist逐项解析]] 是同一主题的**10 项详解版**（每项都展开"后果 → 配置 → 推荐值 → 验证方法"，并做了 P0/P1/P2 分级）。上线前以那份为准。
+
+### 13.1 并行度设置
+
+- 概念见 [[#三、架构：把 Flink 想象成一座工厂]]（给工厂多招人、多加工位）；
+- 核心是**匹配**：算子并行度要匹配数据量与集群资源——太小则单算子扛不住（背压），太大则资源浪费、**状态副本变多、Checkpoint 变慢**；
+- 上线前确认：各算子并行度是否匹配、有没有算子被"卡脖子"。
 
 ### 13.2 网络缓冲区（Network Buffer）
 
 | 项 | 说明 |
 | --- | --- |
 | 是什么 | Flink **算子之间传输数据**用的缓冲区 |
+| 关键配置 | `taskmanager.network.memory.fraction`（网络内存占 TaskManager 内存的比例） |
 | 默认值 | 对大部分场景够用 |
 | 何时要调大 | **数据量特别大**或**大量 shuffle** 场景 |
 | 不调的后果 | 缓冲区满 → 产生**反压** → 上游被迫降速等下游，**吞吐直接腰斩** |
 
-### 13.3 反压（Backpressure）怎么看
+> [!tip] 相关参数
+> `taskmanager.network.memory.fraction`（默认 0.1，常用区间 0.1~0.3）、`taskmanager.network.memory.max`（上限，默认 1GB）。详见 [[13-生产部署Checklist逐项解析]]、[[6-背压与性能调优]]。
+
+### 13.3 Checkpoint 间隔与超时
+
+**PPT 口径：间隔 ≥ 1min，超时 ≥ 间隔 × 3。**
+
+| 参数 | 作用 | 建议 |
+| --- | --- | --- |
+| `execution.checkpointing.interval` | 触发间隔 | **≥ 1min**（示例 60s）；太小会频繁抢资源、拖慢吞吐 |
+| `execution.checkpointing.timeout` | 单次 CK 超时 | **≥ 间隔 × 3**（如间隔 1min → 超时 ≥ 3min）；给足重试余量 |
+| `execution.checkpointing.min-pause` | 两次 CK 最小间隔 | 30s ~ 1min，避免 CK 连轴转 |
+| `execution.checkpointing.max-concurrent-checkpoints` | 并发数 | **必须 1**（>1 会放宽一致性并互相干扰） |
+
+**间隔怎么定**：间隔越小 → 故障回退的数据越少（恢复快、重复计算少），但 CK 开销更频繁；间隔越大 → 吞吐更平稳，但故障时回退更多、恢复更慢。这是**吞吐与恢复成本之间的权衡**。
+
+> [!note] 超时值的取舍
+> "超时 ≥ 间隔 × 3"是**容忍抖动**的保守口径（应对偶发的慢 CK）。若你的 CK 稳定在 10s 内，超时设 3 倍间隔会占用较长的"卡住窗口"，可结合 `execution.checkpointing.tolerable-failed-checkpoints`（容忍几次失败，别一失败就挂作业）一起调。详见 [[5-Checkpoint与Savepoint]]、[[13-生产部署Checklist逐项解析]]。
+
+### 13.4 State Backend 选型
+
+**PPT 口径：大状态用 RocksDB + 增量 Checkpoint。**
+
+| 状态规模 | 选型 | 理由 |
+| --- | --- | --- |
+| 小状态（几百 MB 以内） | **HashMapStateBackend / FsStateBackend** | 纯内存快，RocksDB 的序列化开销反而拖后腿 |
+| **大状态（GB ~ TB 级）** | **RocksDB + 增量 Checkpoint** | 状态落磁盘不吃堆内存；增量 CK 只同步变化部分，不用全量快照 |
+
+- 概念回顾见 [[#十、State Backend：状态存哪]]；
+- 增量 Checkpoint 是大状态的**救命配置**：全量快照在 TB 级状态下会跑到超时；
+- 配套调优点：RocksDB 的 **write buffer / block cache**（见 [[#十二 · 3 状态膨胀：跑一天就 OOM]]）；
+- 深入：[[3-状态管理]]、[[5-Checkpoint与Savepoint]]。
+
+### 13.5 反压监控（第一信号）
 
 1. **Flink Web UI 里直接有反压指示器**；
 2. 看到某个算子频繁出现 **High 反压** → 它就是瓶颈；
@@ -550,6 +597,22 @@ flowchart LR
 ```
 
 深读：[[6-背压与性能调优]]（Credit 反压机制、指标定位法）、[[9-部署与运维]]（网络内存配置）。
+
+### 13.6 GC 调优
+
+**PPT 口径：使用 G1GC，避免 Full GC 停顿。**
+
+| 项 | 说明 |
+| --- | --- |
+| 怎么配 | `env.java.opts.taskmanager: -XX:+UseG1GC`（JDK 9+ 默认已是 G1，老 JDK 需显式指定） |
+| 为什么要 G1 | 大堆场景下 **G1 可预测停顿**（`-XX:MaxGCPauseMillis`），而 CMS/Parallel 的老年代回收会带来**长停顿** |
+| Full GC 的后果 | 停顿期间**算子不处理数据 → 背压 → Checkpoint 超时/失败**，甚至作业重启 |
+| 怎么发现 | 监控 **GC 时间占比**（Flink 自带 `Status.JVM.GarbageCollector.*` 指标）与 Full GC 次数 |
+| 治本手段 | GC 调优只是**缓解**：Full GC 的根因通常是**状态过大 / 对象分配过多**——所以要配合 ③ 状态 TTL、⑩ 复用对象（[[13-生产部署Checklist逐项解析]]） |
+
+> [!important] 一句话串联六条
+> **并行度**决定谁来干、**网络缓冲**决定传得动传不动、**Checkpoint 间隔/超时**决定挂了能不能快速恢复、**State Backend** 决定大状态放得下放不下、**反压**是最先亮起的报警灯、**GC** 是内存压力的最终体现。
+> 六条里 **4（State Backend / 状态治理）和 6（GC）本质是同一件事**——状态规模控制住了，GC 和 Checkpoint 会一起变好。
 
 ---
 

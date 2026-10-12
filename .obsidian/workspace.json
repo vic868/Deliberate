@@ -41,10 +41,10 @@
             "state": {
               "type": "smm",
               "state": {
-                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.smm.md"
+                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（思维导图）.smm.md"
               },
               "icon": "smm-icon",
-              "title": "Flink入门：1条河讲透实时数据处理（详细整理版）.smm"
+              "title": "Flink入门：1条河讲透实时数据处理（思维导图）.smm"
             }
           }
         ],
@@ -353,13 +353,13 @@
       }
     ]
   },
-  "active": "0162e52300fc6b18",
+  "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.smm.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.smm.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（思维导图）.smm.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
     "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
