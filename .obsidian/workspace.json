@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
+                "file": "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "kafka 问题优化和建议（详细整理版）"
+              "title": "理解 kafka 基本盘（详细整理版）"
             }
           }
         ],
@@ -357,9 +357,10 @@
   },
   "active": "e0dad9b3ff383371",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
+    "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
     "3-mq/2-Kafka/理解 kafka 基本盘.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
-    "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
     "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题.md",
@@ -382,7 +383,6 @@
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.smm.md",
     "5-bigdata/0-flink/6-背压与性能调优.md",
-    "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
