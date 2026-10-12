@@ -25,12 +25,14 @@
             "id": "408e98210b939591",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（思维导图）.smm.md"
+                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "Flink入门：1条河讲透实时数据处理（思维导图）.smm"
+              "icon": "lucide-file",
+              "title": "Flink入门：1条河讲透实时数据处理（详细整理版）"
             }
           }
         ],
@@ -308,9 +310,9 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（思维导图）.smm.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.smm.md",
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（思维导图）.smm.md",
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
