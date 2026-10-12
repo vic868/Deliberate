@@ -25,14 +25,12 @@
             "id": "408e98210b939591",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "smm",
               "state": {
-                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
-                "mode": "preview",
-                "source": true
+                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.smm.md"
               },
-              "icon": "lucide-file",
-              "title": "Flink入门：1条河讲透实时数据处理（详细整理版）"
+              "icon": "smm-icon",
+              "title": "Flink入门：1条河讲透实时数据处理.smm"
             }
           }
         ],
@@ -98,7 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 282.08984375
+    "width": 472.5
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -308,13 +306,14 @@
       }
     ]
   },
-  "active": "408e98210b939591",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.smm.md",
+    "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
     "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
     "1-java/4-jvm/5-JIT编译与运行时优化.md",
     "1-java/4-jvm/6-JVM参数与调优实战.md",
@@ -336,7 +335,6 @@
     "10-数据仓库/2-维度建模.md",
     "10-数据仓库/6-数仓建模实战案例.md",
     "10-数据仓库/5-ETL调度与数据同步.md",
-    "大数据学习规划/02-Flink补课.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
