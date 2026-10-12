@@ -71,14 +71,7 @@ map和filter我理解了，但状态是什么。代码里也没看到要存什�
 08:00 嗯这就是state backend要解决的问题，
 08:05 FLINK提供三种选择， memory stick backend状态全放JVM堆内存快，但不靠谱，挂了就丢，只用来做本地开发测试，fs state bend状态还是在内存， 但定期快照到文件系统恢复， 从快照加载够用，但状态不能超过单机内存，那如果我的状态有几十个GB甚至更大呢， 用rocks dB state backend生产环境的标配， rocks dB是一个嵌入式KV存储状态，存在磁盘上带有内存缓存， 关键是支持增量checkpoint，每次只同步变化的部分。不用全量快照，你的状态就算到了tb级也能扛住，那我直接无脑选rocks dB不就行了，大部分场景确实如此 但rocks dB的序列化开销比纯内存大，如果你的状态很小， 几百MB以内， FSSTBEND反而更快， 选型没有银弹， 只有TRADEOFF，Flink，之所以能在生产环境站稳脚跟， 靠的就是容错机制，核心就是checkpoint，你可以理解为游戏的存档点就是定时保存状态，
 09:11 那我用REDIS也能做啊，
-09:14 不一样的，FLINK的checkpoint是分布式一致性快照， 它不光保存状态，还保证了所有算子在同一时刻的状态一致性， 靠的是一个叫barrier的标记， job manager往数据流里注入barrier，barrier流经每个算子时，触发该算子保存状态，
-09:31 所有算子都保存完这个checkpoint才算成功，
-09:36 那exactly once是怎么回事，
-09:40 注意exactly ones是指计算结果的精确一次，
-09:43 不是数据只处理一次，
-09:45 frank保证的是从checkpoint恢复后，
-09:47 每条数据的计算结果恰好被反映一次，
-09:50 具体到sink端，
+09:14 不一样的，FLINK的checkpoint是分布式一致性快照， 它不光保存状态，还保证了所有算子在同一时刻的状态一致性， 靠的是一个叫barrier的标记， job manager往数据流里注入barrier，barrier流经每个算子时，触发该算子保存状态， 所有算子都保存完这个checkpoint才算成功， 那exactly once是怎么回事， 注意exactly ones是指计算结果的精确一次，不是数据只处理一次， frank保证的是从checkpoint恢复后， 每条数据的计算结果恰好被反映一次， 具体到sink端，
 09:52 你还需要配合密等写入，
 09:53 重复写，
 09:54 也不影响结果，
