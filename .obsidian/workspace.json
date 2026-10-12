@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "Flink入门：1条河讲透实时数据处理（详细整理版）"
             }
+          },
+          {
+            "id": "e0dad9b3ff383371",
+            "type": "leaf",
+            "state": {
+              "type": "smm",
+              "state": {
+                "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.smm.md"
+              },
+              "icon": "smm-icon",
+              "title": "Flink入门：1条河讲透实时数据处理（详细整理版）.smm"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -305,14 +317,48 @@
         "height": 1130,
         "maximize": true,
         "zoom": 0
+      },
+      {
+        "id": "bbd5e4dd78633ec2",
+        "type": "window",
+        "children": [
+          {
+            "id": "d2accc347bfb9395",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "0162e52300fc6b18",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "Flink入门：1条河讲透实时数据处理（详细整理版）"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
       }
     ]
   },
-  "active": "408e98210b939591",
+  "active": "0162e52300fc6b18",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.smm.md",
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.smm.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（思维导图）.smm.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/6-背压与性能调优.md",
     "5-bigdata/0-flink/7-FlinkCDC与实时数仓.md",
@@ -336,7 +382,6 @@
     "8-spring/0-Spring总览.md",
     "1-2-风控/6-合规总览与工作体系.md",
     "10-数据仓库/2-维度建模.md",
-    "10-数据仓库/6-数仓建模实战案例.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",

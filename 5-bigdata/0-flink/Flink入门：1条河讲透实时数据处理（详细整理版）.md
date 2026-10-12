@@ -1,9 +1,14 @@
 ---
 title: Flink 入门：1 条河讲透实时数据处理（详细整理版）
-tags: [Flink, 入门, 流处理, 批处理, 视频笔记]
+tags:
+  - Flink
+  - 入门
+  - 流处理
+  - 批处理
+  - 视频笔记
 status: 已完成
 created: 2026-10-11
-source: "https://www.bilibili.com/video/BV11yux66EfG/"
+source: https://www.bilibili.com/video/BV11yux66EfG/
 来源作者: onedayhigh
 原视频日期: 2026-08-07
 ---
