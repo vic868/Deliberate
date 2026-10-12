@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/1-doris/1-架构与原理.md",
+                "file": "面试准备/Qbit/04-追问链模拟与口播稿.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1-架构与原理"
+              "title": "04-追问链模拟与口播稿"
             }
           }
         ],
@@ -271,6 +271,7 @@
   },
   "active": "408e98210b939591",
   "lastOpenFiles": [
+    "5-bigdata/1-doris/1-架构与原理.md",
     "5-bigdata/1-doris/0-Doris总览.md",
     "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
     "5-bigdata/0-flink/0-flink.excalidraw.md",
@@ -300,7 +301,6 @@
     "1-2-风控/3-反欺诈.md",
     "1-2-风控/2-反洗钱AML.md",
     "1-2-风控",
-    "面试准备/Qbit/00-JD与匹配分析.md",
     "面试准备/Qbit",
     "1-1-管理",
     "Pasted Image 20261009150831_843.png",
