@@ -6,7 +6,7 @@ tags:
 > 请勿修改除YAML外的任何信息
 # metadata
 ```metadata
-{"root":{"data":{"text":"Flink 入门：1条河讲透实时数据处理"},"children":[{"data":{"text":"批处理 vs 流处理（水库与河流）","note":"开场场景：报表跑了一宿才出来，老板要看实时数据，而数据还在 Kafka 里排队。"},"children":[{"data":{"text":"批处理 = 水库：先攒够一批，再统一开闸处理"},"children":[]},{"data":{"text":"好处是简单粗暴，坏处是用户得等"},"children":[]},{"data":{"text":"流处理 = 河流：数据来了就处理，来一条算一条"},"children":[]},{"data":{"text":"用户秒级看到结果，实时大屏用的就是这个思路"},"children":[]},{"data":{"text":"核心结论：不是跑得更快的批处理，而是根本思路不同"},"children":[]},{"data":{"text":"底层哲学不一样，记住这个比喻，后面很多概念都能往里套"},"children":[]}]},{"data":{"text":"流处理框架选型：为什么是 Flink","note":"视频措辞很克制——\"至少在需要低延迟、复杂状态、精确一次语义的场景下，它是当前最优解\"。微批可接受且深度绑定 Spark 生态时，Structured Streaming 依然合理。"},"children":[{"data":{"text":"Spark Streaming：微批模型，延迟有天花板"},"children":[]},{"data":{"text":"Storm：太老了，API 不友好"},"children":[]},{"data":{"text":"Flink：流处理领域的六边形战士"},"children":[]},{"data":{"text":"真正一条一条处理，不是微批"},"children":[]},{"data":{"text":"Event Time 支持最完整"},"children":[]},{"data":{"text":"状态管理最成熟"},"children":[]},{"data":{"text":"结论：低延迟 + 复杂状态 + 精确一次语义，它是当前最优解"},"children":[]}]},{"data":{"text":"架构：把 Flink 想象成一座工厂","tag":["架构","工厂比喻"]},"children":[{"data":{"text":"JobManager 指挥中心：唯一职责是接单排产"},"children":[]},{"data":{"text":"把任务拆成小块分配下去，协调整个作业达成目标"},"children":[]},{"data":{"text":"TaskManager 车间：真正干活的工人"},"children":[]},{"data":{"text":"Slot 工位：TaskManager 内的资源单位"},"children":[]},{"data":{"text":"一个 Task 被分配到一个 Slot 上执行"},"children":[]},{"data":{"text":"想处理更快 = 多招车间 + 多加工位（并行度）"},"children":[]},{"data":{"text":"注意：工位多了，协调也复杂"},"children":[]}]},{"data":{"text":"数据流：高速公路、keyBy 与算子链"},"children":[{"data":{"text":"高速公路比喻"},"children":[{"data":{"text":"三条车道 = 并行度为 3"},"children":[]},{"data":{"text":"每条车道上的小车互不干扰"},"children":[]},{"data":{"text":"keyBy = 收费站，把相同 key 的车赶到同一条道上"},"children":[]},{"data":{"text":"结论：keyBy 之后并行度不变，但数据分区变了"},"children":[]}]},{"data":{"text":"算子链优化（Operator Chain）","desc":"| 算子 | 是否改分区 | 是否断链 |\n|---|---|---|\n| map / filter / flatMap | 否 | 否，可成链 |\n| keyBy / rebalance | 是（shuffle） | 是 |\n| 上下游并行度不一致 | 是 | 是 |"},"children":[{"data":{"text":"两个算子之间没有 shuffle 就连在一起"},"children":[]},{"data":{"text":"在同一个线程里跑，省掉网络传输"},"children":[]},{"data":{"text":"链越长性能越好，Flink 自动完成"},"children":[]},{"data":{"text":"你必须知道它存在，调试并行度时才不会懵"},"children":[]},{"data":{"text":"常见误区：不是每个算子占一个线程，是能链就链"},"children":[]}]}]},{"data":{"text":"编程模型：Source → Transformation → Sink"},"children":[{"data":{"text":"Source 进料口：Kafka、文件、Socket、数据库 CDC"},"children":[]},{"data":{"text":"Transformation 加工：map、filter、keyBy、窗口、聚合"},"children":[]},{"data":{"text":"Sink 出料口：MySQL、Redis、ES，或再写回 Kafka"},"children":[]},{"data":{"text":"与 Java Stream 的区别"},"children":[{"data":{"text":"API 风格像链式调用，但底层完全不同"},"children":[]},{"data":{"text":"Java Stream 是单机内存操作"},"children":[]},{"data":{"text":"Flink 是分布式：map 在机器 A、reduce 在机器 B，中间走网络"},"children":[]},{"data":{"text":"Java Stream 有界，collect 等它结束"},"children":[]},{"data":{"text":"Flink 流是无界的，数据永远不停，不能像 collect 那样等结束"},"children":[]}]},{"data":{"text":"无界流什么时候出结果"},"children":[{"data":{"text":"答案就是窗口：把无界流切成有界的数据"},"children":[]},{"data":{"text":"但聊窗口之前，必须先把时间语义搞清楚"},"children":[]}]}]},{"data":{"text":"时间语义：三个钟","note":"示例：用户 10:01 下单，网络卡了 10:05 才到系统。\n事件时间 = 10:01，摄入时间 = 10:05，处理时间 = 10:05 或更晚。"},"children":[{"data":{"text":"Event Time 事件时间：事件真正发生的时刻"},"children":[]},{"data":{"text":"Ingestion Time 摄入时间：数据进入 Flink 的时刻"},"children":[]},{"data":{"text":"Processing Time 处理时间：Flink 算子处理这条数据的时刻"},"children":[]},{"data":{"text":"乱序问题"},"children":[{"data":{"text":"更要命的是：数据到达顺序可能和发生顺序不一样"},"children":[]},{"data":{"text":"10:03 的单子反而比 10:01 的单子晚到"},"children":[]}]},{"data":{"text":"怎么选：看业务"},"children":[{"data":{"text":"关心用户几点下单，用 Event Time，这是绝大多数场景的正确选择"},"children":[]},{"data":{"text":"只是粗略统计这一秒处理了多少条，Processing Time 就够了"},"children":[]},{"data":{"text":"Event Time 虽然准确，处理起来也最复杂：要处理乱序和迟到"},"children":[]}]}]},{"data":{"text":"Watermark：对数据迟到的容忍度"},"children":[{"data":{"text":"大白话：Watermark 就是你对数据迟到的容忍度"},"children":[]},{"data":{"text":"设 Watermark 为当前最大事件时间减 5 秒"},"children":[]},{"data":{"text":"含义：已看到最大时间 10:05，就认为 10:04:55 之前的数据都到齐了"},"children":[]},{"data":{"text":"Flink 最精妙的设计之一"},"children":[]},{"data":{"text":"权衡：准确性与延迟"},"children":[{"data":{"text":"Watermark 越大越安全，但延迟也越高"},"children":[]},{"data":{"text":"Watermark 越小越快，但大量迟到数据被丢弃"},"children":[]},{"data":{"text":"这是准确性和延迟之间永远的权衡"},"children":[]},{"data":{"text":"电商大屏场景一般设 1~5 秒就够了"},"children":[]},{"data":{"text":"金融对账场景可能要设几分钟甚至更久"},"children":[]}]},{"data":{"text":"迟到数据三件套"},"children":[{"data":{"text":"丢弃：迟到就迟到，不等了，最简单"},"children":[]},{"data":{"text":"allowedLateness 允许迟到：再给窗口一次机会"},"children":[]},{"data":{"text":"Side Output 侧输出：把没赶上的数据单独收集起来后续补算"},"children":[]},{"data":{"text":"现实中这三个机制经常组合使用"},"children":[]}]}]},{"data":{"text":"窗口：把无界流切成有界数据"},"children":[{"data":{"text":"窗口的本质就一句话：把无界流切成有界的数据"},"children":[]},{"data":{"text":"滚动窗口 Tumbling"},"children":[{"data":{"text":"最简单，按固定长度切，窗口之间不重叠"},"children":[]},{"data":{"text":"每 5 秒统计一次订单数，就像每 5 秒拍一张快照"},"children":[]}]},{"data":{"text":"滑动窗口 Sliding"},"children":[{"data":{"text":"窗口之间有重叠，比如每 5 秒划一次，但窗口大小是 10 秒"},"children":[]},{"data":{"text":"意味着任何一个事件会被统计两次"},"children":[]},{"data":{"text":"适合做趋势平滑"},"children":[]}]},{"data":{"text":"会话窗口 Session"},"children":[{"data":{"text":"最有意思的一个：不按时间切，按活跃度切"},"children":[]},{"data":{"text":"逛淘宝点了几下，停了 3 分钟没动静，Flink 判定会话结束，统计一次"},"children":[]},{"data":{"text":"什么时候你又来了，新的会话开始"},"children":[]},{"data":{"text":"每个人的行为窗口大小都不一样，全靠数据本身驱动"},"children":[]},{"data":{"text":"电商分析用户行为用的就是 Session Window"},"children":[]}]}]},{"data":{"text":"状态：流处理的记忆"},"children":[{"data":{"text":"场景：统计每个用户到目前为止的累计消费金额"},"children":[]},{"data":{"text":"每来一条订单就把它加到之前的总额上"},"children":[]},{"data":{"text":"你必须记住之前的总额，这个总额就是状态 State"},"children":[]},{"data":{"text":"没有状态：每条数据都是孤岛，来了就忘"},"children":[]},{"data":{"text":"有了状态：才能做累加、计数、模式匹配这些需要记忆的操作"},"children":[]},{"data":{"text":"两类状态"},"children":[{"data":{"text":"Keyed State 键控状态：按 key 分区存储，比如每个用户一个状态"},"children":[]},{"data":{"text":"这是你最常用的，90% 场景都是这种"},"children":[]},{"data":{"text":"Operator State 算子状态：跟算子绑定，跟 key 无关"},"children":[]},{"data":{"text":"一般用于 Source 的 offset 管理等底层场景"},"children":[]}]},{"data":{"text":"Keyed State 的数据结构"},"children":[{"data":{"text":"ValueState：存一个值，比如累计消费总额"},"children":[]},{"data":{"text":"ListState：存一个列表，比如最近十条订单"},"children":[]},{"data":{"text":"MapState：存 key-value 映射，比如商品到购买次数"},"children":[]},{"data":{"text":"选哪个取决于你的业务逻辑"},"children":[]},{"data":{"text":"注意：状态会越攒越多"},"children":[]}]}]},{"data":{"text":"State Backend：状态存哪","tag":["状态后端","RocksDB"]},"children":[{"data":{"text":"问题：状态全放内存，不会撑爆吗"},"children":[]},{"data":{"text":"MemoryStateBackend 内存后端"},"children":[{"data":{"text":"状态全放 JVM 堆内存，快"},"children":[]},{"data":{"text":"最不靠谱：挂了就丢"},"children":[]},{"data":{"text":"只用来做本地开发测试"},"children":[]}]},{"data":{"text":"FsStateBackend 文件系统后端"},"children":[{"data":{"text":"状态还是在内存，但定期快照到文件系统"},"children":[]},{"data":{"text":"恢复时从快照加载，够用"},"children":[]},{"data":{"text":"但状态不能超过单机内存"},"children":[]}]},{"data":{"text":"RocksDBStateBackend 生产标配"},"children":[{"data":{"text":"RocksDB 是嵌入式 KV 存储，状态存在磁盘上，带有内存缓存"},"children":[]},{"data":{"text":"关键：支持增量 Checkpoint，每次只同步变化的部分"},"children":[]},{"data":{"text":"状态到了 TB 级也能扛住"},"children":[]}]},{"data":{"text":"选型结论"},"children":[{"data":{"text":"大部分场景确实无脑选 RocksDB"},"children":[]},{"data":{"text":"但 RocksDB 的序列化开销比纯内存大"},"children":[]},{"data":{"text":"如果你的状态很小，几百 MB 以内，FsStateBackend 反而更快"},"children":[]},{"data":{"text":"选型没有银弹，只有 Tradeoff"},"children":[]}]}]},{"data":{"text":"Checkpoint：分布式存档点"},"children":[{"data":{"text":"可以理解为游戏的存档点：定时保存状态"},"children":[]},{"data":{"text":"问题：我用 Redis 也能做啊"},"children":[]},{"data":{"text":"不一样：Checkpoint 是分布式一致性快照"},"children":[]},{"data":{"text":"它不光保存状态，还保证所有算子在同一时刻的状态一致性"},"children":[]},{"data":{"text":"Barrier 机制"},"children":[{"data":{"text":"JobManager 往数据流里注入 Barrier"},"children":[]},{"data":{"text":"Barrier 流经每个算子时，触发该算子保存状态"},"children":[]},{"data":{"text":"所有算子都保存完，这个 Checkpoint 才算成功"},"children":[]}]},{"data":{"text":"Exactly-Once 到底保证什么"},"children":[{"data":{"text":"关键澄清：Exactly-Once 是指计算结果的精确一次"},"children":[]},{"data":{"text":"不是\"数据只处理一次\""},"children":[]},{"data":{"text":"保证从 Checkpoint 恢复后，每条数据的计算结果恰好被反映一次"},"children":[]}]},{"data":{"text":"端到端 Exactly-Once"},"children":[{"data":{"text":"Sink 端需要配合幂等写入：重复写也不影响结果"},"children":[]},{"data":{"text":"或者两阶段提交 2PC"},"children":[]},{"data":{"text":"两者配合才能实现端到端的 Exactly-Once"},"children":[]}]}]},{"data":{"text":"经典坑一：数据倾斜"},"children":[{"data":{"text":"现象：任务跑着跑着，一个 TaskManager 内存爆了，其他都好好的"},"children":[]},{"data":{"text":"十有八九是数据倾斜"},"children":[]},{"data":{"text":"原因：某个 key 的数据量远超其他 key"},"children":[]},{"data":{"text":"keyBy 的铁律：相同 key 一定在同一个 subtask 上处理"},"children":[]},{"data":{"text":"热门 key 太多，一个 subtask 就撑不住了"},"children":[]},{"data":{"text":"解决方案"},"children":[{"data":{"text":"最经典的是两阶段聚合"},"children":[]},{"data":{"text":"先给热点 key 加随机后缀，也就是加盐，做一次局部聚合"},"children":[]},{"data":{"text":"把大压力打散到多个 subtask 上"},"children":[]},{"data":{"text":"再去掉后缀，做全局聚合"},"children":[]},{"data":{"text":"这样热点 key 的压力就被均摊了"},"children":[]},{"data":{"text":"另外还有 rebalance 强制轮询分配"},"children":[]},{"data":{"text":"以及自定义 Partitioner 等手段"},"children":[]},{"data":{"text":"但两阶段聚合是最实用的"},"children":[]}]},{"data":{"text":"怎么提前发现"},"children":[{"data":{"text":"看 Flink Web UI 里各 subtask 的处理数据量和耗时"},"children":[]},{"data":{"text":"如果某一个远高于其他的，那就是了"},"children":[]},{"data":{"text":"监控先行，优化在后"},"children":[]}]}]},{"data":{"text":"经典坑二：Watermark 怎么设（P99 法）"},"children":[{"data":{"text":"这是 Flink 调优里最让人纠结的问题之一"},"children":[]},{"data":{"text":"设太大：窗口迟迟不触发，实时大屏变成准实时大屏"},"children":[]},{"data":{"text":"设太小：大量迟到数据被丢弃，统计结果不准"},"children":[]},{"data":{"text":"标准做法"},"children":[{"data":{"text":"先分析你的数据，上线前做一件事"},"children":[]},{"data":{"text":"统计数据延迟分布：每条数据的事件时间和到达时间的差值"},"children":[]},{"data":{"text":"画一条分布曲线，取 P99 分位值作为 Watermark"},"children":[]},{"data":{"text":"含义：99% 的正常数据你都能兜住"},"children":[]},{"data":{"text":"只有 1% 的极端迟到会被丢掉"},"children":[]}]},{"data":{"text":"三层保障（生产标准姿势）"},"children":[{"data":{"text":"第一层：Watermark 取 P99"},"children":[]},{"data":{"text":"第二层：allowedLateness 给窗口续一条命，比如再等 30 秒"},"children":[]},{"data":{"text":"这期间到的迟到数据还是能更新窗口"},"children":[]},{"data":{"text":"第三层：Side Output 收集超过 30 秒还迟到的数据"},"children":[]},{"data":{"text":"后续补算或者人工审核"},"children":[]},{"data":{"text":"三层保障叠加才是生产环境的标准姿势"},"children":[]}]}]},{"data":{"text":"经典坑三：状态膨胀"},"children":[{"data":{"text":"现象：任务跑了一天之后越来越慢，最后崩了"},"children":[]},{"data":{"text":"但数据量没变"},"children":[]},{"data":{"text":"八成是状态膨胀"},"children":[]},{"data":{"text":"Keyed State 是按 key 存的，如果你的 key 不断增加"},"children":[]},{"data":{"text":"比如用户 id 每天都有新用户，状态就只会增长不会减少"},"children":[]},{"data":{"text":"时间一长，几十个 GB 的状态把内存和 checkpoint 都拖垮"},"children":[]},{"data":{"text":"解法三板斧","note":"核心原则：任何长期运行的 Flink 任务，必须有状态退出机制。"},"children":[{"data":{"text":"给状态设 TTL，也就是 time to live"},"children":[]},{"data":{"text":"告诉 Flink：这个 key 超过 24 小时没被访问就自动清理"},"children":[]},{"data":{"text":"一行配置能救你的命：StateTtlConfig 设 Time.hours(24)"},"children":[]},{"data":{"text":"对于 ListState 这种容易膨胀的类型，注意控制列表长度"},"children":[]},{"data":{"text":"定期做裁剪"},"children":[]},{"data":{"text":"如果真需要保留大量状态，回到 State Backend 用 RocksDB"},"children":[]},{"data":{"text":"状态存磁盘，不吃堆内存"},"children":[]},{"data":{"text":"再配合增量 Checkpoint 和合理的 write buffer / block cache 调优"},"children":[]},{"data":{"text":"TB 级状态也能稳定运行"},"children":[]}]}]},{"data":{"text":"生产上线前性能调优检查表（6 条）","tag":["上线清单","性能调优"],"note":"六条的内在联系：并行度决定谁来干、网络缓冲决定传得动传不动、Checkpoint 间隔与超时决定挂了能否快速恢复、State Backend 决定大状态放得下放不下、反压是最先亮起的报警灯、GC 是内存压力的最终体现。其中第 4 条和第 6 条本质是同一件事——状态规模控制住了，GC 和 Checkpoint 会一起变好。"},"children":[{"data":{"text":"视频给的是六条检查表，每条都很关键"},"children":[]},{"data":{"text":"注意：语音字幕只念到第 1、2、5 条"},"children":[]},{"data":{"text":"第 3、4、6 条打在 PPT 上但没被解说，故不在原始字幕稿里"},"children":[]},{"data":{"text":"完整 10 项详解见笔记「13-生产部署Checklist逐项解析」"},"children":[]},{"data":{"text":"1 并行度设置"},"children":[{"data":{"text":"算子并行度匹配数据量与集群资源"},"children":[]},{"data":{"text":"太小则单算子扛不住，太大则状态副本变多、Checkpoint 变慢"},"children":[]},{"data":{"text":"上线前确认各算子并行度是否匹配，有没有算子被卡脖子"},"children":[]}]},{"data":{"text":"2 网络缓冲区"},"children":[{"data":{"text":"Flink 算子之间传输数据用的是网络缓冲区"},"children":[]},{"data":{"text":"关键配置 taskmanager.network.memory.fraction"},"children":[]},{"data":{"text":"默认值对大部分场景够用"},"children":[]},{"data":{"text":"数据量特别大或大量 shuffle 时需要调大"},"children":[]},{"data":{"text":"否则缓冲区满了产生反压，上游被迫降速，吞吐直接腰斩"},"children":[]}]},{"data":{"text":"3 Checkpoint 间隔与超时"},"children":[{"data":{"text":"PPT 口径：间隔 ≥ 1min，超时 ≥ 间隔 × 3"},"children":[]},{"data":{"text":"execution.checkpointing.interval 触发间隔，建议 ≥ 1min"},"children":[]},{"data":{"text":"execution.checkpointing.timeout 单次超时，给足抖动余量"},"children":[]},{"data":{"text":"min-pause 设 30s 到 1min，避免 CK 连轴转"},"children":[]},{"data":{"text":"max-concurrent-checkpoints 必须为 1，否则放宽一致性且互相干扰"},"children":[]},{"data":{"text":"间隔越小故障回退数据越少但开销更大，是吞吐与恢复成本的权衡"},"children":[]}]},{"data":{"text":"4 State Backend 选型"},"children":[{"data":{"text":"PPT 口径：大状态用 RocksDB + 增量 Checkpoint"},"children":[]},{"data":{"text":"小状态几百 MB 以内用 HashMapStateBackend 或 FsStateBackend 反而更快"},"children":[]},{"data":{"text":"大状态用 RocksDB，状态落磁盘不吃堆内存"},"children":[]},{"data":{"text":"增量 Checkpoint 只同步变化部分，全量快照在 TB 级会跑到超时"},"children":[]},{"data":{"text":"配套调优 RocksDB 的 write buffer 与 block cache"},"children":[]}]},{"data":{"text":"5 反压监控"},"children":[{"data":{"text":"Flink Web UI 里直接有反压指示器"},"children":[]},{"data":{"text":"某个算子频繁出现 High 反压，说明它是瓶颈"},"children":[]},{"data":{"text":"三选一：优化这个算子的逻辑"},"children":[]},{"data":{"text":"或者给它加并行度"},"children":[]},{"data":{"text":"或者解决下游写入慢的问题"},"children":[]},{"data":{"text":"反压是性能调优的第一信号，看到它就说明有优化空间"},"children":[]}]},{"data":{"text":"6 GC 调优"},"children":[{"data":{"text":"PPT 口径：使用 G1GC，避免 Full GC 停顿"},"children":[]},{"data":{"text":"配置 env.java.opts.taskmanager 加 -XX:+UseG1GC"},"children":[]},{"data":{"text":"G1 可预测停顿，CMS 或 Parallel 的老年代回收停顿长"},"children":[]},{"data":{"text":"Full GC 停顿期间算子不处理数据，导致背压与 Checkpoint 超时"},"children":[]},{"data":{"text":"监控 GC 时间占比与 Full GC 次数"},"children":[]},{"data":{"text":"治本靠状态治理：状态 TTL 与复用对象"},"children":[]}]}]},{"data":{"text":"知识地图与下一步"},"children":[{"data":{"text":"从批处理对流处理开始"},"children":[]},{"data":{"text":"一路走过 Flink 架构、时间语义、Watermark、Window、状态管理、Checkpoint"},"children":[]},{"data":{"text":"最后踩了三个坑：数据倾斜、Watermark 配置、状态膨胀"},"children":[]},{"data":{"text":"骨架与肌肉"},"children":[{"data":{"text":"今天掌握的是骨架"},"children":[]},{"data":{"text":"CEP 复杂事件处理、Table API、Flink SQL、CDC 数据集成是骨架上的肌肉"},"children":[]},{"data":{"text":"但没有骨架，肌肉无处附着"},"children":[]}]},{"data":{"text":"下一步：写一个真实的 Flink Job","note":"视频结尾：\"好我先去搭个 docker 环境……等等，我本地有 docker 吗？这就是下一步的故事了。\""},"children":[{"data":{"text":"从你自己的业务开始"},"children":[]},{"data":{"text":"把那个 T+1 报表改成实时的"},"children":[]},{"data":{"text":"Source 读 Kafka，按用户 id keyBy"},"children":[]},{"data":{"text":"开一个一分钟的滚动窗口做聚合"},"children":[]},{"data":{"text":"Sink 写到你的大屏数据源"},"children":[]},{"data":{"text":"原理能跑通，你就入门了"},"children":[]}]}]},{"data":{"text":"附录：语音转写勘误对照"},"children":[{"data":{"text":"KEBA → keyBy"},"children":[]},{"data":{"text":"test manager → TaskManager"},"children":[]},{"data":{"text":"frank → Flink"},"children":[]},{"data":{"text":"kid state → Keyed State"},"children":[]},{"data":{"text":"this state → ListState"},"children":[]},{"data":{"text":"memory stick backend → MemoryStateBackend"},"children":[]},{"data":{"text":"fs state bend → FsStateBackend"},"children":[]},{"data":{"text":"rocks dB → RocksDB"},"children":[]},{"data":{"text":"密等写入 → 幂等写入"},"children":[]},{"data":{"text":"exactly ones → Exactly-Once"},"children":[]},{"data":{"text":"aloud lenness → allowedLateness"},"children":[]},{"data":{"text":"Sex dt t l time hours → StateTtlConfig(Time.hours(24))"},"children":[]},{"data":{"text":"right buffer block cash → write buffer / block cache"},"children":[]},{"data":{"text":"sap 复杂事件处理 → CEP"},"children":[]},{"data":{"text":"能练就练 → 能链就链"},"children":[]}]}]},"layout":"logicalStructure","theme":{"template":"classic13","config":{}}}
+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
 ```
 # svgdata
 ```svgData
@@ -14,3 +14,542 @@ tags:
 ```
 # linkdata
 # textdata
+Flink 入门：1条河讲透实时数据处理 ^6591da7b-04ac-4910-ab44-008f3b85ee55
+
+批处理 vs 流处理（水库与河流） ^59a09511-a7ef-4bf5-a690-74a8566aca1d
+
+批处理 = 水库：先攒够一批，再统一开闸处理 ^67578214-4332-4b0f-888b-982bec8d032b
+
+好处是简单粗暴，坏处是用户得等 ^73b8d8ed-fef0-4cc8-bc3d-d44d277cd5c4
+
+流处理 = 河流：数据来了就处理，来一条算一条 ^961a4914-580b-41c5-bb95-acce40537c44
+
+用户秒级看到结果，实时大屏用的就是这个思路 ^8a712a03-57a8-49e8-b6d5-5039e695005a
+
+核心结论：不是跑得更快的批处理，而是根本思路不同 ^97bc85f5-318e-4c01-ba8c-fa1709987639
+
+底层哲学不一样，记住这个比喻，后面很多概念都能往里套 ^e9b5512f-1d53-4ed9-9bae-d892bd7e80dd
+
+流处理框架选型：为什么是 Flink ^6b099962-0459-4dd4-b5c7-90ef83ad21a8
+
+Spark Streaming：微批模型，延迟有天花板 ^2becdcf9-538b-444c-a021-8787fc26589a
+
+Storm：太老了，API 不友好 ^3deadc63-8ea9-4b38-b2ad-6dcc91f67673
+
+Flink：流处理领域的六边形战士 ^2b4b7030-548b-465b-bc35-9a884ca0b9b6
+
+真正一条一条处理，不是微批 ^99898579-d83b-437a-9b46-ccee9fec4f1b
+
+Event Time 支持最完整 ^8dda889d-0219-47e3-a0b8-73d678612ac2
+
+状态管理最成熟 ^2d8af281-1e93-491f-8939-1a2cd09a9944
+
+结论：低延迟 + 复杂状态 + 精确一次语义，它是当前最优解 ^3e0add7f-7154-4183-82bd-16165e0a18ec
+
+架构：把 Flink 想象成一座工厂 ^38c52adf-c3ab-4730-9d70-3cc531d2f926
+
+JobManager 指挥中心：唯一职责是接单排产 ^5f447872-5a7b-41b0-8471-2d03183d9c24
+
+把任务拆成小块分配下去，协调整个作业达成目标 ^53d74ec0-71c8-4286-984b-0ddda71092d9
+
+TaskManager 车间：真正干活的工人 ^811d1fcc-521e-4589-a260-41e979df232d
+
+Slot 工位：TaskManager 内的资源单位 ^2fe78a70-9ced-4623-979f-9aa031624875
+
+一个 Task 被分配到一个 Slot 上执行 ^40c1a56d-5aea-454e-bf7e-4d8ccf2541d6
+
+想处理更快 = 多招车间 + 多加工位（并行度） ^e799c3f9-8251-4302-8ec1-4e890ed35a72
+
+注意：工位多了，协调也复杂 ^38068922-81ad-407a-8f34-5f0e803c0616
+
+数据流：高速公路、keyBy 与算子链 ^bdb5680d-456e-4720-a6f5-b968803f0ae7
+
+高速公路比喻 ^67937708-6181-46ff-9a20-a842a0109895
+
+三条车道 = 并行度为 3 ^d03ec85c-7ad6-42b3-b527-f04208f5bd8b
+
+每条车道上的小车互不干扰 ^09bb2d7d-90fe-4649-8586-6615db491f89
+
+keyBy = 收费站，把相同 key 的车赶到同一条道上 ^7fde2393-079d-42e6-8879-2d1820ad8d39
+
+结论：keyBy 之后并行度不变，但数据分区变了 ^bdcb5db8-ba40-49c2-ae01-40efbd60c6b7
+
+算子链优化（Operator Chain） ^530d5dd3-4444-4691-ace5-9261f881bbd1
+
+两个算子之间没有 shuffle 就连在一起 ^7b7b0513-78ce-4246-8fb1-91d54e70d1c7
+
+在同一个线程里跑，省掉网络传输 ^23ca74f2-4778-4e4f-b6f7-2a1e51c966fb
+
+链越长性能越好，Flink 自动完成 ^95888744-d75c-4233-a98b-8aa65fe8fe9d
+
+你必须知道它存在，调试并行度时才不会懵 ^4bf1809a-b4cc-4dde-9e96-6df000a4955c
+
+常见误区：不是每个算子占一个线程，是能链就链 ^2fa6957b-8505-4153-9215-90285674df88
+
+编程模型：Source → Transformation → Sink ^57f1d99f-2846-47ab-946d-7b76433be7f8
+
+Source 进料口：Kafka、文件、Socket、数据库 CDC ^25507a97-48af-44ff-b312-1eab11fe1a71
+
+Transformation 加工：map、filter、keyBy、窗口、聚合 ^6c43860e-b0b2-4cff-a0b3-923a3dfd639e
+
+Sink 出料口：MySQL、Redis、ES，或再写回 Kafka ^834996ad-b7b1-4872-9a5e-da981c3679a3
+
+与 Java Stream 的区别 ^00651fd1-1124-41e9-8dc1-9060e1472937
+
+API 风格像链式调用，但底层完全不同 ^ab0113d8-e5cf-461e-a5a1-16f7c63c1301
+
+Java Stream 是单机内存操作 ^8ab1c1db-88b7-451d-9d13-be3429474cf9
+
+Flink 是分布式：map 在机器 A、reduce 在机器 B，中间走网络 ^b2758249-40fc-4ae7-881f-881202a699cd
+
+Java Stream 有界，collect 等它结束 ^bc061ae0-33fc-4bf0-b3b2-8f28dc1e960d
+
+Flink 流是无界的，数据永远不停，不能像 collect 那样等结束 ^b8bcb1f3-19c7-4173-b83a-1f0e55d3e50c
+
+无界流什么时候出结果 ^92efd276-2fa5-4d48-87df-37a6ab74a473
+
+答案就是窗口：把无界流切成有界的数据 ^74470d9c-9413-4d50-adb8-bb7c1f4df066
+
+但聊窗口之前，必须先把时间语义搞清楚 ^e11424f4-c1a4-4d81-8223-be88ac7ae09d
+
+时间语义：三个钟 ^5af9c00c-793e-45f8-8468-410762990ca9
+
+Event Time 事件时间：事件真正发生的时刻 ^98d438e7-f30b-42a9-bab2-ad88a8a393ed
+
+Ingestion Time 摄入时间：数据进入 Flink 的时刻 ^894f4c06-fe25-4465-b14c-d138fa20d6a4
+
+Processing Time 处理时间：Flink 算子处理这条数据的时刻 ^510f561b-8480-48ec-9380-3fe1c89d39a3
+
+乱序问题 ^29c4b814-94e3-4d73-a4fa-648d2c22c2db
+
+更要命的是：数据到达顺序可能和发生顺序不一样 ^14652658-55b7-40b3-a653-7c39aaf1fd79
+
+10:03 的单子反而比 10:01 的单子晚到 ^d2cf2497-dc8b-4044-9430-42f6436ade51
+
+怎么选：看业务 ^b8137b8a-ccea-4261-9b01-7e97c51b89a4
+
+关心用户几点下单，用 Event Time，这是绝大多数场景的正确选择 ^c29011fe-31c9-4ab6-b41e-5978a0359f1c
+
+只是粗略统计这一秒处理了多少条，Processing Time 就够了 ^d0fd2ae7-8d09-4ee2-abc0-4f6792c86156
+
+Event Time 虽然准确，处理起来也最复杂：要处理乱序和迟到 ^8f6d4e34-247d-4828-af6f-a4fea38243ab
+
+Watermark：对数据迟到的容忍度 ^09ec3546-82df-4944-9487-5e91b3668aa8
+
+大白话：Watermark 就是你对数据迟到的容忍度 ^490c8f63-4b3c-478c-9409-ad9da032c877
+
+设 Watermark 为当前最大事件时间减 5 秒 ^16f62175-7965-40ad-937d-a1c80fa4d6c7
+
+含义：已看到最大时间 10:05，就认为 10:04:55 之前的数据都到齐了 ^69efa836-84c8-45b9-87b8-7f104d5a5cef
+
+Flink 最精妙的设计之一 ^eba6cef5-3bd6-4ede-9136-7447b4bc73e5
+
+权衡：准确性与延迟 ^7cb436e1-435b-4b8c-9664-a6899b5f6481
+
+Watermark 越大越安全，但延迟也越高 ^bbb71bc6-ecca-4541-a0dc-ef0051ac2bb1
+
+Watermark 越小越快，但大量迟到数据被丢弃 ^c2b9fe23-32e8-42db-98a8-3bed24cb7d80
+
+这是准确性和延迟之间永远的权衡 ^3684e6e3-8cc8-44b4-87d9-05df5b1ecb5f
+
+电商大屏场景一般设 1~5 秒就够了 ^80e54dc5-f34f-4b2c-9a50-248921ff33c3
+
+金融对账场景可能要设几分钟甚至更久 ^de892c99-d223-4b88-b6f4-f731d59cb84a
+
+迟到数据三件套 ^90490d09-7976-4a3a-89e2-cfaf4cbf4ebd
+
+丢弃：迟到就迟到，不等了，最简单 ^47035782-0c23-4fd9-8845-3d3a6fcacf16
+
+allowedLateness 允许迟到：再给窗口一次机会 ^e0d4729d-e7b6-46cc-902b-c95a5732a8d9
+
+Side Output 侧输出：把没赶上的数据单独收集起来后续补算 ^3ea91d31-93e4-46a5-90f8-33ee9745a9b7
+
+现实中这三个机制经常组合使用 ^c640c7ed-81cf-4758-8694-78c0380b71fa
+
+窗口：把无界流切成有界数据 ^3b389a67-a8f9-4922-a015-1fdb0ec584c8
+
+窗口的本质就一句话：把无界流切成有界的数据 ^e4cd7b07-451a-49f1-9b44-3764a8ecec5c
+
+滚动窗口 Tumbling ^66c660d7-77e9-4b10-88fd-e141dcee83df
+
+最简单，按固定长度切，窗口之间不重叠 ^c047dd3f-a292-41c6-b25a-b450cbedd3ad
+
+每 5 秒统计一次订单数，就像每 5 秒拍一张快照 ^1bb76042-023c-4240-b604-ee77223a20ca
+
+滑动窗口 Sliding ^e1661fb0-6af5-499d-9c26-76e83e0d2755
+
+窗口之间有重叠，比如每 5 秒划一次，但窗口大小是 10 秒 ^51acea35-1827-44bf-ba71-dea44630af24
+
+意味着任何一个事件会被统计两次 ^e768c6b5-3c40-4862-b7a6-2da7d6d98701
+
+适合做趋势平滑 ^48d4c90e-7774-4803-8452-3612f463dcb2
+
+会话窗口 Session ^a0ca2f05-1c67-4474-bab9-e639b2581e27
+
+最有意思的一个：不按时间切，按活跃度切 ^30df06a5-85ad-4d5e-8d48-8c54d6eb35d5
+
+逛淘宝点了几下，停了 3 分钟没动静，Flink 判定会话结束，统计一次 ^ccd9cfe4-a7ff-4fc3-9181-eb082ada075f
+
+什么时候你又来了，新的会话开始 ^2262f6a2-0157-4fbe-ace1-33568f74c617
+
+每个人的行为窗口大小都不一样，全靠数据本身驱动 ^67337198-6ef5-4f5d-a20e-d64113f3781d
+
+电商分析用户行为用的就是 Session Window ^7592eceb-49bb-474e-a44c-ec90cf5240b3
+
+状态：流处理的记忆 ^1a9423c7-a907-4431-8912-6996d82fb54b
+
+场景：统计每个用户到目前为止的累计消费金额 ^28f553c0-0d42-4b22-b15c-ae017ba2c66f
+
+每来一条订单就把它加到之前的总额上 ^6d010ea0-9314-4df1-8ca2-935c6da7dedc
+
+你必须记住之前的总额，这个总额就是状态 State ^f4342c15-a69b-49e1-b2c5-a9d74e4a735f
+
+没有状态：每条数据都是孤岛，来了就忘 ^d4b63a90-1615-4a5f-9f89-85cb9d08e151
+
+有了状态：才能做累加、计数、模式匹配这些需要记忆的操作 ^5fee7f2a-8f6f-477c-babb-8b507694dfbd
+
+两类状态 ^eb522d2a-fc07-4e5a-9901-8f0474012c7f
+
+Keyed State 键控状态：按 key 分区存储，比如每个用户一个状态 ^2f3598d8-10cd-459b-b90c-5dfd8b24ceb4
+
+这是你最常用的，90% 场景都是这种 ^a8ae10fa-8cdb-4a20-b77f-97bf49813d17
+
+Operator State 算子状态：跟算子绑定，跟 key 无关 ^5684c3c3-dc2c-4abe-80c0-f411a07428e5
+
+一般用于 Source 的 offset 管理等底层场景 ^abab253b-1e0e-4d39-888b-5a128f441eb0
+
+Keyed State 的数据结构 ^45971339-daf7-4637-84ee-2b23c87576c0
+
+ValueState：存一个值，比如累计消费总额 ^badc20db-bab1-4d3a-9600-457793c6f54f
+
+ListState：存一个列表，比如最近十条订单 ^6478b2ec-8d21-4fa8-bf10-d9cbd8f83ca5
+
+MapState：存 key-value 映射，比如商品到购买次数 ^c946d26c-ad1d-459b-8964-2617fbe8aab8
+
+选哪个取决于你的业务逻辑 ^c0f22c2a-760f-47f6-bdc5-c9b634a8c00e
+
+注意：状态会越攒越多 ^4b907ee6-bb19-4b43-9dde-44bb241cafbd
+
+State Backend：状态存哪 ^f6c38b02-c94e-44c3-908e-04d6dcb8f9fc
+
+问题：状态全放内存，不会撑爆吗 ^b1cfc7d2-c262-4d8d-8cd0-520f02586754
+
+MemoryStateBackend 内存后端 ^6bb51fdd-3f47-43b5-9f1d-3ee659eb3b58
+
+状态全放 JVM 堆内存，快 ^a77b1d26-3e9b-4f99-afa6-0c61f08129ec
+
+最不靠谱：挂了就丢 ^f447b2a9-ee67-48ec-86d5-8e50a6da8e2c
+
+只用来做本地开发测试 ^e8b0af61-a616-43a6-ab27-9a9b4dc5e0a5
+
+FsStateBackend 文件系统后端 ^2f97f430-deb9-4fc8-8cf6-209462f6dc89
+
+状态还是在内存，但定期快照到文件系统 ^61a60597-2cde-4309-9b02-60b3be663511
+
+恢复时从快照加载，够用 ^eef5b2b0-b0e7-4cc5-a13b-34bd13c28cfd
+
+但状态不能超过单机内存 ^5a044b4b-2dd9-403c-a756-9c67194ce237
+
+RocksDBStateBackend 生产标配 ^26263cf5-b7e0-45ca-9b3c-d18febb39474
+
+RocksDB 是嵌入式 KV 存储，状态存在磁盘上，带有内存缓存 ^d1496f16-2ccb-4eba-9de0-30fbcb124eeb
+
+关键：支持增量 Checkpoint，每次只同步变化的部分 ^40155aeb-e837-42b6-97bf-9eff90734a4c
+
+状态到了 TB 级也能扛住 ^599b016f-8150-4fad-9f10-f3a398d163e8
+
+选型结论 ^9a838040-8dc7-4887-85a9-8f2e2d603d2b
+
+大部分场景确实无脑选 RocksDB ^a971c9ad-b4ac-4ec6-bd61-2ccf95016235
+
+但 RocksDB 的序列化开销比纯内存大 ^3103aee9-94e1-483e-8e5d-bde04faa2461
+
+如果你的状态很小，几百 MB 以内，FsStateBackend 反而更快 ^4ac17864-c151-46b8-b9a5-ace7c1ebcf70
+
+选型没有银弹，只有 Tradeoff ^ae723b78-e7e3-4dfb-a97c-8a28b8311812
+
+Checkpoint：分布式存档点 ^e21e5b6c-7ac7-42a4-8288-f27ce603bf3d
+
+可以理解为游戏的存档点：定时保存状态 ^1e8e3acf-71f6-4499-8b2d-705b1772b3f3
+
+问题：我用 Redis 也能做啊 ^c63721d2-51e4-4d39-87c5-3d809f970774
+
+不一样：Checkpoint 是分布式一致性快照 ^5b3ac357-fe82-4b86-aa31-2227bda53711
+
+它不光保存状态，还保证所有算子在同一时刻的状态一致性 ^0fe1331e-5217-4188-a0b9-80821ada890a
+
+Barrier 机制 ^94f027e4-7500-410b-9855-3a2f3d3b84aa
+
+JobManager 往数据流里注入 Barrier ^b59dc6b8-1403-488d-a146-1555eb441159
+
+Barrier 流经每个算子时，触发该算子保存状态 ^42a2ee4a-cda4-4630-b167-f89ad3794887
+
+所有算子都保存完，这个 Checkpoint 才算成功 ^1129ee77-34ce-44a7-8ceb-6156912a49b4
+
+Exactly-Once 到底保证什么 ^73fd6621-e1b7-4cae-8d46-40d7da3332e8
+
+关键澄清：Exactly-Once 是指计算结果的精确一次 ^44c58465-7e3a-475d-b5b7-1c43108976bb
+
+不是"数据只处理一次" ^235d996a-3103-445d-a633-b9b2a1f96970
+
+保证从 Checkpoint 恢复后，每条数据的计算结果恰好被反映一次 ^635bf6ad-d0b9-4d5b-87f4-92904e36748c
+
+端到端 Exactly-Once ^2ca06fcc-699b-4f5f-b137-a63b39b44b2c
+
+Sink 端需要配合幂等写入：重复写也不影响结果 ^91281aac-8ff7-47b5-8a64-30127f531e24
+
+或者两阶段提交 2PC ^a40050f2-bb95-4902-b1a0-a96b19269a6c
+
+两者配合才能实现端到端的 Exactly-Once ^6119e445-e351-45ce-a3bb-d715d7b17967
+
+经典坑一：数据倾斜 ^a6584b08-1b39-4ea3-8d16-68b933c36f3b
+
+现象：任务跑着跑着，一个 TaskManager 内存爆了，其他都好好的 ^a4fa8c45-5e49-40cf-88bb-781c5d2c83fc
+
+十有八九是数据倾斜 ^d87eb905-f387-46f9-8598-d983b8a2bc23
+
+原因：某个 key 的数据量远超其他 key ^195f0510-b443-44ce-bd08-15ce4fe7323a
+
+keyBy 的铁律：相同 key 一定在同一个 subtask 上处理 ^e1c2476a-2391-4892-b48c-e80ecf15079e
+
+热门 key 太多，一个 subtask 就撑不住了 ^f1c9ec23-c11c-474f-b8bb-c51ee7d870e6
+
+解决方案 ^20aa4b16-0804-4b71-b124-b968a0d89531
+
+最经典的是两阶段聚合 ^9249acee-5ff0-4374-95c4-d681bafe51d7
+
+先给热点 key 加随机后缀，也就是加盐，做一次局部聚合 ^89b13e1a-fbd1-480e-b4e8-be7ccbe01d2d
+
+把大压力打散到多个 subtask 上 ^b9b9839d-e8b3-46e6-8328-5ef1b8322069
+
+再去掉后缀，做全局聚合 ^f53395a1-b7f3-4842-b760-fb536a441852
+
+这样热点 key 的压力就被均摊了 ^05150581-4616-4c6a-9e37-9dfee31aabe7
+
+另外还有 rebalance 强制轮询分配 ^8e5a4d92-e213-4740-8780-9138e164c0a2
+
+以及自定义 Partitioner 等手段 ^b0ea42a8-e31c-4c95-a5b2-84a0703391b9
+
+但两阶段聚合是最实用的 ^48bcd129-ee53-4f67-a727-a99a7342df74
+
+怎么提前发现 ^6621c210-f9d6-4cfc-8cac-a9d81a81a393
+
+看 Flink Web UI 里各 subtask 的处理数据量和耗时 ^3ddd46f0-267b-439a-91d3-bf1188840437
+
+如果某一个远高于其他的，那就是了 ^10bcc686-af5c-4ace-9e02-a5c43524fd76
+
+监控先行，优化在后 ^c297193a-4d31-40b4-9e2b-d2836c219734
+
+经典坑二：Watermark 怎么设（P99 法） ^a290aa2f-0965-46b5-aa8a-a58e3c9b5778
+
+这是 Flink 调优里最让人纠结的问题之一 ^6d50a966-6a3e-4992-9f3d-1ccb1af4f95b
+
+设太大：窗口迟迟不触发，实时大屏变成准实时大屏 ^50ec0036-df19-44a2-888d-bea599eab35a
+
+设太小：大量迟到数据被丢弃，统计结果不准 ^da348e1c-c77b-4074-881e-bf1d1bb8d5f2
+
+标准做法 ^1c034469-07a5-42e3-8f09-921c014aea38
+
+先分析你的数据，上线前做一件事 ^44c9ea1d-527f-482c-b831-ba2a0cb529c5
+
+统计数据延迟分布：每条数据的事件时间和到达时间的差值 ^ff5260d3-de17-4b0a-b81e-a6bc9c227f1e
+
+画一条分布曲线，取 P99 分位值作为 Watermark ^25b9e686-6da4-4f8a-89bf-f21bde9de5b5
+
+含义：99% 的正常数据你都能兜住 ^e8e54083-6d8b-4338-8705-4ddeca94563c
+
+只有 1% 的极端迟到会被丢掉 ^f1a0b551-10db-43ba-ab00-edea4d601d67
+
+三层保障（生产标准姿势） ^42caf3b1-9453-4ff3-8ba0-c681fc7f0580
+
+第一层：Watermark 取 P99 ^755423d3-e4d2-4b7f-93d0-0ee0319fd007
+
+第二层：allowedLateness 给窗口续一条命，比如再等 30 秒 ^13c4b729-eade-4af0-ba4b-bec1577751f1
+
+这期间到的迟到数据还是能更新窗口 ^12e146fa-da6d-46ce-aaf6-52f06717a21d
+
+第三层：Side Output 收集超过 30 秒还迟到的数据 ^b6e13bf8-8645-4205-a52e-161158219c3a
+
+后续补算或者人工审核 ^3c8cd272-6064-4810-8086-0d3c54c30aac
+
+三层保障叠加才是生产环境的标准姿势 ^114058ca-54fa-49cf-adcf-a25ec7bf7796
+
+经典坑三：状态膨胀 ^1057f1e1-e1d2-4357-8f1b-8c29265e5c5c
+
+现象：任务跑了一天之后越来越慢，最后崩了 ^acfc7530-a398-4b5c-ac48-7b0c248f0422
+
+但数据量没变 ^38b0a7ca-d5fc-4a6e-9abc-8466eddbb903
+
+八成是状态膨胀 ^fa96717e-fce3-415b-8057-68b39c107fba
+
+Keyed State 是按 key 存的，如果你的 key 不断增加 ^92e08069-f95a-4e9c-a26f-b4c0dcc49866
+
+比如用户 id 每天都有新用户，状态就只会增长不会减少 ^b9c7e14c-cfdc-4374-9094-5258effedd5b
+
+时间一长，几十个 GB 的状态把内存和 checkpoint 都拖垮 ^bc6a1e07-65a0-443f-bfdb-b4e27e0ccb18
+
+解法三板斧 ^86ac11b7-41d6-4fdb-b020-4c3acbd1a6ff
+
+给状态设 TTL，也就是 time to live ^d928dd04-d939-4b2d-8c44-18aa9d53707c
+
+告诉 Flink：这个 key 超过 24 小时没被访问就自动清理 ^57cc5809-ac61-4538-8e33-3ba03678cf62
+
+一行配置能救你的命：StateTtlConfig 设 Time.hours(24) ^0f7e7b92-395f-4214-af5d-95ddd8eab2a7
+
+对于 ListState 这种容易膨胀的类型，注意控制列表长度 ^e339ec65-a733-4be3-8c52-9c316887759d
+
+定期做裁剪 ^ccf6105c-47d3-4c6c-99c5-b8f9357b0abd
+
+如果真需要保留大量状态，回到 State Backend 用 RocksDB ^ef5e2324-4c85-452f-a3e8-60bd0cab6406
+
+状态存磁盘，不吃堆内存 ^de9aa113-b1e8-44df-95f5-dbedb1104fe7
+
+再配合增量 Checkpoint 和合理的 write buffer / block cache 调优 ^beee44c3-ba8c-4782-a45e-3f2ee4d4473c
+
+TB 级状态也能稳定运行 ^038aec01-3291-4596-badc-d83570cf2459
+
+生产上线前性能调优检查表（6 条） ^523c037c-ee00-4325-addc-45a3187e2f0d
+
+视频给的是六条检查表，每条都很关键 ^ddccda8f-4fe0-4aae-9cc8-c326a79cf5ba
+
+注意：语音字幕只念到第 1、2、5 条 ^aad523c8-075f-4474-82c6-414f6eb92553
+
+第 3、4、6 条打在 PPT 上但没被解说，故不在原始字幕稿里 ^6beae53b-e1e9-4a86-bf37-83e7338e0427
+
+完整 10 项详解见笔记「13-生产部署Checklist逐项解析」 ^a8b1e3b5-3d6f-4094-8e7a-c450aeecc2c5
+
+1 并行度设置 ^bc7f1507-78a5-471c-a14a-8db9c8d7101c
+
+算子并行度匹配数据量与集群资源 ^efb1254a-7c8d-46be-875b-bd7b7c211437
+
+太小则单算子扛不住，太大则状态副本变多、Checkpoint 变慢 ^e668a9d5-7144-44ec-93ff-81188c897824
+
+上线前确认各算子并行度是否匹配，有没有算子被卡脖子 ^5f096b35-ee53-4999-ab43-08ce26564413
+
+2 网络缓冲区 ^658f2cec-7102-401e-8865-5889f37e6700
+
+Flink 算子之间传输数据用的是网络缓冲区 ^2148aae6-32de-4e11-89ed-536297cd2513
+
+关键配置 taskmanager.network.memory.fraction ^9da8f237-4a9c-4caa-b40f-135006e565db
+
+默认值对大部分场景够用 ^15071989-65ee-4fef-b99b-08919d41b13c
+
+数据量特别大或大量 shuffle 时需要调大 ^ca6b5149-9793-4451-83ca-833a0037b64d
+
+否则缓冲区满了产生反压，上游被迫降速，吞吐直接腰斩 ^e90990fc-6031-4db0-8aec-616ee9111aeb
+
+3 Checkpoint 间隔与超时 ^fcc1512e-1247-493a-b5ec-f2e4fb75f93d
+
+PPT 口径：间隔 ≥ 1min，超时 ≥ 间隔 × 3 ^dda5bf7e-584b-4f55-9bf3-7c6dfc054f12
+
+execution.checkpointing.interval 触发间隔，建议 ≥ 1min ^f39c629e-5ec7-44d0-b2a8-858dc0e80681
+
+execution.checkpointing.timeout 单次超时，给足抖动余量 ^a051d4c6-0b90-4d97-ae00-565e77166272
+
+min-pause 设 30s 到 1min，避免 CK 连轴转 ^5755f6ac-0fb3-4e42-b301-fcc5dfaab269
+
+max-concurrent-checkpoints 必须为 1，否则放宽一致性且互相干扰 ^52c5fd80-72c1-43fa-8e20-fa8e79f92804
+
+间隔越小故障回退数据越少但开销更大，是吞吐与恢复成本的权衡 ^f2cfbcde-e7d2-4291-aa89-7556e0d3c3f5
+
+4 State Backend 选型 ^67678892-1c0f-4ae4-bd1b-be608f938b6a
+
+PPT 口径：大状态用 RocksDB + 增量 Checkpoint ^42a2935d-4a29-4c60-aa49-d833a73957a2
+
+小状态几百 MB 以内用 HashMapStateBackend 或 FsStateBackend 反而更快 ^c2ae7230-a590-41d4-a7ce-b4354d53e939
+
+大状态用 RocksDB，状态落磁盘不吃堆内存 ^34eb7587-b40e-4da2-8abb-b03f026782fe
+
+增量 Checkpoint 只同步变化部分，全量快照在 TB 级会跑到超时 ^be7cf0ff-0d03-4e1b-8dfd-26429fc13af0
+
+配套调优 RocksDB 的 write buffer 与 block cache ^20c49e24-d499-4ec4-b8ed-39728357feb6
+
+5 反压监控 ^84c19db0-29d3-44fb-89f2-cef86d3e79ae
+
+Flink Web UI 里直接有反压指示器 ^f09f41d0-8d32-4dd3-9aa9-e63dcd0c4c70
+
+某个算子频繁出现 High 反压，说明它是瓶颈 ^1660a732-a038-4f1f-bfed-0bfd39950237
+
+三选一：优化这个算子的逻辑 ^1c448149-3d0e-4fc2-896c-b590d2b8ae49
+
+或者给它加并行度 ^11ed9bec-c9e0-4d2f-8bcb-29fc6ba15e22
+
+或者解决下游写入慢的问题 ^a429570f-42a3-4d8b-b45b-0a9ac6bb52da
+
+反压是性能调优的第一信号，看到它就说明有优化空间 ^b6774c45-e04b-4a46-a0bf-3335e3e5f511
+
+6 GC 调优 ^0206519d-005d-4fc0-b001-6dac25a84fed
+
+PPT 口径：使用 G1GC，避免 Full GC 停顿 ^53937869-c32b-47cd-aea4-19261d810aa0
+
+配置 env.java.opts.taskmanager 加 -XX:+UseG1GC ^125aeddf-8eda-4be8-bfab-6c155a2e1464
+
+G1 可预测停顿，CMS 或 Parallel 的老年代回收停顿长 ^399fe7a1-819c-4932-a5bd-91ff534f9c87
+
+Full GC 停顿期间算子不处理数据，导致背压与 Checkpoint 超时 ^c7ec02b0-1e0d-4dd6-8ea2-05c763537ee9
+
+监控 GC 时间占比与 Full GC 次数 ^4ed3064d-edac-4057-9cf5-429b20a90bbe
+
+治本靠状态治理：状态 TTL 与复用对象 ^97fc92c2-16ac-43e7-aed9-885a21d7db1d
+
+知识地图与下一步 ^a2733ada-eca4-4c48-b8e2-b604188a690b
+
+从批处理对流处理开始 ^9e09c9b6-74f1-4143-a300-ed299e41e06d
+
+一路走过 Flink 架构、时间语义、Watermark、Window、状态管理、Checkpoint ^8897281a-d8d7-4191-a7c4-82aa47a1ce74
+
+最后踩了三个坑：数据倾斜、Watermark 配置、状态膨胀 ^b73cbf6d-fad8-4fb5-9787-915d5c88aee6
+
+骨架与肌肉 ^377abf0e-3fc6-477d-a52e-de235fb751a7
+
+今天掌握的是骨架 ^b7865b1c-dec6-4969-a16d-10df56d86cfc
+
+CEP 复杂事件处理、Table API、Flink SQL、CDC 数据集成是骨架上的肌肉 ^1cd41af4-6d17-43ea-b3ff-c0350cdde6ff
+
+但没有骨架，肌肉无处附着 ^6836e803-f204-4501-92f2-ab5711728ae2
+
+下一步：写一个真实的 Flink Job ^b3ebcba6-a36f-4c60-a0ec-66e4f14f31c5
+
+从你自己的业务开始 ^b616f238-7df3-41a4-869c-239e6acd46ea
+
+把那个 T+1 报表改成实时的 ^6d659fa2-64ab-47d2-aee4-dfd63c85dd47
+
+Source 读 Kafka，按用户 id keyBy ^fe6377f9-1f79-4d4e-9ccb-85342c55846e
+
+开一个一分钟的滚动窗口做聚合 ^fccaace6-18ee-462b-829f-da4a87305b6f
+
+Sink 写到你的大屏数据源 ^067cbe70-3e37-4079-8121-8bc452f65922
+
+原理能跑通，你就入门了 ^d7bac3d5-91c9-4244-a6c5-594d7f0f260e
+
+附录：语音转写勘误对照 ^c7d300f0-6a39-43db-b5bf-6cbecaf2f361
+
+KEBA → keyBy ^dff9c9ef-ba2f-4556-9e20-86e753a531cd
+
+test manager → TaskManager ^46874fc8-de33-4df6-baca-3d217f1f2287
+
+frank → Flink ^3c3212e0-3cd6-490d-811e-d57294eb5b04
+
+kid state → Keyed State ^31591e5b-0451-4ef8-9b6e-6c59b0dd8e8d
+
+this state → ListState ^d788aba6-8e07-4ac7-b5be-731e6ad2aedb
+
+memory stick backend → MemoryStateBackend ^ba66589c-6905-4360-9316-a418411705d2
+
+fs state bend → FsStateBackend ^bc17433b-cd61-4f98-968e-71bdff82ee28
+
+rocks dB → RocksDB ^92ff45d8-c7cc-4f84-98f2-a6f78b49486e
+
+密等写入 → 幂等写入 ^d183e782-d080-4f3b-85a0-7cc1598d9135
+
+exactly ones → Exactly-Once ^e9cefc59-1cce-4189-90fb-e98620a8229b
+
+aloud lenness → allowedLateness ^c52d9288-1db8-4faf-8b9f-de9c8fe899cf
+
+Sex dt t l time hours → StateTtlConfig(Time.hours(24)) ^aecdcfb2-f71c-422a-b991-a2884aed2adc
+
+right buffer block cash → write buffer / block cache ^19301acf-af8c-47c4-b720-bd96b84c41a5
+
+sap 复杂事件处理 → CEP ^b67b53b8-02de-4c91-b3f3-5e1c490098e0
+
+能练就练 → 能链就链 ^1746b8c9-b0f4-471f-8b32-97976f8f534a
