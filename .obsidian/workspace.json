@@ -39,14 +39,12 @@
             "id": "f7a1a4b1264dce9f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "smm",
               "state": {
-                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
-                "mode": "preview",
-                "source": true
+                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md"
               },
-              "icon": "lucide-file",
-              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）"
+              "icon": "smm-icon",
+              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）.smm"
             }
           }
         ],
@@ -302,7 +300,7 @@
                   "type": "markdown",
                   "state": {
                     "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
-                    "mode": "source",
+                    "mode": "preview",
                     "source": true
                   },
                   "icon": "lucide-file",
@@ -317,15 +315,15 @@
         "y": 121,
         "width": 1024,
         "height": 800,
-        "maximize": false,
+        "maximize": true,
         "zoom": 0
       }
     ]
   },
-  "active": "e142ea966a285637",
+  "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
     "1-java/1-juc/虚拟线程-java（详细整理版）.md",
     "1-java/1-juc/虚拟线程-java（详细整理版）.smm.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
