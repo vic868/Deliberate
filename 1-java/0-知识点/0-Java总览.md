@@ -22,6 +22,11 @@ created: 2026-10-09
 | 3 | **[[3-泛型反射与注解]]** | 0-知识点 | 元编程 | 类型擦除、PECS、桥接方法、反射与动态代理、注解本质 |
 | 4 | **[[1-集合框架]]** | 2-collection | 数据容器 | HashMap 源码与扩容、ArrayList/LinkedList、LRU、并发容器选型 |
 | 5 | **[[3-IO与网络编程]]** | 3-IO | 输入输出与网络 | 五种 IO 模型、epoll、NIO 三件套、零拷贝、Netty |
+| 5.1 | **[[1-IO类结构继承总图]]** | 3-IO | ⭐ IO 类结构 | **四大基类继承树**（反射实测）、`Filter*` 装饰器分支、`Closeable` 链 |
+| 5.2 | **[[2-装饰器与流组合]]** | 3-IO | 流怎么组合 | 装饰器两要素、⭐ **装饰顺序规则**、三个标准配方、缓冲原理 |
+| 5.3 | **[[3-NIO类结构体系]]** | 3-IO | NIO 类结构 | Buffer/Channel/Selector 继承体系、⭐ **FileChannel 为何不能注册 Selector** |
+| 5.4 | **[[4-RandomAccessFile与FileDescriptor]]** | 3-IO | 随机访问与 fd | 文件指针 `seek`、fd 本质、⭐ **`flush` vs `sync`** |
+| 5.5 | **[[5-nio-file与现代文件API]]** | 3-IO | 现代文件 API | `Path`/`Paths`/`Files`、⭐ **`ATOMIC_MOVE`**、新旧 API 对照 |
 | 6 | **[[4-多线程与内存模型]]** | 1-juc | 并发基石 | 线程状态、synchronized 与锁升级、JMM/volatile/happens-before、死锁、ThreadLocal |
 | 7 | **[[5-线程池]]** | 1-juc | 并发资源管理 | ThreadPoolExecutor 源码、拒绝策略、Executors 的坑、线程数公式 |
 | 8 | **[[6-JUC并发工具]]** | 1-juc | 并发工具箱 | AQS、ReentrantLock/读写锁/StampedLock、同步器、LongAdder、CompletableFuture |
@@ -138,7 +143,7 @@ created: 2026-10-09
 | 已有笔记 | 关系 |
 |---|---|
 | [[1-juc/0-juc.excalidraw]]、[[1-juc/0.1-JUC核心类结构总览图.md]] | **图纸**。本系列的 [[6-JUC并发工具]] 是它的**文字详解版**，两者配合看 |
-| [[3-IO/0-IO.excalidraw]] | 图纸。对应 [[3-IO与网络编程]] |
+| [[3-IO/0-IO.excalidraw]] | 图纸。对应 [[3-IO与网络编程]]，类结构细节见 [[1-IO类结构继承总图]] 与 [[3-NIO类结构体系]] |
 | [[java 版本.smm]] | 图纸。对应 [[9-Java版本特性]] |
 | [[硬核技术-业务阵地]] | 面试策略页（怎么讲你的技术阵地），本系列提供"阵地里的弹药" |
 | [[面试准备/专业技能/02-Java核心与微服务]] | 面试速答与"简历原话/高危模块"分析；本系列提供**背后的原理支撑** |
