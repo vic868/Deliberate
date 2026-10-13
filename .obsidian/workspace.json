@@ -309,10 +309,49 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "floating": {
+    "id": "a886c425e4ec871e",
+    "type": "floating",
+    "children": [
+      {
+        "id": "c69c72a50ddc9a53",
+        "type": "window",
+        "children": [
+          {
+            "id": "55a3bf9c5474eb5c",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "786990adc161b065",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "11-高并发高可用/高并发系统设计.md",
+                    "mode": "source",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "高并发系统设计"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "786990adc161b065",
   "lastOpenFiles": [
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/0-1高并发.excalidraw.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/高并发系统设计.md",
     "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒（详细整理版）.md",
     "3-mq/2-Kafka/8-性能优化与高吞吐原理.md",
