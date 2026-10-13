@@ -1058,6 +1058,9 @@ flowchart TD
 | CEP 有什么坑 | 事件类**必须实现 `equals`/`hashCode`**；必须先 `keyBy`；默认 `noSkip` 会产生海量匹配；CEP **不支持动态规则**（要动态用广播状态） |
 | CEP 和 SQL `MATCH_RECOGNIZE` 怎么选 | 常规模式且已在 SQL 管道 → `MATCH_RECOGNIZE`；要超时回调/侧输出/复杂条件 → CEP 库；要动态规则 → 广播状态手写 |
 | 状态机手写 vs CEP | 手写：命令式、状态自管易泄漏、需求变更要重写；CEP：声明式、框架管状态（但需设上界）、可读性好 |
+| `until` 是什么、能配什么 | ⭐ **停止条件**：until 事件出现后**不再有更多事件被接受进模式**；官方限定**只能配 `oneOrMore()`**；它带来"**基于事件清理模式状态**"的能力（事件驱动的状态清理，不必等 `within` 超时） |
+| 跳过策略写在哪 | ⭐ **`Pattern.begin(name, AfterMatchSkipStrategy...)`**——没有别的入口；写成 `CEP.pattern(stream, pattern, strategy)` **编译不过**（该重载不存在，第二个参数是 `EventComparator`） |
+| 跨事件条件怎么写、怎么省成本 | 用 `IterativeCondition` + `ctx.getEventsForPattern(name)`；但**每次判定要遍历历史**——生产上更优做法是**上游 enrichment**（把"最近登录城市/时间"先写进事件），CEP 里只留 `SimpleCondition`，状态小、CPU 低 |
 
 > [!note] 相关笔记
 > [[0-Flink总览]]（MOC）｜[[2-时间与窗口]]｜[[3-状态管理]]｜[[5-Checkpoint与Savepoint]]｜[[6-背压与性能调优]]｜[[8-FlinkSQL与TableAPI]]（§5.6 `MATCH_RECOGNIZE`）｜[[13-生产部署Checklist逐项解析]]｜[[14-开发常用API速查]]｜[[0-flink.excalidraw]]
