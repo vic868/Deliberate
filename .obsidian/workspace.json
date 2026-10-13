@@ -297,8 +297,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "7425856c79ab980e",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/3-IO/2-装饰器与流组合.md",
+    "1-java/3-IO/1-IO类结构继承总图.md",
     "4-db/3-事务与MVCC.smm.md",
     "4-db/3-事务与MVCC.md",
     "4-db/5-日志与持久化.md",
@@ -323,8 +325,6 @@
     "5-bigdata/2-hbase/2-数据模型与RowKey设计.md",
     "5-bigdata/2-hbase/1-架构与原理.md",
     "5-bigdata/2-hbase/0-HBase总览.md",
-    "5-bigdata/2-hbase/4-生产坑与调优.md",
-    "1-java/1-juc/了解一下：ConcurrentHashMap（详细整理版）.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",
