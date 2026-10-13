@@ -299,6 +299,8 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/2-collection/2-HashMap实战.md",
+    "1-java/2-collection/1-HashMap全解.md",
     "1-java/2-collection/0-Collection总览.md",
     "1-java/3-IO/3-NIO类结构体系.md",
     "1-java/3-IO/5-nio-file与现代文件API.md",
@@ -323,8 +325,6 @@
     "1-java/4-jvm/7-JVM故障排查实战.md",
     "5-bigdata/4-hive/5-Hive面试高频题.md",
     "5-bigdata/4-hive/4-生产坑与调优.md",
-    "5-bigdata/4-hive/3-HQL与SQL优化.md",
-    "5-bigdata/4-hive/2-数据模型与表设计.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",
