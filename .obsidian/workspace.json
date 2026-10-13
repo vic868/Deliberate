@@ -285,6 +285,7 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "5-bigdata/4-hive/2-数据模型与表设计.md",
     "5-bigdata/4-hive/1-架构与原理.md",
     "5-bigdata/4-hive/0-Hive总览.md",
     "5-bigdata/2-hbase/2-数据模型与RowKey设计.md",
@@ -313,7 +314,6 @@
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md.crdownload",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
