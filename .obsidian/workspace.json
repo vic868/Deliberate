@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/1-juc/虚拟线程-java（详细整理版）.md",
+                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "虚拟线程-java（详细整理版）"
+              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）"
             }
           }
         ],
@@ -271,8 +271,8 @@
   },
   "active": "3ffa6c21efcc9f91",
   "lastOpenFiles": [
-    "1-java/1-juc/虚拟线程-java（详细整理版）.smm.md",
     "1-java/1-juc/虚拟线程-java（详细整理版）.md",
+    "1-java/1-juc/虚拟线程-java（详细整理版）.smm.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
