@@ -283,8 +283,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "f7a1a4b1264dce9f",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "5-bigdata/4-hive",
+    "5-bigdata/2-hbase",
     "4-db/MySQL深度优化与MGR高可用面试题.md",
     "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
     "Qbit趣比汇-雇主尽调报告.md",
@@ -311,7 +313,6 @@
     "5-bigdata/0-flink/4-容错与ExactlyOnce.md",
     "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
     "3-mq/2-Kafka/4-消费者与Rebalance.md",
-    "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！（详细整理版）.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md.crdownload",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
@@ -330,7 +331,6 @@
     "5-bigdata/3-StarRocks",
     "10-数据仓库",
     "面试准备/得逸信息",
-    "AI 学习规划/1-AI 工具",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
