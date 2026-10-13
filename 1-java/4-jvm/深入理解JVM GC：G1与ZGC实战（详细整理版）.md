@@ -1,9 +1,17 @@
 ---
 title: 深入理解 JVM GC：G1 与 ZGC 实战（详细整理版）
-tags: [Java, JVM, GC, G1, ZGC, 性能调优, 故障排查, 视频笔记]
+tags:
+  - Java
+  - JVM
+  - GC
+  - G1
+  - ZGC
+  - 性能调优
+  - 故障排查
+  - 视频笔记
 status: 已完成
 created: 2026-10-12
-source: "https://www.bilibili.com/video/BV1PMEQ6eEkd/"
+source: https://www.bilibili.com/video/BV1PMEQ6eEkd/
 来源作者: onedayhigh
 原视频日期: 2026-06-10
 ---

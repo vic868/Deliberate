@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）"
             }
+          },
+          {
+            "id": "f7a1a4b1264dce9f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -269,8 +283,49 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "3ffa6c21efcc9f91",
+  "floating": {
+    "id": "a886c425e4ec871e",
+    "type": "floating",
+    "children": [
+      {
+        "id": "c6a184f6a3f796ff",
+        "type": "window",
+        "children": [
+          {
+            "id": "5ccae81ad60002cc",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e142ea966a285637",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+                    "mode": "source",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "e142ea966a285637",
   "lastOpenFiles": [
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "1-java/1-juc/虚拟线程-java（详细整理版）.md",
     "1-java/1-juc/虚拟线程-java（详细整理版）.smm.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
@@ -285,7 +340,6 @@
     "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
     "3-mq/2-Kafka/4-消费者与Rebalance.md",
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！（详细整理版）.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
     "1-java/4-jvm/7-JVM故障排查实战.md",
@@ -297,7 +351,6 @@
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
-    "3-mq/2-Kafka/理解 kafka 基本盘.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
