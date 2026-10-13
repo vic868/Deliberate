@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2-redis/一次讲透Redis（详细整理版）.md",
+                "file": "1-java/2-collection/1-HashMap全解.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "一次讲透Redis（详细整理版）"
+              "title": "1-HashMap全解"
             }
           }
         ],
@@ -299,6 +299,7 @@
   },
   "active": "7425856c79ab980e",
   "lastOpenFiles": [
+    "2-redis/一次讲透Redis（详细整理版）.md",
     "1-java/2-collection/5-并发容器专题.md",
     "2-redis/一次讲透Redis.md",
     "1-java/1-juc/了解一下：ConcurrentHashMap（详细整理版）.md",
@@ -324,7 +325,6 @@
     "5-bigdata/0-flink/11-端到端一致性.md",
     "5-bigdata/0-flink/14-开发常用API速查.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
-    "4-db/6-慢查询与调优.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",

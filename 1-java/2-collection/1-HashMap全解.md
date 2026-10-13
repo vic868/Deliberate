@@ -218,6 +218,7 @@ final void treeifyBin(Node<K,V>[] tab, int hash) {
 
 > [!important] ⭐ 为什么"先扩容"
 > **桶长达到 8 有两种可能：**
+> 
 > | 原因 | 应对 |
 > |---|---|
 > | ① **hash 真的差** | 树化 |
