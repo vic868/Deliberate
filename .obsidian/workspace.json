@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
+                "file": "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Kafka 问题（详细整理版）"
+              "title": "15-FlinkCEP复杂事件处理"
             }
           }
         ],
@@ -285,6 +285,9 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
+    "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
+    "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
@@ -298,7 +301,6 @@
     "5-bigdata/0-flink/14-开发常用API速查.md",
     "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
     "5-bigdata/0-flink/4-容错与ExactlyOnce.md",
-    "5-bigdata/0-flink/8-FlinkSQL与TableAPI.md",
     "5-bigdata/0-flink/5-Checkpoint与Savepoint.md",
     "3-mq/2-Kafka/4-消费者与Rebalance.md",
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！（详细整理版）.md",
@@ -309,8 +311,6 @@
     "1-java/1-juc/虚拟线程-java.md",
     "3-mq/2-Kafka/10-面试高频题.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
-    "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
-    "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
