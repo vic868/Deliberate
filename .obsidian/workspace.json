@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/3-IO/3-NIO类结构体系.md",
+                "file": "1-java/1-juc/了解一下：ConcurrentHashMap（详细整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "3-NIO类结构体系"
+              "title": "了解一下：ConcurrentHashMap（详细整理版）"
             }
           }
         ],
@@ -297,15 +297,16 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "7425856c79ab980e",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "1-java/2-collection/0-Collection总览.md",
+    "1-java/3-IO/3-NIO类结构体系.md",
     "1-java/3-IO/5-nio-file与现代文件API.md",
     "1-java/4-jvm/1-JVM内存区域与对象布局.md",
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/3-IO/4-RandomAccessFile与FileDescriptor.md",
     "1-java/3-IO/1-IO类结构继承总图.md",
     "4-db/3-事务与MVCC.md",
-    "1-java/3-IO/3-NIO类结构体系.md",
     "1-java/3-IO/2-装饰器与流组合.md",
     "4-db/3-事务与MVCC.smm.md",
     "4-db/5-日志与持久化.md",
@@ -324,7 +325,6 @@
     "5-bigdata/4-hive/4-生产坑与调优.md",
     "5-bigdata/4-hive/3-HQL与SQL优化.md",
     "5-bigdata/4-hive/2-数据模型与表设计.md",
-    "5-bigdata/4-hive/1-架构与原理.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",
