@@ -1041,6 +1041,7 @@ flowchart TD
 | 2.x 迁移 | `Time` → **`Duration`**；`select` 需显式 **`TypeInformation`**；`TimeCharacteristic` 移除（事件时间默认） |
 | 事件类要求 | ⭐ **必须正确实现 `equals()` / `hashCode()`** |
 | `within` 参数 | 1.x `Time.minutes(5)` → 2.x `Duration.ofMinutes(5)` |
+| ⚠️ **API 易错点** | `CEP.pattern` **只有 2 个重载**（第二个是 `EventComparator`，**不是跳过策略**）；跳过策略的唯一入口是 `Pattern.begin(name, strategy)`；`until` **只能配 `oneOrMore()`** |
 
 ## 附录 C：面试问答
 
