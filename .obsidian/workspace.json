@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒.md",
+                "file": "3-mq/2-Kafka/8-性能优化与高吞吐原理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "50万QPS实时推荐 延迟从小时压到毫秒"
+              "title": "8-性能优化与高吞吐原理"
             }
           }
         ],
@@ -299,8 +299,13 @@
   },
   "active": "7425856c79ab980e",
   "lastOpenFiles": [
-    "1-java/4-jvm/2-GC机制深度.md",
+    "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒（详细整理版）.md",
+    "3-mq/2-Kafka/7-运维与集群调优.md",
+    "3-mq/2-Kafka/6-事务与Exactly-Once.md",
+    "3-mq/2-Kafka/5-日志存储与副本机制.md",
+    "3-mq/2-Kafka/2-架构与核心概念.md",
     "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒.md",
+    "1-java/4-jvm/2-GC机制深度.md",
     "11-高并发高可用",
     "1-java/2-collection/1-HashMap全解.md",
     "1-java/1-juc/了解一下：ConcurrentHashMap.md",
@@ -321,11 +326,6 @@
     "1-java/3-IO/1-IO类结构继承总图.md",
     "4-db/3-事务与MVCC.md",
     "1-java/3-IO/2-装饰器与流组合.md",
-    "4-db/3-事务与MVCC.smm.md",
-    "4-db/5-日志与持久化.md",
-    "4-db/2-索引与B+树.md",
-    "4-db/1-架构与执行流程.md",
-    "4-db/4-锁机制.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",
