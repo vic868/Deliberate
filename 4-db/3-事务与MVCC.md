@@ -1,6 +1,13 @@
 ---
 title: MySQL 事务与 MVCC
-tags: [MySQL, 事务, ACID, 隔离级别, MVCC, ReadView, 版本链]
+tags:
+  - MySQL
+  - 事务
+  - ACID
+  - 隔离级别
+  - MVCC
+  - ReadView
+  - 版本链
 status: 进行中
 created: 2026-10-13
 ---
