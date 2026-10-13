@@ -285,6 +285,7 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "4-db/1-架构与执行流程.md",
     "4-db/0-MySQL总览.md",
     "5-bigdata/0-flink/6-背压与性能调优.md",
     "1-java/4-jvm/1-JVM内存区域与对象布局.md",
@@ -313,7 +314,6 @@
     "4-db/MYSQL.excalidraw.md",
     "5-bigdata/0-flink/11-端到端一致性.md",
     "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md.crdownload",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
