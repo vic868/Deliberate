@@ -20,7 +20,13 @@ created: 2026-10-09
 | 1 | **[[1-语言基础与面向对象]]** | 0-知识点 | 语言基本功 | 基本类型与装箱、String、final/static、异常、多态与分派 |
 | 2 | **[[2-面向对象与设计模式]]** | 0-知识点 | 抽象与设计 | 抽象类 vs 接口、SOLID、23 种模式（重点单例/代理/模板） |
 | 3 | **[[3-泛型反射与注解]]** | 0-知识点 | 元编程 | 类型擦除、PECS、桥接方法、反射与动态代理、注解本质 |
-| 4 | **[[1-集合框架]]** | 2-collection | 数据容器 | HashMap 源码与扩容、ArrayList/LinkedList、LRU、并发容器选型 |
+| 4 | **[[1-集合框架]]** | 2-collection | 数据容器（速查全景） | HashMap 源码与扩容、ArrayList/LinkedList、LRU、并发容器选型 |
+| 4.0 | **[[0-Collection总览]]** | 2-collection | ⭐ 集合 MOC | 体系总图、**Map 不继承 Collection**、选型总表、三个已淘汰类 |
+| 4.1 | **[[1-HashMap全解]]** | 2-collection | ⭐⭐ HashMap 完整解析 | 结构选型、hash 扰动、**put/get/resize 源码**、树化、**1.7 死循环** |
+| 4.2 | **[[2-HashMap实战]]** | 2-collection | ⭐ HashMap 工程实践 | **key 三铁律**、`hashCode` 契约与 31、序列化、**并发事故**、容量预设 |
+| 4.3 | **[[3-List专题]]** | 2-collection | List 怎么选 | ArrayList **1.5 倍扩容**、⭐ **LinkedList 被高估**、Vector、COW |
+| 4.4 | **[[4-Set与Queue专题]]** | 2-collection | 去重与队列 | ⭐ **Set 底层都是 Map**、`ArrayDeque`、`PriorityQueue` topK |
+| 4.5 | **[[5-并发容器专题]]** | 2-collection | 并发怎么选 | CHM 选型与坑、⭐ **复合操作原子性**、COW、BlockingQueue |
 | 5 | **[[3-IO与网络编程]]** | 3-IO | 输入输出与网络 | 五种 IO 模型、epoll、NIO 三件套、零拷贝、Netty |
 | 5.1 | **[[1-IO类结构继承总图]]** | 3-IO | ⭐ IO 类结构 | **四大基类继承树**（反射实测）、`Filter*` 装饰器分支、`Closeable` 链 |
 | 5.2 | **[[2-装饰器与流组合]]** | 3-IO | 流怎么组合 | 装饰器两要素、⭐ **装饰顺序规则**、三个标准配方、缓冲原理 |
