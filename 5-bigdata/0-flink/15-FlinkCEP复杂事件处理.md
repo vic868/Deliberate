@@ -346,14 +346,21 @@ flowchart TB
 ```
 
 ```java
-// 方式一：作用在 PatternStream 上（全局）
-PatternStream<Event> ps = CEP.pattern(stream, pattern, 
-        AfterMatchSkipStrategy.skipPastLastEvent());
+// ⭐ 正确写法（1.13+）：把跳过策略挂在【模式的第一个 begin】上
+AfterMatchSkipStrategy skip = AfterMatchSkipStrategy.skipPastLastEvent();
+Pattern<Event, ?> pattern = Pattern.<Event>begin("start", skip)
+        .where(SimpleCondition.of(...))
+        .next("end").where(SimpleCondition.of(...));
 
-// 方式二：作用在单次匹配结果里
-CEP.pattern(stream, pattern).select(
-        AfterMatchSkipStrategy.skipToNext(), fn);
+// SKIP_TO_FIRST / SKIP_TO_LAST 还可以要求「指定的模式名没匹配到就抛异常」
+AfterMatchSkipStrategy.skipToFirst("start").throwExceptionOnMiss();
 ```
+
+> [!warning] 一个极易写错的点（编译期才会发现）
+> `CEP.pattern` **只有两个重载**：`pattern(input, pattern)` 和 `pattern(input, pattern, EventComparator)`。
+> **没有"第三个参数是跳过策略"的重载**——老博客里常见的
+> `CEP.pattern(stream, pattern, AfterMatchSkipStrategy.skipPastLastEvent())` **编译不过**。
+> 跳过策略的唯一正确位置是 **`Pattern.begin(name, skipStrategy)`**（作用于整个模式）。
 
 | 策略 | 语义 | 匹配数量 | 状态开销 | 适用 |
 | --- | --- | --- | --- | --- |
@@ -579,8 +586,9 @@ public class LoginFailDetection {
                         .<LoginEvent>forBoundedOutOfOrderness(Duration.ofSeconds(3))
                         .withTimestampAssigner((e, ts) -> e.getEventTime()), "logins");
 
-        // ① 定义模式：严格连续 3 次失败，5 分钟内
-        Pattern<LoginEvent, ?> pattern = Pattern.<LoginEvent>begin("first")
+        // ① 定义模式：严格连续 3 次失败，5 分钟内；匹配后跳过整个序列防重复告警
+        Pattern<LoginEvent, ?> pattern = Pattern.<LoginEvent>begin("first",
+                AfterMatchSkipStrategy.skipPastLastEvent())
                 .where(SimpleCondition.of(LoginEvent::isFail))
                 .next("second")
                 .where(SimpleCondition.of(LoginEvent::isFail))
@@ -588,11 +596,9 @@ public class LoginFailDetection {
                 .where(SimpleCondition.of(LoginEvent::isFail))
                 .within(Duration.ofMinutes(5));       // ⭐ 必配
 
-        // ② 检测（按用户分组 + 匹配后跳过整个序列，避免重复告警）
+        // ② 检测（按用户分组）
         PatternStream<LoginEvent> ps = CEP.pattern(
-                logins.keyBy(LoginEvent::getUserId),
-                pattern,
-                AfterMatchSkipStrategy.skipPastLastEvent());
+                logins.keyBy(LoginEvent::getUserId), pattern);
 
         // ③ 输出
         SingleOutputStreamOperator<Alert> alerts = ps.process(new LoginFailAlert());
