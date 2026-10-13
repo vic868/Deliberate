@@ -580,10 +580,10 @@ flowchart TB
 | --- | --- | --- |
 | [8.1](#81-案例一连续-3-次登录失败风控最经典) | 登录风控 | `next` + `within` + `skipPastLastEvent` |
 | [8.2](#82-案例二下单后-15-分钟未支付超时类模式) | 掉单催付 | `followedBy` / `notFollowedBy` + 超时思路 |
-| [8.3](#83-案例三金额连续上涨量词--迭代条件) | 行情识别 | `IterativeCondition` + `timesOrMore` + `greedy` |
-| [8.4](#84-案例四电商转化漏斗followedBy-宽连续) | 漏斗分析 | ⭐ `followedBy` ×3 + `within(24h)` |
+| [8.3](#83-案例三金额连续上涨迭代条件) | 行情识别 | `IterativeCondition` + `timesOrMore` + `greedy` |
+| [8.4](#84-案例四电商转化漏斗宽连续) | 漏斗分析 | ⭐ `followedBy` ×3 + `within(24h)` |
 | [8.5](#85-案例五异地登录后大额转账跨事件条件) | 交易风控 | ⭐ **跨事件条件**（读取前面匹配的事件） |
-| [8.6](#86-案例六设备反复报警直到维修oneor-more--until) | IoT 故障 | ⭐ `oneOrMore().until(...)` |
+| [8.6](#86-案例六设备反复报警直到维修until) | IoT 故障 | ⭐ `oneOrMore().until(...)` |
 | [8.7](#87-案例七物流超时未更新超时回调完整可运行) | 物流催派 | ⭐ `TimedOutPartialMatchHandler` + 侧输出 |
 | [8.8](#88-本地测试与调试不接-kafka-也能验证-cep) | 开发调试 | `fromData` + `executeAndCollect()` |
 
@@ -662,7 +662,7 @@ Pattern<OrderEvent, ?> notPaid = Pattern.<OrderEvent>begin("create")
 
 > 💡 更常见的做法是**用超时部分匹配**：定义 `create → pay` 的模式并 `within(15min)`，然后在 `processTimedOutMatch` 里发"催单"事件——**语义更清晰、也更好实现**。
 
-### 8.3 案例三：金额连续上涨（量词 + 迭代条件）
+### 8.3 案例三：金额连续上涨（迭代条件）
 
 ```java
 Pattern<PriceEvent, ?> rising = Pattern.<PriceEvent>begin("rise",
@@ -686,7 +686,7 @@ PatternStream<PriceEvent> ps = CEP.pattern(prices.keyBy(PriceEvent::getSymbol), 
 
 ---
 
-### 8.4 案例四：电商转化漏斗（followedBy 宽连续）
+### 8.4 案例四：电商转化漏斗（宽连续）
 
 **业务痛点**：运营要看"浏览 → 加购 → 下单 → 支付"的转化率。但真实用户**中间会夹杂大量无关行为**（看详情、比价、逛别的商品）——如果模式写成 `next`（严格连续），会漏掉绝大部分转化，漏斗数据严重失真。
 
@@ -741,7 +741,7 @@ SingleOutputStreamOperator<Conversion> out = CEP
 flowchart LR
     E1["10:00 登录<br/>city=北京"] --> E2["10:03 查余额（无关）"]
     E2 --> E3["10:05 转账 8 万<br/>city=上海"]
-    E3 --> R["✅ 命中：异地（北京→上海）<br/>且金额 8 万 > 阈值 5 万<br/>→ 冻结 / 人工审核"]
+    E3 --> R["✅ 命中：异地（北京→上海）<br/>且金额 8 万 大于 阈值 5 万<br/>→ 冻结 / 人工审核"]
     E3 -.->|"❌ 同城转账不算<br/>❌ 小额转账不算"| R
 ```
 
@@ -776,7 +776,7 @@ Pattern<Op, ?> risk = Pattern.<Op>begin("login",
 >         && o.getEventTime() - o.getLastLoginTime() < 10 * 60_000L));
 > ```
 
-### 8.6 案例六：设备反复报警直到维修（oneOrMore + until）
+### 8.6 案例六：设备反复报警直到维修（until）
 
 **业务痛点**：IoT 场景——设备温度**反复报警**，直到运维"维修完成"事件出现为止。这段"**报警 → 报警 → … → 维修**"就是一个**故障段**，要输出"报警次数 + 持续时长"。
 
