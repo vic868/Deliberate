@@ -285,6 +285,7 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "5-bigdata/2-hbase/3-开发API.md",
     "1-java/1-juc/了解一下：ConcurrentHashMap（详细整理版）.md",
     "5-bigdata/2-hbase/2-数据模型与RowKey设计.md",
     "1-java/1-juc/了解一下：ConcurrentHashMap.md",
@@ -313,7 +314,6 @@
     "1-java/1-juc/虚拟线程-java（详细整理版）.md",
     "1-java/1-juc/虚拟线程-java（详细整理版）.smm.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
-    "2-redis/一次讲透Redis（详细整理版）.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md.crdownload",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
