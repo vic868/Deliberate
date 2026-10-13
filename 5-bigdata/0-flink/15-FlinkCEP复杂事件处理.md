@@ -686,6 +686,286 @@ PatternStream<PriceEvent> ps = CEP.pattern(prices.keyBy(PriceEvent::getSymbol), 
 
 ---
 
+### 8.4 案例四：电商转化漏斗（followedBy 宽连续）
+
+**业务痛点**：运营要看"浏览 → 加购 → 下单 → 支付"的转化率。但真实用户**中间会夹杂大量无关行为**（看详情、比价、逛别的商品）——如果模式写成 `next`（严格连续），会漏掉绝大部分转化，漏斗数据严重失真。
+
+```mermaid
+flowchart TB
+    U["用户 u9 的行为流"] --> A1["浏览商品 a（@10:00）"]
+    A1 --> A2["看详情 a（无关）"]
+    A2 --> A3["加入购物车 a（@10:20）"]
+    A3 --> A4["比价页面 b（无关）"]
+    A4 --> A5["下单 a（@11:00）"]
+    A5 --> A6["支付 a（@11:30）"]
+    A3 -.->|"followedBy：中间允许夹任意事件"| A5
+    A6 --> R["✅ 24h 内走完 4 步<br/>输出：转化耗时 = 11:30 − 10:00 = 90 分钟"]
+```
+
+```java
+Pattern<UserAction, ?> funnel = Pattern.<UserAction>begin("browse",
+                AfterMatchSkipStrategy.skipPastLastEvent())
+        .where(SimpleCondition.of(a -> "browse".equals(a.getAction())))
+        .followedBy("cart")          // ⭐ 宽松：中间可夹别的行为（用 next 会漏大量转化）
+        .where(SimpleCondition.of(a -> "cart".equals(a.getAction())))
+        .followedBy("order")
+        .where(SimpleCondition.of(a -> "order".equals(a.getAction())))
+        .followedBy("pay")
+        .where(SimpleCondition.of(a -> "pay".equals(a.getAction())))
+        .within(Duration.ofHours(24));   // ⭐ 24 小时转化口径 = 状态上界
+
+SingleOutputStreamOperator<Conversion> out = CEP
+        .pattern(actions.keyBy(UserAction::getUid), funnel)
+        .process(new PatternProcessFunction<UserAction, Conversion>() {
+            @Override
+            public void processMatch(Map<String, List<UserAction>> m, Context ctx, Collector<Conversion> c) {
+                UserAction start = m.get("browse").get(0);
+                UserAction pay   = m.get("pay").get(0);
+                c.collect(new Conversion(ctx.getCurrentKey(), start.getTime(),
+                        pay.getTime() - start.getTime()));
+            }
+        });
+```
+
+> [!important] 这个案例的三个决策
+> ① **用 `followedBy` 而不是 `next`**——用户会穿插无关行为，`next` 会漏匹配（漏斗数据失真）；
+> ② **`within(24h)` 一箭双雕**——既是业务口径（24 小时内完成才算转化），又是**状态上界**；
+> ③ **没转化的用户 = 流失信号**——在 `processTimedOutMatch` 里可以拿到"走到第几步才流失"，这是漏斗分析最有价值的数据（但注意：`begin` 级超时拿到的是**第一个模式之后的部分匹配**，实际工程里常把"流失"做成"独立的超时算子"）。
+> ⚠️ 状态提醒：`followedBy` 会为**每个 uid** 保留部分匹配 → key 基数 ≈ 活跃用户数（DAU），大 DAU 场景必须评估内存。
+
+### 8.5 案例五：异地登录后大额转账（跨事件条件）
+
+**业务痛点**：风控规则——**"刚在 A 城登录，10 分钟内就发生 B 城大额转账"**。注意"大额 + 异地"这两个条件需要**同时看两个事件**（登录事件的城市、转账事件的城市与金额）。
+
+```mermaid
+flowchart LR
+    E1["10:00 登录<br/>city=北京"] --> E2["10:03 查余额（无关）"]
+    E2 --> E3["10:05 转账 8 万<br/>city=上海"]
+    E3 --> R["✅ 命中：异地（北京→上海）<br/>且金额 8 万 > 阈值 5 万<br/>→ 冻结 / 人工审核"]
+    E3 -.->|"❌ 同城转账不算<br/>❌ 小额转账不算"| R
+```
+
+```java
+Pattern<Op, ?> risk = Pattern.<Op>begin("login",
+                AfterMatchSkipStrategy.skipPastLastEvent())
+        .where(SimpleCondition.of(o -> o.getType() == OpType.LOGIN))
+        .followedBy("transfer")
+        .where(new IterativeCondition<Op>() {
+            @Override
+            public boolean filter(Op cur, Context<Op> ctx) throws Exception {
+                if (cur.getType() != OpType.TRANSFER || cur.getAmount() == null) return false;
+                // ⭐ 跨事件条件：拿到"已匹配的登录事件"，和当前转账事件一起判断
+                Op login = ctx.getEventsForPattern("login").iterator().next();
+                return cur.getAmount().compareTo(new BigDecimal("50000")) > 0        // 大额
+                        && !Objects.equals(cur.getCity(), login.getCity());          // 异地
+            }
+        })
+        .within(Duration.ofMinutes(10));
+```
+
+> [!important] 这个案例的两个要点
+> ① **跨事件条件是 `IterativeCondition` 的专属能力**（`ctx.getEventsForPattern(name)` 能读到"已匹配的历史事件"）；`SimpleCondition` 只看当前事件；
+> ② ⭐ **生产上的降本技巧：能不在 CEP 里跨事件，就不要跨**。
+> `IterativeCondition` 每次判定都要**遍历历史事件**（CPU 随序列变长而涨）。
+> 更优做法是**上游 enrichment**：用状态/维表把"该用户**最近一次登录的城市与时间**"先写到每条事件上，CEP 里就只剩 `SimpleCondition` 判断——**零历史遍历，状态还小**。
+> ```java
+> // ⭐ 更优：上游先 enrich，CEP 只做单事件判断
+> .where(SimpleCondition.of(o -> o.getType() == OpType.TRANSFER
+>         && o.getAmount().compareTo(THRESHOLD) > 0
+>         && !Objects.equals(o.getCity(), o.getLastLoginCity())   // 信息已带在事件上
+>         && o.getEventTime() - o.getLastLoginTime() < 10 * 60_000L));
+> ```
+
+### 8.6 案例六：设备反复报警直到维修（oneOrMore + until）
+
+**业务痛点**：IoT 场景——设备温度**反复报警**，直到运维"维修完成"事件出现为止。这段"**报警 → 报警 → … → 维修**"就是一个**故障段**，要输出"报警次数 + 持续时长"。
+
+```mermaid
+flowchart LR
+    A1["08:00 温度报警"] --> A2["08:10 又报警"] --> A3["08:20 又报警"] --> A4["08:30 维修完成 ✔"]
+    A4 -.->|"until 条件命中<br/>循环停止，不再接受后续事件"| R["✅ 输出故障段：<br/>报警 3 次 · 持续 30 分钟<br/>⭐ 状态在这一刻可清理"]
+    A3 -.->|"如果一直不来维修事件"| R2["within 兜底<br/>（防止状态无限挂着）"]
+```
+
+```java
+Pattern<DeviceEvent, ?> fault = Pattern.<DeviceEvent>begin("alarm",
+                AfterMatchSkipStrategy.skipPastLastEvent())
+        .where(SimpleCondition.of(DeviceEvent::isAlarm))  // 温度超标
+        .oneOrMore()                                      // ⭐ 官方限定：until 只能配 oneOrMore()
+        .until(SimpleCondition.of(DeviceEvent::isRepaired));  // 出现"维修完成"即停止
+
+SingleOutputStreamOperator<FaultReport> reports = CEP
+        .pattern(events.keyBy(DeviceEvent::getDeviceId), fault)
+        .process(new PatternProcessFunction<DeviceEvent, FaultReport>() {
+            @Override
+            public void processMatch(Map<String, List<DeviceEvent>> m, Context ctx, Collector<FaultReport> c) {
+                List<DeviceEvent> alarms = m.get("alarm");
+                DeviceEvent first = alarms.get(0);
+                DeviceEvent last  = alarms.get(alarms.size() - 1);
+                c.collect(new FaultReport(ctx.getCurrentKey(), alarms.size(),
+                        last.getTime() - first.getTime()));
+            }
+        });
+```
+
+> [!important] `until` 的准确语义（官方 2.0 文档原文口径）
+> ① **停止条件**：until 条件的事件出现后，**不再有更多事件被接受进这个模式**（循环即停）；
+> ② ⭐ **官方限定：只能与 `oneOrMore()` 连用**（不能配 `times`）；
+> ③ **隐藏价值**：官方文档明确指出 until 会带来一个好处——**"基于事件清理对应模式的状态"**（维修完成一到，部分匹配状态立刻可清，不必干等 `within` 超时）。
+> **与 `within` 的关系**：until 管"**业务何时结束**"（事件驱动），within 管"**最长等多久**"（时间兜底）——**两者可以同时配**：`within(Duration.ofHours(12))` 防止"设备再也没报修事件"导致状态永久挂着。
+
+### 8.7 案例七：物流超时未更新（超时回调完整可运行）
+
+**业务痛点**：快递揽收后 **24 小时内必须出现"妥投"**，否则要催派。注意"**没发生什么**"本身就是信号——这正是 `TimedOutPartialMatchHandler` 的主场。
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant K as Kafka: logistics
+    participant C as CEP 算子
+    participant O as AlertSink（告警/催派系统）
+    K->>C: 揽收事件（揽收时间 t0）
+    Note over C: 记录部分匹配：等待"妥投"（within 24h）
+    Note over C: ……24h 内始终没有"妥投"事件……
+    Note over C: 水位推进过 t0+24h
+    C->>C: processTimedOutMatch 回调触发
+    C->>O: 侧输出：超时告警（单号、揽收时间、已等待 24h）
+    Note over C: 状态随之清理
+    alt 反过来：24h 内来了妥投
+        K->>C: 妥投事件
+        C->>O: 主输出：及时妥投（可选，用于时效统计）
+    end
+```
+
+**完整可运行代码**：
+
+```java
+// ========== ① 事件类（⚠️ 必须正确实现 equals/hashCode，CEP 官方要求）==========
+public class LogisticsEvent implements Serializable {
+    private String waybill;   // 运单号（= key）
+    private String action;    // PICKUP 揽收 / SIGNED 妥投
+    private long eventTime;   // 事件时间（毫秒）
+    // 构造方法 + getter ……
+}
+
+// ========== ② 主作业 ==========
+public class WaybillTimeoutJob {
+    public static final OutputTag<TimeoutAlert> TIMEOUT_TAG =
+            new OutputTag<>("waybill-timeout") {};
+
+    public static void main(String[] args) throws Exception {
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        env.enableCheckpointing(60_000, CheckpointingMode.EXACTLY_ONCE);
+
+        KafkaSource<LogisticsEvent> source = KafkaSource.<LogisticsEvent>builder()
+                .setBootstrapServers("kafka-1:9092")
+                .setTopics("logistics")
+                .setGroupId("waybill-timeout-job")
+                .setStartingOffsets(OffsetsInitializer.committedOffsets(OffsetResetStrategy.EARLIEST))
+                .setDeserializer(KafkaRecordDeserializationSchema.of(new LogisticsJsonDeserializer()))
+                .build();
+
+        DataStream<LogisticsEvent> events = env.fromSource(source, WatermarkStrategy
+                .<LogisticsEvent>forBoundedOutOfOrderness(Duration.ofMinutes(2))
+                .withTimestampAssigner((e, t) -> e.getEventTime()), "logistics");
+
+        // ⭐ 模式：揽收 → 24h 内妥投
+        Pattern<LogisticsEvent, ?> signedWithin24h = Pattern.<LogisticsEvent>begin("pickup",
+                AfterMatchSkipStrategy.skipPastLastEvent())
+                .where(SimpleCondition.of(e -> "PICKUP".equals(e.getAction())))
+                .followedBy("signed")
+                .where(SimpleCondition.of(e -> "SIGNED".equals(e.getAction())))
+                .within(Duration.ofHours(24));
+
+        SingleOutputStreamOperator<TimeoutAlert> alerts = CEP
+                .pattern(events.keyBy(LogisticsEvent::getWaybill), signedWithin24h)
+                .process(new WaybillAlertFunction());
+
+        alerts.sinkTo(alertSink);                       // 主输出：及时妥投指标
+        alerts.getSideOutput(TIMEOUT_TAG).sinkTo(escalationSink);  // ⭐ 侧输出：催派
+        env.execute("waybill-timeout-job");
+    }
+}
+
+// ========== ③ 处理函数（含超时回调）==========
+public class WaybillAlertFunction extends PatternProcessFunction<LogisticsEvent, TimeoutAlert>
+        implements TimedOutPartialMatchHandler<LogisticsEvent> {
+
+    @Override
+    public void processMatch(Map<String, List<LogisticsEvent>> match, Context ctx, Collector<TimeoutAlert> out) {
+        LogisticsEvent pickup = match.get("pickup").get(0);
+        LogisticsEvent signed = match.get("signed").get(0);
+        out.collect(TimeoutAlert.ok(pickup.getWaybill(), signed.getEventTime() - pickup.getEventTime()));
+    }
+
+    @Override
+    public void processTimedOutMatch(Map<String, List<LogisticsEvent>> match, Context ctx) {
+        // ⭐ 关键：24h 内没等到妥投 → 走侧输出催派
+        LogisticsEvent pickup = match.get("pickup").get(0);
+        ctx.output(WaybillTimeoutJob.TIMEOUT_TAG,
+                TimeoutAlert.timeout(pickup.getWaybill(), pickup.getEventTime()));
+    }
+}
+```
+
+| 输出 | 触发时机 | 去向 |
+| --- | --- | --- |
+| 主输出 `ok(waybill, 用时)` | 24h 内妥投 | 时效统计指标 |
+| ⭐ 侧输出 `timeout(waybill, 揽收时间)` | `within` 到期仍未妥投 | **催派系统 / 告警群** |
+| （可选）侧输出其他 | 业务分流 | 按需 |
+
+> 💡 这是"**用超时表达否定语义**"的标准姿势：**"24 小时没有发生某事"用窗口超时来表达**，比手写定时器 + 状态管理干净得多。
+
+### 8.8 本地测试与调试：不接 Kafka 也能验证 CEP
+
+**开发时最痛的是什么？** 改一行模式就得起 Kafka、灌数据、等匹配——太慢。其实 **CEP 的逻辑完全可以离线验证**：
+
+```java
+public class CepLocalTest {
+    public static void main(String[] args) throws Exception {
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        env.setParallelism(1);                    // ⭐ 固定并行度，输出顺序稳定
+        env.getConfig().disableGenericTypes();    // ⭐ 故意禁掉 Kryo 兜底：POJO 不合格直接报错
+
+        // ⭐ 造数据（1.19+ 用 fromData；老版本用 fromElements）——有界流，作业会自己跑完
+        DataStream<LoginEvent> logins = env.fromData(
+                new LoginEvent("u1", false, 1000L),   // 失败
+                new LoginEvent("u1", false, 2000L),   // 失败
+                new LoginEvent("u9", false, 2100L),   // ⚠️ 干扰：别的用户的失败
+                new LoginEvent("u1", true,  2500L),   // ✅ u1 登录成功 → 三连败被打断
+                new LoginEvent("u2", false, 3000L),
+                new LoginEvent("u2", false, 3100L),
+                new LoginEvent("u2", false, 3200L));  // ✅ u2 三连败 → 应产出 1 条告警
+
+        // ……放 §8.1 的 pattern 与 CEP.pattern（不需要 sink）……
+
+        List<Alert> alerts = ps.process(new LoginFailAlert()).executeAndCollect();
+        for (Alert a : alerts) {
+            System.out.println(">>> " + a);
+        }
+        // 期望输出只有 1 条：>>> Alert{userId=u2, reason=5分钟内连续3次登录失败}
+    }
+}
+```
+
+**六个调试技巧**：
+
+| 技巧 | 说明 |
+| --- | --- |
+| ⭐ `executeAndCollect()` | 不写 Sink，把结果直接收进 `List` 断言（最适合单测/本地验证） |
+| `print()` | 粗暴有效：把 `PatternStream` 直接 `.print("cep")` 看轨迹 |
+| `env.setParallelism(1)` | 测试固定并行度，避免输出顺序乱跳 |
+| ⭐ `disableGenericTypes()` | 让"POJO 不合格 → 静默走 Kryo"变成**启动即报错**，别把这个坑留到生产 |
+| 测**超时**逻辑 | 有界源结束时水位会推到"最大时间"→ **`within` 超时回调在测试里会自然触发**，很方便 |
+| 测**匹配数量** | 记住默认是 `NO_SKIP`：同一段事件可能产出多条匹配——断言前先想清楚 skip 策略，否则"多了几条"不是 bug |
+
+> [!warning] 本地测试的三个注意
+> ① `fromData` 是**有界流**，作业跑完就退出（不像 Kafka 常驻）；
+> ② 事件类的 `equals/hashCode` 坑**最容易在测试中暴露**（表现为"明明数据对却匹配不上"）；
+> ③ `within` 用**毫秒级小窗口**（如 5000ms）测试，别用 24h——有界源的水位虽会推进，但小窗口调试更直观。
+
+---
+
 ## 九、选型：CEP 库 vs MATCH_RECOGNIZE vs 手写 ProcessFunction
 
 ```mermaid
