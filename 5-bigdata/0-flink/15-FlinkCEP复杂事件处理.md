@@ -651,7 +651,8 @@ Pattern<OrderEvent, ?> notPaid = Pattern.<OrderEvent>begin("create")
 ### 8.3 案例三：金额连续上涨（量词 + 迭代条件）
 
 ```java
-Pattern<PriceEvent, ?> rising = Pattern.<PriceEvent>begin("rise")
+Pattern<PriceEvent, ?> rising = Pattern.<PriceEvent>begin("rise",
+                AfterMatchSkipStrategy.skipPastLastEvent())   // ⭐ 策略挂在 begin 上
         .where(new IterativeCondition<PriceEvent>() {
             @Override
             public boolean filter(PriceEvent cur, Context<PriceEvent> ctx) throws Exception {
@@ -666,8 +667,7 @@ Pattern<PriceEvent, ?> rising = Pattern.<PriceEvent>begin("rise")
         .greedy()
         .within(Duration.ofMinutes(30));               // ⭐ 状态上界
 
-PatternStream<PriceEvent> ps = CEP.pattern(prices.keyBy(PriceEvent::getSymbol), rising,
-        AfterMatchSkipStrategy.skipPastLastEvent());
+PatternStream<PriceEvent> ps = CEP.pattern(prices.keyBy(PriceEvent::getSymbol), rising);
 ```
 
 ---

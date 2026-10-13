@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/0-flink/6-背压与性能调优.md",
+                "file": "数据库面试/MySQL深度优化与MGR高可用面试题.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "6-背压与性能调优"
+              "title": "MySQL深度优化与MGR高可用面试题"
             }
           }
         ],
@@ -285,6 +285,9 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "5-bigdata/0-flink/6-背压与性能调优.md",
+    "数据库面试/MySQL深度优化与MGR高可用面试题.md",
+    "数据库面试",
     "4-db/MYSQL.excalidraw.md",
     "5-bigdata/0-flink/11-端到端一致性.md",
     "5-bigdata/0-flink/13-生产部署Checklist逐项解析.md",
@@ -309,8 +312,6 @@
     "3-mq/2-Kafka/4-消费者与Rebalance.md",
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！（详细整理版）.md",
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
-    "1-java/4-jvm/7-JVM故障排查实战.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md.crdownload",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
@@ -330,7 +331,6 @@
     "10-数据仓库",
     "面试准备/得逸信息",
     "AI 学习规划/1-AI 工具",
-    "_dvtest",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
