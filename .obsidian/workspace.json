@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
+                "file": "1-java/4-jvm/2-GC机制深度.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "15-FlinkCEP复杂事件处理"
+              "title": "2-GC机制深度"
             }
           }
         ],
@@ -297,11 +297,13 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "7425856c79ab980e",
   "lastOpenFiles": [
-    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
-    "1-java/2-collection/5-并发容器专题.md",
     "1-java/2-collection/1-HashMap全解.md",
+    "1-java/1-juc/了解一下：ConcurrentHashMap.md",
+    "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
+    "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
+    "1-java/2-collection/5-并发容器专题.md",
     "2-redis/一次讲透Redis（详细整理版）.md",
     "2-redis/一次讲透Redis.md",
     "1-java/1-juc/了解一下：ConcurrentHashMap（详细整理版）.md",
@@ -323,8 +325,6 @@
     "4-db/1-架构与执行流程.md",
     "4-db/4-锁机制.md",
     "4-db/0-MySQL总览.md",
-    "5-bigdata/0-flink/11-端到端一致性.md",
-    "5-bigdata/0-flink/14-开发常用API速查.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",
