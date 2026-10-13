@@ -1001,6 +1001,7 @@ flowchart TD
 | 分类 | API | 说明 |
 | --- | --- | --- |
 | **模式起点** | `Pattern.<T>begin("name")` | ⭐ 必须第一个 |
+| | `Pattern.<T>begin("name", AfterMatchSkipStrategy...)` | ⭐ **跳过策略的唯一挂载点** |
 | | `Pattern.<T>begin("groupName", patternGroup)` | 模式组 |
 | **连接** | `.next("name")` | ⭐ 严格连续 |
 | | `.followedBy("name")` | ⭐ 宽松连续 |
@@ -1010,11 +1011,12 @@ flowchart TD
 | | `.where(IterativeCondition)` | 可访问已匹配事件 |
 | | `.or(condition)` | 或条件 |
 | | `.subtype(Class)` | 按子类过滤 |
-| | `.until(condition)` | ⭐ 循环模式的**终止条件**（配 `oneOrMore`） |
+| | `.until(condition)` | ⭐ 停止条件：**官方限定只能配 `oneOrMore()`**；触发后不再接受事件，且**可基于事件清理状态** |
 | **量词** | `.oneOrMore()` / `.times(n)` / `.times(a,b)` / `.timesOrMore(n)` / `.optional()` / `.greedy()` | 重复次数 |
 | **时间约束** | `.within(Duration)` | ⭐ 总时长 + 状态上界 |
-| **跳过策略** | `AfterMatchSkipStrategy.noSkip()` / `.skipToNext()` / `.skipPastLastEvent()` / `.skipToFirst("n")` / `.skipToLast("n")` | 匹配后从哪里继续 |
-| **检测** | `CEP.pattern(keyedStream, pattern[, comparator])` | ⭐ 必须先 `keyBy` |
+| **跳过策略** | `AfterMatchSkipStrategy.noSkip()` / `.skipToNext()` / `.skipPastLastEvent()` / `.skipToFirst("n")` / `.skipToLast("n")` | 匹配后从哪里继续；⚠️ **必须传给 `Pattern.begin`**，没有别的入口 |
+| **检测** | `CEP.pattern(keyedStream, pattern)` | ⭐ 必须先 `keyBy` |
+| | `CEP.pattern(keyedStream, pattern, EventComparator)` | 自定义事件比较器（**仅此一个额外重载**） |
 | | `patternStream.inEventTime()` / `.inProcessingTime()` | 时间语义 |
 | **输出** | ⭐ `patternStream.process(PatternProcessFunction)` | 推荐 |
 | | `patternStream.select(fn[, TypeInformation])` | 旧 API，2.x 需显式类型 |
