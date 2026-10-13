@@ -573,6 +573,20 @@ flowchart TB
 
 ## 八、实战案例
 
+> [!tip] 本章共 **7 个案例 + 1 篇调试指南**
+> 每个案例 = **一句业务痛点 + 事件轨迹图 + 可运行代码 + 坑点**。覆盖 Pattern API 的全部常用能力。
+
+| 案例 | 场景 | 用到的核心 API |
+| --- | --- | --- |
+| [8.1](#81-案例一连续-3-次登录失败风控最经典) | 登录风控 | `next` + `within` + `skipPastLastEvent` |
+| [8.2](#82-案例二下单后-15-分钟未支付超时类模式) | 掉单催付 | `followedBy` / `notFollowedBy` + 超时思路 |
+| [8.3](#83-案例三金额连续上涨量词--迭代条件) | 行情识别 | `IterativeCondition` + `timesOrMore` + `greedy` |
+| [8.4](#84-案例四电商转化漏斗followedBy-宽连续) | 漏斗分析 | ⭐ `followedBy` ×3 + `within(24h)` |
+| [8.5](#85-案例五异地登录后大额转账跨事件条件) | 交易风控 | ⭐ **跨事件条件**（读取前面匹配的事件） |
+| [8.6](#86-案例六设备反复报警直到维修oneor-more--until) | IoT 故障 | ⭐ `oneOrMore().until(...)` |
+| [8.7](#87-案例七物流超时未更新超时回调完整可运行) | 物流催派 | ⭐ `TimedOutPartialMatchHandler` + 侧输出 |
+| [8.8](#88-本地测试与调试不接-kafka-也能验证-cep) | 开发调试 | `fromData` + `executeAndCollect()` |
+
 ### 8.1 案例一：连续 3 次登录失败（风控，最经典）
 
 ```java
