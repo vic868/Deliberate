@@ -306,7 +306,7 @@ List<Result> all = at.scanAll(scan).get();       // 小范围扫描一次性拉�
 
 ### 7.2 BulkLoad（换个象限看）
 
-百万级以上的**历史/离线导入**不要走 Put（WAL + flush + compaction 全要陪你加班）：用 Spark/MR 直接**生成 HFile，再 completebulkload 挂载**——不写 WAL、不进 MemStore，集群几乎无感。要点（详见 [[4-生产坑与调优]] 坑 13）：
+百万级以上的**历史/离线导入**不要走 Put（WAL + flush + compaction 全要陪你加班）：用 Spark/MR 直接**生成 HFile，再 completebulkload 挂载**——不写 WAL、不进 MemStore，集群几乎无感。要点（详见 [[4-生产坑与调优]] 坑 23）：
 
 ```bash
 # 1) Spark/MR 产 HFile（要按目标表 Region 边界分区 → TotalOrderPartitioner）
