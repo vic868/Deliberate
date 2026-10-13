@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5-bigdata/2-hbase/1-架构与原理.md",
+                "file": "1-java/4-jvm/7-JVM故障排查实战.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1-架构与原理"
+              "title": "7-JVM故障排查实战"
             }
           }
         ],
@@ -285,14 +285,14 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "5-bigdata/2-hbase/2-数据模型与RowKey设计.md",
+    "5-bigdata/2-hbase/1-架构与原理.md",
     "5-bigdata/2-hbase/0-HBase总览.md",
     "5-bigdata/2-hbase/4-生产坑与调优.md",
     "1-java/1-juc/了解一下：ConcurrentHashMap（详细整理版）.md",
     "27张支付架构图，我本来是留着做内训舍不得发的.md",
     "5-bigdata/2-hbase/3-开发API.md",
-    "5-bigdata/2-hbase/2-数据模型与RowKey设计.md",
     "1-java/1-juc/了解一下：ConcurrentHashMap.md",
-    "5-bigdata/2-hbase/1-架构与原理.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "4-db/MySQL深度优化与MGR高可用面试题.md",
