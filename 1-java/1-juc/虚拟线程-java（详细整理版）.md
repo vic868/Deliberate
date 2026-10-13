@@ -1,9 +1,16 @@
 ---
 title: Java 虚拟线程（详细整理版）—— 让并发编程回归简单
-tags: [Java, 虚拟线程, 并发, ProjectLoom, JUC, 性能, 视频笔记]
+tags:
+  - Java
+  - 虚拟线程
+  - 并发
+  - ProjectLoom
+  - JUC
+  - 性能
+  - 视频笔记
 status: 已完成
 created: 2026-10-12
-source: "https://www.bilibili.com/video/BV14XVo63EnP/"
+source: https://www.bilibili.com/video/BV14XVo63EnP/
 来源作者: onedayhigh
 原视频日期: 2026-06-01
 ---

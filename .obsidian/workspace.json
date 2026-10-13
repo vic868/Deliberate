@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "虚拟线程-java（详细整理版）"
             }
+          },
+          {
+            "id": "3ffa6c21efcc9f91",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1-java/1-juc/虚拟线程-java（详细整理版）.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "虚拟线程-java（详细整理版）"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -254,8 +269,10 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "3ffa6c21efcc9f91",
   "lastOpenFiles": [
+    "1-java/1-juc/虚拟线程-java（详细整理版）.smm.md",
+    "1-java/1-juc/虚拟线程-java（详细整理版）.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
@@ -272,7 +289,6 @@
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
     "1-java/4-jvm/7-JVM故障排查实战.md",
-    "1-java/1-juc/虚拟线程-java（详细整理版）.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md.crdownload",
     "1-java/1-juc/虚拟线程-java.md",
     "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
@@ -282,7 +298,6 @@
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
     "3-mq/2-Kafka/理解 kafka 基本盘.md",
-    "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "4-db/MySQL面试不背书：用故事讲透索引事务锁.txt",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
