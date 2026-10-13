@@ -322,8 +322,9 @@
       }
     ]
   },
-  "active": "e7a7b303c61786dc",
+  "active": "0162e52300fc6b18",
   "lastOpenFiles": [
+    "2-redis/一次讲透Redis（详细整理版）.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
     "5-bigdata/0-flink/14-开发常用API速查.md",
@@ -346,7 +347,6 @@
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
-    "2-redis/一次讲透Redis（详细整理版）.md",
     "3-mq/2-Kafka/理解 kafka 基本盘.md",
     "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/Kafka 问题.md",
