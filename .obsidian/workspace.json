@@ -83,7 +83,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/0-一次了解 Kafka（详细整理版）.md",
+                "file": "3-mq/2-Kafka/4-消费者与Rebalance.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -98,7 +98,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "0-一次了解 Kafka（详细整理版）"
+              "title": "4-消费者与Rebalance"
             }
           }
         ],
@@ -374,10 +374,10 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "1789c364be31b764",
   "lastOpenFiles": [
-    "3-mq/2-Kafka/0-一次了解 Kafka.md",
     "3-mq/2-Kafka/0-一次了解 Kafka（详细整理版）.md",
+    "3-mq/2-Kafka/0-一次了解 Kafka.md",
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
     "2-redis/一次讲透Redis（详细整理版）.md",
