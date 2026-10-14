@@ -399,7 +399,7 @@ flowchart TB
     subgraph QL["quicklist（Redis 3.2+）：多个小 ziplist 串成双向链表"]
         direction LR
         Q1["ziplist A<br/>（几十个元素）"] <-->|"双向指针"| Q2["ziplist B"] <-->|"双向指针"| Q3["ziplist C"]
-        QN["✅ 既保留内存效率<br/>✅ 又避免"单个大块整体移动"的代价"]
+        QN["✅ 既保留内存效率<br/>✅ 又避免「单个大块整体移动」的代价"]
     end
     ZIP -->|"数据量大时的问题"| QL
 ```
