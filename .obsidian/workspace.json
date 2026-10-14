@@ -376,6 +376,7 @@
   },
   "active": "1789c364be31b764",
   "lastOpenFiles": [
+    "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "3-mq/2-Kafka/0-一次了解 Kafka（详细整理版）.md",
@@ -403,7 +404,6 @@
     "1-java/1-juc/了解一下：ConcurrentHashMap.md",
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
-    "1-java/2-collection/5-并发容器专题.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",
