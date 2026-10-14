@@ -333,6 +333,7 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
     "服务器巡检-192.168.0.106/deploy/nginx/ca/106-internal-ca.crt",
     "服务器巡检-192.168.0.106/deploy/nginx/ca",
     "服务器巡检-192.168.0.106/deploy/nginx/README.md",
@@ -349,7 +350,6 @@
     "12-nginx",
     "服务器巡检-192.168.0.106/deploy/nginx/html",
     "服务器巡检-192.168.0.106/deploy/nginx/nginx.service",
-    "服务器巡检-192.168.0.106/deploy/nginx/conf/conf.d/50-tools.conf",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
