@@ -69,7 +69,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "9-k8s/4-状态型中间件上不上K8s.md",
+                "file": "9-k8s/5-106服务梳理与K8s迁移规划.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -84,7 +84,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "4-状态型中间件上不上K8s"
+              "title": "5-106服务梳理与K8s迁移规划"
             }
           }
         ],
@@ -293,7 +293,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "9-k8s/4-状态型中间件上不上K8s.md"
+                "file": "9-k8s/5-106服务梳理与K8s迁移规划.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -374,9 +374,9 @@
   },
   "active": "93b46a2e7552e152",
   "lastOpenFiles": [
+    "9-k8s/4-状态型中间件上不上K8s.md",
     "9-k8s/5-106服务梳理与K8s迁移规划.md",
     "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
-    "9-k8s/4-状态型中间件上不上K8s.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
     "9-k8s/0-K8s网络请求全过程.md",
     "9-k8s/2-系统架构总览.md",
