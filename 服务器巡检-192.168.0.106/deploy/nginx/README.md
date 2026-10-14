@@ -27,7 +27,7 @@
 | `nginx.service` | `/etc/systemd/system/nginx.service` | systemd 单元 |
 
 > 证书文件（`ca.crt`/`ca.key`/`106.crt`/`106.key`）**不入库**——私钥不应进 Git。
-> 生成命令见 [[12-nginx/1-Nginx配置详解与HTTPS证书实践]] §5。
+> 生成命令见 [[12-nginx/2-实践篇-HTTPS证书落地#二、方案 A：自建内部 CA（106 采用）]]。
 
 ## HTTPS（已启用，可与 HTTP 并存）
 
@@ -50,7 +50,8 @@ sudo security add-trusted-cert -d -r trustRoot \
   "$(pwd)/ca/106-internal-ca.crt"
 ```
 
-⚠️ 自签证书**不要开 HSTS**，详见手册 §9.3。证书/私钥生成命令见手册 §5。
+⚠️ 自签证书**不要开 HSTS**，原理见 [[12-nginx/1-理论篇-理解Nginx与HTTPS#10.1 给自签证书开 HSTS —— 最危险的一个]]。
+证书/私钥生成命令见 [[12-nginx/2-实践篇-HTTPS证书落地#二、方案 A：自建内部 CA（106 采用）]]。
 
 ## 部署命令
 
