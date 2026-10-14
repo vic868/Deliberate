@@ -60,9 +60,21 @@
               "icon": "excalidraw-icon",
               "title": "0-高并发.excalidraw"
             }
+          },
+          {
+            "id": "bda8a977fef0d1b5",
+            "type": "leaf",
+            "state": {
+              "type": "drawio-file-view",
+              "state": {
+                "file": "Untitled Diagram 1791969941113.drawio"
+              },
+              "icon": "pencil-ruler",
+              "title": "Untitled Diagram 1791969941113"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -140,7 +152,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md",
+                "file": "Untitled Diagram 1791969941113.drawio",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -267,7 +279,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md"
+                "file": "Untitled Diagram 1791969941113.drawio"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -345,11 +357,12 @@
       }
     ]
   },
-  "active": "7425856c79ab980e",
+  "active": "bda8a977fef0d1b5",
   "lastOpenFiles": [
+    "11-高并发高可用/0-高并发.excalidraw.md",
+    "Untitled Diagram 1791969941113.drawio",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
-    "11-高并发高可用/0-高并发.excalidraw.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
     "11-高并发高可用/高并发系统设计.md",
@@ -368,7 +381,6 @@
     "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/30-app.yaml",
     "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/20-middleware-endpoints.yaml",
     "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/10-config.yaml",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/00-namespace.yaml",
     "9-k8s/5-106服务梳理与K8s迁移规划.md",
     "9-k8s/4-状态型中间件上不上K8s.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
@@ -382,7 +394,6 @@
     "服务器巡检-192.168.0.106/巡检报告.md",
     "2-redis/一次讲透Redis（详细整理版）.md",
     "1-java/0-知识点/0-Java进化论（详细整理版）.md",
-    "1-java/0-知识点/0-Java进化论.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
