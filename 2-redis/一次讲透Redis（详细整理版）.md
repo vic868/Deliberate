@@ -279,7 +279,7 @@ flowchart LR
 
 ### 4.5 Sorted Set：排行榜
 
-> 视频对话："Sorted Set 就是在 Set 基础上加了排序——每个元素关联一个 **score**，Redis 自动按分数排序；**score 相同则按字典序排**。"
+> 视频对话："Sorted Set 就是在 Set 基础上加了**排序**——每个元素关联一个 **score**，Redis 自动按分数排序；**score 相同则按字典序排**。"
 
 | 要点 | 说明 |
 | --- | --- |

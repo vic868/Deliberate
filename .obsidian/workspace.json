@@ -83,7 +83,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "file": "2-redis/一次讲透Redis（详细整理版）.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -98,7 +98,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "高并发系统设计（详细整理版）"
+              "title": "一次讲透Redis（详细整理版）"
             }
           }
         ],
@@ -376,10 +376,11 @@
   },
   "active": "1789c364be31b764",
   "lastOpenFiles": [
+    "2-redis/一次讲透Redis.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
     "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/高并发系统设计.md",
     "11-高并发高可用/高并发系统设计.md-E",
     "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒（详细整理版）.md",
@@ -397,7 +398,6 @@
     "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
     "1-java/2-collection/5-并发容器专题.md",
     "2-redis/一次讲透Redis（详细整理版）.md",
-    "2-redis/一次讲透Redis.md",
     "1-java/1-juc/了解一下：ConcurrentHashMap（详细整理版）.md",
     "1-java/2-collection/4-Set与Queue专题.md",
     "1-java/2-collection/3-List专题.md",
