@@ -67,24 +67,12 @@
             "id": "93b46a2e7552e152",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "11-高并发高可用/1-1-三高接入层架构设计.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "file": "11-高并发高可用/0-高并发.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "1-1-三高接入层架构设计"
+              "icon": "excalidraw-icon",
+              "title": "0-高并发.excalidraw"
             }
           }
         ],
@@ -293,7 +281,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/1-1-三高接入层架构设计.md"
+                "file": "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -349,14 +337,10 @@
                 "id": "da0dd560c7f1461b",
                 "type": "leaf",
                 "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "11-高并发高可用/高并发系统设计.md",
-                    "mode": "source",
-                    "source": true
-                  },
+                  "type": "empty",
+                  "state": {},
                   "icon": "lucide-file",
-                  "title": "高并发系统设计"
+                  "title": "新标签页"
                 }
               }
             ]
@@ -374,8 +358,11 @@
   },
   "active": "93b46a2e7552e152",
   "lastOpenFiles": [
-    "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
+    "11-高并发高可用/0-高并发.excalidraw.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
+    "11-高并发高可用/高并发系统设计.md",
     "11-高并发高可用/1-1-三高接入层架构设计.md",
+    "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
     "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
     "9-k8s/6-实战-业务上k3s与对接Docker中间件.md",
@@ -396,10 +383,8 @@
     "9-k8s/0-K8s网络请求全过程.md",
     "9-k8s/2-系统架构总览.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
-    "11-高并发高可用/高并发系统设计.md",
     "架构/微博整体架构.excalidraw.md",
     "服务器巡检-192.168.0.103/巡检报告.md",
     "服务器巡检-192.168.0.103/修复清单.md",
@@ -409,7 +394,6 @@
     "1-java/0-知识点/0-Java进化论.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
     "3-mq/2-Kafka/0-一次了解 Kafka（详细整理版）.md",
-    "3-mq/2-Kafka/4-消费者与Rebalance.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
