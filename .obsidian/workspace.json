@@ -376,6 +376,7 @@
   },
   "active": "1789c364be31b764",
   "lastOpenFiles": [
+    "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
     "1-java/0-知识点/0-Java进化论.md",
     "1-java/0-知识点/0-Java进化论（详细整理版）.md",
@@ -403,7 +404,6 @@
     "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒.md",
     "1-java/4-jvm/2-GC机制深度.md",
     "11-高并发高可用",
-    "1-java/2-collection/1-HashMap全解.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",
