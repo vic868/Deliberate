@@ -317,7 +317,7 @@ mindmap
 flowchart LR
   F["🌊 秒杀洪峰<br/>瞬时 10 万 QPS"] --> K[("<b>Kafka 蓄水池</b>")]
   K -->|"⭐ 按后端能力<br/>稳定放出 2000 QPS"| B["后端服务<br/>（不被冲垮）"]
-  B --> OK["✅ 洪峰被"摊平"<br/>延迟换稳定"]
+  B --> OK["✅ 洪峰被摊平<br/>延迟换稳定"]
   classDef bad fill:#ffebee,stroke:#c62828,color:#b71c1c
   classDef k fill:#fff3e0,stroke:#ef6c00,color:#e65100
   classDef ok fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
@@ -525,7 +525,8 @@ sequenceDiagram
 flowchart TB
   AL["⭐ Kafka 默认投递语义<br/><b>at-least-once</b><br/>（不丢，但可能重复）"]
   IDEMP["⭐ 业务幂等<br/>（重复处理 = 无效果）"]
-  AL + IDEMP --> EO["✅ <b>效果上的 Exactly-Once</b><br/>（不丢 + 不重复处理）"]
+  AL --> EO["✅ <b>效果上的 Exactly-Once</b><br/>（不丢 + 不重复处理）"]
+  IDEMP --> EO
   classDef a fill:#fff3e0,stroke:#ef6c00,color:#e65100
   classDef b fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
   classDef c fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
