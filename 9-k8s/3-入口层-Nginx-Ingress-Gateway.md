@@ -50,13 +50,13 @@ graph LR
 
 ## 一、四个角色的定位（一张表说透）
 
-| 角色 | 是什么 | 跑在哪 | OSI | 谁来配置 | 典型实现 |
-|---|---|---|---|---|---|
-| **Nginx（边缘）** | 通用 Web 服务器/反向代理 | K8s **外**（宿主机/独立机器） | L7（可 L4） | 改 `.conf` + reload | Nginx / OpenResty / Tengine |
-| **Ingress** | K8s **资源对象**（规则清单） | etcd 里的一条数据 | L7 语义 | `kubectl apply` YAML | — |
-| **Ingress Controller** | 监听 Ingress 并执行转发的**程序** | K8s **内**（DaemonSet/Deployment） | L7 | 由 Ingress 资源驱动 | ingress-nginx / Traefik |
-| **API/业务网关** | 一个**懂业务的微服务** | K8s **内**（普通 Pod） | L7 | 代码 / 配置中心 | Spring Cloud Gateway / Kong / APISIX |
-| **Service** | K8s 的 **L4 稳定 VIP**（iptables/ipvs） | 内核规则 | **L4** | 由 Endpoints 自动维护 | kube-proxy |
+| 角色                     | 是什么                                | 跑在哪                             | OSI      | 谁来配置                 | 典型实现                                 |
+| ---------------------- | ---------------------------------- | ------------------------------- | -------- | -------------------- | ------------------------------------ |
+| **Nginx（边缘）**          | 通用 Web 服务器/反向代理                    | K8s **外**（宿主机/独立机器）             | L7（可 L4） | 改 `.conf` + reload   | Nginx / OpenResty / Tengine          |
+| **Ingress**            | K8s **资源对象**（规则清单）                 | etcd 里的一条数据                     | L7 语义    | `kubectl apply` YAML | —                                    |
+| **Ingress Controller** | 监听 Ingress 并执行转发的**程序**            | K8s **内**（DaemonSet/Deployment） | L7       | 由 Ingress 资源驱动       | ingress-nginx / Traefik              |
+| **API/业务网关**           | 一个**懂业务的微服务**                      | K8s **内**（普通 Pod）               | L7       | 代码 / 配置中心            | Spring Cloud Gateway / Kong / APISIX |
+| **Service**            | K8s 的 **L4 稳定 VIP**（iptables/ipvs） | 内核规则                            | **L4**   | 由 Endpoints 自动维护     | kube-proxy                           |
 
 ### 1.1 它们各自的"转发依据"
 

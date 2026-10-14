@@ -69,7 +69,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
+                "file": "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -84,7 +84,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2-单机被打爆后，我才读懂 Nginx（详细整理版）"
+              "title": "3-入口层-Nginx-Ingress-Gateway"
             }
           }
         ],
@@ -293,7 +293,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md"
+                "file": "9-k8s/3-入口层-Nginx-Ingress-Gateway.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -374,16 +374,17 @@
   },
   "active": "93b46a2e7552e152",
   "lastOpenFiles": [
+    "9-k8s/0-K8s网络请求全过程.md",
+    "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
+    "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
     "9-k8s/2-系统架构总览.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
-    "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/高并发系统设计.md",
     "架构/Untitled Diagram 1790241846562.drawio",
     "架构/微博整体架构.excalidraw.md",
-    "9-k8s/0-K8s网络请求全过程.md",
     "服务器巡检-192.168.0.103/巡检报告.md",
     "服务器巡检-192.168.0.103/修复清单.md",
     "服务器巡检-192.168.0.106/巡检报告.md",
@@ -401,7 +402,6 @@
     "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "11-高并发高可用/高并发系统设计.md-E",
-    "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒（详细整理版）.md",
     "11-高并发高可用",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
