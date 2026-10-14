@@ -21,26 +21,36 @@
 | `conf/conf.d/40-monitoring.conf` | 同左 | Grafana `:3100`、Prometheus `:9093` |
 | `conf/conf.d/50-tools.conf` | 同左 | Portainer `:9000`、Neo4j `:7474`、MinIO `:9001`、Attu `:8000`、RedisInsight `:5540` |
 | `conf/snippets/ssl-common.conf` | `/opt/nginx/conf/snippets/ssl-common.conf` | SSL 参数片段（各 HTTPS 站点 include 它） |
-| `conf/https-staged/99-https.conf` | `/opt/nginx/conf/https-staged/99-https.conf` | **443 配置（暂存未启用）**，含 `map` 分发 |
+| `conf/https-staged/99-https.conf` | `/opt/nginx/conf/conf.d/99-https.conf` | **443 配置（已启用）**，含 `map` 分发；源文件保留在 `https-staged/` |
+| `ca/106-internal-ca.crt` | — | **内部 CA 证书（公开，给客户端导入信任用）** |
 | `html/index.html` | `/opt/nginx/html/index.html` | 服务导航首页 |
 | `nginx.service` | `/etc/systemd/system/nginx.service` | systemd 单元 |
 
 > 证书文件（`ca.crt`/`ca.key`/`106.crt`/`106.key`）**不入库**——私钥不应进 Git。
 > 生成命令见 [[12-nginx/1-Nginx配置详解与HTTPS证书实践]] §5。
 
-## HTTPS 启用 / 停用
+## HTTPS（已启用，可与 HTTP 并存）
+
+443 已上线，**HTTP 与 HTTPS 并行可用**（没做强制跳转，方便随时回退）。
 
 ```bash
-# 启用 443
+# 停用 HTTPS（回到只有 80）
+sudo rm /opt/nginx/conf/conf.d/99-https.conf && sudo systemctl reload nginx
+
+# 重新启用
 sudo cp /opt/nginx/conf/https-staged/99-https.conf /opt/nginx/conf/conf.d/ \
   && sudo /opt/nginx/sbin/nginx -t && sudo systemctl reload nginx
-
-# 停用（回到只有 80）
-sudo rm /opt/nginx/conf/conf.d/99-https.conf && sudo systemctl reload nginx
 ```
 
-启用前**先在客户端导入 CA**（`/opt/nginx/conf/ssl/ca.crt`），否则浏览器会报证书错误。
-⚠️ 自签证书**不要开 HSTS**，详见手册 §9.3。
+**客户端必须导入 CA 才能真正用上**（否则浏览器报警告、`curl` 报 `(60) unable to get local issuer certificate`）：
+
+```bash
+sudo security add-trusted-cert -d -r trustRoot \
+  -k /Library/Keychains/System.keychain \
+  "$(pwd)/ca/106-internal-ca.crt"
+```
+
+⚠️ 自签证书**不要开 HSTS**，详见手册 §9.3。证书/私钥生成命令见手册 §5。
 
 ## 部署命令
 
@@ -75,7 +85,10 @@ curl -s http://192.168.0.106/healthz
 2. **`._*` 垃圾文件**：macOS 打包会带上，用 `COPYFILE_DISABLE=1` 避免，或传完 `rm -f`。
 3. **YARN 的 proxy_pass 必须写 LAN IP**（`192.168.0.106:8088`），因为它只绑 LAN IP、不绑 `127.0.0.1`。写错就是 502。
 
-## 当前状态
+## 当前状态（2026-10-14）
 
-- 2026-10-14 已上线：`systemctl is-enabled nginx` → `enabled`，`is-active` → `active`
-- 实测 **18/18** 个服务域名入口正常，且所有跳转都指向公网域名，**未改动任何现有服务配置**
+- **80 + 443 并行运行**：`systemctl is-enabled nginx` → `enabled`，`is-active` → `active`
+- HTTP 侧实测 **18/18** 服务域名入口正常，且跳转都指向公网域名
+- HTTPS 侧实测 **18/18** 服务全部 200/302，TLS 1.3 协商成功，证书有效期至 2029-01
+- ⚠️ **客户端 CA 尚未导入** —— 这是唯一待办
+- 全程**未改动任何现有服务的配置**

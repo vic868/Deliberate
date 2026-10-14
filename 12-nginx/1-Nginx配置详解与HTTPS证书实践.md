@@ -7,7 +7,7 @@ tags:
   - 证书
   - 运维
 created: 2026-10-14
-status: HTTPS 已验证待启用
+status: HTTPS 已启用（80/443 并行）· 待导入客户端 CA
 环境: 192.168.0.106 · nginx 1.30.5（源码编译）· OpenSSL 3.5.5 · 内部自建 CA
 关联: "[[12-nginx/0-106服务统一入口配置手册]] · [[服务器巡检-192.168.0.106/巡检报告]] · [[9-k8s/3-入口层-Nginx-Ingress-Gateway]]"
 配置源文件: "[[服务器巡检-192.168.0.106/deploy/nginx/conf/snippets/ssl-common.conf|ssl-common.conf]] · [[服务器巡检-192.168.0.106/deploy/nginx/conf/https-staged/99-https.conf|99-https.conf]]"
@@ -33,25 +33,32 @@ status: HTTPS 已验证待启用
 | 服务器证书 | ✅ 已生成 `/opt/nginx/conf/ssl/106.crt` + `106.key`（RSA 2048，825 天，2029-01 到期） |
 | 证书 SAN | ✅ `*.192.168.0.106.nip.io` + `192.168.0.106.nip.io` + `IP:192.168.0.106` |
 | SSL 参数片段 | ✅ `/opt/nginx/conf/snippets/ssl-common.conf` |
-| 443 配置 | ✅ `/opt/nginx/conf/https-staged/99-https.conf`（**暂存，未启用**） |
+| 443 配置 | ✅ **已启用** `/opt/nginx/conf/conf.d/99-https.conf`（源文件保留在 `https-staged/`） |
 | 语法验证 | ✅ `nginx -t` 通过 |
-| 功能验证 | ✅ 临时启用实测：**10 个服务 200/302 全通，TLS 1.3 协商成功** |
-| **当前线上** | ⚠️ **只开 80，443 未启用**（测完已撤回，`443 监听数 = 0`） |
+| 功能验证 | ✅ **18 个服务 HTTPS 全部 200/302，TLS 1.3 协商成功** |
+| **当前线上** | ✅ **80 与 443 同时可用**（未做强制跳转，HTTP 可随时回退） |
+| 客户端信任 | ⚠️ **尚未导入 CA** → 浏览器/curl 目前报 `unable to get local issuer certificate` |
 
-### 一条命令启用 HTTPS
+### 当前状态与开关命令
 
-```bash
-ssh vic@192.168.0.106
-sudo cp /opt/nginx/conf/https-staged/99-https.conf /opt/nginx/conf/conf.d/ \
-  && sudo /opt/nginx/sbin/nginx -t \
-  && sudo systemctl reload nginx
-```
-
-停用（回到只有 80）：
+**HTTP（80）和 HTTPS（443）现在是并行可用的**，没有做 301 强制跳转——这是刻意的，方便出问题时回退。
 
 ```bash
+# 停用 HTTPS（回到只有 80）
 sudo rm /opt/nginx/conf/conf.d/99-https.conf && sudo systemctl reload nginx
+
+# 重新启用
+sudo cp /opt/nginx/conf/https-staged/99-https.conf /opt/nginx/conf/conf.d/ \
+  && sudo /opt/nginx/sbin/nginx -t && sudo systemctl reload nginx
+
+# 确认状态
+ss -lnt | grep -E ':(80|443) '
 ```
+
+> [!important] 现在必须导入 CA，否则 HTTPS 用不了
+> 服务端已就绪，但**客户端还没有信任这个内部 CA**，所以浏览器会报警告页、
+> `curl` 会报 `(60) SSL certificate failed`。导入方法见 §7，证书文件已放在
+> `服务器巡检-192.168.0.106/deploy/nginx/ca/106-internal-ca.crt`。
 
 > [!warning] 启用前请先读完 §7（客户端信任 CA）
 > 自签证书**浏览器默认不信任**。不先导入 CA 就启用 HTTPS，你会看到一片红色警告页。
@@ -568,19 +575,37 @@ server {
 
 ### 7.1 macOS
 
+> [!tip] CA 证书已经帮你取到本地了
+> 路径：`服务器巡检-192.168.0.106/deploy/nginx/ca/106-internal-ca.crt`
+> 指纹 `SHA256:C7:50:41:B7:F8:CB:25:94:D4:3E:DC:A9:33:31:06:8C:E1:C8:F4:93:A3:28:FC:56:52:82:37:5D:0F:1B:F2:EA`
+
 ```bash
-# 1) 把 CA 证书从服务器拷到本地
-scp vic@192.168.0.106:/opt/nginx/conf/ssl/ca.crt ~/Downloads/vic-ca.crt
-
-# 2) 导入系统钥匙串并标记为受信任根证书（需要输 Mac 密码）
+# 【方式一】命令行导入（推荐，一次性对所有浏览器/curl 生效）
+#   -d = 加入管理员(系统)信任域，需要输一次 Mac 密码
+#   用「系统」钥匙串的好处：所有用户、所有浏览器都信任
 sudo security add-trusted-cert -d -r trustRoot \
-  -k /Library/Keychains/System.keychain ~/Downloads/vic-ca.crt
+  -k /Library/Keychains/System.keychain \
+  "/Users/vic/workspace-obsidian/Deliberate/服务器巡检-192.168.0.106/deploy/nginx/ca/106-internal-ca.crt"
 
-# 3) 验证（应该输出 OK）
-security verify-cert -c ~/Downloads/vic-ca.crt
+# 验证（应输出 cert verification: OK 之类）
+security verify-cert -c "/Users/vic/workspace-obsidian/Deliberate/服务器巡检-192.168.0.106/deploy/nginx/ca/106-internal-ca.crt"
 ```
 
-图形化替代：双击 `vic-ca.crt` → 加入"系统"钥匙串 → 双击该证书 → 展开"信任" → 把"使用此证书时"设为**始终信任**。
+**方式二（图形化）**：双击 `106-internal-ca.crt` → 加入「系统」钥匙串 →
+在钥匙串访问里找到 `Vic Root CA` → 双击 → 展开「信任」→「使用此证书时」设为**始终信任**。
+
+**导入后自测**：
+
+```bash
+# 这行不再报 (60) unable to get local issuer certificate 就成功了
+curl -sS https://192.168.0.106/healthz
+curl -sS --resolve flink.192.168.0.106.nip.io:443:192.168.0.106 \
+     https://flink.192.168.0.106.nip.io/ -o /dev/null -w '%{http_code}\n'
+```
+
+> [!note] 如果不想导入 CA
+> 也可以就用 HTTP（80 端口照常可用），或者浏览器里点「高级 → 继续前往」忽略警告。
+> 代价是每个域名每次都要点一次，而且 `curl`/脚本会一直报错。
 
 ### 7.2 Windows
 
@@ -752,9 +777,9 @@ sudo systemctl restart chrony
 | `/opt/nginx/conf/ssl/106.crt` | 泛域名服务器证书（nginx 用） |
 | `/opt/nginx/conf/ssl/106.key` | 服务器私钥（权限 600） |
 | `/opt/nginx/conf/snippets/ssl-common.conf` | SSL 参数片段（所有 HTTPS 站点 include 它） |
-| `/opt/nginx/conf/https-staged/99-https.conf` | 443 站点配置（**暂存，未启用**） |
+| `/opt/nginx/conf/conf.d/99-https.conf` | 443 站点配置（**已启用**；源文件在 `https-staged/`） |
 
-### 10.2 启用步骤
+### 10.2 启用步骤（已完成，留作参考）
 
 ```bash
 # ① 启用 443
@@ -770,34 +795,35 @@ curl -k --resolve flink.192.168.0.106.nip.io:443:192.168.0.106 \
 open https://flink.192.168.0.106.nip.io/
 ```
 
-### 10.3 实测验证结果（临时启用后测得）
+### 10.3 实测验证结果（已启用，2026-10-14）
 
 | 项目 | 结果 |
 |---|---|
 | `nginx -t` | ✅ 通过 |
-| 443 监听 | ✅ 2 socket（IPv4 + IPv6） |
+| 80 / 443 监听 | ✅ 各 2 socket（IPv4 + IPv6），**并行可用** |
 | `/healthz`（HTTPS） | ✅ `nginx-ok-https` |
 | 导航页（apex 域名） | ✅ 200 |
-| flink / dinky / doris / portainer / minio | ✅ 200 |
-| hdfs / yarn / hue / kibana / grafana | ✅ 302（正常跳转） |
+| **18 个服务 HTTPS 全量复测** | ✅ 全部通过（flink/dinky/hive/doris/hbase/kafka-ui/portainer/neo4j/minio/attu/redisinsight = 200；hdfs/yarn/jobhistory/hue/kibana/grafana/prometheus = 302） |
+| HTTP(80) 是否受影响 | ✅ 不受影响，flink 仍 200 |
 | TLS 版本 | ✅ **TLSv1.3**，套件 `TLS_AES_256_GCM_SHA384` |
-| 证书 subject | `CN=*.192.168.0.106.nip.io` |
-| 证书 issuer | `CN=Vic Root CA` |
-| 验证后状态 | ✅ 已撤回，`443 监听数 = 0`，80 服务正常 |
+| 证书 subject / issuer | `CN=*.192.168.0.106.nip.io` / `CN=Vic Root CA` |
+| 证书有效期 | 2026-10-14 → **2029-01-16** |
+| 客户端信任 | ⚠️ **待导入 CA**（当前 curl 报 `(60) unable to get local issuer certificate`） |
 
-> [!important] 关于"已验证但未启用"
-> 我把 HTTPS **完整跑通验证了一遍再撤回**，是为了给你一个"确认可用"的结论，
-> 同时**不改变你当前能正常使用的 80 访问方式**。
-> 启用/停用都是一条命令，随时切换。
+> [!important] 启用方式：80 与 443 并存，没有强制跳转
+> 之所以不做 301 强制跳转，是为了**随时可回退**：万一某个服务在 HTTPS 下因"混合内容"出问题，
+> 你直接换回 `http://` 即可，不用改 nginx。
+> 等 18 个服务都逐个验证过、CA 也导入信任了，再考虑加强制跳转（见 §6.4）。
 
 ### 10.4 还需要注意的
 
 | 项 | 说明 |
 |---|---|
-| ⚠️ 混合内容 | Hadoop/HBase/Doris 的 UI 可能硬编码 http 链接，启用 HTTPS 后部分功能可能异常。**建议先在 80 上用，需要加密时再逐个服务验证** |
+| ⚠️ **CA 还没导入客户端** | 这是现在的**唯一阻塞项**。导入前浏览器会报警告，`curl` 报证书错误。导入后 18 个域名一次性全部受信任 |
+| ⚠️ 混合内容 | Hadoop/HBase/Doris 的 UI 可能硬编码 http 链接，HTTPS 下部分功能可能异常。**出问题就用 80 访问**（仍然可用） |
 | ⚠️ 全站无鉴权 | nginx 入口目前**没有 Basic Auth**，18 个控制台局域网内谁都能进（见上一篇 §10.1） |
 | ⚠️ `ca.key` 保管 | 根 CA 私钥泄露 = 任何人都能签出被你信任的证书。权限 600，别拷来拷去 |
-| 💡 建议顺序 | 先 **Basic Auth**（10 分钟，收益最大）→ 再 **HTTPS** → 最后考虑 HSTS/强制跳转 |
+| 💡 建议顺序 | HTTPS 已开 → 接着做 **Basic Auth** → 逐个验证 Hadoop 系 UI → 最后才考虑 HSTS/强制跳转 |
 
 ---
 
