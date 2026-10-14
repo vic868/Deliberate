@@ -1,6 +1,6 @@
 <mxfile host="embed.diagrams.net">
   <diagram id="0" name="Page-1">
-    <mxGraphModel dx="1192" dy="931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1564" dy="931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -31,8 +31,44 @@
         <mxCell id="TcwC968GG99V6PZgZuYD-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="基础服务层" vertex="1">
           <mxGeometry height="60" width="120" x="100" y="750" as="geometry" />
         </mxCell>
-        <mxCell id="TcwC968GG99V6PZgZuYD-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+        <mxCell id="TcwC968GG99V6PZgZuYD-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="what" vertex="1">
           <mxGeometry height="760" width="240" x="320" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-13" edge="1" parent="1" source="TcwC968GG99V6PZgZuYD-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TcwC968GG99V6PZgZuYD-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font color=&quot;#0d47a1&quot; face=&quot;??, ??, ui-sans-serif, -apple-system, system-ui, system-ui, Segoe UI, Google Sans Flex, Roboto, Inter Variable, Inter, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 16px; caret-color: rgb(34, 34, 34); text-wrap-mode: nowrap;&quot;&gt;Nginx / 网关 / LB&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="370" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-15" edge="1" parent="1" source="TcwC968GG99V6PZgZuYD-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TcwC968GG99V6PZgZuYD-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(13, 71, 161); font-family: &amp;quot;??&amp;quot;, &amp;quot;??&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, system-ui, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Google Sans Flex&amp;quot;, Roboto, &amp;quot;Inter Variable&amp;quot;, Inter, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, sans-serif; font-size: 16px; caret-color: rgb(34, 34, 34); white-space: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;业务服务（线程池）&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="370" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-17" edge="1" parent="1" source="TcwC968GG99V6PZgZuYD-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TcwC968GG99V6PZgZuYD-16" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(13, 71, 161); font-family: &amp;quot;??&amp;quot;, &amp;quot;??&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, system-ui, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Google Sans Flex&amp;quot;, Roboto, &amp;quot;Inter Variable&amp;quot;, Inter, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, sans-serif; font-size: 16px; caret-color: rgb(34, 34, 34); white-space: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;Redis / 本地缓存&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="370" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-19" edge="1" parent="1" source="TcwC968GG99V6PZgZuYD-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TcwC968GG99V6PZgZuYD-18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(13, 71, 161); font-family: &amp;quot;??&amp;quot;, &amp;quot;??&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, system-ui, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Google Sans Flex&amp;quot;, Roboto, &amp;quot;Inter Variable&amp;quot;, Inter, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, sans-serif; font-size: 16px; caret-color: rgb(34, 34, 34); white-space: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;MySQL / 磁盘 IO&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="370" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(13, 71, 161); font-family: &amp;quot;??&amp;quot;, &amp;quot;??&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, system-ui, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Google Sans Flex&amp;quot;, Roboto, &amp;quot;Inter Variable&amp;quot;, Inter, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, sans-serif; font-size: 16px; caret-color: rgb(34, 34, 34); white-space: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;带宽 / CPU / 内存&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="370" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="when" vertex="1">
+          <mxGeometry height="760" width="240" x="640" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="where" vertex="1">
+          <mxGeometry height="760" width="240" x="960" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="how" vertex="1">
+          <mxGeometry height="760" width="240" x="1300" y="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
