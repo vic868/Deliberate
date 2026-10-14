@@ -69,7 +69,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
+                "file": "9-k8s/2-系统架构总览.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -84,7 +84,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "3-入口层-Nginx-Ingress-Gateway"
+              "title": "2-系统架构总览"
             }
           }
         ],
@@ -293,7 +293,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "9-k8s/3-入口层-Nginx-Ingress-Gateway.md"
+                "file": "9-k8s/2-系统架构总览.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -374,10 +374,10 @@
   },
   "active": "93b46a2e7552e152",
   "lastOpenFiles": [
+    "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
     "9-k8s/0-K8s网络请求全过程.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
-    "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
     "9-k8s/2-系统架构总览.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
