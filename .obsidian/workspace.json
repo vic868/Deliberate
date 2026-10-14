@@ -140,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -267,7 +267,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.smm.md"
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -345,10 +345,10 @@
       }
     ]
   },
-  "active": "7425856c79ab980e",
+  "active": "5743d172291e31f1",
   "lastOpenFiles": [
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
