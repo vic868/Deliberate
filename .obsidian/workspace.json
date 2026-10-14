@@ -81,12 +81,24 @@
             "id": "1789c364be31b764",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md"
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "excalidraw-icon",
-              "title": "0-高并发.excalidraw"
+              "icon": "lucide-file",
+              "title": "高并发系统设计（详细整理版）"
             }
           }
         ],
@@ -364,8 +376,8 @@
   },
   "active": "1789c364be31b764",
   "lastOpenFiles": [
-    "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
+    "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/高并发系统设计.md",
