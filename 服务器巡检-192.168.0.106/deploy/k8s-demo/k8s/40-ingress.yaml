@@ -1,0 +1,52 @@
+# ============================================================
+# Ingress：把集群内的 Service 暴露成域名入口
+# 前置：先装好 ingress-nginx（见 9-k8s/6-实战 文档的上半部分）
+# 应用：kubectl apply -f k8s/40-ingress.yaml
+# ============================================================
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-api-ingress
+  namespace: demo
+  annotations:
+    # 把请求体上限提到 10M
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+    # 后端响应超时（默认 60s，学习环境调小便于暴露问题）
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "30"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "5"
+spec:
+  ingressClassName: nginx          # ★ 与 IngressClass 名字一致
+  rules:
+    # 方案 A：有 DNS 时用真域名
+    - host: demo.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: demo-api
+                port:
+                  number: 8080
+    # 方案 B：没有 DNS 时，用 nip.io 直接映射到 IP（无需改 hosts）
+    #   浏览器访问 http://192.168.0.106.nip.io/api/health 即可
+    - host: 192.168.0.106.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: demo-api
+                port:
+                  number: 8080
+  # ── 可选：TLS ──
+  # 需要 https 时取消注释，并先生成自签证书做 Secret：
+  #   openssl req -x509 -nodes -newkey rsa:2048 -days 3650 \
+  #     -keyout demo.key -out demo.crt \
+  #     -subj "/CN=demo.local" \
+  #     -addext "subjectAltName=DNS:demo.local,DNS:demo.local,IP:192.168.0.106"
+  #   kubectl -n demo create secret tls demo-tls --cert=demo.crt --key=demo.key
+  # tls:
+  #   - hosts: ["demo.local"]
+  #     secretName: demo-tls

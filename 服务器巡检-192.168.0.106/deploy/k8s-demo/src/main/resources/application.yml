@@ -1,0 +1,78 @@
+# ============================================================
+# demo-api 应用配置
+# 所有外部依赖地址都来自环境变量 —— 由 K8s 的 ConfigMap / Secret 注入。
+# 本地直接跑时用默认值（默认指向 106 宿主机 Docker）。
+# ============================================================
+spring:
+  application:
+    name: demo-api
+
+  # ---------- MySQL（106 宿主机 Docker，3306）----------
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:192.168.0.106}:${MYSQL_PORT:3306}/${MYSQL_DB:mysql}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&connectTimeout=3000&socketTimeout=5000
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      connection-timeout: 3000
+      validation-timeout: 2000
+      # ★ 关键：数据库暂时连不上时不要让应用启动失败，
+      #   否则 K8s 里会出现 CrashLoopBackOff，排障很不友好。
+      initialization-fail-timeout: -1
+
+  # ---------- Redis（106 宿主机 Docker，6379）----------
+  data:
+    redis:
+      host: ${REDIS_HOST:192.168.0.106}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      timeout: 3s
+      connect-timeout: 2s
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 4
+          min-idle: 0
+
+server:
+  port: 8080
+  # 优雅停机：收到 SIGTERM 后停止收新请求、等待在途请求结束
+  shutdown: graceful
+
+spring.lifecycle:
+  timeout-per-shutdown-phase: 20s
+
+# ---------- Actuator / 探针 ----------
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true          # 开启 liveness / readiness 两个探针组
+  health:
+    db:
+      enabled: true            # 保留依赖健康检查（放在 /actuator/health 里看）
+    redis:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: demo-api
+    version: 1.0.0
+    desc: 最小业务服务，验证 k3s 业务 Pod 对接宿主机 Docker 中间件
+
+logging:
+  level:
+    root: INFO
+    com.demo: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

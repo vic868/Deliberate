@@ -1,0 +1,47 @@
+# ============================================================
+# HPA：按 CPU 自动扩缩容（2 ~ 6 副本）
+# 前置：metrics-server 已在跑（你的 k3s kube-system 里已有）
+# 应用：kubectl apply -f k8s/50-hpa.yaml
+# 验证：kubectl -n demo get hpa -w
+# ============================================================
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: demo-api-hpa
+  namespace: demo
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: demo-api
+  minReplicas: 2
+  maxReplicas: 6
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 30
+      policies:
+        - type: Percent
+          value: 100
+          periodSeconds: 30
+    scaleDown:
+      # 缩容慢一点，避免抖动
+      stabilizationWindowSeconds: 300
+      policies:
+        - type: Pods
+          value: 1
+          periodSeconds: 60
+
+# ── 压测命令（在 106 上执行，观察 HPA 扩容）──
+# 用 k3s 里临时起一个压测 Pod：
+#   kubectl -n demo run loadtest --rm -it --image=busybox:1.36 --restart=Never -- \
+#     sh -c "while true; do wget -q -O- http://demo-api:8080/api/health >/dev/null; done"
+#
+# 观察：
+#   kubectl -n demo get hpa,pods -w

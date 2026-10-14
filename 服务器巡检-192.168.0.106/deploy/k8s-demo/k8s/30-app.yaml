@@ -1,0 +1,135 @@
+# ============================================================
+# Deployment（无状态业务）+ Service（集群内稳定 VIP）
+# 应用：kubectl apply -f k8s/30-app.yaml
+#
+# 这是本套 YAML 的核心：把"一个无状态 Spring Boot 服务跑成 K8s 工作负载"。
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-api
+  namespace: demo
+  labels:
+    app: demo-api
+spec:
+  replicas: 2                     # 两个副本，验证 Service 负载均衡
+  selector:
+    matchLabels:
+      app: demo-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0           # 滚动更新期间不减少可用副本
+  template:
+    metadata:
+      labels:
+        app: demo-api
+    spec:
+      # 给 K8s 时间：preStop sleep 8s + 应用优雅停机 20s，留足余量
+      terminationGracePeriodSeconds: 45
+      containers:
+        - name: demo-api
+          image: demo-api:1.0.0
+          # ★ 本地导入 k3s 的镜像，不是从 registry 拉，所以用 IfNotPresent
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: http
+              containerPort: 8080
+
+          # ── 配置注入：ConfigMap 提供普通变量，Secret 提供密码 ──
+          envFrom:
+            - configMapRef:
+                name: demo-config
+            - secretRef:
+                name: demo-secret
+
+          # ── 探针 ──
+          # ★ 注意用 /liveness 和 /readiness 这两个"探针专用"端点，
+          #   不要用 /actuator/health —— 它包含 db/redis 检查，
+          #   中间件一抖就会把 Pod 判死，引发无谓重启。
+          startupProbe:                       # 启动慢也不怕：先给足 60s×5 的启动窗口
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            periodSeconds: 5
+            failureThreshold: 12
+          livenessProbe:                      # 只判断进程是否僵死
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          readinessProbe:                     # 判断能否接流量
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+          # ── 资源 ──
+          resources:
+            requests:
+              cpu: 100m
+              memory: 384Mi
+            limits:
+              cpu: "1"
+              memory: 768Mi          # JVM 按 MaxRAMPercentage=70 自动算堆
+
+          # ── 优雅停机 ──
+          # Pod 被删时：先执行 preStop 等待，让 Endpoints 把本 Pod 摘掉，
+          # 期间应用仍在正常服务；之后再发 SIGTERM 触发 Spring 优雅停机。
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 8"]
+
+          # 安全基线：非 root、禁提权
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+
+      volumes:
+        - name: tmp
+          emptyDir: {}
+
+      # 让两个副本尽量分散（单机 k3s 只有 1 个节点，这里是为将来多节点预留）
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: demo-api
+
+---
+# ============================================================
+# Service：给两个 Pod 一个稳定的 ClusterIP + DNS 名
+#   demo-api.demo.svc.cluster.local:8080
+# ============================================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-api
+  namespace: demo
+  labels:
+    app: demo-api
+spec:
+  type: ClusterIP
+  selector:
+    app: demo-api
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+      protocol: TCP
