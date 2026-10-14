@@ -53,12 +53,12 @@
             "id": "7425856c79ab980e",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "excalidraw",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.smm.md"
+                "file": "11-高并发高可用/0-高并发.excalidraw.md"
               },
-              "icon": "smm-icon",
-              "title": "高并发系统设计（详细整理版）.smm"
+              "icon": "excalidraw-icon",
+              "title": "0-高并发.excalidraw"
             }
           }
         ],
@@ -140,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "file": "11-高并发高可用/0-高并发.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -267,7 +267,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md"
+                "file": "11-高并发高可用/0-高并发.excalidraw.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -345,7 +345,7 @@
       }
     ]
   },
-  "active": "5743d172291e31f1",
+  "active": "7425856c79ab980e",
   "lastOpenFiles": [
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
