@@ -83,7 +83,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2-redis/一次讲透Redis（详细整理版）.md",
+                "file": "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -98,7 +98,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "一次讲透Redis（详细整理版）"
+              "title": "2-单机被打爆后，我才读懂 Nginx（详细整理版）"
             }
           }
         ],
@@ -374,8 +374,9 @@
       }
     ]
   },
-  "active": "1789c364be31b764",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "2-redis/一次讲透Redis（详细整理版）.md",
     "1-java/0-知识点/0-Java进化论（详细整理版）.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
@@ -388,7 +389,6 @@
     "3-mq/2-Kafka/0-一次了解 Kafka.md",
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
-    "2-redis/一次讲透Redis（详细整理版）.md",
     "2-redis/一次讲透Redis.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
     "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
