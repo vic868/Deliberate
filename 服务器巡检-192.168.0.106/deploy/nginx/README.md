@@ -20,8 +20,27 @@
 | `conf/conf.d/30-data.conf` | 同左 | Doris `:18030`、HBase `:16010`、Kibana `:5601`、Kafka UI `:28080` |
 | `conf/conf.d/40-monitoring.conf` | 同左 | Grafana `:3100`、Prometheus `:9093` |
 | `conf/conf.d/50-tools.conf` | 同左 | Portainer `:9000`、Neo4j `:7474`、MinIO `:9001`、Attu `:8000`、RedisInsight `:5540` |
+| `conf/snippets/ssl-common.conf` | `/opt/nginx/conf/snippets/ssl-common.conf` | SSL 参数片段（各 HTTPS 站点 include 它） |
+| `conf/https-staged/99-https.conf` | `/opt/nginx/conf/https-staged/99-https.conf` | **443 配置（暂存未启用）**，含 `map` 分发 |
 | `html/index.html` | `/opt/nginx/html/index.html` | 服务导航首页 |
 | `nginx.service` | `/etc/systemd/system/nginx.service` | systemd 单元 |
+
+> 证书文件（`ca.crt`/`ca.key`/`106.crt`/`106.key`）**不入库**——私钥不应进 Git。
+> 生成命令见 [[12-nginx/1-Nginx配置详解与HTTPS证书实践]] §5。
+
+## HTTPS 启用 / 停用
+
+```bash
+# 启用 443
+sudo cp /opt/nginx/conf/https-staged/99-https.conf /opt/nginx/conf/conf.d/ \
+  && sudo /opt/nginx/sbin/nginx -t && sudo systemctl reload nginx
+
+# 停用（回到只有 80）
+sudo rm /opt/nginx/conf/conf.d/99-https.conf && sudo systemctl reload nginx
+```
+
+启用前**先在客户端导入 CA**（`/opt/nginx/conf/ssl/ca.crt`），否则浏览器会报证书错误。
+⚠️ 自签证书**不要开 HSTS**，详见手册 §9.3。
 
 ## 部署命令
 
