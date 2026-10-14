@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>192.168.0.106 · 服务导航</title>
+<style>
+  :root{
+    --bg:#0f172a; --card:#1e293b; --line:#334155; --fg:#e2e8f0;
+    --muted:#94a3b8; --accent:#38bdf8; --ok:#34d399; --warn:#fbbf24;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+  header{padding:28px 24px 18px;border-bottom:1px solid var(--line)}
+  h1{margin:0 0 6px;font-size:22px;letter-spacing:.5px}
+  .sub{color:var(--muted);font-size:13px}
+  .sub code{background:#0b1220;padding:2px 6px;border-radius:4px;color:var(--accent)}
+  main{padding:20px 24px 60px;max-width:1280px;margin:0 auto}
+  section{margin-bottom:30px}
+  h2{font-size:15px;margin:0 0 12px;color:var(--accent);
+     border-left:3px solid var(--accent);padding-left:9px;font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+        padding:13px 15px;transition:.15s}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card a{color:var(--fg);text-decoration:none;font-weight:600;font-size:14px;
+          display:block;margin-bottom:5px}
+  .card a:hover{color:var(--accent)}
+  .meta{color:var(--muted);font-size:12px;font-family:ui-monospace,Menlo,Consolas,monospace;
+        word-break:break-all}
+  .note{background:#1c1917;border:1px solid #44403c;border-radius:10px;
+        padding:14px 16px;color:#d6d3d1;font-size:13px;margin-bottom:26px}
+  .note b{color:var(--warn)}
+  .badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;
+         background:#064e3b;color:var(--ok);margin-left:6px;vertical-align:middle}
+  footer{color:var(--muted);font-size:12px;text-align:center;padding:22px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header>
+  <h1>192.168.0.106 &middot; 服务导航</h1>
+  <div class="sub">
+    nginx 1.30.5 统一入口 &middot; 主机名方式反代，无需修改各服务配置 &middot;
+    域名后缀 <code>.192.168.0.106.nip.io</code>（泛解析到本机）
+  </div>
+</header>
+
+<main>
+  <div class="note">
+    <b>说明：</b>下方「域名入口」走 nginx 反代（推荐，链接干净、可统一加 TLS/鉴权）；
+    「直连端口」是各服务原始端口，未经过 nginx。若某个域名入口打不开，
+    先用直连端口确认服务本身是活的，再查 nginx 日志
+    <code>/opt/nginx/logs/</code>。
+  </div>
+
+  <section>
+    <h2>计算 / K8s</h2>
+    <div class="grid">
+      <div class="card"><a href="http://flink.192.168.0.106.nip.io">Flink Web UI</a>
+        <div class="meta">flink.192.168.0.106.nip.io &rarr; :30081 <span class="badge">NodePort</span></div></div>
+      <div class="card"><a href="http://dinky.192.168.0.106.nip.io">Dinky</a>
+        <div class="meta">dinky.192.168.0.106.nip.io &rarr; :30888 <span class="badge">NodePort</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Hadoop 全家桶</h2>
+    <div class="grid">
+      <div class="card"><a href="http://hdfs.192.168.0.106.nip.io">HDFS NameNode</a>
+        <div class="meta">hdfs.192.168.0.106.nip.io &rarr; :9870</div></div>
+      <div class="card"><a href="http://yarn.192.168.0.106.nip.io">YARN ResourceManager</a>
+        <div class="meta">yarn.192.168.0.106.nip.io &rarr; :8088</div></div>
+      <div class="card"><a href="http://jobhistory.192.168.0.106.nip.io">MapReduce JobHistory</a>
+        <div class="meta">jobhistory.192.168.0.106.nip.io &rarr; :19888</div></div>
+      <div class="card"><a href="http://hive.192.168.0.106.nip.io">HiveServer2 Web</a>
+        <div class="meta">hive.192.168.0.106.nip.io &rarr; :10002</div></div>
+      <div class="card"><a href="http://hue.192.168.0.106.nip.io">Hue</a>
+        <div class="meta">hue.192.168.0.106.nip.io &rarr; :8888 &middot; 快捷入口 /hue/</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>数据服务</h2>
+    <div class="grid">
+      <div class="card"><a href="http://doris.192.168.0.106.nip.io">Apache Doris FE</a>
+        <div class="meta">doris.192.168.0.106.nip.io &rarr; :18030</div></div>
+      <div class="card"><a href="http://hbase.192.168.0.106.nip.io">HBase Master</a>
+        <div class="meta">hbase.192.168.0.106.nip.io &rarr; :16010</div></div>
+      <div class="card"><a href="http://kibana.192.168.0.106.nip.io">Kibana</a>
+        <div class="meta">kibana.192.168.0.106.nip.io &rarr; :5601</div></div>
+      <div class="card"><a href="http://kafka-ui.192.168.0.106.nip.io">Kafka UI</a>
+        <div class="meta">kafka-ui.192.168.0.106.nip.io &rarr; :28080</div></div>
+      <div class="card"><a href="/es/_cluster/health">Elasticsearch API</a>
+        <div class="meta">/es/ &rarr; :9200 &middot; 例 /es/_cluster/health</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>监控</h2>
+    <div class="grid">
+      <div class="card"><a href="http://grafana.192.168.0.106.nip.io">Grafana</a>
+        <div class="meta">grafana.192.168.0.106.nip.io &rarr; :3100</div></div>
+      <div class="card"><a href="http://prometheus.192.168.0.106.nip.io">Prometheus</a>
+        <div class="meta">prometheus.192.168.0.106.nip.io &rarr; :9093</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>工具</h2>
+    <div class="grid">
+      <div class="card"><a href="http://portainer.192.168.0.106.nip.io">Portainer</a>
+        <div class="meta">portainer.192.168.0.106.nip.io &rarr; :9000</div></div>
+      <div class="card"><a href="http://neo4j.192.168.0.106.nip.io">Neo4j Browser</a>
+        <div class="meta">neo4j.192.168.0.106.nip.io &rarr; :7474 &middot; Bolt :7687</div></div>
+      <div class="card"><a href="http://minio.192.168.0.106.nip.io">MinIO Console</a>
+        <div class="meta">minio.192.168.0.106.nip.io &rarr; :9001 &middot; S3 :9002</div></div>
+      <div class="card"><a href="http://attu.192.168.0.106.nip.io">Attu (Milvus)</a>
+        <div class="meta">attu.192.168.0.106.nip.io &rarr; :8000</div></div>
+      <div class="card"><a href="http://redisinsight.192.168.0.106.nip.io">RedisInsight</a>
+        <div class="meta">redisinsight.192.168.0.106.nip.io &rarr; :5540</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>nginx 自身</h2>
+    <div class="grid">
+      <div class="card"><a href="/healthz">健康检查</a>
+        <div class="meta">GET /healthz &rarr; nginx-ok</div></div>
+      <div class="card"><a href="/nginx_status">stub_status</a>
+        <div class="meta">仅 127.0.0.1 与 192.168.0.0/24 可访问</div></div>
+      <div class="card"><a href="http://192.168.0.106:10591">宝塔面板</a>
+        <div class="meta">:10591 &middot; 需带安全入口路径 &middot; 不经 nginx</div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  nginx/1.30.5 &middot; 配置目录 /opt/nginx/conf/conf.d/ &middot; 日志 /opt/nginx/logs/
+</footer>
+</body>
+</html>

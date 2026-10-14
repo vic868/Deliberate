@@ -1,0 +1,31 @@
+[Unit]
+Description=nginx 1.30.5 (源码编译版, prefix=/opt/nginx) - 106 服务统一入口
+Documentation=https://nginx.org/en/docs/
+After=network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/opt/nginx/logs/nginx.pid
+
+# 启动前先校验配置，配错了就拒绝启动（避免把已有的 80 端口服务搞坏）
+ExecStartPre=/opt/nginx/sbin/nginx -t -q
+ExecStart=/opt/nginx/sbin/nginx
+ExecReload=/opt/nginx/sbin/nginx -s reload
+ExecStop=/opt/nginx/sbin/nginx -s quit
+
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=30s
+
+LimitNOFILE=65535
+
+# ── 安全加固 ──
+PrivateTmp=true
+NoNewPrivileges=true
+# 如需更严格（/usr /etc 只读），取消下一行注释；
+# 注意 nginx 的临时目录都在 --prefix=/opt/nginx 下，不受影响。
+#ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

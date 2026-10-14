@@ -138,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md",
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -265,7 +265,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md"
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -343,12 +343,22 @@
       }
     ]
   },
-  "active": "3ffa6c21efcc9f91",
+  "active": "5743d172291e31f1",
   "lastOpenFiles": [
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
-    "11-高并发高可用/0-1-高并发高可用.drawio",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
+    "服务器巡检-192.168.0.106/deploy/nginx/html/index.html",
+    "服务器巡检-192.168.0.106/deploy/nginx/html",
+    "服务器巡检-192.168.0.106/deploy/nginx/nginx.service",
+    "服务器巡检-192.168.0.106/deploy/nginx/conf/conf.d/50-tools.conf",
+    "服务器巡检-192.168.0.106/deploy/nginx/conf/conf.d/40-monitoring.conf",
+    "服务器巡检-192.168.0.106/deploy/nginx/conf/conf.d/30-data.conf",
+    "服务器巡检-192.168.0.106/deploy/nginx/conf/conf.d/20-hadoop.conf",
+    "服务器巡检-192.168.0.106/deploy/nginx/conf/conf.d/10-k8s.conf",
+    "服务器巡检-192.168.0.106/deploy/nginx/conf/conf.d/00-default.conf",
+    "服务器巡检-192.168.0.106/deploy/nginx/conf/nginx.conf",
+    "服务器巡检-192.168.0.106/deploy/nginx/conf/conf.d",
     "11-高并发高可用/0-高并发.excalidraw.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
@@ -359,15 +369,6 @@
     "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
     "9-k8s/6-实战-业务上k3s与对接Docker中间件.md",
     "服务器巡检-192.168.0.106/deploy/k8s-demo/README.md",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/scripts/verify.sh",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/scripts/install-ingress-nginx.sh",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/scripts/build-image.sh",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/scripts",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/50-hpa.yaml",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/40-ingress.yaml",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/30-app.yaml",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/20-middleware-endpoints.yaml",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/k8s/10-config.yaml",
     "9-k8s/5-106服务梳理与K8s迁移规划.md",
     "9-k8s/4-状态型中间件上不上K8s.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
@@ -380,7 +381,6 @@
     "服务器巡检-192.168.0.103/修复清单.md",
     "服务器巡检-192.168.0.106/巡检报告.md",
     "2-redis/一次讲透Redis（详细整理版）.md",
-    "1-java/0-知识点/0-Java进化论（详细整理版）.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
