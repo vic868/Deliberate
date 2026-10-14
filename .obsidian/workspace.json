@@ -83,7 +83,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/0-知识点/0-Java进化论（详细整理版）.md",
+                "file": "2-redis/一次讲透Redis（详细整理版）.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -98,7 +98,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "0-Java进化论（详细整理版）"
+              "title": "一次讲透Redis（详细整理版）"
             }
           }
         ],
@@ -376,10 +376,10 @@
   },
   "active": "1789c364be31b764",
   "lastOpenFiles": [
+    "1-java/0-知识点/0-Java进化论（详细整理版）.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
     "1-java/0-知识点/0-Java进化论.md",
-    "1-java/0-知识点/0-Java进化论（详细整理版）.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
