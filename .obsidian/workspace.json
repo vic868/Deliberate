@@ -83,7 +83,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "file": "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -98,7 +98,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "高并发系统设计（详细整理版）"
+              "title": "1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！"
             }
           }
         ],
@@ -376,6 +376,8 @@
   },
   "active": "1789c364be31b764",
   "lastOpenFiles": [
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
+    "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "3-mq/2-Kafka/0-一次了解 Kafka（详细整理版）.md",
     "3-mq/2-Kafka/4-消费者与Rebalance.md",
     "3-mq/2-Kafka/0-一次了解 Kafka.md",
@@ -383,7 +385,6 @@
     "3-mq/2-Kafka/kafka 问题优化和建议.md",
     "2-redis/一次讲透Redis（详细整理版）.md",
     "2-redis/一次讲透Redis.md",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
     "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
@@ -403,7 +404,6 @@
     "5-bigdata/0-flink/Flink入门：1条河讲透实时数据处理（详细整理版）.md",
     "5-bigdata/0-flink/15-FlinkCEP复杂事件处理.md",
     "1-java/2-collection/5-并发容器专题.md",
-    "1-java/1-juc/了解一下：ConcurrentHashMap（详细整理版）.md",
     "5-bigdata/4-hive",
     "5-bigdata/2-hbase",
     "数据库面试",
