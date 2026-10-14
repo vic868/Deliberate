@@ -71,7 +71,7 @@
               "state": {
                 "file": "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
                 "mode": "source",
-                "source": true,
+                "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
                   "collapseAll": false,
@@ -286,9 +286,21 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "0a1b153ed9f005cd",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md"
+              },
+              "icon": "lucide-info",
+              "title": "笔记属性"
+            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "horizontal",
