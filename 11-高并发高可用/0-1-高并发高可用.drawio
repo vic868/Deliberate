@@ -1,9 +1,39 @@
 <mxfile host="embed.diagrams.net">
   <diagram id="0" name="Page-1">
-    <mxGraphModel dx="1514" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1192" dy="931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="TcwC968GG99V6PZgZuYD-3" edge="1" parent="1" source="TcwC968GG99V6PZgZuYD-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TcwC968GG99V6PZgZuYD-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="接入层" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-5" edge="1" parent="1" source="TcwC968GG99V6PZgZuYD-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TcwC968GG99V6PZgZuYD-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="应用层" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-7" edge="1" parent="1" source="TcwC968GG99V6PZgZuYD-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TcwC968GG99V6PZgZuYD-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="缓存层" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-9" edge="1" parent="1" source="TcwC968GG99V6PZgZuYD-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TcwC968GG99V6PZgZuYD-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="数据层" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="基础服务层" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="TcwC968GG99V6PZgZuYD-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="760" width="240" x="320" y="100" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
