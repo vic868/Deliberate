@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -253,7 +253,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md"
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -331,13 +331,13 @@
       }
     ]
   },
-  "active": "f7a1a4b1264dce9f",
+  "active": "5743d172291e31f1",
   "lastOpenFiles": [
+    "12-nginx/2-实践篇-HTTPS证书落地.md",
     "12-nginx/3-免费SSL证书全览.md",
     "12-nginx/1-理论篇-理解Nginx与HTTPS.md",
     "12-nginx/0-106服务统一入口配置手册.md",
     "12-nginx/1-Nginx配置详解与HTTPS证书实践.md",
-    "12-nginx/2-实践篇-HTTPS证书落地.md",
     "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
     "服务器巡检-192.168.0.106/deploy/nginx/ca/106-internal-ca.crt",
     "服务器巡检-192.168.0.106/deploy/nginx/ca",
