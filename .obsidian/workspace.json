@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -253,7 +253,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md"
+                "file": "12-nginx/2-实践篇-HTTPS证书落地.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -331,8 +331,9 @@
       }
     ]
   },
-  "active": "5743d172291e31f1",
+  "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "12-nginx/2-实践篇-HTTPS证书落地.md",
     "12-nginx/3-免费SSL证书全览.md",
     "12-nginx/1-理论篇-理解Nginx与HTTPS.md",
@@ -349,7 +350,6 @@
     "服务器巡检-192.168.0.106/deploy/nginx/conf/snippets",
     "4-db/3-事务与MVCC.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "12-nginx",
     "服务器巡检-192.168.0.106/deploy/nginx/html",
     "服务器巡检-192.168.0.106/deploy/nginx/nginx.service",
