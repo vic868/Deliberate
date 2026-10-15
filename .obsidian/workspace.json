@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
+                "file": "大数据学习规划/04-离线回顾.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2-实践篇-HTTPS证书落地"
+              "title": "04-离线回顾"
             }
           },
           {
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
+                "file": "大数据学习规划/04-离线回顾.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
+                "file": "大数据学习规划/04-离线回顾.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -253,7 +253,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md"
+                "file": "大数据学习规划/04-离线回顾.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -333,10 +333,13 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
+    "大数据学习规划/03-实时数仓与存储.md",
+    "大数据学习规划/02-Flink补课.md",
     "13- 设计模式/白话讲解领域驱动设计domain driven design (DDD).md",
+    "12-nginx/2-实践篇-HTTPS证书落地.md",
     "13- 设计模式",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
-    "12-nginx/2-实践篇-HTTPS证书落地.md",
     "12-nginx/3-免费SSL证书全览.md",
     "12-nginx/1-理论篇-理解Nginx与HTTPS.md",
     "12-nginx/0-106服务统一入口配置手册.md",
@@ -366,9 +369,6 @@
     "9-k8s/6-实战-业务上k3s与对接Docker中间件.md",
     "服务器巡检-192.168.0.106/deploy/k8s-demo/README.md",
     "9-k8s/5-106服务梳理与K8s迁移规划.md",
-    "9-k8s/4-状态型中间件上不上K8s.md",
-    "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
-    "9-k8s/0-K8s网络请求全过程.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
