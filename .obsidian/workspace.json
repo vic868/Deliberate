@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10-数据仓库/2-维度建模.md",
-                "mode": "preview",
-                "source": true
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "2-维度建模"
+              "title": "0-领域驱动设计DDD-白话详解"
             }
           },
           {
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "10-数据仓库/2-维度建模.md",
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10-数据仓库/2-维度建模.md",
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -253,7 +253,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "10-数据仓库/2-维度建模.md"
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -333,6 +333,7 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "10-数据仓库/2-维度建模.md",
     "10-数据仓库/1-数仓概念与分层架构.md",
     "10-数据仓库/0-数据仓库总览.md",
     "12-nginx/0-106服务统一入口配置手册.md",
@@ -368,7 +369,6 @@
     "11-高并发高可用/高并发系统设计.md",
     "11-高并发高可用/1-1-三高接入层架构设计.md",
     "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
-    "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
