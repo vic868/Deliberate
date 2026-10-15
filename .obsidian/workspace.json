@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
+                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0-领域驱动设计DDD-白话详解"
+              "title": "从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥"
             }
           },
           {
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
+                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
+                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -253,7 +253,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md"
+                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -333,13 +333,14 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
+    "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
     "10-数据仓库/2-维度建模.md",
     "10-数据仓库/1-数仓概念与分层架构.md",
     "10-数据仓库/0-数据仓库总览.md",
     "12-nginx/0-106服务统一入口配置手册.md",
     "12-nginx/2-实践篇-HTTPS证书落地.md",
     "12-nginx/1-理论篇-理解Nginx与HTTPS.md",
-    "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md.crdownload",
     "14-AI agent ",
@@ -368,7 +369,6 @@
     "JavaTutorial/docs/interview/BATJ-Experience/alipay-pinduoduo-toutiao.md",
     "11-高并发高可用/高并发系统设计.md",
     "11-高并发高可用/1-1-三高接入层架构设计.md",
-    "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
