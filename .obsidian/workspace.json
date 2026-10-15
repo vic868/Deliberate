@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大数据学习规划/04-离线回顾.md",
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "04-离线回顾"
+              "title": "0-领域驱动设计DDD-白话详解"
             }
           },
           {
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "大数据学习规划/04-离线回顾.md",
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "大数据学习规划/04-离线回顾.md",
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -253,7 +253,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "大数据学习规划/04-离线回顾.md"
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -333,10 +333,14 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
+    "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md.crdownload",
+    "14-AI agent ",
+    "13- 设计模式/白话讲解领域驱动设计domain driven design (DDD).md",
+    "大数据学习规划/04-离线回顾.md",
     "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
     "大数据学习规划/03-实时数仓与存储.md",
     "大数据学习规划/02-Flink补课.md",
-    "13- 设计模式/白话讲解领域驱动设计domain driven design (DDD).md",
     "12-nginx/2-实践篇-HTTPS证书落地.md",
     "13- 设计模式",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
@@ -355,8 +359,6 @@
     "服务器巡检-192.168.0.106/deploy/nginx/conf/snippets",
     "4-db/3-事务与MVCC.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
-    "12-nginx",
-    "服务器巡检-192.168.0.106/deploy/nginx/html",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
@@ -367,8 +369,6 @@
     "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "9-k8s/3-入口层-Nginx-Ingress-Gateway.md",
     "9-k8s/6-实战-业务上k3s与对接Docker中间件.md",
-    "服务器巡检-192.168.0.106/deploy/k8s-demo/README.md",
-    "9-k8s/5-106服务梳理与K8s迁移规划.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
