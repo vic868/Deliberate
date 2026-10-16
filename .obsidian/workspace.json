@@ -268,6 +268,7 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "11-高并发高可用/0-高可用高并发高性能 系统设计（5W1H 整理版）.md",
     "11-高并发高可用/5-k8s",
     "11-高并发高可用/4-Nginx",
     "11-高并发高可用/3-LVS(VIP)",
@@ -302,7 +303,6 @@
     "12-nginx/3-免费SSL证书全览.md",
     "12-nginx/1-Nginx配置详解与HTTPS证书实践.md",
     "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
-    "服务器巡检-192.168.0.106/deploy/nginx/ca/106-internal-ca.crt",
     "服务器巡检-192.168.0.106/deploy/nginx/README.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
