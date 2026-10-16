@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
-                "mode": "source",
-                "source": false
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "0-Agent 面试通关：8 站通关作战地图"
+              "title": "高并发系统设计（详细整理版）"
             }
           }
         ]
@@ -268,6 +268,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
+    "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
+    "11-高并发高可用/1-1-三高接入层架构设计.md",
+    "11-高并发高可用/0-高并发.excalidraw.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
@@ -300,10 +304,6 @@
     "服务器巡检-192.168.0.106/deploy/nginx/conf/snippets/ssl-common.conf",
     "服务器巡检-192.168.0.106/deploy/nginx/conf/snippets",
     "4-db/3-事务与MVCC.md",
-    "11-高并发高可用/0-高并发.excalidraw.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
-    "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
-    "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx（详细整理版）.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
