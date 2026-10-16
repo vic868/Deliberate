@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
+                "file": "11-高并发高可用/0-DNS+GSLB/DNS+GSLB 全局负载调度（5W1H 整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-高可用高并发高性能 系统设计"
+              "title": "DNS+GSLB 全局负载调度（5W1H 整理版）"
             }
           }
         ]
@@ -266,9 +266,11 @@
       "hybrid-git-sync:Sync Now": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "11-高并发高可用/0-高可用高并发高性能 系统设计（5W1H 整理版）.md",
+    "11-高并发高可用/0-DNS+GSLB/DNS+GSLB 全局负载调度（5W1H 整理版）.md",
+    "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "11-高并发高可用/5-k8s",
     "11-高并发高可用/4-Nginx",
     "11-高并发高可用/3-LVS(VIP)",
@@ -282,7 +284,6 @@
     "11-高并发高可用/1-1-三高接入层架构设计.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
-    "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）.md",
     "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
     "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
@@ -303,7 +304,6 @@
     "12-nginx/3-免费SSL证书全览.md",
     "12-nginx/1-Nginx配置详解与HTTPS证书实践.md",
     "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
-    "服务器巡检-192.168.0.106/deploy/nginx/README.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
