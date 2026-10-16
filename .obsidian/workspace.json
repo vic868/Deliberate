@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
+                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥"
+              "title": "从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）"
             }
           },
           {
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
+                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
+                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -253,7 +253,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md"
+                "file": "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -264,7 +264,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875
+    "width": 729.546875,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -333,9 +334,9 @@
   },
   "active": "f7a1a4b1264dce9f",
   "lastOpenFiles": [
+    "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
     "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）.md",
     "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
-    "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
     "10-数据仓库/2-维度建模.md",
     "10-数据仓库/1-数仓概念与分层架构.md",
     "10-数据仓库/0-数据仓库总览.md",
