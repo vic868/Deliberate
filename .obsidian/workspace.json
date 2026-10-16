@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "file": "11-高并发高可用/0-DNS+GSLB/DNS+GSLB 全局负载调度（5W1H 整理版）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -237,8 +237,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875,
-    "collapsed": true
+    "width": 729.546875
   },
   "left-ribbon": {
     "hiddenItems": {
