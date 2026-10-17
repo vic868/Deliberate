@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
+                "file": "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2-实践篇-HTTPS证书落地"
+              "title": "1-SpringBoot上K8s与入口证书管理"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
+                "file": "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -268,10 +268,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "9-k8s/0-K8s网络请求全过程.md",
+    "12-nginx/2-实践篇-HTTPS证书落地.md",
     "12-nginx/0-106服务统一入口配置手册.md",
     "12-nginx/4-域名与公网证书实战-vic868.888.moe.md",
     "12-nginx/3-免费SSL证书全览.md",
-    "12-nginx/2-实践篇-HTTPS证书落地.md",
     "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
@@ -306,7 +307,6 @@
     "13- 设计模式/白话讲解领域驱动设计domain driven design (DDD).md",
     "大数据学习规划/04-离线回顾.md",
     "大数据学习规划/03-实时数仓与存储.md",
-    "大数据学习规划/02-Flink补课.md",
     "13- 设计模式",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
