@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12-nginx/0-106服务统一入口配置手册.md",
+                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-106服务统一入口配置手册"
+              "title": "2-实践篇-HTTPS证书落地"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "12-nginx/0-106服务统一入口配置手册.md",
+                "file": "12-nginx/2-实践篇-HTTPS证书落地.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -268,6 +268,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "12-nginx/0-106服务统一入口配置手册.md",
     "12-nginx/4-域名与公网证书实战-vic868.888.moe.md",
     "12-nginx/3-免费SSL证书全览.md",
     "12-nginx/2-实践篇-HTTPS证书落地.md",
@@ -298,7 +299,6 @@
     "10-数据仓库/2-维度建模.md",
     "10-数据仓库/1-数仓概念与分层架构.md",
     "10-数据仓库/0-数据仓库总览.md",
-    "12-nginx/0-106服务统一入口配置手册.md",
     "12-nginx/1-理论篇-理解Nginx与HTTPS.md",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md.crdownload",
