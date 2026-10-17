@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
-                "mode": "source",
+                "file": "12-nginx/3-免费SSL证书全览.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "后端技术杂谈：十分钟理解Kubernetes核心概念"
+              "title": "3-免费SSL证书全览"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
+                "file": "12-nginx/3-免费SSL证书全览.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -268,6 +268,8 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "12-nginx/2-实践篇-HTTPS证书落地.md",
+    "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
@@ -295,7 +297,6 @@
     "10-数据仓库/1-数仓概念与分层架构.md",
     "10-数据仓库/0-数据仓库总览.md",
     "12-nginx/0-106服务统一入口配置手册.md",
-    "12-nginx/2-实践篇-HTTPS证书落地.md",
     "12-nginx/1-理论篇-理解Nginx与HTTPS.md",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md.crdownload",
@@ -313,7 +314,6 @@
     "Pasted Image 20261009151249_453.png",
     "Pasted Image 20261006162516_406.png",
     "Pasted Image 20261006162206_107.png",
-    "Pasted Image 20260928182321_802.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
