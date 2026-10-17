@@ -8,7 +8,7 @@ tags:
 created: 2026-10-14
 status: 学习中
 说明: 网上免费证书的整理与适用性判断，含 2026 年最新政策变化
-关联: "[[1-理论篇-理解Nginx与HTTPS]] · [[2-实践篇-HTTPS证书落地]]"
+关联: "[[1-理论篇-理解Nginx与HTTPS]] · [[2-实践篇-HTTPS证书落地]] · [[4-域名与公网证书实战-vic868.888.moe]]"
 ---
 
 # 免费 SSL 证书全览
@@ -292,6 +292,7 @@ flowchart TD
 
 - 原理：[[1-理论篇-理解Nginx与HTTPS]]
 - 动手：[[2-实践篇-HTTPS证书落地]]
+- **真的拿一个域名跑通 DNS-01**：[[4-域名与公网证书实战-vic868.888.moe]]
 - 106 入口运维：[[0-106服务统一入口配置手册]]
 - Let's Encrypt 文档：<https://letsencrypt.org/docs/>
 - acme.sh：<https://github.com/acmesh-official/acme.sh>

@@ -8,7 +8,7 @@ tags:
 created: 2026-10-14
 status: 106 已启用，待导入客户端 CA
 说明: 只讲怎么动手。原理部分见 [[1-理论篇-理解Nginx与HTTPS]]
-关联: "[[1-理论篇-理解Nginx与HTTPS]] · [[3-免费SSL证书全览]] · [[0-106服务统一入口配置手册]]"
+关联: "[[1-理论篇-理解Nginx与HTTPS]] · [[3-免费SSL证书全览]] · [[4-域名与公网证书实战-vic868.888.moe]] · [[0-106服务统一入口配置手册]]"
 ---
 
 # 实践篇：HTTPS 证书落地
@@ -452,6 +452,7 @@ sudo cp /opt/nginx/conf/https-staged/99-https.conf /opt/nginx/conf/conf.d/ \
 
 - 原理：[[1-理论篇-理解Nginx与HTTPS]]
 - 免费证书全貌：[[3-免费SSL证书全览]]
+- **真实域名落地（本篇方案 B 的完整实操）**：[[4-域名与公网证书实战-vic868.888.moe]]
 - 106 入口运维：[[0-106服务统一入口配置手册]]
 - acme.sh 文档：<https://github.com/acmesh-official/acme.sh>
 - mkcert：<https://github.com/FiloSottile/mkcert>
