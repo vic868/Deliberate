@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted Image 20261006163236_959.png"
+                "file": "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "lucide-image",
-              "title": "Pasted Image 20261006163236_959"
+              "icon": "lucide-file",
+              "title": "后端技术杂谈：十分钟理解Kubernetes核心概念"
             }
           }
         ]
@@ -159,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pasted Image 20261006163236_959.png",
+                "file": "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -266,6 +268,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009152014_855.png",
@@ -311,7 +314,6 @@
     "Pasted Image 20261006162516_406.png",
     "Pasted Image 20261006162206_107.png",
     "Pasted Image 20260928182321_802.png",
-    "Pasted Image 20260927115138_252.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
