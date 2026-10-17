@@ -11,14 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "11-高并发高可用/0-DNS+GSLB/DNS+GSLB 全局负载调度（5W1H 整理版）.md",
-                "mode": "preview",
-                "source": true
+                "file": "Pasted Image 20261006163236_959.png"
               },
-              "icon": "lucide-file",
-              "title": "DNS+GSLB 全局负载调度（5W1H 整理版）"
+              "icon": "lucide-image",
+              "title": "Pasted Image 20261006163236_959"
             }
           }
         ]
@@ -161,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/0-DNS+GSLB/DNS+GSLB 全局负载调度（5W1H 整理版）.md",
+                "file": "Pasted Image 20261006163236_959.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -237,7 +235,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875
+    "width": 729.546875,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -267,8 +266,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "11-高并发高可用/0-高可用高并发高性能 系统设计（5W1H 整理版）.md",
+    "Pasted Image 20261008134509_484.png",
+    "Pasted Image 20261009150831_843.png",
+    "Pasted Image 20261009152014_855.png",
     "11-高并发高可用/0-DNS+GSLB/DNS+GSLB 全局负载调度（5W1H 整理版）.md",
+    "11-高并发高可用/0-高可用高并发高性能 系统设计（5W1H 整理版）.md",
     "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "11-高并发高可用/5-k8s",
     "11-高并发高可用/4-Nginx",
@@ -302,13 +304,10 @@
     "13- 设计模式",
     "12-nginx/3-免费SSL证书全览.md",
     "12-nginx/1-Nginx配置详解与HTTPS证书实践.md",
-    "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
-    "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009151249_453.png",
-    "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261006162516_406.png",
     "Pasted Image 20261006162206_107.png",
     "Pasted Image 20260928182321_802.png",
