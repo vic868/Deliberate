@@ -11,14 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "12-nginx/3-免费SSL证书全览.md",
-                "mode": "preview",
-                "source": true
+                "file": "11-高并发高可用/0-高并发.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "3-免费SSL证书全览"
+              "icon": "excalidraw-icon",
+              "title": "0-高并发.excalidraw"
             }
           }
         ]
@@ -161,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "12-nginx/3-免费SSL证书全览.md",
+                "file": "11-高并发高可用/0-高并发.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -268,12 +266,12 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "12-nginx/3-免费SSL证书全览.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
     "9-k8s/0-K8s网络请求全过程.md",
     "12-nginx/2-实践篇-HTTPS证书落地.md",
     "12-nginx/0-106服务统一入口配置手册.md",
     "12-nginx/4-域名与公网证书实战-vic868.888.moe.md",
-    "12-nginx/3-免费SSL证书全览.md",
     "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
