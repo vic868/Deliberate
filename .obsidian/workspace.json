@@ -174,8 +174,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -184,8 +184,8 @@
             "state": {
               "type": "juggl_nodes",
               "state": {},
-              "icon": "ag-node-list",
-              "title": "Juggl nodes"
+              "icon": "lucide-ghost",
+              "title": "juggl_nodes"
             }
           },
           {
@@ -194,8 +194,8 @@
             "state": {
               "type": "juggl_style",
               "state": {},
-              "icon": "ag-style",
-              "title": "Juggl style"
+              "icon": "lucide-ghost",
+              "title": "juggl_style"
             }
           },
           {
@@ -214,8 +214,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           },
           {
@@ -241,7 +241,6 @@
   "left-ribbon": {
     "hiddenItems": {
       "switcher:打开快速切换": false,
-      "homepage:Open homepage": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -249,23 +248,12 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "obsidian42-brat:BRAT": false,
-      "zhihu:Open Zhihu side view": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false,
-      "copilot:Open Copilot Agent Chat": false,
-      "agent-client:Open agent client": false,
-      "simple-mind-map:新建思维导图": false,
-      "obsidian-textgenerator-plugin:Generate Text!": false,
-      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
-      "juggl:Juggl global graph": false,
-      "obsidian-omnivore:Omnivore": false,
-      "drawio-editor:Create new drawio diagram": false,
       "hybrid-git-sync:Sync Now": false
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "11-高并发高可用/0-高并发.excalidraw.md",
     "12-nginx/3-免费SSL证书全览.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
     "9-k8s/0-K8s网络请求全过程.md",
@@ -291,7 +279,6 @@
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/1-1-三高接入层架构设计.md",
-    "11-高并发高可用/0-高并发.excalidraw.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）.md",
     "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
