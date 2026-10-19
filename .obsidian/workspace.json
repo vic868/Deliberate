@@ -331,7 +331,7 @@
                   "type": "markdown",
                   "state": {
                     "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
-                    "mode": "source",
+                    "mode": "preview",
                     "source": true
                   },
                   "icon": "lucide-file",
