@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
+                "file": "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）"
+              "title": "OOM事故血泪史！彻底搞懂Java本地缓存所有坑"
             }
           }
         ],
@@ -98,7 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 228.76171875
+    "width": 453.45703125
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
+                "file": "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -308,6 +308,12 @@
   },
   "active": "f276d5b078c6fbc1",
   "lastOpenFiles": [
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
+    "1-java/4-jvm/0-JVM总览.md",
+    "1-java/4-jvm/1-JVM内存区域与对象布局.md",
+    "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
@@ -328,15 +334,10 @@
     "12-nginx/3-免费SSL证书全览.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
     "9-k8s/0-K8s网络请求全过程.md",
-    "12-nginx/2-实践篇-HTTPS证书落地.md",
-    "12-nginx/0-106服务统一入口配置手册.md",
-    "12-nginx/4-域名与公网证书实战-vic868.888.moe.md",
-    "JavaTutorial/docs/backend/后端技术杂谈：十分钟理解Kubernetes核心概念.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009152014_855.png",
-    "11-高并发高可用/0-DNS+GSLB/DNS+GSLB 全局负载调度（5W1H 整理版）.md",
     "11-高并发高可用/5-k8s",
     "11-高并发高可用/4-Nginx",
     "11-高并发高可用/3-LVS(VIP)",
@@ -344,7 +345,6 @@
     "11-高并发高可用/1-CDN/未命名",
     "11-高并发高可用/1-CDN",
     "11-高并发高可用/0-DNS+GSLB",
-    "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md.crdownload",
     "14-AI agent ",
     "13- 设计模式",
