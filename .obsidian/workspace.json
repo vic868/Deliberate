@@ -14,8 +14,8 @@
               "type": "markdown",
               "state": {
                 "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
-                "mode": "preview",
-                "source": true
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
               "title": "高并发系统设计（详细整理版）"
@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 472.5
+    "width": 228.76171875
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md",
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -237,8 +237,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 729.546875,
-    "collapsed": true
+    "width": 420.8359375
   },
   "left-ribbon": {
     "hiddenItems": {
