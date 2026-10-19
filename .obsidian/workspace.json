@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md"
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "0-高并发.excalidraw"
+              "icon": "lucide-file",
+              "title": "高并发系统设计（详细整理版）"
             }
           }
         ]
@@ -253,6 +255,8 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
     "12-nginx/3-免费SSL证书全览.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
@@ -275,7 +279,6 @@
     "11-高并发高可用/1-CDN/未命名",
     "11-高并发高可用/1-CDN",
     "11-高并发高可用/0-DNS+GSLB",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/1-1-三高接入层架构设计.md",
@@ -291,7 +294,6 @@
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md.crdownload",
     "14-AI agent ",
     "13- 设计模式/白话讲解领域驱动设计domain driven design (DDD).md",
-    "大数据学习规划/04-离线回顾.md",
     "13- 设计模式",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
