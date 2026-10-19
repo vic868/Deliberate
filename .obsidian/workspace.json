@@ -190,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+                "file": "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -266,7 +266,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 420.8359375
+    "width": 420.8359375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -353,11 +354,11 @@
       }
     ]
   },
-  "active": "a9941710376997f5",
+  "active": "96097f7cbde3dae2",
   "lastOpenFiles": [
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
     "1-java/4-jvm/Drawing 2026-10-19 19.25.02.excalidraw.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/0-知识点/13-Spring源码骨架.md",
