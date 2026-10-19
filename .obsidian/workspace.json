@@ -11,10 +11,14 @@
             "id": "5ffc23441e1c5b20",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "1-java/0-知识点/13-Spring源码骨架.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "13-Spring源码骨架"
             }
           }
         ]
@@ -157,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md",
+                "file": "1-java/0-知识点/13-Spring源码骨架.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -287,16 +291,18 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "5ffc23441e1c5b20",
   "lastOpenFiles": [
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
+    "1-java/0-知识点/3-泛型反射与注解.md",
+    "1-java/0-知识点/9-Java版本特性.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
+    "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/1-1-三高接入层架构设计.md",
     "11-高并发高可用/0-高可用高并发高性能 系统设计（5W1H 整理版）.md",
-    "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "12-nginx/3-免费SSL证书全览.md",
@@ -324,8 +330,6 @@
     "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥.md",
     "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
     "10-数据仓库/2-维度建模.md",
-    "10-数据仓库/1-数仓概念与分层架构.md",
-    "10-数据仓库/0-数据仓库总览.md",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md.crdownload",
     "14-AI agent ",
     "13- 设计模式",
