@@ -27,16 +27,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）"
+              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）.smm"
+            }
+          },
+          {
+            "id": "96097f7cbde3dae2",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "1-java/4-jvm/Drawing 2026-10-19 19.25.02.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-10-19 19.25.02.excalidraw"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -176,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+                "file": "1-java/4-jvm/Drawing 2026-10-19 19.25.02.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -306,15 +318,16 @@
       }
     ]
   },
-  "active": "f276d5b078c6fbc1",
+  "active": "96097f7cbde3dae2",
   "lastOpenFiles": [
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
+    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
+    "1-java/4-jvm/Drawing 2026-10-19 19.25.02.excalidraw.md",
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/0-知识点/13-Spring源码骨架.md",
     "服务器巡检-192.168.0.106/巡检报告.md",
     "服务器巡检-192.168.0.106/数据流全链路执行手册.md",
     "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战.md",
     "1-java/4-jvm/0-JVM总览.md",
     "1-java/4-jvm/1-JVM内存区域与对象布局.md",
@@ -333,7 +346,6 @@
     "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
     "11-高并发高可用/1-1-三高接入层架构设计.md",
-    "11-高并发高可用/0-高可用高并发高性能 系统设计（5W1H 整理版）.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
