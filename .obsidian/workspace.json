@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md",
+                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -291,10 +291,10 @@
       }
     ]
   },
-  "active": "5ffc23441e1c5b20",
+  "active": "6ceda5662f7ab031",
   "lastOpenFiles": [
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "1-java/3-IO/1-IO类结构继承总图.md",
     "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/0-知识点/2-面向对象与设计模式.md",
