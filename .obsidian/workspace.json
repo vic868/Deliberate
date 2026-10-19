@@ -20,8 +20,23 @@
               "icon": "excalidraw-icon",
               "title": "0-高并发.excalidraw"
             }
+          },
+          {
+            "id": "f276d5b078c6fbc1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -161,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md",
+                "file": "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -291,10 +306,12 @@
       }
     ]
   },
-  "active": "5ffc23441e1c5b20",
+  "active": "f276d5b078c6fbc1",
   "lastOpenFiles": [
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
+    "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
+    "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "1-java/3-IO/1-IO类结构继承总图.md",
     "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/0-知识点/2-面向对象与设计模式.md",
@@ -305,10 +322,8 @@
     "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "11-高并发高可用/50万QPS实时推荐 延迟从小时压到毫秒.md",
     "11-高并发高可用/2-单机被打爆后，我才读懂 Nginx.md",
-    "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/1-1-三高接入层架构设计.md",
     "11-高并发高可用/0-高可用高并发高性能 系统设计（5W1H 整理版）.md",
-    "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.smm.md",
     "12-nginx/3-免费SSL证书全览.md",
     "9-k8s/1-SpringBoot上K8s与入口证书管理.md",
