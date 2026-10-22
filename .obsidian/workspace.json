@@ -137,7 +137,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125
+    "width": 453.45703125,
+    "collapsed": true
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -348,7 +349,7 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "f6abfd5b28f3de65",
   "lastOpenFiles": [
     "未命名.base",
     "1-2-风控/risk-control.drawio",
