@@ -1,0 +1,25 @@
+<mxfile host="embed.diagrams.net">
+  <diagram id="0" name="Page-1">
+    <mxGraphModel dx="2231" dy="2166" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nyMVYey6LXWV5xRtun50-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=12 12;" value="" vertex="1">
+          <mxGeometry height="1180" width="2490" x="-10" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" value="" vertex="1">
+          <mxGeometry height="290" width="1030" x="50" y="-210" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="注册" vertex="1">
+          <mxGeometry height="60" width="130" x="70" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="注册" vertex="1">
+          <mxGeometry height="60" width="130" x="310" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="注册" vertex="1">
+          <mxGeometry height="60" width="130" x="550" y="-110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

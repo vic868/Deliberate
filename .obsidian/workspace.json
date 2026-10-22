@@ -61,9 +61,21 @@
               "icon": "lucide-table",
               "title": "未命名"
             }
+          },
+          {
+            "id": "f6abfd5b28f3de65",
+            "type": "leaf",
+            "state": {
+              "type": "drawio-file-view",
+              "state": {
+                "file": "1-2-风控/risk-control.drawio"
+              },
+              "icon": "pencil-ruler",
+              "title": "risk-control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -292,7 +304,9 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "hybrid-git-sync:Sync Now": false
+      "hybrid-git-sync:Sync Now": false,
+      "drawio:Launch draw.io editor": false,
+      "drawio-editor:Create new drawio diagram": false
     }
   },
   "floating": {
@@ -334,10 +348,11 @@
       }
     ]
   },
-  "active": "65dbcae2a33804c4",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "7-分布式/10-SCA分布式实战项目规划.md",
     "未命名.base",
+    "1-2-风控/risk-control.drawio",
+    "7-分布式/10-SCA分布式实战项目规划.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "7-分布式/9-分布式面试高频题.md",
     "7-分布式/8-微服务架构与注册配置中心.md",
