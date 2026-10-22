@@ -53,12 +53,14 @@
             "id": "65dbcae2a33804c4",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/1-milvus/0-milvus.excalidraw.md"
+                "file": "7-分布式/10-SCA分布式实战项目规划.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "0-milvus.excalidraw"
+              "icon": "lucide-file",
+              "title": "10-SCA分布式实战项目规划"
             }
           }
         ],
@@ -333,13 +335,16 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "65dbcae2a33804c4",
   "lastOpenFiles": [
-    "1-java/4-jvm/0-JVM总览.md",
+    "7-分布式/9-分布式面试高频题.md",
+    "7-分布式/10-SCA分布式实战项目规划.md",
+    "7-分布式/8-微服务架构与注册配置中心.md",
     "6-ai/1-milvus/0-milvus.excalidraw.md",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
+    "1-java/4-jvm/0-JVM总览.md",
     "6-ai/1-milvus",
     "6-ai/未命名",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "1-java/0-知识点/0-Java总览.md",
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
@@ -360,9 +365,6 @@
     "1-java/3-IO/0-IO.excalidraw.md",
     "1-java/0-知识点/2-面向对象与设计模式.md",
     "1-java/0-知识点/3-泛型反射与注解.md",
-    "1-java/0-知识点/9-Java版本特性.md",
-    "1-java/0-知识点/10-面试高频题.md",
-    "11-高并发高可用/0-高可用高并发高性能 系统设计.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
