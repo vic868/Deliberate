@@ -207,17 +207,28 @@
         <mxCell id="nyMVYey6LXWV5xRtun50-73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;strokeWidth=3;strokeColor=#CC6600;verticalAlign=top;align=left;fontSize=25;" value="大数据平台" vertex="1">
           <mxGeometry height="1275" width="1300" x="3240" y="105" as="geometry" />
         </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-80" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="nyMVYey6LXWV5xRtun50-75">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3390" y="290" as="sourcePoint" />
+            <mxPoint x="3390" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-74" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;" value="dinky" vertex="1">
           <mxGeometry height="70" width="120" x="3330" y="210" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-78" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=bottom;dashed=1;strokeWidth=5;fillColor=none;strokeColor=#66B2FF;" value="" vertex="1">
-          <mxGeometry height="300" width="300" x="3260" y="490" as="geometry" />
+          <mxGeometry height="300" width="300" x="3260" y="500" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-75" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;" value="flink 引擎" vertex="1">
-          <mxGeometry height="70" width="120" x="3330" y="620" as="geometry" />
+          <mxGeometry height="70" width="120" x="3330" y="640" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-77" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/databases.svg;fontSize=25;" value="redis/hbase/mysql/api" vertex="1">
-          <mxGeometry height="140" width="142.86" x="3307.14" y="1060" as="geometry" />
+          <mxGeometry height="140" width="142.86" x="3318.5699999999997" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-81" edge="1" parent="1" source="nyMVYey6LXWV5xRtun50-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="nyMVYey6LXWV5xRtun50-77">
+          <mxGeometry relative="1" x="-0.119" as="geometry">
+            <mxPoint x="3401.43" y="710" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
