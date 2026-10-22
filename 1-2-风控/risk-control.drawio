@@ -1,10 +1,10 @@
 <mxfile host="embed.diagrams.net">
   <diagram id="0" name="Page-1">
-    <mxGraphModel dx="2791" dy="2597" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2464" dy="2345" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="nyMVYey6LXWV5xRtun50-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=12 12;" value="" vertex="1">
+        <mxCell id="nyMVYey6LXWV5xRtun50-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=12 12;strokeColor=#FF3333;" value="" vertex="1">
           <mxGeometry height="1180" width="2490" x="-10" y="170" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" value="" vertex="1">
@@ -22,8 +22,23 @@
         <mxCell id="nyMVYey6LXWV5xRtun50-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="活动" vertex="1">
           <mxGeometry height="60" width="130" x="770" y="-110" as="geometry" />
         </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+        <mxCell id="nyMVYey6LXWV5xRtun50-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;dashPattern=8 4 1 4;strokeColor=#FFE599;" value="策略配置" vertex="1">
           <mxGeometry height="350" width="600" x="110" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;dashPattern=8 4 1 4;strokeColor=#FFE599;" value="决策开发" vertex="1">
+          <mxGeometry height="350" width="600" x="780" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="场景策略" vertex="1">
+          <mxGeometry height="210" width="110" x="170" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;dashPattern=8 4 1 4;strokeColor=#FFE599;" value="策略配置" vertex="1">
+          <mxGeometry height="350" width="600" x="110" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="场景策略" vertex="1">
+          <mxGeometry height="210" width="110" x="170" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="场景策略" vertex="1">
+          <mxGeometry height="210" width="110" x="410" y="330" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
