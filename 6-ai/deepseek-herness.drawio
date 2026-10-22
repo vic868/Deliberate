@@ -11,19 +11,34 @@
           <mxGeometry relative="1" x="0.0033" as="geometry" />
         </mxCell>
         <mxCell id="d5S0IJ78dCxdiRXRORcU-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="能看到什么上下文" vertex="1">
-          <mxGeometry height="20" width="100" x="110" y="180" as="geometry" />
+          <mxGeometry height="20" width="100" x="115" y="180" as="geometry" />
         </mxCell>
         <mxCell id="d5S0IJ78dCxdiRXRORcU-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="能调用哪些工具" vertex="1">
-          <mxGeometry height="20" width="100" x="110" y="220" as="geometry" />
+          <mxGeometry height="20" width="90" x="110" y="220" as="geometry" />
         </mxCell>
         <mxCell id="d5S0IJ78dCxdiRXRORcU-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="工具在哪执行" vertex="1">
-          <mxGeometry height="20" width="100" x="110" y="260" as="geometry" />
+          <mxGeometry height="20" width="75" x="110" y="260" as="geometry" />
         </mxCell>
-        <mxCell id="d5S0IJ78dCxdiRXRORcU-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="能调用哪些工具" vertex="1">
-          <mxGeometry height="20" width="100" x="110" y="310" as="geometry" />
+        <mxCell id="d5S0IJ78dCxdiRXRORcU-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="哪些操作需要授权" vertex="1">
+          <mxGeometry height="20" width="100" x="110" y="290" as="geometry" />
         </mxCell>
-        <mxCell id="d5S0IJ78dCxdiRXRORcU-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="能调用哪些工具" vertex="1">
-          <mxGeometry height="20" width="100" x="110" y="340" as="geometry" />
+        <mxCell id="d5S0IJ78dCxdiRXRORcU-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="失败后如何继续" vertex="1">
+          <mxGeometry height="20" width="90" x="110" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="d5S0IJ78dCxdiRXRORcU-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="历史状态保存在哪里" vertex="1">
+          <mxGeometry height="20" width="110" x="110" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="d5S0IJ78dCxdiRXRORcU-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="一轮什么时候结束" vertex="1">
+          <mxGeometry height="20" width="100" x="110" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="d5S0IJ78dCxdiRXRORcU-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="是否允许派生子 Agent" vertex="1">
+          <mxGeometry height="20" width="130" x="110" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="d5S0IJ78dCxdiRXRORcU-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="是否允许运行代码" vertex="1">
+          <mxGeometry height="20" width="100" x="110" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="d5S0IJ78dCxdiRXRORcU-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="如何恢复、审计和调试" vertex="1">
+          <mxGeometry height="20" width="130" x="110" y="470" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
