@@ -4,14 +4,14 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="nyMVYey6LXWV5xRtun50-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=12 12;strokeColor=#FF3333;fontSize=30;" value="" vertex="1">
+        <mxCell id="nyMVYey6LXWV5xRtun50-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=12 12;fontSize=30;fillColor=none;" value="" vertex="1">
           <mxGeometry height="1180" width="2490" x="-10" y="170" as="geometry" />
         </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-23" edge="1" parent="1" source="nyMVYey6LXWV5xRtun50-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="nyMVYey6LXWV5xRtun50-13">
+        <mxCell id="nyMVYey6LXWV5xRtun50-23" edge="1" parent="1" source="nyMVYey6LXWV5xRtun50-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;verticalAlign=bottom;" target="nyMVYey6LXWV5xRtun50-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-25" connectable="0" parent="nyMVYey6LXWV5xRtun50-23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
-          <mxGeometry relative="1" x="-0.9553" y="3" as="geometry">
+          <mxGeometry relative="1" x="-0.9559" y="3" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -30,17 +30,14 @@
         <mxCell id="nyMVYey6LXWV5xRtun50-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="活动" vertex="1">
           <mxGeometry height="60" width="130" x="770" y="-110" as="geometry" />
         </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;dashPattern=8 4 1 4;strokeColor=#FFE599;" value="策略配置" vertex="1">
-          <mxGeometry height="350" width="600" x="110" y="290" as="geometry" />
-        </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;dashPattern=8 4 1 4;strokeColor=#877852;strokeWidth=3;fontSize=25;" value="决策开发" vertex="1">
-          <mxGeometry height="350" width="600" x="780" y="280" as="geometry" />
+        <mxCell id="nyMVYey6LXWV5xRtun50-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;dashPattern=8 4 1 4;strokeWidth=3;fontSize=25;fillColor=none;" value="决策开发" vertex="1">
+          <mxGeometry height="350" width="600" x="770" y="280" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="场景策略" vertex="1">
           <mxGeometry height="210" width="110" x="170" y="340" as="geometry" />
         </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;dashPattern=8 4 1 4;strokeColor=#857750;strokeWidth=3;fontSize=25;" value="策略配置" vertex="1">
-          <mxGeometry height="350" width="600" x="110" y="280" as="geometry" />
+        <mxCell id="nyMVYey6LXWV5xRtun50-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;dashPattern=8 4 1 4;strokeWidth=3;fontSize=25;fillColor=none;" value="策略配置" vertex="1">
+          <mxGeometry height="350" width="600" x="75" y="280" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="场景策略" vertex="1">
           <mxGeometry height="210" width="110" x="170" y="330" as="geometry" />
@@ -52,22 +49,16 @@
           <mxGeometry height="220" width="60" x="810" y="330" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="发布校准" vertex="1">
-          <mxGeometry height="220" width="60" x="900" y="330" as="geometry" />
+          <mxGeometry height="220" width="60" x="935" y="330" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="输入设置" vertex="1">
-          <mxGeometry height="220" width="60" x="990" y="330" as="geometry" />
+          <mxGeometry height="220" width="60" x="1060" y="330" as="geometry" />
         </mxCell>
         <mxCell id="nyMVYey6LXWV5xRtun50-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="风险归类" vertex="1">
-          <mxGeometry height="220" width="60" x="1070" y="330" as="geometry" />
-        </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="策略开发" vertex="1">
           <mxGeometry height="220" width="60" x="1160" y="330" as="geometry" />
         </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-22" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="960" y="330" as="sourcePoint" />
-            <mxPoint x="1010" y="280" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="nyMVYey6LXWV5xRtun50-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;direction=west;horizontal=1;fontStyle=0;textDirection=vertical-lr;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="策略开发" vertex="1">
+          <mxGeometry height="220" width="60" x="1260" y="330" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
