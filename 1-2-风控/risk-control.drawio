@@ -153,8 +153,11 @@
         <mxCell id="nyMVYey6LXWV5xRtun50-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;strokeWidth=3;strokeColor=#CC6600;verticalAlign=top;align=left;fontSize=25;" value="运维平台" vertex="1">
           <mxGeometry height="1210" width="590" x="2450" y="110" as="geometry" />
         </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="cannel" vertex="1">
+        <mxCell id="nyMVYey6LXWV5xRtun50-57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Canal" vertex="1">
           <mxGeometry height="60" width="120" x="2640" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Canal" vertex="1">
+          <mxGeometry height="60" width="120" x="2640" y="330" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
