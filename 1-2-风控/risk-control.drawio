@@ -1,6 +1,6 @@
 <mxfile host="embed.diagrams.net">
   <diagram id="0" name="Page-1">
-    <mxGraphModel dx="2231" dy="2166" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2791" dy="2597" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,11 +13,17 @@
         <mxCell id="nyMVYey6LXWV5xRtun50-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="注册" vertex="1">
           <mxGeometry height="60" width="130" x="70" y="-110" as="geometry" />
         </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="注册" vertex="1">
+        <mxCell id="nyMVYey6LXWV5xRtun50-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="登录" vertex="1">
           <mxGeometry height="60" width="130" x="310" y="-110" as="geometry" />
         </mxCell>
-        <mxCell id="nyMVYey6LXWV5xRtun50-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="注册" vertex="1">
+        <mxCell id="nyMVYey6LXWV5xRtun50-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="交易" vertex="1">
           <mxGeometry height="60" width="130" x="550" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="活动" vertex="1">
+          <mxGeometry height="60" width="130" x="770" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="nyMVYey6LXWV5xRtun50-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="350" width="600" x="110" y="290" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
