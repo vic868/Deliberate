@@ -7,20 +7,53 @@
         <mxCell id="AUvF3KoyZVTuGkdwbndg-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="JVM 运行时数据区" vertex="1">
           <mxGeometry height="60" width="120" x="590" y="570" as="geometry" />
         </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-11" edge="1" parent="1" source="AUvF3KoyZVTuGkdwbndg-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;curved=1;curveGeometry=1;" target="AUvF3KoyZVTuGkdwbndg-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-12" edge="1" parent="1" source="AUvF3KoyZVTuGkdwbndg-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;defaultLabelBackgroundColor=page;curved=1;curveGeometry=1;" target="AUvF3KoyZVTuGkdwbndg-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-13" edge="1" parent="1" source="AUvF3KoyZVTuGkdwbndg-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;curveGeometry=1;" target="AUvF3KoyZVTuGkdwbndg-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="AUvF3KoyZVTuGkdwbndg-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程私有区域" vertex="1">
-          <mxGeometry height="60" width="120" x="240" y="710" as="geometry" />
+          <mxGeometry height="60" width="120" x="200" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-15" edge="1" parent="1" source="AUvF3KoyZVTuGkdwbndg-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;curved=1;curveGeometry=1;" target="AUvF3KoyZVTuGkdwbndg-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-16" edge="1" parent="1" source="AUvF3KoyZVTuGkdwbndg-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;curved=1;curveGeometry=1;" target="AUvF3KoyZVTuGkdwbndg-8">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="AUvF3KoyZVTuGkdwbndg-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程共享区域&lt;div&gt;全局唯一、随 JVM 启动而存在&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="230" x="800" y="700" as="geometry" />
         </mxCell>
-        <mxCell id="AUvF3KoyZVTuGkdwbndg-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程共享区域&lt;div&gt;全局唯一、随 JVM 启动而存在&lt;/div&gt;" vertex="1">
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="java 堆" vertex="1">
           <mxGeometry height="60" width="230" x="610" y="880" as="geometry" />
         </mxCell>
         <mxCell id="AUvF3KoyZVTuGkdwbndg-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="程序计数器" vertex="1">
           <mxGeometry height="60" width="120" x="50" y="890" as="geometry" />
         </mxCell>
-        <mxCell id="AUvF3KoyZVTuGkdwbndg-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="程序计数器" vertex="1">
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="java虚拟机栈" vertex="1">
           <mxGeometry height="60" width="120" x="190" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="本地方法栈" vertex="1">
+          <mxGeometry height="60" width="120" x="365" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-17" edge="1" parent="1" source="AUvF3KoyZVTuGkdwbndg-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="AUvF3KoyZVTuGkdwbndg-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="方法区" vertex="1">
+          <mxGeometry height="60" width="230" x="930" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="常量池" vertex="1">
+          <mxGeometry height="60" width="230" x="930" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-10" edge="1" parent="1" source="AUvF3KoyZVTuGkdwbndg-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;edgeStyle=orthogonalEdgeStyle;curved=1;curveGeometry=1;" target="AUvF3KoyZVTuGkdwbndg-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-14" edge="1" parent="1" source="AUvF3KoyZVTuGkdwbndg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.557;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;curved=1;curveGeometry=1;" target="AUvF3KoyZVTuGkdwbndg-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
