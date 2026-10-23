@@ -130,10 +130,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "7-分布式/分布式事务.drawio"
+                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "分布式事务"
+              "title": "Kafka-架构与面试"
             }
           }
         ],
@@ -412,8 +412,8 @@
   },
   "active": "305343f6b8ad1b8c",
   "lastOpenFiles": [
-    "7-分布式/分布式事务-总览.png",
     "7-分布式/分布式事务.drawio",
+    "7-分布式/分布式事务-总览.png",
     "1-java/1-juc/1-AQS.drawio",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
