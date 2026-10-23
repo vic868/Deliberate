@@ -22,6 +22,18 @@
             }
           },
           {
+            "id": "ae60d48e9a4c5d2c",
+            "type": "leaf",
+            "state": {
+              "type": "drawio-file-view",
+              "state": {
+                "file": "1-java/4-jvm/Untitled Diagram 1792727710783.drawio"
+              },
+              "icon": "pencil-ruler",
+              "title": "Untitled Diagram 1792727710783"
+            }
+          },
+          {
             "id": "f276d5b078c6fbc1",
             "type": "leaf",
             "state": {
@@ -98,7 +110,8 @@
               "title": "分布式事务"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -160,7 +173,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125
+    "width": 453.45703125,
+    "collapsed": true
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -371,8 +385,10 @@
       }
     ]
   },
-  "active": "5ffc23441e1c5b20",
+  "active": "ae60d48e9a4c5d2c",
   "lastOpenFiles": [
+    "11-高并发高可用/0-高并发.excalidraw.md",
+    "1-java/4-jvm/Untitled Diagram 1792727710783.drawio",
     "7-分布式/分布式事务.drawio",
     "7-分布式/幂等.excalidraw.md",
     "7-分布式/分布式锁.excalidraw.md",
@@ -404,7 +420,6 @@
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！（详细整理版）.md",
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
-    "11-高并发高可用/0-高并发.excalidraw.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
@@ -412,7 +427,6 @@
     "11-高并发高可用/5-k8s",
     "11-高并发高可用/4-Nginx",
     "11-高并发高可用/3-LVS(VIP)",
-    "11-高并发高可用/2-WAF+DDOS",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
