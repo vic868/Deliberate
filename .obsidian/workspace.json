@@ -27,10 +27,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "1-java/4-jvm/Untitled Diagram 1792727710783.drawio"
+                "file": "1-java/4-jvm/从内存模型到 OOM 排查.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "Untitled Diagram 1792727710783"
+              "title": "从内存模型到 OOM 排查"
             }
           },
           {
@@ -388,7 +388,7 @@
   "active": "ae60d48e9a4c5d2c",
   "lastOpenFiles": [
     "11-高并发高可用/0-高并发.excalidraw.md",
-    "1-java/4-jvm/Untitled Diagram 1792727710783.drawio",
+    "1-java/4-jvm/从内存模型到 OOM 排查.drawio",
     "7-分布式/分布式事务.drawio",
     "7-分布式/幂等.excalidraw.md",
     "7-分布式/分布式锁.excalidraw.md",
