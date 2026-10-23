@@ -1,6 +1,6 @@
 <mxfile host="embed.diagrams.net">
   <diagram id="0" name="Page-1">
-    <mxGraphModel dx="4152" dy="2560" grid="0" gridSize="10" guides="0" tooltips="0" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2632" dy="1655" grid="0" gridSize="10" guides="0" tooltips="0" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -336,6 +336,147 @@
             <mxGeometry height="553" width="550" x="-386.62962962963" y="-536.6049382716051" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-92" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;h4 style=&quot;margin-top: 30px;margin-bottom: 15px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;display: block;&quot;&gt;&lt;span style=&quot;font-size: 18px;color: rgb(0, 0, 0);line-height: 1.5em;letter-spacing: 0em;text-align: left;font-weight: bold;display: block;&quot;&gt;&lt;span&gt;TLAB 分配（Thread Local Allocation Buffer）&lt;/span&gt;&lt;/span&gt;&lt;/h4&gt;&lt;ul style=&quot;list-style-type: disc;margin-top: 8px;margin-bottom: 8px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 25px;padding-right: 0px;color: rgb(0, 0, 0);&quot; class=&quot;list-paddingleft-1&quot;&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);font-weight: bold;background-attachment: scroll;background-clip: border-box;background-color: rgba(0, 0, 0, 0);background-image: none;background-origin: padding-box;background-position-x: left;background-position-y: top;background-repeat: no-repeat;background-size: auto;width: auto;height: auto;margin-top: 0px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;&quot;&gt;&lt;span&gt;核心思想&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;：每个线程在 Eden 区预先分配一块专属的内存区域，线程创建对象时优先在自己的 TLAB 里分配，彻底避免多线程竞争。&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);font-weight: bold;background-attachment: scroll;background-clip: border-box;background-color: rgba(0, 0, 0, 0);background-image: none;background-origin: padding-box;background-position-x: left;background-position-y: top;background-repeat: no-repeat;background-size: auto;width: auto;height: auto;margin-top: 0px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;&quot;&gt;&lt;span&gt;通俗比喻&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;：就像超市里每个人都有自己的购物车，不用每次拿东西都去抢公共货架。&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);font-weight: bold;background-attachment: scroll;background-clip: border-box;background-color: rgba(0, 0, 0, 0);background-image: none;background-origin: padding-box;background-position-x: left;background-position-y: top;background-repeat: no-repeat;background-size: auto;width: auto;height: auto;margin-top: 0px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;&quot;&gt;&lt;span&gt;工作原理&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;：&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;ul style=&quot;list-style-type: disc;margin-top: 8px;margin-bottom: 8px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 25px;padding-right: 0px;color: rgb(0, 0, 0);&quot; class=&quot;list-paddingleft-1&quot;&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;span&gt;TLAB 大小默认是 Eden 区的 1%，可通过&lt;/span&gt;&lt;code style=&quot;color: rgb(30, 107, 184);font-size: 14px;line-height: 1.8em;letter-spacing: 0em;background-attachment: scroll;background-clip: border-box;background-color: rgba(27, 31, 35, 0.05);background-image: none;background-origin: padding-box;background-position-x: left;background-position-y: top;background-repeat: no-repeat;background-size: auto;width: auto;margin-top: 0px;margin-bottom: 0px;margin-left: 2px;margin-right: 2px;padding-top: 2px;padding-bottom: 2px;padding-left: 4px;padding-right: 4px;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgb(0, 0, 0);border-bottom-color: rgba(0, 0, 0, 0.4);border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas, Monaco, Menlo, monospace;word-break: break-all;&quot;&gt;&lt;span&gt;-XX:TLABWasteTargetPercent&lt;/span&gt;&lt;/code&gt;&lt;span&gt;调整&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;span&gt;TLAB 满了之后，线程会向 JVM 申请新的 TLAB&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;span&gt;超大对象直接跳过 TLAB，分配到堆上&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);font-weight: bold;background-attachment: scroll;background-clip: border-box;background-color: rgba(0, 0, 0, 0);background-image: none;background-origin: padding-box;background-position-x: left;background-position-y: top;background-repeat: no-repeat;background-size: auto;width: auto;height: auto;margin-top: 0px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;&quot;&gt;&lt;span&gt;优点&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;：解决并发安全问题、分配速度接近栈上分配&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);font-weight: bold;background-attachment: scroll;background-clip: border-box;background-color: rgba(0, 0, 0, 0);background-image: none;background-origin: padding-box;background-position-x: left;background-position-y: top;background-repeat: no-repeat;background-size: auto;width: auto;height: auto;margin-top: 0px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;&quot;&gt;&lt;span&gt;缺点&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;：会产生少量内存浪费（TLAB 内的空闲空间）&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="460" width="550" x="511.3548387096771" y="-517.8387096774195" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-93" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;h4 style=&quot;margin-top: 30px;margin-bottom: 15px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;display: block;&quot;&gt;&lt;span style=&quot;font-size: 18px;color: rgb(0, 0, 0);line-height: 1.5em;letter-spacing: 0em;text-align: left;font-weight: bold;display: block;&quot;&gt;&lt;span&gt;堆上分配（兜底方案）&lt;/span&gt;&lt;/span&gt;&lt;/h4&gt;&lt;ul style=&quot;list-style-type: disc;margin-top: 8px;margin-bottom: 8px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 25px;padding-right: 0px;color: rgb(0, 0, 0);&quot; class=&quot;list-paddingleft-1&quot;&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;span&gt;当对象太大、TLAB 已满，或开启逃逸分析但对象发生了逃逸时，就会分配到堆上。&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;span&gt;堆上分配需要通过 CAS + 失败重试保证并发安全。&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style=&quot;margin-top: 5px;margin-bottom: 5px;color: rgb(1, 1, 1);font-size: 16px;line-height: 1.8em;letter-spacing: 0em;text-align: left;font-weight: normal;&quot;&gt;&lt;span&gt;堆上分配的对象必须由 GC 回收，是性能最差的分配方式。&lt;/span&gt;&lt;/section&gt;&lt;/li&gt;&lt;/ul&gt;&lt;pre style=&quot;border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;margin-top: 10px;margin-bottom: 10px;margin-left: 0px;margin-right: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;&quot;&gt;&lt;code style=&quot;overflow-x: auto;padding: 16px;color: #abb2bf;padding-top: 15px;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas, Monaco, Menlo, monospace;font-size: 12px;&quot;&gt;&lt;span&gt;堆 Eden 区示意：&lt;/span&gt;&lt;br&gt;&lt;span&gt;+-------------------------------------------------------+&lt;/span&gt;&lt;br&gt;&lt;span&gt;| 线程A TLAB &amp;nbsp;| 线程B TLAB &amp;nbsp;| 线程C TLAB &amp;nbsp;| 公共分配区 &amp;nbsp; |&lt;/span&gt;&lt;br&gt;&lt;span&gt;+-------------------------------------------------------+&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;↑ 线程私享，无锁分配&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="342" width="550" x="1301.677419354839" y="-466.2258064516127" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-94" parent="1" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;tableRender=collapsed;" value="" vertex="1">
+          <mxGeometry height="294" width="808" x="2357" y="-450" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-95" parent="AUvF3KoyZVTuGkdwbndg-94" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
+          <mxGeometry height="74" width="808" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-96" parent="AUvF3KoyZVTuGkdwbndg-95" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="分配策略" vertex="1">
+          <mxGeometry height="74" width="135" as="geometry">
+            <mxRectangle height="74" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-97" parent="AUvF3KoyZVTuGkdwbndg-95" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="分配位置" vertex="1">
+          <mxGeometry height="74" width="134" x="135" as="geometry">
+            <mxRectangle height="74" width="134" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-98" parent="AUvF3KoyZVTuGkdwbndg-95" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="并发安全" vertex="1">
+          <mxGeometry height="74" width="135" x="269" as="geometry">
+            <mxRectangle height="74" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-99" parent="AUvF3KoyZVTuGkdwbndg-95" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="GC 参与" vertex="1">
+          <mxGeometry height="74" width="135" x="404" as="geometry">
+            <mxRectangle height="74" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-100" parent="AUvF3KoyZVTuGkdwbndg-95" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="性能" vertex="1">
+          <mxGeometry height="74" width="134" x="539" as="geometry">
+            <mxRectangle height="74" width="134" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-101" parent="AUvF3KoyZVTuGkdwbndg-95" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="适用场景" vertex="1">
+          <mxGeometry height="74" width="135" x="673" as="geometry">
+            <mxRectangle height="74" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-102" parent="AUvF3KoyZVTuGkdwbndg-94" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
+          <mxGeometry height="73" width="808" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-103" parent="AUvF3KoyZVTuGkdwbndg-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="栈上分配" vertex="1">
+          <mxGeometry height="73" width="135" as="geometry">
+            <mxRectangle height="73" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-104" parent="AUvF3KoyZVTuGkdwbndg-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="栈帧" vertex="1">
+          <mxGeometry height="73" width="134" x="135" as="geometry">
+            <mxRectangle height="73" width="134" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-105" parent="AUvF3KoyZVTuGkdwbndg-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="天然安全" vertex="1">
+          <mxGeometry height="73" width="135" x="269" as="geometry">
+            <mxRectangle height="73" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-106" parent="AUvF3KoyZVTuGkdwbndg-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="❌不需要" vertex="1">
+          <mxGeometry height="73" width="135" x="404" as="geometry">
+            <mxRectangle height="73" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-107" parent="AUvF3KoyZVTuGkdwbndg-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="🚀最高" vertex="1">
+          <mxGeometry height="73" width="134" x="539" as="geometry">
+            <mxRectangle height="73" width="134" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-108" parent="AUvF3KoyZVTuGkdwbndg-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="73" width="135" x="673" as="geometry">
+            <mxRectangle height="73" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-109" parent="AUvF3KoyZVTuGkdwbndg-94" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
+          <mxGeometry height="74" width="808" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-110" parent="AUvF3KoyZVTuGkdwbndg-109" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="TLAB 分配" vertex="1">
+          <mxGeometry height="74" width="135" as="geometry">
+            <mxRectangle height="74" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-111" parent="AUvF3KoyZVTuGkdwbndg-109" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="Eden 区（线程专属）" vertex="1">
+          <mxGeometry height="74" width="134" x="135" as="geometry">
+            <mxRectangle height="74" width="134" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-112" parent="AUvF3KoyZVTuGkdwbndg-109" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="天然安全" vertex="1">
+          <mxGeometry height="74" width="135" x="269" as="geometry">
+            <mxRectangle height="74" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-113" parent="AUvF3KoyZVTuGkdwbndg-109" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="✅需要" vertex="1">
+          <mxGeometry height="74" width="135" x="404" as="geometry">
+            <mxRectangle height="74" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-114" parent="AUvF3KoyZVTuGkdwbndg-109" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="74" width="134" x="539" as="geometry">
+            <mxRectangle height="74" width="134" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-115" parent="AUvF3KoyZVTuGkdwbndg-109" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="74" width="135" x="673" as="geometry">
+            <mxRectangle height="74" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-116" parent="AUvF3KoyZVTuGkdwbndg-94" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
+          <mxGeometry height="73" width="808" y="221" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-117" parent="AUvF3KoyZVTuGkdwbndg-116" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="堆上分配" vertex="1">
+          <mxGeometry height="73" width="135" as="geometry">
+            <mxRectangle height="73" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-118" parent="AUvF3KoyZVTuGkdwbndg-116" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="堆（全局共享）" vertex="1">
+          <mxGeometry height="73" width="134" x="135" as="geometry">
+            <mxRectangle height="73" width="134" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-119" parent="AUvF3KoyZVTuGkdwbndg-116" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="CAS 保证" vertex="1">
+          <mxGeometry height="73" width="135" x="269" as="geometry">
+            <mxRectangle height="73" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-120" parent="AUvF3KoyZVTuGkdwbndg-116" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="✅需要" vertex="1">
+          <mxGeometry height="73" width="135" x="404" as="geometry">
+            <mxRectangle height="73" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-121" parent="AUvF3KoyZVTuGkdwbndg-116" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="73" width="134" x="539" as="geometry">
+            <mxRectangle height="73" width="134" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-122" parent="AUvF3KoyZVTuGkdwbndg-116" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="73" width="135" x="673" as="geometry">
+            <mxRectangle height="73" width="135" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
