@@ -128,12 +128,13 @@
             "id": "305343f6b8ad1b8c",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "bases",
               "state": {
-                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
+                "file": "未命名 1.base",
+                "viewName": "视图"
               },
-              "icon": "pencil-ruler",
-              "title": "Kafka-架构与面试"
+              "icon": "lucide-table",
+              "title": "未命名 1"
             }
           }
         ],
@@ -368,7 +369,8 @@
       "bases:新建数据库": false,
       "hybrid-git-sync:Sync Now": false,
       "drawio:Launch draw.io editor": false,
-      "drawio-editor:Create new drawio diagram": false
+      "drawio-editor:Create new drawio diagram": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "floating": {
@@ -412,8 +414,9 @@
   },
   "active": "305343f6b8ad1b8c",
   "lastOpenFiles": [
-    "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
+    "未命名 1.base",
+    "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
     "7-分布式/分布式事务.drawio",
     "7-分布式/分布式事务-总览.png",
     "1-java/1-juc/1-AQS.drawio",
