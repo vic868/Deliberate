@@ -1240,180 +1240,180 @@
     </mxGraphModel>
   </diagram>
   <diagram id="r06" name="06 持久化">
-    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0" background="#FFFFFF">
+    <mxGraphModel dx="2225" dy="1183" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="r06_accent" value="" style="rounded=1;arcSize=40;fillColor=#2563EB;strokeColor=none;" vertex="1" parent="1">
-          <mxGeometry x="60" y="42" width="7" height="54" as="geometry" />
+        <mxCell id="r06_accent" parent="1" style="rounded=1;arcSize=40;fillColor=#2563EB;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="54" width="7" x="60" y="42" as="geometry" />
         </mxCell>
-        <mxCell id="r06_title" value="持久化：RDB 拍全景，AOF 记流水，混合持久化两手抓" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#0F172A;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="82" y="36" width="1180" height="44" as="geometry" />
+        <mxCell id="r06_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#0F172A;fontFamily=PingFang SC;" value="持久化：RDB 拍全景，AOF 记流水，混合持久化两手抓" vertex="1">
+          <mxGeometry height="44" width="1180" x="82" y="36" as="geometry" />
         </mxCell>
-        <mxCell id="r06_sub" value="RDB 用 fork + COW 不阻塞；AOF everysec 最多丢 1 秒；混合持久化先读 RDB 再补 AOF 尾部。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13.5;fontColor=#64748B;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="82" y="82" width="1330" height="24" as="geometry" />
+        <mxCell id="r06_sub" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13.5;fontColor=#64748B;fontFamily=PingFang SC;" value="RDB 用 fork + COW 不阻塞；AOF everysec 最多丢 1 秒；混合持久化先读 RDB 再补 AOF 尾部。" vertex="1">
+          <mxGeometry height="24" width="1330" x="82" y="82" as="geometry" />
         </mxCell>
-        <mxCell id="r06_num" value="06 / 12" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontColor=#94A3B8;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="1370" y="44" width="170" height="24" as="geometry" />
+        <mxCell id="r06_num" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontColor=#94A3B8;fontFamily=PingFang SC;" value="06 / 12" vertex="1">
+          <mxGeometry height="24" width="170" x="1370" y="44" as="geometry" />
         </mxCell>
-        <mxCell id="r06_hdrline" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#E2E8F0;strokeWidth=1;" edge="1" parent="1">
+        <mxCell id="r06_hdrline" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#E2E8F0;strokeWidth=1;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="60" y="118" as="sourcePoint" />
             <mxPoint x="1540" y="118" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r06_p1" value="" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="150" width="720" height="380" as="geometry" />
+        <mxCell id="r06_p1" parent="1" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="380" width="720" x="60" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t2" value="RDB：定期全量快照" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="84" y="168" width="660" height="24" as="geometry" />
+        <mxCell id="r06_t2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="RDB：定期全量快照" vertex="1">
+          <mxGeometry height="24" width="660" x="84" y="168" as="geometry" />
         </mxCell>
-        <mxCell id="r06_b3" value="主进程" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9.5;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="90" y="212" width="150" height="54" as="geometry" />
+        <mxCell id="r06_b3" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9.5;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="主进程" vertex="1">
+          <mxGeometry height="54" width="150" x="90" y="212" as="geometry" />
         </mxCell>
-        <mxCell id="r06_a4" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#D97706;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="r06_a4" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#D97706;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="240" y="239" as="sourcePoint" />
             <mxPoint x="300" y="239" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r06_t5" value="fork" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="190.0" y="219.0" width="160" height="20" as="geometry" />
+        <mxCell id="r06_t5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" value="fork" vertex="1">
+          <mxGeometry height="20" width="160" x="190" y="219" as="geometry" />
         </mxCell>
-        <mxCell id="r06_b6" value="子进程&#xa;写 RDB" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9.5;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="300" y="212" width="180" height="54" as="geometry" />
+        <mxCell id="r06_b6" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9.5;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="子进程&#xa;写 RDB" vertex="1">
+          <mxGeometry height="54" width="180" x="300" y="212" as="geometry" />
         </mxCell>
-        <mxCell id="r06_a7" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#D97706;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="r06_a7" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#D97706;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="480" y="239" as="sourcePoint" />
             <mxPoint x="540" y="239" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r06_b8" value="磁盘&#xa;snapshot.rdb" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="540" y="212" width="180" height="54" as="geometry" />
+        <mxCell id="r06_b8" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="磁盘&#xa;snapshot.rdb" vertex="1">
+          <mxGeometry height="54" width="180" x="540" y="212" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t9" value="主进程继续服务；只有被修改的页才复制（COW）。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#059669;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="90" y="286" width="650" height="20" as="geometry" />
+        <mxCell id="r06_t9" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#059669;fontFamily=PingFang SC;spacing=0;" value="主进程继续服务；只有被修改的页才复制（COW）。" vertex="1">
+          <mxGeometry height="20" width="650" x="90" y="286" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t10" value="SAVE 阻塞（禁用）；BGSAVE 才是生产用法。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="90" y="316" width="650" height="20" as="geometry" />
+        <mxCell id="r06_t10" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="SAVE 阻塞（禁用）；BGSAVE 才是生产用法。" vertex="1">
+          <mxGeometry height="20" width="650" x="90" y="316" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p11" value="" style="rounded=1;arcSize=8;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="356" width="630" height="62" as="geometry" />
+        <mxCell id="r06_p11" parent="1" style="rounded=1;arcSize=8;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="62" width="630" x="90" y="356" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t12" value="触发条件" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="106" y="366" width="600" height="20" as="geometry" />
+        <mxCell id="r06_t12" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="触发条件" vertex="1">
+          <mxGeometry height="20" width="600" x="106" y="366" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t13" value="save 900 1 / save 300 10 / save 60 10000" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#D97706;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="106" y="392" width="600" height="20" as="geometry" />
+        <mxCell id="r06_t13" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#D97706;fontFamily=PingFang SC;spacing=0;" value="save 900 1 / save 300 10 / save 60 10000" vertex="1">
+          <mxGeometry height="20" width="600" x="106" y="392" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t14" value="缺点：两次快照之间宕机 → 这段时间的数据丢失。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="90" y="434" width="630" height="22" as="geometry" />
+        <mxCell id="r06_t14" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" value="缺点：两次快照之间宕机 → 这段时间的数据丢失。" vertex="1">
+          <mxGeometry height="22" width="630" x="90" y="434" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t15" value="fork 本身会短暂阻塞；COW 期间写入多，内存可能翻倍。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.6;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="90" y="466" width="630" height="40" as="geometry" />
+        <mxCell id="r06_t15" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.6;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" value="fork 本身会短暂阻塞；COW 期间写入多，内存可能翻倍。" vertex="1">
+          <mxGeometry height="40" width="630" x="90" y="466" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p16" value="" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="800" y="150" width="740" height="380" as="geometry" />
+        <mxCell id="r06_p16" parent="1" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="380" width="740" x="800" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t17" value="AOF：追加写命令" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="824" y="168" width="680" height="24" as="geometry" />
+        <mxCell id="r06_t17" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="AOF：追加写命令" vertex="1">
+          <mxGeometry height="24" width="680" x="824" y="168" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t18" value="每条写命令追加到 AOF 缓冲区，再按策略 fsync 到磁盘。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="824" y="204" width="680" height="20" as="geometry" />
+        <mxCell id="r06_t18" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" value="每条写命令追加到 AOF 缓冲区，再按策略 fsync 到磁盘。" vertex="1">
+          <mxGeometry height="20" width="680" x="824" y="204" as="geometry" />
         </mxCell>
-        <mxCell id="r06_b19" value="写命令" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9.5;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="830" y="240" width="150" height="54" as="geometry" />
+        <mxCell id="r06_b19" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9.5;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="写命令" vertex="1">
+          <mxGeometry height="54" width="150" x="830" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="r06_a20" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="r06_a20" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="980" y="267" as="sourcePoint" />
             <mxPoint x="1020" y="267" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r06_b21" value="AOF 缓冲区" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="1020" y="240" width="170" height="54" as="geometry" />
+        <mxCell id="r06_b21" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="AOF 缓冲区" vertex="1">
+          <mxGeometry height="54" width="170" x="1020" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="r06_a22" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="r06_a22" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1190" y="267" as="sourcePoint" />
             <mxPoint x="1230" y="267" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r06_b23" value="AOF 文件" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="1230" y="240" width="260" height="54" as="geometry" />
+        <mxCell id="r06_b23" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="AOF 文件" vertex="1">
+          <mxGeometry height="54" width="260" x="1230" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p24" value="" style="rounded=1;arcSize=8;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="830" y="326" width="660" height="50" as="geometry" />
+        <mxCell id="r06_p24" parent="1" style="rounded=1;arcSize=8;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="50" width="660" x="830" y="326" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t25" value="always" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#DC2626;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="846" y="338" width="110" height="22" as="geometry" />
+        <mxCell id="r06_t25" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#DC2626;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="always" vertex="1">
+          <mxGeometry height="22" width="110" x="846" y="338" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t26" value="每条都 fsync；最安全最慢" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.6;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="960" y="338" width="520" height="22" as="geometry" />
+        <mxCell id="r06_t26" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.6;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="每条都 fsync；最安全最慢" vertex="1">
+          <mxGeometry height="22" width="520" x="960" y="338" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p27" value="" style="rounded=1;arcSize=8;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="830" y="384" width="660" height="50" as="geometry" />
+        <mxCell id="r06_p27" parent="1" style="rounded=1;arcSize=8;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="50" width="660" x="830" y="384" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t28" value="everysec" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="846" y="396" width="110" height="22" as="geometry" />
+        <mxCell id="r06_t28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="everysec" vertex="1">
+          <mxGeometry height="22" width="110" x="846" y="396" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t29" value="每秒一次；最多丢 1 秒 ⭐" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.6;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="960" y="396" width="520" height="22" as="geometry" />
+        <mxCell id="r06_t29" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.6;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="每秒一次；最多丢 1 秒 ⭐" vertex="1">
+          <mxGeometry height="22" width="520" x="960" y="396" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p30" value="" style="rounded=1;arcSize=8;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="830" y="442" width="660" height="50" as="geometry" />
+        <mxCell id="r06_p30" parent="1" style="rounded=1;arcSize=8;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="50" width="660" x="830" y="442" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t31" value="no" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="846" y="454" width="110" height="22" as="geometry" />
+        <mxCell id="r06_t31" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="no" vertex="1">
+          <mxGeometry height="22" width="110" x="846" y="454" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t32" value="交给 OS；最快，可能丢更多" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.6;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="960" y="454" width="520" height="22" as="geometry" />
+        <mxCell id="r06_t32" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.6;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="交给 OS；最快，可能丢更多" vertex="1">
+          <mxGeometry height="22" width="520" x="960" y="454" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t33" value="AOF 重写：BGREWRITEAOF 合并冗余命令（十次 INCR → 一次 SET）。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="824" y="500" width="680" height="42" as="geometry" />
+        <mxCell id="r06_t33" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="AOF 重写：BGREWRITEAOF 合并冗余命令（十次 INCR → 一次 SET）。" vertex="1">
+          <mxGeometry height="42" width="680" x="824" y="500" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p34" value="" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="560" width="1480" height="300" as="geometry" />
+        <mxCell id="r06_p34" parent="1" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="300" width="1480" x="60" y="560" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t35" value="混合持久化：RDB 做底，AOF 补尾" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#7C3AED;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="84" y="578" width="1400" height="24" as="geometry" />
+        <mxCell id="r06_t35" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#7C3AED;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="混合持久化：RDB 做底，AOF 补尾" vertex="1">
+          <mxGeometry height="24" width="1400" x="84" y="578" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p36" value="" style="rounded=1;arcSize=8;fillColor=#F5F3FF;strokeColor=#DDD6FE;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="100" y="620" width="560" height="56" as="geometry" />
+        <mxCell id="r06_p36" parent="1" style="rounded=1;arcSize=8;fillColor=#F5F3FF;strokeColor=#DDD6FE;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="56" width="560" x="100" y="620" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t37" value="前半：RDB 全量快照" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#7C3AED;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="116" y="634" width="260" height="26" as="geometry" />
+        <mxCell id="r06_t37" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#7C3AED;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="前半：RDB 全量快照" vertex="1">
+          <mxGeometry height="26" width="260" x="116" y="634" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p38" value="" style="rounded=1;arcSize=8;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="660" y="620" width="440" height="56" as="geometry" />
+        <mxCell id="r06_p38" parent="1" style="rounded=1;arcSize=8;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="56" width="440" x="660" y="620" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t39" value="后半：AOF 增量命令" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="676" y="634" width="400" height="26" as="geometry" />
+        <mxCell id="r06_t39" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="后半：AOF 增量命令" vertex="1">
+          <mxGeometry height="26" width="400" x="676" y="634" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t40" value="aof-use-rdb-preamble yes&#xa;重启先读 RDB，再重放 AOF 尾部" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="632" width="380" height="40" as="geometry" />
+        <mxCell id="r06_t40" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="aof-use-rdb-preamble yes&#xa;重启先读 RDB，再重放 AOF 尾部" vertex="1">
+          <mxGeometry height="40" width="380" x="1120" y="632" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t41" value="生产基线：appendonly yes + appendfsync everysec + 混合持久化 + 合理的 save 策略。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.5;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="100" y="698" width="1380" height="22" as="geometry" />
+        <mxCell id="r06_t41" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.5;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="生产基线：appendonly yes + appendfsync everysec + 混合持久化 + 合理的 save 策略。" vertex="1">
+          <mxGeometry height="22" width="1380" x="100" y="698" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t42" value="最坏情况：everysec 的 1 秒窗口；RDB 负责快速恢复，AOF 负责完整性。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="100" y="726" width="1380" height="22" as="geometry" />
+        <mxCell id="r06_t42" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" value="最坏情况：everysec 的 1 秒窗口；RDB 负责快速恢复，AOF 负责完整性。" vertex="1">
+          <mxGeometry height="22" width="1380" x="100" y="726" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p43" value="" style="rounded=1;arcSize=8;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="100" y="764" width="1380" height="60" as="geometry" />
+        <mxCell id="r06_p43" parent="1" style="rounded=1;arcSize=8;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="60" width="1380" x="100" y="764" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t44" value="面试点：fork 会阻塞吗？会短暂阻塞；COW 只复制被修改页，但写入量大时内存可能接近翻倍。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="116" y="776" width="1340" height="34" as="geometry" />
+        <mxCell id="r06_t44" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="面试点：fork 会阻塞吗？会短暂阻塞；COW 只复制被修改页，但写入量大时内存可能接近翻倍。" vertex="1">
+          <mxGeometry height="34" width="1340" x="116" y="776" as="geometry" />
         </mxCell>
-        <mxCell id="r06_p45" value="" style="rounded=1;arcSize=12;fillColor=#0F172A;strokeColor=#0F172A;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="892" width="1480" height="72" as="geometry" />
+        <mxCell id="r06_p45" parent="1" style="rounded=1;arcSize=12;fillColor=#0F172A;strokeColor=#0F172A;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="72" width="1480" x="60" y="892" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t46" value="记住" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#93C5FD;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="88" y="906" width="86" height="44" as="geometry" />
+        <mxCell id="r06_t46" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#93C5FD;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="记住" vertex="1">
+          <mxGeometry height="44" width="86" x="88" y="906" as="geometry" />
         </mxCell>
-        <mxCell id="r06_t47" value="RDB 保恢复速度，AOF 保数据完整；混合持久化把两者拼成一个文件，是生产默认答案。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="176" y="902" width="1330" height="52" as="geometry" />
+        <mxCell id="r06_t47" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" value="RDB 保恢复速度，AOF 保数据完整；混合持久化把两者拼成一个文件，是生产默认答案。" vertex="1">
+          <mxGeometry height="52" width="1330" x="176" y="902" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
