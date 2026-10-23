@@ -1,1 +1,19 @@
-<mxfile><diagram id="0" name="Page-1"><mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/></root></mxGraphModel></diagram></mxfile>
+<mxfile host="embed.diagrams.net">
+  <diagram id="0" name="Page-1">
+    <mxGraphModel dx="1986" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="JVM 运行时数据区" vertex="1">
+          <mxGeometry height="60" width="120" x="590" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程私有区域" vertex="1">
+          <mxGeometry height="60" width="120" x="240" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程私有区域" vertex="1">
+          <mxGeometry height="60" width="120" x="670" y="700" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
