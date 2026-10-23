@@ -1396,243 +1396,243 @@
     </mxGraphModel>
   </diagram>
   <diagram id="p07" name="06 消息">
-    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0" background="#FFFFFF">
+    <mxGraphModel dx="1986" dy="1183" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="p07_accent" value="" style="rounded=1;arcSize=40;fillColor=#2563EB;strokeColor=none;" vertex="1" parent="1">
-          <mxGeometry x="60" y="42" width="7" height="54" as="geometry" />
+        <mxCell id="p07_accent" parent="1" style="rounded=1;arcSize=40;fillColor=#2563EB;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="54" width="7" x="60" y="42" as="geometry" />
         </mxCell>
-        <mxCell id="p07_title" value="消息型：把「跨库提交」降维成「本地事务 + 可靠投递」" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#0F172A;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="82" y="36" width="1180" height="44" as="geometry" />
+        <mxCell id="p07_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#0F172A;fontFamily=PingFang SC;" value="消息型：把「跨库提交」降维成「本地事务 + 可靠投递」" vertex="1">
+          <mxGeometry height="44" width="1180" x="82" y="36" as="geometry" />
         </mxCell>
-        <mxCell id="p07_sub" value="本地消息表靠同库同事务；RocketMQ 事务消息靠半消息 + 回查。两者都是 at-least-once。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13.5;fontColor=#64748B;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="82" y="82" width="1330" height="24" as="geometry" />
+        <mxCell id="p07_sub" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13.5;fontColor=#64748B;fontFamily=PingFang SC;" value="本地消息表靠同库同事务；RocketMQ 事务消息靠半消息 + 回查。两者都是 at-least-once。" vertex="1">
+          <mxGeometry height="24" width="1330" x="82" y="82" as="geometry" />
         </mxCell>
-        <mxCell id="p07_num" value="07 / 10" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontColor=#94A3B8;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="1370" y="44" width="170" height="24" as="geometry" />
+        <mxCell id="p07_num" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontColor=#94A3B8;fontFamily=PingFang SC;" value="07 / 10" vertex="1">
+          <mxGeometry height="24" width="170" x="1370" y="44" as="geometry" />
         </mxCell>
-        <mxCell id="p07_hdrline" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#E2E8F0;strokeWidth=1;" edge="1" parent="1">
+        <mxCell id="p07_hdrline" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#E2E8F0;strokeWidth=1;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="60" y="118" as="sourcePoint" />
             <mxPoint x="1540" y="118" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_p1" value="" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="150" width="720" height="700" as="geometry" />
+        <mxCell id="p07_p1" parent="1" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="700" width="720" x="60" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t2" value="本地消息表：不依赖 MQ 的可靠" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="84" y="168" width="660" height="24" as="geometry" />
+        <mxCell id="p07_t2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="本地消息表：不依赖 MQ 的可靠" vertex="1">
+          <mxGeometry height="24" width="660" x="84" y="168" as="geometry" />
         </mxCell>
-        <mxCell id="p07_p3" value="" style="rounded=1;arcSize=12;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1;dashed=1;dashPattern=7 5;" vertex="1" parent="1">
-          <mxGeometry x="90" y="220" width="660" height="180" as="geometry" />
+        <mxCell id="p07_p3" parent="1" style="rounded=1;arcSize=12;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1;dashed=1;dashPattern=7 5;" value="" vertex="1">
+          <mxGeometry height="180" width="660" x="90" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t4" value="同一个本地事务" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="104" y="232" width="300" height="20" as="geometry" />
+        <mxCell id="p07_t4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="同一个本地事务" vertex="1">
+          <mxGeometry height="20" width="300" x="104" y="232" as="geometry" />
         </mxCell>
-        <mxCell id="p07_db5" value="业务表" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1.4;fontSize=12;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="120" y="272" width="180" height="96" as="geometry" />
+        <mxCell id="p07_db5" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1.4;fontSize=12;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;align=center;verticalAlign=middle;" value="业务表" vertex="1">
+          <mxGeometry height="96" width="180" x="120" y="272" as="geometry" />
         </mxCell>
-        <mxCell id="p07_db6" value="消息表" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1.4;fontSize=12;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="430" y="272" width="190" height="96" as="geometry" />
+        <mxCell id="p07_db6" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1.4;fontSize=12;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;align=center;verticalAlign=middle;" value="消息表" vertex="1">
+          <mxGeometry height="96" width="190" x="430" y="272" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a7" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a7" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="300" y="320" as="sourcePoint" />
             <mxPoint x="428" y="320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t8" value="同一 COMMIT" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="312" y="296" width="110" height="20" as="geometry" />
+        <mxCell id="p07_t8" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" value="同一 COMMIT" vertex="1">
+          <mxGeometry height="20" width="110" x="312" y="296" as="geometry" />
         </mxCell>
-        <mxCell id="p07_b9" value="定时轮询&#xa;未发送的消息" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=10.5;fontColor=#0F172A;fontFamily=PingFang SC;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="215" y="450" width="180" height="56" as="geometry" />
+        <mxCell id="p07_b9" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=10.5;fontColor=#0F172A;fontFamily=PingFang SC;spacing=8;" value="定时轮询&#xa;未发送的消息" vertex="1">
+          <mxGeometry height="56" width="180" x="215" y="450" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a10" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a10" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="525" y="368" as="sourcePoint" />
             <mxPoint x="305" y="450" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t11" value="扫描未发送" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="380" y="392" width="110" height="20" as="geometry" />
+        <mxCell id="p07_t11" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" value="扫描未发送" vertex="1">
+          <mxGeometry height="20" width="110" x="380" y="392" as="geometry" />
         </mxCell>
-        <mxCell id="p07_b12" value="MQ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=12;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="450" y="450" width="160" height="56" as="geometry" />
+        <mxCell id="p07_b12" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=12;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="MQ" vertex="1">
+          <mxGeometry height="56" width="160" x="450" y="450" as="geometry" />
         </mxCell>
-        <mxCell id="p07_b13" value="下游消费者" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=11.5;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="330" y="575" width="200" height="56" as="geometry" />
+        <mxCell id="p07_b13" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=11.5;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="下游消费者" vertex="1">
+          <mxGeometry height="56" width="200" x="330" y="575" as="geometry" />
         </mxCell>
-        <mxCell id="p07_d14" value="消费成功？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1.2;fontSize=10.5;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
-          <mxGeometry x="355" y="670" width="150" height="80" as="geometry" />
+        <mxCell id="p07_d14" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1.2;fontSize=10.5;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;align=center;verticalAlign=middle;spacing=4;" value="消费成功？" vertex="1">
+          <mxGeometry height="80" width="150" x="355" y="670" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a15" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a15" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="305" y="506" as="sourcePoint" />
             <mxPoint x="450" y="506" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_a16" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a16" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="530" y="506" as="sourcePoint" />
             <mxPoint x="430" y="575" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_a17" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a17" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="430" y="631" as="sourcePoint" />
             <mxPoint x="430" y="670" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t18" value="成功 → 更新消息表&#xa;失败 → 重试 / 告警" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="518" y="672" width="170" height="40" as="geometry" />
+        <mxCell id="p07_t18" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" value="成功 → 更新消息表&#xa;失败 → 重试 / 告警" vertex="1">
+          <mxGeometry height="40" width="170" x="518" y="672" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a19" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.2;endArrow=none;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+        <mxCell id="p07_a19" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.2;endArrow=none;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="505" y="720" as="sourcePoint" />
             <mxPoint x="690" y="720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_a20" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.2;endArrow=none;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+        <mxCell id="p07_a20" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.2;endArrow=none;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="690" y="720" as="sourcePoint" />
             <mxPoint x="690" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_a21" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+        <mxCell id="p07_a21" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="690" y="340" as="sourcePoint" />
             <mxPoint x="622" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t22" value="消费成功回写状态" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.5;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="548" y="744" width="170" height="20" as="geometry" />
+        <mxCell id="p07_t22" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.5;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" value="消费成功回写状态" vertex="1">
+          <mxGeometry height="20" width="170" x="548" y="744" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t23" value="先写库、再发消息；表里存的是「意图」，不是「已发送」。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="100" y="790" width="650" height="32" as="geometry" />
+        <mxCell id="p07_t23" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="先写库、再发消息；表里存的是「意图」，不是「已发送」。" vertex="1">
+          <mxGeometry height="32" width="650" x="100" y="790" as="geometry" />
         </mxCell>
-        <mxCell id="p07_p24" value="" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="800" y="150" width="740" height="700" as="geometry" />
+        <mxCell id="p07_p24" parent="1" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="700" width="740" x="800" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t25" value="RocketMQ：先发半消息，再执行本地事务" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="824" y="168" width="680" height="24" as="geometry" />
+        <mxCell id="p07_t25" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="RocketMQ：先发半消息，再执行本地事务" vertex="1">
+          <mxGeometry height="24" width="680" x="824" y="168" as="geometry" />
         </mxCell>
-        <mxCell id="p07_b26" value="生产者" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=11.5;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="840" y="225" width="160" height="48" as="geometry" />
+        <mxCell id="p07_b26" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=11.5;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="生产者" vertex="1">
+          <mxGeometry height="48" width="160" x="840" y="225" as="geometry" />
         </mxCell>
-        <mxCell id="p07_b27" value="Broker" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=11.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="1080" y="225" width="180" height="48" as="geometry" />
+        <mxCell id="p07_b27" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=11.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="Broker" vertex="1">
+          <mxGeometry height="48" width="180" x="1080" y="225" as="geometry" />
         </mxCell>
-        <mxCell id="p07_b28" value="消费者" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=11.5;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="1320" y="225" width="140" height="48" as="geometry" />
+        <mxCell id="p07_b28" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=11.5;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="消费者" vertex="1">
+          <mxGeometry height="48" width="140" x="1320" y="225" as="geometry" />
         </mxCell>
-        <mxCell id="p07_life920" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#CBD5E1;strokeWidth=1;dashed=1;dashPattern=6 4;" edge="1" parent="1">
+        <mxCell id="p07_life920" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#CBD5E1;strokeWidth=1;dashed=1;dashPattern=6 4;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="920" y="273" as="sourcePoint" />
             <mxPoint x="920" y="720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_life1170" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#CBD5E1;strokeWidth=1;dashed=1;dashPattern=6 4;" edge="1" parent="1">
+        <mxCell id="p07_life1170" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#CBD5E1;strokeWidth=1;dashed=1;dashPattern=6 4;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1170" y="273" as="sourcePoint" />
             <mxPoint x="1170" y="720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_life1390" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#CBD5E1;strokeWidth=1;dashed=1;dashPattern=6 4;" edge="1" parent="1">
+        <mxCell id="p07_life1390" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#CBD5E1;strokeWidth=1;dashed=1;dashPattern=6 4;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1390" y="273" as="sourcePoint" />
             <mxPoint x="1390" y="720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_a29" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a29" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="920" y="310" as="sourcePoint" />
             <mxPoint x="1160" y="310" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t30" value="① 半消息（消费者不可见）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="940" y="286" width="240" height="20" as="geometry" />
+        <mxCell id="p07_t30" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" value="① 半消息（消费者不可见）" vertex="1">
+          <mxGeometry height="20" width="240" x="940" y="286" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a31" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a31" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1160" y="350" as="sourcePoint" />
             <mxPoint x="930" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t32" value="② 发送成功" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#059669;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="990" y="326" width="140" height="20" as="geometry" />
+        <mxCell id="p07_t32" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#059669;fontFamily=PingFang SC;spacing=0;" value="② 发送成功" vertex="1">
+          <mxGeometry height="20" width="140" x="990" y="326" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t33" value="③ 执行本地事务" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10.5;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="840" y="376" width="260" height="20" as="geometry" />
+        <mxCell id="p07_t33" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10.5;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="③ 执行本地事务" vertex="1">
+          <mxGeometry height="20" width="260" x="840" y="376" as="geometry" />
         </mxCell>
-        <mxCell id="p07_b34" value="本地事务&#xa;（写业务库）" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9.5;fontColor=#0F172A;fontFamily=PingFang SC;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="840" y="400" width="160" height="50" as="geometry" />
+        <mxCell id="p07_b34" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9.5;fontColor=#0F172A;fontFamily=PingFang SC;spacing=8;" value="本地事务&#xa;（写业务库）" vertex="1">
+          <mxGeometry height="50" width="160" x="840" y="400" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a35" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a35" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="920" y="370" as="sourcePoint" />
             <mxPoint x="920" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_a36" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a36" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="920" y="450" as="sourcePoint" />
             <mxPoint x="920" y="490" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_a37" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a37" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="920" y="500" as="sourcePoint" />
             <mxPoint x="1160" y="500" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t38" value="④ commit / rollback" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#059669;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="940" y="476" width="220" height="20" as="geometry" />
+        <mxCell id="p07_t38" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#059669;fontFamily=PingFang SC;spacing=0;" value="④ commit / rollback" vertex="1">
+          <mxGeometry height="20" width="220" x="940" y="476" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a39" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#DC2626;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+        <mxCell id="p07_a39" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#DC2626;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1160" y="555" as="sourcePoint" />
             <mxPoint x="930" y="555" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t40" value="⑤ 超时 → 定时回查" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="940" y="531" width="220" height="20" as="geometry" />
+        <mxCell id="p07_t40" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" value="⑤ 超时 → 定时回查" vertex="1">
+          <mxGeometry height="20" width="220" x="940" y="531" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a41" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#D97706;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" edge="1" parent="1">
+        <mxCell id="p07_a41" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#D97706;strokeWidth=1.4;endArrow=block;endFill=1;startArrow=none;dashed=1;dashPattern=7 5;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="930" y="595" as="sourcePoint" />
             <mxPoint x="1160" y="595" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t42" value="返回事务状态" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#D97706;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="960" y="571" width="180" height="20" as="geometry" />
+        <mxCell id="p07_t42" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#D97706;fontFamily=PingFang SC;spacing=0;" value="返回事务状态" vertex="1">
+          <mxGeometry height="20" width="180" x="960" y="571" as="geometry" />
         </mxCell>
-        <mxCell id="p07_a43" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="p07_a43" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#0891B2;strokeWidth=1.6;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1170" y="660" as="sourcePoint" />
             <mxPoint x="1378" y="660" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p07_t44" value="⑥ 投递消息" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="1188" y="636" width="160" height="20" as="geometry" />
+        <mxCell id="p07_t44" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#0891B2;fontFamily=PingFang SC;spacing=0;" value="⑥ 投递消息" vertex="1">
+          <mxGeometry height="20" width="160" x="1188" y="636" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t45" value="回查逻辑必须能从 DB 查到确定答案，不能依赖 JVM 内存；&#xa;达到上限后的默认策略，决定极端情况下是丢消息还是多消息。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="840" y="692" width="660" height="50" as="geometry" />
+        <mxCell id="p07_t45" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" value="回查逻辑必须能从 DB 查到确定答案，不能依赖 JVM 内存；&#xa;达到上限后的默认策略，决定极端情况下是丢消息还是多消息。" vertex="1">
+          <mxGeometry height="50" width="660" x="840" y="692" as="geometry" />
         </mxCell>
-        <mxCell id="p07_p46" value="" style="rounded=1;arcSize=10;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="840" y="770" width="660" height="54" as="geometry" />
+        <mxCell id="p07_p46" parent="1" style="rounded=1;arcSize=10;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="54" width="660" x="840" y="770" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t47" value="顺序与本地消息表相反：这里是「先发半消息，后写本地事务」。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="858" y="782" width="624" height="32" as="geometry" />
+        <mxCell id="p07_t47" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="顺序与本地消息表相反：这里是「先发半消息，后写本地事务」。" vertex="1">
+          <mxGeometry height="32" width="624" x="858" y="782" as="geometry" />
         </mxCell>
-        <mxCell id="p07_p48" value="" style="rounded=1;arcSize=12;fillColor=#0F172A;strokeColor=#0F172A;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="892" width="1480" height="72" as="geometry" />
+        <mxCell id="p07_p48" parent="1" style="rounded=1;arcSize=12;fillColor=#0F172A;strokeColor=#0F172A;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="72" width="1480" x="60" y="892" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t49" value="记住" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#93C5FD;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="88" y="906" width="86" height="44" as="geometry" />
+        <mxCell id="p07_t49" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#93C5FD;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="记住" vertex="1">
+          <mxGeometry height="44" width="86" x="88" y="906" as="geometry" />
         </mxCell>
-        <mxCell id="p07_t50" value="不丢 ≠ 不重：at-least-once 是事实，「消费幂等」才是把重复收敛成一次效果的解。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="176" y="902" width="1330" height="52" as="geometry" />
+        <mxCell id="p07_t50" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" value="不丢 ≠ 不重：at-least-once 是事实，「消费幂等」才是把重复收敛成一次效果的解。" vertex="1">
+          <mxGeometry height="52" width="1330" x="176" y="902" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
