@@ -98,8 +98,7 @@
               "title": "分布式事务"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -161,8 +160,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125,
-    "collapsed": true
+    "width": 453.45703125
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -373,12 +371,12 @@
       }
     ]
   },
-  "active": "183c06b52a4d18d1",
+  "active": "5ffc23441e1c5b20",
   "lastOpenFiles": [
+    "7-分布式/分布式事务.drawio",
     "7-分布式/幂等.excalidraw.md",
     "7-分布式/分布式锁.excalidraw.md",
     "7-分布式/分布式事务.excalidraw.md",
-    "7-分布式/分布式事务.drawio",
     "7-分布式/分布式事务-总览.png",
     "1-2-风控/risk-control.drawio",
     "6-ai/deepseek-herness.drawio",
@@ -407,7 +405,6 @@
     "11-高并发高可用/1-QPS卡在10万？拆解Java单机百万调优全流程，从JVM到Linux内核硬核突围！.md",
     "11-高并发高可用/0-1-支付场景三高 系统架构设计.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
-    "1-java/3-IO/1-IO类结构继承总图.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
