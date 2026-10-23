@@ -333,8 +333,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -350,12 +350,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
-    "width": 420.8359375,
-    "collapsed": true
+    "width": 420.8359375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -414,6 +413,8 @@
   },
   "active": "305343f6b8ad1b8c",
   "lastOpenFiles": [
+    "2-redis/Redis-架构与面试-总览.png",
+    "2-redis/Redis-架构与面试.drawio",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "未命名 1.base",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
@@ -437,7 +438,6 @@
     "6-ai/1-milvus/0-milvus.excalidraw.md",
     "1-java/4-jvm/0-JVM总览.md",
     "6-ai/1-milvus",
-    "6-ai/未命名",
     "1-java/0-知识点/0-Java总览.md",
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
@@ -455,7 +455,6 @@
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009152014_855.png",
-    "11-高并发高可用/5-k8s",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
