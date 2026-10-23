@@ -10,8 +10,17 @@
         <mxCell id="AUvF3KoyZVTuGkdwbndg-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程私有区域" vertex="1">
           <mxGeometry height="60" width="120" x="240" y="710" as="geometry" />
         </mxCell>
-        <mxCell id="AUvF3KoyZVTuGkdwbndg-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程私有区域" vertex="1">
-          <mxGeometry height="60" width="120" x="670" y="700" as="geometry" />
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程共享区域&lt;div&gt;全局唯一、随 JVM 启动而存在&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="800" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="线程共享区域&lt;div&gt;全局唯一、随 JVM 启动而存在&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="610" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="程序计数器" vertex="1">
+          <mxGeometry height="60" width="120" x="50" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="AUvF3KoyZVTuGkdwbndg-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="程序计数器" vertex="1">
+          <mxGeometry height="60" width="120" x="190" y="890" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
