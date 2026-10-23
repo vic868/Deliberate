@@ -110,8 +110,7 @@
               "title": "分布式事务"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -385,8 +384,9 @@
       }
     ]
   },
-  "active": "6ceda5662f7ab031",
+  "active": "5ffc23441e1c5b20",
   "lastOpenFiles": [
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "1-java/4-jvm/从内存模型到 OOM 排查.drawio",
     "11-高并发高可用/0-高并发.excalidraw.md",
     "7-分布式/分布式事务.drawio",
@@ -396,7 +396,6 @@
     "7-分布式/分布式事务-总览.png",
     "1-2-风控/risk-control.drawio",
     "6-ai/deepseek-herness.drawio",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "未命名.base",
     "7-分布式/10-SCA分布式实战项目规划.md",
     "7-分布式/9-分布式面试高频题.md",
