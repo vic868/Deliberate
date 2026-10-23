@@ -104,7 +104,7 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "7-分布式/分布式事务.drawio"
+                "file": "7-分布式/0-分布式事务/分布式事务.drawio"
               },
               "icon": "pencil-ruler",
               "title": "分布式事务"
@@ -128,12 +128,14 @@
             "id": "305343f6b8ad1b8c",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "2-redis/Redis-架构与面试.drawio"
+                "file": "7-分布式/5-一致性哈希与负载均衡.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "Redis-架构与面试"
+              "icon": "lucide-file",
+              "title": "5-一致性哈希与负载均衡"
             }
           }
         ],
@@ -199,8 +201,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125,
-    "collapsed": true
+    "width": 453.45703125
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -414,14 +415,16 @@
   },
   "active": "305343f6b8ad1b8c",
   "lastOpenFiles": [
+    "7-分布式/0-分布式事务/分布式事务.drawio",
+    "7-分布式/2-幂等",
+    "7-分布式/1-分布式锁",
+    "2-redis/Redis-架构与面试.drawio",
     "未命名 1.base",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "2-redis/Redis-架构与面试-总览.png",
-    "2-redis/Redis-架构与面试.drawio",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
-    "7-分布式/分布式事务.drawio",
-    "7-分布式/分布式事务-总览.png",
+    "7-分布式/0-分布式事务/分布式事务-总览.png",
     "1-java/1-juc/1-AQS.drawio",
     "Upwork-接单判断清单.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
@@ -438,7 +441,6 @@
     "7-分布式/8-微服务架构与注册配置中心.md",
     "6-ai/1-milvus/0-milvus.excalidraw.md",
     "1-java/4-jvm/0-JVM总览.md",
-    "6-ai/1-milvus",
     "1-java/0-知识点/0-Java总览.md",
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
