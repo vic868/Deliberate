@@ -128,13 +128,12 @@
             "id": "305343f6b8ad1b8c",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "drawio-file-view",
               "state": {
-                "file": "未命名 1.base",
-                "viewName": "视图"
+                "file": "2-redis/Redis-架构与面试.drawio"
               },
-              "icon": "lucide-table",
-              "title": "未命名 1"
+              "icon": "pencil-ruler",
+              "title": "Redis-架构与面试"
             }
           }
         ],
@@ -413,10 +412,11 @@
   },
   "active": "305343f6b8ad1b8c",
   "lastOpenFiles": [
+    "未命名 1.base",
+    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "2-redis/Redis-架构与面试-总览.png",
     "2-redis/Redis-架构与面试.drawio",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
-    "未命名 1.base",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
     "7-分布式/分布式事务.drawio",
     "7-分布式/分布式事务-总览.png",
@@ -424,7 +424,6 @@
     "Upwork-接单判断清单.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "1-java/4-jvm/从内存模型到 OOM 排查.drawio",
     "7-分布式/幂等.excalidraw.md",
     "7-分布式/分布式锁.excalidraw.md",
@@ -458,7 +457,6 @@
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
-    "Pasted Image 20261009151249_453.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
