@@ -109,8 +109,35 @@
               "icon": "pencil-ruler",
               "title": "分布式事务"
             }
+          },
+          {
+            "id": "c550583f88673e51",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "你怎么理解AQS我不懂（详细整理版）"
+            }
+          },
+          {
+            "id": "305343f6b8ad1b8c",
+            "type": "leaf",
+            "state": {
+              "type": "drawio-file-view",
+              "state": {
+                "file": "1-java/1-juc/1-AQS.drawio"
+              },
+              "icon": "pencil-ruler",
+              "title": "1-AQS"
+            }
           }
-        ]
+        ],
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -172,8 +199,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125,
-    "collapsed": true
+    "width": 453.45703125
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -384,11 +410,13 @@
       }
     ]
   },
-  "active": "5ffc23441e1c5b20",
+  "active": "305343f6b8ad1b8c",
   "lastOpenFiles": [
+    "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
+    "1-java/1-juc/1-AQS.drawio",
+    "11-高并发高可用/0-高并发.excalidraw.md",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "1-java/4-jvm/从内存模型到 OOM 排查.drawio",
-    "11-高并发高可用/0-高并发.excalidraw.md",
     "7-分布式/分布式事务.drawio",
     "7-分布式/幂等.excalidraw.md",
     "7-分布式/分布式锁.excalidraw.md",
@@ -425,7 +453,6 @@
     "Pasted Image 20261009152014_855.png",
     "11-高并发高可用/5-k8s",
     "11-高并发高可用/4-Nginx",
-    "11-高并发高可用/3-LVS(VIP)",
     "Pasted Image 20261011193635_377.png",
     "Pasted Image 20261011122448_940.png",
     "Pasted Image 20261011112900_854.png",
