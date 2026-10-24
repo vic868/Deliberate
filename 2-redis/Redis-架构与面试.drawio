@@ -2730,7 +2730,7 @@
             <mxRectangle height="102" width="120" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-98" parent="hm0ZugIW6zdflCOt5yMR-96" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="先更新 Db" vertex="1">
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-98" parent="hm0ZugIW6zdflCOt5yMR-96" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="先删除一次缓存，&lt;div&gt;然后更新数据库&lt;/div&gt;&lt;div&gt;等待一段时间（500）&lt;/div&gt;&lt;div&gt;再删除一次缓存&lt;/div&gt;" vertex="1">
           <mxGeometry height="102" width="121" x="120" as="geometry">
             <mxRectangle height="102" width="121" as="alternateBounds" />
           </mxGeometry>
