@@ -2632,6 +2632,9 @@
         <mxCell id="hm0ZugIW6zdflCOt5yMR-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="数据一致性，查询缓存与查询数据库的结果是一致的" vertex="1">
           <mxGeometry height="11" width="307" x="1217" y="680" as="geometry" />
         </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="30" width="60" x="1302" y="778" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
