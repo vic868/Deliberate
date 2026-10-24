@@ -151,9 +151,21 @@
               "icon": "lucide-file",
               "title": "别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析"
             }
+          },
+          {
+            "id": "ceee30759d3e1d73",
+            "type": "leaf",
+            "state": {
+              "type": "drawio-file-view",
+              "state": {
+                "file": "14-AI agent /3-Milvus/0-Milvus.drawio"
+              },
+              "icon": "pencil-ruler",
+              "title": "0-Milvus"
+            }
           }
         ],
-        "currentTab": 10
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -215,7 +227,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125
+    "width": 453.45703125,
+    "collapsed": true
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -388,8 +401,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
+    "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
+    "14-AI agent /3-Milvus/0-Milvus.drawio",
     "14-AI agent /3-Milvus/【2026最新版】Milvus3.0向量数据库-新特性+RAG企业知识库教程！把AI大模型面试必备技能+简历+面试题+面试复盘一次性给大家讲明白！-码士集团.md",
     "14-AI agent /3-Milvus",
     "14-AI agent /1-LangChain/0-LangChain.drawio",
@@ -412,7 +427,6 @@
     "7-分布式/0-分布式事务/分布式事务.drawio",
     "7-分布式/2-幂等",
     "7-分布式/1-分布式锁",
-    "2-redis/Redis-架构与面试.drawio",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
     "7-分布式/0-分布式事务/分布式事务-总览.png",
@@ -429,7 +443,6 @@
     "1-java/0-知识点/0-Java总览.md",
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
-    "1-java/4-jvm/Drawing 2026-10-19 19.25.02.excalidraw.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
