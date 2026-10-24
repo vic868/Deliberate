@@ -687,7 +687,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="r04" name="04 数据类型">
-    <mxGraphModel dx="1616" dy="1075" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="801" dy="533" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -909,6 +909,9 @@
         </mxCell>
         <mxCell id="r04_t67" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" value="类型选择先看“读写的粒度”：整对象、单字段、去重、排序、还是消息——结构选错，后面全靠命令硬凑。" vertex="1">
           <mxGeometry height="52" width="1330" x="176" y="902" as="geometry" />
+        </mxCell>
+        <mxCell id="zXRydfWkMo_UghjoxSN--2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="存什么" vertex="1">
+          <mxGeometry height="60" width="120" x="103" y="1322" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
