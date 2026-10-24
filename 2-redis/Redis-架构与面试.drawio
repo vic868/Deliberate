@@ -2753,7 +2753,7 @@
         <mxCell id="hm0ZugIW6zdflCOt5yMR-102" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="124" width="1018" y="531" as="geometry" />
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-103" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案" vertex="1">
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-103" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案四&lt;div&gt;上分布式锁&lt;/div&gt;&lt;div&gt;保证强一致性&lt;/div&gt;" vertex="1">
           <mxGeometry height="124" width="204" as="geometry">
             <mxRectangle height="124" width="204" as="alternateBounds" />
           </mxGeometry>
