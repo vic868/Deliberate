@@ -2781,26 +2781,26 @@
         <mxCell id="hm0ZugIW6zdflCOt5yMR-108" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontColor=#FF0000;" value="三大 BOSS" vertex="1">
           <mxGeometry height="845" width="1094" x="1165" y="2056" as="geometry" />
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-112" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#DB2843;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" value="缓存击穿" vertex="1">
-          <mxGeometry height="35" width="68" x="1271" y="2379" as="geometry" />
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-112" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#DB2843;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" value="缓存击穿：&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 12px; font-weight: 400; text-align: center;&quot;&gt;某个超级热点 key，突然过期&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 12px; font-weight: 400; text-align: center;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="64" width="193" x="1203" y="2380" as="geometry" />
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-113" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#FFBC26;fontColor=#000000;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" value="缓存穿透" vertex="1">
-          <mxGeometry height="19" width="89" x="1512" y="2383" as="geometry" />
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-113" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#FFBC26;fontColor=#000000;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" value="缓存穿透：查一个根本不存在的数据，缓存没有，数据库也没有。" vertex="1">
+          <mxGeometry height="48" width="247" x="1512" y="2383" as="geometry" />
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-114" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#0085FC;fontColor=#FFFFFF;whiteSpace=wrap;align=center;verticalAlign=middle;spacingLeft=0;fontStyle=0;fontSize=16;spacing=5;" value="雪崩" vertex="1">
-          <mxGeometry height="40" width="80" x="1827" y="2358" as="geometry" />
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-114" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#0085FC;fontColor=#FFFFFF;whiteSpace=wrap;align=center;verticalAlign=middle;spacingLeft=0;fontStyle=0;fontSize=16;spacing=5;" value="雪崩：大量 key 同步过期" vertex="1">
+          <mxGeometry height="57" width="189" x="1827" y="2358" as="geometry" />
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-115" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="某个超级热点 key，突然过期" vertex="1">
-          <mxGeometry height="29" width="184" x="1246" y="2434" as="geometry" />
-        </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-116" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#1CA5B8;strokeWidth=1;fillColor=none;fontColor=#1CA5B8;whiteSpace=wrap;align=center;verticalAlign=middle;spacingLeft=0;fontStyle=0;fontSize=16;spacing=5;" value="互斥锁" vertex="1">
-          <mxGeometry height="40" width="119" x="1241" y="2491" as="geometry" />
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-116" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#1CA5B8;strokeWidth=1;fillColor=none;fontColor=#1CA5B8;whiteSpace=wrap;align=center;verticalAlign=middle;spacingLeft=0;fontStyle=0;fontSize=16;spacing=5;" value="互斥锁：同一时刻，只允许一个请求去回原，其他等着。" vertex="1">
+          <mxGeometry height="52" width="260" x="1180" y="2491" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-117" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#FFBC26;strokeWidth=1;fillColor=none;fontColor=#FFBC26;whiteSpace=wrap;align=center;verticalAlign=middle;spacingLeft=0;fontStyle=0;fontSize=16;spacing=5;" value="布隆过滤器" vertex="1">
-          <mxGeometry height="40" width="90" x="1513" y="2498" as="geometry" />
+          <mxGeometry height="40" width="90" x="1572" y="2495" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-118" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#33A64C;strokeWidth=1;fillColor=none;fontColor=#33A64C;whiteSpace=wrap;align=center;verticalAlign=middle;spacingLeft=0;fontStyle=0;fontSize=16;spacing=5;" value="随机 TTL" vertex="1">
           <mxGeometry height="40" width="90" x="1831" y="2491" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-119" parent="1" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#1CA5B8;strokeWidth=1;fillColor=none;fontColor=#1CA5B8;whiteSpace=wrap;align=center;verticalAlign=middle;spacingLeft=0;fontStyle=0;fontSize=16;spacing=5;" value="要么设置成永久不过期，加异步更新。" vertex="1">
+          <mxGeometry height="52" width="260" x="1183" y="2565" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
