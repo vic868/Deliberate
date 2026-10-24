@@ -1,11 +1,17 @@
 <mxfile host="embed.diagrams.net">
   <diagram id="0" name="Milvus">
-    <mxGraphModel dx="1772" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2225" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="QQL8Gx31dZhrEueqIieo-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="60" width="120" x="40" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="QQL8Gx31dZhrEueqIieo-2" parent="1" style="text;whiteSpace=wrap;" value="1、Milvus 2.0(2022年1月):全新云原生架构、采用存算分离设计&#xa;2、Milvus 2.1(2022年4月):性能，百万级数据集的检索延迟&lt;=5ms&#xa;3、Milvus 2.2(2022年11月):引入了 DiskANN,向量索引可以不全部放内存&#xa;4、Milvus 2.3(2023年8月):支持GPU,实现了比纯CPU版本快10倍的性能&#xa;5、Milvus 2.4(2024年3月):CAGRAGPU索引把搜索性能再提50倍&#xa;6、Milvus 2.6(2025年6月):架构升级和数据湖(Data Lake)的初步集成&#xa;7、Milvus 3.0(2026年7月29日):确立了“湖原生(Lake-Native)&quot;的核心方向X即将播放[Milvus】&#xa;2、Milvus3.0的新特性" vertex="1">
+          <mxGeometry height="160" width="540" x="200" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QQL8Gx31dZhrEueqIieo-3" parent="1" style="text;whiteSpace=wrap;" value="@3.0升级核心定义:Milvus让向量数据库从&quot;数据孤岛&quot;走向&quot;湖仓一体&quot;从&quot;单一检索&quot;走向&quot;全链路检索平台&quot;湖原生检索:为全新的Vector Lakebase(向量数据湖基座)架构提供底层能力保障1External Collection(外部集合):直接搜索数据湖中的向量数据2、S3存储(Storage v3):一个面向S3兼容对象存储、基于Manifest管理的列式存储引擎3、4、在线增删字段(Schema Hot Change):解决“Schema演进” 难题5、Snapshot(快照):低成本创建数据视图6、Spark Connector:把Milvus 接入批处理流水线7、服务端ORDERBY:直接在Milvus内部排序8、聚合与分面搜索 (Aggregation and Faceted Search)9、StructArray:把多向量实体作为一个整体存储和搜索10、轻量化 BM25索引与全新 SINDI算法11、针对 SPLADE这类学习型稀疏向量优化的新检索算法12、" vertex="1">
+          <mxGeometry height="140" width="560" x="220" y="240" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
