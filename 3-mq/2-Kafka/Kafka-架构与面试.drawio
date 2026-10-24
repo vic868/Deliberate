@@ -716,7 +716,7 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="分区策略：kafka 默认会根据消息的 key 来计算一个 hash 值，然后决定放到哪个 Partition，&lt;br&gt;没有 key -&amp;gt; 就轮询分配，保证均匀" vertex="1">
           <mxGeometry height="72" width="453" x="1126" y="1441" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+        <mxCell id="gSB3KToxIW4thPM919Vh-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="分区越多，理论上处理能力越强&lt;br&gt;⚠️但分区太多 会增加管理开销，一般根据实际业务量和消费者" vertex="1">
           <mxGeometry height="103.5" width="368" x="1148" y="1537.5" as="geometry" />
         </mxCell>
       </root>
