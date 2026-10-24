@@ -156,12 +156,14 @@
             "id": "ceee30759d3e1d73",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "2-redis/Redis-架构与面试.drawio"
+                "file": "2-redis/一次讲透Redis（详细整理版）.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "Redis-架构与面试"
+              "icon": "lucide-file",
+              "title": "一次讲透Redis（详细整理版）"
             }
           }
         ],
@@ -227,8 +229,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125,
-    "collapsed": true
+    "width": 453.45703125
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -401,6 +402,9 @@
   },
   "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
+    "2-redis/一次讲透Redis.md",
+    "2-redis/0-Redis.excalidraw.md",
+    "2-redis/Redis-架构与面试.drawio",
     "1-java/Java面试别再死背八股了（详细整理版）.md",
     "14-AI agent /3-Milvus/0-Milvus.drawio",
     "14-AI agent /1-LangChain/0-LangChain.drawio",
@@ -428,7 +432,6 @@
     "11-高并发高可用/0-DNS+GSLB/DNS+GSLB 全局负载调度（5W1H 整理版）.md",
     "7-分布式/5-一致性哈希与负载均衡.md",
     "7-分布式/0-分布式事务/分布式事务.drawio",
-    "7-分布式/2-幂等",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
     "7-分布式/0-分布式事务/分布式事务-总览.png",
@@ -442,8 +445,6 @@
     "7-分布式/9-分布式面试高频题.md",
     "7-分布式/8-微服务架构与注册配置中心.md",
     "1-java/4-jvm/0-JVM总览.md",
-    "1-java/0-知识点/0-Java总览.md",
-    "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
