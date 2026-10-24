@@ -766,6 +766,9 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" value="consumer group" vertex="1">
           <mxGeometry height="184" width="131" x="570" y="3440" as="geometry" />
         </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="293" width="557" x="52" y="3866" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
