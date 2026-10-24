@@ -144,10 +144,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "14-AI agent /1-LangChain/Untitled Diagram 1792824781744.drawio"
+                "file": "14-AI agent /1-LangChain/0-LangChain.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "Untitled Diagram 1792824781744"
+              "title": "0-LangChain"
             }
           }
         ],
@@ -425,10 +425,10 @@
       }
     ]
   },
-  "active": "5635d5b494c18a33",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
     "14-AI agent /未命名.md",
-    "14-AI agent /1-LangChain/Untitled Diagram 1792824781744.drawio",
+    "14-AI agent /1-LangChain/0-LangChain.drawio",
     "14-AI agent /1-LangChain",
     "11-高并发高可用/高并发系统设计.drawio",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
