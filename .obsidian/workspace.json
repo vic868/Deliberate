@@ -156,12 +156,14 @@
             "id": "ceee30759d3e1d73",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "2-redis/Redis-架构与面试.drawio"
+                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "Redis-架构与面试"
+              "icon": "lucide-file",
+              "title": "0-领域驱动设计DDD-白话详解"
             }
           }
         ],
@@ -227,8 +229,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125,
-    "collapsed": true
+    "width": 453.45703125
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -438,7 +439,7 @@
       }
     ]
   },
-  "active": "4f12000f9b604256",
+  "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
     "2-redis/Redis-架构与面试.drawio",
     "2-redis/一次讲透Redis（详细整理版）.md",
