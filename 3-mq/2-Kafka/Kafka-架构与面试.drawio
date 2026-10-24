@@ -674,7 +674,7 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="topic与 partition" vertex="1">
           <mxGeometry height="853" width="1516" x="120" y="1258" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeColor=#E5CCFF;fillColor=#FFCCE6;" value="Topic" vertex="1">
+        <mxCell id="gSB3KToxIW4thPM919Vh-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeColor=#E5CCFF;fillColor=#FFCCE6;" value=" " vertex="1">
           <mxGeometry height="348" width="120" x="317" y="1401" as="geometry" />
         </mxCell>
         <mxCell id="gSB3KToxIW4thPM919Vh-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#66FFB3;" value="Partition-0" vertex="1">
@@ -685,6 +685,36 @@
         </mxCell>
         <mxCell id="gSB3KToxIW4thPM919Vh-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#00CC00;" value="Partition-2" vertex="1">
           <mxGeometry height="60" width="120" x="317" y="1618" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Partition 可以理解为 topic 下面的子传送带&lt;div&gt;如何确定消息在哪个 partition&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="98" width="429" x="1031" y="1333" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeColor=#E5CCFF;fillColor=#FFCCE6;" value="Topic" vertex="1">
+          <mxGeometry height="348" width="120" x="575" y="1394" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#66FFB3;" value="Partition-0" vertex="1">
+          <mxGeometry height="60" width="120" x="575" y="1468" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#66FF66;" value="Partition-1" vertex="1">
+          <mxGeometry height="60" width="120" x="575" y="1537.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#00CC00;" value="Partition-2" vertex="1">
+          <mxGeometry height="60" width="120" x="575" y="1611" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeColor=#E5CCFF;fillColor=#FFCCE6;" value="Topic" vertex="1">
+          <mxGeometry height="348" width="120" x="818" y="1394" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#66FFB3;" value="Partition-0" vertex="1">
+          <mxGeometry height="60" width="120" x="818" y="1468" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#66FF66;" value="Partition-1" vertex="1">
+          <mxGeometry height="60" width="120" x="818" y="1537.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#00CC00;" value="Partition-2" vertex="1">
+          <mxGeometry height="60" width="120" x="818" y="1611" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="106" width="474" x="1126" y="1441" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
