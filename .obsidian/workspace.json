@@ -158,12 +158,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
+                "file": "大数据学习规划/02-Flink补课.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-领域驱动设计DDD-白话详解"
+              "title": "02-Flink补课"
             }
           }
         ],
@@ -441,11 +441,15 @@
   },
   "active": "4f12000f9b604256",
   "lastOpenFiles": [
+    "大数据学习规划/02-Flink补课.md",
+    "大数据学习规划/03-实时数仓与存储.md",
+    "大数据学习规划/01-学习路径总览.md",
+    "面试准备/智控/03-技术题库.md",
+    "2-redis/一次讲透Redis（详细整理版）.md",
     "14-AI agent /3-Milvus/ShixizhiClient_1.26.1012.0.dmg",
     "14-AI agent /3-Milvus/ShixizhiClient_1.26.1012.0.dmg.crdownload",
     "13- 设计模式/0-领域驱动设计DDD-白话详解.md",
     "2-redis/Redis-架构与面试.drawio",
-    "2-redis/一次讲透Redis（详细整理版）.md",
     "2-redis/一次讲透Redis.md",
     "2-redis/0-Redis.excalidraw.md",
     "1-java/Java面试别再死背八股了（详细整理版）.md",
@@ -468,7 +472,6 @@
     "架构/微博整体架构.excalidraw.md",
     "14-AI agent /未命名.md",
     "14-AI agent /1-LangChain",
-    "11-高并发高可用/高并发系统设计.drawio",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/高并发系统设计-总览.png",
     "11-高并发高可用/从告警到百万QPS！Java性能调优实战，这12分钟全是干货🔥（详细整理版）.md",
@@ -481,9 +484,6 @@
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
     "11-高并发高可用/0-高并发.excalidraw.md",
     "7-分布式/幂等.excalidraw.md",
-    "7-分布式/分布式锁.excalidraw.md",
-    "7-分布式/分布式事务.excalidraw.md",
-    "7-分布式/10-SCA分布式实战项目规划.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
