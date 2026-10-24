@@ -2712,7 +2712,7 @@
             <mxRectangle height="104" width="120" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-73" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="删除失败永久残留" vertex="1">
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-73" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="大部分会安全，&lt;div&gt;删除失败永久残留&lt;/div&gt;&lt;div&gt;（网络抖动，redis 超时，缓存没删除）&lt;/div&gt;" vertex="1">
           <mxGeometry height="104" width="121" x="361" as="geometry">
             <mxRectangle height="104" width="121" as="alternateBounds" />
           </mxGeometry>
