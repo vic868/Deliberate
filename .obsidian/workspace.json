@@ -158,10 +158,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "14-AI agent /3-Milvus/0-Milvus.drawio"
+                "file": "14-AI agent /1-LangChain/0-LangChain.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "0-Milvus"
+              "title": "0-LangChain"
             }
           }
         ],
@@ -227,8 +227,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125,
-    "collapsed": true
+    "width": 453.45703125
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -403,15 +402,15 @@
   },
   "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
+    "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
+    "14-AI agent /1-LangChain/0-LangChain.drawio",
+    "14-AI agent /3-Milvus/0-Milvus.drawio",
     "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
     "14-AI agent /1-LangChain/1-LangChain-知识地图.png",
-    "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
-    "14-AI agent /3-Milvus/0-Milvus.drawio",
     "14-AI agent /3-Milvus/【2026最新版】Milvus3.0向量数据库-新特性+RAG企业知识库教程！把AI大模型面试必备技能+简历+面试题+面试复盘一次性给大家讲明白！-码士集团.md",
     "14-AI agent /3-Milvus",
-    "14-AI agent /1-LangChain/0-LangChain.drawio",
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！（详细整理版）.md",
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
@@ -448,7 +447,6 @@
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
-    "Pasted Image 20261009152014_855.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
