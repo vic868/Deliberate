@@ -749,7 +749,7 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-31" edge="1" parent="1" source="gSB3KToxIW4thPM919Vh-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="gSB3KToxIW4thPM919Vh-29">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-32" connectable="0" parent="gSB3KToxIW4thPM919Vh-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=fontFamily,fontSize,fontStyle,textOpacity,labelBorderColor,labelBorderWidth,labelBackgroundColor,defaultLabelBackgroundColor,labelPadding;defaultLabelBackgroundColor=page;fontColor=#00CC00;" value="一个 consumer 可以读多个 parttion&lt;div&gt;一个 partition 只能被一个 consumer 读&lt;/div&gt;" vertex="1">
+        <mxCell id="gSB3KToxIW4thPM919Vh-32" connectable="0" parent="gSB3KToxIW4thPM919Vh-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=fontFamily,fontSize,fontStyle,textOpacity,labelBorderColor,labelBorderWidth,labelBackgroundColor,defaultLabelBackgroundColor,labelPadding;defaultLabelBackgroundColor=page;fontColor=#00CC00;" value="保证消息的顺序性：&lt;div&gt;一个 consumer 可以读多个 parttion&lt;div&gt;一个 partition 只能被一个 consumer 读&lt;/div&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry relative="1" x="-0.3603" y="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -759,6 +759,9 @@
         </mxCell>
         <mxCell id="gSB3KToxIW4thPM919Vh-29" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#67AB9F;" value="consumer" vertex="1">
           <mxGeometry height="80" width="80" x="944" y="3183" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="顺序性：&lt;div&gt;kafka规定&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="297" x="562" y="3272" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
