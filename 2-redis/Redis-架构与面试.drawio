@@ -2577,7 +2577,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="20tK1mfWK4Mak4eyCLYM" name="第 13 页">
-    <mxGraphModel dx="1560" dy="1038" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="666" dy="443" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2585,7 +2585,31 @@
           <mxGeometry height="1210" width="1640" x="350" y="570" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="问题：&lt;div&gt;缓存与 DB 不一致&lt;/div&gt;&lt;div&gt;订单超卖 xxx单&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="417" y="615" as="geometry" />
+          <mxGeometry height="60" width="120" x="390" y="764" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="流程" vertex="1">
+          <mxGeometry height="375" width="397" x="543" y="637" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-7" edge="1" parent="1" source="hm0ZugIW6zdflCOt5yMR-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="hm0ZugIW6zdflCOt5yMR-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="用户下单" vertex="1">
+          <mxGeometry height="143" width="59" x="565" y="707" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-8" edge="1" parent="1" source="hm0ZugIW6zdflCOt5yMR-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="hm0ZugIW6zdflCOt5yMR-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="库存扣掉" vertex="1">
+          <mxGeometry height="143" width="59" x="665" y="707" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-10" edge="1" parent="1" source="hm0ZugIW6zdflCOt5yMR-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="hm0ZugIW6zdflCOt5yMR-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="订单状态不对" vertex="1">
+          <mxGeometry height="143" width="59" x="769" y="707" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="重复扣款" vertex="1">
+          <mxGeometry height="143" width="59" x="851" y="707" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
