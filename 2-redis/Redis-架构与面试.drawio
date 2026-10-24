@@ -2611,6 +2611,27 @@
         <mxCell id="hm0ZugIW6zdflCOt5yMR-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="重复扣款" vertex="1">
           <mxGeometry height="143" width="59" x="851" y="707" as="geometry" />
         </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="改完数据库，顺手 把 redis 缓存更新" vertex="1">
+          <mxGeometry height="24" width="284" x="571" y="861" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="mysql" vertex="1">
+          <mxGeometry height="60" width="120" x="1046" y="647" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-21" edge="1" parent="1" source="hm0ZugIW6zdflCOt5yMR-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="hm0ZugIW6zdflCOt5yMR-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="redis" vertex="1">
+          <mxGeometry height="60" width="120" x="1046" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="app" vertex="1">
+          <mxGeometry height="60" width="120" x="1046" y="843" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-20" edge="1" parent="1" source="hm0ZugIW6zdflCOt5yMR-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="hm0ZugIW6zdflCOt5yMR-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="数据一致性，查询缓存与查询数据库的结果是一致的" vertex="1">
+          <mxGeometry height="11" width="307" x="1217" y="680" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
