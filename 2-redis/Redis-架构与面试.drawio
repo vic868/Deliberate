@@ -2584,7 +2584,7 @@
         <mxCell id="hm0ZugIW6zdflCOt5yMR-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="redis 数据一致性" vertex="1">
           <mxGeometry height="1210" width="1640" x="350" y="570" as="geometry" />
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="问题：&lt;div&gt;缓存与 DB 不一致&lt;/div&gt;&lt;div&gt;订单超卖 xxx单&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="120" x="417" y="615" as="geometry" />
         </mxCell>
       </root>
