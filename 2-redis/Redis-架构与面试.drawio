@@ -2636,7 +2636,7 @@
           <mxGeometry height="58" width="331" x="1302" y="766" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-56" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;tableRender=collapsed;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value=" " vertex="1">
-          <mxGeometry height="655" width="1018" x="1306" y="1033" as="geometry" />
+          <mxGeometry height="779" width="1018" x="1306" y="1033" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-57" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="126" width="1018" y="30" as="geometry" />
@@ -2758,7 +2758,7 @@
             <mxRectangle height="124" width="204" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-104" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-104" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="redis 本身就支持 SETNX，Redission 把封装的更好用" vertex="1">
           <mxGeometry height="124" width="203" x="204" as="geometry">
             <mxRectangle height="124" width="203" as="alternateBounds" />
           </mxGeometry>
@@ -2774,6 +2774,34 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-107" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="124" width="204" x="814" as="geometry">
+            <mxRectangle height="124" width="204" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-120" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
+          <mxGeometry height="124" width="1018" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-121" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案五&lt;div&gt;Canal+MQ 最终一致性方案&lt;/div&gt;" vertex="1">
+          <mxGeometry height="124" width="204" as="geometry">
+            <mxRectangle height="124" width="204" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-122" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="redis 本身就支持 SETNX，Redission 把封装的更好用" vertex="1">
+          <mxGeometry height="124" width="203" x="204" as="geometry">
+            <mxRectangle height="124" width="203" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-123" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="124" width="204" x="407" as="geometry">
+            <mxRectangle height="124" width="204" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-124" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="124" width="203" x="611" as="geometry">
+            <mxRectangle height="124" width="203" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-125" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
           <mxGeometry height="124" width="204" x="814" as="geometry">
             <mxRectangle height="124" width="204" as="alternateBounds" />
           </mxGeometry>
