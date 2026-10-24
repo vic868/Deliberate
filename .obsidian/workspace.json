@@ -144,10 +144,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "14-AI agent /1-LangChain/0-LangChain.drawio"
+                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "0-LangChain"
+              "title": "Kafka-架构与面试"
             }
           }
         ],
@@ -388,8 +388,10 @@
   },
   "active": "5635d5b494c18a33",
   "lastOpenFiles": [
-    "14-AI agent /未命名.md",
+    "架构/Untitled Diagram 1790241846562.drawio",
+    "架构/微博整体架构.excalidraw.md",
     "14-AI agent /1-LangChain/0-LangChain.drawio",
+    "14-AI agent /未命名.md",
     "14-AI agent /1-LangChain",
     "11-高并发高可用/高并发系统设计.drawio",
     "11-高并发高可用/高并发系统设计（详细整理版）.md",
@@ -426,7 +428,6 @@
     "1-java/4-jvm/2-GC机制深度.md",
     "1-java/0-知识点/13-Spring源码骨架.md",
     "服务器巡检-192.168.0.106/巡检报告.md",
-    "服务器巡检-192.168.0.106/数据流全链路执行手册.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
