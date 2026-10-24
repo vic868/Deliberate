@@ -478,7 +478,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="k03" name="03 三层结构">
-    <mxGraphModel dx="2147" dy="1690" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="2783" dy="2191" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -719,8 +719,23 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="分区越多，理论上处理能力越强&lt;br&gt;⚠️但分区太多 会增加管理开销，&lt;div&gt;✅一般根据实际业务量和消费者数量来定&lt;/div&gt;" vertex="1">
           <mxGeometry height="103.5" width="368" x="1148" y="1537.5" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+        <mxCell id="gSB3KToxIW4thPM919Vh-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="💰问题，如何保证 kafka 消息均匀分布在各个 partition？" vertex="1">
           <mxGeometry height="120" width="301" x="1031" y="1817" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fontSize=50;" value="消息&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="499" width="850" x="170" y="2284" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="key&lt;div&gt;user_1234&lt;/div&gt;" vertex="1">
+          <mxGeometry height="111.5" width="200" x="282" y="2422" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="111.5" width="200" x="575" y="2422" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="111.5" width="200" x="575" y="2578" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="111.5" width="200" x="282" y="2578" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
