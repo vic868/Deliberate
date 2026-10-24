@@ -478,7 +478,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="k03" name="03 三层结构">
-    <mxGraphModel dx="1503" dy="1183" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="2037" dy="1183" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -722,7 +722,7 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="💰问题，如何保证 kafka 消息均匀分布在各个 partition？" vertex="1">
           <mxGeometry height="120" width="301" x="1031" y="1817" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fontSize=50;fillColor=#FF99FF;" value="消息&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="gSB3KToxIW4thPM919Vh-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fontSize=50;fillColor=#FF99FF;" value="消息&lt;div&gt;offset: 1024&lt;/div&gt;" vertex="1">
           <mxGeometry height="499" width="850" x="170" y="2284" as="geometry" />
         </mxCell>
         <mxCell id="gSB3KToxIW4thPM919Vh-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66FF66;" value="key&lt;div&gt;user_1234&lt;/div&gt;" vertex="1">
@@ -736,6 +736,9 @@
         </mxCell>
         <mxCell id="gSB3KToxIW4thPM919Vh-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;" value="TimeStamp&lt;div&gt;172223334&lt;/div&gt;" vertex="1">
           <mxGeometry height="111.5" width="200" x="282" y="2578" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="offset: 每个 partition 里的 offset 都是唯一" vertex="1">
+          <mxGeometry height="30" width="437" x="1095" y="2297" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
