@@ -1,6 +1,6 @@
 <mxfile host="embed.diagrams.net" agent="DSH" pages="12">
   <diagram id="r01" name="01 封面">
-    <mxGraphModel dx="784" dy="700" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1052" dy="700" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -285,6 +285,9 @@
         </mxCell>
         <mxCell id="rkg8AXqkNAdLN61A6X9q-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="为什么需要 redis" vertex="1">
           <mxGeometry height="60" width="120" x="83" y="1141" as="geometry" />
+        </mxCell>
+        <mxCell id="rkg8AXqkNAdLN61A6X9q-3" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;strong style=&quot;box-sizing: border-box; scrollbar-width: auto; font-weight: 600; color: rgb(34, 34, 34); --csstools-light-dark-toggle--23: light-dark(#0060df, #5caeff); --focus-ring-color: light-dark(#0060df, #5caeff); font-family: &amp;quot;??&amp;quot;, &amp;quot;??&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, system-ui, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Google Sans Flex&amp;quot;, Roboto, &amp;quot;Inter Variable&amp;quot;, Inter, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; caret-color: rgb(34, 34, 34); white-space: normal; background-color: oklch(0.727476 0.124634 192.763 / 0.1); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;解决的问题：热点数据的极速读写 + 原子操作 + 分布式协调&lt;/strong&gt;" vertex="1">
+          <mxGeometry height="35.09" width="437.35" x="353.65" y="1058.91" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
