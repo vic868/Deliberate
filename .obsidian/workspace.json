@@ -144,12 +144,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！（详细整理版）.md",
-                "mode": "preview",
+                "file": "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！（详细整理版）"
+              "title": "别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析"
             }
           }
         ],
@@ -388,10 +388,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5635d5b494c18a33",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！.md",
+    "14-AI agent /3-Milvus/【2026最新版】Milvus3.0向量数据库-新特性+RAG企业知识库教程！把AI大模型面试必备技能+简历+面试题+面试复盘一次性给大家讲明白！-码士集团.md",
+    "14-AI agent /3-Milvus",
     "14-AI agent /1-LangChain/0-LangChain.drawio",
+    "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！（详细整理版）.md",
+    "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "6-ai/1-milvus/0-milvus.excalidraw.md",
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
@@ -410,7 +413,6 @@
     "7-分布式/2-幂等",
     "7-分布式/1-分布式锁",
     "2-redis/Redis-架构与面试.drawio",
-    "未命名 1.base",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
     "7-分布式/0-分布式事务/分布式事务-总览.png",
@@ -428,8 +430,6 @@
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
     "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "1-java/4-jvm/Drawing 2026-10-19 19.25.02.excalidraw.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
-    "1-java/4-jvm/2-GC机制深度.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
