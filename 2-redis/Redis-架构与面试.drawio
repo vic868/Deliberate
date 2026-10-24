@@ -1,6 +1,6 @@
 <mxfile host="embed.diagrams.net" agent="DSH" pages="12">
   <diagram id="r01" name="01 封面">
-    <mxGraphModel dx="1523" dy="1621" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="784" dy="700" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -282,6 +282,9 @@
         </mxCell>
         <mxCell id="r01_t66" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=15;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" value="Redis 不是“更快的数据库”，而是用内存换速度、用数据结构换表达力、&#xa;用持久化与复制换安全；所有面试题，最后都会落回这三件事。" vertex="1">
           <mxGeometry height="72" width="1340" x="168" y="862" as="geometry" />
+        </mxCell>
+        <mxCell id="rkg8AXqkNAdLN61A6X9q-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="为什么需要 redis" vertex="1">
+          <mxGeometry height="60" width="120" x="83" y="1141" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
