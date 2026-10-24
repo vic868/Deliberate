@@ -2234,183 +2234,183 @@
     </mxGraphModel>
   </diagram>
   <diagram id="r11" name="11 分布式锁">
-    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0" background="#FFFFFF">
+    <mxGraphModel dx="1522" dy="1220" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="r11_accent" value="" style="rounded=1;arcSize=40;fillColor=#2563EB;strokeColor=none;" vertex="1" parent="1">
-          <mxGeometry x="60" y="42" width="7" height="54" as="geometry" />
+        <mxCell id="r11_accent" parent="1" style="rounded=1;arcSize=40;fillColor=#2563EB;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="54" width="7" x="60" y="42" as="geometry" />
         </mxCell>
-        <mxCell id="r11_title" value="分布式锁：SET NX PX 只是起点，不是全部" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#0F172A;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="82" y="36" width="1180" height="44" as="geometry" />
+        <mxCell id="r11_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#0F172A;fontFamily=PingFang SC;" value="分布式锁：SET NX PX 只是起点，不是全部" vertex="1">
+          <mxGeometry height="44" width="1180" x="82" y="36" as="geometry" />
         </mxCell>
-        <mxCell id="r11_sub" value="唯一 value + 过期时间 + Lua 释放；业务超时要续期；主从切换可能丢锁，RedLock 有争议。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13.5;fontColor=#64748B;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="82" y="82" width="1330" height="24" as="geometry" />
+        <mxCell id="r11_sub" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13.5;fontColor=#64748B;fontFamily=PingFang SC;" value="唯一 value + 过期时间 + Lua 释放；业务超时要续期；主从切换可能丢锁，RedLock 有争议。" vertex="1">
+          <mxGeometry height="24" width="1330" x="82" y="82" as="geometry" />
         </mxCell>
-        <mxCell id="r11_num" value="11 / 12" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontColor=#94A3B8;fontFamily=PingFang SC;" vertex="1" parent="1">
-          <mxGeometry x="1370" y="44" width="170" height="24" as="geometry" />
+        <mxCell id="r11_num" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontColor=#94A3B8;fontFamily=PingFang SC;" value="11 / 12" vertex="1">
+          <mxGeometry height="24" width="170" x="1370" y="44" as="geometry" />
         </mxCell>
-        <mxCell id="r11_hdrline" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#E2E8F0;strokeWidth=1;" edge="1" parent="1">
+        <mxCell id="r11_hdrline" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=#E2E8F0;strokeWidth=1;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="60" y="118" as="sourcePoint" />
             <mxPoint x="1540" y="118" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r11_p1" value="" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="150" width="760" height="690" as="geometry" />
+        <mxCell id="r11_p1" parent="1" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="690" width="760" x="60" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t2" value="加锁与释放：一条命令 + 一段 Lua" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="84" y="168" width="700" height="24" as="geometry" />
+        <mxCell id="r11_t2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="加锁与释放：一条命令 + 一段 Lua" vertex="1">
+          <mxGeometry height="24" width="700" x="84" y="168" as="geometry" />
         </mxCell>
-        <mxCell id="r11_b3" value="Client 1&#xa;uuid-1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="90" y="220" width="170" height="60" as="geometry" />
+        <mxCell id="r11_b3" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#BFDBFE;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#2563EB;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="Client 1&#xa;uuid-1" vertex="1">
+          <mxGeometry height="60" width="170" x="90" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="r11_b4" value="SET lock:order uuid-1&#xa;NX PX 30000" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=8.8;fontColor=#C81E1E;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="330" y="220" width="250" height="60" as="geometry" />
+        <mxCell id="r11_b4" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=8.8;fontColor=#C81E1E;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="SET lock:order uuid-1&#xa;NX PX 30000" vertex="1">
+          <mxGeometry height="60" width="250" x="330" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="r11_a5" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="r11_a5" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="260" y="250" as="sourcePoint" />
             <mxPoint x="330" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r11_b6" value="Redis" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#C81E1E;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="640" y="220" width="150" height="60" as="geometry" />
+        <mxCell id="r11_b6" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#C81E1E;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="Redis" vertex="1">
+          <mxGeometry height="60" width="150" x="640" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="r11_a7" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="r11_a7" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="580" y="250" as="sourcePoint" />
             <mxPoint x="640" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r11_t8" value="NX：不存在才设置；PX：自动过期防死锁；value 唯一：防误删别人的锁。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.4;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="90" y="292" width="700" height="20" as="geometry" />
+        <mxCell id="r11_t8" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.4;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="NX：不存在才设置；PX：自动过期防死锁；value 唯一：防误删别人的锁。" vertex="1">
+          <mxGeometry height="20" width="700" x="90" y="292" as="geometry" />
         </mxCell>
-        <mxCell id="r11_b9" value="业务执行" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="90" y="330" width="170" height="54" as="geometry" />
+        <mxCell id="r11_b9" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#E2E8F0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=9;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="业务执行" vertex="1">
+          <mxGeometry height="54" width="170" x="90" y="330" as="geometry" />
         </mxCell>
-        <mxCell id="r11_a10" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.1;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="r11_a10" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.1;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="175" y="280" as="sourcePoint" />
             <mxPoint x="175" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r11_b11" value="Lua：if get(key)==uuid-1 then del(key)" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=8.2;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="330" y="330" width="300" height="54" as="geometry" />
+        <mxCell id="r11_b11" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1.2;align=center;verticalAlign=middle;fontSize=8.2;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=8;" value="Lua：if get(key)==uuid-1 then del(key)" vertex="1">
+          <mxGeometry height="54" width="300" x="330" y="330" as="geometry" />
         </mxCell>
-        <mxCell id="r11_a12" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" edge="1" parent="1">
+        <mxCell id="r11_a12" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#059669;strokeWidth=1.2;endArrow=block;endFill=1;startArrow=none;" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="260" y="357" as="sourcePoint" />
             <mxPoint x="330" y="357" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="r11_t13" value="释放必须原子：先比对 value，再删除；否则可能删掉刚被 B 拿到的锁。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.4;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="90" y="398" width="700" height="20" as="geometry" />
+        <mxCell id="r11_t13" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.4;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="释放必须原子：先比对 value，再删除；否则可能删掉刚被 B 拿到的锁。" vertex="1">
+          <mxGeometry height="20" width="700" x="90" y="398" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p14" value="" style="rounded=1;arcSize=10;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="84" y="440" width="690" height="74" as="geometry" />
+        <mxCell id="r11_p14" parent="1" style="rounded=1;arcSize=10;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="74" width="690" x="84" y="440" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t15" value="没设过期时间" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#DC2626;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="100" y="450" width="160" height="20" as="geometry" />
+        <mxCell id="r11_t15" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#DC2626;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="没设过期时间" vertex="1">
+          <mxGeometry height="20" width="160" x="100" y="450" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t16" value="客户端崩溃 → 死锁" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="270" y="450" width="230" height="20" as="geometry" />
+        <mxCell id="r11_t16" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" value="客户端崩溃 → 死锁" vertex="1">
+          <mxGeometry height="20" width="230" x="270" y="450" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t17" value="SET ... NX PX 一条命令原子完成" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="270" y="474" width="480" height="20" as="geometry" />
+        <mxCell id="r11_t17" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="SET ... NX PX 一条命令原子完成" vertex="1">
+          <mxGeometry height="20" width="480" x="270" y="474" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p18" value="" style="rounded=1;arcSize=10;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="84" y="524" width="690" height="74" as="geometry" />
+        <mxCell id="r11_p18" parent="1" style="rounded=1;arcSize=10;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="74" width="690" x="84" y="524" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t19" value="业务 &gt; 锁过期" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="100" y="534" width="160" height="20" as="geometry" />
+        <mxCell id="r11_t19" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="业务 &gt; 锁过期" vertex="1">
+          <mxGeometry height="20" width="160" x="100" y="534" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t20" value="锁提前释放 → 超卖" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="270" y="534" width="230" height="20" as="geometry" />
+        <mxCell id="r11_t20" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" value="锁提前释放 → 超卖" vertex="1">
+          <mxGeometry height="20" width="230" x="270" y="534" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t21" value="Redisson 看门狗：默认 30s，每 10s 续期" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="270" y="558" width="480" height="20" as="geometry" />
+        <mxCell id="r11_t21" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="Redisson 看门狗：默认 30s，每 10s 续期" vertex="1">
+          <mxGeometry height="20" width="480" x="270" y="558" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p22" value="" style="rounded=1;arcSize=10;fillColor=#F5F3FF;strokeColor=#DDD6FE;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="84" y="608" width="690" height="74" as="geometry" />
+        <mxCell id="r11_p22" parent="1" style="rounded=1;arcSize=10;fillColor=#F5F3FF;strokeColor=#DDD6FE;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="74" width="690" x="84" y="608" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t23" value="主库宕机丢锁" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#7C3AED;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="100" y="618" width="160" height="20" as="geometry" />
+        <mxCell id="r11_t23" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#7C3AED;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="主库宕机丢锁" vertex="1">
+          <mxGeometry height="20" width="160" x="100" y="618" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t24" value="锁未同步到从库 → 双持有" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="270" y="618" width="230" height="20" as="geometry" />
+        <mxCell id="r11_t24" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#DC2626;fontFamily=PingFang SC;spacing=0;" value="锁未同步到从库 → 双持有" vertex="1">
+          <mxGeometry height="20" width="230" x="270" y="618" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t25" value="RedLock 多节点多数派；或业务幂等兜底" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="270" y="642" width="480" height="20" as="geometry" />
+        <mxCell id="r11_t25" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="RedLock 多节点多数派；或业务幂等兜底" vertex="1">
+          <mxGeometry height="20" width="480" x="270" y="642" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t26" value="RedLock 争议：提升安全性但依赖各节点时钟与 GC 停顿；&#xa;能接受幂等时，优先“唯一值 + Lua + 看门狗”，强一致要求高时考虑 ZooKeeper / etcd。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.3;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="84" y="700" width="690" height="60" as="geometry" />
+        <mxCell id="r11_t26" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.3;fontColor=#64748B;fontFamily=PingFang SC;spacing=0;" value="RedLock 争议：提升安全性但依赖各节点时钟与 GC 停顿；&#xa;能接受幂等时，优先“唯一值 + Lua + 看门狗”，强一致要求高时考虑 ZooKeeper / etcd。" vertex="1">
+          <mxGeometry height="60" width="690" x="84" y="700" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p27" value="" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="840" y="150" width="700" height="690" as="geometry" />
+        <mxCell id="r11_p27" parent="1" style="rounded=1;arcSize=16;fillColor=#FFFFFF;strokeColor=#E2E8F0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="690" width="700" x="840" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t28" value="Pipeline / 事务 / Lua / Pub-Sub" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="864" y="168" width="640" height="24" as="geometry" />
+        <mxCell id="r11_t28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12.5;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="Pipeline / 事务 / Lua / Pub-Sub" vertex="1">
+          <mxGeometry height="24" width="640" x="864" y="168" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p29" value="" style="rounded=1;arcSize=10;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="864" y="208" width="650" height="70" as="geometry" />
+        <mxCell id="r11_p29" parent="1" style="rounded=1;arcSize=10;fillColor=#ECFEFF;strokeColor=#A5F3FC;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="70" width="650" x="864" y="208" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t30" value="Pipeline" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="882" y="218" width="160" height="20" as="geometry" />
+        <mxCell id="r11_t30" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#0891B2;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="Pipeline" vertex="1">
+          <mxGeometry height="20" width="160" x="882" y="218" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t31" value="减少 RTT；不是原子，中间可被插队" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="1040" y="218" width="450" height="40" as="geometry" />
+        <mxCell id="r11_t31" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="减少 RTT；不是原子，中间可被插队" vertex="1">
+          <mxGeometry height="40" width="450" x="1040" y="218" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p32" value="" style="rounded=1;arcSize=10;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="864" y="290" width="650" height="70" as="geometry" />
+        <mxCell id="r11_p32" parent="1" style="rounded=1;arcSize=10;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="70" width="650" x="864" y="290" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t33" value="MULTI / EXEC" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="882" y="300" width="160" height="20" as="geometry" />
+        <mxCell id="r11_t33" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#D97706;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="MULTI / EXEC" vertex="1">
+          <mxGeometry height="20" width="160" x="882" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t34" value="命令入队后连续执行；不支持回滚（弱事务）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="1040" y="300" width="450" height="40" as="geometry" />
+        <mxCell id="r11_t34" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="命令入队后连续执行；不支持回滚（弱事务）" vertex="1">
+          <mxGeometry height="40" width="450" x="1040" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p35" value="" style="rounded=1;arcSize=10;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="864" y="372" width="650" height="70" as="geometry" />
+        <mxCell id="r11_p35" parent="1" style="rounded=1;arcSize=10;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="70" width="650" x="864" y="372" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t36" value="Lua" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="882" y="382" width="160" height="20" as="geometry" />
+        <mxCell id="r11_t36" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.2;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="Lua" vertex="1">
+          <mxGeometry height="20" width="160" x="882" y="382" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t37" value="原子执行 + 条件逻辑；分布式锁释放的标准做法" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="1040" y="382" width="450" height="40" as="geometry" />
+        <mxCell id="r11_t37" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="原子执行 + 条件逻辑；分布式锁释放的标准做法" vertex="1">
+          <mxGeometry height="40" width="450" x="1040" y="382" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t38" value="Pub/Sub vs Stream" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.5;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="864" y="462" width="650" height="20" as="geometry" />
+        <mxCell id="r11_t38" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9.5;fontColor=#0F172A;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="Pub/Sub vs Stream" vertex="1">
+          <mxGeometry height="20" width="650" x="864" y="462" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p39" value="" style="rounded=1;arcSize=10;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="864" y="490" width="650" height="120" as="geometry" />
+        <mxCell id="r11_p39" parent="1" style="rounded=1;arcSize=10;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="120" width="650" x="864" y="490" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t40" value="Pub/Sub：推送，消息不持久，离线即丢" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#DC2626;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="882" y="502" width="620" height="20" as="geometry" />
+        <mxCell id="r11_t40" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#DC2626;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="Pub/Sub：推送，消息不持久，离线即丢" vertex="1">
+          <mxGeometry height="20" width="620" x="882" y="502" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t41" value="适合实时通知、聊天广播；不能当可靠队列。&#xa;没有 ACK，没有消费者组，Redis 重启消息全没。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="882" y="528" width="620" height="68" as="geometry" />
+        <mxCell id="r11_t41" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="适合实时通知、聊天广播；不能当可靠队列。&#xa;没有 ACK，没有消费者组，Redis 重启消息全没。" vertex="1">
+          <mxGeometry height="68" width="620" x="882" y="528" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p42" value="" style="rounded=1;arcSize=10;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="864" y="626" width="650" height="120" as="geometry" />
+        <mxCell id="r11_p42" parent="1" style="rounded=1;arcSize=10;fillColor=#ECFDF5;strokeColor=#A7F3D0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="120" width="650" x="864" y="626" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t43" value="Stream：拉取，持久化，消费者组 + ACK" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="882" y="638" width="620" height="20" as="geometry" />
+        <mxCell id="r11_t43" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.8;fontColor=#059669;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="Stream：拉取，持久化，消费者组 + ACK" vertex="1">
+          <mxGeometry height="20" width="620" x="882" y="638" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t44" value="适合可靠消息队列；支持 XREADGROUP、PENDING、消息回溯。&#xa;比 List 更适合“不能丢”的场景。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="882" y="664" width="620" height="68" as="geometry" />
+        <mxCell id="r11_t44" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.2;fontColor=#475569;fontFamily=PingFang SC;spacing=0;" value="适合可靠消息队列；支持 XREADGROUP、PENDING、消息回溯。&#xa;比 List 更适合“不能丢”的场景。" vertex="1">
+          <mxGeometry height="68" width="620" x="882" y="664" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t45" value="面试点：Pipeline 不是原子；事务不回滚；Lua 才是“原子 + 条件”的常用解。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.5;fontColor=#DC2626;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="864" y="770" width="650" height="50" as="geometry" />
+        <mxCell id="r11_t45" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=8.5;fontColor=#DC2626;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="面试点：Pipeline 不是原子；事务不回滚；Lua 才是“原子 + 条件”的常用解。" vertex="1">
+          <mxGeometry height="50" width="650" x="864" y="770" as="geometry" />
         </mxCell>
-        <mxCell id="r11_p46" value="" style="rounded=1;arcSize=12;fillColor=#0F172A;strokeColor=#0F172A;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="892" width="1480" height="72" as="geometry" />
+        <mxCell id="r11_p46" parent="1" style="rounded=1;arcSize=12;fillColor=#0F172A;strokeColor=#0F172A;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="72" width="1480" x="60" y="892" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t47" value="记住" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#93C5FD;fontFamily=PingFang SC;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="88" y="906" width="86" height="44" as="geometry" />
+        <mxCell id="r11_t47" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#93C5FD;fontFamily=PingFang SC;fontStyle=1;spacing=0;" value="记住" vertex="1">
+          <mxGeometry height="44" width="86" x="88" y="906" as="geometry" />
         </mxCell>
-        <mxCell id="r11_t48" value="锁的三要素是“互斥、防死锁、防误删”；续期和主从切换是工程问题，不是一条 SET 命令能解决的。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="176" y="902" width="1330" height="52" as="geometry" />
+        <mxCell id="r11_t48" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" value="锁的三要素是“互斥、防死锁、防误删”；续期和主从切换是工程问题，不是一条 SET 命令能解决的。" vertex="1">
+          <mxGeometry height="52" width="1330" x="176" y="902" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -2576,8 +2576,8 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="20tK1mfWK4Mak4eyCLYM" name="第 13 页">
-    <mxGraphModel dx="1062" dy="851" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram id="20tK1mfWK4Mak4eyCLYM" name="13 redis 一致性方案">
+    <mxGraphModel grid="0" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2635,7 +2635,7 @@
         <mxCell id="hm0ZugIW6zdflCOt5yMR-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="58" width="331" x="1302" y="766" as="geometry" />
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-56" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;tableRender=collapsed;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value=" " vertex="1">
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-56" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;tableRender=collapsed;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="  " vertex="1">
           <mxGeometry height="845" width="1088" x="1306" y="1033" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-57" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
