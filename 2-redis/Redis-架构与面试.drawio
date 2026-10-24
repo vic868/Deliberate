@@ -2636,7 +2636,7 @@
           <mxGeometry height="58" width="331" x="1302" y="766" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-56" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;tableRender=collapsed;" value="灵魂考问：更新数据时是先删除缓存，再更新数据库，&#xa;还是先更新数据库，再删除缓存 。" vertex="1">
-          <mxGeometry height="342" width="602" x="1344" y="866" as="geometry" />
+          <mxGeometry height="339.55633802816897" width="602" x="1344" y="866" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-57" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="104" width="602" y="30" as="geometry" />
@@ -2695,31 +2695,31 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-69" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
-          <mxGeometry height="104" width="602" y="238" as="geometry" />
+          <mxGeometry height="102" width="602" y="238" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-70" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案二" vertex="1">
-          <mxGeometry height="104" width="120" as="geometry">
-            <mxRectangle height="104" width="120" as="alternateBounds" />
+          <mxGeometry height="102" width="120" as="geometry">
+            <mxRectangle height="102" width="120" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-71" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="先更新 Db" vertex="1">
-          <mxGeometry height="104" width="121" x="120" as="geometry">
-            <mxRectangle height="104" width="121" as="alternateBounds" />
+          <mxGeometry height="102" width="121" x="120" as="geometry">
+            <mxRectangle height="102" width="121" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-72" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="⚠️仍存风险" vertex="1">
-          <mxGeometry height="104" width="120" x="241" as="geometry">
-            <mxRectangle height="104" width="120" as="alternateBounds" />
+          <mxGeometry height="102" width="120" x="241" as="geometry">
+            <mxRectangle height="102" width="120" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-73" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="大部分会安全，&lt;div&gt;删除失败永久残留&lt;/div&gt;&lt;div&gt;（网络抖动，redis 超时，缓存没删除）&lt;/div&gt;" vertex="1">
-          <mxGeometry height="104" width="121" x="361" as="geometry">
-            <mxRectangle height="104" width="121" as="alternateBounds" />
+          <mxGeometry height="102" width="121" x="361" as="geometry">
+            <mxRectangle height="102" width="121" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-74" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="104" width="120" x="482" as="geometry">
-            <mxRectangle height="104" width="120" as="alternateBounds" />
+          <mxGeometry height="102" width="120" x="482" as="geometry">
+            <mxRectangle height="102" width="120" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
       </root>
