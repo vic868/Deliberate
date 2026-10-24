@@ -213,7 +213,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 453.45703125
+    "width": 453.45703125,
+    "collapsed": true
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -386,46 +387,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "floating": {
-    "id": "e947407904f1fcf3",
-    "type": "floating",
-    "children": [
-      {
-        "id": "f2b3519d318aed89",
-        "type": "window",
-        "children": [
-          {
-            "id": "003bc7dcbf69e974",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "6ceda5662f7ab031",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "11-高并发高可用/高并发系统设计（详细整理版）.md",
-                    "mode": "preview",
-                    "source": true
-                  },
-                  "icon": "lucide-file",
-                  "title": "高并发系统设计（详细整理版）"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 388,
-        "y": 121,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "69b72e3490e469f5",
+  "active": "5635d5b494c18a33",
   "lastOpenFiles": [
     "14-AI agent /未命名.md",
     "14-AI agent /1-LangChain/0-LangChain.drawio",
