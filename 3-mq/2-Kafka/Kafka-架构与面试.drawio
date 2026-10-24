@@ -760,8 +760,11 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-29" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#67AB9F;" value="consumer" vertex="1">
           <mxGeometry height="80" width="80" x="944" y="3183" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="顺序性：&lt;div&gt;多个 consumer 同时读一个 partition,那谁先谁后,不就乱了&lt;br&gt;&lt;div&gt;kafka规定，一个 partition 同一时间只能分配一个 consumer&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="108" width="396" x="562" y="3272" as="geometry" />
+        <mxCell id="gSB3KToxIW4thPM919Vh-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="顺序性：&lt;div&gt;多个 consumer 同时读一个 partition,那谁先谁后,不就乱了&lt;br&gt;&lt;div&gt;⚠️kafka规定，一个 partition 同一时间只能分配一个 consumer，但一个 consumer 可以同步读多个 partiton，就像一个可以同步取多个快递&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;如果消息很多一个 consumer 忙不过来怎么办&lt;/div&gt;&lt;div&gt;这个时候就需要 consumer group消费组&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="403" x="562" y="3272" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" value="consumer group" vertex="1">
+          <mxGeometry height="184" width="131" x="570" y="3440" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
