@@ -403,6 +403,10 @@
   },
   "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
+    "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
+    "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
+    "14-AI agent /1-LangChain/1-LangChain-知识地图.png",
+    "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
     "14-AI agent /3-Milvus/0-Milvus.drawio",
     "14-AI agent /3-Milvus/【2026最新版】Milvus3.0向量数据库-新特性+RAG企业知识库教程！把AI大模型面试必备技能+简历+面试题+面试复盘一次性给大家讲明白！-码士集团.md",
@@ -426,7 +430,6 @@
     "7-分布式/5-一致性哈希与负载均衡.md",
     "7-分布式/0-分布式事务/分布式事务.drawio",
     "7-分布式/2-幂等",
-    "7-分布式/1-分布式锁",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
     "7-分布式/0-分布式事务/分布式事务-总览.png",
@@ -442,13 +445,10 @@
     "1-java/4-jvm/0-JVM总览.md",
     "1-java/0-知识点/0-Java总览.md",
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
-    "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
     "Pasted Image 20261009152014_855.png",
-    "Pasted Image 20261011193635_377.png",
-    "Pasted Image 20261011122448_940.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]

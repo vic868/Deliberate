@@ -1,0 +1,1092 @@
+<mxfile host="embed.diagrams.net" agent="dsh" version="24.7.17">
+  <diagram id="page-knowledge-map" name="1 知识地图">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1280" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n10" value="&lt;b&gt;LangChain 1.x 知识地图  ——  模型 → 消息 → 提示 → 工具 → 智能体中间件 → 检索 → 记忆/RAG → 可观测&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=18;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1500" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n11" value="学习主线：LangChain（本节） → LangGraph（有状态图 / 多 Agent 编排，本页底部） → LangSmith（可观测、评测、提示管理）。标注「v1」的为新版推荐写法；标注「classic」的需 pip install langchain-classic 才可用。源码：docs.langchain.com" style="rounded=0;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#333333;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="68" width="1500" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="n12" value="&lt;b&gt;① 模型层 Models —— 统一接口，屏蔽供应商差异&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="105" width="1500" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n13" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;init_chat_model()&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;v1 统一入口：模型 / 供应商 / 密钥 / 温度一次指定，切换供应商只改一行，支持 model=&amp;quot;provider:model&amp;quot;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• langchain.chat_models&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="141" width="240.0" height="106" as="geometry"/>
+        </mxCell>
+        <mxCell id="n14" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;invoke / stream / batch&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;invoke 一次返回；stream 逐 token 流式；batch 并发批量；异步为 ainvoke / astream，均返回 AIMessage&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• ChatModel 三件套&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="278.0" y="141" width="240.0" height="106" as="geometry"/>
+        </mxCell>
+        <mxCell id="n15" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;bind_tools / with_structured_output&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;把工具 schema 绑定给模型；with_structured_output(Pydantic) 直接产出结构化对象，无需解析 JSON&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 扩展能力&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="526.0" y="141" width="240.0" height="106" as="geometry"/>
+        </mxCell>
+        <mxCell id="n16" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;多模态与工具调用&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;图片 / 音频 / 文件放进 content_blocks；模型生成 tool_calls，交给 ToolNode 执行并回填结果&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 多模态&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="774.0" y="141" width="240.0" height="106" as="geometry"/>
+        </mxCell>
+        <mxCell id="n17" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;提供商包 langchain-*&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;langchain-openai / anthropic / google-genai / ollama / aws … 独立发版、按需安装、可混用&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 生态包&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1022.0" y="141" width="240.0" height="106" as="geometry"/>
+        </mxCell>
+        <mxCell id="n18" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;Embeddings 向量模型&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;init_embeddings() 或直接实例化；给文本转向量，用于语义检索、去重与聚类&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• Embeddings&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1270.0" y="141" width="240.0" height="106" as="geometry"/>
+        </mxCell>
+        <mxCell id="n19" value="&lt;b&gt;② 消息 Messages —— Agent 之间流动的「货币」（跨模型、跨轮次统一格式）&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="275" width="800" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n20" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;SystemMessage&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;角色、约束、输出格式；v1 用 create_agent(system_prompt=...)&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="311" width="189.0" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="n21" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;HumanMessage&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;用户输入；多模态内容放进 content_blocks&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#d5e8d4;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="227.0" y="311" width="189.0" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="n22" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;AIMessage&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;模型回复：text + tool_calls + reasoning 推理块&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="424.0" y="311" width="189.0" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="n23" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;ToolMessage&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;工具结果，必须带 tool_call_id 与 AI 调用配对&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="621.0" y="311" width="189.0" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="n24" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;content_blocks（v1 标准内容块）&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;text / reasoning / tool_call / citation / image …… 同一个属性跨 Provider 统一访问，不同厂商的元能力用一致结构表达&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="385" width="189.0" height="96" as="geometry"/>
+        </mxCell>
+        <mxCell id="n25" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;消息操作与状态&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;add_messages reducer 追加消息；trim_messages 按 token 裁剪历史；messages_to_dict 序列化后存库或传给前端&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="227.0" y="385" width="189.0" height="96" as="geometry"/>
+        </mxCell>
+        <mxCell id="n26" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;多模态消息&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;文本 + 图片 + 文件 + 音频混排在一条消息里；能否使用取决于所选模型能力，不支持的模型会报错&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="424.0" y="385" width="189.0" height="96" as="geometry"/>
+        </mxCell>
+        <mxCell id="n27" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;消息即状态&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;LangGraph 里 messages 是最核心的 state 字段；所谓「多轮对话」就是把历史消息不断追加后重新提交&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="621.0" y="385" width="189.0" height="96" as="geometry"/>
+        </mxCell>
+        <mxCell id="n28" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;典型消息序列&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;Human → AI(tool_calls) → Tool×N → AI(最终回答)，如此循环直到模型不再请求工具。&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="489" width="780" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n29" value="&lt;b&gt;③ 提示 Prompts&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="620" width="350" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n30" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;ChatPromptTemplate&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;角色 → 变量，format_messages / invoke 生成消息列表&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="654" width="330" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n31" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;MessagesPlaceholder&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;在模板中预留对话历史 / 工具结果位置&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="686" width="330" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n32" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;PromptTemplate / FewShot&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;纯字符串模板与示例注入（少样本提示）&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="718" width="330" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n33" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;hub / partial / 版本化&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;集中管理 + 预填部分变量；hub 在 v1 已挪到 langchain-classic&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="750" width="330" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n34" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;v1 推荐&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;system_prompt 参数 + 代码拼装，复杂逻辑交给 middleware&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="782" width="330" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n35" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;为什么要模板&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;变量化 + 复用 + 可测试：同一套提示注入不同用户 / 语言 / 风格&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="822" width="106.0" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n36" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;提示即代码&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;写进 Git、走 Code Review、配单元测试；重要提示单独文件版本化&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="142.0" y="822" width="106.0" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n37" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;与 middleware 分工&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;模板负责「静态结构」，middleware 负责「运行时动态注入」&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="254.0" y="822" width="106.0" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n38" value="&lt;b&gt;④ 工具 Tools&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="390" y="620" width="370" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n39" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;@tool 装饰器&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;函数签名 + docstring 自动生成 schema，供 bind_tools&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="400" y="654" width="350" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n40" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;BaseTool / StructuredTool&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;复杂参数、异步、校验、错误处理&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="400" y="686" width="350" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n41" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;设计原则&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;单一职责、描述清晰、幂等安全、限制返回长度&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="400" y="718" width="350" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n42" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;集成与注入&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;MCP / 社区工具；State、Store、Runtime、Context 注入&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="400" y="750" width="350" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n43" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;错误策略&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;出错返回错误 ToolMessage 让模型自纠，而非抛异常中断&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="400" y="782" width="350" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="n44" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;描述决定能力&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;模型只看 name + description + 参数 schema；含糊描述 = 用错工具&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="400.0" y="822" width="112.66666666666667" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n45" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;小而稳&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;一个工具一件事；复杂流程交给图编排，而不是塞进一个大工具&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="518.6666666666666" y="822" width="112.66666666666667" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n46" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;让模型能自纠&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;返回短而结构化的结果，失败时给出可读错误原因，而不是抛异常&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="637.3333333333334" y="822" width="112.66666666666667" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n47" value="&lt;b&gt;组件关系：一次调用里，提示 / 工具 / 模型 / 消息 如何串起来&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="780" y="620" width="740" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n48" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;SystemMessage 系统提示&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;角色设定 + 输出规则 + 上下文&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="794" y="660" width="196" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n49" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;HumanMessage 用户消息&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;问题 / 附件 / 多模态内容&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#d5e8d4;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="794" y="720" width="196" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n50" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;工具清单&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;@tool → JSON schema&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="794" y="784" width="196" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n51" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;ChatModel&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;绑定工具后调用模型&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1044" y="706" width="168" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="n52" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;AIMessage&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;text + tool_calls&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1266" y="660" width="184" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n53" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;ToolMessage&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;tool_call_id + 执行结果&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1266" y="722" width="184" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n54" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;最终回答&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;带引用 / 结构化结果&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1266" y="784" width="184" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.2;fontSize=10;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.2;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n48" target="n51">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.2;fontSize=10;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n49" target="n51">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1.2;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;dashed=1;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n50" target="n51">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n58" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.2;fontSize=10;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n51" target="n52">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.2;fontSize=10;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n51" target="n54">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#b85450;strokeWidth=1.2;fontSize=10;fontColor=#b85450;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n51" target="n53">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#b85450;strokeWidth=1.2;fontSize=10;fontColor=#b85450;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n53" target="n51">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1358" y="812"/><mxPoint x="1128" y="812"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="n62" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;一句话理解&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 提示告诉模型「怎么回答」，工具告诉模型「能做什么」，消息是交互留下的「记录」。&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 模型本身没有记忆：每次调用都把 messages + 系统提示 + 工具清单一起提交，这就是它的「世界」。&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 优化 Agent 的四个杠杆：提示、工具、上下文（消息 + 检索）、外层循环（middleware / 图）。&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;verticalAlign=top;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="794" y="842" width="700" height="86" as="geometry"/>
+        </mxCell>
+        <mxCell id="n63" value="&lt;b&gt;⑤ Agent 主循环（v1 核心：create_agent）—— 模型决定调用工具，结果回灌消息，再进模型，无工具调用即结束&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="965" width="900" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n64" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;输入&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;user messages / context&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#1f3864;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="32" y="1003" width="146" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n65" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;① 调用模型&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;bind_tools → AIMessage.tool_calls&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#1f3864;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="32" y="1059" width="146" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n66" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;② 有 tool_calls？&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;判断是否还要用工具&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#d5e8d4;strokeColor=#1f3864;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="226" y="1059" width="146" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n67" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;③ 执行工具&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;ToolNode → ToolMessage&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#d5e8d4;strokeColor=#1f3864;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="32" y="1115" width="146" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n68" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;输出&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;无 tool_calls → 最终回答&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#1f3864;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="226" y="1115" width="146" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n69" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.3;fontSize=10;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n64" target="n65">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n70" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.3;fontSize=10;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n65" target="n66">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#555555;strokeWidth=1.3;fontSize=10;fontColor=#555555;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n66" target="n68">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#b85450;strokeWidth=1.3;fontSize=10;fontColor=#b85450;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;;exitX=0.9;exitY=0;exitDx=0;exitDy=0;entryX=0.9;entryY=1;entryDx=0;entryDy=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="n67" target="n65">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n73" value="是：执行工具，回灌 ToolMessage" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontColor=#b85450;strokeColor=none;fillColor=#ffffff;whiteSpace=wrap;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="184" y="1107" width="200" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="n74" value="否" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;strokeColor=none;fillColor=#ffffff;whiteSpace=wrap;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="376" y="1071" width="22" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="n75" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;理解要点&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 一次响应可含多个 tool_calls → 并行执行，各自回一条 ToolMessage&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 工具报错不中断：错误写进 ToolMessage，让模型自己修正&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 循环上限靠 middleware 或图的条件边兜底，防止死循环&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;• 每轮都提交完整消息历史 → 所以需要压缩与记忆机制&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;verticalAlign=top;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="382" y="1001" width="186" height="186" as="geometry"/>
+        </mxCell>
+        <mxCell id="n76" value="" style="rounded=0;fillColor=#fbfbf9;strokeColor=#1f3864;align=left;verticalAlign=top;spacing=6;overflow:hidden!important;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="432" y="999" width="474" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="n77" value="agent = create_agent(" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1003.0" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n78" value="    model=&quot;openai:gpt-4.1&quot;," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1015.6" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n79" value="    tools=[get_weather, calc]," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1028.2" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n80" value="    system_prompt=&quot;你是助教&quot;," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1040.8" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n81" value="    middleware=[Summarization(...)]," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1053.4" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n82" value="    response_format=ToolStrategy(Ans)," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1066.0" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n83" value=")                                 # 底层是图" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1078.6" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n84" value="res = agent.invoke({&quot;messages&quot;: [" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1091.2" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n85" value="    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;北京天气?&quot;}]})" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1103.8" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n86" value="res[&quot;messages&quot;][-1].text          # 回答" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1116.4" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n87" value="res[&quot;structured_response&quot;]        # 结构化结果" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="438" y="1129.0" width="462" height="12" as="geometry">
+            <mxRectangle width="462" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n88" value="&lt;b&gt;⑥ Middleware 中间件 —— LangChain v1 的「杀手锏」扩展层&lt;/b&gt;" style="rounded=0;fillColor=#9673a6;strokeColor=#9673a6;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="940" y="965" width="580" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n89" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;before_agent&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;Agent 开始前：加载记忆、校验输入&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="950.0" y="1001" width="181.33333333333334" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n90" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;before_model&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;每次调模型前：动态改提示、裁剪消息&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1139.3333333333333" y="1001" width="181.33333333333334" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n91" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;wrap_model_call&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;包裹模型调用：按上下文换模型 / 换工具 / 改请求&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1328.6666666666667" y="1001" width="181.33333333333334" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n92" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;wrap_tool_call&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;包裹工具调用：拦截 / 重试 / 审计&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="950.0" y="1053" width="181.33333333333334" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n93" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;after_model&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;模型回复后：校验、加护栏、修复输出&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1139.3333333333333" y="1053" width="181.33333333333334" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n94" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;after_agent&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;Agent 结束后：保存结果、清理、指标&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1328.6666666666667" y="1053" width="181.33333333333334" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n95" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;SummarizationMiddleware&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;token 超阈值自动摘要历史（trigger 配置）&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="950.0" y="1111" width="135.5" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="n96" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;HumanInTheLoopMiddleware&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;敏感工具调用前 interrupt，等待 approve/edit/reject&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1091.5" y="1111" width="135.5" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="n97" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;PIIMiddleware&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;检测 / 脱敏 / 阻断 邮箱、手机号等个人信息&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1233.0" y="1111" width="135.5" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="n98" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;TodoListMiddleware&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;给 Agent 一份可持久化的待办，长任务不跑偏&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1374.5" y="1111" width="135.5" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="n99" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;ToolRetryMiddleware&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;工具失败自动重试（指数退避）&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="950.0" y="1153" width="135.5" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="n100" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;ModelCallLimit / ToolCallLimit&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;控制单次运行的模型 / 工具调用次数，防死循环&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1091.5" y="1153" width="135.5" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="n101" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;FilesystemMiddleware / SubAgent&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;文件读写沙箱、召唤子 Agent（Deep Agents 常用）&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1233.0" y="1153" width="135.5" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="n102" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;自定义 AgentMiddleware&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;继承并实现任意钩子；可组合多个，顺序即执行顺序&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1374.5" y="1153" width="135.5" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="n103" value="&lt;b&gt;⑦ 检索与 RAG —— Document Loader → Splitter → Embedding → VectorStore → Retriever → Prompt&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1215" width="740" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n104" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;文档加载 Document Loaders&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;PDF / HTML / Markdown / CSV / 网页（WebBaseLoader）/ 目录批量加载&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="1251" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n105" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;切分 Text Splitters&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;RecursiveCharacterTextSplitter（默认首选）、chunk_size / chunk_overlap、按语义或标题切分&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="272.66666666666663" y="1251" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n106" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;向量存储 Vector Stores&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;Chroma / FAISS / pgvector / Milvus / Qdrant / Pinecone；similarity_search、MMR 去冗余&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="515.3333333333333" y="1251" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n107" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;检索器 Retrievers&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;VectorStoreRetriever、ParentDocument、MultiQuery、Ensemble、BM25；支持混合检索与重排 rerank&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="1331" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n108" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;RAG 进阶&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;查询改写 → 路由 → 多路召回 → 融合 → 重排 → 压缩 → 生成；评估用 RAGAS / LangSmith 数据集&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="272.66666666666663" y="1331" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n109" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;v1 变化&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;Indexing API 与多数 Retriever 已挪到 langchain-classic；向量库还在 langchain-&amp;lt;provider&amp;gt; 集成包&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="515.3333333333333" y="1331" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n110" value="&lt;b&gt;⑧ 记忆 Memory —— 短期会话记忆 + 长期语义记忆&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1215" width="740" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n111" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;短期记忆 Short-term&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;thread 内消息历史：由 LangGraph checkpointer（InMemorySaver / SqliteSaver / PostgresSaver）自动持久化&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="790.0" y="1251" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n112" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;长期记忆 Long-term&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;跨 thread 的 Store（InMemoryStore / 数据库）：按 namespace 存 (key, value) + 向量检索&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1032.6666666666667" y="1251" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n113" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;读记忆&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;在 before_model 钩子或工具中按 user_id 检索 store，把相关片段拼进 system prompt&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1275.3333333333333" y="1251" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n114" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;写记忆&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;在 after_agent 钩子或后台任务中抽取事实/偏好 → 写入 store；要处理冲突与遗忘&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="790.0" y="1331" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n115" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;压缩与治理&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;SummarizationMiddleware 压缩历史；trim_messages 控制 token；敏感信息过滤与 TTL&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1032.6666666666667" y="1331" width="234.66666666666666" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="n116" value="&lt;b&gt;⑨ 包结构与学习路径速查&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1435" width="1500" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n117" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;langchain&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;核心：agents / messages / tools / chat_models / embeddings 等&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="1471" width="206.28571428571428" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n118" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;langchain-core&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;底层抽象：Runnable、BaseMessage、BaseTool、RunnableConfig（被众多包依赖）&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="242.28571428571428" y="1471" width="206.28571428571428" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n119" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;langchain-classic&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;v1 中被移出的旧功能：旧链、Retriever、Indexing、hub&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="454.57142857142856" y="1471" width="206.28571428571428" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n120" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;langchain-&amp;lt;provider&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;各家模型与向量库集成包，按需安装、独立发版&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="666.8571428571429" y="1471" width="206.28571428571428" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n121" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;langgraph&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;图编排 / 有状态 / 持久化 / HITL / 多 Agent，是 create_agent 的底座&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="879.1428571428571" y="1471" width="206.28571428571428" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n122" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;deepagents&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;构建在 LangChain + LangGraph 之上的高级 Runtime：内置子 Agent、文件工具、待办&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1091.4285714285713" y="1471" width="206.28571428571428" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n123" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;langsmith&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;追踪观测、数据集评测、提示管理、在线监控&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1303.7142857142858" y="1471" width="206.28571428571428" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n124" value="&lt;b&gt;⑩ 学习路线（建议顺序 + 每步产出）&lt;/b&gt;" style="rounded=0;fillColor=#d6b656;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1585" width="735" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n125" value="&lt;b&gt;1&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1621.0625" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="n126" value="&lt;b&gt;环境与模型&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;装 langchain + langchain-openai；init_chat_model 跑通 invoke / stream / batch&lt;/font&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="58" y="1617.0" width="430" height="32.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n127" value="&lt;font style=&quot;font-size:10px&quot;&gt;产出：会切换模型、流式打印&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496" y="1623.0" width="249" height="20.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n128" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="        <mxCell id="n125" value="&lt;b&gt;1&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1621.0625" width="22" height="22" as="geometry"/>
+        </mxCell>" target="n127">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n129" value="&lt;b&gt;2&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1659.1875" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="n130" value="&lt;b&gt;消息与结构化输出&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;SystemMessage / HumanMessage / AIMessage；with_structured_output(Pydantic) + content_blocks&lt;/font&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="58" y="1655.125" width="430" height="32.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n131" value="&lt;font style=&quot;font-size:10px&quot;&gt;产出：写一个发票/简历抽取脚本&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496" y="1661.125" width="249" height="20.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n132" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="        <mxCell id="n129" value="&lt;b&gt;2&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1659.1875" width="22" height="22" as="geometry"/>
+        </mxCell>" target="n131">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n133" value="&lt;b&gt;3&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1697.3125" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="n134" value="&lt;b&gt;工具与 Agent&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;@tool 写 2~3 个工具 → create_agent → invoke / stream → 观察 tool_calls 回灌&lt;/font&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="58" y="1693.25" width="430" height="32.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n135" value="&lt;font style=&quot;font-size:10px&quot;&gt;产出：一个能查天气+算数的小 Agent&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496" y="1699.25" width="249" height="20.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n136" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="        <mxCell id="n133" value="&lt;b&gt;3&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1697.3125" width="22" height="22" as="geometry"/>
+        </mxCell>" target="n135">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n137" value="&lt;b&gt;4&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1735.4375" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="n138" value="&lt;b&gt;中间件&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;加 Summarization + HumanInTheLoop，再写一个 before_model 自定义中间件&lt;/font&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="58" y="1731.375" width="430" height="32.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n139" value="&lt;font style=&quot;font-size:10px&quot;&gt;产出：能审计、能人工审批的 Agent&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496" y="1737.375" width="249" height="20.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n140" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="        <mxCell id="n137" value="&lt;b&gt;4&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1735.4375" width="22" height="22" as="geometry"/>
+        </mxCell>" target="n139">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n141" value="&lt;b&gt;5&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1773.5625" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="n142" value="&lt;b&gt;RAG&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;加载 Obsidian 笔记 → 切分 → 向量化 → 检索 → 工具调用式问答&lt;/font&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="58" y="1769.5" width="430" height="32.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n143" value="&lt;font style=&quot;font-size:10px&quot;&gt;产出：个人笔记问答助手&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496" y="1775.5" width="249" height="20.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n144" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="        <mxCell id="n141" value="&lt;b&gt;5&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1773.5625" width="22" height="22" as="geometry"/>
+        </mxCell>" target="n143">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n145" value="&lt;b&gt;6&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1811.6875" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="n146" value="&lt;b&gt;记忆 &amp;amp; 多轮&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;checkpointer 持久化 + Store 长期记忆&lt;/font&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="58" y="1807.625" width="430" height="32.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n147" value="&lt;font style=&quot;font-size:10px&quot;&gt;产出：记住用户偏好的助手&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496" y="1813.625" width="249" height="20.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n148" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="        <mxCell id="n145" value="&lt;b&gt;6&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1811.6875" width="22" height="22" as="geometry"/>
+        </mxCell>" target="n147">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n149" value="&lt;b&gt;7&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1849.8125" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="n150" value="&lt;b&gt;评测与观测&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;接入 LangSmith tracing，建数据集跑评测&lt;/font&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="58" y="1845.75" width="430" height="32.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n151" value="&lt;font style=&quot;font-size:10px&quot;&gt;产出：看得见每一步调用的 Agent&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496" y="1851.75" width="249" height="20.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n152" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="        <mxCell id="n149" value="&lt;b&gt;7&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1849.8125" width="22" height="22" as="geometry"/>
+        </mxCell>" target="n151">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n153" value="&lt;b&gt;8&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1887.9375" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="n154" value="&lt;b&gt;进入 LangGraph&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;把它拆成 State / Node / Edge，读懂 create_agent 底层图&lt;/font&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="58" y="1883.875" width="430" height="32.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n155" value="&lt;font style=&quot;font-size:10px&quot;&gt;产出：可自由分支的图式 Agent&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496" y="1889.875" width="249" height="20.125" as="geometry"/>
+        </mxCell>
+        <mxCell id="n156" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="        <mxCell id="n153" value="&lt;b&gt;8&lt;/b&gt;" style="ellipse;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1887.9375" width="22" height="22" as="geometry"/>
+        </mxCell>" target="n155">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n157" value="&lt;b&gt;⑪ 常见陷阱 &amp;amp; 概念辨析（易错点）&lt;/b&gt;" style="rounded=0;fillColor=#b85450;strokeColor=#b85450;fontSize=12;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="785" y="1585" width="735" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n158" value="&lt;b&gt;LangChain != LangGraph&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;LangChain 提供「组件 + 高层 Agent」；LangGraph 提供「状态图编排」。create_agent 就是一层 LangGraph 封装，两者不是竞争关系&lt;/font&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1619.0" width="715" height="35.57142857142857" as="geometry"/>
+        </mxCell>
+        <mxCell id="n159" value="&lt;b&gt;v1 起 create_react_agent 已过时&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;改用 create_agent；import 报模块不存在，多半是没装 langchain-classic（旧链/旧 Retriever/hub）&lt;/font&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1662.5714285714287" width="715" height="35.57142857142857" as="geometry"/>
+        </mxCell>
+        <mxCell id="n160" value="&lt;b&gt;消息配对要完整&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;AIMessage.tool_calls 与 ToolMessage.tool_call_id 必须一一对应，否则模型报错或行为异常&lt;/font&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1706.142857142857" width="715" height="35.57142857142857" as="geometry"/>
+        </mxCell>
+        <mxCell id="n161" value="&lt;b&gt;RAG 不是万能药&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;检索失败占多数：切分太大/太小、向量模型不匹配领域、召回未重排；先加 LangSmith 追踪看命中&lt;/font&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1749.7142857142858" width="715" height="35.57142857142857" as="geometry"/>
+        </mxCell>
+        <mxCell id="n162" value="&lt;b&gt;Prompt 与代码耦合&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;把提示写死在几十处难维护；用 hub / 版本管理 / 模板集中存放，并纳入评测&lt;/font&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1793.2857142857142" width="715" height="35.57142857142857" as="geometry"/>
+        </mxCell>
+        <mxCell id="n163" value="&lt;b&gt;评测优先&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;先建数据集与指标，再谈优化；否则每次「优化」都靠感觉&lt;/font&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1836.857142857143" width="715" height="35.57142857142857" as="geometry"/>
+        </mxCell>
+        <mxCell id="n164" value="&lt;b&gt;密钥安全&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;.env + 环境变量，绝不硬编码；Agent 工具要做权限/确认（HITL）&lt;/font&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1880.4285714285716" width="715" height="35.57142857142857" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page-create-agent" name="2 create_agent 配方">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1280" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n165" value="&lt;b&gt;create_agent 实战配方（LangChain v1 / Python）&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=18;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1500" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n166" value="" style="rounded=0;fillColor=#fbfbf9;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacing=8;overflow=hidden;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="342" width="760" height="728" as="geometry"/>
+        </mxCell>
+        <mxCell id="n167" value="from dotenv import load_dotenv" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="340.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n168" value="from langchain.agents import create_agent" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="352.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n169" value="from langchain.agents.middleware import (" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="364.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n170" value="    SummarizationMiddleware, HumanInTheLoopMiddleware, PIIMiddleware)" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="376.6" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n171" value="from langchain.agents.structured_output import ToolStrategy" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="388.8" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n172" value="from langchain.chat_models import init_chat_model" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="401.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n173" value="from langchain.tools import tool" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="413.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n174" value="from pydantic import BaseModel, Field" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="425.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n175" value="load_dotenv()" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="437.6" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n176" value="# 1) 模型（也可直接传 model=&quot;openai:gpt-4.1-mini&quot;）" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="462.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n177" value="model = init_chat_model(&quot;openai:gpt-4.1-mini&quot;, temperature=0)" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="474.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n178" value="# 2) 工具：docstring 就是模型看到的工具描述" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="498.6" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n179" value="@tool" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="510.79999999999995" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n180" value="def search_notes(query: str) -&gt; str:" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="523.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n181" value="    &quot;&quot;&quot;在个人笔记库中搜索相关片段。&quot;&quot;&quot;" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="535.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n182" value="    return retrieve_from_obsidian(query)   # 接 RAG 检索" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="547.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n183" value="@tool" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="571.8" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n184" value="def send_email(to: str, subject: str, body: str) -&gt; str:" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="584.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n185" value="    &quot;&quot;&quot;发送邮件（有外部副作用，需人工确认）。&quot;&quot;&quot;" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="596.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n186" value="    ..." style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="608.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n187" value="# 3) 结构化输出 schema" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="632.8" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n188" value="class Answer(BaseModel):" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="645.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n189" value="    summary: str = Field(description=&quot;一句话结论&quot;)" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="657.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n190" value="    sources: list[str] = Field(description=&quot;引用来源&quot;)" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="669.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n191" value="# 4) 组装 Agent：中间件按顺序执行" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="693.8" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n192" value="agent = create_agent(" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="706.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n193" value="    model=model," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="718.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n194" value="    tools=[search_notes, send_email]," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="730.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n195" value="    system_prompt=&quot;你是我的研究助理，回答需引用笔记来源。&quot;," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="742.5999999999999" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n196" value="    middleware=[" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="754.8" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n197" value="        PIIMiddleware(&quot;email&quot;, strategy=&quot;redact&quot;)," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="767.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n198" value="        SummarizationMiddleware(" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="779.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n199" value="            model=model, trigger={&quot;tokens&quot;: 4000})," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="791.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n200" value="        HumanInTheLoopMiddleware(" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="803.5999999999999" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n201" value="            interrupt_on={&quot;send_email&quot;: {&quot;allowed_decisions&quot;: [" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="815.8" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n202" value="                &quot;approve&quot;, &quot;edit&quot;, &quot;reject&quot;]}})," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="828.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n203" value="    ]," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="840.2" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n204" value="    response_format=ToolStrategy(Answer)," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="852.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n205" value=")" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="864.6" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n206" value="# 5) 运行" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="889.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n207" value="res = agent.invoke({&quot;messages&quot;: [" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="901.1999999999999" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n208" value="    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;整理 Agent 要点并邮件给 team@x.com&quot;}]})" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="913.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n209" value="print(res[&quot;structured_response&quot;])" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="925.5999999999999" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n210" value="# 6) 流式观察每一步（model / tools 节点逐个输出）" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="950.0" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n211" value="for chunk in agent.stream({&quot;messages&quot;: [...]}, stream_mode=&quot;updates&quot;):" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="962.1999999999999" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n212" value="    print(chunk)" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="28" y="974.4" width="744" height="12" as="geometry">
+            <mxRectangle width="744" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n213" value="&lt;div style=&quot;font-size:12px;text-align:left&quot;&gt;&lt;b&gt;图例 / 颜色约定&lt;/b&gt;&lt;/div&gt;&lt;table style=&quot;font-size:11px;margin-top:2px&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#dae8fc;border:1px solid #6c8ebf&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;LangChain 核心组件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#d5e8d4;border:1px solid #82b366&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;LangGraph 相关（Agent 底层 / 下一阶段）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#ffe6cc;border:1px solid #d79b00&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;LangSmith 相关（再下一阶段）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#e1d5e7;border:1px solid #9673a6&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;v1 新增 / Middleware 扩展点&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#f5f5f5;border:1px solid #666666&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;生态与包&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#f8cecc;border:1px solid #b85450&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;陷阱 / 注意&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#fff2cc;border:1px solid #d6b656&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;学习路线 / 重点&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="rounded=0;fillColor=#ffffff;strokeColor=#999999;align=left;verticalAlign=top;spacing=8;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="360" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="n214" value="&lt;b&gt;create_agent 参数速查&lt;/b&gt;" style="rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontColor=#1a1a1a;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="80" width="310" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="n215" value="&lt;b&gt;model&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;字符串 &amp;quot;provider:model&amp;quot;、BaseChatModel 实例，或「按运行时上下文返回模型」的函数&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="110.0" width="310" height="34.75" as="geometry"/>
+        </mxCell>
+        <mxCell id="n216" value="&lt;b&gt;tools&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;工具列表；支持 @tool / BaseTool / MCP 工具；工具可通过 ToolRuntime 读 state、store、context&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="148.75" width="310" height="34.75" as="geometry"/>
+        </mxCell>
+        <mxCell id="n217" value="&lt;b&gt;system_prompt&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;静态字符串，或接收 state/runtime 返回字符串的函数（v1 的 system_prompt 参数）&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="187.5" width="310" height="34.75" as="geometry"/>
+        </mxCell>
+        <mxCell id="n218" value="&lt;b&gt;middleware&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;中间件列表，按顺序执行；负责压缩、HITL、护栏、限流等横切逻辑&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="226.25" width="310" height="34.75" as="geometry"/>
+        </mxCell>
+        <mxCell id="n219" value="&lt;b&gt;response_format&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;ToolStrategy(pydantic / typed dict) 或 ProviderStrategy；结果在 result[&amp;quot;structured_response&amp;quot;]&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="265.0" width="310" height="34.75" as="geometry"/>
+        </mxCell>
+        <mxCell id="n220" value="&lt;b&gt;context_schema / context&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;定义运行期上下文（用户、权限、配置），供中间件与工具读取&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="303.75" width="310" height="34.75" as="geometry"/>
+        </mxCell>
+        <mxCell id="n221" value="&lt;b&gt;state_schema&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;扩展 AgentState（配合自定义中间件持久化额外字段）&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="342.5" width="310" height="34.75" as="geometry"/>
+        </mxCell>
+        <mxCell id="n222" value="&lt;b&gt;checkpointer / store&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;传入 LangGraph 持久化对象：checkpointer 管多轮，store 管长期记忆&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="381.25" width="310" height="34.75" as="geometry"/>
+        </mxCell>
+        <mxCell id="n223" value="&lt;b&gt;调用与流式 API&lt;/b&gt;" style="rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontColor=#1a1a1a;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="838" y="80" width="310" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="n224" value="&lt;b&gt;invoke&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;同步一次运行，返回最终 state dict&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="838" y="110.0" width="310" height="40.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="n225" value="&lt;b&gt;stream(stream_mode=...)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;values / updates / messages（逐 token）/ custom，用于前端实时展示&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="838" y="154.0" width="310" height="40.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="n226" value="&lt;b&gt;ainvoke / astream&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;异步版本，用于 Web 服务（FastAPI）&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="838" y="198.0" width="310" height="40.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="n227" value="&lt;b&gt;get_state / update_state&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;读取与修改 thread 状态，配合 HITL 恢复运行&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="838" y="242.0" width="310" height="40.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="n228" value="&lt;b&gt;Command(resume=...)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;人工审批后恢复被中断的运行&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="838" y="286.0" width="310" height="40.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="n229" value="&lt;b&gt;落地建议（先用 LangChain，后上 LangGraph）&lt;/b&gt;" style="rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontColor=#1a1a1a;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="636" width="310" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="n230" value="&lt;b&gt;什么时候够用&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;单 Agent + 一组工具 + 人审 + 检索：create_agent + middleware 已足够&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="666.0" width="310" height="52.666666666666664" as="geometry"/>
+        </mxCell>
+        <mxCell id="n231" value="&lt;b&gt;什么时候不该用&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;需要显式分支、多 Agent 角色分工、复杂状态机、长时任务续跑（用 LangGraph）&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="722.6666666666666" width="310" height="52.666666666666664" as="geometry"/>
+        </mxCell>
+        <mxCell id="n232" value="&lt;b&gt;迁移成本&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;先固定工具与中间件，再在 LangGraph 里重画节点；create_agent 的 prompt/tools 可直接复用&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="779.3333333333334" width="310" height="52.666666666666664" as="geometry"/>
+        </mxCell>
+        <mxCell id="n233" value="&lt;b&gt;最小可用骨架（可直接粘进项目）&lt;/b&gt;" style="rounded=1;fillColor=#fbfbf9;strokeColor=#1f3864;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="850" y="180" width="670" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="n234" value="" style="rounded=0;fillColor=#fbfbf9;strokeColor=#1f3864;align=left;verticalAlign=top;spacing=6;overflow:hidden!important;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="850" y="206" width="670" height="520" as="geometry"/>
+        </mxCell>
+        <mxCell id="n235" value="from langchain.agents import create_agent" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="216" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n236" value="from langchain.chat_models import init_chat_model" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="235" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n237" value="from langchain.tools import tool" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="254" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n238" value="" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="273" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n239" value="@tool" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="292" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n240" value="def get_weather(city: str) -&gt; str:" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="311" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n241" value="    &quot;&quot;&quot;查询城市天气。&quot;&quot;&quot;" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="330" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n242" value="    return f&quot;{city} 晴，18~26 摄氏度&quot;" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="349" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n243" value="" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="368" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n244" value="model = init_chat_model(&quot;openai:gpt-4.1-mini&quot;, temperature=0)" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="387" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n245" value="agent = create_agent(model=model, tools=[get_weather]," style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="406" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n246" value="                     system_prompt=&quot;你是严谨的助手，不确定时先调用工具。&quot;)" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="425" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n247" value="res = agent.invoke({&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;上海天气？&quot;}]})" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="444" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n248" value="print(res[&quot;messages&quot;][-1].text)" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="463" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n249" value="" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="482" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n250" value="# 多轮：create_agent(..., checkpointer=InMemorySaver())" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="501" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n251" value="#       invoke(..., config={&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;u-001&quot;}})" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="520" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n252" value="# 流式：agent.stream({...}, stream_mode=&quot;messages&quot;)   # 逐 token" style="rounded=0;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;html=1;spacing=0;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="882" y="539" width="620" height="24" as="geometry">
+            <mxRectangle width="620" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page-overview" name="3 LC-LG-LS 全景与8周路线">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1280" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n253" value="&lt;b&gt;LangChain / LangGraph / LangSmith 全景与分工&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=18;fontColor=#ffffff;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1500" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n254" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;LangChain&lt;/b&gt;&lt;/div&gt;" style="rounded=0;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontSize=16;fontColor=#ffffff;fontStyle=1;align=center;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="90" width="480" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n255" value="&lt;b&gt;构建层 · 组件与高层 Agent API&lt;/b&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="136" width="480" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n256" value="&lt;font style=&quot;font-size:11px&quot;&gt;• 模型、消息、提示、工具、检索、记忆统一抽象&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="176" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n257" value="&lt;font style=&quot;font-size:11px&quot;&gt;• create_agent：开箱即用的 Agent 主循环&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="222" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n258" value="&lt;font style=&quot;font-size:11px&quot;&gt;• Middleware：动态提示、压缩、HITL、护栏&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="268" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n259" value="&lt;font style=&quot;font-size:11px&quot;&gt;• 面向「快速搭出一个能干活的 Agent」&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="314" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n260" value="&lt;font style=&quot;font-size:11px&quot;&gt;• 学习重点：组件 API 与中间件组合&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="360" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n261" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;LangGraph&lt;/b&gt;&lt;/div&gt;" style="rounded=0;fillColor=#82b366;strokeColor=#82b366;fontSize=16;fontColor=#ffffff;fontStyle=1;align=center;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="480" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n262" value="&lt;b&gt;编排层 · 有状态图运行时&lt;/b&gt;" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="520" y="136" width="480" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n263" value="&lt;font style=&quot;font-size:11px&quot;&gt;• State / Node / Edge / 条件边 / 子图&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="520" y="176" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n264" value="&lt;font style=&quot;font-size:11px&quot;&gt;• 持久化 Checkpointer、Time travel、断点续跑&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="520" y="222" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n265" value="&lt;font style=&quot;font-size:11px&quot;&gt;• 多 Agent：Supervisor / Swarm / 层级团队&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="520" y="268" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n266" value="&lt;font style=&quot;font-size:11px&quot;&gt;• create_agent 的底层就是它&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="520" y="314" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n267" value="&lt;font style=&quot;font-size:11px&quot;&gt;• 学习重点：状态设计、路由与容错&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="520" y="360" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n268" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;LangSmith&lt;/b&gt;&lt;/div&gt;" style="rounded=0;fillColor=#d79b00;strokeColor=#d79b00;fontSize=16;fontColor=#ffffff;fontStyle=1;align=center;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="90" width="480" height="46" as="geometry"/>
+        </mxCell>
+        <mxCell id="n269" value="&lt;b&gt;观测层 · 开发运维平台&lt;/b&gt;" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="136" width="480" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n270" value="&lt;font style=&quot;font-size:11px&quot;&gt;• Tracing：每个节点/LLM 调用的输入输出与耗时&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="176" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n271" value="&lt;font style=&quot;font-size:11px&quot;&gt;• Datasets + Evaluators：离线评测、回归&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="222" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n272" value="&lt;font style=&quot;font-size:11px&quot;&gt;• Prompt Hub：提示版本与协作&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="268" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n273" value="&lt;font style=&quot;font-size:11px&quot;&gt;• 线上监控、标注队列、A/B 对比&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="314" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n274" value="&lt;font style=&quot;font-size:11px&quot;&gt;• 学习重点：用数据驱动优化 Agent&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="360" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n275" value="产出" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1f3864;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#1f3864;labelBackgroundColor=#ffffff;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="col0" target="col1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n276" value="接入" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1f3864;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#1f3864;labelBackgroundColor=#ffffff;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;" edge="1" parent="1" source="col1" target="col2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n277" value="&lt;b&gt;学习节奏建议（8 周）&lt;/b&gt;" style="rounded=0;fillColor=#d6b656;strokeColor=#d6b656;fontSize=13;fontColor=#1a1a1a;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="420" width="1500" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n278" value="&lt;b&gt;第 1 周&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="460" width="100" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n279" value="&lt;b&gt;模型 &amp;amp; 消息&lt;/b&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="126" y="460" width="200" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n280" value="&lt;font style=&quot;font-size:10.5px&quot;&gt;init_chat_model、invoke/stream/batch、content_blocks、结构化输出&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="332" y="460" width="1188" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n281" value="&lt;b&gt;第 2 周&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="512" width="100" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n282" value="&lt;b&gt;工具 &amp;amp; Agent&lt;/b&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="126" y="512" width="200" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n283" value="&lt;font style=&quot;font-size:10.5px&quot;&gt;@tool、bind_tools、create_agent、观察 tool_calls 回灌、stream 调试&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="332" y="512" width="1188" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n284" value="&lt;b&gt;第 3 周&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="564" width="100" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n285" value="&lt;b&gt;中间件&lt;/b&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="126" y="564" width="200" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n286" value="&lt;font style=&quot;font-size:10.5px&quot;&gt;内置中间件（摘要/HITL/PII/限额）+ 自定义 before_model / wrap_model_call&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="332" y="564" width="1188" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n287" value="&lt;b&gt;第 4 周&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="616" width="100" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n288" value="&lt;b&gt;RAG&lt;/b&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="126" y="616" width="200" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n289" value="&lt;font style=&quot;font-size:10.5px&quot;&gt;加载 → 切分 → 向量化 → 检索 → 重排，工具化问答与引用&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="332" y="616" width="1188" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n290" value="&lt;b&gt;第 5 周&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="668" width="100" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n291" value="&lt;b&gt;记忆 &amp;amp; 持久化&lt;/b&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="126" y="668" width="200" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n292" value="&lt;font style=&quot;font-size:10.5px&quot;&gt;checkpointer 多轮 + Store 长期记忆 + 多租户 user_id 隔离&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="332" y="668" width="1188" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n293" value="&lt;b&gt;第 6 周&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="720" width="100" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n294" value="&lt;b&gt;LangSmith&lt;/b&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="126" y="720" width="200" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n295" value="&lt;font style=&quot;font-size:10.5px&quot;&gt;接入 tracing、建数据集、写 evaluator、对比版本&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="332" y="720" width="1188" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n296" value="&lt;b&gt;第 7 周&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="772" width="100" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n297" value="&lt;b&gt;LangGraph 基础&lt;/b&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="126" y="772" width="200" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n298" value="&lt;font style=&quot;font-size:10.5px&quot;&gt;State 设计、条件边、循环、子图、Command、interrupt/resume&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="332" y="772" width="1188" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n299" value="&lt;b&gt;第 8 周&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="824" width="100" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n300" value="&lt;b&gt;多 Agent &amp;amp; 部署&lt;/b&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="126" y="824" width="200" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n301" value="&lt;font style=&quot;font-size:10.5px&quot;&gt;Supervisor/Swarm、LangGraph Platform 部署、生产化监控&lt;/font&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="332" y="824" width="1188" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n302" value="&lt;b&gt;推荐学习资源&lt;/b&gt;" style="rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontColor=#1a1a1a;fontStyle=1;align=left;verticalAlign=middle;spacing=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="900" width="1500" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n303" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;官方文档（首选）&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;docs.langchain.com：LangChain / LangGraph / LangSmith 各有一套 oss/python 文档与参考&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20.0" y="934" width="292.0" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n304" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;官方教程&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;Build an agent、RAG tutorial、LangGraph 的 quickstart 与「带记忆的客服 Agent」&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="322.0" y="934" width="292.0" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n305" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;API 参考&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;reference.langchain.com：类与函数签名、参数说明&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="624.0" y="934" width="292.0" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n306" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;动手项目&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;个人笔记问答（本知识库）、自动化研究报告 Agent、带审批的邮件/日历助手&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="926.0" y="934" width="292.0" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n307" value="&lt;div style=&quot;text-align:left;line-height:1.35;margin-left:4px&quot;&gt;&lt;b&gt;社区&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#555555&quot;&gt;LangChain Blog、GitHub Issues 的 v1 标签、LangGraph Academy 课程&lt;/font&gt;&lt;/div&gt;" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10.5;fontColor=#1a1a1a;arcSize=6;spacing=6;opacity=100;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1228.0" y="934" width="292.0" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n308" value="&lt;div style=&quot;font-size:12px;text-align:left&quot;&gt;&lt;b&gt;术语对照（避免混淆）&lt;/b&gt;&lt;/div&gt;&lt;table style=&quot;font-size:11px;margin-top:2px&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#f5f5f5;border:1px solid #666666&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;Chain（v1 前）= Runnable 组合出的处理管线（旧的「链」）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#dae8fc;border:1px solid #6c8ebf&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;Agent = 模型 + 工具 + 循环（v1 用 create_agent 构建）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#d5e8d4;border:1px solid #82b366&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;Graph = LangGraph 的状态机；Agent 只是其中一类图&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#ffe6cc;border:1px solid #d79b00&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;Run / Trace = LangSmith 中一次调用 / 一棵调用树的记录&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#e1d5e7;border:1px solid #9673a6&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;Middleware = 主循环上的「可挂钩点」，v1 的扩展核心&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#fff2cc;border:1px solid #d6b656&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;State / Thread / Checkpoint = LangGraph 的运行期状态、会话、快照&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="rounded=0;fillColor=#ffffff;strokeColor=#999999;align=left;verticalAlign=top;spacing=8;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1050" width="740" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="n309" value="&lt;div style=&quot;font-size:12px;text-align:left&quot;&gt;&lt;b&gt;从 LangChain 到 LangGraph 的迁移信号（出现这些需求时就该上 LangGraph）&lt;/b&gt;&lt;/div&gt;&lt;table style=&quot;font-size:11px;margin-top:2px&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#d5e8d4;border:1px solid #82b366&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;需要在 Agent 内部做显式分支（如「分类 → 走不同流程」）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#d5e8d4;border:1px solid #82b366&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;多个 Agent 协作：Supervisor 分派、并行评审、层级团队&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#d5e8d4;border:1px solid #82b366&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;复杂状态：任务清单、多个子产出、人工审阅节点&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#fff2cc;border:1px solid #d6b656&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;需要长时运行、断点续跑、time travel 回放&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#f5f5f5;border:1px solid #666666&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;需要把「非 LLM 的确定性步骤」也画进流程图&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding:1px 6px 1px 0&quot;&gt;&lt;span style=&quot;display:inline-block;width:22px;height:10px;background:#ffe6cc;border:1px solid #d79b00&quot;&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;font-size:11px&quot;&gt;需要精细控制循环次数、容错、重试与人工介入点&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="rounded=0;fillColor=#ffffff;strokeColor=#999999;align=left;verticalAlign=top;spacing=8;fontSize=11;html=1;align=left;verticalAlign=middle;;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1050" width="740" height="170" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
