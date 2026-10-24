@@ -395,7 +395,6 @@
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
       "hybrid-git-sync:Sync Now": false,
-      "drawio:Launch draw.io editor": false,
       "drawio-editor:Create new drawio diagram": false,
       "obsidian-git:Open Git source control": false
     }
