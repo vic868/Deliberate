@@ -2786,7 +2786,7 @@
             <mxRectangle height="124" width="204" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-122" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="redis 本身就支持 SETNX，Redission 把封装的更好用" vertex="1">
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-122" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="不在业务里更新缓存了，让 mysql 通知缓存去更新" vertex="1">
           <mxGeometry height="124" width="203" x="204" as="geometry">
             <mxRectangle height="124" width="203" as="alternateBounds" />
           </mxGeometry>
