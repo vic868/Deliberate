@@ -478,7 +478,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="k03" name="03 三层结构">
-    <mxGraphModel dx="1757" dy="1183" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1474" dy="1160" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -670,6 +670,21 @@
         </mxCell>
         <mxCell id="k03_t50" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" value="Topic 是逻辑，Partition 是并行与有序，Replica 是高可用，Segment 是磁盘上的删除与查找单位。" vertex="1">
           <mxGeometry height="52" width="1330" x="176" y="902" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="topic与 partition" vertex="1">
+          <mxGeometry height="853" width="1516" x="120" y="1258" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeColor=#E5CCFF;fillColor=#FFCCE6;" value="Topic" vertex="1">
+          <mxGeometry height="348" width="120" x="317" y="1401" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#66FFB3;" value="Partition-0" vertex="1">
+          <mxGeometry height="60" width="120" x="317" y="1475" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#66FF66;" value="Partition-1" vertex="1">
+          <mxGeometry height="60" width="120" x="317" y="1544.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillColor=#00CC00;" value="Partition-2" vertex="1">
+          <mxGeometry height="60" width="120" x="317" y="1618" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
