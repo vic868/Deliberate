@@ -2577,12 +2577,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="20tK1mfWK4Mak4eyCLYM" name="第 13 页">
-    <mxGraphModel dx="666" dy="443" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1252" dy="833" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="hm0ZugIW6zdflCOt5yMR-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="redis 数据一致性" vertex="1">
-          <mxGeometry height="1210" width="1640" x="350" y="570" as="geometry" />
+          <mxGeometry height="1210" width="1640" x="398" y="438" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="问题：&lt;div&gt;缓存与 DB 不一致&lt;/div&gt;&lt;div&gt;订单超卖 xxx单&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="120" x="390" y="764" as="geometry" />
@@ -2632,8 +2632,8 @@
         <mxCell id="hm0ZugIW6zdflCOt5yMR-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="数据一致性，查询缓存与查询数据库的结果是一致的" vertex="1">
           <mxGeometry height="11" width="307" x="1217" y="680" as="geometry" />
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="灵魂考问：更新数据时是先删除缓存" vertex="1">
-          <mxGeometry height="50" width="352" x="1302" y="778" as="geometry" />
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="灵魂考问：更新数据时是先删除缓存，再更新数据库，&lt;div&gt;还是先更新数据库，再删除缓存 。&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;❌不一致，&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="217" width="350" x="1302" y="766" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
