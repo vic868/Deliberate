@@ -158,10 +158,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "14-AI agent /1-LangChain/0-LangChain.drawio"
+                "file": "14-AI agent /3-Milvus/0-Milvus.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "0-LangChain"
+              "title": "0-Milvus"
             }
           }
         ],
@@ -402,8 +402,8 @@
   },
   "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
-    "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent /1-LangChain/0-LangChain.drawio",
+    "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent /3-Milvus/0-Milvus.drawio",
     "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
