@@ -156,12 +156,14 @@
             "id": "ceee30759d3e1d73",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
+                "file": "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "Kafka-架构与面试"
+              "icon": "lucide-file",
+              "title": "Kafka 温习一下（详细整理版）"
             }
           }
         ],
@@ -227,8 +229,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 249.18359375,
-    "collapsed": true
+    "width": 249.18359375
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -436,11 +437,46 @@
         "height": 800,
         "maximize": true,
         "zoom": 0
+      },
+      {
+        "id": "48c9a8c23aefadf4",
+        "type": "window",
+        "children": [
+          {
+            "id": "79b34eb2d445d78e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4dc9ac7548e9fe23",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "Kafka 温习一下（详细整理版）"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
       }
     ]
   },
-  "active": "ceee30759d3e1d73",
+  "active": "4dc9ac7548e9fe23",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
+    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
     "2-redis/Redis-架构与面试.drawio",
     "大数据学习规划/02-Flink补课.md",
@@ -468,7 +504,6 @@
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "6-ai/1-milvus/0-milvus.excalidraw.md",
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
-    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "架构/Untitled Diagram 1790241846562.drawio",
     "架构/微博整体架构.excalidraw.md",
     "14-AI agent /未命名.md",
@@ -483,7 +518,6 @@
     "7-分布式/0-分布式事务/分布式事务-总览.png",
     "Upwork-接单判断清单.md",
     "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
-    "11-高并发高可用/0-高并发.excalidraw.md",
     "Pasted Image 20261006163236_959.png",
     "Pasted Image 20261008134509_484.png",
     "Pasted Image 20261009150831_843.png",
