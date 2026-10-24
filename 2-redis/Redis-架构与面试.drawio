@@ -2636,174 +2636,174 @@
           <mxGeometry height="58" width="331" x="1302" y="766" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-56" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;tableRender=collapsed;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value=" " vertex="1">
-          <mxGeometry height="779" width="1018" x="1306" y="1033" as="geometry" />
+          <mxGeometry height="845" width="1088" x="1306" y="1033" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-57" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
-          <mxGeometry height="126" width="1018" y="30" as="geometry" />
+          <mxGeometry height="137" width="1088" y="30" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-58" parent="hm0ZugIW6zdflCOt5yMR-57" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;" value="" vertex="1">
-          <mxGeometry height="126" width="204" as="geometry">
-            <mxRectangle height="126" width="204" as="alternateBounds" />
+          <mxGeometry height="137" width="218" as="geometry">
+            <mxRectangle height="137" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-59" parent="hm0ZugIW6zdflCOt5yMR-57" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="描述" vertex="1">
-          <mxGeometry height="126" width="203" x="204" as="geometry">
-            <mxRectangle height="126" width="203" as="alternateBounds" />
+          <mxGeometry height="137" width="217" x="218" as="geometry">
+            <mxRectangle height="137" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-60" parent="hm0ZugIW6zdflCOt5yMR-57" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="是否一致" vertex="1">
-          <mxGeometry height="126" width="204" x="407" as="geometry">
-            <mxRectangle height="126" width="204" as="alternateBounds" />
+          <mxGeometry height="137" width="218" x="435" as="geometry">
+            <mxRectangle height="137" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-61" parent="hm0ZugIW6zdflCOt5yMR-57" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="原因" vertex="1">
-          <mxGeometry height="126" width="203" x="611" as="geometry">
-            <mxRectangle height="126" width="203" as="alternateBounds" />
+          <mxGeometry height="137" width="217" x="653" as="geometry">
+            <mxRectangle height="137" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-62" parent="hm0ZugIW6zdflCOt5yMR-57" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="126" width="204" x="814" as="geometry">
-            <mxRectangle height="126" width="204" as="alternateBounds" />
+          <mxGeometry height="137" width="218" x="870" as="geometry">
+            <mxRectangle height="137" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-63" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
-          <mxGeometry height="127" width="1018" y="156" as="geometry" />
+          <mxGeometry height="138" width="1088" y="167" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-64" parent="hm0ZugIW6zdflCOt5yMR-63" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案一、" vertex="1">
-          <mxGeometry height="127" width="204" as="geometry">
-            <mxRectangle height="127" width="204" as="alternateBounds" />
+          <mxGeometry height="138" width="218" as="geometry">
+            <mxRectangle height="138" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-65" parent="hm0ZugIW6zdflCOt5yMR-63" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="先删除缓存" vertex="1">
-          <mxGeometry height="127" width="203" x="204" as="geometry">
-            <mxRectangle height="127" width="203" as="alternateBounds" />
+          <mxGeometry height="138" width="217" x="218" as="geometry">
+            <mxRectangle height="138" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-66" parent="hm0ZugIW6zdflCOt5yMR-63" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="❌不一致" vertex="1">
-          <mxGeometry height="127" width="204" x="407" as="geometry">
-            <mxRectangle height="127" width="204" as="alternateBounds" />
+          <mxGeometry height="138" width="218" x="435" as="geometry">
+            <mxRectangle height="138" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-67" parent="hm0ZugIW6zdflCOt5yMR-63" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="并发读请求可能将旧数据写回缓存" vertex="1">
-          <mxGeometry height="127" width="203" x="611" as="geometry">
-            <mxRectangle height="127" width="203" as="alternateBounds" />
+          <mxGeometry height="138" width="217" x="653" as="geometry">
+            <mxRectangle height="138" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-68" parent="hm0ZugIW6zdflCOt5yMR-63" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="127" width="204" x="814" as="geometry">
-            <mxRectangle height="127" width="204" as="alternateBounds" />
+          <mxGeometry height="138" width="218" x="870" as="geometry">
+            <mxRectangle height="138" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-69" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
-          <mxGeometry height="124" width="1018" y="283" as="geometry" />
+          <mxGeometry height="135" width="1088" y="305" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-70" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案二" vertex="1">
-          <mxGeometry height="124" width="204" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-71" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="先更新 Db" vertex="1">
-          <mxGeometry height="124" width="203" x="204" as="geometry">
-            <mxRectangle height="124" width="203" as="alternateBounds" />
+          <mxGeometry height="135" width="217" x="218" as="geometry">
+            <mxRectangle height="135" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-72" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="⚠️仍存风险" vertex="1">
-          <mxGeometry height="124" width="204" x="407" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" x="435" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-73" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="大部分会安全，&lt;div&gt;删除失败永久残留&lt;/div&gt;&lt;div&gt;（网络抖动，redis 超时，缓存没删除）&lt;/div&gt;" vertex="1">
-          <mxGeometry height="124" width="203" x="611" as="geometry">
-            <mxRectangle height="124" width="203" as="alternateBounds" />
+          <mxGeometry height="135" width="217" x="653" as="geometry">
+            <mxRectangle height="135" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-74" parent="hm0ZugIW6zdflCOt5yMR-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="124" width="204" x="814" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" x="870" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-96" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
-          <mxGeometry height="124" width="1018" y="407" as="geometry" />
+          <mxGeometry height="135" width="1088" y="440" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-97" parent="hm0ZugIW6zdflCOt5yMR-96" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案三&lt;div&gt;延迟双删&lt;/div&gt;" vertex="1">
-          <mxGeometry height="124" width="204" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-98" parent="hm0ZugIW6zdflCOt5yMR-96" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="先删除一次缓存，&lt;div&gt;然后更新数据库&lt;/div&gt;&lt;div&gt;等待一段时间（500）&lt;/div&gt;&lt;div&gt;再删除一次缓存&lt;/div&gt;" vertex="1">
-          <mxGeometry height="124" width="203" x="204" as="geometry">
-            <mxRectangle height="124" width="203" as="alternateBounds" />
+          <mxGeometry height="135" width="217" x="218" as="geometry">
+            <mxRectangle height="135" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-99" parent="hm0ZugIW6zdflCOt5yMR-96" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="⚠️仍存风险" vertex="1">
-          <mxGeometry height="124" width="204" x="407" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" x="435" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-100" parent="hm0ZugIW6zdflCOt5yMR-96" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="大部分会安全，&lt;div&gt;删除失败永久残留&lt;/div&gt;&lt;div&gt;（网络抖动，redis 超时，缓存没删除）&lt;/div&gt;" vertex="1">
-          <mxGeometry height="124" width="203" x="611" as="geometry">
-            <mxRectangle height="124" width="203" as="alternateBounds" />
+          <mxGeometry height="135" width="217" x="653" as="geometry">
+            <mxRectangle height="135" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-101" parent="hm0ZugIW6zdflCOt5yMR-96" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="⚠️等待的目的是确保从第一次删除开始，到所有可能读到旧数据的请求全部执行完毕。&lt;div&gt;⚠️如果第二次删除失败了，脏数据也有可能留下&lt;/div&gt;&lt;div&gt;✅真正要强一致得上锁&lt;/div&gt;" vertex="1">
-          <mxGeometry height="124" width="204" x="814" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" x="870" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-102" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
-          <mxGeometry height="124" width="1018" y="531" as="geometry" />
+          <mxGeometry height="135" width="1088" y="575" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-103" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案四&lt;div&gt;上分布式锁&lt;/div&gt;&lt;div&gt;保证强一致性&lt;/div&gt;" vertex="1">
-          <mxGeometry height="124" width="204" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-104" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="redis 本身就支持 SETNX，Redission 把封装的更好用" vertex="1">
-          <mxGeometry height="124" width="203" x="204" as="geometry">
-            <mxRectangle height="124" width="203" as="alternateBounds" />
+          <mxGeometry height="135" width="217" x="218" as="geometry">
+            <mxRectangle height="135" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-105" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="124" width="204" x="407" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" x="435" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-106" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="124" width="203" x="611" as="geometry">
-            <mxRectangle height="124" width="203" as="alternateBounds" />
+          <mxGeometry height="135" width="217" x="653" as="geometry">
+            <mxRectangle height="135" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-107" parent="hm0ZugIW6zdflCOt5yMR-102" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="124" width="204" x="814" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" x="870" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-120" parent="hm0ZugIW6zdflCOt5yMR-56" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
-          <mxGeometry height="124" width="1018" y="655" as="geometry" />
+          <mxGeometry height="135" width="1088" y="710" as="geometry" />
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-121" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="方案五&lt;div&gt;Canal+MQ 最终一致性方案&lt;/div&gt;" vertex="1">
-          <mxGeometry height="124" width="204" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-122" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="不在业务里更新缓存了，让 mysql 通知缓存去更新" vertex="1">
-          <mxGeometry height="124" width="203" x="204" as="geometry">
-            <mxRectangle height="124" width="203" as="alternateBounds" />
+          <mxGeometry height="135" width="217" x="218" as="geometry">
+            <mxRectangle height="135" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-123" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="124" width="204" x="407" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" x="435" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hm0ZugIW6zdflCOt5yMR-124" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="124" width="203" x="611" as="geometry">
-            <mxRectangle height="124" width="203" as="alternateBounds" />
+        <mxCell id="hm0ZugIW6zdflCOt5yMR-124" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="Canel,伪装成 mysql 的从库，实时监听 binlog&lt;div&gt;，数据库一有一时更新，Canal 就把变更消息扔到 mq 里，消费者拿到消息，去更新缓存，数据库和缓存之间有一个自动同步器，完全不用业务代码操心&lt;/div&gt;&lt;div&gt;⚠️就算消费失败，mq 的重试机制也能保证最终一致&lt;/div&gt;" vertex="1">
+          <mxGeometry height="135" width="217" x="653" as="geometry">
+            <mxRectangle height="135" width="217" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-125" parent="hm0ZugIW6zdflCOt5yMR-120" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="" vertex="1">
-          <mxGeometry height="124" width="204" x="814" as="geometry">
-            <mxRectangle height="124" width="204" as="alternateBounds" />
+          <mxGeometry height="135" width="218" x="870" as="geometry">
+            <mxRectangle height="135" width="218" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hm0ZugIW6zdflCOt5yMR-108" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontColor=#FF0000;" value="三大 BOSS" vertex="1">
