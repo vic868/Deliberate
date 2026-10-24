@@ -478,7 +478,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="k03" name="03 三层结构">
-    <mxGraphModel dx="2037" dy="1183" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1465" dy="851" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -737,8 +737,28 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;" value="TimeStamp&lt;div&gt;172223334&lt;/div&gt;" vertex="1">
           <mxGeometry height="111.5" width="200" x="282" y="2578" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="offset: 每个 partition 里的 offset 都是唯一" vertex="1">
-          <mxGeometry height="30" width="437" x="1095" y="2297" as="geometry" />
+        <mxCell id="gSB3KToxIW4thPM919Vh-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="offset: 每个 partition 里的 offset 都是唯一，从 0 开始递增，消费者就是通过 offset来记录自己读到哪里了，就像书签一样，消费者说我读到 100 条，下次从 101 开始，即使服务重启，这样也不会丢数据" vertex="1">
+          <mxGeometry height="54" width="437" x="1095" y="2297" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-30" edge="1" parent="1" source="gSB3KToxIW4thPM919Vh-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="gSB3KToxIW4thPM919Vh-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-27" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#FFCE9F;" value="producer" vertex="1">
+          <mxGeometry height="80" width="80" x="38" y="3183" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-31" edge="1" parent="1" source="gSB3KToxIW4thPM919Vh-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="gSB3KToxIW4thPM919Vh-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-32" connectable="0" parent="gSB3KToxIW4thPM919Vh-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.3603" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66FF66;" value="Topic&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="385" y="3193" as="geometry" />
+        </mxCell>
+        <mxCell id="gSB3KToxIW4thPM919Vh-29" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#67AB9F;" value="consumer" vertex="1">
+          <mxGeometry height="80" width="80" x="772" y="3183" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
