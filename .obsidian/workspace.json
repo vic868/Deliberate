@@ -158,12 +158,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
+                "file": "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Kafka 问题（详细整理版）"
+              "title": "Kafka 温习一下（详细整理版）"
             }
           }
         ],
@@ -307,7 +307,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
+                "file": "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -379,12 +379,11 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 208.171875,
-    "collapsed": true
+    "width": 538.64453125
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -479,11 +478,12 @@
       }
     ]
   },
-  "active": "4dc9ac7548e9fe23",
+  "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/Kafka 温习一下.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
-    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
+    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/3-生产者原理.md",
     "3-mq/2-Kafka/2-架构与核心概念.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
@@ -518,7 +518,6 @@
     "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "架构/Untitled Diagram 1790241846562.drawio",
     "架构/微博整体架构.excalidraw.md",
-    "14-AI agent /未命名.md",
     "14-AI agent /1-LangChain",
     "11-高并发高可用/高并发系统设计-总览.png",
     "2-redis/Redis-架构与面试-总览.png",
