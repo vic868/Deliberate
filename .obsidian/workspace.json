@@ -407,6 +407,7 @@
   },
   "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/gemini-code-1792917743920.xml",
     "3-mq/2-Kafka/gemini-code-1792917533942.xml",
     "服务器巡检-192.168.0.106/数据流全链路执行手册.md",
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
@@ -445,7 +446,6 @@
     "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
     "14-AI agent /1-LangChain/1-LangChain-知识地图.png",
     "14-AI agent /3-Milvus",
-    "架构/Untitled Diagram 1790241846562.drawio",
     "11-高并发高可用/高并发系统设计-总览.png",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
