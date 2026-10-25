@@ -1,0 +1,257 @@
+<mxfile host="app.diagrams.net" modified="2026-10-25T00:00:00.000Z" agent="Mozilla/5.0" version="21.0.0" type="device">
+  <diagram id="kafka-deep-arch" name="Kafka-Deep-Logical-Architecture">
+    <mxGraphModel dx="1600" dy="950" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1650" pageHeight="1050" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 1. PRODUCER CONTAINER -->
+        <mxCell id="box_producer" value="Producer 生产端内核流水线" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="30" y="50" width="310" height="730" as="geometry" />
+        </mxCell>
+        <mxCell id="p_app" value="1. 业务调用: kafkaProducer.send(record)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4CAF50;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="90" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p_intercept" value="2. Interceptor (拦截器链: 埋点/审计)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;" vertex="1" parent="1">
+          <mxGeometry x="55" y="145" width="260" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p_serialize" value="3. Serializer (Key/Value 序列化)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;" vertex="1" parent="1">
+          <mxGeometry x="55" y="195" width="260" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p_partitioner" value="4. Partitioner (分区路由)&#xa;• Key 指定: MurmurHash2(key) % partition_num&#xa;• Key 为空: Sticky 粘性分区连续打包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="55" y="245" width="260" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- Record Accumulator -->
+        <mxCell id="p_accum" value="5. RecordAccumulator (记录累加器)&#xa;[BufferPool 内存池管理: 避免频繁 GC]" style="swimlane;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#2E7D32;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="55" y="320" width="260" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="batch_p0" value="Topic-Partition 0: Deque&amp;lt;ProducerBatch&amp;gt;&#xa;[Batch 16KB] ➔ [Batch 16KB] ➔ ..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;fontSize=10;" vertex="1" parent="p_accum">
+          <mxGeometry x="15" y="35" width="230" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="batch_p1" value="Topic-Partition 1: Deque&amp;lt;ProducerBatch&amp;gt;&#xa;[Batch 16KB] ➔ [Batch 16KB] ➔ ..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;fontSize=10;" vertex="1" parent="p_accum">
+          <mxGeometry x="15" y="80" width="230" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="batch_rules" value="触发发送阈值:&#xa;• batch.size 达到上限 (如 16KB)&#xa;• linger.ms 达到等待超时 (如 10ms)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#1B5E20;" vertex="1" parent="p_accum">
+          <mxGeometry x="15" y="125" width="230" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Sender Thread -->
+        <mxCell id="p_sender" value="6. Sender I/O 独立线程 (NIO Selector 轮询)&#xa;• 生成 ClientRequest 批次&#xa;• 幂等性控制 (ProducerId + SequenceNumber)&#xa;• 确认级别控制: acks=0, 1, all(-1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#81C784;strokeColor=#2E7D32;fontStyle=1;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="55" y="530" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p_network" value="7. NetworkClient (维护 InFlightRequests)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;fontStyle=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="55" y="630" width="260" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p_note" value="参数: max.in.flight.requests.per.connection (默认5)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="55" y="670" width="260" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Producer Connectors -->
+        <mxCell id="pf1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E7D32;strokeWidth=1;" edge="1" parent="1" source="p_app" target="p_intercept" />
+        <mxCell id="pf2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E7D32;strokeWidth=1;" edge="1" parent="1" source="p_intercept" target="p_serialize" />
+        <mxCell id="pf3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E7D32;strokeWidth=1;" edge="1" parent="1" source="p_serialize" target="p_partitioner" />
+        <mxCell id="pf4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E7D32;strokeWidth=1;" edge="1" parent="1" source="p_partitioner" target="p_accum" />
+        <mxCell id="pf5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E7D32;strokeWidth=1;" edge="1" parent="1" source="p_accum" target="p_sender" />
+        <mxCell id="pf6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E7D32;strokeWidth=1;" edge="1" parent="1" source="p_sender" target="p_network" />
+
+        <!-- 2. BROKER CLUSTER CONTAINER -->
+        <mxCell id="box_broker" value="Kafka Broker 内部架构 (Reactor 多线程模型 + 存储引擎)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F8F9FA;strokeColor=#455A64;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="380" y="30" width="830" height="750" as="geometry" />
+        </mxCell>
+
+        <!-- Reactor Network Layer -->
+        <mxCell id="b_reactor" value="Broker 网络通信层: 1+N+M Reactor 模型" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#607D8B;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="405" y="70" width="780" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="r_acceptor" value="Acceptor 线程&#xa;(单线程监听端口)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CFD8DC;strokeColor=#455A64;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="115" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="r_processors" value="Processor 线程池 (NIO)&#xa;num.network.threads&#xa;[Thread-0] ... [Thread-N]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B0BEC5;strokeColor=#37474F;" vertex="1" parent="1">
+          <mxGeometry x="570" y="110" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r_queue" value="RequestChannel&#xa;(全局单阻塞队列&#xa;ArrayBlockingQueue)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF59D;strokeColor=#FBC02D;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="110" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r_handlers" value="KafkaRequestHandlerPool&#xa;num.io.threads 工作线程池&#xa;(执行磁盘 I/O 读写)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B0BEC5;strokeColor=#37474F;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="970" y="110" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r_purgatory" value="DelayedOperationPurgatory (延迟炼狱: 分层时间轮 TimingWheel)&#xa;• 等待 acks=all 的 ISR 同步完成   • 延迟 Fetch 拉取请求挂起与超时唤醒" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE082;strokeColor=#FFA000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="570" y="185" width="590" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Reactor Connectors -->
+        <mxCell id="rf1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#455A64;strokeWidth=1;" edge="1" parent="1" source="r_acceptor" target="r_processors" />
+        <mxCell id="rf2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#455A64;strokeWidth=1;" edge="1" parent="1" source="r_processors" target="r_queue" />
+        <mxCell id="rf3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#455A64;strokeWidth=1;" edge="1" parent="1" source="r_queue" target="r_handlers" />
+        <mxCell id="rf4" value="等待 ISR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FFA000;strokeWidth=1;dashed=1;" edge="1" parent="1" source="r_handlers" target="r_purgatory" />
+
+        <!-- Storage & Log Internals -->
+        <mxCell id="b_storage" value="Partition 存储引擎与物理分段剖析 (LogSegment 结构)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0288D1;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="405" y="270" width="780" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="p_header" value="Topic: Order-Events / Partition-0 (Leader 副本) [ISR 列表: Broker-0, Broker-1]" style="text;html=1;strokeColor=none;fillColor=#B3E5FC;align=left;spacingLeft=10;fontStyle=1;fontSize=11;" vertex="1" parent="b_storage">
+          <mxGeometry x="20" y="30" width="740" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Segments -->
+        <mxCell id="seg1" value="LogSegment-0 (历史切片: 只读)&#xa;BaseOffset: 00000000000000000000" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0288D1;fontSize=11;" vertex="1" parent="b_storage">
+          <mxGeometry x="20" y="65" width="340" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="seg1_log" value="0000...0000.log (消息真实数据文件)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#00ACC1;fontSize=10;" vertex="1" parent="seg1">
+          <mxGeometry x="10" y="35" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="seg1_idx" value="0000...0000.index (稀疏索引: Offset ➔ 物理 Position)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#00ACC1;fontSize=10;" vertex="1" parent="seg1">
+          <mxGeometry x="10" y="70" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="seg1_time" value="0000...0000.timeindex (时间戳索引: Timestamp ➔ Offset)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#00ACC1;fontSize=10;" vertex="1" parent="seg1">
+          <mxGeometry x="10" y="105" width="320" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="seg2" value="Active LogSegment (当前活跃切片: 顺序写追加)&#xa;BaseOffset: 00000000000050000000" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0288D1;fontSize=11;" vertex="1" parent="b_storage">
+          <mxGeometry x="400" y="65" width="360" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="seg2_log" value="5000...0000.log (持续追加写写入...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#FBC02D;fontStyle=1;fontSize=10;" vertex="1" parent="seg2">
+          <mxGeometry x="10" y="35" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="seg2_idx" value="5000...0000.index (每 4KB 记录一个稀疏索引节点)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#FBC02D;fontSize=10;" vertex="1" parent="seg2">
+          <mxGeometry x="10" y="70" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="seg2_watermark" value="水位控制: [已消费] ➔ [HW: 高水位线] ➔ [LEO: 日志末端]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#FF5722;fontStyle=1;fontSize=10;" vertex="1" parent="seg2">
+          <mxGeometry x="10" y="105" width="340" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- OS & Zero Copy Layer -->
+        <mxCell id="b_os" value="Linux 操作系统内核加速 (Kernel Space)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#8E24AA;fontStyle=1;fontSize=11;" vertex="1" parent="b_storage">
+          <mxGeometry x="20" y="230" width="740" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="os_pagecache" value="Linux PageCache (页缓存)&#xa;• 顺序写直接写入内核脏页，由 OS 异步 Flush 刷盘&#xa;• 顺序读直接命中内存页，实现极高缓存命中率" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8E24AA;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="b_os">
+          <mxGeometry x="20" y="30" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="os_zerocopy" value="Zero-Copy: sendfile() 零拷贝系统调用&#xa;PageCache ➔ 网卡 Socket Buffer (内核态直通)&#xa;完全规避 CPU 内存拷贝与用户态上下文切换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8E24AA;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="b_os">
+          <mxGeometry x="380" y="30" width="340" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Broker Coords -->
+        <mxCell id="b_offsets_topic" value="内部压缩主题: __consumer_offsets (保存各消费者组已提交的位点，通过 Compact 定期清理)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#616161;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="405" y="630" width="780" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="b_group_coord" value="GroupCoordinator (组协调器: 管理消费者加入/退出与心跳监测)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#FB8C00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="405" y="680" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="b_txn_coord" value="TransactionCoordinator (事务协调器: 基于 2PC 保证端到端 Exactly-Once)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#FB8C00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="805" y="680" width="380" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 3. CONSUMER CONTAINER -->
+        <mxCell id="box_consumer" value="Consumer 客户端内部架构" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1245" y="50" width="375" height="730" as="geometry" />
+        </mxCell>
+        <mxCell id="c_group" value="Consumer Group: 'billing-group'" style="text;html=1;strokeColor=none;fillColor=#FFE0B2;align=center;fontStyle=1;fontSize=12;" vertex="1" parent="box_consumer">
+          <mxGeometry x="25" y="40" width="325" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inst1" value="Consumer 实例 (多线程分工模型)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FB8C00;fontStyle=1;fontSize=11;" vertex="1" parent="box_consumer">
+          <mxGeometry x="25" y="80" width="325" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="c_fetcher" value="1. Fetcher (拉取器)&#xa;按 max.poll.records 发起 Fetch 请求" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;fontSize=11;" vertex="1" parent="c_inst1">
+          <mxGeometry x="20" y="35" width="285" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c_buffer" value="completedFetches (预热消息缓冲队列)&#xa;解耦底层 I/O 与上层业务遍历" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#FBC02D;fontSize=11;" vertex="1" parent="c_inst1">
+          <mxGeometry x="20" y="90" width="285" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c_poll_loop" value="2. 业务主线程: while (true) { poll(timeout) }&#xa;• 消息反序列化 (Deserializer)&#xa;• 执行核心业务逻辑&#xa;• 提交位点 (commitSync / commitAsync)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="c_inst1">
+          <mxGeometry x="20" y="145" width="285" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="c_coord" value="3. ConsumerCoordinator (客户端协调器)&#xa;• 维护分区分配 (Sticky / Range / RoundRobin)&#xa;• 订阅状态管理器 (SubscriptionState)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="c_inst1">
+          <mxGeometry x="20" y="235" width="285" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_heartbeat" value="4. HeartbeatThread (后台独立心跳守护线程)&#xa;• 定时发送 HeartbeatRequest (默认 3s)&#xa;• 超时 session.timeout.ms 触发 Rebalance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#D84315;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="c_inst1">
+          <mxGeometry x="20" y="310" width="285" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_rebalance" value="Rebalance 状态机:&#xa;FindCoordinator ➔ JoinGroup ➔ SyncGroup" style="text;html=1;strokeColor=#FFAB91;fillColor=#FBE9E7;align=center;verticalAlign=middle;rounded=1;fontSize=10;fontColor=#BF360C;" vertex="1" parent="c_inst1">
+          <mxGeometry x="20" y="385" width="285" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Consumer Connectors -->
+        <mxCell id="cf1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#E65100;strokeWidth=1;" edge="1" parent="c_inst1" source="c_fetcher" target="c_buffer" />
+        <mxCell id="cf2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#E65100;strokeWidth=1;" edge="1" parent="c_inst1" source="c_buffer" target="c_poll_loop" />
+
+        <mxCell id="c_rules" value="消费核心原则:&#xa;1. 单分区在同一个组内同时仅由 1 个 Consumer 消费&#xa;2. 消费者数 &amp;gt; 分区数时，超出部分的实例处于空闲状态" style="text;html=1;strokeColor=#FFE082;fillColor=#FFFDE7;align=left;spacingLeft=5;fontSize=10;fontColor=#E65100;rounded=1;" vertex="1" parent="box_consumer">
+          <mxGeometry x="25" y="545" width="325" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 4. KRAFT CONTROL PLANE -->
+        <mxCell id="box_kraft" value="Control Plane: KRaft 元数据共识 Quorum (去 ZooKeeper 架构)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#EDE7F6;strokeColor=#512DA8;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="405" y="810" width="780" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="k_active" value="★ Active Controller (Leader)&#xa;• 维护状态机与集群全局拓扑&#xa;• 快速推送元数据变更，消除 ZK 监听雪崩" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1C4E9;strokeColor=#512DA8;fontStyle=1;fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="425" y="850" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="k_f1" value="Controller Follower 1 (Voter)&#xa;Raft 日志热备拉取同步" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7E57C2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="685" y="850" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="k_f2" value="Controller Follower 2 (Voter)&#xa;Raft 日志热备拉取同步" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7E57C2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="945" y="850" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="k_meta_log" value="@metadata 系统日志: 元数据写入该 Topic，秒级异步回放至各 Broker 本地内存" style="text;html=1;strokeColor=#B39DDB;fillColor=#EDE7F6;align=center;verticalAlign=middle;rounded=1;fontSize=11;fontColor=#311B92;" vertex="1" parent="1">
+          <mxGeometry x="425" y="915" width="740" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Raft Sync Lines -->
+        <mxCell id="kf_sync1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#512DA8;strokeWidth=1;dashed=1;" edge="1" parent="1" source="k_active" target="k_f1" />
+        <mxCell id="kf_sync2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#512DA8;strokeWidth=1;dashed=1;" edge="1" parent="1" source="k_f1" target="k_f2" />
+
+        <!-- CROSS FLOW CONNECTORS -->
+        <mxCell id="flow_produce" value="TCP Push: ProduceRequest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E7D32;strokeWidth=2;" edge="1" parent="1" source="p_network" target="r_acceptor">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="647" />
+              <mxPoint x="360" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_write" value="调用追加写入 Log" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0288D1;strokeWidth=2;" edge="1" parent="1" source="r_handlers" target="seg2_log">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1065" y="260" />
+              <mxPoint x="975" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_fetch" value="Zero-Copy 零拷贝拉取: sendfile()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#E65100;strokeWidth=2;" edge="1" parent="1" source="os_zerocopy" target="c_fetcher">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1225" y="525" />
+              <mxPoint x="1225" y="185" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_commit" value="Offset Commit (提交消费位点)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#757575;strokeWidth=1;dashed=1;" edge="1" parent="1" source="c_poll_loop" target="b_offsets_topic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1235" y="310" />
+              <mxPoint x="1235" y="648" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_heartbeat" value="Heartbeat 心跳" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#D84315;strokeWidth=1;dashed=1;" edge="1" parent="1" source="c_heartbeat" target="b_group_coord">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1230" y="470" />
+              <mxPoint x="1230" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_kraft" value="元数据同步 / 节点状态感知" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#512DA8;strokeWidth=2;dashed=1;" edge="1" parent="1" source="k_active" target="box_broker">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="535" y="790" />
+              <mxPoint x="795" y="790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
