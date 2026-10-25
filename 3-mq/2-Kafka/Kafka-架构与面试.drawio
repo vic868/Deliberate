@@ -925,7 +925,7 @@
         <mxCell id="2mIV2XToz9f9RzVtizk6-32" parent="2mIV2XToz9f9RzVtizk6-19" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="41" width="589.2868852459017" y="152" as="geometry" />
         </mxCell>
-        <mxCell id="2mIV2XToz9f9RzVtizk6-33" parent="2mIV2XToz9f9RzVtizk6-32" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="2mIV2XToz9f9RzVtizk6-33" parent="2mIV2XToz9f9RzVtizk6-32" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="&lt;div&gt;kRaft 模式化选举出一个 Controller&lt;/div&gt;" vertex="1">
           <mxGeometry height="41" width="111" as="geometry">
             <mxRectangle height="41" width="111" as="alternateBounds" />
           </mxGeometry>
