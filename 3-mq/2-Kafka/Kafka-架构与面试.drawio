@@ -766,7 +766,7 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#FFCCE6;" value="consumer group" vertex="1">
           <mxGeometry height="317" width="299" x="570" y="3440" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fontSize=20;" value="kafka 数据会不会丢" vertex="1">
+        <mxCell id="gSB3KToxIW4thPM919Vh-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fontSize=20;" value="kafka 数据会不会丢&amp;nbsp; &amp;nbsp;--&amp;nbsp; 消息的保险箱：持久化与副本&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="822" width="1390" x="52" y="4087" as="geometry" />
         </mxCell>
         <mxCell id="8XNW18-L0Lp2LkT6NNfB-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="consumer-1" vertex="1">
@@ -780,6 +780,9 @@
         </mxCell>
         <mxCell id="8XNW18-L0Lp2LkT6NNfB-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rebalance 再均衡，就是当 consumer 加入或者退出时，kafka 会重新分配 partition，保证负载均衡" vertex="1">
           <mxGeometry height="44" width="382" x="918" y="3479" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNW18-L0Lp2LkT6NNfB-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="它通过副本机制保证数据不丢" vertex="1">
+          <mxGeometry height="26" width="494" x="130" y="4128" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
