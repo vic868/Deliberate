@@ -156,12 +156,14 @@
             "id": "ceee30759d3e1d73",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
+                "file": "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "Kafka-架构与面试"
+              "icon": "lucide-file",
+              "title": "Kafka 温习一下（详细整理版）"
             }
           }
         ],
@@ -473,12 +475,12 @@
   },
   "active": "ceee30759d3e1d73",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/3-生产者原理.md",
     "3-mq/2-Kafka/2-架构与核心概念.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
     "3-mq/2-Kafka/1-Kafka总览.md",
     "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
-    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
     "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
     "2-redis/Redis-架构与面试.drawio",
@@ -511,7 +513,6 @@
     "架构/微博整体架构.excalidraw.md",
     "14-AI agent /未命名.md",
     "14-AI agent /1-LangChain",
-    "11-高并发高可用/高并发系统设计（详细整理版）.md",
     "11-高并发高可用/高并发系统设计-总览.png",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
