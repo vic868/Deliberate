@@ -1,6 +1,6 @@
 <mxfile host="embed.diagrams.net" agent="DSH" pages="11">
   <diagram id="k01" name="01 封面">
-    <mxGraphModel dx="1788" dy="1183" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1523" dy="1443" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -260,7 +260,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="k02" name="02 全景图">
-    <mxGraphModel dx="1788" dy="1183" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="3123" dy="1443" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -473,6 +473,116 @@
         </mxCell>
         <mxCell id="k02_t57" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14.5;fontColor=#F8FAFC;fontFamily=PingFang SC;spacing=0;" value="Controller 管分区，Coordinator 管消费组；Broker 有状态地存数据，但不记录你读到哪。" vertex="1">
           <mxGeometry height="52" width="1330" x="176" y="902" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="30" width="60" x="137" y="1213" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-2" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;fontStyle=1;fontSize=14;" value="Producer Layer (生产者)" vertex="1">
+          <mxGeometry height="360" width="220" x="-83" y="1293" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-3" parent="V9zt1ldKdhpZka5SDvVX-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2E7D32;" value="Producer App A&#xa;(业务应用 / Web)" vertex="1">
+          <mxGeometry height="60" width="170" x="25" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-4" parent="V9zt1ldKdhpZka5SDvVX-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2E7D32;" value="Producer App B&#xa;(日志收集 / Agent)" vertex="1">
+          <mxGeometry height="60" width="170" x="25" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-5" parent="V9zt1ldKdhpZka5SDvVX-2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#2E7D32;" value="路由机制:&#xa;• Key 指定: hash(key) % partition&#xa;• Key 未指定: 轮询 / Sticky 分区&#xa;• 确认机制: acks=0, 1, all" vertex="1">
+          <mxGeometry height="110" width="190" x="15" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-6" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F8F9FA;strokeColor=#455A64;fontStyle=1;fontSize=15;dashed=1;" value="Kafka Cluster (分布式集群)" vertex="1">
+          <mxGeometry height="440" width="540" x="197" y="1253" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-7" parent="V9zt1ldKdhpZka5SDvVX-6" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#607D8B;fontStyle=1;" value="Broker 0" vertex="1">
+          <mxGeometry height="260" width="220" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-8" parent="V9zt1ldKdhpZka5SDvVX-7" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;strokeWidth=2;fontStyle=1;" value="Topic-A : Partition-0&#xa;★ Leader (读写)" vertex="1">
+          <mxGeometry height="50" width="180" x="20" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-9" parent="V9zt1ldKdhpZka5SDvVX-7" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#9E9E9E;dashed=1;" value="Topic-A : Partition-1&#xa;Follower (仅同步)" vertex="1">
+          <mxGeometry height="50" width="180" x="20" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-10" parent="V9zt1ldKdhpZka5SDvVX-7" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF9C4;strokeColor=#FBC02D;fontSize=10;" value="Commit Log (顺序写追加)&#xa;Offset: [0][1][2][3]...[N]" vertex="1">
+          <mxGeometry height="60" width="180" x="20" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-11" parent="V9zt1ldKdhpZka5SDvVX-6" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#607D8B;fontStyle=1;" value="Broker 1" vertex="1">
+          <mxGeometry height="260" width="220" x="290" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-12" parent="V9zt1ldKdhpZka5SDvVX-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;strokeWidth=2;fontStyle=1;" value="Topic-A : Partition-1&#xa;★ Leader (读写)" vertex="1">
+          <mxGeometry height="50" width="180" x="20" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-13" parent="V9zt1ldKdhpZka5SDvVX-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#9E9E9E;dashed=1;" value="Topic-A : Partition-0&#xa;Follower (仅同步)" vertex="1">
+          <mxGeometry height="50" width="180" x="20" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-14" parent="V9zt1ldKdhpZka5SDvVX-11" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF9C4;strokeColor=#FBC02D;fontSize=10;" value="Commit Log (顺序写追加)&#xa;Offset: [0][1][2][3]...[N]" vertex="1">
+          <mxGeometry height="60" width="180" x="20" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-15" parent="V9zt1ldKdhpZka5SDvVX-6" style="text;html=1;strokeColor=#90CAF9;fillColor=#E3F2FD;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontColor=#0D47A1;" value="高吞吐保障: PageCache页缓存 | 零拷贝 (sendfile) | 批量打包压缩" vertex="1">
+          <mxGeometry height="30" width="480" x="30" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontStyle=1;fontSize=13;" value="Metadata &amp; Control Plane (元数据控制面: KRaft / ZooKeeper)" vertex="1">
+          <mxGeometry height="70" width="540" x="197" y="1733" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-17" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF9800;fontStyle=1;fontSize=14;" value="Consumer Layer (消费者)" vertex="1">
+          <mxGeometry height="420" width="370" x="797" y="1263" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-18" parent="V9zt1ldKdhpZka5SDvVX-17" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#FB8C00;dashed=1;fontStyle=1;" value="Consumer Group A (负载均衡单播消费)" vertex="1">
+          <mxGeometry height="170" width="330" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-19" parent="V9zt1ldKdhpZka5SDvVX-18" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;" value="Consumer 1&#xa;(消费 Partition-0)" vertex="1">
+          <mxGeometry height="50" width="135" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-20" parent="V9zt1ldKdhpZka5SDvVX-18" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;" value="Consumer 2&#xa;(消费 Partition-1)" vertex="1">
+          <mxGeometry height="50" width="135" x="175" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-21" parent="V9zt1ldKdhpZka5SDvVX-18" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#E65100;" value="• 组内 1 个分区只能由 1 个 Consumer 消费&#xa;• 成员变动触发 Rebalance 重平衡" vertex="1">
+          <mxGeometry height="45" width="290" x="20" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-22" parent="V9zt1ldKdhpZka5SDvVX-17" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#FB8C00;dashed=1;fontStyle=1;" value="Consumer Group B (独立广播消费)" vertex="1">
+          <mxGeometry height="160" width="330" x="20" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-23" parent="V9zt1ldKdhpZka5SDvVX-22" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;" value="Consumer 3&#xa;(独立全量拉取 P-0 &amp; P-1)" vertex="1">
+          <mxGeometry height="45" width="290" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-24" parent="V9zt1ldKdhpZka5SDvVX-22" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#E65100;" value="• 组间互不干扰，每组获取全量数据&#xa;• Offset 提交至 __consumer_offsets" vertex="1">
+          <mxGeometry height="45" width="290" x="20" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-25" edge="1" parent="1" source="V9zt1ldKdhpZka5SDvVX-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#2E7D32;strokeWidth=2;" target="V9zt1ldKdhpZka5SDvVX-8" value="Push: Send(P0)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-26" edge="1" parent="1" source="V9zt1ldKdhpZka5SDvVX-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#2E7D32;strokeWidth=2;" target="V9zt1ldKdhpZka5SDvVX-12" value="Push: Send(P1)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="157" y="1463" />
+              <mxPoint x="157" y="1373" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-27" edge="1" parent="1" source="V9zt1ldKdhpZka5SDvVX-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#78909C;strokeWidth=1;dashed=1;" target="V9zt1ldKdhpZka5SDvVX-13" value="ISR Sync">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-28" edge="1" parent="1" source="V9zt1ldKdhpZka5SDvVX-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#78909C;strokeWidth=1;dashed=1;" target="V9zt1ldKdhpZka5SDvVX-9" value="ISR Sync">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-29" edge="1" parent="1" source="V9zt1ldKdhpZka5SDvVX-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#E65100;strokeWidth=2;" target="V9zt1ldKdhpZka5SDvVX-19" value="Pull (P0)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="457" y="1373" />
+              <mxPoint x="457" y="1333" />
+              <mxPoint x="777" y="1333" />
+              <mxPoint x="777" y="1368" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-30" edge="1" parent="1" source="V9zt1ldKdhpZka5SDvVX-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#E65100;strokeWidth=2;" target="V9zt1ldKdhpZka5SDvVX-20" value="Pull (P1)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="757" y="1373" />
+              <mxPoint x="757" y="1368" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V9zt1ldKdhpZka5SDvVX-31" edge="1" parent="1" source="V9zt1ldKdhpZka5SDvVX-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#7B1FA2;strokeWidth=1;dashed=1;" target="V9zt1ldKdhpZka5SDvVX-6" value="心跳 / Leader选举 / 集群元数据更新">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
