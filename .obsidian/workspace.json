@@ -156,14 +156,12 @@
             "id": "ceee30759d3e1d73",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "drawio-file-view",
               "state": {
-                "file": "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
-                "mode": "preview",
-                "source": true
+                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
               },
-              "icon": "lucide-file",
-              "title": "Kafka 温习一下（详细整理版）"
+              "icon": "pencil-ruler",
+              "title": "Kafka-架构与面试"
             }
           }
         ],
@@ -473,14 +471,14 @@
       }
     ]
   },
-  "active": "ceee30759d3e1d73",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/3-生产者原理.md",
     "3-mq/2-Kafka/2-架构与核心概念.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
     "3-mq/2-Kafka/1-Kafka总览.md",
-    "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/理解 kafka 基本盘（详细整理版）.md",
     "3-mq/2-Kafka/0-概念脑图.excalidraw.md",
     "2-redis/Redis-架构与面试.drawio",
