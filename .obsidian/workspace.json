@@ -4,168 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "b6b4193f02a6ae9e",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "5ffc23441e1c5b20",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "11-高并发高可用/0-高并发.excalidraw.md"
-              },
-              "pinned": true,
-              "icon": "excalidraw-icon",
-              "title": "0-高并发.excalidraw"
-            }
-          },
-          {
-            "id": "ae60d48e9a4c5d2c",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
-              "state": {
-                "file": "1-java/4-jvm/从内存模型到 OOM 排查.drawio"
-              },
-              "icon": "pencil-ruler",
-              "title": "从内存模型到 OOM 排查"
-            }
-          },
-          {
-            "id": "f276d5b078c6fbc1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.smm.md",
-                "mode": "preview",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）.smm"
-            }
-          },
-          {
-            "id": "96097f7cbde3dae2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1-java/4-jvm/0-JVM总览.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "0-JVM总览"
-            }
-          },
-          {
-            "id": "65dbcae2a33804c4",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "未命名.base",
-                "viewName": "视图"
-              },
-              "icon": "lucide-table",
-              "title": "未命名"
-            }
-          },
-          {
-            "id": "f6abfd5b28f3de65",
-            "type": "leaf",
-            "state": {
-              "type": "drawio-file-view",
-              "state": {
-                "file": "1-2-风控/risk-control.drawio"
-              },
-              "icon": "pencil-ruler",
-              "title": "risk-control"
-            }
-          },
-          {
-            "id": "930c266083728517",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "7-分布式/分布式锁.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "分布式锁.excalidraw"
-            }
-          },
-          {
-            "id": "183c06b52a4d18d1",
-            "type": "leaf",
-            "state": {
-              "type": "drawio-file-view",
-              "state": {
-                "file": "7-分布式/0-分布式事务/分布式事务.drawio"
-              },
-              "icon": "pencil-ruler",
-              "title": "分布式事务"
-            }
-          },
-          {
-            "id": "c550583f88673e51",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1-java/1-juc/你怎么理解AQS我不懂（详细整理版）.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "你怎么理解AQS我不懂（详细整理版）"
-            }
-          },
-          {
-            "id": "305343f6b8ad1b8c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "14-AI agent /未命名.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "未命名"
-            }
-          },
-          {
-            "id": "5635d5b494c18a33",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析"
-            }
-          },
-          {
-            "id": "ceee30759d3e1d73",
-            "type": "leaf",
-            "state": {
-              "type": "drawio-file-view",
-              "state": {
-                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
-              },
-              "icon": "pencil-ruler",
-              "title": "Kafka-架构与面试"
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 11
+        ]
       }
     ],
     "direction": "vertical"
@@ -399,14 +251,13 @@
       "obsidian-git:Open Git source control": false,
       "obsidian42-brat:BRAT": false,
       "simple-mind-map:新建思维导图": false,
-      "obsidian-omnivore:Omnivore": false,
-      "zhihu:Open Zhihu side view": false,
       "juggl:Juggl global graph": false,
       "homepage:Open homepage": false
     }
   },
-  "active": "ceee30759d3e1d73",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/gemini-code-1792921279514.xml",
     "3-mq/2-Kafka/gemini-code-1792921239091.xml",
     "3-mq/2-Kafka/gemini-code-1792917743920.xml",
@@ -428,7 +279,6 @@
     "面试准备/公司直招渠道",
     "面试准备/简历/05-LinkedIn-Profile-en-draft.md",
     "3-mq/2-Kafka/Kafka 温习一下.md",
-    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/3-生产者原理.md",
     "3-mq/2-Kafka/2-架构与核心概念.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
