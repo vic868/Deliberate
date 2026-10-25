@@ -763,11 +763,20 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="顺序性：&lt;div&gt;多个 consumer 同时读一个 partition,那谁先谁后,不就乱了&lt;br&gt;&lt;div&gt;⚠️kafka规定，一个 partition 同一时间只能分配一个 consumer，但一个 consumer 可以同步读多个 partiton，就像一个可以同步取多个快递&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;如果消息很多一个 consumer 忙不过来怎么办&lt;/div&gt;&lt;div&gt;这个时候就需要 consumer group消费组&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="139" width="403" x="562" y="3272" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" value="consumer group" vertex="1">
-          <mxGeometry height="184" width="131" x="570" y="3440" as="geometry" />
+        <mxCell id="gSB3KToxIW4thPM919Vh-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#FFCCE6;" value="consumer group" vertex="1">
+          <mxGeometry height="317" width="299" x="570" y="3440" as="geometry" />
         </mxCell>
         <mxCell id="gSB3KToxIW4thPM919Vh-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="293" width="557" x="52" y="3866" as="geometry" />
+          <mxGeometry height="293" width="557" x="52" y="4087" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNW18-L0Lp2LkT6NNfB-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="consumer-1" vertex="1">
+          <mxGeometry height="60" width="120" x="650" y="3506" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNW18-L0Lp2LkT6NNfB-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="consumer-2" vertex="1">
+          <mxGeometry height="60" width="120" x="652" y="3597" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNW18-L0Lp2LkT6NNfB-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="consumer-3" vertex="1">
+          <mxGeometry height="60" width="120" x="652" y="3685" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
