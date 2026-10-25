@@ -778,6 +778,9 @@
         <mxCell id="8XNW18-L0Lp2LkT6NNfB-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="consumer-3" vertex="1">
           <mxGeometry height="60" width="120" x="652" y="3685" as="geometry" />
         </mxCell>
+        <mxCell id="8XNW18-L0Lp2LkT6NNfB-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rebalance" vertex="1">
+          <mxGeometry height="47" width="243" x="918" y="3479" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
