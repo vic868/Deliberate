@@ -478,8 +478,10 @@
       }
     ]
   },
-  "active": "ceee30759d3e1d73",
+  "active": "4dc9ac7548e9fe23",
   "lastOpenFiles": [
+    "面试准备/公司直招渠道/00-杭州企业官网招聘入口.md",
+    "面试准备/公司直招渠道",
     "面试准备/简历/05-LinkedIn-Profile-en-draft.md",
     "3-mq/2-Kafka/Kafka 温习一下.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
@@ -516,9 +518,7 @@
     "8-spring/面试官问手写Spring Boot？7大核心模块+避坑指南，彻底搞透底层原理！.md",
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "6-ai/1-milvus/0-milvus.excalidraw.md",
-    "3-mq/2-Kafka/kafka 问题优化和建议（详细整理版）.md",
     "架构/Untitled Diagram 1790241846562.drawio",
-    "14-AI agent /1-LangChain",
     "11-高并发高可用/高并发系统设计-总览.png",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
