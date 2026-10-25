@@ -1,100 +1,97 @@
 ---
-title: LinkedIn Profile · 英文文案底稿
-tags: [面试, 简历, LinkedIn, 英文, 待填]
-status: 草稿
+title: LinkedIn Profile · 已填写内容（英文）
+tags: [面试, 简历, LinkedIn, 英文, 已完成]
+status: 已完成
+updated: 2026-10-25
+profile: https://www.linkedin.com/in/yong-zhang-707798419/
 ---
 
-# LinkedIn Profile 英文底稿（待事实字段）
+# LinkedIn Profile 已填写内容（2026-10-25）
 
-> 依据：[[01-酒店送物机器人-项目描述]]、[[02-回收站点积分平台-项目描述]]、[[03-SpringAIAlibaba-RAG-Demo-答辩准备]]
-> 口径：只写真实做过的；AI 部分写"个人实践的 RAG Demo + 结合现有微服务架构的设计能力"，不写"落地"
+> 事实来源：`/Volumes/新加卷/职场/简历/张勇-个人简历.docx`
+> 口径：只用简历里真实存在的经历；AI 部分写成「个人实践 + 设计能力」，不写落地项目。
 
-`[方括号]` = 待你补的事实，其余可直接用。
-
----
-
-## 1. Headline（≤220 字符）
-
-> Java Backend Engineer | Spring Cloud · Netty/MQTT · High-concurrency IoT Platforms | RAG & LLM Application Engineering (Spring AI)
-
-备选（更偏 AI 方向）：
-
-> Backend Engineer (Java) | IoT Device Connectivity & High-concurrency Transaction Systems | Building LLM/RAG capabilities with Spring AI
+**已写入 LinkedIn 的区块**：Intro（姓名/Headline/行业/城市）、About、6 段 Experience、Education、13 个 Skills。
 
 ---
 
-## 2. About（约 1500 字符内）
+## 1. Intro
 
-I build backend systems for IoT and transaction-heavy platforms — the kind where a lost message means a robot never arrives, or a race condition means points get minted out of thin air.
+- 姓名：**Yong Zhang**
+- Headline：
+  `Technical Project Manager & Java Backend Lead | PMP | 14 yrs building high-concurrency platforms - IoT smart parking, risk control, data warehouse | Spring Cloud - Kafka - Redis`
+- Industry：IT Services and IT Consulting
+- 城市：Hangzhou, Zhejiang, China
 
-Over the past `[N]` years I have led backend design and core-module development on two production systems: a hotel/building delivery-robot platform and a community recycling + loyalty-points platform. Both are real-time, device-connected, and unforgiving about consistency.
+> [!warning] 已知副作用
+> 每次新增工作经历，LinkedIn 会把 Headline 自动改成「最新添加的那条职位 at 公司」。
+> 这次已经被覆盖过一次（变成 `Software Engineer at 金舵时代`），已手动改回。
+> **以后再加经历，记得回头检查 Headline。**
 
-What I focus on:
+## 2. About（1,992 / 2,600 字符）
 
-• **Long-lived device connections at scale** — Netty + MQTT gateways with heartbeat keep-alive, reconnect storms handled by exponential backoff with jitter, stateless gateway nodes so any node can take a device after a restart.
+Java backend architect and technical project manager with 14 years of experience building and running high-concurrency, data-intensive systems. Now targeting technical project manager / backend lead roles.
 
-• **State machines and idempotency over hope** — delivery tasks and reward events flow through explicit state machines with idempotency keys; duplicate device reports are de-duplicated before they ever affect a balance.
+Where I have done that work:
 
-• **Money-grade consistency on points** — three-way point accounts (available / frozen / lifetime), atomic deduction via Redis + Lua, unique-key idempotency, and a T+1 reconciliation job between device ledgers and platform ledgers as the final line of defense.
+Risk control, from 0 to 1 and at scale. Built fraud and abuse prevention for an online auction marketplace - bid manipulation, promotion abuse, scam messaging and content compliance. Dozens of real-time features from device, IP, location and behavioural signals; Flink for streaming features, Hive for offline, HBase for storage, binlog-driven ingestion through Kafka.
 
-• **Concurrency under peak load** — Redis pre-validation, async order placement through MQ, and idempotent consumers; core APIs kept within tight P99 budgets.
+IoT + multi-tenant SaaS. Led a four-person team delivering a national smart-parking platform for commercial complexes in 20+ cities: Spring Boot / Spring Cloud, Apollo, Gateway, Sentinel, Redis, Kafka, MySQL and Elasticsearch, with license-plate recognition, parking guidance, reverse car-finding and unattended payment integrations.
 
-On the AI side, I have gone past the "read the docs" stage: I built a working enterprise-knowledge-base **RAG demo on Spring AI Alibaba** (chunking, embedding, vector store, retrieval + rerank, citation-grounded answers) and I spend real time on the engineering questions that matter in production — document-level permission isolation in retrieval, hallucination control via mandatory citations, and cost/latency trade-offs between small and large models. I am looking for roles where this meets the backend systems I already know how to run.
+Enterprise risk products. Designed the data model, module structure and Docker-based delivery pipeline for a cross-border e-commerce risk reporting SaaS; rebuilt a lending risk engine as a master-slave rule-wall / scorecard design on DDD plus factory, proxy and adapter patterns.
 
-Tech I reach for: Java, Spring Boot / Spring Cloud, Netty, MQTT, MySQL, Redis, Kafka/RocketMQ, Kubernetes, plus Spring AI / LangChain for LLM applications.
+Banking data warehouse. Anti-fraud and early-warning systems for Bank of China and ICBC - IFRS9 business logic, Oracle DW modelling, Hadoop pipelines - plus team lead duties on standards and code review.
 
----
+What I am good at: turning messy requirements into an architecture that survives peak load; building idempotent, reconcilable flows for money-like data; and keeping delivery predictable with a team instead of alone. PMP and Oracle OCP certified.
 
-## 3. Experience（按真实公司拆段）
+Recently focused on LLM application engineering - RAG knowledge bases and agent components with Spring AI / LangChain - and on grounding them in the Java microservices stacks I already run in production.
 
-### `[公司名]` — `[职位，如 Senior Backend Engineer / Backend Lead]`
-`[城市]` · `[YYYY.MM] – [YYYY.MM 或 Present]`
+Based in Hangzhou, China. Open to technical project manager and backend lead roles. Reach me at vic868@126.com
 
-Hotel / building delivery-robot platform — backend owner for core modules.
+## 3. Experience（6 段，均已落库）
 
-- Designed and built the robot connectivity gateway on **Netty + MQTT**, supporting `[N]` concurrent devices with heartbeat keep-alive, exponential-backoff reconnection and offline task recovery.
-- Implemented **multi-robot dispatch** with a task state machine: Redis atomic claims (Lua / SETNX) prevent two robots from taking the same task; nearest-plus-load balancing for assignment; failed robots release tasks for reassignment.
-- Integrated hotel **PMS and elevator-control** third parties (signed open API with timestamp anti-replay, idempotency keys, async callbacks with retry, T+1 reconciliation), enabling automatic elevator rides and status write-back.
-- Pushed live robot/task state to clients over **WebSocket**, with report-rate throttling and change-only updates to keep the push fan-out bounded.
-- Absorbed check-in peaks with **Redis pre-validation + MQ async order placement**, keeping core APIs at P99 `[X] ms` and delivery success rate at `[X]%`.
+| # | 公司 | 职位 | 时间 |
+|---|---|---|---|
+| 1 | Cognizant | Program Manager | 2022.05 – 2026.05 |
+| 2 | 杭州微拍堂文化创意有限公司 | Big Data Java Engineer | 2020.10 – 2022.05 |
+| 3 | 五渡（杭州）科技有限责任公司 | Senior Java Engineer | 2019.12 – 2020.10 |
+| 4 | 杭州维恒科技 | Senior Java Engineer | 2018.08 – 2019.10 |
+| 5 | iSoftStone（已关联公司主页） | Senior Software Engineer | 2015.05 – 2018.07 |
+| 6 | 金舵时代 | Software Engineer | 2012.04 – 2015.04 |
 
-### `[公司名]` — `[职位]`
-`[城市]` · `[YYYY.MM] – [YYYY.MM 或 Present]`
+> 公司名除 iSoftStone 外都用中文原名（LinkedIn 无对应公司实体，存为自由文本，不会链接到公司主页）。
 
-Community recycling + loyalty-points platform — backend owner for accounts, points, device ingestion and settlement.
+各段 Highlights 的完整英文文案见 LinkedIn 页面本身，要点：
+1. **Cognizant**：多租户智能停车 SaaS、4 人小组、20+ 城市、Spring Cloud/Apollo/Gateway/Sentinel、车牌识别与无人支付
+2. **微拍堂**：风控平台（拉新薅羊毛/顶价/内容合规/诈骗）、Flink 实时特征 + Hive 离线 + HBase、binlog→Kafka、腾讯云 K8s
+3. **五渡**：企像仪企业风控报告、SaaS 风控决策系统 0→1、Docker 化交付、Jenkins/Nexus/GitLab 工程基线
+4. **维恒**：hydrus 风控墙 + 评分卡、风控引擎（master-slave）+ DDD + 设计模式重构、贷超 ertix 防 DDoS
+5. **软通动力**：外派中行软件中心（非零售数据集市 / IFRS9）、工行大数据、带新人做代码审查
+6. **金舵时代**：上海移动 DB2 / OLAP 报表、存储过程、BO 报表、线上问题查证
 
-- Designed the **points account system** (available / frozen / lifetime ledgers) with **Redis + Lua atomic deduction** and unique-key idempotency, achieving zero over-issuance under concurrent redemptions.
-- Ingested smart recycling bins and weighing devices over **MQTT**, with device-level de-duplication (device ID + timestamp + sequence), abnormal-weight rejection and ordered replay of offline back-fill.
-- Built **T+1 reconciliation** between device ledgers and platform ledgers, classifying discrepancies into auto-correction vs. manual ticket flows, keeping the variance rate under `[X]%`.
-- Implemented **anti-abuse rules** (per-user/device/IP rate limits, anomalous weight detection, blacklist) with configurable thresholds — blocking `[N]` abnormal submissions per month.
-- Delivered point expiry via **delayed messages + scheduled fallback**, and a **Redis ZSet** leaderboard serving million-scale rankings in milliseconds.
-- Enforced multi-tenant data isolation by injecting site/tenant conditions through a MyBatis interceptor, so site admins only ever see their own data.
+## 4. Education
 
-### Personal project — RAG Knowledge Base on Spring AI Alibaba
-`[YYYY.MM] – [YYYY.MM]`
+- **Huaibei Normal University** — Bachelor of Engineering, Computer Science and Technology — Sep 2008 – Jul 2012
+- 学校用的是自由文本（LinkedIn 上的实体是旧名 `Huaibei Coal Industry Teachers College`，即「淮北煤炭师范学院」，2010 年更名）。若想挂到学校主页/校友网络，可以换成旧名实体。
 
-- Built an end-to-end enterprise knowledge-base RAG demo: document ingestion, chunking with `[chunk size / overlap]`, embedding, vector store, retrieval with `[top-K]`, and citation-grounded generation.
-- Designed document-level permission filtering at retrieval time (metadata-scoped queries) so answers never cross tenant boundaries.
-- Evaluated retrieval quality with a labeled `[N]`-question set, reaching `[X]%` hit rate; added hybrid retrieval (vector + keyword) with rerank for domain-specific terms.
-- Analyzed production gaps: prompt-injection surfaces, cost per query, streaming latency and fallback paths when retrieval confidence is low.
+## 5. Skills（13）
 
----
-
-## 4. Skills（LinkedIn 技能区块，按顺序加）
-
-Java · Spring Boot · Spring Cloud · Netty · MQTT · MySQL · Redis · Apache Kafka · RocketMQ · Kubernetes · Docker · Distributed Systems · High Concurrency · Idempotency · System Design · Microservices · Spring AI · RAG (Retrieval-Augmented Generation) · LLM Application Development · Vector Databases
-
----
-
-## 5. Education
-
-`[学校]` — `[专业]`, `[学位]` · `[YYYY] – [YYYY]`
+Java · Spring Boot · Spring Cloud · Redis · Apache Kafka · MySQL · Elasticsearch · Kubernetes · Microservices · Risk Management · Project Management · Apache Flink · Large Language Models (LLM)
 
 ---
 
-## 6. 待你确认的 4 个口径
+## 6. 还没做、建议补的（按性价比排序）
 
-1. `[N]` 年经验怎么算（写入 About 第一段）
-2. 两段经历的时间线是否重叠 / 是否都在职
-3. 数字要不要填真值（LinkedIn 上被追问的概率低于简历，但仍建议不编）
-4. 目标岗位偏「Java 后端」还是「AI 应用工程」——决定 Headline 用第 1 还是第 2 版
+1. **补认证区块**：PMP 和 Oracle OCP 目前只在 About 里提了一句，建议在 Licenses & certifications 里正式加两条（PMP 已有 Credly 徽章帖子，直接加更省事）
+2. **补 Projects**：把 RAG Demo 作为 Project 挂出来，正好呼应 Headline 里的 AI 方向
+3. **联系方式**：Contact info 里补邮箱 `vic868@126.com`（About 已写入，但 Contact info 区块本身还没填）
+4. **自定义 URL**：现在是 `yong-zhang-707798419`，可改成 `yong-zhang-pmp` 之类，职业化一些
+5. **背景图 + 头像**：头像是自拍，建议换成职业照；背景图现在是默认灰色
+6. **城市已在 Intro 改成 Hangzhou**，但 Open to work 卡片里的 Hangzhou 是独立字段，二者现在一致，无需再动
+
+## 7. 复现方式（自动化脚本位置）
+
+浏览器控制脚本在 `.bh-config/agent-workspace/agent_helpers.py`，用 `browser-use` + Chrome 调试端口 9336 驱动：
+- `li_add_position(...)`：填一段工作经历
+- `li_add_skill(...)`：加一个技能（每次需重新进 skills 页）
+- `li_click_checkbox(...)`：勾/取消「通知联系人」开关（**默认是开的，填经历时务必关掉，否则会刷屏你的联系人**）
