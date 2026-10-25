@@ -781,7 +781,7 @@
         <mxCell id="8XNW18-L0Lp2LkT6NNfB-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rebalance 再均衡，就是当 consumer 加入或者退出时，kafka 会重新分配 partition，保证负载均衡" vertex="1">
           <mxGeometry height="44" width="382" x="918" y="3479" as="geometry" />
         </mxCell>
-        <mxCell id="8XNW18-L0Lp2LkT6NNfB-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="它通过副本机制保证数据不丢" vertex="1">
+        <mxCell id="8XNW18-L0Lp2LkT6NNfB-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;" value="它通过副本机制保证数据不丢" vertex="1">
           <mxGeometry height="26" width="494" x="130" y="4128" as="geometry" />
         </mxCell>
       </root>
