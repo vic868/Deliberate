@@ -850,7 +850,7 @@
         <mxCell id="2mIV2XToz9f9RzVtizk6-11" parent="2mIV2XToz9f9RzVtizk6-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="41" width="589.2868852459017" y="152" as="geometry" />
         </mxCell>
-        <mxCell id="2mIV2XToz9f9RzVtizk6-12" parent="2mIV2XToz9f9RzVtizk6-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="Leader 选举&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="2mIV2XToz9f9RzVtizk6-12" parent="2mIV2XToz9f9RzVtizk6-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="Leader 选举" vertex="1">
           <mxGeometry height="41" width="111" as="geometry">
             <mxRectangle height="41" width="111" as="alternateBounds" />
           </mxGeometry>
@@ -865,13 +865,13 @@
             <mxRectangle height="41" width="239" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2mIV2XToz9f9RzVtizk6-19" parent="1" style="shape=table;startSize=29;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;tableRender=collapsed;" value="KRaft" vertex="1">
+        <mxCell id="2mIV2XToz9f9RzVtizk6-19" parent="1" style="shape=table;startSize=29;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;tableRender=collapsed;" value="KRaft 指挥中心内置到 Kafka 自己里" vertex="1">
           <mxGeometry height="193" width="589.2868852459017" x="193" y="5357" as="geometry" />
         </mxCell>
         <mxCell id="2mIV2XToz9f9RzVtizk6-20" parent="2mIV2XToz9f9RzVtizk6-19" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="41" width="589.2868852459017" y="29" as="geometry" />
         </mxCell>
-        <mxCell id="2mIV2XToz9f9RzVtizk6-21" parent="2mIV2XToz9f9RzVtizk6-20" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="负责 broker 的注册" vertex="1">
+        <mxCell id="2mIV2XToz9f9RzVtizk6-21" parent="2mIV2XToz9f9RzVtizk6-20" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="原因减少依赖，部署简单" vertex="1">
           <mxGeometry height="41" width="111" as="geometry">
             <mxRectangle height="41" width="111" as="alternateBounds" />
           </mxGeometry>
@@ -889,7 +889,7 @@
         <mxCell id="2mIV2XToz9f9RzVtizk6-24" parent="2mIV2XToz9f9RzVtizk6-19" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="41" width="589.2868852459017" y="70" as="geometry" />
         </mxCell>
-        <mxCell id="2mIV2XToz9f9RzVtizk6-25" parent="2mIV2XToz9f9RzVtizk6-24" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="topic 创建" vertex="1">
+        <mxCell id="2mIV2XToz9f9RzVtizk6-25" parent="2mIV2XToz9f9RzVtizk6-24" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="提高性能，元数据操作更快" vertex="1">
           <mxGeometry height="41" width="111" as="geometry">
             <mxRectangle height="41" width="111" as="alternateBounds" />
           </mxGeometry>
@@ -907,7 +907,7 @@
         <mxCell id="2mIV2XToz9f9RzVtizk6-28" parent="2mIV2XToz9f9RzVtizk6-19" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="41" width="589.2868852459017" y="111" as="geometry" />
         </mxCell>
-        <mxCell id="2mIV2XToz9f9RzVtizk6-29" parent="2mIV2XToz9f9RzVtizk6-28" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="partition 的分配" vertex="1">
+        <mxCell id="2mIV2XToz9f9RzVtizk6-29" parent="2mIV2XToz9f9RzVtizk6-28" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="避免 zookeeper 成为瓶颈" vertex="1">
           <mxGeometry height="41" width="111" as="geometry">
             <mxRectangle height="41" width="111" as="alternateBounds" />
           </mxGeometry>
@@ -925,7 +925,7 @@
         <mxCell id="2mIV2XToz9f9RzVtizk6-32" parent="2mIV2XToz9f9RzVtizk6-19" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;" value="" vertex="1">
           <mxGeometry height="41" width="589.2868852459017" y="152" as="geometry" />
         </mxCell>
-        <mxCell id="2mIV2XToz9f9RzVtizk6-33" parent="2mIV2XToz9f9RzVtizk6-32" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="Leader 选举&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="2mIV2XToz9f9RzVtizk6-33" parent="2mIV2XToz9f9RzVtizk6-32" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="41" width="111" as="geometry">
             <mxRectangle height="41" width="111" as="alternateBounds" />
           </mxGeometry>
