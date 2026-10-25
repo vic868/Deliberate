@@ -156,12 +156,14 @@
             "id": "ceee30759d3e1d73",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
+                "file": "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "Kafka-架构与面试"
+              "icon": "lucide-file",
+              "title": "Kafka 问题（详细整理版）"
             }
           }
         ],
@@ -325,26 +327,6 @@
             }
           },
           {
-            "id": "2b4ca0a4f5848692",
-            "type": "leaf",
-            "state": {
-              "type": "juggl_nodes",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "juggl_nodes"
-            }
-          },
-          {
-            "id": "8d47cb5a04084f9c",
-            "type": "leaf",
-            "state": {
-              "type": "juggl_style",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "juggl_style"
-            }
-          },
-          {
             "id": "8963ab70719a7bd9",
             "type": "leaf",
             "state": {
@@ -375,9 +357,29 @@
               "icon": "lucide-info",
               "title": "笔记属性"
             }
+          },
+          {
+            "id": "77b55b835333f485",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_nodes",
+              "state": {},
+              "icon": "ag-node-list",
+              "title": "Juggl nodes"
+            }
+          },
+          {
+            "id": "076a476d8a4240e7",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_style",
+              "state": {},
+              "icon": "ag-style",
+              "title": "Juggl style"
+            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -396,7 +398,13 @@
       "bases:新建数据库": false,
       "hybrid-git-sync:Sync Now": false,
       "drawio-editor:Create new drawio diagram": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian42-brat:BRAT": false,
+      "simple-mind-map:新建思维导图": false,
+      "obsidian-omnivore:Omnivore": false,
+      "zhihu:Open Zhihu side view": false,
+      "juggl:Juggl global graph": false,
+      "homepage:Open homepage": false
     }
   },
   "floating": {
@@ -471,10 +479,11 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "4dc9ac7548e9fe23",
   "lastOpenFiles": [
-    "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
+    "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
+    "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "3-mq/2-Kafka/3-生产者原理.md",
     "3-mq/2-Kafka/2-架构与核心概念.md",
     "3-mq/2-Kafka/1-Kafka总览-bak.md",
