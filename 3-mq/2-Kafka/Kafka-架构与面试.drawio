@@ -478,7 +478,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="k03" name="03 三层结构">
-    <mxGraphModel dx="1555" dy="1029" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="2353" dy="1557" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -766,8 +766,8 @@
         <mxCell id="gSB3KToxIW4thPM919Vh-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#FFCCE6;" value="consumer group" vertex="1">
           <mxGeometry height="317" width="299" x="570" y="3440" as="geometry" />
         </mxCell>
-        <mxCell id="gSB3KToxIW4thPM919Vh-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="293" width="557" x="52" y="4087" as="geometry" />
+        <mxCell id="gSB3KToxIW4thPM919Vh-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fontSize=20;" value="kafka 数据会不会丢" vertex="1">
+          <mxGeometry height="822" width="1390" x="52" y="4087" as="geometry" />
         </mxCell>
         <mxCell id="8XNW18-L0Lp2LkT6NNfB-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="consumer-1" vertex="1">
           <mxGeometry height="60" width="120" x="650" y="3506" as="geometry" />
@@ -778,8 +778,8 @@
         <mxCell id="8XNW18-L0Lp2LkT6NNfB-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="consumer-3" vertex="1">
           <mxGeometry height="60" width="120" x="652" y="3685" as="geometry" />
         </mxCell>
-        <mxCell id="8XNW18-L0Lp2LkT6NNfB-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rebalance" vertex="1">
-          <mxGeometry height="47" width="243" x="918" y="3479" as="geometry" />
+        <mxCell id="8XNW18-L0Lp2LkT6NNfB-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rebalance 再均衡，就是当 consumer 加入或者退出时，kafka 会重新分配 partition，保证负载均衡" vertex="1">
+          <mxGeometry height="44" width="382" x="918" y="3479" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
