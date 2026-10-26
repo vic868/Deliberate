@@ -252,11 +252,14 @@ def main():
                     continue
                 if "~0" not in d["href"]:
                     continue
+                jid = re.search(r"~0\d+", d["href"]).group(0)
+                d["href"] = re.sub(r"-span-class-highlight-[^-]+-span", "", d["href"])
+                d["href"] = d["href"].replace("-amp-", "-")
                 t = parse_tile(d["href"], d["text"])
                 if not t:
                     continue
                 t["query"] = kw
-                found[t["href"]] = t
+                found[jid] = t            # 按 job id 去重（同一单的 URL 会带高亮标记）
         log(f"  共抓到 {len(found)} 条")
     finally:
         close_chrome(proc)
