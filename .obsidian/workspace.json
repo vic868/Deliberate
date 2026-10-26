@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/AI 学习规划/环境搭建/03-PyCharm 配置详解.md",
-                "mode": "source",
-                "source": false
+                "file": "6-ai/AI 学习规划/环境搭建/01-环境搭建总览.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "03-PyCharm 配置详解"
+              "title": "01-环境搭建总览"
             }
           }
         ],
@@ -315,6 +315,10 @@
   },
   "active": "3380a6f6066ae441",
   "lastOpenFiles": [
+    "6-ai/AI 学习规划/图灵-AI 大模型/【2026最新版】这绝对是B站唯一将LangChain1.3从入门到精通讲明白的教程！ Agent智能体✚RAG✚MCP✚LangGraph.md",
+    "6-ai/AI 学习规划/图灵-AI 大模型",
+    "6-ai/AI 学习规划/环境搭建/1-Conda-环境管理.drawio",
+    "6-ai/AI 学习规划/环境搭建/03-PyCharm 配置详解.md",
     "6-ai/AI 学习规划/环境搭建/2-PyCharm-解释器配置.drawio",
     "6-ai/AI 学习规划/环境搭建/02-Conda 配置详解.md",
     "6-ai/AI 学习规划/环境搭建/01-环境搭建总览.md",
@@ -325,11 +329,9 @@
     "6-ai/AI 学习规划/12周AI应用开发路线/07-AI开发环境搭建与发布流程.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/0-路线总览.drawio",
     "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
-    "6-ai/AI 学习规划/环境搭建/1-Conda-环境管理.drawio",
     "6-ai/AI 学习规划/环境搭建/06-环境速查卡.md",
     "6-ai/AI 学习规划/环境搭建/05-常见问题排查.md",
     "6-ai/AI 学习规划/环境搭建/04-AI 依赖清单与镜像源.md",
-    "6-ai/AI 学习规划/环境搭建/03-PyCharm 配置详解.md",
     "6-ai/AI 学习规划/1-AI 工具/deepseek_xml_20261026_847fdd.xml",
     "6-ai/AI 学习规划/1-AI 工具/deepseek_xml_20261026_847fdd.xml.crdownload",
     "6-ai/AI 学习规划/环境搭建/README.md",
@@ -347,7 +349,6 @@
     "6-ai/AI 学习规划/12周AI应用开发路线",
     "upwork-jobscan/README.md",
     "upwork-jobscan/runs/2026-10-26.md",
-    "upwork-jobscan/runs",
     "服务器巡检-192.168.0.106/数据流全链路执行手册.md",
     "服务器巡检-192.168.0.106/限流熔断与分布式事务中间件方案.md",
     "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
