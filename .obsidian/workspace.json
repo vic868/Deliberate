@@ -11,10 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "drawio-file-view",
+              "state": {
+                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
+              },
+              "icon": "pencil-ruler",
+              "title": "Kafka-架构与面试"
             }
           }
         ]
