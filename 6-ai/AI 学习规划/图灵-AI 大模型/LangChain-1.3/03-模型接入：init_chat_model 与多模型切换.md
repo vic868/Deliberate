@@ -12,6 +12,8 @@ status: 进行中
 
 ## 1. 统一入口：`init_chat_model`
 
+![[1-模型接入与工具调用链路.drawio]]
+
 ```mermaid
 flowchart LR
     A["业务代码"] --> B["init_chat_model(...)"]

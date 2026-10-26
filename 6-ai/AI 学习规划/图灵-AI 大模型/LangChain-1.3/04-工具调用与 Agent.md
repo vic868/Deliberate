@@ -56,6 +56,8 @@ def get_current_date() -> str:
 
 ## 3. 工具调用的完整时序（核心）
 
+![[1-模型接入与工具调用链路.drawio]]
+
 ```mermaid
 sequenceDiagram
     autonumber
