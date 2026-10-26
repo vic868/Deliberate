@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net" modified="2025-01-01T00:00:00.000Z" agent="manual" version="24.0.0">
+  <diagram id="llm-env-arch" name="LLM 环境架构">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 硬件层 -->
+        <mxCell id="hw_box" value="硬件层 Hardware" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1020" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cpu" value="CPU&#10;(推荐 8 核+)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="hw_box">
+          <mxGeometry x="40" y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ram" value="内存 RAM&#10;(推荐 16GB+)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="hw_box">
+          <mxGeometry x="240" y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gpu" value="GPU&#10;NVIDIA 显存 8GB+&#10;(可选，微调需要)" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="hw_box">
+          <mxGeometry x="440" y="50" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="disk" value="磁盘 SSD&#10;(模型权重 20GB+)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="hw_box">
+          <mxGeometry x="680" y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="net" value="网络&#10;(下载权重/镜像)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="hw_box">
+          <mxGeometry x="880" y="50" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 驱动与运行时层 -->
+        <mxCell id="drv_box" value="驱动与运行时 Runtime" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="1020" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="nvidia_drv" value="NVIDIA Driver" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="drv_box">
+          <mxGeometry x="40" y="50" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cuda" value="CUDA Toolkit&#10;(12.1 推荐)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="drv_box">
+          <mxGeometry x="250" y="50" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cudnn" value="cuDNN" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="drv_box">
+          <mxGeometry x="460" y="50" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="python" value="Python 3.10+&#10;conda / venv" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="drv_box">
+          <mxGeometry x="640" y="50" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="git" value="Git / Git LFS" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="drv_box">
+          <mxGeometry x="850" y="50" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 框架层 -->
+        <mxCell id="fw_box" value="深度学习框架 Frameworks" style="swimlane;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="1020" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="torch" value="PyTorch 2.x&#10;(+ torchvision)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="fw_box">
+          <mxGeometry x="40" y="50" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="transformers" value="transformers&#10;tokenizers" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="fw_box">
+          <mxGeometry x="260" y="50" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="accelerate" value="accelerate&#10;datasets" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="fw_box">
+          <mxGeometry x="480" y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="peft" value="peft (LoRA)&#10;trl" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="fw_box">
+          <mxGeometry x="680" y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="quant" value="bitsandbytes&#10;(4bit 量化)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="fw_box">
+          <mxGeometry x="880" y="50" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 应用层 -->
+        <mxCell id="app_box" value="应用与工具层 Application" style="swimlane;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="580" width="1020" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hf" value="HuggingFace Hub&#10;(模型/数据集)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="app_box">
+          <mxGeometry x="40" y="50" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jupyter" value="JupyterLab&#10;Notebook" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="app_box">
+          <mxGeometry x="260" y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vllm" value="vLLM / ollama&#10;(推理服务)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="app_box">
+          <mxGeometry x="460" y="50" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="demo" value="推理 / LoRA 微调 Demo" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="app_box">
+          <mxGeometry x="680" y="50" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="monitor" value="nvidia-smi&#10;wandb (可选)" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="app_box">
+          <mxGeometry x="920" y="50" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 层间箭头 -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="gpu" target="nvidia_drv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="nvidia_drv" target="cuda">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="cuda" target="torch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="torch" target="transformers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="transformers" target="hf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
