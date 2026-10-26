@@ -25,14 +25,12 @@
             "id": "3380a6f6066ae441",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "drawio-file-view",
               "state": {
-                "file": "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
-                "mode": "preview",
-                "source": true
+                "file": "6-ai/AI 学习规划/12周AI应用开发路线/0-路线总览.drawio"
               },
-              "icon": "lucide-file",
-              "title": "01-路线总览"
+              "icon": "pencil-ruler",
+              "title": "0-路线总览"
             }
           }
         ],
@@ -274,7 +272,46 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "3380a6f6066ae441",
+  "floating": {
+    "id": "f45832874a789108",
+    "type": "floating",
+    "children": [
+      {
+        "id": "9433b6b59b83c7c4",
+        "type": "window",
+        "children": [
+          {
+            "id": "6665f5ae6823bfd4",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "22126dead45ad321",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "01-路线总览"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "22126dead45ad321",
   "lastOpenFiles": [
     "6-ai/AI 学习规划/12周AI应用开发路线/0-路线总览.drawio",
     "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
