@@ -34,7 +34,7 @@ PROFILE = "/tmp/bu-upwork-scan"
 
 KEYWORDS = os.environ.get("UPWORK_KEYWORDS", "").split(",") if os.environ.get("UPWORK_KEYWORDS") else [
     "kafka",
-    "kafka connect",
+    "kafka streams",
     "flink",
     "spring boot",
     "spring batch",
@@ -42,7 +42,9 @@ KEYWORDS = os.environ.get("UPWORK_KEYWORDS", "").split(",") if os.environ.get("U
     "elasticsearch",
     "payment gateway",
     "rocketmq",
-    "java performance",
+    "hadoop hive",
+    "java migration",
+    "event driven",
 ]
 
 # 命中任一 → 认为和你的技术栈相关
