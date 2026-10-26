@@ -45,6 +45,8 @@ mindmap
 
 ## 2. 解释器绑定（最核心）
 
+![[2-PyCharm-解释器配置.drawio]]
+
 ```mermaid
 flowchart TD
     A["打开项目"] --> B{"解释器已配置?"}
