@@ -193,11 +193,14 @@ def hours_ago(posted):
 
 
 def score(job):
+    title = job["title"].lower()
     blob = (job["title"] + " " + job["desc"]).lower()
     if any(b in blob for b in BAD):
         return -1
+    title_hits = sum(1 for g in GOOD if g in title)
     hits = sum(1 for g in GOOD if g in blob)
-    if hits == 0:
+    # 标题里没有技术词、且正文命中不足 2 个 → 噪音，丢掉
+    if title_hits == 0 and hits < 2:
         return -1
     s = hits * 2
     if "fixed price" in blob:
