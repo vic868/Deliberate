@@ -32,7 +32,7 @@ SEEN = os.path.join(BASE, ".seen.json")
 RUNS = os.path.join(BASE, "runs")
 PROFILE = "/tmp/bu-upwork-scan"
 
-KEYWORDS = [
+KEYWORDS = os.environ.get("UPWORK_KEYWORDS", "").split(",") if os.environ.get("UPWORK_KEYWORDS") else [
     "kafka",
     "kafka connect",
     "flink",
