@@ -78,4 +78,4 @@ flowchart LR
 #Transformer #NLP #面试题 #自注意力 #多头注意力 #位置编码
 
 ---
-回到 [[01-学习路径总览]] · 新手速通 [[00-Transformer入门总览]]
+回到 [[6-ai/AI 学习规划/01-学习路径总览]] · 新手速通 [[00-Transformer入门总览]]

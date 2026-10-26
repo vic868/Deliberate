@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "3-mq/2-Kafka/Kafka-架构与面试.drawio"
+                "file": "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "Kafka-架构与面试"
+              "icon": "lucide-file",
+              "title": "01-路线总览"
             }
           }
         ]
@@ -259,25 +261,26 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "AI 学习规划/12周AI应用开发路线/专题-AI应用工程化与交付.md",
-    "AI 学习规划/12周AI应用开发路线/专题-Agent工具与工作流安全.md",
-    "AI 学习规划/12周AI应用开发路线/专题-RAG端到端设计.md",
-    "AI 学习规划/12周AI应用开发路线/专题-SpringAI应用服务.md",
-    "AI 学习规划/12周AI应用开发路线/专题-Python与模型API基础.md",
-    "AI 学习规划/12周AI应用开发路线/06-每日学习模板.md",
-    "AI 学习规划/12周AI应用开发路线/05-RAG评测与复盘.md",
-    "AI 学习规划/12周AI应用开发路线/04-项目实践手册.md",
-    "AI 学习规划/12周AI应用开发路线/03-专题地图.md",
-    "AI 学习规划/12周AI应用开发路线/02-学习看板.md",
-    "AI 学习规划/12周AI应用开发路线/README.md",
-    "AI 学习规划/12周AI应用开发路线/01-路线总览.md",
-    "AI 学习规划/12周AI应用开发路线",
+    "6-ai/AI 学习规划/1-AI 工具/0-AI工具总览.md",
+    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
+    "6-ai/AI 学习规划/12周AI应用开发路线/专题-AI应用工程化与交付.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/专题-Agent工具与工作流安全.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/专题-RAG端到端设计.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/专题-SpringAI应用服务.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/专题-Python与模型API基础.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/06-每日学习模板.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/05-RAG评测与复盘.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/04-项目实践手册.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/03-专题地图.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/02-学习看板.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/README.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线",
     "upwork-jobscan/README.md",
     "upwork-jobscan/runs/2026-10-26.md",
     "upwork-jobscan/runs",
     "upwork-jobscan/scan.py",
     "upwork-jobscan",
-    "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "3-mq/2-Kafka/gemini-code-1792921279514.xml",
     "3-mq/2-Kafka/gemini-code-1792921239091.xml",
     "3-mq/2-Kafka/gemini-code-1792917743920.xml",
@@ -293,7 +296,6 @@
     "服务器巡检-192.168.0.106/deploy/nginx/README.md",
     "3-mq/2-Kafka/Kafka 问题（详细整理版）.md",
     "2-redis/一次讲透Redis（详细整理版）.md",
-    "3-mq/2-Kafka/Kafka 温习一下（详细整理版）.md",
     "面试准备/公司直招渠道",
     "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
