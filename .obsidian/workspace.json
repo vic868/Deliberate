@@ -25,12 +25,14 @@
             "id": "3380a6f6066ae441",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/AI 学习规划/12周AI应用开发路线/Untitled Diagram 1792994019368.drawio"
+                "file": "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "Untitled Diagram 1792994019368"
+              "icon": "lucide-file",
+              "title": "01-路线总览"
             }
           }
         ],
@@ -274,8 +276,8 @@
   },
   "active": "3380a6f6066ae441",
   "lastOpenFiles": [
+    "6-ai/AI 学习规划/12周AI应用开发路线/0-路线总览.drawio",
     "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
-    "6-ai/AI 学习规划/12周AI应用开发路线/Untitled Diagram 1792994019368.drawio",
     "6-ai/AI 学习规划/12周AI应用开发路线/02-学习看板.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/03-专题地图.md",
     "6-ai/AI 学习规划/1-AI 工具/0-AI工具总览.md",
