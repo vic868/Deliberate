@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/AI 学习规划/12周AI应用开发路线/专题-Agent工具与工作流安全.md",
-                "mode": "preview",
+                "file": "6-ai/AI 学习规划/环境搭建/03-PyCharm 配置详解.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "专题-Agent工具与工作流安全"
+              "title": "03-PyCharm 配置详解"
             }
           }
         ],
@@ -315,20 +315,21 @@
   },
   "active": "3380a6f6066ae441",
   "lastOpenFiles": [
+    "6-ai/AI 学习规划/环境搭建/2-PyCharm-解释器配置.drawio",
+    "6-ai/AI 学习规划/环境搭建/02-Conda 配置详解.md",
+    "6-ai/AI 学习规划/环境搭建/01-环境搭建总览.md",
+    "6-ai/AI 学习规划/环境搭建/0-环境搭建全景.drawio",
+    "6-ai/AI 学习规划/12周AI应用开发路线/专题-Agent工具与工作流安全.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/专题-AI应用工程化与交付.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/03-专题地图.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/07-AI开发环境搭建与发布流程.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/0-路线总览.drawio",
     "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
-    "6-ai/AI 学习规划/环境搭建/2-PyCharm-解释器配置.drawio",
     "6-ai/AI 学习规划/环境搭建/1-Conda-环境管理.drawio",
-    "6-ai/AI 学习规划/环境搭建/0-环境搭建全景.drawio",
     "6-ai/AI 学习规划/环境搭建/06-环境速查卡.md",
     "6-ai/AI 学习规划/环境搭建/05-常见问题排查.md",
     "6-ai/AI 学习规划/环境搭建/04-AI 依赖清单与镜像源.md",
     "6-ai/AI 学习规划/环境搭建/03-PyCharm 配置详解.md",
-    "6-ai/AI 学习规划/环境搭建/02-Conda 配置详解.md",
-    "6-ai/AI 学习规划/环境搭建/01-环境搭建总览.md",
     "6-ai/AI 学习规划/1-AI 工具/deepseek_xml_20261026_847fdd.xml",
     "6-ai/AI 学习规划/1-AI 工具/deepseek_xml_20261026_847fdd.xml.crdownload",
     "6-ai/AI 学习规划/环境搭建/README.md",
@@ -336,7 +337,6 @@
     "6-ai/AI 学习规划/12周AI应用开发路线/02-学习看板.md",
     "6-ai/AI 学习规划/1-AI 工具/0-AI工具总览.md",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
-    "6-ai/AI 学习规划/12周AI应用开发路线/专题-Agent工具与工作流安全.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/专题-RAG端到端设计.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/专题-SpringAI应用服务.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/专题-Python与模型API基础.md",
