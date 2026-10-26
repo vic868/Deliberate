@@ -1,0 +1,144 @@
+<mxfile host="embed.diagrams.net" agent="codebuddy">
+  <diagram id="env-overview" name="环境全景">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="AI 开发环境全景（macOS arm64）" style="text;html=1;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1F3864;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1080" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lane1" value="L1 操作系统层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="1080" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" value="macOS arm64&#10;Apple Silicon" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="220" y="110" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="Homebrew&#10;brew install miniforge" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="460" y="110" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="Shell&#10;zsh + conda init" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="700" y="110" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lane2" value="L2 环境管理层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="190" width="1080" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="conda 24.11.3&#10;/opt/anaconda3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="225" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="solver: libmamba&#10;channel_priority: strict" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;" vertex="1" parent="1">
+          <mxGeometry x="460" y="225" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="~/.condarc&#10;镜像源配置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="700" y="225" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lane3" value="L3 Python 环境层（隔离）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E8A33D;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="1080" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="base&#10;py3.11 · 只放 conda" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E8A33D;" vertex="1" parent="1">
+          <mxGeometry x="180" y="345" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="ai-core&#10;torch · transformers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E8A33D;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="345" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="ai-rag&#10;embedding · rerank" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E8A33D;" vertex="1" parent="1">
+          <mxGeometry x="560" y="345" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="ai-agent&#10;langchain · mcp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E8A33D;" vertex="1" parent="1">
+          <mxGeometry x="750" y="345" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" value="vnpy / codegeex-agent&#10;已有环境 · 禁止混装" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="345" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lane4" value="L4 依赖来源层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="1080" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" value="conda-forge" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;" vertex="1" parent="1">
+          <mxGeometry x="260" y="465" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" value="TUNA 镜像&#10;conda + PyPI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="465" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" value="内网私有源 / 离线包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;" vertex="1" parent="1">
+          <mxGeometry x="700" y="465" width="180" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lane5" value="L5 IDE 层 PyCharm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="550" width="1080" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" value="Python Interpreter&#10;绑定 ai-core" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="585" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n16" value="Run / Debug&#10;工作目录 + 环境变量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;" vertex="1" parent="1">
+          <mxGeometry x="430" y="585" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n17" value="内置终端&#10;conda activate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;" vertex="1" parent="1">
+          <mxGeometry x="640" y="585" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n18" value="Ruff / Jupyter&#10;代码质量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;" vertex="1" parent="1">
+          <mxGeometry x="850" y="585" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lane6" value="L6 项目与业务层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDE9D9;strokeColor=#D79B00;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="670" width="1080" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n19" value="PythonProject2&#10;模型 API 脚本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="260" y="695" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n20" value="Spring AI 服务&#10;Java 侧主力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="695" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" value="RAG + Agent Demo&#10;Milvus · Langfuse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="700" y="695" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="n1" target="n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#4A90D9;" edge="1" parent="1" source="n4" target="n7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#4A90D9;" edge="1" parent="1" source="n4" target="n8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#4A90D9;" edge="1" parent="1" source="n4" target="n9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#4A90D9;" edge="1" parent="1" source="n4" target="n10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#5AA469;dashed=1;" edge="1" parent="1" source="n8" target="n13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#9B6BC7;" edge="1" parent="1" source="n8" target="n15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#9B6BC7;" edge="1" parent="1" source="n9" target="n15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#9B6BC7;" edge="1" parent="1" source="n10" target="n15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#D79B00;" edge="1" parent="1" source="n15" target="n19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#D79B00;" edge="1" parent="1" source="n15" target="n20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=2;strokeColor=#D79B00;" edge="1" parent="1" source="n15" target="n21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1;dashed=1;strokeColor=#D9534F;fontColor=#D9534F;label位置=left;label=禁止混装;" edge="1" parent="1" source="n11" target="n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
