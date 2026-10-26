@@ -218,7 +218,7 @@ def score(job):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--hours", type=float, default=36)
+    ap.add_argument("--hours", type=float, default=96)
     ap.add_argument("--all", action="store_true")
     args = ap.parse_args()
 
