@@ -179,6 +179,12 @@ print(res.type)        # 'ai'（AIMessage）
 | `Connection refused` | base_url 写错 | 去掉 `/chat/completions` 后缀，只留 base |
 | 401 且用了 DeepSeek | provider 写错但仍用 openai 协议 | 改 `model_provider="deepseek"` |
 | 报 `openai` 包缺失 | 只装了 langchain 没装集成包 | `pip install langchain-openai` |
+| `422 tools[0]: missing field type` | 直传 `tools=` 而没走 `bind_tools` | 见 [[04-工具调用与 Agent]] 的坑 1 |
+
+> [!tip] 实测记录（2026-10-26，langchain 1.4.2 + langchain-openai + DeepSeek）
+> 装 `langchain-openai` 后，**DeepSeek / 百炼 / OpenAI 全部走 `model_provider="openai"` + 改 `base_url`**，
+> 只需换 4 个参数，业务代码零改动。
+> 参考实现：`~/PycharmProjects/PythonProject2/examples/config.py`（模型配置表 + 一键切换）。
 
 ## 🏷️ 标签
 

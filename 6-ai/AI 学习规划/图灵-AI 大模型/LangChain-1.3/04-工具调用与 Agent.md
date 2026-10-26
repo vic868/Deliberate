@@ -143,6 +143,25 @@ print(result["messages"][-1].content)   # 最终答案
 | 工具 | 能力：实时数据 / 业务操作 |
 | Agent 封装 | 中间所有编排逻辑由框架消化 |
 
+> [!danger] 坑 1：必须用 `bind_tools`，不能直传 `tools=`
+> 手写 `invoke` 时，**`model.invoke(msgs, tools=[tool])` 在 DeepSeek 等严格实现上会报 422**：
+> ```
+> Error code: 422 - tools[0]: missing field `type`
+> ```
+> 正确写法（`bind_tools` 会生成 `{"type": "function", ...}` 标准 schema）：
+> ```python
+> llm = model.bind_tools(tools)
+> resp = llm.invoke(messages)
+> ```
+> `create_agent` 内部走的就是 bind_tools，所以 Agent 方式反而不会踩这个坑。
+
+> [!warning] 坑 2：`prompt.invoke()` 返回的是 `ChatPromptValue`
+> 不是消息列表，要再取一层 `.messages`：
+> ```python
+> msgs = prompt.invoke({"question": "...", "language": "Chinese"}).messages
+> ```
+> 另外 `invoke([("human", "...")])` 这种 **tuple 形式不能直接取 `.content`**，要转成 `HumanMessage(content=...)` 对象。
+
 > [!quote] 讲师的描述
 > "这个 Agent 里面有什么？有大模型，有工具……中间的逻辑他全部给你封装清楚了。"
 > "你把那些基础组件给他就行了，中间的过程 Agent 自己去规划，组件内部去消化。"
