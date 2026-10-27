@@ -4,44 +4,23 @@
 
 ### Spring AI vs LangChain vs LangGraph 全景对比表
 
-|**维度**|**Spring AI**|**LangChain**|**LangGraph**|
-|---|---|---|---|
-|**核心语言/生态**|**Java / Spring Boot 生态**|**Python / TypeScript**|**Python / TypeScript**（基于 LangChain 构建）|
-|**设计哲学**|继承 Spring 一贯的**便携高层抽象（Portability）、厂商解耦（Vendor Agnostic）**，采用 POJO 与依赖注入|**模块化与组件化（Modular & Compositional）**，提供丰富的通用链式拼装积木|**基于图和状态机（State Machine & Graph-based）**，专注于复杂循环、状态管理与多智能体协作|
-|**架构与控制流**|**管道与切面机制（Pipeline & Advisors）**，类似 Spring AOP 的环绕拦截模型|偏向**有向无环图（DAG / Chains）**，线性流水线或简单的路由分发|显式支持**环路（Cycles）、条件分支、断点暂停、时间旅行（Time Travel）**|
-|**核心组件与特色**|• `ChatClient` (Fluent API)<br><br>  <br>  <br><br>• `Advisors API` (切面增强/RAG/记忆)<br><br>  <br>  <br><br>• `VectorStore` 统一检索<br><br>  <br>  <br><br>• 原生支持 **MCP (Model Context Protocol)**|• `Prompt Templates` (提示词模板)<br><br>  <br>  <br><br>• `Chains / LCEL` (表达式语言)<br><br>  <br>  <br><br>• `Document Loaders` & `Vectorstores`<br><br>  <br>  <br><br>• 庞大的第三方集成生态|• `State` (中心化状态管理)<br><br>  <br>  <br><br>• `Nodes & Edges` (图节点与边)<br><br>  <br>  <br><br>• `Checkpointer` (持久化与断点)<br><br>  <br>  <br><br>• `Human-in-the-loop` (人工介入)|
-|**最适用的业务场景**|**企业级 Java 后端系统**，需要将 AI 能力无缝嵌入现有 Spring Boot 微服务架构中|**快速原型开发**，构建标准 RAG 知识库问答、简单 Chatbot、文本处理流水线|**高度复杂的自主智能体（Autonomous Agents）**、多智能体协同、需要严谨逻辑校验与循环纠错的系统|
-|**学习与工程门槛**|**低（对 Java 开发者）**：完全契合企业级开发习惯，配置即用|**中**：概念较多（LCEL、各种组件封装），但文档和社区极丰富|**高**：需要理解状态机逻辑、图状态流转及复杂控制流调试|
+| **维度**       | **Spring AI**                                                                                                                    | **LangChain**                                                                                                      | **LangGraph**                                                                                                 |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| **核心语言/生态**  | **Java / Spring Boot 生态**                                                                                                        | **Python / TypeScript**                                                                                            | **Python / TypeScript**（基于 LangChain 构建）                                                                      |
+| **设计哲学**     | 继承 Spring 一贯的**便携高层抽象（Portability）、厂商解耦（Vendor Agnostic）**，采用 POJO 与依赖注入                                                         | **模块化与组件化（Modular & Compositional）**，提供丰富的通用链式拼装积木                                                                 | **基于图和状态机（State Machine & Graph-based）**，专注于复杂循环、状态管理与多智能体协作                                                  |
+| **架构与控制流**   | **管道与切面机制（Pipeline & Advisors）**，类似 Spring AOP 的环绕拦截模型                                                                           | 偏向**有向无环图（DAG / Chains）**，线性流水线或简单的路由分发                                                                            | 显式支持**环路（Cycles）、条件分支、断点暂停、时间旅行（Time Travel）**                                                                |
+| **核心组件与特色**  | • `ChatClient` (Fluent API)<br>• `Advisors API` (切面增强/RAG/记忆)<br>• `VectorStore` 统一检索<br>• 原生支持 **MCP (Model Context Protocol)** | • `Prompt Templates` (提示词模板)<br>• `Chains / LCEL` (表达式语言)<br>• `Document Loaders` & `Vectorstores`<br>• 庞大的第三方集成生态 | • `State` (中心化状态管理)<br>• `Nodes & Edges` (图节点与边)<br>• `Checkpointer` (持久化与断点)<br>• `Human-in-the-loop` (人工介入) |
+| **最适用的业务场景** | **企业级 Java 后端系统**，需要将 AI 能力无缝嵌入现有 Spring Boot 微服务架构中                                                                             | **快速原型开发**，构建标准 RAG 知识库问答、简单 Chatbot、文本处理流水线                                                                       | **高度复杂的自主智能体（Autonomous Agents）**、多智能体协同、需要严谨逻辑校验与循环纠错的系统                                                     |
+| **学习与工程门槛**  | **低（对 Java 开发者）**：完全契合企业级开发习惯，配置即用                                                                                               | **中**：概念较多（LCEL、各种组件封装），但文档和社区极丰富                                                                                  | **高**：需要理解状态机逻辑、图状态流转及复杂控制流调试                                                                                 |
 
 ### 💡 选型建议指南
 
 1. **选择 Spring AI 如果：**
-    
-      
     - 你的团队是 **Java 技术栈**，核心系统基于 Spring Boot 构建。
-        
-          
-        
     - 需要将 AI 功能作为微服务的一部分，对安全性、依赖管理、企业级可观测性（如 Micrometer 指标监控）有严格要求。
-        
-          
-        
 2. **选择 LangChain 如果：**
-    
-      
     - 你在使用 **Python**，需要快速验证一个 AI 应用原型（如标准的 RAG 检索问答、文档摘要提取工具）。
-        
-          
-        
     - 希望直接调用海量现成的集成组件（各种大模型 API、向量数据库、第三方工具）。
-        
-          
-        
 3. **选择 LangGraph 如果：**
-    
-      
     - 你的应用不仅仅是“问答”，而是需要 AI 像人一样“思考、执行、检查、出错重试”（具备循环和复杂决策逻辑的 Agent）。
-        
-          
-        
     - 需要实现**人工审批（Human-in-the-loop）**、状态持久化保存或多智能体团队协同合作。
