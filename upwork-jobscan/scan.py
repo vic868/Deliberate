@@ -112,7 +112,7 @@ def close_chrome(p):
 def connect():
     import websocket
     tabs = [t for t in http_json("/json/list") if t.get("type") == "page"]
-    ws = websocket.create_connection(tabs[0]["webSocketDebuggerUrl"], timeout=90,
+    ws = websocket.create_connection(tabs[0]["webSocketDebuggerUrl"], timeout=25,
                                      suppress_origin=True)
     return ws
 
@@ -243,8 +243,12 @@ def main():
             url = ("https://www.upwork.com/nx/search/jobs/?q="
                    + urllib.parse.quote(kw) + "&sort=recency")
             log(f"· 搜索: {kw}")
-            job.goto(url, wait=12)
-            raw = job.js(TILE_JS) or ""
+            try:
+                job.goto(url, wait=12)
+                raw = job.js(TILE_JS) or ""
+            except Exception as e:
+                log(f"  ! {kw} 跳过（{type(e).__name__}）")
+                continue
             for chunk in raw.split("\u0001"):
                 if not chunk.strip():
                     continue
