@@ -1,0 +1,423 @@
+<mxfile host="embed.diagrams.net" agent="dsh" version="24.7.17">
+  <diagram id="prod" name="3 生产化改造">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1540" pageHeight="1120" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c10" value="&lt;b&gt;生产化改造：持久化会话存储 · Milvus 独立服务 · 多会话与知识库管理 · token 级流式&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=15;fontColor=#ffffff;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="16" width="1500" height="42" as="geometry">
+            <mxRectangle width="1500" height="42" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c11" value="验收：重启服务后会话还在；两台进程共享同一 thread；前端逐字出现、可停止、可多会话切换" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="62" width="1500" height="26" as="geometry">
+            <mxRectangle width="1500" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c12" value="" style="rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c13" value="要改造" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c14" value="" style="rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c15" value="要点" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1267" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c16" value="" style="rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c17" value="注意" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1417" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c18" value="" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c19" value="现状" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1567" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c20" value="阶段一已完成：LangChain 基础(模型/Prompt/记忆) · 工具调用(bind_tools/tool_calls) · LangGraph 核心(State/Node/Edge/ConditionalEdge/MemorySaver) · FastAPI+SSE · RAG+Milvus，本页为其后的进阶准备" style="rounded=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="92" width="1500" height="24" as="geometry">
+            <mxRectangle width="1500" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c21" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="128" width="860" height="300" as="geometry">
+            <mxRectangle width="860" height="300" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c22" value="①  会话持久化：MemorySaver → Postgres / Redis（多进程共享）" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="128" width="860" height="28" as="geometry">
+            <mxRectangle width="860" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c23" value="&lt;b&gt;Saver&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="164" width="150" height="20" as="geometry">
+            <mxRectangle width="150" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c24" value="&lt;b&gt;安装包&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="180" y="164" width="150" height="20" as="geometry">
+            <mxRectangle width="150" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c25" value="&lt;b&gt;适合&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="164" width="170" height="20" as="geometry">
+            <mxRectangle width="170" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c26" value="&lt;b&gt;多进程&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="164" width="200" height="20" as="geometry">
+            <mxRectangle width="200" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c27" value="InMemorySaver" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="184" width="150" height="26" as="geometry">
+            <mxRectangle width="150" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c28" value="langgraph-checkpoint（自带）" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="180" y="184" width="150" height="26" as="geometry">
+            <mxRectangle width="150" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c29" value="本地开发 / 单元测试" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="184" width="170" height="26" as="geometry">
+            <mxRectangle width="170" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c30" value="✗ 重启即丢" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="184" width="200" height="26" as="geometry">
+            <mxRectangle width="200" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c31" value="SqliteSaver" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="210" width="150" height="26" as="geometry">
+            <mxRectangle width="150" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c32" value="langgraph-checkpoint-sqlite" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="180" y="210" width="150" height="26" as="geometry">
+            <mxRectangle width="150" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c33" value="单机、本地 demo" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="210" width="170" height="26" as="geometry">
+            <mxRectangle width="170" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c34" value="✗ 单写者" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="210" width="200" height="26" as="geometry">
+            <mxRectangle width="200" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c35" value="PostgresSaver" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="236" width="150" height="26" as="geometry">
+            <mxRectangle width="150" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c36" value="langgraph-checkpoint-postgres" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="180" y="236" width="150" height="26" as="geometry">
+            <mxRectangle width="150" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c37" value="生产首选：事务、可查询" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="236" width="170" height="26" as="geometry">
+            <mxRectangle width="170" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c38" value="✓" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="236" width="200" height="26" as="geometry">
+            <mxRectangle width="200" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c39" value="Redis / Mongo Saver" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="262" width="150" height="26" as="geometry">
+            <mxRectangle width="150" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c40" value="langgraph-checkpoint-redis 等" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="180" y="262" width="150" height="26" as="geometry">
+            <mxRectangle width="150" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c41" value="已有 Redis/Mongo 的团队" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="262" width="170" height="26" as="geometry">
+            <mxRectangle width="170" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c42" value="✓" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="262" width="200" height="26" as="geometry">
+            <mxRectangle width="200" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c43" value="from langgraph.checkpoint.postgres import PostgresSaver&lt;br&gt;with PostgresSaver.from_conn_string(DSN) as cp:&lt;br&gt;    cp.setup()            # 首次建表&lt;br&gt;    graph = builder.compile(checkpointer=cp)&lt;br&gt;# 异步服务用 AsyncPostgresSaver + async with" style="rounded=1;fillColor=#fbfbf9;strokeColor=#1f3864;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="296" width="400" height="96" as="geometry">
+            <mxRectangle width="400" height="96" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c44" value="&lt;b&gt;改造清单&lt;/b&gt;&lt;br&gt;• 启动时初始化 checkpointer 一次，别每个请求 new&lt;br&gt;• thread_id 用「用户 + 会话」规则生成，前端传回&lt;br&gt;• thread 的标题/时间另存业务表，列表页别扫 checkpoint 表&lt;br&gt;• 敏感会话可配 EncryptedSerializer（LANGGRAPH_AES_KEY）" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="440" y="294" width="410" height="98" as="geometry">
+            <mxRectangle width="410" height="98" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c45" value="&lt;b&gt;异步写法（FastAPI 必须）&lt;/b&gt;：AsyncPostgresSaver + async with … await cp.setup()；graph.ainvoke / astream 全链路 async，别在事件循环里调同步 LLM 客户端。" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="400" width="400" height="46" as="geometry">
+            <mxRectangle width="400" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c46" value="&lt;b&gt;长期记忆&lt;/b&gt;：跨会话的 Store（InMemoryStore → PostgresStore / 向量 Store）；checkpointer 管单次对话，Store 管跨对话的用户偏好与事实。" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="440" y="400" width="410" height="46" as="geometry">
+            <mxRectangle width="410" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c47" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="900" y="128" width="620" height="300" as="geometry">
+            <mxRectangle width="620" height="300" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c48" value="②  Milvus：Lite → Docker Standalone（为了 BM25 / 多租户 / 性能）" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="900" y="128" width="620" height="28" as="geometry">
+            <mxRectangle width="620" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c49" value="&lt;b&gt;Milvus Lite&lt;/b&gt;&lt;br&gt;pip 安装、一个 .db 文件&lt;br&gt;只有 FLAT 索引" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="910" y="164" width="260" height="56" as="geometry">
+            <mxRectangle width="260" height="56" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c50" value="&lt;b&gt;Standalone (Docker)&lt;/b&gt;&lt;br&gt;完整能力：HNSW/IVF、BM25 全文、partition&lt;br&gt;URL http://localhost:19530" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="164" width="290" height="56" as="geometry">
+            <mxRectangle width="290" height="56" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c51" value="升级" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#b85450;strokeWidth=1.4;fontSize=9;fontColor=#b85450;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c49" target="c50">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c52" value="curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/&lt;br&gt;  scripts/standalone_embed.sh -o standalone_embed.sh&lt;br&gt;bash standalone_embed.sh start&lt;br&gt;# WebUI: http://127.0.0.1:9091/webui" style="rounded=1;fillColor=#fbfbf9;strokeColor=#1f3864;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="910" y="234" width="590" height="64" as="geometry">
+            <mxRectangle width="590" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c53" value="&lt;b&gt;踩坑&lt;/b&gt;：&lt;br&gt;• Lite 不支持 BM25 内置函数、partition_key → 混检/多租户必须上 Standalone&lt;br&gt;• 已有 Lite 数据要迁移：重新 ingest 最快（第 2 页建库脚本可复用）&lt;br&gt;• 索引与 metric 建好后改需重建 collection" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="910" y="306" width="590" height="76" as="geometry">
+            <mxRectangle width="590" height="76" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c54" value="Milvus 3.0（湖原生）：External Collection 直接检索数据湖、在线增删字段、服务端 ORDER BY / 聚合、BM25 索引体积约为 2.6 的 1/3 —— 个人项目先不用追新，但要知道方向。" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="910" y="388" width="590" height="46" as="geometry">
+            <mxRectangle width="590" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c55" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="440" width="720" height="275" as="geometry">
+            <mxRectangle width="720" height="275" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c56" value="③  前端：多会话管理 + 知识库管理 UI" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="440" width="720" height="28" as="geometry">
+            <mxRectangle width="720" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c57" value="&lt;b&gt;多会话&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="476" width="120" height="36" as="geometry">
+            <mxRectangle width="120" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c58" value="会话列表（thread_id/标题/时间）· 新建 · 重命名 · 删除 · 切换后恢复历史（get_state）" style="rounded=1;fillColor=#fbfbf9;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="150" y="476" width="580" height="36" as="geometry">
+            <mxRectangle width="580" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c59" value="&lt;b&gt;流式展示&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="518" width="120" height="36" as="geometry">
+            <mxRectangle width="120" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c60" value="接收 SSE 增量逐字渲染 · 显示当前节点(检索/生成) · 支持点击停止(AbortController)" style="rounded=1;fillColor=#fbfbf9;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="150" y="518" width="580" height="36" as="geometry">
+            <mxRectangle width="580" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c61" value="&lt;b&gt;知识库管理&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="560" width="120" height="36" as="geometry">
+            <mxRectangle width="120" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c62" value="上传文件 · 查看 ingest 进度 · 文档列表(分块数/状态) · 删除文档(按 metadata 过滤删向量)" style="rounded=1;fillColor=#fbfbf9;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="150" y="560" width="580" height="36" as="geometry">
+            <mxRectangle width="580" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c63" value="&lt;b&gt;调试面板&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="602" width="120" height="36" as="geometry">
+            <mxRectangle width="120" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c64" value="本次请求命中的 chunk 与分数 · 实际发送的 prompt 摘要 · 耗时拆解" style="rounded=1;fillColor=#fbfbf9;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="150" y="602" width="580" height="36" as="geometry">
+            <mxRectangle width="580" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c65" value="&lt;b&gt;交互能力&lt;/b&gt;" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="644" width="120" height="36" as="geometry">
+            <mxRectangle width="120" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c66" value="点赞/点踩与备注（喂给第 4 页评估与数据集）；中断时展示「等待确认」按钮" style="rounded=1;fillColor=#fbfbf9;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="150" y="644" width="580" height="36" as="geometry">
+            <mxRectangle width="580" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c67" value="接口约定：POST /chat（SSE，返回 token/节点/引用）、GET /threads、DELETE /threads/{id}、POST /kb/upload、GET /kb/docs" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="700" width="700" height="26" as="geometry">
+            <mxRectangle width="700" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c68" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="760" y="440" width="760" height="275" as="geometry">
+            <mxRectangle width="760" height="275" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c69" value="④  token 级流式：stream_mode=&quot;messages&quot;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="760" y="440" width="760" height="28" as="geometry">
+            <mxRectangle width="760" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c70" value="async for ev in graph.astream(inputs, config,&lt;br&gt;        stream_mode=&quot;messages&quot;):&lt;br&gt;    chunk, meta = ev            # 二元组&lt;br&gt;    if chunk.content:&lt;br&gt;        yield sse({&quot;type&quot;: &quot;token&quot;, &quot;text&quot;: chunk.content})&lt;br&gt;    # 也可叠 &quot;updates&quot; 推节点进度、&quot;custom&quot; 推工具" style="rounded=1;fillColor=#fbfbf9;strokeColor=#1f3864;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="770" y="476" width="740" height="96" as="geometry">
+            <mxRectangle width="740" height="96" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c71" value="&lt;b&gt;要点&lt;/b&gt;&lt;br&gt;• messages 是「所有 LLM 调用」的 token，包含中间步骤；要区分最终答案就按节点名/标签过滤 metadata&lt;br&gt;• 用 model 的 stream 才会逐字；invoke 也会发出 token 事件（一次性）&lt;br&gt;• 前端用 fetch + ReadableStream 解析 SSE；Nginx 需关闭 buffering；心跳保活" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="770" y="580" width="740" height="76" as="geometry">
+            <mxRectangle width="740" height="76" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c72" value="联调清单：断线重连（Last-Event-ID）· 停止生成（前端 abort + 后端取消任务）· 错误事件统一格式 · 跨域 CORS" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="770" y="660" width="740" height="26" as="geometry">
+            <mxRectangle width="740" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c73" value="&lt;b&gt;SSE 事件设计&lt;/b&gt;（给前端约定）：{type: token|node|tool|interrupt|error|done, data: {...}}；token 追加到气泡，node 显示「检索中 / 生成中」，done 时回填引用与耗时统计。" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="770" y="692" width="740" height="36" as="geometry">
+            <mxRectangle width="740" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c74" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="732" width="1500" height="200" as="geometry">
+            <mxRectangle width="1500" height="200" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c75" value="⑤  上线前自检" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="732" width="1500" height="28" as="geometry">
+            <mxRectangle width="1500" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c76" value="☐ 密钥全部走环境变量 / 密钥服务，不进代码库" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=9.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="768" width="486.7" height="64" as="geometry">
+            <mxRectangle width="486.7" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c77" value="☐ 依赖锁版本（uv lock / conda env export），并固定 embedder 与模型版本" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=9.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="526.7" y="768" width="486.7" height="64" as="geometry">
+            <mxRectangle width="486.7" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c78" value="☐ 并发限制与超时：单请求超时、LLM 重试（指数退避）、工具调用超时" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=9.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1023.3" y="768" width="486.7" height="64" as="geometry">
+            <mxRectangle width="486.7" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c79" value="☐ checkpoint 表增长与清理策略（TTL / 归档）" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=9.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="842" width="486.7" height="64" as="geometry">
+            <mxRectangle width="486.7" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c80" value="☐ 日志含 thread_id 与 run_id，可与第 4 页 trace 对齐" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=9.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="526.7" y="842" width="486.7" height="64" as="geometry">
+            <mxRectangle width="486.7" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c81" value="☐ Docker Compose 一键拉起：API + Milvus + Postgres" style="rounded=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=9.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1023.3" y="842" width="486.7" height="64" as="geometry">
+            <mxRectangle width="486.7" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c82" value="&lt;b&gt;生产化改造：持久化会话存储 · Milvus 独立服务 · 多会话与知识库管理 · token 级流式&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=15;fontColor=#ffffff;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="16" width="1500" height="42" as="geometry">
+            <mxRectangle width="1500" height="42" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c83" value="验收：重启服务后会话还在；两台进程共享同一 thread；前端逐字出现、可停止、可多会话切换" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="62" width="1500" height="26" as="geometry">
+            <mxRectangle width="1500" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c84" value="" style="rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c85" value="要改造" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c86" value="" style="rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c87" value="要点" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1267" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c88" value="" style="rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c89" value="注意" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1417" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c90" value="" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c91" value="现状" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1567" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c92" value="阶段一已完成：LangChain 基础(模型/Prompt/记忆) · 工具调用(bind_tools/tool_calls) · LangGraph 核心(State/Node/Edge/ConditionalEdge/MemorySaver) · FastAPI+SSE · RAG+Milvus，本页为其后的进阶准备" style="rounded=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="92" width="1500" height="24" as="geometry">
+            <mxRectangle width="1500" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

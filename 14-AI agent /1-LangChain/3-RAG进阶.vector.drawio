@@ -1,0 +1,567 @@
+<mxfile host="embed.diagrams.net" agent="dsh" version="24.7.17">
+  <diagram id="rag-advanced" name="2 RAG进阶">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1540" pageHeight="1120" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c10" value="&lt;b&gt;RAG 进阶：切分 → Embedding 选型 → 混合检索与 Rerank → 拼接技巧 → 离线建库 → 自建评估&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=15;fontColor=#ffffff;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="16" width="1500" height="42" as="geometry">
+            <mxRectangle width="1500" height="42" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c11" value="验收：同一批 30 条 query 的 Hit@5 / MRR 有前后对比；每个改动都能说清「为什么变好」" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="62" width="1500" height="26" as="geometry">
+            <mxRectangle width="1500" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c12" value="" style="rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c13" value="基础" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c14" value="" style="rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c15" value="本阶段要做" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1267" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c16" value="" style="rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c17" value="易错点" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1417" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c18" value="" style="rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c19" value="数据" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1567" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c20" value="阶段一已完成：LangChain 基础(模型/Prompt/记忆) · 工具调用(bind_tools/tool_calls) · LangGraph 核心(State/Node/Edge/ConditionalEdge/MemorySaver) · FastAPI+SSE · RAG+Milvus，本页为其后的进阶准备" style="rounded=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="92" width="1500" height="24" as="geometry">
+            <mxRectangle width="1500" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c21" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="128" width="740" height="210" as="geometry">
+            <mxRectangle width="740" height="210" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c22" value="①  更聪明的切分" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="128" width="740" height="28" as="geometry">
+            <mxRectangle width="740" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c23" value="&lt;b&gt;Recursive 递归切分&lt;/b&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="164" width="172.5" height="26" as="geometry">
+            <mxRectangle width="172.5" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c24" value="按段落→行→空格&#10;逐级降级拆分；&#10;chunk_size 与 overlap&#10;是两个大旋钮，&#10;默认基线就用它" style="rounded=1;fillColor=#fbfbf9;strokeColor=#6c8ebf;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="190" width="172.5" height="122" as="geometry">
+            <mxRectangle width="172.5" height="122" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c25" value="&lt;b&gt;中文/日文换分隔符&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="212.5" y="164" width="172.5" height="26" as="geometry">
+            <mxRectangle width="172.5" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c26" value="默认分隔符不友好：&#10;加入全角逗号「，」、&#10;顿号「、」、句号「。」，&#10;避免把词切成两半" style="rounded=1;fillColor=#fbfbf9;strokeColor=#6c8ebf;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="212.5" y="190" width="172.5" height="122" as="geometry">
+            <mxRectangle width="172.5" height="122" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c27" value="&lt;b&gt;按 Markdown 标题切&lt;/b&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="395.0" y="164" width="172.5" height="26" as="geometry">
+            <mxRectangle width="172.5" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c28" value="按 # / ## 分层切，&#10;标题层级写进 metadata；&#10;命中后能知道&#10;出自哪一节的第几段" style="rounded=1;fillColor=#fbfbf9;strokeColor=#6c8ebf;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="395.0" y="190" width="172.5" height="122" as="geometry">
+            <mxRectangle width="172.5" height="122" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c29" value="&lt;b&gt;语义切分（实验性）&lt;/b&gt;" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="577.5" y="164" width="172.5" height="26" as="geometry">
+            <mxRectangle width="172.5" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c30" value="基于句向量邻接相似度&#10;找断点，比长度切分&#10;更贴语义；更慢、&#10;结果不稳定，慎用于长文" style="rounded=1;fillColor=#fbfbf9;strokeColor=#6c8ebf;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="577.5" y="190" width="172.5" height="122" as="geometry">
+            <mxRectangle width="172.5" height="122" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c31" value="切分评测法：固定 embedder，扫 chunk_size ∈ {256,512,1024}、overlap ∈ {0,10%,20%}，在固定 query 集上看 Hit@5 与拼接后的回答质量。没有评测就不要调参。" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="316" width="720" height="58" as="geometry">
+            <mxRectangle width="720" height="58" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c32" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="780" y="128" width="740" height="210" as="geometry">
+            <mxRectangle width="740" height="210" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c33" value="②  Embedding 模型选型（用你自己的数据测，不要只看榜单）" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="780" y="128" width="740" height="28" as="geometry">
+            <mxRectangle width="740" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c34" value="&lt;b&gt;模型&lt;/b&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="164" width="190" height="18" as="geometry">
+            <mxRectangle width="190" height="18" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c35" value="&lt;b&gt;维度&lt;/b&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="164" width="90" height="18" as="geometry">
+            <mxRectangle width="90" height="18" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c36" value="&lt;b&gt;部署&lt;/b&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="164" width="100" height="18" as="geometry">
+            <mxRectangle width="100" height="18" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c37" value="&lt;b&gt;中文&lt;/b&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="164" width="60" height="18" as="geometry">
+            <mxRectangle width="60" height="18" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c38" value="&lt;b&gt;备注&lt;/b&gt;" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="164" width="300" height="18" as="geometry">
+            <mxRectangle width="300" height="18" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c39" value="text-embedding-3-small/large" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="182" width="190" height="26" as="geometry">
+            <mxRectangle width="190" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c40" value="1536/3072" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="182" width="90" height="26" as="geometry">
+            <mxRectangle width="90" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c41" value="API" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="182" width="100" height="26" as="geometry">
+            <mxRectangle width="100" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c42" value="中上" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="182" width="60" height="26" as="geometry">
+            <mxRectangle width="60" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c43" value="便宜好用；支持调低维；英文最强" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="182" width="300" height="26" as="geometry">
+            <mxRectangle width="300" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c44" value="bge-m3" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="208" width="190" height="26" as="geometry">
+            <mxRectangle width="190" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c45" value="1024" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="208" width="90" height="26" as="geometry">
+            <mxRectangle width="90" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c46" value="自托管/API" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="208" width="100" height="26" as="geometry">
+            <mxRectangle width="100" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c47" value="强" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="208" width="60" height="26" as="geometry">
+            <mxRectangle width="60" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c48" value="多语言，可同时出稠密+稀疏，中文检索首选之一" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="208" width="300" height="26" as="geometry">
+            <mxRectangle width="300" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c49" value="nomic-embed-text" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="234" width="190" height="26" as="geometry">
+            <mxRectangle width="190" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c50" value="768" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="234" width="90" height="26" as="geometry">
+            <mxRectangle width="90" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c51" value="本地 Ollama" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="234" width="100" height="26" as="geometry">
+            <mxRectangle width="100" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c52" value="一般" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="234" width="60" height="26" as="geometry">
+            <mxRectangle width="60" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c53" value="免费、快、体积小；适合原型与私有部署" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="234" width="300" height="26" as="geometry">
+            <mxRectangle width="300" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c54" value="qwen / jina / voyage" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="260" width="190" height="26" as="geometry">
+            <mxRectangle width="190" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c55" value="1024+" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="260" width="90" height="26" as="geometry">
+            <mxRectangle width="90" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c56" value="API/自托管" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="260" width="100" height="26" as="geometry">
+            <mxRectangle width="100" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c57" value="强" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="260" width="60" height="26" as="geometry">
+            <mxRectangle width="60" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c58" value="中文或多语言任务可作对比项" style="rounded=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="260" width="300" height="26" as="geometry">
+            <mxRectangle width="300" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c59" value="&lt;b&gt;对比方法&lt;/b&gt;：同一份切分、同一批 query、只换 embedder，看检索指标（第 ⑥ 节）与成本/延迟。换 embedder = 全量重建向量库；把模型版本号写进 collection 名或 metadata。" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="790" y="286" width="720" height="66" as="geometry">
+            <mxRectangle width="720" height="66" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c60" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="353" width="1500" height="246" as="geometry">
+            <mxRectangle width="1500" height="246" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c61" value="③  检索后处理：Hybrid（向量 + BM25）与 Rerank" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="353" width="1500" height="28" as="geometry">
+            <mxRectangle width="1500" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c62" value="query" style="rounded=1;fillColor=#ffffff;strokeColor=#999999;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="409" width="120" height="46" as="geometry">
+            <mxRectangle width="120" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c63" value="关键词/BM25" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="200" y="389" width="180" height="44" as="geometry">
+            <mxRectangle width="180" height="44" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c64" value="向量检索 top-k" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="200" y="459" width="180" height="44" as="geometry">
+            <mxRectangle width="180" height="44" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c65" value="融合&#10;RRF / 加权" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="430" y="409" width="150" height="60" as="geometry">
+            <mxRectangle width="150" height="60" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c66" value="Rerank 精排&#10;返回 top-n" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="630" y="409" width="150" height="60" as="geometry">
+            <mxRectangle width="150" height="60" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c67" value="拼进 Prompt" style="rounded=1;fillColor=#ffffff;strokeColor=#999999;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="830" y="409" width="140" height="60" as="geometry">
+            <mxRectangle width="140" height="60" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1.4;fontSize=9;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c62" target="c63">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c69" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#6c8ebf;strokeWidth=1.4;fontSize=9;fontColor=#6c8ebf;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c62" target="c64">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c70" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d6b656;strokeWidth=1.4;fontSize=9;fontColor=#d6b656;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="c63" target="c65">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#6c8ebf;strokeWidth=1.4;fontSize=9;fontColor=#6c8ebf;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="c64" target="c65">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#b85450;strokeWidth=1.4;fontSize=9;fontColor=#b85450;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c65" target="c66">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c73" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#555555;strokeWidth=1.4;fontSize=9;fontColor=#555555;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c66" target="c67">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c74" value="from langchain_milvus import Milvus, BM25BuiltInFunction&lt;br&gt;vs = Milvus.from_documents(docs, embedding=emb,&lt;br&gt;    builtin_function=BM25BuiltInFunction(),&lt;br&gt;    vector_field=[&quot;dense&quot;, &quot;sparse&quot;],  # 稠密 + BM25 稀疏&lt;br&gt;    connection_args={&quot;uri&quot;: URI}, drop_old=True)&lt;br&gt;vs.similarity_search(q, k=5, ranker_type=&quot;rrf&quot;)&lt;br&gt;vs.similarity_search(q, k=5, ranker_type=&quot;weighted&quot;,&lt;br&gt;                      ranker_params={&quot;weights&quot;: [0.6, 0.4]})" style="rounded=1;fillColor=#fbfbf9;strokeColor=#1f3864;fontSize=8;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="389" width="500" height="112" as="geometry">
+            <mxRectangle width="500" height="112" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c75" value="&lt;b&gt;易错点&lt;/b&gt;：BM25 内置函数要 Milvus Standalone/Distributed，&lt;b&gt;Milvus Lite 不支持&lt;/b&gt;（这也是上第 3 页的原因）；改 BM25 分词要设 analyzer_params；Rerank 后要把 rerank_score 写回 metadata 方便调试。" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="534" width="980" height="40" as="geometry">
+            <mxRectangle width="980" height="40" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c76" value="&lt;b&gt;为什么 Hybrid 有用&lt;/b&gt;：查询含编号/专有名词（如「TS-999」）时 BM25 命中精确串、稠密向量易漏；Anthropic 实测（Contextual Retrieval）：&lt;br&gt;Contextual Embeddings 单独让检索失败率 -35%，&lt;br&gt;再加 Contextual BM25 共 -49%。" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="509" width="490" height="76" as="geometry">
+            <mxRectangle width="490" height="76" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c77" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="611" width="740" height="200" as="geometry">
+            <mxRectangle width="740" height="200" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c78" value="④  Prompt 里怎样拼检索结果最有效" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="611" width="740" height="28" as="geometry">
+            <mxRectangle width="740" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c79" value="&lt;b&gt;带来源与定位&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="647" width="233.3" height="22" as="geometry">
+            <mxRectangle width="233.3" height="22" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c80" value="每条放 [id] 标题 / 来源路径 / 段落号，正文里要求引用 [id]，便于回查、评测与引用" style="rounded=1;fillColor=#fffaf0;strokeColor=#d6b656;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="669" width="233.3" height="54" as="geometry">
+            <mxRectangle width="233.3" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c81" value="&lt;b&gt;去重与截断&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="273.3" y="647" width="233.3" height="22" as="geometry">
+            <mxRectangle width="233.3" height="22" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c82" value="按 parent doc 去重，单文档最多 k 条；每条截断到 800~1500 字，长文用摘要 + 原文双轨" style="rounded=1;fillColor=#fffaf0;strokeColor=#d6b656;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="273.3" y="669" width="233.3" height="54" as="geometry">
+            <mxRectangle width="233.3" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c83" value="&lt;b&gt;顺序有讲究&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="516.7" y="647" width="233.3" height="22" as="geometry">
+            <mxRectangle width="233.3" height="22" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c84" value="「关键信息在开头结尾、中间容易丢」：最相关的放最前，其次是最后，弱相关的放中间" style="rounded=1;fillColor=#fffaf0;strokeColor=#d6b656;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="516.7" y="669" width="233.3" height="54" as="geometry">
+            <mxRectangle width="233.3" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c85" value="&lt;b&gt;上下文增强&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="729" width="233.3" height="22" as="geometry">
+            <mxRectangle width="233.3" height="22" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c86" value="切分时给每个 chunk 加段落摘要/标题上下文（Contextual Retrieval 思路），检索与生成都受益" style="rounded=1;fillColor=#fffaf0;strokeColor=#d6b656;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30.0" y="751" width="233.3" height="54" as="geometry">
+            <mxRectangle width="233.3" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c87" value="&lt;b&gt;明确边界&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="273.3" y="729" width="233.3" height="22" as="geometry">
+            <mxRectangle width="233.3" height="22" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c88" value="明确说「只用给定资料，资料里没有就说不知道」，降低幻觉" style="rounded=1;fillColor=#fffaf0;strokeColor=#d6b656;fontSize=8;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="273.3" y="751" width="233.3" height="54" as="geometry">
+            <mxRectangle width="233.3" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c89" value="&lt;b&gt;稳定标签&lt;/b&gt;" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="516.7" y="729" width="233.3" height="22" as="geometry">
+            <mxRectangle width="233.3" height="22" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c90" value="&lt;context&gt;…&lt;/context&gt; 或 &lt;document&gt; 结构固定，方便模型区分「资料」和「指令」" style="rounded=1;fillColor=#fffaf0;strokeColor=#d6b656;fontSize=8;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="516.7" y="751" width="233.3" height="54" as="geometry">
+            <mxRectangle width="233.3" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c91" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="780" y="611" width="740" height="200" as="geometry">
+            <mxRectangle width="740" height="200" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c92" value="⑤  离线建库：PDF / Markdown / 网页批量 ingest" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="780" y="611" width="740" height="28" as="geometry">
+            <mxRectangle width="740" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c93" value="Loader&#10;多格式加载" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="647" width="128" height="54" as="geometry">
+            <mxRectangle width="128" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c94" value="Splitter&#10;切分+加元数据" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="932" y="647" width="128" height="54" as="geometry">
+            <mxRectangle width="128" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c95" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d79b00;strokeWidth=1.4;fontSize=9;fontColor=#d79b00;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c93" target="c94">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c96" value="Embedding&#10;批量向量化" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1074" y="647" width="128" height="54" as="geometry">
+            <mxRectangle width="128" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c97" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d79b00;strokeWidth=1.4;fontSize=9;fontColor=#d79b00;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c94" target="c96">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c98" value="Milvus&#10;写库+索引" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1216" y="647" width="128" height="54" as="geometry">
+            <mxRectangle width="128" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c99" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d79b00;strokeWidth=1.4;fontSize=9;fontColor=#d79b00;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c96" target="c98">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c100" value="Manifest&#10;版本/去重" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1358" y="647" width="128" height="54" as="geometry">
+            <mxRectangle width="128" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c101" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#d79b00;strokeWidth=1.4;fontSize=9;fontColor=#d79b00;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c98" target="c100">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c102" value="&lt;b&gt;工程要点&lt;/b&gt;：&lt;br&gt;• 每个 chunk 带 source / title / section / page 与 content_hash&lt;br&gt;• 用 content_hash 去重；用 manifest（文件名+修改时间+embedding 版本）做增量与幂等&lt;br&gt;• 先小批量（100 篇）跑通再全量；失败可断点续跑&lt;br&gt;• PDF 表格与扫描页要单独处理（OCR）" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="790" y="711" width="740" height="88" as="geometry">
+            <mxRectangle width="740" height="88" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c103" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="820" width="1500" height="258" as="geometry">
+            <mxRectangle width="1500" height="258" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c104" value="⑥  先自建评估，再谈优化" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="820" width="1500" height="28" as="geometry">
+            <mxRectangle width="1500" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c105" value="&lt;b&gt;固定 query 集&lt;/b&gt;&lt;br&gt;30~100 条，覆盖事实/多跳/口语" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="876" width="240" height="64" as="geometry">
+            <mxRectangle width="240" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c106" value="&lt;b&gt;检索指标&lt;/b&gt;&lt;br&gt;Hit@5 / Recall@20 / MRR（可先不用 LLM）" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="876" width="260" height="64" as="geometry">
+            <mxRectangle width="260" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c107" value="&lt;b&gt;回答指标&lt;/b&gt;&lt;br&gt;LLM-as-judge：正确性 / 忠实度 / 引用是否支持" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="650" y="876" width="280" height="64" as="geometry">
+            <mxRectangle width="280" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c108" value="&lt;b&gt;对比实验&lt;/b&gt;&lt;br&gt;切分方案 A/B、embedder A/B、加不加 rerank" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="990" y="876" width="280" height="64" as="geometry">
+            <mxRectangle width="280" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c109" value="&lt;b&gt;回归与门禁&lt;/b&gt;&lt;br&gt;每次改动重跑同一批，指标不能掉" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="990" y="966" width="280" height="54" as="geometry">
+            <mxRectangle width="280" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c110" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.4;fontSize=9;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c105" target="c106">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c111" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.4;fontSize=9;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c106" target="c107">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c112" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#1f3864;strokeWidth=1.4;fontSize=9;fontColor=#1f3864;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c107" target="c108">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c113" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#666666;strokeWidth=1.4;fontSize=9;fontColor=#666666;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c108" target="c109">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c114" value="# 最小可实现：先只算检索命中&lt;br&gt;hits = [any(ref in d.metadata[&#x27;id&#x27;] for d in vs.similarity_search(q, k=5))&lt;br&gt;        for q, ref in gold]&lt;br&gt;hit_at_5 = sum(hits) / len(hits)" style="rounded=1;fillColor=#fbfbf9;strokeColor=#1f3864;fontSize=8;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="330" y="966" width="620" height="66" as="geometry">
+            <mxRectangle width="620" height="66" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c115" value="&lt;b&gt;顺序&lt;/b&gt;：检索指标（便宜、稳定）先做，回答质量（LLM-as-judge 贵、有波动）后做；有了第 4 页的 LangSmith 数据集，这两套指标就能自动化。" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1046" width="1480" height="26" as="geometry">
+            <mxRectangle width="1480" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c116" value="&lt;b&gt;RAG 进阶：切分 → Embedding 选型 → 混合检索与 Rerank → 拼接技巧 → 离线建库 → 自建评估&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=15;fontColor=#ffffff;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="16" width="1500" height="42" as="geometry">
+            <mxRectangle width="1500" height="42" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c117" value="验收：同一批 30 条 query 的 Hit@5 / MRR 有前后对比；每个改动都能说清「为什么变好」" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="62" width="1500" height="26" as="geometry">
+            <mxRectangle width="1500" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c118" value="" style="rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c119" value="基础" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c120" value="" style="rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c121" value="本阶段要做" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1267" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c122" value="" style="rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c123" value="易错点" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1417" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c124" value="" style="rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c125" value="数据" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1567" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c126" value="阶段一已完成：LangChain 基础(模型/Prompt/记忆) · 工具调用(bind_tools/tool_calls) · LangGraph 核心(State/Node/Edge/ConditionalEdge/MemorySaver) · FastAPI+SSE · RAG+Milvus，本页为其后的进阶准备" style="rounded=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="92" width="1500" height="24" as="geometry">
+            <mxRectangle width="1500" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

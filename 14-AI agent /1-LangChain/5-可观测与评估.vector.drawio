@@ -1,0 +1,343 @@
+<mxfile host="embed.diagrams.net" agent="dsh" version="24.7.17">
+  <diagram id="obs" name="4 可观测与评估">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1540" pageHeight="1120" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c10" value="&lt;b&gt;可观测与评估：LangSmith 追踪 → 自建 tracing → 数据集与自动评估&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=15;fontColor=#ffffff;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="16" width="1500" height="42" as="geometry">
+            <mxRectangle width="1500" height="42" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c11" value="验收：任意一次线上问题能在 3 分钟内定位到「哪个节点 / 哪次 LLM 调用 / 命中了哪些 chunk」" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="62" width="1500" height="26" as="geometry">
+            <mxRectangle width="1500" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c12" value="" style="rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c13" value="本阶段要做" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c14" value="" style="rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c15" value="要点" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1267" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c16" value="" style="rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c17" value="注意" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1417" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c18" value="" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=7.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c19" value="对比" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1567" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c20" value="阶段一已完成：LangChain 基础(模型/Prompt/记忆) · 工具调用(bind_tools/tool_calls) · LangGraph 核心(State/Node/Edge/ConditionalEdge/MemorySaver) · FastAPI+SSE · RAG+Milvus，本页为其后的进阶准备" style="rounded=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="92" width="1500" height="24" as="geometry">
+            <mxRectangle width="1500" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c21" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="128" width="1500" height="300" as="geometry">
+            <mxRectangle width="1500" height="300" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c22" value="①  LangSmith 追踪：每一步 tool_call 的输入输出" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="128" width="1500" height="28" as="geometry">
+            <mxRectangle width="1500" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c23" value="&lt;b&gt;开启追踪&lt;/b&gt;&lt;br&gt;LANGCHAIN_TRACING_V2=true&lt;br&gt;LANGCHAIN_API_KEY=...&lt;br&gt;LANGCHAIN_PROJECT=xxx" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="184" width="240" height="64" as="geometry">
+            <mxRectangle width="240" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c24" value="&lt;b&gt;Run 树&lt;/b&gt;&lt;br&gt;graph invoke ▸ 节点 ▸ LLM ▸ tool&lt;br&gt;子图/子 Agent 自动展开" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="330" y="184" width="260" height="64" as="geometry">
+            <mxRectangle width="260" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c25" value="&lt;b&gt;看什么&lt;/b&gt;&lt;br&gt;输入输出 · 延迟 · Token · 错误&lt;br&gt;命中的 chunk · 实际 prompt" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="650" y="184" width="270" height="64" as="geometry">
+            <mxRectangle width="270" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c26" value="&lt;b&gt;怎么用&lt;/b&gt;&lt;br&gt;定位慢/贵/错 → 加数据集&lt;br&gt;把坏 case 一键转成评估样例" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="184" width="280" height="64" as="geometry">
+            <mxRectangle width="280" height="64" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#9673a6;strokeWidth=1.4;fontSize=9;fontColor=#9673a6;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c23" target="c24">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#9673a6;strokeWidth=1.4;fontSize=9;fontColor=#9673a6;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c24" target="c25">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#9673a6;strokeWidth=1.4;fontSize=9;fontColor=#9673a6;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c25" target="c26">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c30" value="&lt;b&gt;代价&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="268" width="80" height="46" as="geometry">
+            <mxRectangle width="80" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c31" value="LangSmith 是云端（有自托管企业版）；数据出境/合规敏感时改用 Langfuse 或自建（OpenTelemetry）" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="110" y="268" width="660" height="46" as="geometry">
+            <mxRectangle width="660" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c32" value="&lt;b&gt;命名&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="790" y="268" width="80" height="46" as="geometry">
+            <mxRectangle width="80" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c33" value="给 run 加 name / tags / metadata（user_id、thread_id、知识库版本），否则 trace 一堆分不清" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="870" y="268" width="660" height="46" as="geometry">
+            <mxRectangle width="660" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c34" value="&lt;b&gt;常见问题&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="324" width="80" height="46" as="geometry">
+            <mxRectangle width="80" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c35" value="看到一次请求几十个 LLM 调用：多半是 Agent 循环没收住 → 用 ModelCallLimit 或限制最大轮次" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="110" y="324" width="660" height="46" as="geometry">
+            <mxRectangle width="660" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c36" value="&lt;b&gt;可以对比&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="790" y="324" width="80" height="46" as="geometry">
+            <mxRectangle width="80" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c37" value="两个 prompt/两个模型各跑一批 → 在 LangSmith 里并排看实验（experiments）" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="870" y="324" width="660" height="46" as="geometry">
+            <mxRectangle width="660" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c38" value="&lt;b&gt;隐私&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="380" width="80" height="46" as="geometry">
+            <mxRectangle width="80" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c39" value="别把用户原文直接打进 trace 就不管：配置脱敏，或只记录 hash / 结构化摘要" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="110" y="380" width="660" height="46" as="geometry">
+            <mxRectangle width="660" height="46" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c40" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="440" width="700" height="300" as="geometry">
+            <mxRectangle width="700" height="300" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c41" value="②  自建 tracing + logging：记录完整链路" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="440" width="700" height="28" as="geometry">
+            <mxRectangle width="700" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c42" value="&lt;b&gt;请求层&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="476" width="110" height="36" as="geometry">
+            <mxRectangle width="110" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c43" value="request_id / thread_id / user_id / trace_id（贯穿到日志与 trace）" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="140" y="476" width="570" height="36" as="geometry">
+            <mxRectangle width="570" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c44" value="&lt;b&gt;每步节点&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="520" width="110" height="36" as="geometry">
+            <mxRectangle width="110" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c45" value="节点名、入参摘要、出参摘要、耗时、重试次数、是否中断" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="140" y="520" width="570" height="36" as="geometry">
+            <mxRectangle width="570" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c46" value="&lt;b&gt;每次 LLM&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="564" width="110" height="36" as="geometry">
+            <mxRectangle width="110" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c47" value="模型名、温度、prompt 的 hash 与 token 数、输出摘要、费用估算" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="140" y="564" width="570" height="36" as="geometry">
+            <mxRectangle width="570" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c48" value="&lt;b&gt;每次检索&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="608" width="110" height="36" as="geometry">
+            <mxRectangle width="110" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c49" value="query（改写后）、召回 id 与分数、融合方式、rerank 前后排名变化" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="140" y="608" width="570" height="36" as="geometry">
+            <mxRectangle width="570" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c50" value="&lt;b&gt;每次工具&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="652" width="110" height="36" as="geometry">
+            <mxRectangle width="110" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c51" value="tool 名、参数、返回值摘要、异常栈、超时标记" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="140" y="652" width="570" height="36" as="geometry">
+            <mxRectangle width="570" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c52" value="&lt;b&gt;落盘与查询&lt;/b&gt;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="696" width="110" height="36" as="geometry">
+            <mxRectangle width="110" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c53" value="结构化 JSON（ELK/Loki）或 SQLite；按 trace_id 串起一条链" style="rounded=1;fillColor=#fbfbf9;strokeColor=#9673a6;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="140" y="696" width="570" height="36" as="geometry">
+            <mxRectangle width="570" height="36" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c54" value="最小实现：一个 @trace 装饰器 + contextvar 传递 trace_id，把每次调用写成 JSON 行；先保证「能串起来」，再谈可视化。" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="746" width="680" height="26" as="geometry">
+            <mxRectangle width="680" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c55" value="" style="rounded=0;fillColor=#ffffff;strokeColor=#9aa6b2;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="740" y="440" width="780" height="300" as="geometry">
+            <mxRectangle width="780" height="300" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c56" value="③  自动评估：一批 query 自动跑，算命中率 / 回答质量" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="740" y="440" width="780" height="28" as="geometry">
+            <mxRectangle width="780" height="28" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c57" value="&lt;b&gt;数据集&lt;/b&gt;&lt;br&gt;LangSmith dataset&lt;br&gt;或 本地 JSONL" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="750" y="476" width="170" height="54" as="geometry">
+            <mxRectangle width="170" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c58" value="&lt;b&gt;target()&lt;/b&gt;&lt;br&gt;调你的 RAG / Agent&lt;br&gt;返回 outputs" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="940" y="476" width="170" height="54" as="geometry">
+            <mxRectangle width="170" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c59" value="&lt;b&gt;evaluators&lt;/b&gt;&lt;br&gt;命中率 / 引用 / LLM-judge" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="476" width="180" height="54" as="geometry">
+            <mxRectangle width="180" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c60" value="&lt;b&gt;experiment&lt;/b&gt;&lt;br&gt;分数表 + 对比&lt;br&gt;不合格即阻断上线" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="476" width="180" height="54" as="geometry">
+            <mxRectangle width="180" height="54" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#666666;strokeWidth=1.4;fontSize=9;fontColor=#666666;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c57" target="c58">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c62" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#666666;strokeWidth=1.4;fontSize=9;fontColor=#666666;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c58" target="c59">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#666666;strokeWidth=1.4;fontSize=9;fontColor=#666666;labelBackgroundColor=#ffffff;endArrow=block;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c59" target="c60">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="c64" value="from langsmith import Client&lt;br&gt;client = Client()&lt;br&gt;results = client.evaluate(&lt;br&gt;    lambda inputs: {&quot;answer&quot;: rag(answer=my_rag(inputs[&quot;q&quot;]))},&lt;br&gt;    data=&quot;my-rag-golden-v1&quot;,   # 数据集名&lt;br&gt;    evaluators=[hit_at_5, citation_ok, llm_judge],&lt;br&gt;    experiment_prefix=&quot;v2-bge-m3+rerank&quot;)" style="rounded=1;fillColor=#fbfbf9;strokeColor=#1f3864;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="750" y="542" width="400" height="92" as="geometry">
+            <mxRectangle width="400" height="92" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c65" value="&lt;b&gt;指标分层&lt;/b&gt;&lt;br&gt;检索层：Hit@5 / Recall@20 / MRR（不需要 LLM，便宜稳定）&lt;br&gt;生成层：正确性 / 忠实度（是否只依据资料）/ 引用是否支持结论&lt;br&gt;体验层：延迟 p95、Token 成本、用户点赞率" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=8.5;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="542" width="340" height="92" as="geometry">
+            <mxRectangle width="340" height="92" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c66" value="&lt;b&gt;经验值&lt;/b&gt;：检索 20 条 → 精排 5 条喂给模型；如果 Hit@5 已经 90%+，再堆 rerank 收益很小，该去改切分或 embedder 了。先用小样本（30 条）跑通闭环，再扩到 100+。" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="750" y="644" width="760" height="44" as="geometry">
+            <mxRectangle width="760" height="44" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c67" value="DoD：同一个 query 集上，任意改动（切分/embedder/rerank/prompt）都能用一条命令跑出对比报告，并把「坏 case」沉淀进数据集。" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="750" y="696" width="760" height="30" as="geometry">
+            <mxRectangle width="760" height="30" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c68" value="&lt;b&gt;可观测与评估：LangSmith 追踪 → 自建 tracing → 数据集与自动评估&lt;/b&gt;" style="rounded=0;fillColor=#1f3864;strokeColor=#1f3864;fontSize=15;fontColor=#ffffff;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=top;spacingLeft=10;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="16" width="1500" height="42" as="geometry">
+            <mxRectangle width="1500" height="42" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c69" value="验收：任意一次线上问题能在 3 分钟内定位到「哪个节点 / 哪次 LLM 调用 / 命中了哪些 chunk」" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="62" width="1500" height="26" as="geometry">
+            <mxRectangle width="1500" height="26" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c70" value="" style="rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c71" value="本阶段要做" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c72" value="" style="rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c73" value="要点" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1267" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c74" value="" style="rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c75" value="注意" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1417" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c76" value="" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#1a1a1a;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="66" width="14" height="12" as="geometry">
+            <mxRectangle width="14" height="12" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c77" value="对比" style="rounded=1;fillColor=#ffffff;strokeColor=#ffffff;fontSize=9;fontColor=#444444;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1567" y="62" width="130" height="20" as="geometry">
+            <mxRectangle width="130" height="20" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c78" value="阶段一已完成：LangChain 基础(模型/Prompt/记忆) · 工具调用(bind_tools/tool_calls) · LangGraph 核心(State/Node/Edge/ConditionalEdge/MemorySaver) · FastAPI+SSE · RAG+Milvus，本页为其后的进阶准备" style="rounded=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=10;fontColor=#333333;arcSize=8;spacing=6;html=1;whiteSpace=nowrap;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="92" width="1500" height="24" as="geometry">
+            <mxRectangle width="1500" height="24" as="alternateBounds"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
