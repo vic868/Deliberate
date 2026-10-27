@@ -11,12 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "drawio-file-view",
               "state": {
-                "file": "14-AI agent /1-LangChain/1-LangChain-知识地图.png"
+                "file": "14-AI agent /1-LangChain/1-LangChain进阶.drawio"
               },
-              "icon": "lucide-image",
-              "title": "1-LangChain-知识地图"
+              "icon": "pencil-ruler",
+              "title": "1-LangChain进阶"
             }
           }
         ]
@@ -259,6 +259,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
+    "14-AI agent /1-LangChain/1-LangChain进阶.drawio",
+    "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
+    "14-AI agent /1-LangChain/1-LangChain-知识地图.png",
     "14-AI agent /1-LangChain/5-可观测与评估.png",
     "14-AI agent /1-LangChain/4-生产化改造.png",
     "14-AI agent /1-LangChain/3-RAG进阶.png",
@@ -267,13 +271,9 @@
     "14-AI agent /1-LangChain/4-生产化改造.vector.drawio",
     "14-AI agent /1-LangChain/3-RAG进阶.vector.drawio",
     "14-AI agent /1-LangChain/2-LangGraph进阶.vector.drawio",
-    "14-AI agent /1-LangChain/1-LangChain进阶.drawio",
     "14-AI agent /1-LangChain/2-LangChain学习地图.md",
-    "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
-    "14-AI agent /1-LangChain/1-LangChain-知识地图.png",
     "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent /1-LangChain/0-LangChain.drawio",
-    "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
     "6-ai/AI 学习规划/Transformer 面试题/13-Decoder和Encoder的多头自注意力相同吗.md",
     "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "6-ai/Agent 面试八站作战地图.drawio",
@@ -304,7 +304,6 @@
     "11-高并发高可用/高并发系统设计-总览.png",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",
-    "7-分布式/0-分布式事务/分布式事务-总览.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
