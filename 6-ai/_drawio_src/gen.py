@@ -57,7 +57,7 @@ p1.text("一条主线：从「它是什么」一路推到「30 秒讲清我的�
 sta = [
     ("第 1 站  概念与边界", "Agent = 会调用工具的循环系统<br/>三判句定生死", "#dbeafe", "#2563eb"),
     ("第 2 站  架构五件套", "模型是大脑，Harness 是脊椎<br/>上线就崩多半是脊椎塌了", "#e0e7ff", "#4338ca"),
-    ("第 3 站  核心循环", "Thought 到 Action 到 Observation<br/>上下文在循环里累积", "#dcfce7", "#16a34a"),
+    ("第 3 站  核心循环", "Thought → Action → Observation<br/>上下文在循环里累积", "#dcfce7", "#16a34a"),
     ("第 4 站  工具与协议", "FC 是模型层能力，MCP 是生态层标准<br/>M×N 变 M+N", "#fef3c7", "#d97706"),
     ("第 5 站  推理范式", "ReAct 地基 / P&E 全局 / Reflexion 自审<br/>选型看能否预判步骤", "#fce7f3", "#db2777"),
     ("第 6 站  记忆与上下文", "三层记忆 + 四招压缩<br/>上下文越少越准", "#cffafe", "#0891b2"),
@@ -107,9 +107,9 @@ for i, (t, s) in enumerate(inner):
 p2.edge(llm, pln, label="决策")
 p2.edge(pln, inids[0], extra="exitX=0.5;exitY=1;entryX=0.5;entryY=0;", label="拆解")
 p2.edge(inids[2], tol, extra="exitX=0.5;exitY=0;entryX=0.5;entryY=1;", label="执行")
-p2.edge(inids[1], mem, extra="exitX=0.5;exitY=0;entryX=0.5;entryY=1;", label="读写")
+
 p2.edge(inids[3], inids[0], extra="exitX=0.5;exitY=1;entryX=0.5;entryY=1;", label="再来一轮", dashed=1)
-p2.edge(mem, inids[1], extra="exitX=1;exitY=0.5;entryX=1;entryY=0.5;", label="", dashed=1, arrow="none", color="#94a3b8")
+
 
 p2.text("讲架构的话术：按「大脑 / 脊椎」的层级讲，比干巴巴报组件清单高一个段位。", 62, 560, 1200, 34, fs=16, bold=0, color="#334155")
 p2.box("常见坑｜<b>只换更强模型，不修脊椎</b>：没有步数上限、没有循环检测、没有超时熔断、没有结构化错误回传。",
@@ -126,7 +126,7 @@ wall = p3.box("<b>上下文墙</b><br/><br/>每轮 Observation 都追加<br/>下
               470, 150, 230, 364, fill="#fef9c3", stroke="#ca8a04", fs=13)
 p3.edge(th, ac, extra="exitX=0.5;exitY=1;entryX=0.5;entryY=0;")
 p3.edge(ac, ob, extra="exitX=0.5;exitY=1;entryX=0.5;entryY=0;")
-p3.edge(ob, th, extra="exitX=0;exitY=0.5;entryX=0;entryY=0.5;", label="带着记忆再来一轮")
+p3.edge(ob, th, extra="exitX=0;exitY=0.5;entryX=0;entryY=0.5;", label="\u518d\u6765\u4e00\u8f6e")
 p3.edge(ob, wall, dashed=1, color="#ca8a04", arrow="none")
 p3.edge(wall, th, dashed=1, color="#ca8a04", extra="exitX=0;exitY=0.5;entryX=1;entryY=0.5;", label="")
 
@@ -146,11 +146,11 @@ def mini(title, x0, y0, w=360, h=250):
     p3.box("", x0, y0 + 30, w, h - 30, fill="#f8fafc", stroke="#cbd5e1", fs=12)
 
 # 1) parallel
-mini("① 并行：无依赖", 60, 630)
-m1 = p3.box("模型", 190, 668, 100, 36, fill="#dbeafe", stroke="#2563eb", fs=12)
-t1 = [p3.box(nm, 70 + i * 112, 740, 96, 34, fill="#dcfce7", stroke="#16a34a", fs=11)
-      for i, nm in enumerate(["工具A", "工具B", "工具C"])]
-s1 = p3.box("汇总", 190, 806, 100, 34, fill="#fef3c7", stroke="#d97706", fs=12)
+mini("\u2460 \u5e76\u884c\uff1a\u65e0\u4f9d\u8d56", 60, 630)
+m1 = p3.box("\u6a21\u578b", 78, 736, 90, 40, fill="#dbeafe", stroke="#2563eb", fs=12)
+t1 = [p3.box(nm, 196, 690 + i * 62, 100, 40, fill="#dcfce7", stroke="#16a34a", fs=11)
+      for i, nm in enumerate(["\u5de5\u5177A", "\u5de5\u5177B", "\u5de5\u5177C"])]
+s1 = p3.box("\u6c47\u603b", 322, 736, 84, 40, fill="#fef3c7", stroke="#d97706", fs=12)
 for t in t1:
     p3.edge(m1, t, width=1.5)
     p3.edge(t, s1, width=1.5)
@@ -172,8 +172,8 @@ dd = p3.diamond("结果？", 960, 718, 110, 64, fs=11)
 da = p3.box("工具A", 876, 806, 100, 34, fill="#dcfce7", stroke="#16a34a", fs=11)
 db = p3.box("工具B", 1052, 806, 100, 34, fill="#dcfce7", stroke="#16a34a", fs=11)
 p3.edge(d1, dd, width=1.5)
-p3.edge(dd, da, label="分支1", width=1.5)
-p3.edge(dd, db, label="分支2", width=1.5)
+p3.edge(dd, da, width=1.5)
+p3.edge(dd, db, width=1.5)
 
 # 4) nested
 mini("④ 嵌套：工具内部借工具", 1260, 630)
@@ -189,7 +189,7 @@ p4.text("第 5 站：三种推理范式与选型决策", 60, 22, 1200, 42, fs=26
 
 def paradigm(x, title, color, fill, bullets):
     p4.box(f"<b>{title}</b>", x, 110, 400, 56, fill=color, stroke=fill, fs=17)
-    p4.box(bullets, x, 176, 400, 200, fill="#ffffff", stroke=fill, fs=13, bold=0, valign="top")
+    p4.box(bullets, x, 166, 400, 214, fill="#ffffff", stroke=fill, fs=13, bold=0, valign="top")
 
 paradigm(60, "ReAct", "#dbeafe", "#2563eb",
          "<b>边走边看</b>：走一步看一步<br/>· Thought / Action / Observation 交替<br/>· 适应未知环境，纠错快<br/>· 弱点：局部贪心，每步只看眼前最优<br/>· 三道保险：步数上限 / 循环检测 / 超时熔断")
@@ -213,13 +213,14 @@ keep = p4.box("就到这里", 1020, 570, 240, 70, fill="#f1f5f9", stroke="#64748
 p4.edge(q2, add, label="大")
 p4.edge(q2, keep, label="不大")
 
-simple = p4.box("任务很简单（比如查个股价）<br/><b>别上规划，纯浪费时间和 token</b>",
-                1300, 470, 340, 100, fill="#fef3c7", stroke="#d97706", fs=13)
+simple = p4.box("<b>例外：简单任务</b><br/>查个股价就别拆五步<br/>纯浪费时间和 token",
+                1030, 700, 300, 90, fill="#fef3c7", stroke="#d97706", fs=13)
 p4.box("<b>工业界真实做法</b><br/>先用 ReAct 跑通业务 → 看步数 / 延迟 / 出错率的数据 → 按需升级到 P&amp;E 或叠加 Reflexion。",
        60, 700, 900, 90, fill="#f0fdf4", stroke="#16a34a", fs=15, bold=0)
 p4.box("<b>一句话切开 ReAct 与 CoT</b><br/>CoT 只在脑子里想；ReAct 每做一步就收回一条真实观察。<br/>区别在于<b>是否引入外部环境反馈</b>。",
        60, 820, 900, 90, fill="#eff6ff", stroke="#2563eb", fs=15, bold=0)
-p4.text("代价必须主动说：无限反思 = 无限烧钱。", 1000, 830, 600, 40, fs=15, bold=0, color="#b91c1c")
+p4.box("<b>代价必须主动说</b><br/>Reflexion 每轮多 1~3 次调用<br/>无限反思 = 无限烧钱，计数器必须封顶",
+       1360, 690, 300, 110, fill="#fdf2f8", stroke="#db2777", fs=13, bold=0)
 
 # ============ Page 5: 生产化 ============
 p5 = Page("05-生产化兜底与安全")
@@ -260,10 +261,10 @@ for i, (nm, sym, fix) in enumerate(deaths):
     p5.box(f"<b>{nm}</b>：{sym}", 80, 680 + i * 66, 400, 56, fill="#fef2f2", stroke="#f87171", fs=13)
     p5.box(fix, 500, 680 + i * 66, 360, 56, fill="#ffffff", stroke="#cbd5e1", fs=13, bold=0)
 
-p5.text("评测三件套：真实日志数据集 → 分层指标（含错误分级）→ golden set 回归，改动即跑，掉阈值回滚。",
-        900, 690, 720, 70, fs=14, bold=0, color="#334155")
-p5.text("上线不是终点：bad case → 分析 → 定位 → 优化 → 回归验证。稳定是迭代出来的。",
-        900, 780, 720, 70, fs=14, bold=0, color="#334155")
+p5.box("<b>评测三件套</b><br/>真实日志数据集 → 分层指标（错误按严重级别分桶）→ golden set 回归<br/>改动即跑，掉阈值就回滚",
+       900, 660, 720, 90, fill="#f8fafc", stroke="#94a3b8", fs=13, bold=0)
+p5.box("<b>上线不是终点</b><br/>bad case → 分析 → 定位 → 优化 → 回归验证<br/>稳定是迭代出来的，不是一次设计出来的",
+       900, 770, 720, 90, fill="#f8fafc", stroke="#94a3b8", fs=13, bold=0)
 
 pages = [p1, p2, p3, p4, p5]
 out = '<mxfile host="app.diagrams.net" type="device">\n' + "\n".join(p.xml() for p in pages) + "\n</mxfile>\n"
