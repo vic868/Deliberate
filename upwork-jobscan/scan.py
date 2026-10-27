@@ -194,6 +194,25 @@ def hours_ago(posted):
     return 9999.0
 
 
+def pay_ok(job):
+    """按你清单第 5 条：时薪上限低于 $25 直接丢掉"""
+    import re as _re
+    m = _re.search(r"\$([\d.,]+)\s*-\s*\$([\d.,]+)", job["budget"] or "")
+    if m:
+        try:
+            upper = float(m.group(2).replace(",", ""))
+        except ValueError:
+            return True
+        return upper >= 25
+    m = _re.search(r"\$([\d.,]+)", job["budget"] or "")
+    if m:
+        try:
+            amt = float(m.group(1).replace(",", ""))
+        except ValueError:
+            return True
+        return amt >= 100          # 固定价低于 $100 的小单不值得花 Connects
+    return True
+
 def score(job):
     title = job["title"].lower()
     blob = (job["title"] + " " + job["desc"]).lower()
@@ -274,6 +293,8 @@ def main():
     for j in found.values():
         if not args.all and hours_ago(j["posted"]) > args.hours:
             continue
+        if not pay_ok(j):
+            continue
         s = score(j)
         if s < 0:
             continue
@@ -291,14 +312,16 @@ def main():
         f.write(f"# Upwork 新单 {today} {time.strftime('%H:%M')}\n\n")
         f.write(f"关键词 {len(KEYWORDS)} 个 · 抓到 {len(found)} 条 · "
                 f"匹配 {len(fresh)} 条 · 其中新单 {len(new)} 条\n\n")
-        for j in (new or fresh):
-            f.write(f"## [{j['score']}分] {j['title']}\n\n")
+        shown = new[:5] + [x for x in fresh if x not in new][:8]
+        for j in shown:
+            tag = "【新】" if j in new else ""
+            f.write(f"## {tag}[{j['score']}分] {j['title']}\n\n")
             f.write(f"- 发布：{j['posted']}　级别：{j['level']}　类型：{j['budget']} {j['est']}\n")
             f.write(f"- 链接：{j['href']}\n")
             f.write(f"- 摘要：{j['desc'][:300]}\n\n")
 
     log(f"\n匹配 {len(fresh)} 条，其中新单 {len(new)} 条 → {path}")
-    for j in (new or fresh)[:10]:
+    for j in (new + [x for x in fresh if x not in new])[:10]:
         log(f"  [{j['score']:>2}] {j['posted']:<22} {j['title'][:60]}")
         log(f"       {j['budget']} {j['est']}")
     return 0
