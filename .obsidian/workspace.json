@@ -11,14 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "drawio-file-view",
               "state": {
-                "file": "6-ai/Agent 面试八站图文精编.md",
-                "mode": "preview",
-                "source": true
+                "file": "6-ai/Agent 面试八站作战地图.drawio"
               },
-              "icon": "lucide-file",
-              "title": "Agent 面试八站图文精编"
+              "icon": "pencil-ruler",
+              "title": "Agent 面试八站作战地图"
             }
           }
         ]
@@ -261,10 +259,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/Agent 面试八站作战地图.drawio",
-    "6-ai/Agent 面试八站图文精编.md",
-    "服务器巡检-192.168.0.106/deploy/argocd/部署记录-Argo CD.md",
     "6-ai/Agent 面试总挂？8 站打通关.md",
+    "14-AI agent /别再堆功能了！Pi Agent用4个工具斩获2万Star，极简Agent框架实战全解析.md",
+    "6-ai/Agent 面试八站图文精编.md",
+    "6-ai/Agent 面试八站作战地图.drawio",
+    "服务器巡检-192.168.0.106/deploy/argocd/部署记录-Argo CD.md",
     "6-ai/_drawio_src/gen.py",
     "6-ai/_drawio_src",
     "6-ai/01-spring ai vs langchan.md",
