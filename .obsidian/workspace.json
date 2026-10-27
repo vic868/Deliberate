@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "14-AI agent /1-LangChain/1-LangChain进阶.drawio"
+                "file": "14-AI agent /1-LangChain/2-LangChain学习地图.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "1-LangChain进阶"
+              "icon": "lucide-file",
+              "title": "2-LangChain学习地图"
             }
           }
         ]
@@ -81,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.1953125
+    "width": 348.625
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -259,8 +261,8 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent /1-LangChain/1-LangChain进阶.drawio",
+    "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
     "14-AI agent /1-LangChain/1-LangChain-知识地图.png",
     "14-AI agent /1-LangChain/5-可观测与评估.png",
