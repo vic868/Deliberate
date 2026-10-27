@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/01-spring ai vs langchan.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "01-spring ai vs langchan"
             }
           }
         ]
@@ -257,6 +261,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/01-spring ai vs langchan.md",
     "面试准备/简历/09-简历终稿-项目经理版.md",
     "upwork-jobscan/runs/2026-10-27.md",
     "Upwork-提案模板.md",
@@ -292,7 +297,6 @@
     "6-ai/AI 学习规划/12周AI应用开发路线/0-路线总览.drawio",
     "6-ai/AI 学习规划/环境搭建/06-环境速查卡.md",
     "6-ai/AI 学习规划/环境搭建/05-常见问题排查.md",
-    "6-ai/AI 学习规划/环境搭建/04-AI 依赖清单与镜像源.md",
     "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
     "14-AI agent /1-LangChain/1-LangChain-知识地图.png",
