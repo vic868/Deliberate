@@ -36,7 +36,7 @@ class Page:
     def edge(self, src, tgt, extra="", label="", dashed=0, color="#334155", width=2, arrow="block"):
         i = self._id("e")
         style = (f"edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth={width};strokeColor={color};"
-                 f"endArrow={arrow};endFill=1;dashed={dashed};fontSize=12;fontColor=#475569;{extra}")
+                 f"endArrow={arrow};endFill=1;dashed={dashed};fontSize=12;fontColor=#475569;horizontal=1;labelBackgroundColor=#ffffff;{extra}")
         self.cells.append(
             f'<mxCell id="{i}" value="{esc(label)}" style="{style}" edge="1" parent="1" source="{src}" target="{tgt}">'
             f'<mxGeometry relative="1" as="geometry"/></mxCell>')
@@ -94,7 +94,7 @@ pln = p2.box("<b>Planning 规划</b><br/>任务拆解 / 路径选择 / 重规划
 tol = p2.box("<b>Tools 工具</b><br/>与真实世界交互", 950, 120, 290, 100, fill="#fef3c7", stroke="#d97706", fs=15)
 mem = p2.box("<b>Memory 记忆</b><br/>短期上下文 / 长期资产", 1290, 120, 290, 100, fill="#fef3c7", stroke="#d97706", fs=15)
 p2.text("大脑层：决定「想什么」", 190, 228, 700, 26, fs=13, bold=0, color="#2563eb")
-p2.text("能力层：决定「能和什么交互」", 950, 228, 700, 26, fs=13, bold=0, color="#b45309")
+p2.text("能力层：决定「能和什么交互」", 1130, 228, 520, 26, fs=13, bold=0, color="#b45309")
 
 p2.text("脊椎：Harness 运行时 —— 最容易被漏掉，也是「demo 能跑、上线就崩」的主因", 60, 268, 1300, 32, fs=17, color="#b91c1c")
 p2.box("", 60, 306, 1520, 214, fill="#fff5f5", stroke="#dc2626", fs=14)
