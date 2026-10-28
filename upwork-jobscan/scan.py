@@ -266,7 +266,16 @@ def main():
                 job.goto(url, wait=12)
                 raw = job.js(TILE_JS) or ""
             except Exception as e:
-                log(f"  ! {kw} 跳过（{type(e).__name__}）")
+                log(f"  ! {kw} 跳过（{type(e).__name__}），重连中…")
+                try:
+                    job = CDP(connect())
+                except Exception as e2:
+                    log(f"  !! 重连失败（{type(e2).__name__}），3 秒后重试")
+                    time.sleep(3)
+                    try:
+                        job = CDP(connect())
+                    except Exception:
+                        pass
                 continue
             for chunk in raw.split("\u0001"):
                 if not chunk.strip():
