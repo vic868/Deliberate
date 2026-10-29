@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14-AI agent /3-Milvus/3-操作指南.md",
+                "file": "14-AI agent /3-Milvus/4-AI中的用法.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "3-操作指南"
+              "title": "4-AI中的用法"
             }
           }
         ],
@@ -276,10 +276,13 @@
   },
   "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
+    "14-AI agent /3-Milvus/3-操作指南.md",
+    "14-AI agent /LangChain4j/8-速查卡.md",
+    "14-AI agent /LangChain4j/7-选型对比与面试.md",
+    "14-AI agent /LangChain4j/6-SpringBoot集成.md",
     "14-AI agent /LangChain4j/5-Agent工具调用.md",
     "14-AI agent /LangChain4j/4-RAG.md",
     "14-AI agent /LangChain4j/0-LangChain4j-知识库索引.md",
-    "14-AI agent /3-Milvus/3-操作指南.md",
     "14-AI agent /LangChain4j/3-契约式开发.md",
     "14-AI agent /LangChain4j/2-核心概念.md",
     "14-AI agent /LangChain4j/1-LangChain4j-入门.md",
@@ -304,12 +307,10 @@
     "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/02-环境安装与依赖管理.md",
     "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/02-环境安装.md",
     "6-ai/AI 学习规划/01-提示词工程.md",
-    "upwork-jobscan/runs/2026-10-29.md",
     "14-AI agent /1-LangChain/3-RAG进阶.vector.drawio",
     "14-AI agent /1-LangChain/3-RAG进阶.png",
     "14-AI agent /1-LangChain/2-LangGraph进阶.vector.drawio",
     "14-AI agent /1-LangChain/2-LangGraph进阶.png",
-    "14-AI agent /1-LangChain/2-LangChain学习地图.md",
     "14-AI agent /1-LangChain/1-LangChain进阶.drawio",
     "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
@@ -318,7 +319,6 @@
     "14-AI agent /1-LangChain/4-生产化改造.png",
     "14-AI agent /1-LangChain/5-可观测与评估.vector.drawio",
     "14-AI agent /1-LangChain/1-LangChain-全景与8周路线.png",
-    "6-ai/AI 学习规划/Transformer 面试题/13-Decoder和Encoder的多头自注意力相同吗.md",
     "11-高并发高可用/高并发系统设计-总览.png",
     "2-redis/Redis-架构与面试-总览.png",
     "3-mq/2-Kafka/Kafka-架构与面试-总览.png",

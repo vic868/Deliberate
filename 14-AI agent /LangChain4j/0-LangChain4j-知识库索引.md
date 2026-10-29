@@ -122,7 +122,7 @@ flowchart LR
 | 工具调用循环、多会话记忆隔离、结构化输出行为 | 用 `ScriptedChatModel`（按脚本回放 `AiMessage` 的假模型）**真实跑过 AiServices 内部流程** ⭐ |
 | 切分 / Embedding / 向量检索 / 过滤器 | 用本地实现的 Embedding + 内存向量库**真实跑通** ⭐ |
 | 调真实大模型（DeepSeek / 通义 / Ollama） | ❌ **没跑**（本机没有可用 API Key），相关示例只保证编译通过 |
-| Spring Boot 自动装配 | ❌ **没起服务验证**（依赖已解析），以官方文档为准，文中标注 |
+| Spring Boot 自动装配（`@AiService` 变成 Bean、模型 Bean 名称、自动配置条件） | ✅ **真实启动 Spring 容器验证**（不调模型），见 [[6-SpringBoot集成#6. ⭐ 真实启动验证（踩坑实录）]] |
 
 > 这是本套笔记和"抄文档"的最大区别：**凡是能离线验证的框架行为，我都跑过并贴了输出**；没验证的明确标 ❌。
 
