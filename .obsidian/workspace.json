@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14-AI agent /3-Milvus/4-AI中的用法.md",
+                "file": "14-AI agent /LangChain4j/0-LangChain4j-知识库索引.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "4-AI中的用法"
+              "title": "0-LangChain4j-知识库索引"
             }
           }
         ],
@@ -276,13 +276,14 @@
   },
   "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
+    "14-AI agent /3-Milvus/4-AI中的用法.md",
+    "14-AI agent /LangChain4j/0-LangChain4j-知识库索引.md",
     "14-AI agent /3-Milvus/3-操作指南.md",
     "14-AI agent /LangChain4j/8-速查卡.md",
     "14-AI agent /LangChain4j/7-选型对比与面试.md",
     "14-AI agent /LangChain4j/6-SpringBoot集成.md",
     "14-AI agent /LangChain4j/5-Agent工具调用.md",
     "14-AI agent /LangChain4j/4-RAG.md",
-    "14-AI agent /LangChain4j/0-LangChain4j-知识库索引.md",
     "14-AI agent /LangChain4j/3-契约式开发.md",
     "14-AI agent /LangChain4j/2-核心概念.md",
     "14-AI agent /LangChain4j/1-LangChain4j-入门.md",
@@ -294,7 +295,6 @@
     "14-AI agent /3-Milvus/0-Milvus-AI知识库索引.md",
     "14-AI agent /2-spring ai/RuoYi-Spring-AI-面试题.md",
     "14-AI agent /3-Milvus/6-速查卡.md",
-    "14-AI agent /3-Milvus/4-AI中的用法.md",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "14-AI agent /2-spring ai/spring ai.drawio",
     "14-AI agent /3-Milvus/0-Milvus.drawio",
