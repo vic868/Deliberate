@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/04-工具调用与 Agent.md",
+                "file": "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/05-提示词模板与短期记忆.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-工具调用与 Agent"
+              "title": "05-提示词模板与短期记忆"
             }
           }
         ]
@@ -259,8 +259,9 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/04-工具调用与 Agent.md",
     "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/03-模型接入：init_chat_model 与多模型切换.md",
     "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/02-环境安装与依赖管理.md",
     "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/02-环境安装.md",
@@ -302,7 +303,6 @@
     "6-ai/AI 学习规划/12周AI应用开发路线/01-路线总览.md",
     "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/06-LangSmith：追踪、评估与运维.md",
     "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/05-提示词模板与短期记忆.md",
-    "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/04-工具调用与 Agent.md",
     "6-ai/AI 学习规划/图灵-AI 大模型/LangChain-1.3/README.md",
     "11-高并发高可用/高并发系统设计-总览.png",
     "2-redis/Redis-架构与面试-总览.png",
