@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14-AI agent /3-Milvus/5-避坑与排障.md",
-                "mode": "source",
+                "file": "14-AI agent /3-Milvus/1-基础介绍.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "5-避坑与排障"
+              "title": "1-基础介绍"
             }
           }
         ],
@@ -276,11 +276,11 @@
   },
   "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
+    "14-AI agent /3-Milvus/5-避坑与排障.md",
     "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
     "14-AI agent /3-Milvus/0-Milvus-AI知识库索引.md",
     "14-AI agent /2-spring ai/RuoYi-Spring-AI-面试题.md",
     "14-AI agent /3-Milvus/6-速查卡.md",
-    "14-AI agent /3-Milvus/5-避坑与排障.md",
     "14-AI agent /3-Milvus/4-AI中的用法.md",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "14-AI agent /2-spring ai/spring ai.drawio",
