@@ -109,15 +109,21 @@ dev.langchain4j
 | `langchain4j-spring-boot-starter` | **1.23.0-beta33** | 集成件仍是 beta 号 |
 | JDK 基线 | **17** | 1.x 需要 Java 17+，老项目 JDK 8/11 要先升 |
 
-### 4.2 1.0 改名：`ChatLanguageModel` → `ChatModel`（**实测确认**）
+### 4.2 改名：`ChatLanguageModel` → `ChatModel`（**精确是 `1.0.0-rc1`，非 1.0.0**）
+
+逐版本下载 `langchain4j-core` 用 `unzip -l` 查类是否存在（完整数据见 [[9-版本记录#3. ⭐ 用 jar 实测验证的关键改名（能省你半天）|9-版本记录 §3]]）：
 
 ```
-langchain4j-core 0.36.2 : dev/langchain4j/model/chat/ChatLanguageModel.class
-                          dev/langchain4j/model/chat/StreamingChatLanguageModel.class
-langchain4j-core 1.23.0 : dev/langchain4j/model/chat/ChatModel.class
-                          dev/langchain4j/model/chat/StreamingChatModel.class
-                          （旧的 ChatLanguageModel 已不存在）
+0.36.2        ChatLanguageModel.class                （0.x 时代的类名）
+1.0.0-alpha1  ChatLanguageModel.class
+1.0.0-beta3   ChatLanguageModel.class
+1.0.0-rc1     ChatModel.class                        ← 就在这一版切换
+1.23.0        ChatModel.class                        （ChatLanguageModel 已不存在）
 ```
+
+> [!warning] 别笼统说"1.0 改的名"
+> `1.0.0-alpha1 ~ 1.0.0-beta3`（2024-12 ~ 2025-04）**仍然是 `ChatLanguageModel`**。
+> 准确分界线是 **`1.0.0-rc1`（2025-05-02）**。
 
 **影响**：网上 2023~2024 年的大量教程、博客、甚至部分面试题写的 `ChatLanguageModel` / `model.generate(...)` 在 1.x 上**直接编译不过**。
 

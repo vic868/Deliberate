@@ -40,6 +40,7 @@ flowchart LR
     E --> F
     F --> G["7-选型对比与面试<br/>vs Spring AI / 考题"]
     G -.-> H["8-速查卡"]
+    I["9-版本记录<br/>时间线 / 升级"] -.-> B
 ```
 
 | 目标 | 读什么 |
@@ -51,6 +52,7 @@ flowchart LR
 | 接进现有 Spring Boot 项目 | [[6-SpringBoot集成]] |
 | 面试怎么讲 / 和 Spring AI 怎么选 | [[7-选型对比与面试]] |
 | 随手查 API | [[8-速查卡]] |
+| 版本选型 / 升级 / 哪个版本有坑 | [[9-版本记录]] |
 
 ---
 
@@ -60,7 +62,7 @@ flowchart LR
 - 一句话定位：**Java 版的 LangChain，但设计上是"声明式 AI Service"**
 - 与 Spring AI / Python LangChain / LangGraph 的边界
 - 生态包地图（`langchain4j`、`-core`、各种 `-open-ai`、`-ollama`、社区 `langchain4j-*`、Spring Boot starter）
-- **版本关键节点**：`ChatLanguageModel → ChatModel`（1.0 改的，0.x 教程不能直接抄）
+- **版本关键节点**：`ChatLanguageModel → ChatModel`（精确分界 **`1.0.0-rc1`**，0.x 教程不能直接抄）→ 详见 [[9-版本记录]]
 - 第一个可跑的最小例子（离线也能跑的思路）
 
 ### [[2-核心概念]] — 五件套
@@ -108,6 +110,14 @@ flowchart LR
 - **面试答题骨架 20 题**（含"你项目为什么不用 LangChain4j"该怎么答）
 - 迁移旧版代码时的常用对照表
 
+### [[9-版本记录]] — 版本时间线、配对规则、升级路径
+- **双轨版本号**：`1.23.0`（核心/主流模型）+ `1.23.0-beta33`（集成件/Spring starter），必须成对
+- 全量时间线：0.x 高频迭代（113 个 Maven 版本）→ 1.0 预备期 → 1.x 逐批转正 → 1.19 ~ 1.23 近期
+- ⭐ **jar 实测**：`ChatLanguageModel → ChatModel` 发生在 **`1.0.0-rc1`**（不是 1.0.0）
+- ⚠️ **`1.19.1` 有害版本**（官方 "published by mistake"，内含 1.20 全部代码，不要"升级"到 1.19.2）
+- 升级检查清单 10 项 + 版本选择建议 + 自助复核命令
+- 与 Spring AI 发版节奏对照（为什么"版本稳定性"是选型理由）
+
 ### [[8-速查卡]] — 一页纸
 注解表 / 常见报错 / 依赖坐标 / 与 Spring AI 对照速查
 
@@ -123,6 +133,7 @@ flowchart LR
 | 切分 / Embedding / 向量检索 / 过滤器 | 用本地实现的 Embedding + 内存向量库**真实跑通** ⭐ |
 | 调真实大模型（DeepSeek / 通义 / Ollama） | ❌ **没跑**（本机没有可用 API Key），相关示例只保证编译通过 |
 | Spring Boot 自动装配（`@AiService` 变成 Bean、模型 Bean 名称、自动配置条件） | ✅ **真实启动 Spring 容器验证**（不调模型），见 [[6-SpringBoot集成#6. ⭐ 真实启动验证（踩坑实录）]] |
+| 版本时间线、改名发生的精确版本、有害版本 | ✅ **GitHub Releases API + Maven metadata + 逐版本下载 jar 检查类**，见 [[9-版本记录]] |
 
 > 这是本套笔记和"抄文档"的最大区别：**凡是能离线验证的框架行为，我都跑过并贴了输出**；没验证的明确标 ❌。
 
@@ -163,6 +174,7 @@ flowchart LR
 > [!note] 三个版本号别混
 > `langchain4j` 主包走 `1.23.0` 这种正式版；`langchain4j-spring-boot-starter`、`-ollama` 等集成件走 **`1.23.0-beta33`** 这种 beta 号；社区扩展走 `dev.langchain4j:langchain4j-community-*` 并配 `langchain4j-community-bom`。
 > 混用会出现 `NoSuchMethodError` / 类找不到。
+> **更省心的做法：用 `langchain4j-bom:1.23.0` 统一管理**，它会自动把每个模块映射到正确的 beta 号——不用背配对表。完整规则见 [[9-版本记录#1.2 一条经验规则|9-版本记录 §1.2]]。
 
 ---
 
