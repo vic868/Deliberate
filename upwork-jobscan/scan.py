@@ -325,6 +325,7 @@ def main():
                 if not t:
                     continue
                 t["query"] = kw
+                t["id"] = jid
                 found[jid] = t            # 按 job id 去重（同一单的 URL 会带高亮标记）
         log(f"  共抓到 {len(found)} 条")
     finally:
@@ -343,8 +344,8 @@ def main():
         fresh.append(j)
     fresh.sort(key=lambda x: (-x["score"], hours_ago(x["posted"])))
 
-    new = [j for j in fresh if j["href"] not in seen]
-    seen.update(j["href"] for j in fresh)
+    new = [j for j in fresh if j.get("id") not in seen]
+    seen.update(j.get("id") for j in fresh if j.get("id"))
     json.dump(sorted(seen), open(SEEN, "w"))
 
     today = time.strftime("%Y-%m-%d")
