@@ -65,8 +65,27 @@ def log(msg):
     print(msg, flush=True)
 
 
-def http_json(path):
-    with urllib.request.urlopen(f"http://[::1]:{DEBUG_PORT}{path}", timeout=5) as r:
+_BASE = {"url": None}
+
+
+def _base():
+    """Chrome 有时绑 127.0.0.1、有时绑 [::1]，两个都试"""
+    if _BASE["url"]:
+        return _BASE["url"]
+    for host in ("127.0.0.1", "[::1]"):
+        try:
+            u = f"http://{host}:{DEBUG_PORT}"
+            with urllib.request.urlopen(u + "/json/version", timeout=3):
+                _BASE["url"] = u
+                return u
+        except Exception:
+            continue
+    return None
+
+
+def http_json(path, base=None):
+    b = base or _base() or f"http://127.0.0.1:{DEBUG_PORT}"
+    with urllib.request.urlopen(b + path, timeout=5) as r:
         return json.load(r)
 
 
@@ -118,7 +137,7 @@ def connect():
             break
         # 没有页面目标时，主动开一个
         try:
-            req = urllib.request.Request(f"http://[::1]:{DEBUG_PORT}/json/new?about:blank", method="PUT")
+            req = urllib.request.Request((_base() or "http://127.0.0.1:%d" % DEBUG_PORT) + "/json/new?about:blank", method="PUT")
             urllib.request.urlopen(req, timeout=5).read()
         except Exception:
             pass
