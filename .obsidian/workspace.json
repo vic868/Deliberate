@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14-AI agent /3-Milvus/1-基础介绍.md",
+                "file": "14-AI agent /3-Milvus/3-操作指南.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1-基础介绍"
+              "title": "3-操作指南"
             }
           }
         ],
@@ -276,6 +276,8 @@
   },
   "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
+    "14-AI agent /3-Milvus/2-环境搭建.md",
+    "14-AI agent /3-Milvus/1-基础介绍.md",
     "14-AI agent /3-Milvus/5-避坑与排障.md",
     "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
     "14-AI agent /3-Milvus/0-Milvus-AI知识库索引.md",
@@ -285,8 +287,6 @@
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "14-AI agent /2-spring ai/spring ai.drawio",
     "14-AI agent /3-Milvus/3-操作指南.md",
-    "14-AI agent /3-Milvus/2-环境搭建.md",
-    "14-AI agent /3-Milvus/1-基础介绍.md",
     "14-AI agent /3-Milvus/0-Milvus.drawio",
     "14-AI agent /3-Milvus/【2026最新版】Milvus3.0向量数据库-新特性+RAG企业知识库教程！把AI大模型面试必备技能+简历+面试题+面试复盘一次性给大家讲明白！-码士集团.md",
     "14-AI agent /2-spring ai/Ruoyi RAG 全链路排障手册.md",
