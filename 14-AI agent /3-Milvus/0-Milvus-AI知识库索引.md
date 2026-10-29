@@ -102,6 +102,7 @@ flowchart LR
 |---|---|
 | [[1-LangChain/2-LangChain学习地图\|LangChain 学习地图]] | 其 §1.3（Hybrid + Rerank）、§3.2（Milvus Lite → Docker Standalone）、§1.6（自建评估）正是本系列 [[3-操作指南]] §6 与 [[4-AI中的用法]] §3.4 的另一种讲法 |
 | [[2-spring ai/RuoYi-Spring-AI-面试题\|RuoYi × Spring AI 面试题]] | §4 Milvus 部分（选型、schema、双保险降级）→ 对应本系列 [[4-AI中的用法]] §4 |
+| [[14-AI agent /LangChain4j/0-LangChain4j-知识库索引\|LangChain4j 知识库]] | Java 侧 LLM 框架（契约式 AiServices / 原生 RAG 抽象）；与本文 RAG 与检索调优是同一条「召回率工程」 |
 | [[2-spring ai/Ruoyi RAG 全链路排障手册\|RuoYi RAG 全链路排障手册]] | 真实事故（outFields、metric 不匹配、schema 不可改）→ 已收录进 [[5-避坑与排障]] §2、§3.1 |
 
 ---
