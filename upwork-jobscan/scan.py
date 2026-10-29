@@ -111,7 +111,20 @@ def close_chrome(p):
 
 def connect():
     import websocket
-    tabs = [t for t in http_json("/json/list") if t.get("type") == "page"]
+    tabs = []
+    for _ in range(10):
+        tabs = [t for t in http_json("/json/list") if t.get("type") == "page"]
+        if tabs:
+            break
+        # 没有页面目标时，主动开一个
+        try:
+            req = urllib.request.Request(f"http://[::1]:{DEBUG_PORT}/json/new?about:blank", method="PUT")
+            urllib.request.urlopen(req, timeout=5).read()
+        except Exception:
+            pass
+        time.sleep(1.5)
+    if not tabs:
+        raise RuntimeError("Chrome 没有可用的页面目标")
     ws = websocket.create_connection(tabs[0]["webSocketDebuggerUrl"], timeout=25,
                                      suppress_origin=True)
     return ws
