@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14-AI agent /3-Milvus/3-操作指南.md",
+                "file": "14-AI agent /3-Milvus/4-AI中的用法.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "3-操作指南"
+              "title": "4-AI中的用法"
             }
           }
         ],
@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "14-AI agent /3-Milvus/3-操作指南.md",
+                "file": "14-AI agent /3-Milvus/4-AI中的用法.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -275,6 +275,7 @@
   },
   "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
+    "14-AI agent /3-Milvus/3-操作指南.md",
     "14-AI agent /3-Milvus/2-环境搭建.md",
     "14-AI agent /LangChain4j/9-版本记录.md",
     "14-AI agent /2-spring ai/RuoYi-Spring-AI-面试题.md",
@@ -282,7 +283,6 @@
     "14-AI agent /LangChain4j/1-LangChain4j-入门.md",
     "14-AI agent /LangChain4j/0-LangChain4j-知识库索引.md",
     "14-AI agent /3-Milvus/4-AI中的用法.md",
-    "14-AI agent /3-Milvus/3-操作指南.md",
     "14-AI agent /LangChain4j/8-速查卡.md",
     "14-AI agent /LangChain4j/7-选型对比与面试.md",
     "14-AI agent /LangChain4j/6-SpringBoot集成.md",
