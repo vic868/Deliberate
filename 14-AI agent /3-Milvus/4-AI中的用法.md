@@ -111,20 +111,26 @@ vectorstore = Milvus(
         output_field_names="sparse",
         analyzer_params={"type": "jieba"},                  # 中文分词
     ),
+    # ⚠️ 不要写 field_name：字段由 vector_field 的位置决定，写了会
+    #    TypeError: add_index() got multiple values for keyword argument 'field_name'
     index_params=[
-        # ⚠️ 这里不要写 field_name：它由 vector_field 位置决定，写了会 TypeError
         {"index_type": "AUTOINDEX", "metric_type": "COSINE"},
         {"index_type": "SPARSE_INVERTED_INDEX", "metric_type": "BM25"},
     ],
+    # ⚠️ 必须显式给！不传时 langchain-milvus 0.4.0 默认用 {"drop_ratio_build": 0.2}，
+    #    任何 search（包括普通库内检索）都会报
+    #    MilvusException: field 'sparse': only drop_ratio_build=0 is supported
     search_params=[
         {"metric_type": "COSINE", "params": {}},
-        # ⚠️ BM25 的 sparse 索引/检索必须 drop_ratio_build = 0，否则报
-        #    MilvusException: field 'sparse': only drop_ratio_build=0 is supported
         {"metric_type": "BM25", "params": {"drop_ratio_search": 0.0, "drop_ratio_build": 0}},
     ],
-    auto_id=True,
 )
 ```
+
+> [!danger] `search_params` 不是可选项（本机三次复现）
+> 只要 `vector_field` 是两个字段（稠密 + 稀疏），**即使你根本不做混合检索**，普通的 `similarity_search(expr=...)` 内部也走 `hybrid_search`，并用默认的 `drop_ratio_build=0.2` → 直接报错。
+> 另外 `metadata_schema` / `metadata_field` 与 `vector_field` **共同决定**这套默认值（实测：传了 `metadata_schema` 后 `vectorstore.search_params` 变成 `drop_ratio_build: 0.2`），排查时用 `print(vectorstore.search_params)` 一眼看清。
+> 另一个坑：**不传 `auto_id=True` 时 LangChain 会自动打开它**并打 WARNING —— 显式写上，别依赖隐式行为。
 
 **融合排序（RRF / Weighted）的两种写法**：
 
@@ -149,8 +155,9 @@ weighted ['Milvus 是向量数据库', 'LangChain 编排 RAG']
 ```
 
 > [!warning] 混合检索模式下别用的 API
-`max_marginal_relevance_search`（MMR）在多向量字段上会直接断言失败：
-`AssertionError: _collection_search does not support multi-vector search.` —— 想要多样性，自己做二次筛选。
+> `max_marginal_relevance_search`（MMR）在多向量字段上会直接断言失败：
+> `AssertionError: _collection_search does not support multi-vector search.` —— 想要多样性，自己做二次筛选。
+> 另外 `ranker_type="weighted"` 在本机报 `weighted merge requires 2 weights, got 4`，**加权融合请用 `reranker=Function(...)` 的新写法**。
 
 ### 2.4 Retriever 接进 RAG 链
 
@@ -170,16 +177,25 @@ prompt = f"""仅根据下面资料回答，资料里没有就直说不知道，�
 
 | 方式 | 写法 | 优缺点 |
 |---|---|---|
-| 内置 `metadata` 字段（默认） | `Document(metadata={"k": "v"})` | 全塞进一个 JSON，**过滤**：`expr='metadata["source"] == "a.md"'`，性能一般 |
-| `metadata_field="*"` | 建表时 `metadata_field="*"` | 动态字段（Lite 实测**不支持**），工程上更麻烦 |
-| **显式 `metadata_schema`**（推荐） | 把 `source`/`doc_id` 定义成真实字段 | 能建 `INVERTED` 索引，过滤快、结果稳 |
+| 内置 `metadata` 字段（默认） | `Document(metadata={"k": "v"})` | 全塞进一个 JSON，**过滤**要写 `expr='metadata["source"] == "a.md"'`，性能一般 |
+| `metadata_field="*"` | 建表时 `metadata_field="*"` | 走动态字段，过滤/索引能力弱 |
+| **显式 `metadata_schema`**（推荐） | 把 `source`/`doc_id` 定义成真实字段 | 能建 `INVERTED` 索引，过滤快、`expr='source == "a.md"'` 写法干净 |
 
 ```python
-# 推荐：关键过滤字段走真实列
-vectorstore = Milvus(..., metadata_field="", metadata_schema={
-    "source": {"type": "VarChar", "max_length": 512},
-    "doc_id": {"type": "VarChar", "max_length": 64},
-})
+# 推荐：关键过滤字段走真实列（实测建表后字段为 text/pk/dense/sparse/source/doc_id）
+vectorstore = Milvus(
+    embedding_function=embeddings,
+    collection_name="lc_docs",
+    connection_args={"uri": "./lc.db"},
+    metadata_schema={
+        "source": {"type": "VarChar", "max_length": 512},
+        "doc_id": {"type": "VarChar", "max_length": 64},
+    },
+    auto_id=True,
+)
+docs = vectorstore.similarity_search("RAG", k=1, expr='source == "b.md"')
+# -> [Document(metadata={'pk': 1, 'source': 'b.md', 'doc_id': '2'}, page_content='LangChain 编排 RAG')]
+#    实测建表后字段：['text', 'pk', 'vector', 'source', 'doc_id']
 ```
 
 ---
@@ -351,7 +367,7 @@ print("Hit@5 =", hit_at_k([json.loads(l) for l in open("evalset.jsonl")], 5))
 | 引用是否支持结论 | 生成 | 抽查，比"看起来对"靠谱 |
 | p95 延迟 / Token 成本 | 体验 | 检索耗时也要算进去 |
 
-> 规则：**没有指标对比的"优化"不算优化**。详见 [[1-LangChain/2-LangChain学习地图#1.6 先自建评估（可观测的前置）|学习地图 §1.6]]。
+> 规则：**没有指标对比的"优化"不算优化**。详见 [[1-LangChain/2-LangChain学习地图|LangChain 学习地图]] 第 1.6 节「先自建评估」。
 
 ---
 
