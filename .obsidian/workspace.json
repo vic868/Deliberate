@@ -275,6 +275,7 @@
   },
   "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
+    "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
     "6-ai/2.3-Hermes Agent/deepseek_xml_20261030_58e4b8.xml",
     "6-ai/2.3-Hermes Agent",
     "14-AI agent /3-Milvus/4-AI中的用法.md",
@@ -312,7 +313,6 @@
     "14-AI agent /1-LangChain/2-LangGraph进阶.vector.drawio",
     "14-AI agent /1-LangChain/2-LangGraph进阶.png",
     "14-AI agent /1-LangChain/1-LangChain进阶.drawio",
-    "14-AI agent /1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent /1-LangChain/1-LangChain-create_agent配方.png",
     "14-AI agent /1-LangChain/1-LangChain-知识地图.png",
     "14-AI agent /1-LangChain/5-可观测与评估.png",
