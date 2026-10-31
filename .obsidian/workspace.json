@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "RuoYi-AI-技术栈全景"
+              "title": "V8.0-应用开发-思维导图整理"
             }
           }
         ],
@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -275,6 +275,7 @@
   },
   "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
+    "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支4.png",
@@ -310,7 +311,6 @@
     "14-AI agent /LangChain4j",
     "14-AI agent /3-Milvus/1-基础介绍.md",
     "14-AI agent /3-Milvus/5-避坑与排障.md",
-    "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
     "14-AI agent /3-Milvus/0-Milvus-AI知识库索引.md",
     "14-AI agent /3-Milvus/6-速查卡.md",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
