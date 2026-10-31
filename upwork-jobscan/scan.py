@@ -76,8 +76,12 @@ def _base():
         try:
             u = f"http://{host}:{DEBUG_PORT}"
             with urllib.request.urlopen(u + "/json/version", timeout=3):
-                _BASE["url"] = u
-                return u
+                pass
+            # 有些实例 /json/version 正常但 /json/list 404，必须实测列表接口
+            with urllib.request.urlopen(u + "/json/list", timeout=3):
+                pass
+            _BASE["url"] = u
+            return u
         except Exception:
             continue
     return None
@@ -319,7 +323,7 @@ def main():
                 if "~0" not in d["href"]:
                     continue
                 jid = re.search(r"~0\d+", d["href"]).group(0)
-                d["href"] = re.sub(r"-span-class-highlight-[^-]+-span", "", d["href"])
+                d["href"] = re.sub(r"-??span-class-highlight-[^-]+-span", "", d["href"])
                 d["href"] = d["href"].replace("-amp-", "-")
                 t = parse_tile(d["href"], d["text"])
                 if not t:
