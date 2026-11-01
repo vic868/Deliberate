@@ -39,12 +39,12 @@
             "id": "64190a5c308fa9bc",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "smm",
               "state": {
-                "file": "6-ai/2.3-Hermes Agent/HermesAgent.drawio"
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md"
               },
-              "icon": "pencil-ruler",
-              "title": "HermesAgent"
+              "icon": "smm-icon",
+              "title": "V8.0-应用开发-思维导图整理.smm"
             }
           }
         ],
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -288,24 +288,29 @@
   },
   "active": "64190a5c308fa9bc",
   "lastOpenFiles": [
-    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
-    "upwork-jobscan/runs/2026-11-01.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
+    "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图-矢量.svg",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支2.png",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
+    "6-ai/1-milvus/0-milvus.excalidraw.md",
+    "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
+    "6-ai/AI 学习规划/01-提示词工程.md",
+    "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
+    "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
+    "upwork-jobscan/runs/2026-11-01.md",
     "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支4.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支3.png",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支2.png",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/概览-L1-L3.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/概览-L1-L2.png",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图-矢量.svg",
     "6-ai/ProcessOn-V8.0应用开发思维导图/outline.txt",
     "6-ai/ProcessOn-V8.0应用开发思维导图/mindmap.json",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments",
     "6-ai/ProcessOn-V8.0应用开发思维导图",
     "upwork-jobscan/runs/2026-10-31.md",
-    "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
     "6-ai/2.3-Hermes Agent/deepseek_xml_20261030_58e4b8.xml",
     "6-ai/2.3-Hermes Agent",
     "14-AI agent /3-Milvus/4-AI中的用法.md",
@@ -325,13 +330,8 @@
     "14-AI agent /LangChain4j/3-契约式开发.md",
     "14-AI agent /LangChain4j",
     "14-AI agent /3-Milvus/1-基础介绍.md",
-    "14-AI agent /3-Milvus/5-避坑与排障.md",
-    "14-AI agent /3-Milvus/0-Milvus-AI知识库索引.md",
-    "14-AI agent /3-Milvus/6-速查卡.md",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "14-AI agent /2-spring ai/spring ai.drawio",
-    "14-AI agent /3-Milvus/【2026最新版】Milvus3.0向量数据库-新特性+RAG企业知识库教程！把AI大模型面试必备技能+简历+面试题+面试复盘一次性给大家讲明白！-码士集团.md",
-    "14-AI agent /2-spring ai/Ruoyi RAG 全链路排障手册.md",
     "14-AI agent /1-LangChain/3-RAG进阶.png",
     "14-AI agent /1-LangChain/2-LangGraph进阶.png",
     "8-spring/spring-logback/未命名.canvas",
