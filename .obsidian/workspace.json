@@ -39,12 +39,14 @@
             "id": "64190a5c308fa9bc",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md"
+                "file": "6-ai/AI 学习规划/01-提示词工程.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "V8.0-应用开发-思维导图整理.smm"
+              "icon": "lucide-file",
+              "title": "01-提示词工程"
             }
           }
         ],
@@ -188,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
+                "file": "6-ai/AI 学习规划/01-提示词工程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -288,9 +290,9 @@
   },
   "active": "64190a5c308fa9bc",
   "lastOpenFiles": [
+    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图-矢量.svg",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支2.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
