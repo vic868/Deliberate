@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -206,7 +206,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md"
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -305,12 +305,46 @@
         "height": 1130,
         "maximize": true,
         "zoom": 0
+      },
+      {
+        "id": "4d2a1abf8e67941b",
+        "type": "window",
+        "children": [
+          {
+            "id": "6f95e14a413af30d",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ba9e7d43100f237c",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "V8.0-应用开发-思维导图整理"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
       }
     ]
   },
-  "active": "4125b1d1940f783f",
+  "active": "ba9e7d43100f237c",
   "lastOpenFiles": [
     "6-ai/0-LLM/1-提示词工程.md",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "6-ai/0-LLM/0-LLM.md",
     "6-ai/AI 学习规划/01-提示词工程.md",
     "6-ai/0-LLM",
@@ -333,7 +367,6 @@
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "模板/_test-render.md",
     "模板",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图-矢量.svg",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支2.png",
