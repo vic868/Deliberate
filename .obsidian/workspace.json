@@ -34,23 +34,9 @@
               "icon": "lucide-file",
               "title": "V8.0-应用开发-思维导图整理"
             }
-          },
-          {
-            "id": "64190a5c308fa9bc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "模板/_test-render.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "_test-render"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -190,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "模板/_test-render.md",
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -289,7 +275,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "64190a5c308fa9bc",
+  "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
     "6-ai/AI 学习规划/01-提示词工程.md",
     "模板/_test-render.md",
