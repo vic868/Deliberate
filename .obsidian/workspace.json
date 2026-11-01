@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
+                "file": "模板/5W1H-通用模板.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "V8.0-应用开发-思维导图整理"
+              "title": "5W1H-通用模板"
             }
           }
         ],
@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
+                "file": "模板/5W1H-通用模板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -277,14 +277,15 @@
   },
   "active": "1f7dc562ccd6b5d2",
   "lastOpenFiles": [
-    "6-ai/AI 学习规划/01-提示词工程.md",
-    "模板/_test-render.md",
+    "模板/_tp_test.md",
+    "模板/5W1H-通用模板.md",
     "模板/示例-5W1H填表示例.md",
     "模板/5W1H-快速版.md",
-    "模板/5W1H-通用模板.md",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
+    "6-ai/AI 学习规划/01-提示词工程.md",
+    "模板/_test-render.md",
     "模板",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图-矢量.svg",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支2.png",
@@ -318,7 +319,6 @@
     "14-AI agent /LangChain4j/0-LangChain4j-知识库索引.md",
     "14-AI agent /LangChain4j/8-速查卡.md",
     "14-AI agent /LangChain4j/7-选型对比与面试.md",
-    "14-AI agent /LangChain4j/6-SpringBoot集成.md",
     "14-AI agent /LangChain4j",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "14-AI agent /1-LangChain/3-RAG进阶.png",
