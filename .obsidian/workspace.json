@@ -39,12 +39,12 @@
             "id": "64190a5c308fa9bc",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "drawio-file-view",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md"
+                "file": "6-ai/2.3-Hermes Agent/HermesAgent.drawio"
               },
-              "icon": "smm-icon",
-              "title": "V8.0-应用开发-思维导图整理.smm"
+              "icon": "pencil-ruler",
+              "title": "HermesAgent"
             }
           }
         ],
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
+                "file": "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -264,7 +264,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 538.64453125
+    "width": 538.64453125,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -287,9 +288,9 @@
   },
   "active": "64190a5c308fa9bc",
   "lastOpenFiles": [
+    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "upwork-jobscan/runs/2026-11-01.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支4.png",
