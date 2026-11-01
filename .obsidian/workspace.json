@@ -206,7 +206,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "11-高并发高可用/高并发系统设计（详细整理版）.md"
+                "file": "6-ai/0-LLM/1-提示词工程.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -231,9 +231,19 @@
               "icon": "ag-style",
               "title": "Juggl style"
             }
+          },
+          {
+            "id": "5df07bc7c9b1cb3e",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -257,13 +267,14 @@
       "simple-mind-map:新建思维导图": false,
       "juggl:Juggl global graph": false,
       "homepage:Open homepage": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/0-LLM/0-LLM.md",
     "6-ai/0-LLM/1-提示词工程.md",
+    "6-ai/0-LLM/0-LLM.md",
     "6-ai/AI 学习规划/01-提示词工程.md",
     "6-ai/0-LLM",
     "6-ai/01-提示词工程.md",
