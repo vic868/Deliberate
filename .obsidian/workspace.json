@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/1-提示词工程.md",
+                "file": "6-ai/0-LLM/2-RAG.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1-提示词工程"
+              "title": "2-RAG"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
+                "file": "6-ai/0-LLM/2-RAG.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -206,7 +206,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md"
+                "file": "6-ai/0-LLM/2-RAG.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -299,11 +299,11 @@
           }
         ],
         "direction": "vertical",
-        "x": 16,
-        "y": 193,
-        "width": 1440,
+        "x": 0,
+        "y": 39,
+        "width": 1750,
         "height": 1130,
-        "maximize": true,
+        "maximize": false,
         "zoom": 0
       },
       {
@@ -332,20 +332,22 @@
           }
         ],
         "direction": "vertical",
-        "x": 388,
-        "y": 121,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
+        "x": 0,
+        "y": 39,
+        "width": 1750,
+        "height": 1130,
+        "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "ba9e7d43100f237c",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0-LLM/0-LLM.md",
+    "6-ai/0-LLM/2-RAG.md",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "6-ai/0-LLM/1-提示词工程.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
-    "6-ai/0-LLM/0-LLM.md",
     "6-ai/AI 学习规划/01-提示词工程.md",
     "6-ai/0-LLM",
     "6-ai/01-提示词工程.md",
@@ -364,7 +366,6 @@
     "模板/支付回调超时处理.md",
     "模板/5W1H-通用模板(Templater).md",
     "模板/_tp_test.md",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "模板/_test-render.md",
     "模板",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
@@ -374,7 +375,6 @@
     "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
     "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
-    "upwork-jobscan/runs/2026-11-01.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支4.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支3.png",
