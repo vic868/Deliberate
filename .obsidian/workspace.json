@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/AI 学习规划/01-提示词工程.md",
+                "file": "模板/_test-render.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "01-提示词工程"
+              "title": "_test-render"
             }
           }
         ],
@@ -190,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/AI 学习规划/01-提示词工程.md",
+                "file": "模板/_test-render.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -285,11 +285,18 @@
       "obsidian42-brat:BRAT": false,
       "simple-mind-map:新建思维导图": false,
       "juggl:Juggl global graph": false,
-      "homepage:Open homepage": false
+      "homepage:Open homepage": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "64190a5c308fa9bc",
   "lastOpenFiles": [
+    "6-ai/AI 学习规划/01-提示词工程.md",
+    "模板/_test-render.md",
+    "模板/示例-5W1H填表示例.md",
+    "模板/5W1H-快速版.md",
+    "模板/5W1H-通用模板.md",
+    "模板",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
@@ -298,7 +305,6 @@
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
     "6-ai/1-milvus/0-milvus.excalidraw.md",
     "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
-    "6-ai/AI 学习规划/01-提示词工程.md",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
     "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
     "upwork-jobscan/runs/2026-11-01.md",
@@ -327,13 +333,8 @@
     "14-AI agent /LangChain4j/8-速查卡.md",
     "14-AI agent /LangChain4j/7-选型对比与面试.md",
     "14-AI agent /LangChain4j/6-SpringBoot集成.md",
-    "14-AI agent /LangChain4j/5-Agent工具调用.md",
-    "14-AI agent /LangChain4j/4-RAG.md",
-    "14-AI agent /LangChain4j/3-契约式开发.md",
     "14-AI agent /LangChain4j",
-    "14-AI agent /3-Milvus/1-基础介绍.md",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
-    "14-AI agent /2-spring ai/spring ai.drawio",
     "14-AI agent /1-LangChain/3-RAG进阶.png",
     "14-AI agent /1-LangChain/2-LangGraph进阶.png",
     "8-spring/spring-logback/未命名.canvas",
