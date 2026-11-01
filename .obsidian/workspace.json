@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/0-LLM/2-RAG.md",
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -206,7 +206,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "6-ai/0-LLM/2-RAG.md"
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -303,7 +303,7 @@
         "y": 39,
         "width": 1750,
         "height": 1130,
-        "maximize": false,
+        "maximize": true,
         "zoom": 0
       },
       {
@@ -336,15 +336,15 @@
         "y": 39,
         "width": 1750,
         "height": 1130,
-        "maximize": false,
+        "maximize": true,
         "zoom": 0
       }
     ]
   },
-  "active": "e7a7b303c61786dc",
+  "active": "ba9e7d43100f237c",
   "lastOpenFiles": [
-    "6-ai/0-LLM/0-LLM.md",
     "6-ai/0-LLM/2-RAG.md",
+    "6-ai/0-LLM/0-LLM.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "6-ai/0-LLM/1-提示词工程.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
