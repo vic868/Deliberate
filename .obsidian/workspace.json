@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "模板/_probe.md",
+                "file": "6-ai/AI 学习规划/01-提示词工程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_probe"
+              "title": "01-提示词工程"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "模板/_probe.md",
+                "file": "6-ai/AI 学习规划/01-提示词工程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -262,6 +262,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "模板/_e2e.md",
     "6-ai/AI 学习规划/01-提示词工程.md",
     "模板/_probe.md",
     "6-ai/AI 学习规划/0-提示词工程.md",
@@ -303,7 +304,6 @@
     "14-AI agent /3-Milvus/4-AI中的用法.md",
     "upwork-jobscan/runs/2026-10-30.md",
     "14-AI agent /3-Milvus/3-操作指南.md",
-    "14-AI agent /3-Milvus/2-环境搭建.md",
     "14-AI agent /LangChain4j",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "14-AI agent /1-LangChain/3-RAG进阶.png",
