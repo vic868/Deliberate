@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/AI 学习规划/README.md",
-                "mode": "source",
-                "source": false
+                "file": "6-ai/01-提示词工程.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "01-提示词工程"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/AI 学习规划/README.md",
+                "file": "6-ai/01-提示词工程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -262,20 +262,23 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/未命名 1.md",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
+    "模板/5W1H-通用模板.md",
+    "模板/5W1H-快速版.md",
+    "6-ai/AI 学习规划/README.md",
     "6-ai/AI 学习规划/01-提示词工程.md",
     "6-ai/AI 学习规划/未命名.md",
     "模板/_e2e.md",
     "模板/_probe.md",
     "6-ai/AI 学习规划/0-提示词工程.md",
     "14-AI agent /3-Milvus/0-Milvus-AI知识库索引.md",
-    "6-ai/未命名.md",
+    "6-ai/01-提示词工程.md",
     "模板/示例-5W1H填表示例.md",
     "面试准备/支付回调超时处理.md",
     "模板/支付回调超时处理.md",
     "模板/5W1H-通用模板(Templater).md",
-    "模板/5W1H-通用模板.md",
     "模板/_tp_test.md",
-    "模板/5W1H-快速版.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "模板/_test-render.md",
     "模板",
@@ -283,7 +286,6 @@
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图-矢量.svg",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支2.png",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
     "6-ai/1-milvus/0-milvus.excalidraw.md",
     "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
@@ -299,11 +301,8 @@
     "6-ai/ProcessOn-V8.0应用开发思维导图/mindmap.json",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments",
     "6-ai/ProcessOn-V8.0应用开发思维导图",
-    "upwork-jobscan/runs/2026-10-31.md",
     "6-ai/2.3-Hermes Agent/deepseek_xml_20261030_58e4b8.xml",
     "6-ai/2.3-Hermes Agent",
-    "14-AI agent /3-Milvus/4-AI中的用法.md",
-    "upwork-jobscan/runs/2026-10-30.md",
     "14-AI agent /LangChain4j",
     "3-mq/2-Kafka/Kafka-架构与面试.drawio",
     "14-AI agent /1-LangChain/3-RAG进阶.png",
