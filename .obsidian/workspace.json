@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/0-LLM.md",
+                "file": "6-ai/0-LLM/1-提示词工程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0-LLM"
+              "title": "1-提示词工程"
             }
           }
         ]
@@ -41,7 +41,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
+                "autoReveal": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/0-LLM/0-LLM.md",
+                "file": "6-ai/0-LLM/1-提示词工程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -262,8 +262,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/AI 学习规划/01-提示词工程.md",
     "6-ai/0-LLM/0-LLM.md",
+    "6-ai/0-LLM/1-提示词工程.md",
+    "6-ai/AI 学习规划/01-提示词工程.md",
     "6-ai/0-LLM",
     "6-ai/01-提示词工程.md",
     "6-ai/未命名 1.md",
@@ -293,7 +294,6 @@
     "6-ai/1.1-多模态“教学演播室”前端交互方案：/0-多模态“教学演播室”前端交互方案：.md",
     "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
     "upwork-jobscan/runs/2026-11-01.md",
-    "14-AI agent /2-spring ai/RuoYi-AI-技术栈全景.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支4.png",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支3.png",
