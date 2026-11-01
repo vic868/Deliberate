@@ -23,7 +23,10 @@
   "embedDblClickNewWindow": true,
   "autoSaveTime": 5,
   "mindMapConfig": {
-    "openRealtimeRenderOnNodeTextEdit": true
+    "openRealtimeRenderOnNodeTextEdit": true,
+    "enableFreeDrag": true,
+    "openPerformance": true,
+    "onlyLoadClientRectImg": true
   },
   "mindMapLocalConfig": {
     "isZenMode": false,
