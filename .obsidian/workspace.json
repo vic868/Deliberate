@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-ai/0-LLM/1-提示词工程.md",
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -206,7 +206,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "6-ai/0-LLM/1-提示词工程.md"
+                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md"
               },
               "icon": "lucide-info",
               "title": "笔记属性"
@@ -271,7 +271,44 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "floating": {
+    "id": "d8b3472ff0f1859e",
+    "type": "floating",
+    "children": [
+      {
+        "id": "e4d9f5d9e6ef4c92",
+        "type": "window",
+        "children": [
+          {
+            "id": "8d1ba7ceabb743c5",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4125b1d1940f783f",
+                "type": "leaf",
+                "state": {
+                  "type": "smm",
+                  "state": {
+                    "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md"
+                  },
+                  "icon": "smm-icon",
+                  "title": "V8.0-应用开发-思维导图整理.smm"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 16,
+        "y": 193,
+        "width": 1440,
+        "height": 1130,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "4125b1d1940f783f",
   "lastOpenFiles": [
     "6-ai/0-LLM/1-提示词工程.md",
     "6-ai/0-LLM/0-LLM.md",
