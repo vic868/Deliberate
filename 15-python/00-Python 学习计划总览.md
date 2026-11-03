@@ -161,6 +161,7 @@ flowchart TB
 | [[04-阶段四-数据与 AI 应用]] | pandas、FastAPI、SSE、LangChain、RAG | ⬜ |
 | [[05-阶段五-项目实战与验收]] | 三个项目、验收清单、面试高频题 | ⬜ |
 | [[06-专题-__name__ 与程序入口]] | `if __name__ == "__main__"` 原理、四种入口写法、七个坑 | ✅ |
+| [[07-专题-Python 的分布式能力边界（对比 Java 生态）]] | 微服务/RPC/限流熔断/分布式锁/事务，Nacos·Sentinel·Seata 能不能用 | ✅ |
 
 ---
 
