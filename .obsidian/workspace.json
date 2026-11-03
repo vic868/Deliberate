@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "0142f235b2d65981",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "fc9bb1fe762ebd2c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "15-python/06-专题-__name__ 与程序入口.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "06-专题-__name__ 与程序入口"
+              "title": "新标签页"
             }
           }
         ]
@@ -271,10 +267,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "fc9bb1fe762ebd2c",
   "lastOpenFiles": [
-    "15-python/02-阶段二-数据模型与工程化.md",
+    "file:/Volumes/新加卷/学习/往期录播/资料/L1阶段/02-WorkBuddy应用实践-26.9.14-Jeff老师/L1_day02-WorkBuddy应用实践-AI学习助手搭建/资料/8大行业AI提效真实场景深度拆解.md",
     "15-python/06-专题-__name__ 与程序入口.md",
+    "15-python/02-阶段二-数据模型与工程化.md",
     "15-python/01-阶段一-语法速通（Java 对照）.md",
     "15-python/03-阶段三-并发与异步.md",
     "15-python/05-阶段五-项目实战与验收.md",
@@ -301,7 +298,6 @@
     "模板/_probe.md",
     "6-ai/AI 学习规划/0-提示词工程.md",
     "14-AI agent /3-Milvus/0-Milvus-AI知识库索引.md",
-    "模板/示例-5W1H填表示例.md",
     "模板",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图-矢量.svg",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支2.png",
