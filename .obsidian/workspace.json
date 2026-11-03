@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "15-python/00-Python 学习计划总览.md",
+                "file": "15-python/02-阶段二-数据模型与工程化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00-Python 学习计划总览"
+              "title": "02-阶段二-数据模型与工程化"
             }
           }
         ]
@@ -273,13 +273,13 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/0-LLM/2-RAG.md",
-    "15-python/05-阶段五-项目实战与验收.md",
-    "15-python/04-阶段四-数据与 AI 应用.md",
+    "15-python/01-阶段一-语法速通（Java 对照）.md",
     "15-python/03-阶段三-并发与异步.md",
     "15-python/02-阶段二-数据模型与工程化.md",
-    "15-python/01-阶段一-语法速通（Java 对照）.md",
+    "15-python/05-阶段五-项目实战与验收.md",
+    "15-python/04-阶段四-数据与 AI 应用.md",
     "15-python/00-Python 学习计划总览.md",
+    "6-ai/0-LLM/2-RAG.md",
     "15-python",
     "upwork-jobscan/runs/2026-11-03.md",
     "6-ai/0-LLM/1-提示词工程.md",
