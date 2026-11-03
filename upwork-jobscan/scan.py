@@ -233,14 +233,15 @@ def hours_ago(posted):
 def pay_ok(job):
     """按你清单第 5 条：时薪上限低于 $25 直接丢掉"""
     import re as _re
-    m = _re.search(r"\$([\d.,]+)\s*-\s*\$([\d.,]+)", job["budget"] or "")
+    blob = (job.get("budget") or "") + " " + (job.get("est") or "")
+    m = _re.search(r"\$([\d.,]+)\s*-\s*\$([\d.,]+)", blob)
     if m:
         try:
             upper = float(m.group(2).replace(",", ""))
         except ValueError:
             return True
         return upper >= 25
-    m = _re.search(r"\$([\d.,]+)", job["budget"] or "")
+    m = _re.search(r"\$([\d.,]+)", blob)
     if m:
         try:
             amt = float(m.group(1).replace(",", ""))
