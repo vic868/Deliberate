@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "15-python/02-阶段二-数据模型与工程化.md",
+                "file": "15-python/06-专题-__name__ 与程序入口.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-阶段二-数据模型与工程化"
+              "title": "06-专题-__name__ 与程序入口"
             }
           }
         ]
@@ -273,9 +273,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "15-python/02-阶段二-数据模型与工程化.md",
+    "15-python/06-专题-__name__ 与程序入口.md",
     "15-python/01-阶段一-语法速通（Java 对照）.md",
     "15-python/03-阶段三-并发与异步.md",
-    "15-python/02-阶段二-数据模型与工程化.md",
     "15-python/05-阶段五-项目实战与验收.md",
     "15-python/04-阶段四-数据与 AI 应用.md",
     "15-python/00-Python 学习计划总览.md",
@@ -301,7 +302,6 @@
     "6-ai/AI 学习规划/0-提示词工程.md",
     "14-AI agent /3-Milvus/0-Milvus-AI知识库索引.md",
     "模板/示例-5W1H填表示例.md",
-    "面试准备/支付回调超时处理.md",
     "模板",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/完整导图-矢量.svg",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支2.png",

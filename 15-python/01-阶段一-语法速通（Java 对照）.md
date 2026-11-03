@@ -294,6 +294,10 @@ flowchart TB
 > `python core/engine.py` 会让 `from .config import X` 报 `ImportError`。
 > 正确做法：`python -m myapp.core.engine`，或在项目根 `uv run`。
 
+> [!tip] 关于 `if __name__ == "__main__"`
+> 一行代码背后是「模块被直接运行 vs 被导入」的身份判定，坑不少（`-m` 模式、`multiprocessing` 递归、`__main__.py`）。
+> 详见专题：[[06-专题-__name__ 与程序入口]]
+
 ---
 
 ## 九、本阶段练习（务必动手）
