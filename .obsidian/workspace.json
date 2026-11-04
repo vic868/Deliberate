@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
+                "file": "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "08-专题-Python 内存管理与垃圾回收（对比 JVM）"
+              "title": "自动化评估驱动开发EDD-技术与工具整理"
             }
           }
         ]
@@ -273,9 +273,11 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "6-ai/自动化评估驱动开发EDD-技术与工具整理.md",
-    "15-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
+    "6-ai/0-LLM/0-LLM.md",
+    "6-ai/0-LLM/2-RAG.md",
     "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
+    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
+    "15-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "服务器巡检-192.168.0.103/WeKnora-部署文档.md",
     "upwork-jobscan/runs/2026-11-04.md",
     "file:/Volumes/新加卷/学习/往期录播/资料/L1阶段/04- 提示词与提示工程-26.9.17-Jeff老师/L1_day03-Prompt Engineer/作业/作业1.md",
@@ -287,11 +289,9 @@
     "15-python/05-阶段五-项目实战与验收.md",
     "15-python/04-阶段四-数据与 AI 应用.md",
     "15-python/00-Python 学习计划总览.md",
-    "6-ai/0-LLM/2-RAG.md",
     "15-python",
     "upwork-jobscan/runs/2026-11-03.md",
     "6-ai/0-LLM/1-提示词工程.md",
-    "6-ai/0-LLM/0-LLM.md",
     "upwork-jobscan/runs/2026-11-02.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
