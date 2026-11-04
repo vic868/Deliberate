@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/3-AI 生产故障的工程本质.md",
+                "file": "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "3-AI 生产故障的工程本质"
+              "title": "01-高级AI工程师与AI研发经理成长路线"
             }
           }
         ]
@@ -273,11 +273,11 @@
   },
   "active": "d649499d8b671e47",
   "lastOpenFiles": [
+    "6-ai/0-LLM/3-AI 生产故障的工程本质.md",
     "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "16-职业成长",
     "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/1-milvus/pgvector 学习文档.md",
-    "6-ai/0-LLM/3-AI 生产故障的工程本质.md",
     "6-ai/1-milvus/Milvus 学习文档.md",
     "6-ai/1-milvus/0-milvus.excalidraw.md",
     "6-ai/1-milvus/pgvector vs Milvus 选型对比.md",
