@@ -31,6 +31,7 @@ source:
 > [!abstract] 一句话结论
 > **pgvector 是"给 PostgreSQL 加一个向量索引"**，胜在零新增组件、事务一致、SQL 生态；**Milvus 是"为向量而生的分布式数据库"**，胜在十亿级规模、原生混合检索与存算分离。
 > 分界线不在"谁更快"，而在**数据量、过滤复杂度、运维意愿**这三件事。
+> 单品深入学习：[[Milvus 学习文档]] · [[pgvector 学习文档]]
 
 ```mermaid
 flowchart LR
