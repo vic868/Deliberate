@@ -11,12 +11,14 @@
             "id": "d649499d8b671e47",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/1-milvus/0-milvus.excalidraw.md"
+                "file": "6-ai/1-milvus/pgvector 学习文档.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "0-milvus.excalidraw"
+              "icon": "lucide-file",
+              "title": "pgvector 学习文档"
             }
           }
         ]
@@ -269,10 +271,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "d649499d8b671e47",
   "lastOpenFiles": [
-    "6-ai/1-milvus/pgvector 学习文档.md",
+    "6-ai/0-LLM/3-AI 生产故障的工程本质.md",
     "6-ai/1-milvus/Milvus 学习文档.md",
+    "6-ai/1-milvus/0-milvus.excalidraw.md",
+    "6-ai/1-milvus/pgvector 学习文档.md",
     "6-ai/1-milvus/pgvector vs Milvus 选型对比.md",
     "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/0-LLM/2-RAG.md",
@@ -299,8 +303,6 @@
     "file:/Volumes/新加卷/学习/往期录播/资料/L1阶段/02-WorkBuddy应用实践-26.9.14-Jeff老师/L1_day02-WorkBuddy应用实践-AI学习助手搭建/资料/8大行业AI提效真实场景深度拆解.md",
     "15-python/06-专题-__name__ 与程序入口.md",
     "15-python/02-阶段二-数据模型与工程化.md",
-    "15-python/01-阶段一-语法速通（Java 对照）.md",
-    "15-python/03-阶段三-并发与异步.md",
     "15-python",
     "6-ai/0-LLM",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
