@@ -11,12 +11,14 @@
             "id": "d649499d8b671e47",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md"
+                "file": "服务器巡检-192.168.0.106/数据流全链路执行手册.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "V8.0-应用开发-思维导图整理.smm"
+              "icon": "lucide-file",
+              "title": "数据流全链路执行手册"
             }
           }
         ]
@@ -271,6 +273,7 @@
   },
   "active": "d649499d8b671e47",
   "lastOpenFiles": [
+    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.md",
     "6-ai/Agent 面试八站图文精编.md",
     "6-ai/SpringAI.excalidraw.md",
@@ -301,7 +304,6 @@
     "15-python",
     "upwork-jobscan/runs/2026-11-03.md",
     "6-ai/0-LLM/1-提示词工程.md",
-    "upwork-jobscan/runs/2026-11-02.md",
     "6-ai/0-LLM",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
     "模板",
