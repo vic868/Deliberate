@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
+                "file": "6-ai/0-LLM/Prompt Engineer 提示词工程.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "自动化评估驱动开发EDD-技术与工具整理"
+              "title": "Prompt Engineer 提示词工程"
             }
           }
         ]
@@ -273,11 +273,11 @@
   },
   "active": "d649499d8b671e47",
   "lastOpenFiles": [
+    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/0-LLM/Prompt Engineer 提示词工程.md",
     "6-ai/0-LLM/0-LLM.md",
     "6-ai/0-LLM/2-RAG.md",
     "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
-    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "15-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "服务器巡检-192.168.0.103/WeKnora-部署文档.md",
     "upwork-jobscan/runs/2026-11-04.md",
