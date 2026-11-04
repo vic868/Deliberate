@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/提示工程实战演练（L1_day04）.md",
+                "file": "6-ai/0-LLM/1.2-Prompt Engineer 提示词工程.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "提示工程实战演练（L1_day04）"
+              "title": "1.2-Prompt Engineer 提示词工程"
             }
           }
         ]
@@ -273,11 +273,11 @@
   },
   "active": "d649499d8b671e47",
   "lastOpenFiles": [
+    "6-ai/0-LLM/1.1-提示工程实战演练（L1_day04）.md",
+    "6-ai/0-LLM/1.2-Prompt Engineer 提示词工程.md",
+    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg.crdownload",
-    "6-ai/0-LLM/Prompt Engineer 提示词工程.md",
-    "6-ai/0-LLM/提示工程实战演练（L1_day04）.md",
-    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/0-LLM/0-LLM.md",
     "6-ai/0-LLM/2-RAG.md",
     "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
@@ -316,7 +316,6 @@
     "6-ai/ProcessOn-V8.0应用开发思维导图/mindmap.json",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments",
     "6-ai/ProcessOn-V8.0应用开发思维导图",
-    "6-ai/2.3-Hermes Agent/deepseek_xml_20261030_58e4b8.xml",
     "14-AI agent /1-LangChain/3-RAG进阶.png",
     "14-AI agent /1-LangChain/2-LangGraph进阶.png",
     "8-spring/spring-logback/未命名.canvas",
