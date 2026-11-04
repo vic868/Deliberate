@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
+                "file": "6-ai/1-milvus/pgvector vs Milvus 选型对比.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "自动化评估驱动开发EDD-技术与工具整理"
+              "title": "pgvector vs Milvus 选型对比"
             }
           }
         ]
@@ -271,10 +271,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d649499d8b671e47",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "6-ai/0-LLM/2-RAG.md",
     "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
+    "6-ai/1-milvus/pgvector vs Milvus 选型对比.md",
+    "6-ai/0-LLM/2-RAG.md",
     "6-ai/0-LLM/1.2-Prompt Engineer 提示词工程.md",
     "6-ai/0-LLM/1-提示词工程.md",
     "6-ai/0-LLM/1.1-提示工程实战演练（L1_day04）.md",
@@ -302,7 +303,6 @@
     "15-python/03-阶段三-并发与异步.md",
     "15-python/05-阶段五-项目实战与验收.md",
     "15-python/04-阶段四-数据与 AI 应用.md",
-    "15-python/00-Python 学习计划总览.md",
     "15-python",
     "6-ai/0-LLM",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
