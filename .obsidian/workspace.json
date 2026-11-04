@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/Prompt Engineer 提示词工程.md",
+                "file": "6-ai/0-LLM/提示工程实战演练（L1_day04）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Prompt Engineer 提示词工程"
+              "title": "提示工程实战演练（L1_day04）"
             }
           }
         ]
@@ -271,11 +271,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d649499d8b671e47",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "6-ai/0-LLM/Prompt Engineer 提示词工程.md",
     "6-ai/0-LLM/提示工程实战演练（L1_day04）.md",
     "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
-    "6-ai/0-LLM/Prompt Engineer 提示词工程.md",
     "6-ai/0-LLM/0-LLM.md",
     "6-ai/0-LLM/2-RAG.md",
     "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
