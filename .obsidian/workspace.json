@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/4-大模型核心原理与Transformer架构.md",
+                "file": "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "4-大模型核心原理与Transformer架构"
+              "title": "5-Attention-Is-All-You-Need论文精读"
             }
           }
         ]
@@ -271,8 +271,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "d649499d8b671e47",
   "lastOpenFiles": [
+    "6-ai/0-LLM/4-大模型核心原理与Transformer架构.md",
     "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
     "6-ai/AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
     "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
@@ -280,7 +281,6 @@
     "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
     "服务器巡检-192.168.0.106/Nacos部署运维手册.md",
     "file:/Users/vic/Desktop/ai.md",
-    "6-ai/0-LLM/4-大模型核心原理与Transformer架构.md",
     "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
     "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "upwork-jobscan/runs/2026-11-05.md",
