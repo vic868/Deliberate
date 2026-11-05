@@ -54,6 +54,14 @@ GOOD = [
     "hadoop", "spark", "rocketmq", "rabbitmq", "postgres", "mysql",
 ]
 # 命中任一 → 直接丢掉（不在你的武器库里）
+# 只招美国本地/必须到岗的信号 —— 你在杭州，命中即丢
+ONSITE = [
+    "in person", "in-person", "onsite", "on-site", "must be local",
+    "remote (usa)", "remote (us)", "us only", "u.s. only", "usa only",
+    "w2", "us citizen", "green card", "authorized to work in the us",
+    "must reside in the us", "must be based in the us",
+]
+
 BAD = [
     "react", "angular", "vue", "flutter", "laravel", "wordpress", "php",
     "shopify", "woocommerce", "swift", "kotlin", "ios developer",
@@ -254,6 +262,8 @@ def score(job):
     title = job["title"].lower()
     blob = (job["title"] + " " + job["desc"]).lower()
     if any(b in blob for b in BAD):
+        return -1
+    if any(o in blob for o in ONSITE):
         return -1
     title_hits = sum(1 for g in GOOD if g in title)
     hits = sum(1 for g in GOOD if g in blob)
