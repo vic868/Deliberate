@@ -40,6 +40,71 @@ related:
 
 ---
 
+## 🔤 命名由来：标题叫 Attention，模型却叫 Transformer
+
+> [!question] 一个常见困惑
+> 论文标题是《Attention Is All You Need》，为什么模型却叫 **Transformer**？
+> 答案：**标题是论点，名字是产品名**。而且——**论文全文没有一句解释命名理由**，第 3 节开头直接就说 "we propose a new simple network architecture, the Transformer"。
+
+### 标题：一句宣战口号，不是技术描述
+
+标题回答的是“**做序列建模到底需要什么**”，答案是“只需要注意力”。三个词都在表态：
+
+| 词 | 真正在说什么 |
+| --- | --- |
+| **Attention** | 方法就是注意力（当时它只是 RNN 的外挂模块） |
+| **All** | 关键词是“全部/仅仅”——否定“必须有 RNN/CNN”这个前提 |
+| **You Need** | 第二人称直面社区，把技术主张写成一句口号 |
+
+2017 年之前的共识是“attention 必须和 RNN 一起用”，论文要掀的正是这张桌子 → 标题必须带攻击性、好记、可引用。
+
+### 名字：来自任务名 sequence transduction
+
+论文第一句：*The dominant **sequence transduction** models are based on complex recurrent or convolutional neural networks...*
+
+- **sequence transduction（序列转换）** = 把一条符号序列映射成另一条，这是论文的**任务定义**；
+- 干这件事的模型学术上叫 **transducer**（换能器/转换器）；加施事后缀 `-er` → **transformer**；
+- 含义：**一个做序列转换的“变换器”**，把输入表示逐层**变换**成输出表示。
+
+所以它是**按功能命名，不是按机制命名**：
+
+| 命名思路 | 假如这么叫 | 问题 |
+| --- | --- | --- |
+| 按机制 | AttentionNet | 把“手段”当“品类”，越界 |
+| 按旧结构 | RNN-Attention | 名字里带着它要推翻的东西 |
+| **按任务/功能** | **Transformer** | 中立、可扩展、不锁模态 ✅ |
+
+这个“中性名”后来价值巨大：论文结论已写明要推向**图像/音频/视频**，四年后 ViT 正是这么干的；若当初叫 AttentionNet for Translation，扩到视觉就尴尬了。
+
+### 同类操作：标题讲洞见，名字做产品
+
+| 论文标题（洞见） | 模型名（实体） |
+| --- | --- |
+| Deep Residual Learning for Image Recognition | **ResNet** |
+| BERT: Pre-training of Deep Bidirectional **Transformers** | **BERT** |
+| Language Models are Unsupervised Multitask Learners | **GPT-2** |
+| An Image is Worth 16x16 Words | **ViT** |
+| **Attention Is All You Need** | **Transformer** |
+
+注意 **GPT = Generative Pre-trained Transformer**：这个家族名被直接写进了下一代模型名里，说明它已从“某个模型”升格为**架构品类名**（地位类似 CNN / RNN）。
+
+### 两个细节
+
+1. **中译为什么两种**：`transduction`（转换，任务层）与 `transform`（变换，计算层）叠在一个词里——论文强调前者，模型内部干的是后者，所以“变换器”“转换器”都说得通。
+2. **名字覆盖范围在漂移**：
+
+| 语境 | “Transformer”指什么 |
+| --- | --- |
+| 2017 论文 | 整个 **encoder + decoder** 模型 |
+| 现在说“Transformer 层/block” | 单层（注意力 + FFN + 残差） |
+| GPT 系列 | 只用 **decoder** 那一半 |
+| BERT | 只用 **encoder** 那一半 |
+
+> [!warning] 面试陷阱
+> 严格讲，今天的“Transformer”是**一组组件的家族名**，已不等于论文里那个具体的翻译模型。被问“Transformer 有几个子层”时，先说清指 encoder 层（2 个）还是 decoder 层（3 个）。
+
+---
+
 ## 一、背景：它要解决什么问题
 
 论文摘要页的讲师批注概括得很准：**Transformer 之前的主流序列模型是「RNN/CNN + encoder-decoder（+注意力）」；Transformer 彻底摒弃 RNN/CNN**。
