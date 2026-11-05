@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
+                "file": "file:/Users/vic/Desktop/ai.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "08-专题-Python 内存管理与垃圾回收（对比 JVM）"
+              "title": "ai"
             }
           }
         ]
@@ -273,6 +273,7 @@
   },
   "active": "d649499d8b671e47",
   "lastOpenFiles": [
+    "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
     "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "upwork-jobscan/runs/2026-11-05.md",
     "6-ai/0-LLM/3-AI 生产故障的工程本质.md",
@@ -298,7 +299,6 @@
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg.crdownload",
     "6-ai/0-LLM/0-LLM.md",
-    "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
     "15-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "服务器巡检-192.168.0.103/WeKnora-部署文档.md",
     "upwork-jobscan/runs/2026-11-04.md",
