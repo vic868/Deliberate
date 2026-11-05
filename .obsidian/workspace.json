@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "file:/Users/vic/Desktop/ai.md",
+                "file": "6-ai/0-LLM/4-大模型核心原理与Transformer架构.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "ai"
+              "title": "4-大模型核心原理与Transformer架构"
             }
           }
         ]
@@ -271,10 +271,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d649499d8b671e47",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "6-ai/0-LLM/4-大模型核心原理与Transformer架构.md",
+    "6-ai/AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
+    "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
+    "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
+    "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
     "服务器巡检-192.168.0.106/Nacos部署运维手册.md",
+    "file:/Users/vic/Desktop/ai.md",
+    "6-ai/0-LLM/4-大模型核心原理与Transformer架构.md",
     "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
     "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "upwork-jobscan/runs/2026-11-05.md",
@@ -296,14 +301,9 @@
     "6-ai/SpringAI.excalidraw.md",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/01-spring ai vs langchan.md",
-    "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "6-ai/deepseek-herness.drawio",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg.crdownload",
-    "6-ai/0-LLM/0-LLM.md",
-    "15-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
-    "服务器巡检-192.168.0.103/WeKnora-部署文档.md",
-    "upwork-jobscan/runs/2026-11-04.md",
     "15-python",
     "6-ai/0-LLM",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
