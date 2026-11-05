@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
+                "file": "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "01-高级AI工程师与AI研发经理成长路线"
+              "title": "08-专题-Python 内存管理与垃圾回收（对比 JVM）"
             }
           }
         ]
@@ -273,9 +273,9 @@
   },
   "active": "d649499d8b671e47",
   "lastOpenFiles": [
+    "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "upwork-jobscan/runs/2026-11-05.md",
     "6-ai/0-LLM/3-AI 生产故障的工程本质.md",
-    "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "16-职业成长",
     "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/1-milvus/pgvector 学习文档.md",
