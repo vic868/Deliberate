@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "15-python/05-阶段五-项目实战与验收.md",
+                "file": "15-python/09-Python基础课-总索引.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "05-阶段五-项目实战与验收"
+              "title": "09-Python基础课-总索引"
             }
           }
         ]
@@ -273,6 +273,8 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "15-python/10-基础课01-04-语法与流程控制.md",
+    "15-python/05-阶段五-项目实战与验收.md",
     "15-python/09-Python基础课-总索引.md",
     "15-python/00-Python 学习计划总览.md",
     "15-python/04-阶段四-数据与 AI 应用.md",
@@ -298,8 +300,6 @@
     "6-ai/1-milvus/0-milvus.excalidraw.md",
     "6-ai/1-milvus/pgvector vs Milvus 选型对比.md",
     "6-ai/0-LLM/1.2-Prompt Engineer 提示词工程.md",
-    "6-ai/0-LLM/1-提示词工程.md",
-    "6-ai/0-LLM/1.1-提示工程实战演练（L1_day04）.md",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/deepseek-herness.drawio",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg",
