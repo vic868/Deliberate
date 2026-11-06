@@ -39,16 +39,30 @@
             "id": "09bf5034c4a2376a",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "13-基础课10-11-模块与文件IO"
+            }
+          },
+          {
+            "id": "9d0c81a690788a0a",
+            "type": "leaf",
+            "state": {
               "type": "smm",
               "state": {
-                "file": "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md"
+                "file": "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md"
               },
               "icon": "smm-icon",
-              "title": "12-基础课08-10-函数与函数式.smm"
+              "title": "13-基础课10-11-模块与文件IO.smm"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -303,25 +317,25 @@
     "type": "floating",
     "children": [
       {
-        "id": "4aabe56a700470a3",
+        "id": "211b1158e2ae37bd",
         "type": "window",
         "children": [
           {
-            "id": "1fe30b8d660fdf01",
+            "id": "f362413f7f532f47",
             "type": "tabs",
             "children": [
               {
-                "id": "281cbec0e2b16f0c",
+                "id": "6089377deaf49011",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "6-ai/01-python/12-基础课08-10-函数与函数式.md",
+                    "file": "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
                     "mode": "preview",
                     "source": true
                   },
                   "icon": "lucide-file",
-                  "title": "12-基础课08-10-函数与函数式"
+                  "title": "13-基础课10-11-模块与文件IO"
                 }
               }
             ]
@@ -337,17 +351,18 @@
       }
     ]
   },
-  "active": "09bf5034c4a2376a",
+  "active": "9d0c81a690788a0a",
   "lastOpenFiles": [
-    "6-ai/01-python/12-基础课08-10-函数与函数式.md",
-    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
+    "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
+    "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
+    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
+    "6-ai/01-python/12-基础课08-10-函数与函数式.md",
     "6-ai/01-python/10-基础课01-04-语法与流程控制.md",
     "file:/Volumes/新加卷/学习/往期录播/视频/L2阶段/01-RAG到底怎么用？从LLM短板出发，手把手教你构建高效知识库与文档分块-26.7.13/L2_day01-Naive RAG入门（解压版）/补充/技术规格说明书.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/0-LLM/0-LLM.md",
-    "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
@@ -364,7 +379,6 @@
     "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
-    "服务器巡检-192.168.0.106/Nacos部署运维手册.md",
     "16-职业成长",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/deepseek-herness.drawio",
