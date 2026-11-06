@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "15-python/10-基础课01-04-语法与流程控制.md",
+                "file": "15-python/12-基础课08-10-函数与函数式.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "10-基础课01-04-语法与流程控制"
+              "title": "12-基础课08-10-函数与函数式"
             }
           }
         ]
@@ -273,13 +273,13 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "15-python/11-基础课05-07-容器与字符串.md",
+    "15-python/10-基础课01-04-语法与流程控制.md",
     "15-python/15-基础课14-15-异常与虚拟环境.md",
     "15-python/14-基础课12-13-面向对象.md",
     "15-python/13-基础课10-11-模块与文件IO.md",
     "15-python/12-基础课08-10-函数与函数式.md",
-    "15-python/11-基础课05-07-容器与字符串.md",
     "15-python/09-Python基础课-总索引.md",
-    "15-python/10-基础课01-04-语法与流程控制.md",
     "15-python/05-阶段五-项目实战与验收.md",
     "15-python/00-Python 学习计划总览.md",
     "15-python/04-阶段四-数据与 AI 应用.md",
