@@ -67,16 +67,30 @@
             "id": "9aad0314832944e2",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "15-基础课14-15-异常与虚拟环境"
+            }
+          },
+          {
+            "id": "bff4cca557c78976",
+            "type": "leaf",
+            "state": {
               "type": "smm",
               "state": {
-                "file": "6-ai/01-python/14-基础课12-13-面向对象.smm.md"
+                "file": "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md"
               },
               "icon": "smm-icon",
-              "title": "14-基础课12-13-面向对象.smm"
+              "title": "15-基础课14-15-异常与虚拟环境.smm"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -331,25 +345,25 @@
     "type": "floating",
     "children": [
       {
-        "id": "b7101fb7c44b5721",
+        "id": "b0e22d711549785f",
         "type": "window",
         "children": [
           {
-            "id": "2b171b52f0ae71ac",
+            "id": "db42417a873c3940",
             "type": "tabs",
             "children": [
               {
-                "id": "dbbbfa86fb6d8078",
+                "id": "2c9b0e1b9de2dc9c",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "6-ai/01-python/14-基础课12-13-面向对象.md",
+                    "file": "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
                     "mode": "preview",
                     "source": true
                   },
                   "icon": "lucide-file",
-                  "title": "14-基础课12-13-面向对象"
+                  "title": "15-基础课14-15-异常与虚拟环境"
                 }
               }
             ]
@@ -365,10 +379,12 @@
       }
     ]
   },
-  "active": "dbbbfa86fb6d8078",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
+    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
     "6-ai/01-python/14-基础课12-13-面向对象.md",
+    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
+    "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
     "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_4.png",
     "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_3.png",
     "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_2.png",
@@ -386,7 +402,6 @@
     "6-ai/0-LLM/0-LLM.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
     "6-ai/01-python/09-Python基础课-总索引.md",
     "6-ai/01-python/05-阶段五-项目实战与验收.md",
     "6-ai/01-python/00-Python 学习计划总览.md",
