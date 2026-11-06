@@ -1,0 +1,68 @@
+---
+path: 6-ai/01-python/06-专题-__name__ 与程序入口.smm.md
+tags:
+  - simplemindmap
+  - Python
+  - 专题
+  - 模块
+  - 入口
+  - 坑
+title: 专题 · if __name__ == "__main__" 到底是什么
+status: 已整理
+created: 2026-11-03
+---
+> 请勿修改除YAML外的任何信息
+# metadata
+```metadata
+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
+```
+# svgdata
+```svgData
+
+```
+# linkdata
+# textdata
+专题 · if __name__ == "__main__": 到底是什么 ^86cf290a-dbbf-4143-af9f-7ff4a154ba9b
+
+一、__name__ 是什么 ^983fddea-a08d-4f6c-8ab4-1aba39b6bda2
+
+这是 Python 的「文件被直接运行」判定，等价于 Java 的 public static void main(String[] args)：
+只有当我这个文件被当作程序启动时才执行下面的代码；被别人 import 时不执行。 ^0ff677b1-4d4b-41fa-bb57-a2b5e1322c06
+
+二、为什么需要这个守卫 ^fcfa6494-e13e-4fed-a8ce-8c1660cf8224
+
+三、标准写法：守卫 + main() 函数 ^31462d2c-4f3e-4ff8-b1dc-968a76e6206d
+
+四、四种"入口"写法的区别 ^c56c23ba-7e03-4c93-b676-b7b8154404d9
+
+五、七个坑 ^e00194fb-30cc-478c-bebe-258bbcadee83
+
+1. 在 -m 模式下 __file__ 和 sys.path[0] 变了 ^3a823792-0c46-49fd-bfa0-a056e048c9cb
+
+2. 不要把 "__main__" 当模块名去 import ^685346d0-a5d7-46a0-8ca9-a63b2c4c787b
+
+3. 守卫写在函数里没有意义 ^59666133-eb5a-4510-a152-d8e403926548
+
+4. 多重入口时只判断一次 ^ecc78a07-0726-43f8-a9a9-27e52e0151aa
+
+5. multiprocessing 必须配守卫（这条最实用） ^f3d194bb-afbd-4569-8c4b-7cecee49bd51
+
+6. 同名模块遮蔽 ^3e3d1487-0052-489b-8a81-627fb402c158
+
+7. 守卫 ≠ 只在"主线程"执行 ^44539b1d-dd2a-4e4d-a802-543bf2c68dde
+
+六、和 Java 对照 ^7a6dd7d5-0a57-4258-b165-3486d031191a
+
+七、自测 ^3622512c-9e02-4b66-b157-af5638a1f696
+
+[ ] 说出 python foo.py、import foo、python -m pkg.foo 三种情况下 __name__ 的值。 ^7f167796-8882-48e3-8724-d9cc5e34d177
+
+[ ] 解释为什么 python foo.py 之后无法 import foo。 ^9ce720f4-2f05-40a5-a82c-7e5ee7466eb0
+
+[ ] 写出"守卫 + main 函数 + sys.exit"的标准骨架。 ^79ee2ec2-ef02-4f84-86b6-8e390a641843
+
+[ ] 说明 pkg/__main__.py 和 [project.scripts] 各自的用途。 ^51cbd58e-87aa-4d2b-897c-f2d1a4d5fc64
+
+[ ] 解释 multiprocessing 不加守卫为什么会无限递归。 ^106f0df1-ea72-418b-bba3-316129ec3bf8
+
+[ ] 判断：python pkg/cli.py 里 from .core import X 为什么报错，怎么改。 ^dba38a4f-caa3-421d-8ed5-7939d448c94d

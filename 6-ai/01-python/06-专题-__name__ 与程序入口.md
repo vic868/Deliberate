@@ -1,6 +1,11 @@
 ---
 title: 专题 · if __name__ == "__main__" 到底是什么
-tags: [Python, 专题, 模块, 入口, 坑]
+tags:
+  - Python
+  - 专题
+  - 模块
+  - 入口
+  - 坑
 status: 已整理
 created: 2026-11-03
 ---
