@@ -62,9 +62,21 @@
               "icon": "lucide-file",
               "title": "14-基础课12-13-面向对象"
             }
+          },
+          {
+            "id": "9aad0314832944e2",
+            "type": "leaf",
+            "state": {
+              "type": "smm",
+              "state": {
+                "file": "6-ai/01-python/14-基础课12-13-面向对象.smm.md"
+              },
+              "icon": "smm-icon",
+              "title": "14-基础课12-13-面向对象.smm"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -314,8 +326,49 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9d0c81a690788a0a",
+  "floating": {
+    "id": "94553ffdc6f8637c",
+    "type": "floating",
+    "children": [
+      {
+        "id": "b7101fb7c44b5721",
+        "type": "window",
+        "children": [
+          {
+            "id": "2b171b52f0ae71ac",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "dbbbfa86fb6d8078",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "6-ai/01-python/14-基础课12-13-面向对象.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "14-基础课12-13-面向对象"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "9aad0314832944e2",
   "lastOpenFiles": [
+    "6-ai/01-python/14-基础课12-13-面向对象.md",
+    "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
@@ -329,7 +382,6 @@
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
-    "6-ai/01-python/14-基础课12-13-面向对象.md",
     "6-ai/01-python/09-Python基础课-总索引.md",
     "6-ai/01-python/05-阶段五-项目实战与验收.md",
     "6-ai/01-python/00-Python 学习计划总览.md",
@@ -341,7 +393,6 @@
     "6-ai/AI 学习规划/Transformer 面试题/00-Transformer入门总览.md",
     "6-ai/AI 学习规划/Transformer 面试题/Transformer 面试题.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
-    "服务器巡检-192.168.0.106/Nacos-Seata学习环境建设方案.md",
     "16-职业成长",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/deepseek-herness.drawio",
