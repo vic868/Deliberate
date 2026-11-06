@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "6-NaiveRAG构建流程与文档分块"
             }
+          },
+          {
+            "id": "b141dc13ac81f491",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "file:/Volumes/新加卷/学习/往期录播/视频/L2阶段/01-RAG到底怎么用？从LLM短板出发，手把手教你构建高效知识库与文档分块-26.7.13/L2_day01-Naive RAG入门（解压版）/补充/技术规格说明书.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "技术规格说明书"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -271,10 +286,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "b141dc13ac81f491",
   "lastOpenFiles": [
-    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/0-LLM/0-LLM.md",
     "15-python/13-基础课10-11-模块与文件IO.md",
     "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
