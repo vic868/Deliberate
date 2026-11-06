@@ -53,12 +53,14 @@
             "id": "9d0c81a690788a0a",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md"
+                "file": "6-ai/01-python/14-基础课12-13-面向对象.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "13-基础课10-11-模块与文件IO.smm"
+              "icon": "lucide-file",
+              "title": "14-基础课12-13-面向对象"
             }
           }
         ],
@@ -312,46 +314,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "floating": {
-    "id": "94553ffdc6f8637c",
-    "type": "floating",
-    "children": [
-      {
-        "id": "211b1158e2ae37bd",
-        "type": "window",
-        "children": [
-          {
-            "id": "f362413f7f532f47",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "6089377deaf49011",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
-                    "mode": "preview",
-                    "source": true
-                  },
-                  "icon": "lucide-file",
-                  "title": "13-基础课10-11-模块与文件IO"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 388,
-        "y": 121,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "6089377deaf49011",
+  "active": "9d0c81a690788a0a",
   "lastOpenFiles": [
     "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
