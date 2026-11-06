@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md"
+                "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "V8.0-应用开发-思维导图整理.smm"
+              "icon": "lucide-file",
+              "title": "6-NaiveRAG构建流程与文档分块"
             }
           }
         ]
@@ -271,19 +273,22 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+    "6-ai/0-LLM/0-LLM.md",
+    "15-python/13-基础课10-11-模块与文件IO.md",
+    "6-ai/ProcessOn-V8.0应用开发思维导图/V8.0-应用开发-思维导图整理.smm.md",
     "16-职业成长/01-高级AI工程师与AI研发经理成长路线.md",
     "15-python/12-基础课08-10-函数与函数式.md",
     "15-python/11-基础课05-07-容器与字符串.md",
     "15-python/10-基础课01-04-语法与流程控制.md",
     "15-python/15-基础课14-15-异常与虚拟环境.md",
     "15-python/14-基础课12-13-面向对象.md",
-    "15-python/13-基础课10-11-模块与文件IO.md",
     "15-python/09-Python基础课-总索引.md",
     "15-python/05-阶段五-项目实战与验收.md",
     "15-python/00-Python 学习计划总览.md",
     "15-python/04-阶段四-数据与 AI 应用.md",
     "15-python/03-阶段三-并发与异步.md",
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/0-LLM/2-RAG.md",
     "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
     "6-ai/0-LLM/4-大模型核心原理与Transformer架构.md",
@@ -294,10 +299,7 @@
     "服务器巡检-192.168.0.106/Nacos部署运维手册.md",
     "file:/Users/vic/Desktop/ai.md",
     "15-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
-    "upwork-jobscan/runs/2026-11-05.md",
-    "6-ai/0-LLM/3-AI 生产故障的工程本质.md",
     "16-职业成长",
-    "6-ai/0-LLM/自动化评估驱动开发EDD-技术与工具整理.md",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/deepseek-herness.drawio",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg",
