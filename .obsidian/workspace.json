@@ -95,12 +95,14 @@
             "id": "7e05572460dc08b7",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/01-python/14-基础课12-13-面向对象.smm.md"
+                "file": "6-ai/01-python/06-专题-__name__ 与程序入口.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "14-基础课12-13-面向对象.smm"
+              "icon": "lucide-file",
+              "title": "06-专题-__name__ 与程序入口"
             }
           }
         ],
@@ -426,27 +428,29 @@
       }
     ]
   },
-  "active": "f885b8ddb2064e57",
+  "active": "7e05572460dc08b7",
   "lastOpenFiles": [
+    "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_4.png",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_1.png",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_2.png",
-    "6-ai/01-python/14-基础课12-13-面向对象.md",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage.png",
+    "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
+    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
     "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
+    "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
+    "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
+    "6-ai/01-python/pic",
     "6-ai/01-python/06-专题-__name__ 与程序入口.md",
+    "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_4.png",
+    "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_1.png",
+    "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_2.png",
+    "6-ai/01-python/14-基础课12-13-面向对象.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境_pasteImage_3.png",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境_pasteImage_2.png",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境_pasteImage_1.png",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境_pasteImage.png",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_3.png",
-    "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
+    "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_3.png",
+    "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_2.png",
+    "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_1.png",
+    "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_3.png",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
-    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
     "6-ai/01-python/12-基础课08-10-函数与函数式.md",
     "6-ai/01-python/10-基础课01-04-语法与流程控制.md",
     "file:/Volumes/新加卷/学习/往期录播/视频/L2阶段/01-RAG到底怎么用？从LLM短板出发，手把手教你构建高效知识库与文档分块-26.7.13/L2_day01-Naive RAG入门（解压版）/补充/技术规格说明书.md",
@@ -472,7 +476,6 @@
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
     "模板",
     "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
-    "6-ai/ProcessOn-V8.0应用开发思维导图/outline.txt",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
