@@ -111,16 +111,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "file:/Users/vic/PycharmProjects/fastapiadmin/docs/后端技术文档.md",
+                "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "后端技术文档"
+              "title": "6-NaiveRAG构建流程与文档分块"
+            }
+          },
+          {
+            "id": "3c8f3ff4d15d8bb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "6-NaiveRAG构建流程与文档分块"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -370,8 +384,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4e17586c3f0dd288",
+  "active": "3c8f3ff4d15d8bb7",
   "lastOpenFiles": [
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+    "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
+    "file:/Users/vic/PycharmProjects/fastapiadmin/docs/后端技术文档.md",
     "17-FastAPI/04-数据层-Model-Schema-CRUD.md",
     "17-FastAPI/03-插件系统内核.md",
     "17-FastAPI/02-五层架构与请求全链路.md",
@@ -406,9 +424,6 @@
     "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
     "6-ai/01-python/12-基础课08-10-函数与函数式.md",
-    "6-ai/01-python/10-基础课01-04-语法与流程控制.md",
-    "file:/Volumes/新加卷/学习/往期录播/视频/L2阶段/01-RAG到底怎么用？从LLM短板出发，手把手教你构建高效知识库与文档分块-26.7.13/L2_day01-Naive RAG入门（解压版）/补充/技术规格说明书.md",
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "16-职业成长",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/deepseek-herness.drawio",
