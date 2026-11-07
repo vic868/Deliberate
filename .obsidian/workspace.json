@@ -125,16 +125,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+                "file": "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "6-NaiveRAG构建流程与文档分块"
+              "title": "7-向量化与向量检索-Embedding相似度与向量数据库"
+            }
+          },
+          {
+            "id": "bf0069f71e32a293",
+            "type": "leaf",
+            "state": {
+              "type": "smm",
+              "state": {
+                "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md"
+              },
+              "icon": "smm-icon",
+              "title": "6-NaiveRAG构建流程与文档分块.smm"
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -384,10 +396,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3c8f3ff4d15d8bb7",
+  "active": "bf0069f71e32a293",
   "lastOpenFiles": [
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
+    "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
+    "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
     "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
     "file:/Users/vic/PycharmProjects/fastapiadmin/docs/后端技术文档.md",
     "17-FastAPI/04-数据层-Model-Schema-CRUD.md",
@@ -422,8 +436,6 @@
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_1.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_3.png",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
-    "6-ai/01-python/11-基础课05-07-容器与字符串.md",
-    "6-ai/01-python/12-基础课08-10-函数与函数式.md",
     "16-职业成长",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/deepseek-herness.drawio",
