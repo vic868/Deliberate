@@ -97,10 +97,10 @@
             "state": {
               "type": "smm",
               "state": {
-                "file": "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md"
+                "file": "6-ai/01-python/14-基础课12-13-面向对象.smm.md"
               },
               "icon": "smm-icon",
-              "title": "06-专题-__name__ 与程序入口.smm"
+              "title": "14-基础课12-13-面向对象.smm"
             }
           }
         ],
@@ -426,8 +426,13 @@
       }
     ]
   },
-  "active": "f885b8ddb2064e57",
+  "active": "7e05572460dc08b7",
   "lastOpenFiles": [
+    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_4.png",
+    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_1.png",
+    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_2.png",
+    "6-ai/01-python/14-基础课12-13-面向对象.md",
+    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
     "6-ai/01-python/06-专题-__name__ 与程序入口.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
@@ -436,13 +441,8 @@
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境_pasteImage_2.png",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境_pasteImage_1.png",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境_pasteImage.png",
-    "6-ai/01-python/14-基础课12-13-面向对象.md",
     "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_4.png",
     "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_3.png",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_2.png",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage_1.png",
-    "6-ai/01-python/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
@@ -462,7 +462,6 @@
     "6-ai/01-python/03-阶段三-并发与异步.md",
     "6-ai/0-LLM/2-RAG.md",
     "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
-    "6-ai/0-LLM/4-大模型核心原理与Transformer架构.md",
     "16-职业成长",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/deepseek-herness.drawio",
