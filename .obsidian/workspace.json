@@ -95,12 +95,14 @@
             "id": "7e05572460dc08b7",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md"
+                "file": "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "06-专题-__name__ 与程序入口.smm"
+              "icon": "lucide-file",
+              "title": "07-专题-Python 的分布式能力边界（对比 Java 生态）"
             }
           }
         ],
@@ -354,82 +356,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "floating": {
-    "id": "94553ffdc6f8637c",
-    "type": "floating",
-    "children": [
-      {
-        "id": "b0e22d711549785f",
-        "type": "window",
-        "children": [
-          {
-            "id": "db42417a873c3940",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "2c9b0e1b9de2dc9c",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
-                    "mode": "preview",
-                    "source": true
-                  },
-                  "icon": "lucide-file",
-                  "title": "15-基础课14-15-异常与虚拟环境"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 388,
-        "y": 121,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      },
-      {
-        "id": "d8f95b48dce96a7e",
-        "type": "window",
-        "children": [
-          {
-            "id": "073a0bdcb257c599",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "f885b8ddb2064e57",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "6-ai/01-python/06-专题-__name__ 与程序入口.md",
-                    "mode": "preview",
-                    "source": true
-                  },
-                  "icon": "lucide-file",
-                  "title": "06-专题-__name__ 与程序入口"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 388,
-        "y": 121,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "7e05572460dc08b7",
   "lastOpenFiles": [
-    "6-ai/01-python/06-专题-__name__ 与程序入口.md",
     "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
+    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
+    "6-ai/01-python/06-专题-__name__ 与程序入口.md",
     "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
@@ -442,7 +373,6 @@
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_2.png",
     "6-ai/01-python/14-基础课12-13-面向对象.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_3.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_2.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_1.png",
