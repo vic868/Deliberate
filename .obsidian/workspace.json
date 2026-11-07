@@ -358,6 +358,11 @@
   },
   "active": "7e05572460dc08b7",
   "lastOpenFiles": [
+    "17-FastAPI/03-插件系统内核.md",
+    "17-FastAPI/02-五层架构与请求全链路.md",
+    "17-FastAPI/01-技术栈与工程结构.md",
+    "17-FastAPI/00-FastApiAdmin-项目总览.md",
+    "17-FastAPI",
     "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
     "6-ai/01-python/06-专题-__name__ 与程序入口.md",
@@ -390,10 +395,6 @@
     "6-ai/01-python/09-Python基础课-总索引.md",
     "6-ai/01-python/05-阶段五-项目实战与验收.md",
     "6-ai/01-python/00-Python 学习计划总览.md",
-    "6-ai/01-python/04-阶段四-数据与 AI 应用.md",
-    "6-ai/01-python/03-阶段三-并发与异步.md",
-    "6-ai/0-LLM/2-RAG.md",
-    "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
     "16-职业成长",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/deepseek-herness.drawio",
@@ -403,7 +404,6 @@
     "6-ai/0-LLM",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
     "模板",
-    "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
