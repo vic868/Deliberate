@@ -442,19 +442,19 @@
           }
         ],
         "direction": "vertical",
-        "x": 388,
-        "y": 121,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
+        "x": -1417,
+        "y": -607,
+        "width": 1327,
+        "height": 1130,
+        "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "1ab8c34ef8d33560",
+  "active": "3bc9a36234e1a9c9",
   "lastOpenFiles": [
-    "6-ai/0-LLM/10-AdvancedRAG二-查询优化与检索组件核心原理.md",
     "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
+    "6-ai/0-LLM/10-AdvancedRAG二-查询优化与检索组件核心原理.md",
     "6-ai/0-LLM/11-AdvancedRAG三-重排RAG-Fusion与多级检索综合实战.md",
     "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
     "17-FastAPI/10-FastAPI与SpringBoot全面对比.md",
