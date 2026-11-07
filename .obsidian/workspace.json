@@ -137,16 +137,30 @@
             "id": "bf0069f71e32a293",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "8-混合检索与NaiveRAG项目实战-BM25与HR智能问答"
+            }
+          },
+          {
+            "id": "1ab8c34ef8d33560",
+            "type": "leaf",
+            "state": {
               "type": "smm",
               "state": {
-                "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md"
+                "file": "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.smm.md"
               },
               "icon": "smm-icon",
-              "title": "6-NaiveRAG构建流程与文档分块.smm"
+              "title": "8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.smm"
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -435,13 +449,14 @@
       }
     ]
   },
-  "active": "3bc9a36234e1a9c9",
+  "active": "1ab8c34ef8d33560",
   "lastOpenFiles": [
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
+    "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.smm.md",
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
     "file:/Users/vic/PycharmProjects/fastapiadmin/docs/后端技术文档.md",
     "17-FastAPI/04-数据层-Model-Schema-CRUD.md",
@@ -470,7 +485,6 @@
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_1.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_2.png",
     "6-ai/01-python/14-基础课12-13-面向对象.md",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_3.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_2.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_1.png",
