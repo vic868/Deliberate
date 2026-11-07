@@ -153,12 +153,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "17-FastAPI/10-FastAPI与SpringBoot全面对比.md",
+                "file": "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "10-FastAPI与SpringBoot全面对比"
+              "title": "9-AdvancedRAG一-七个故障点与高级索引技术"
             }
           }
         ],
@@ -453,8 +453,8 @@
   },
   "active": "1ab8c34ef8d33560",
   "lastOpenFiles": [
-    "17-FastAPI/09-开发实战与踩坑清单.md",
     "17-FastAPI/10-FastAPI与SpringBoot全面对比.md",
+    "17-FastAPI/09-开发实战与踩坑清单.md",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.smm.md",
     "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
