@@ -396,13 +396,52 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "bf0069f71e32a293",
+  "floating": {
+    "id": "94553ffdc6f8637c",
+    "type": "floating",
+    "children": [
+      {
+        "id": "f365efff5e0c8932",
+        "type": "window",
+        "children": [
+          {
+            "id": "ae117f5538f68af1",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "3bc9a36234e1a9c9",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "6-NaiveRAG构建流程与文档分块"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "3bc9a36234e1a9c9",
   "lastOpenFiles": [
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
     "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
     "file:/Users/vic/PycharmProjects/fastapiadmin/docs/后端技术文档.md",
     "17-FastAPI/04-数据层-Model-Schema-CRUD.md",
