@@ -348,7 +348,7 @@ MySQL 的 `TEXT` 只有 64KB，日志的 `request_payload` / `response_json` 很
 
 ### 6.3 测试用 SQLite
 
-`tests/conftest.py` 设置 `TESTING` 环境变量 + `SLQ_DB_ENABLE`，用 `aiosqlite` 跑全量测试，不依赖外部 MySQL。
+`tests/conftest.py` 设置 `TESTING` 环境变量 + `REDIS_ENABLE=False`，用 `aiosqlite` 跑全量测试，不依赖外部 MySQL / Redis。
 
 > [!note] 可移植性的代价
 > `func.date_format()` 是 MySQL 函数，PostgreSQL 上没有。虽然项目声明支持 PG，但 `date`/`month` 操作符在 PG 下会报错。如果要上 PG，这两处需要改成 `func.to_char`。
