@@ -104,9 +104,23 @@
               "icon": "lucide-file",
               "title": "04-数据层-Model-Schema-CRUD"
             }
+          },
+          {
+            "id": "4e17586c3f0dd288",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "file:/Users/vic/PycharmProjects/fastapiadmin/docs/后端技术文档.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "后端技术文档"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -356,14 +370,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7e05572460dc08b7",
+  "active": "4e17586c3f0dd288",
   "lastOpenFiles": [
+    "17-FastAPI/04-数据层-Model-Schema-CRUD.md",
     "17-FastAPI/03-插件系统内核.md",
     "17-FastAPI/02-五层架构与请求全链路.md",
     "17-FastAPI/01-技术栈与工程结构.md",
     "17-FastAPI/00-FastApiAdmin-项目总览.md",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
-    "17-FastAPI/04-数据层-Model-Schema-CRUD.md",
     "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "17-FastAPI/09-开发实战与踩坑清单.md",
     "17-FastAPI/08-启动流程与配置管理.md",
