@@ -153,12 +153,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "17-FastAPI/09-开发实战与踩坑清单.md",
-                "mode": "source",
+                "file": "17-FastAPI/10-FastAPI与SpringBoot全面对比.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "09-开发实战与踩坑清单"
+              "title": "10-FastAPI与SpringBoot全面对比"
             }
           }
         ],
@@ -453,6 +453,8 @@
   },
   "active": "1ab8c34ef8d33560",
   "lastOpenFiles": [
+    "17-FastAPI/09-开发实战与踩坑清单.md",
+    "17-FastAPI/10-FastAPI与SpringBoot全面对比.md",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.smm.md",
     "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
@@ -469,7 +471,6 @@
     "17-FastAPI/00-FastApiAdmin-项目总览.md",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
-    "17-FastAPI/09-开发实战与踩坑清单.md",
     "17-FastAPI/08-启动流程与配置管理.md",
     "17-FastAPI/07-操作日志与审计.md",
     "17-FastAPI/06-国密加密体系.md",
@@ -480,7 +481,6 @@
     "6-ai/01-python/06-专题-__name__ 与程序入口.md",
     "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
-    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/pic",
