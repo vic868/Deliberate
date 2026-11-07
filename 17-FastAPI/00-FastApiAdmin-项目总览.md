@@ -11,7 +11,7 @@ version: v3.1.0
 > [!tldr] 一句话
 > **FastApiAdmin = FastAPI 版的 RuoYi**：内核 + 插件、五层分层、RBAC + 数据权限、JWT 双 Token、国密加密、代码生成器。一套后端同时喂 Web(6110) / UniApp(6120) / Flutter(6150)。
 
-这套笔记的目标不是"翻译项目文档"，而是**把 304 个 Python 文件讲成一个能上手改的结构**。写作时所有结论都回源码核对过，与 `docs/` 原文不一致的地方单独列在第 5 节。
+这套笔记的目标不是"翻译项目文档"，而是**把 303 个 Python 文件讲成一个能上手改的结构**。写作时所有结论都回源码核对过，与 `docs/` 原文不一致的地方单独列在第 5 节。
 
 ---
 
@@ -20,7 +20,7 @@ version: v3.1.0
 | 来源 | 内容 |
 |---|---|
 | `fastapiadmin/docs/` 5 份文档 | 快速入门与技术栈、后端技术文档、日志模块分析、国密加密实现、AI 工具规范 |
-| `backend/app/` 源码 | 内核 20 个模块、9 个业务插件（304 个 .py） |
+| `backend/app/` 源码 | 内核 21 个顶层模块（连子目录共 35 个 `.py`）、9 个业务插件（`app/` 内合计 270 个 `.py`） |
 | `backend/pyproject.toml` | 真实依赖版本（**以此为准**，文档里的版本号有过时） |
 | `AGENTS.md` + `core/plugin/README.md` | 项目自定的 4 条静默失败红线、迁移自检清单 |
 
@@ -148,7 +148,7 @@ flowchart TB
 | Web 后台 | `6110` · UniApp H5 `6120` · Flutter Web `6150` |
 | Python | `>= 3.14` |
 | 业务插件数 | 9 个（system / ai / task / monitor / storage / generator / application / common / example） |
-| 内核文件数 | 20 个 `.py`（`app/core/`） |
+| 内核文件数 | 21 个顶层 `.py`，连子目录共 35 个（`app/core/`） |
 
 ---
 
