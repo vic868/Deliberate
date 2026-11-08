@@ -453,6 +453,7 @@
   },
   "active": "3bc9a36234e1a9c9",
   "lastOpenFiles": [
+    "upwork-jobscan/runs/2026-11-08.md",
     "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
     "6-ai/0-LLM/10-AdvancedRAG二-查询优化与检索组件核心原理.md",
     "6-ai/0-LLM/11-AdvancedRAG三-重排RAG-Fusion与多级检索综合实战.md",
@@ -480,7 +481,6 @@
     "17-FastAPI/05-认证鉴权-JWT与RBAC.md",
     "17-FastAPI",
     "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/pic",
