@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/0-LLM.md",
+                "file": "18-LangChain/00-LangChain V1.0 学习总览.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0-LLM"
+              "title": "00-LangChain V1.0 学习总览"
             }
           }
         ]
@@ -271,11 +271,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0-LLM/0-LLM.md",
+    "18-LangChain/01-V1.0 重构与整体体系.md",
+    "18-LangChain/00-LangChain V1.0 学习总览.md",
+    "18-LangChain",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
-    "6-ai/0-LLM/0-LLM.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
     "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
@@ -298,8 +301,6 @@
     "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "17-FastAPI/08-启动流程与配置管理.md",
     "17-FastAPI/07-操作日志与审计.md",
-    "17-FastAPI/06-国密加密体系.md",
-    "17-FastAPI/05-认证鉴权-JWT与RBAC.md",
     "17-FastAPI",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
@@ -317,7 +318,6 @@
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg.crdownload",
     "6-ai/01-python",
-    "6-ai/0-LLM",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
