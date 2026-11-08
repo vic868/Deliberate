@@ -5,7 +5,7 @@ created: 2026-11-08
 related:
   - "[[00-LangChain V1.0 学习总览]]"
   - "[[03-链与 LCEL]]"
-  - "[[1-milvus]]"
+  - "[[Milvus 学习文档]]"
 source: "LangChainV1.0讲义.pdf P35–P45"
 ---
 
@@ -254,8 +254,8 @@ print(resp["answer"])
 | `similarity_search_with_score` 分数越大越相关？ | **反了**：Chroma 默认 L2 距离，分数越小越相似 |
 | 切换向量库要改一堆代码 | 统一用 `as_retriever()`，别直接调各家 API |
 | 把 Runnable 当文档塞进 context | 需用 `RunnablePassthrough` + 字典字面量组成 `RunnableParallel` |
-| 模型回答里夹着 ```sql 之类的标记 | 讲义 SQL 实战里专门写了 `SQLCleaner(StrOutputParser)` 清理，见 [[05-Agent 工具调用与中间件]] |
+| 模型回答里夹着 SQL 代码围栏标记 | 讲义 SQL 实战里专门写了 `SQLCleaner(StrOutputParser)` 清理，见 [[05-Agent 工具调用与中间件]] |
 | V1.0 找不到 `create_retrieval_chain` | 已移到 `langchain_classic`，或改 LCEL |
 
 > [!note] 往哪走
-> 这里是最基础的 RAG。课程后续章节（Advanced RAG、RAG 评估、通用文档智能问答系统）会在此基础上做查询改写、重排、混合检索与效果评估。向量库换成 Milvus 时可参考 [[1-milvus]]。
+> 这里是最基础的 RAG。课程后续章节（Advanced RAG、RAG 评估、通用文档智能问答系统）会在此基础上做查询改写、重排、混合检索与效果评估。向量库换成 Milvus 时可参考 [[Milvus 学习文档]] 与 [[pgvector vs Milvus 选型对比]]。

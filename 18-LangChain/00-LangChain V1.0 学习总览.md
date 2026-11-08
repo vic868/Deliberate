@@ -110,7 +110,7 @@ flowchart TB
 
 > [!tip] 与已有知识串联
 > 若已熟悉 Spring 生态：讲义给的定位是 **LangChain ≈ Spring Boot（脚手架）+ Apache Camel（集成总线）**；`Depends` 对应 IoC 注入、`Middleware` 对应 AOP 环绕、`@tool` 对应可被发现的 Bean 方法。详见 [[10-FastAPI与SpringBoot全面对比]]。
-> RAG 的向量库部分可衔接 [[1-milvus]] 与 Spring AI 侧的实现。
+> RAG 的向量库部分可衔接 [[Milvus 学习文档]]、[[pgvector vs Milvus 选型对比]] 与 Spring AI 侧的实现。
 
 ---
 

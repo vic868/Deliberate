@@ -353,7 +353,7 @@ agent = create_agent(
 | 多用户串会话 | 必须传 `config={"configurable": {"thread_id": ...}}`，并确保 checkpointer 已配置 |
 | Agent 执行了 UPDATE/DELETE | 在 system_prompt 里明令禁止 + 用 `HumanInTheLoopMiddleware` 加人工审批 |
 | Agent 死循环 / 费用失控 | `ModelCallLimitMiddleware` / `ToolCallLimitMiddleware` |
-| 生成的 SQL 带 ```sql 围栏 | v0.3 手写链需要 `SQLCleaner`；v1.0 Agent 内置循环已处理 |
+| 生成的 SQL 带 sql 代码围栏 | v0.3 手写链需要 `SQLCleaner`；v1.0 Agent 内置循环已处理 |
 
 > [!note] 与 [[03-链与 LCEL]] 的关系
 > LCEL 是「人定义好每一步」的确定性编排；Agent 是「模型决定走哪几步」的动态编排。V1.0 把主推方向从前者切到了后者，但 RAG 的检索、数据准备这些固定步骤仍大量使用 `Runnable` 组合。
