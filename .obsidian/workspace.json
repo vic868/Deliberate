@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "8-混合检索与NaiveRAG项目实战-BM25与HR智能问答"
             }
           }
         ]
@@ -79,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 348.625,
-    "collapsed": true
+    "width": 348.625
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -270,9 +273,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
+    "6-ai/0-LLM/0-LLM.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
-    "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
     "upwork-jobscan/runs/2026-11-08.md",
@@ -297,7 +301,6 @@
     "17-FastAPI/06-国密加密体系.md",
     "17-FastAPI/05-认证鉴权-JWT与RBAC.md",
     "17-FastAPI",
-    "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/pic",
