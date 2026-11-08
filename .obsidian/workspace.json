@@ -273,6 +273,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/05-Agent 工具调用与中间件.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
     "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
@@ -299,7 +300,6 @@
     "17-FastAPI/03-插件系统内核.md",
     "17-FastAPI/02-五层架构与请求全链路.md",
     "17-FastAPI/01-技术栈与工程结构.md",
-    "17-FastAPI/00-FastApiAdmin-项目总览.md",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
