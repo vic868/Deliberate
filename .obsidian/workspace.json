@@ -153,16 +153,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
-                "mode": "source",
-                "source": false
+                "file": "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "8-混合检索与NaiveRAG项目实战-BM25与HR智能问答"
+              "title": "7-向量化与向量检索-Embedding相似度与向量数据库"
             }
           }
-        ],
-        "currentTab": 10
+        ]
       }
     ],
     "direction": "vertical"
@@ -413,10 +412,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1ab8c34ef8d33560",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
+    "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "upwork-jobscan/runs/2026-11-08.md",
@@ -426,7 +426,6 @@
     "17-FastAPI/10-FastAPI与SpringBoot全面对比.md",
     "17-FastAPI/09-开发实战与踩坑清单.md",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.smm.md",
-    "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
     "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
     "file:/Users/vic/PycharmProjects/fastapiadmin/docs/后端技术文档.md",
