@@ -273,6 +273,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "6-ai/0-LLM/0-LLM.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
@@ -300,7 +301,6 @@
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "17-FastAPI/08-启动流程与配置管理.md",
-    "17-FastAPI/07-操作日志与审计.md",
     "17-FastAPI",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
