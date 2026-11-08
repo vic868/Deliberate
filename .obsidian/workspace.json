@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
+                "file": "6-ai/0-LLM/0-LLM.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "8-混合检索与NaiveRAG项目实战-BM25与HR智能问答"
+              "title": "0-LLM"
             }
           }
         ]
@@ -271,13 +271,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
     "6-ai/0-LLM/0-LLM.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
-    "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
     "upwork-jobscan/runs/2026-11-08.md",
     "6-ai/0-LLM/10-AdvancedRAG二-查询优化与检索组件核心原理.md",
