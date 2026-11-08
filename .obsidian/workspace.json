@@ -11,154 +11,10 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
-                "mode": "preview",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "6-NaiveRAG构建流程与文档分块"
-            }
-          },
-          {
-            "id": "b141dc13ac81f491",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/01-python/12-基础课08-10-函数与函数式.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "12-基础课08-10-函数与函数式"
-            }
-          },
-          {
-            "id": "09bf5034c4a2376a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "13-基础课10-11-模块与文件IO"
-            }
-          },
-          {
-            "id": "9d0c81a690788a0a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/01-python/14-基础课12-13-面向对象.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "14-基础课12-13-面向对象"
-            }
-          },
-          {
-            "id": "9aad0314832944e2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "15-基础课14-15-异常与虚拟环境"
-            }
-          },
-          {
-            "id": "bff4cca557c78976",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/01-python/06-专题-__name__ 与程序入口.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "06-专题-__name__ 与程序入口"
-            }
-          },
-          {
-            "id": "7e05572460dc08b7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "17-FastAPI/04-数据层-Model-Schema-CRUD.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "04-数据层-Model-Schema-CRUD"
-            }
-          },
-          {
-            "id": "4e17586c3f0dd288",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "6-NaiveRAG构建流程与文档分块"
-            }
-          },
-          {
-            "id": "3c8f3ff4d15d8bb7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "7-向量化与向量检索-Embedding相似度与向量数据库"
-            }
-          },
-          {
-            "id": "bf0069f71e32a293",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "8-混合检索与NaiveRAG项目实战-BM25与HR智能问答"
-            }
-          },
-          {
-            "id": "1ab8c34ef8d33560",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "7-向量化与向量检索-Embedding相似度与向量数据库"
+              "title": "新标签页"
             }
           }
         ]
@@ -414,11 +270,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "upwork-jobscan/runs/2026-11-08.md",
     "6-ai/0-LLM/10-AdvancedRAG二-查询优化与检索组件核心原理.md",
     "6-ai/0-LLM/11-AdvancedRAG三-重排RAG-Fusion与多级检索综合实战.md",
