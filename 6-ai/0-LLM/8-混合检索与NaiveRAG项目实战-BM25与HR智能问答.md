@@ -361,11 +361,11 @@ erDiagram
 
 ## 六、LangChain 组织的三层工具（随堂笔记）
 
-| 层 | 定位 | 面向 |
-|---|---|---|
+| 层              | 定位                                                                                       | 面向            |
+| -------------- | ---------------------------------------------------------------------------------------- | ------------- |
 | **DeepAgents** | 顶层，相对更重。基于 Harness 思想提供**开箱即用的 agent 实例**，封装任务分解、tool 链、subAgent、skills、内存管理、文件系统、沙盒、中间件 | 开箱即用的深度 Agent |
-| **LangChain** | 中间层。基于 LangGraph 封装了轻量级 create-agent，**主要面向 RAG 应用** | RAG 应用开发 |
-| **LangGraph** | 最底层。自定义流程（图）用它，**面向个性化 Agent 实现** | 自定义工作流 |
+| **LangChain**  | 中间层。基于 LangGraph 封装了轻量级 create-agent，**主要面向 RAG 应用**                                     | RAG 应用开发      |
+| **LangGraph**  | 最底层。自定义流程（图）用它，**面向个性化 Agent 实现**                                                        | 自定义工作流        |
 
 ```mermaid
 flowchart TD
