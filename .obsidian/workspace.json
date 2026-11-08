@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/00-LangChain V1.0 学习总览.md",
+                "file": "18-LangChain/03-链与 LCEL.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "00-LangChain V1.0 学习总览"
+              "title": "03-链与 LCEL"
             }
           }
         ]
@@ -273,14 +273,14 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
+    "18-LangChain/01-V1.0 重构与整体体系.md",
+    "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
     "18-LangChain/03-链与 LCEL.md",
-    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "6-ai/0-LLM/0-LLM.md",
-    "18-LangChain/01-V1.0 重构与整体体系.md",
-    "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain",
     "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
