@@ -25,14 +25,12 @@
             "id": "dcb5e2341e2ac597",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "smm",
               "state": {
-                "file": "file:/Users/vic/Desktop/ai.md",
-                "mode": "preview",
-                "source": true
+                "file": "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md"
               },
-              "icon": "lucide-file",
-              "title": "ai"
+              "icon": "smm-icon",
+              "title": "15-基础课14-15-异常与虚拟环境.smm"
             }
           }
         ],
@@ -288,6 +286,14 @@
   },
   "active": "dcb5e2341e2ac597",
   "lastOpenFiles": [
+    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
+    "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
+    "6-ai/01-python/14-基础课12-13-面向对象.md",
+    "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
+    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
+    "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
+    "6-ai/01-python/12-基础课08-10-函数与函数式.md",
+    "file:/Users/vic/Desktop/ai.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/03-链与 LCEL.md",
@@ -307,14 +313,6 @@
     "6-ai/0-LLM/10-AdvancedRAG二-查询优化与检索组件核心原理.md",
     "6-ai/0-LLM/11-AdvancedRAG三-重排RAG-Fusion与多级检索综合实战.md",
     "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
-    "17-FastAPI/10-FastAPI与SpringBoot全面对比.md",
-    "17-FastAPI/09-开发实战与踩坑清单.md",
-    "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.smm.md",
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.smm.md",
-    "6-ai/0-LLM/5-Attention-Is-All-You-Need论文精读.md",
-    "file:/Users/vic/PycharmProjects/fastapiadmin/docs/后端技术文档.md",
-    "17-FastAPI/04-数据层-Model-Schema-CRUD.md",
-    "17-FastAPI/03-插件系统内核.md",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
