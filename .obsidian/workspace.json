@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "00-LangChain V1.0 学习总览"
             }
+          },
+          {
+            "id": "dcb5e2341e2ac597",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "file:/Users/vic/Desktop/ai.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "ai"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -271,13 +286,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "dcb5e2341e2ac597",
   "lastOpenFiles": [
+    "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/03-链与 LCEL.md",
     "upwork-jobscan/runs/2026-11-09.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
-    "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
