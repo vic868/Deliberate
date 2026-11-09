@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/01-python/11-基础课05-07-容器与字符串.md",
-                "mode": "preview",
+                "file": "6-ai/01-python/04-阶段四-数据与 AI 应用.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "11-基础课05-07-容器与字符串"
+              "title": "04-阶段四-数据与 AI 应用"
             }
           }
         ],
@@ -70,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "yield",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -288,15 +288,24 @@
   },
   "active": "dcb5e2341e2ac597",
   "lastOpenFiles": [
+    "6-ai/01-python/05-阶段五-项目实战与验收.md",
+    "6-ai/01-python/06-专题-__name__ 与程序入口.md",
+    "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
+    "6-ai/01-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
+    "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
+    "6-ai/01-python/09-Python基础课-总索引.md",
     "6-ai/01-python/10-基础课01-04-语法与流程控制.md",
-    "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
+    "6-ai/01-python/11-基础课05-07-容器与字符串.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
     "6-ai/01-python/14-基础课12-13-面向对象.md",
-    "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
-    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
+    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
     "6-ai/01-python/12-基础课08-10-函数与函数式.md",
+    "6-ai/01-python/02-阶段二-数据模型与工程化.md",
+    "1-java/0-知识点/0-Java进化论（详细整理版）.md",
+    "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
+    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
+    "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
     "file:/Users/vic/Desktop/ai.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
@@ -305,16 +314,7 @@
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
-    "18-LangChain/04-RAG 数据连接与检索.md",
-    "6-ai/0-LLM/0-LLM.md",
     "18-LangChain",
-    "6-ai/0-LLM/8-混合检索与NaiveRAG项目实战-BM25与HR智能问答.md",
-    "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.smm.md",
-    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
-    "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
-    "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
-    "upwork-jobscan/runs/2026-11-08.md",
-    "6-ai/0-LLM/10-AdvancedRAG二-查询优化与检索组件核心原理.md",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
