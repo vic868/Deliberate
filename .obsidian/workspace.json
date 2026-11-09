@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/01-python/16-专题-yield 关键字全景（从生成器到依赖注入）.md",
+                "file": "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "16-专题-yield 关键字全景（从生成器到依赖注入）"
+              "title": "15-基础课14-15-异常与虚拟环境"
             }
           }
         ],
@@ -288,8 +288,9 @@
   },
   "active": "dcb5e2341e2ac597",
   "lastOpenFiles": [
-    "6-ai/01-python/04-阶段四-数据与 AI 应用.md",
+    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
     "6-ai/01-python/16-专题-yield 关键字全景（从生成器到依赖注入）.md",
+    "6-ai/01-python/04-阶段四-数据与 AI 应用.md",
     "6-ai/01-python/05-阶段五-项目实战与验收.md",
     "6-ai/01-python/06-专题-__name__ 与程序入口.md",
     "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
@@ -306,7 +307,6 @@
     "6-ai/01-python/02-阶段二-数据模型与工程化.md",
     "1-java/0-知识点/0-Java进化论（详细整理版）.md",
     "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
     "file:/Users/vic/Desktop/ai.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
