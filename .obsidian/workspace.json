@@ -25,12 +25,14 @@
             "id": "dcb5e2341e2ac597",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md"
+                "file": "6-ai/01-python/11-基础课05-07-容器与字符串.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "15-基础课14-15-异常与虚拟环境.smm"
+              "icon": "lucide-file",
+              "title": "11-基础课05-07-容器与字符串"
             }
           }
         ],
@@ -286,8 +288,10 @@
   },
   "active": "dcb5e2341e2ac597",
   "lastOpenFiles": [
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
+    "6-ai/01-python/10-基础课01-04-语法与流程控制.md",
     "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
+    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
+    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
     "6-ai/01-python/14-基础课12-13-面向对象.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
     "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
@@ -311,8 +315,6 @@
     "6-ai/0-LLM/12-RAG评估-指标体系Ragas与检索器对比实验.md",
     "upwork-jobscan/runs/2026-11-08.md",
     "6-ai/0-LLM/10-AdvancedRAG二-查询优化与检索组件核心原理.md",
-    "6-ai/0-LLM/11-AdvancedRAG三-重排RAG-Fusion与多级检索综合实战.md",
-    "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
