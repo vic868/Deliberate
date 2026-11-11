@@ -13,15 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/01-V1.0 重构与整体体系.md",
+                "file": "18-LangChain/00-LangChain V1.0 学习总览.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "01-V1.0 重构与整体体系"
+              "title": "00-LangChain V1.0 学习总览"
+            }
+          },
+          {
+            "id": "97d20a0baed94c80",
+            "type": "leaf",
+            "state": {
+              "type": "smm",
+              "state": {
+                "file": "18-LangChain/00-LangChain V1.0 学习总览.smm.md"
+              },
+              "icon": "smm-icon",
+              "title": "00-LangChain V1.0 学习总览.smm"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -271,11 +284,52 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "floating": {
+    "id": "0a078f273207ae51",
+    "type": "floating",
+    "children": [
+      {
+        "id": "51a048916bb8cb84",
+        "type": "window",
+        "children": [
+          {
+            "id": "8999a2ec7c1c48e6",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "16c2e0848578d55c",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "18-LangChain/00-LangChain V1.0 学习总览.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "00-LangChain V1.0 学习总览"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "16c2e0848578d55c",
   "lastOpenFiles": [
-    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
-    "18-LangChain/03-链与 LCEL.md",
+    "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
+    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
+    "18-LangChain/01-V1.0 重构与整体体系.md",
+    "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/07-Day02 课堂复盘 LCEL 与会话记忆.md",
     "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
@@ -303,8 +357,6 @@
     "6-ai/01-python/09-Python基础课-总索引.md",
     "6-ai/01-python/10-基础课01-04-语法与流程控制.md",
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
-    "6-ai/01-python/14-基础课12-13-面向对象.md",
-    "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
     "18-LangChain",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",

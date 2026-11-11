@@ -1,8 +1,14 @@
 ---
 title: LangChain V1.0 学习总览 · 笔记集索引
-tags: [langchain, llm, rag, agent, python, 索引]
+tags:
+  - langchain
+  - llm
+  - rag
+  - agent
+  - python
+  - 索引
 created: 2026-11-08
-source: "L2阶段 / 04-day01 + 05-day02 + 06-day03 资料（讲义PDF + 四份课件PPTX + FastAPI / LangServe 两份教程）"
+source: L2阶段 / 04-day01 + 05-day02 + 06-day03 资料（讲义PDF + 四份课件PPTX + FastAPI / LangServe 两份教程）
 version: LangChain 1.0
 ---
 
