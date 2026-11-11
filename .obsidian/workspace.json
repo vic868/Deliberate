@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "英文学习/01-每日训练SOP.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "01-每日训练SOP"
             }
           }
         ]
@@ -51,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "yield",
+                "query": "JavaTutorial",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -269,6 +273,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "英文学习/00-路线图.md",
+    "JavaTutorial/docs/backend/后端技术杂谈：白话虚拟化技术.md",
+    "JavaTutorial/docs/backend/后端技术杂谈：捋一捋大数据研发的基本概念.md",
+    "JavaTutorial/ReadMe.md",
+    "14-AI agent/1-LangChain/4-生产化改造.vector.drawio",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
     "upwork-jobscan/runs/2026-11-10.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
@@ -291,10 +300,6 @@
     "6-ai/01-python/14-基础课12-13-面向对象.smm.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.smm.md",
     "file:/Users/vic/Desktop/ai.md",
-    "18-LangChain/00-LangChain V1.0 学习总览.md",
-    "18-LangChain/01-V1.0 重构与整体体系.md",
-    "18-LangChain/03-链与 LCEL.md",
-    "upwork-jobscan/runs/2026-11-09.md",
     "18-LangChain",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
@@ -313,7 +318,6 @@
     "6-ai/deepseek-herness.drawio",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg",
     "6-ai/2.3-Hermes Agent/扣子-v1.1.46-darwin-arm64.dmg.crdownload",
-    "6-ai/01-python",
     "6-ai/ProcessOn-V8.0应用开发思维导图/attachments/分支1.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
