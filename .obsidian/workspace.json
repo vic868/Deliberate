@@ -13,10 +13,10 @@
             "state": {
               "type": "smm",
               "state": {
-                "file": "18-LangChain/00-LangChain V1.0 学习总览.smm.md"
+                "file": "18-LangChain/00-LangChain V1.0 学习总览_1.smm.md"
               },
               "icon": "smm-icon",
-              "title": "00-LangChain V1.0 学习总览.smm"
+              "title": "00-LangChain V1.0 学习总览_1.smm"
             }
           },
           {
@@ -322,10 +322,11 @@
       }
     ]
   },
-  "active": "e7a7b303c61786dc",
+  "active": "16c2e0848578d55c",
   "lastOpenFiles": [
-    "18-LangChain/00-LangChain V1.0 学习总览.md",
+    "18-LangChain/00-LangChain V1.0 学习总览_1.smm.md",
     "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
+    "18-LangChain/00-LangChain V1.0 学习总览.md",
     "6-ai/0-LLM/13-LLM-as-a-Judge 评测与监控脚手架.md",
     "6-ai/0-LLM/0-LLM.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
@@ -355,7 +356,6 @@
     "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
     "6-ai/01-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
     "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
-    "6-ai/01-python/09-Python基础课-总索引.md",
     "18-LangChain",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
