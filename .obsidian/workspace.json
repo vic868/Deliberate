@@ -324,6 +324,7 @@
   },
   "active": "16c2e0848578d55c",
   "lastOpenFiles": [
+    "18-LangChain/09-LangChain 1.0 API 速查菜单.md",
     "18-LangChain/00-LangChain V1.0 学习总览_1.smm.md",
     "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
@@ -355,7 +356,6 @@
     "6-ai/01-python/06-专题-__name__ 与程序入口.md",
     "6-ai/01-python/06-专题-__name__ 与程序入口.smm.md",
     "6-ai/01-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
-    "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "18-LangChain",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
