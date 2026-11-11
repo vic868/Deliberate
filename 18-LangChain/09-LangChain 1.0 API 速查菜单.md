@@ -114,6 +114,9 @@ result = client.invoke([("system", "请翻译成中文"), ("human", "hello")])
 | 不兼容 OpenAI 协议 | `init_chat_model`（`langchain.chat_models`） |
 | 厂商专属类 | `langchain_community.chat_models.ChatTongyi` 等 |
 
+> [!note] 讲义未给完整代码的两个入口
+> `init_chat_model` 与 `ChatTongyi` 在讲义里只出现在选型表中，没给可运行示例；上面按用途列出，具体参数签名以当前装的版本为准。日常开发用 §1.2 的 `ChatOpenAI` 即可覆盖绝大多数场景。
+
 ### 1.3 嵌入模型（与对话模型不是同一个客户端）
 
 ```python
@@ -413,9 +416,7 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", "仅用上下文回答：{question}\n上下文：{context}"),
 ])
 chain = (
-    {"question": RunnablePassthrough(), "context": docs_find}
-    | prompt
-    | client
+    {"question": RunnablePassthrough(), "context": docs_find} | prompt | client
 )
 resp = chain.invoke("请介绍一下猫")
 print(resp.content)
@@ -654,7 +655,7 @@ curl -X POST 'http://localhost:8000/tslServer/invoke' \
 | 我要做什么 | 用哪个 API | 最小写法 |
 |---|---|---|
 | 接一个 OpenAI 兼容模型 | `ChatOpenAI` | `ChatOpenAI(api_key=..., base_url=..., model=...)` |
-| 接非兼容模型 | `init_chat_model` | `init_chat_model(model=..., model_provider=...)` |
+| 接非兼容模型 | `init_chat_model` | `init_chat_model(model="...")`（签名按装的版本核对） |
 | 做文本向量 | `DashScopeEmbeddings` | `DashScopeEmbeddings(model="text-embedding-v3", ...)` |
 | 写多角色提示词 | `ChatPromptTemplate` | `ChatPromptTemplate.from_messages([("system", ...), ("human", "{text}")])` |
 | 留历史消息槽位 | `MessagesPlaceholder` | `MessagesPlaceholder(variable_name="history")` |
