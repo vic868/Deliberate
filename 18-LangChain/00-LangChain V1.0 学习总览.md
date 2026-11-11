@@ -2,27 +2,32 @@
 title: LangChain V1.0 学习总览 · 笔记集索引
 tags: [langchain, llm, rag, agent, python, 索引]
 created: 2026-11-08
-source: "L2阶段 / 04-（必修）LangChain day01 / 文档（讲义PDF + 课件PPTX + FastAPI / LangServe 两份教程）"
+source: "L2阶段 / 04-day01 + 05-day02 资料（讲义PDF + 两份课件PPTX + FastAPI / LangServe 两份教程）"
 version: LangChain 1.0
 ---
 
 # LangChain V1.0 学习总览 · 笔记集索引
 
 > [!tldr] 一句话
-> **LangChain 1.0 = 建在 LangGraph 之上的 Agent 工程化框架**。Day01 这条主线是：`Model I/O → LCEL 链 → RAG 数据连接 → Agent / 中间件 → FastAPI + LangServe 部署`。前四步解决"应用怎么搭"，最后一步解决"应用怎么给别的系统用"。
+> **LangChain 1.0 = 建在 LangGraph 之上的 Agent 工程化框架**。主线是：`Model I/O → LCEL 链 → RAG 数据连接 → Agent / 中间件 → FastAPI + LangServe 部署`。前四步解决"应用怎么搭"，最后一步解决"应用怎么给别的系统用"。
 
-这套笔记把四份课程资料**合并成一条完整链路**，而不是逐份摘抄。所有结论以 `LangChainV1.0讲义.pdf` 为主干，PPT 用于还原课堂结构，两份 Markdown 教程补齐服务端知识。资料里混用了 v0.3 与 v1.0 的写法，本系列统一以 **V1.0 为准**，旧写法单独标注。
+这套笔记把课程资料**合并成一条完整链路**，而不是逐份摘抄。所有结论以 `LangChainV1.0讲义.pdf` 为主干，PPT 用于还原课堂结构，两份 Markdown 教程补齐服务端知识。资料里混用了 v0.3 与 v1.0 的写法，本系列统一以 **V1.0 为准**，旧写法单独标注。
+
+> [!info] 关于 day02 资料（2026-11-11 补记）
+> day02 的四份资料中，讲义 PDF、FastAPI、LangServe 三份与 day01 **md5 完全一致**；唯一新增的是 11 页的 day02 课件，且内容只覆盖「链和 LCEL + 记忆」，正是 [[03-链与 LCEL]] 已完整整理的一章。
+> 因此没有重复造笔记，只补了 [[07-Day02 课堂复盘 LCEL 与会话记忆]]：资料差异核对、课件/讲义/笔记三向索引、讲义细节补齐与勘误。其余各篇无需改动。
 
 ---
 
-## 一、四份资料与各自的定位
+## 一、课程资料与各自的定位
 
 | 资料 | 体量 | 在笔记里的角色 |
 |---|---|---|
-| `LangChainV1.0讲义.pdf` | 64 页 | **主干**。V1.0 重构、体系、Model I/O、LCEL、RAG、工具调用、中间件，含全部示例代码 |
-| `1.LangChainV1.0从入门到精通.pptx` | 27 页 | **课堂大纲**。确认讲授顺序与重点：什么是 V1.0 → 体系 → 核心组件 → 第一个应用 → 部署阶段；含环境准备（Python 3.11、API-KEY 放系统变量） |
-| `FastAPI 框架入门.md` | 16 章 | **服务端基础**。路由、Pydantic、依赖注入、认证、中间件、部署 |
-| `LangServe 入门指南.md` | 8 章 | **部署落地**。`add_routes` 把链变 REST API、端点、认证、生产化 |
+| `LangChainV1.0讲义.pdf` | 64 页 | **主干**。V1.0 重构、体系、Model I/O、LCEL、RAG、工具调用、中间件，含全部示例代码；day01 / day02 为同一文件 |
+| `1.LangChainV1.0从入门到精通.pptx`（day01） | 27 页 | **整门课大纲**。确认讲授顺序与重点：什么是 V1.0 → 体系 → 核心组件 → 第一个应用 → 部署阶段；含环境准备（Python 3.11、API-KEY 放系统变量） |
+| `LangChainV1.0从入门到精通-day02.pptx`（day02） | 11 页 | **第二次课切片**。目录列 6 项，实际只展开「链和 LCEL」并延伸到记忆；对应讲义 P27–P38，见 [[07-Day02 课堂复盘 LCEL 与会话记忆]] |
+| `FastAPI 框架入门.md` | 16 章 | **服务端基础**。路由、Pydantic、依赖注入、认证、中间件、部署；day01 / day02 为同一文件 |
+| `LangServe 入门指南.md` | 8 章 | **部署落地**。`add_routes` 把链变 REST API、端点、认证、生产化；day01 / day02 为同一文件 |
 
 > [!warning] 资料本身存在版本混杂
 > - `LangServe 入门指南.md` 的示例用了 `from langchain.llms import OpenAI` + `LLMChain`，这是 **v0.3 及更早**的写法，V1.0 已移到 `langchain-classic`。
@@ -91,6 +96,7 @@ flowchart TB
 | [[04-RAG 数据连接与检索]] | 外部知识 | 文档 → 向量 → 检索 → 生成，完整链路怎么串 | 讲义 P38–P45 |
 | [[05-Agent 工具调用与中间件]] | V1.0 核心 | `create_agent` 怎么用？工具谁执行？中间件拦在哪？ | 讲义 P45–P64 |
 | [[06-服务化部署 FastAPI 与 LangServe]] | 对外服务 | 怎么把链变成 API？怎么调、怎么鉴权、怎么上生产 | 两份 Markdown 教程 + 讲义 P19–P21、PPT 第 27 页 |
+| [[07-Day02 课堂复盘 LCEL 与会话记忆]] | day02 增量复盘 | 第二天讲了什么？和已有笔记怎么对上？有哪些讲义细节和勘误？ | day02 课件 11 页 + 讲义 P27–P38 |
 
 ---
 
@@ -101,6 +107,7 @@ flowchart TB
 
 **第 2 阶段 · 会组装**
 `03` → `04`。目标：能用 `RunnablePassthrough` 把用户问题和检索结果拼进提示词，做出一个最小 RAG。
+> 若按课堂进度复习：第二天的课对应 `03`（LCEL + 记忆），配合 `07` 的三向索引和自测清单过一遍即可，不必另起一套笔记。
 
 **第 3 阶段 · 交给模型自己决策**
 `05`。目标：理解「模型只发起工具调用请求，执行由应用负责」这个分工，用 `create_agent` + `checkpointer` 做出带会话记忆的助手。
@@ -160,4 +167,4 @@ client = ChatOpenAI(
 
 ## 七、一句提醒
 
-Day01 里有大量「已废弃但值得学」的内容（LCEL、内置 Chain、MessageHistory）。**学的是思想，不是 import 路径**：链的思想是数据流动，RAG 的思想是检索增强，Agent 的思想是把决策权交给模型。真正写新代码时，入口只有一个——`create_agent`。
+课程里有大量「已废弃但值得学」的内容（LCEL、内置 Chain、MessageHistory），day02 尤甚——整堂课几乎都在讲这些。**学的是思想，不是 import 路径**：链的思想是数据流动，RAG 的思想是检索增强，Agent 的思想是把决策权交给模型。真正写新代码时，入口只有一个——`create_agent`。
