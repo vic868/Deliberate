@@ -43,9 +43,9 @@ version: LangChain 1.0
 > [!warning] 资料本身存在版本混杂
 > - `LangServe 入门指南.md` 的示例用了 `from langchain.llms import OpenAI` + `LLMChain`，这是 **v0.3 及更早**的写法，V1.0 已移到 `langchain-classic`。
 > - 讲义里 `ConversationBufferMemory`、`create_sql_query_chain`、`create_retrieval_chain` 也都明确标注为"旧版 / 已废弃，仅作了解"。
-> - `FastAPI 框架入门.md` 里的 `BaseSettings`、`Query(regex=...)` 属于 Pydantic v1 写法，Pydantic v2 已变更。
+> - `FastAPI 框架入门.md` 里的 `BaseSettings`、`Query(regex=...)` 属于 Pydantic v1 写法，Pydantic v2 已变更；这类是**依赖库升级**，不是 LangChain 废弃。
 >
-> 详见 [[06-服务化部署 FastAPI 与 LangServe]] 的「版本勘误」一节。
+> 完整废弃项、替代方案与「哪些其实没废弃」见本篇 **§5.1**；资料级勘误见 [[06-服务化部署 FastAPI 与 LangServe]] 的「版本勘误」一节。
 
 ---
 
@@ -150,6 +150,63 @@ flowchart TB
 
 **升级决策**（讲义原话）：新项目直接用 `create_agent` + V1.0 API；维护旧项目先装 `langchain-classic` 保证能跑，再逐步用 Middleware 和 `create_agent` 替换老的 Chain / Executor。
 
+### 5.1 完整废弃清单与替代（按状态分层）
+
+> [!important] 先纠正一个容易混淆的说法
+> 讲义原话是「**V1.0 已移除各种 Chain，但 LCEL 作为一种思想仍有必要学**」（[[01-V1.0 重构与整体体系]] §四、[[07-Day02 课堂复盘 LCEL 与会话记忆]] §三）。所以「课程里旧了但值得学」的内容要分三层，**不能一概叫废弃**：
+>
+> | 状态 | 含义 | 代表 |
+> |---|---|---|
+> | ① **真废弃** | 主包已移除或官方标 Deprecated；新代码不要写，维护旧项目装 `langchain-classic` | 预制 Chain 类、`AgentExecutor`、`ConversationBufferMemory` |
+> | ② **教学路径** | API 在 V1.0 仍可用，但不再是推荐入口 | `ChatMessageHistory` + `RunnableWithMessageHistory`、`MessagesPlaceholder` + `session_id` |
+> | ③ **没废弃，是 V1.0 地基** | 继续用，且是新项目的标准写法 | **LCEL（`Runnable` / `\|` / `RunnablePassthrough`）**、`ChatOpenAI`、`content_blocks` |
+>
+> 一句话：**`LCEL` 和 `MessageHistory` 本身没有废弃**，废弃的是「预制 Chain 类」和「Memory 组件类」。上面 §五 的速查表是「一行一个迁移决策」，下面这张是「按状态分层的完整清单」。
+
+**① 真废弃 → V1.0 替代**
+
+| 废弃项 | V1.0 替代 | 为什么还值得学 | 出处 |
+|---|---|---|---|
+| `initialize_agent` / `AgentExecutor` / `create_react_agent` / `AgentType.OPENAI_FUNCTIONS` / `handle_parsing_errors` | `langchain.agents.create_agent`，LangGraph 内置 Tool Calling 循环，参数填错自动捕获并反馈模型重试 | 看清「模型只发起调用请求，执行与结果回灌由应用负责」这个分工；对比旧版手工兜底的痛点 | `01` §一、`05` §2.1 |
+| 输入 `{"input": ...}` / 输出 `output` | `{"messages": [...]}`，含全部中间步骤，答案取 `result["messages"][-1].content` | 理解 Agent 状态为什么是一条消息列表 | `05` §2.1 |
+| Tool 的 `return_direct` 逐工具声明 | 内置循环统一接管结果回灌，不再逐个声明 | 理解旧版为何要人显式决定「工具结果是否终止循环」 | `08` §2.2 |
+| `ConversationBufferMemory` 等 Memory 组件 | `checkpointer`（如 `InMemorySaver`）+ `thread_id` 传给 `create_agent` | 「模型无状态、会话状态由应用按会话标识注入」；`thread_id` 就是 `session_id` 换名 | `01` §三、`03` §3.4、`07` §五 |
+| `LLMChain` / 各种预制 Chain | `prompt \| model \| parser` 或 `create_agent`；旧代码到 `langchain_classic` 找 | 链的本质是数据流动；看懂老项目与网上教程 | `03` §四、`06` §三 |
+| `create_retrieval_chain` / `create_stuff_documents_chain` | LCEL 手写 `{"context": retriever, "question": RunnablePassthrough()} \| prompt \| model \| parser` | 理解 RAG 里检索结果怎么进提示词 | `04` §七、`08` §七 |
+| `create_sql_query_chain` + 手写 `SQLCleaner` + `RunnablePassthrough.assign` 五步链 | `create_agent` + `SQLDatabaseToolkit` | 数据流动的教科书；对比才知道 V1.0 内置了工具选择、执行、错误重试、消息历史 | `05` §3.3–3.4 |
+| `from langchain.chains / langchain.prompts / langchain.llms import ...` | `langchain_core.*`（抽象）、`langchain.*`（Agent 高层 API）、`langchain_classic.*`（老代码）；模型统一 `ChatOpenAI` / `init_chat_model` | 靠 import 路径一眼判断代码版本；纯文本补全 LLM 的 API 已停更，国内厂商普遍不支持 | `01` §二、`02` §一 |
+| 结构化输出靠「额外一次 LLM 调用 + Prompt 技巧」 | `create_agent(response_format=YourPydanticModel)` / `with_structured_output` | 理解校验为什么必须进主循环（少一次调用、降 Token 与延迟） | `02` §六、`00` §五 |
+| 各厂商 `AIMessage` 结构分别解析 | `message.content_blocks`（text / reasoning / tool_call / citation） | 理解跨厂商解耦点，也是 `create_agent` 统一工具调用的前提 | `01` §1.2 |
+
+**② 教学路径（V1.0 仍可用，但别当生产入口）**
+
+| 写法 | 状态 | 建议 | 出处 |
+|---|---|---|---|
+| `ChatMessageHistory` + `RunnableWithMessageHistory` + `MessagesPlaceholder` + `session_id` | 仍可用 | 只用来理解「历史怎么注入」；生产直接 `checkpointer` + `thread_id` | `03` §3.4、`07` §五 |
+| `RedisChatMessageHistory` 讲义示意 | 讲义自述**代码未经测试** | 只作跨进程持久化的思路参考，需自行补 import / TTL / 降级 | `07` §4.2 |
+| `langchain.debug = True` | 仍可用 | 本地调试够用；团队级追踪评估用 LangSmith | `03` §五 |
+
+**③ 没废弃，V1.0 继续用**
+
+| 写法 | 定位 | 出处 |
+|---|---|---|
+| `Runnable` 三方法 `invoke / batch / stream` 与 `\|` 管道 | 组件间组合的通用协议，`create_agent` 也建立在这套抽象上 | `03` §一、§二 |
+| `RunnablePassthrough.assign` / `RunnableParallel` / `RunnableLambda` | 手写链的标准件，最小 RAG 就是它们拼出来的 | `03` §三 |
+| `ChatPromptTemplate \| ChatOpenAI \| StrOutputParser` | 最小应用的标准写法，第 1 阶段学习路径 | `00` §四、`02` §一 |
+| `content_blocks` / `response_format` / `middleware=[...]` | V1.0 新增能力，不是替代品而是新地基 | `01` §一、`05` |
+
+**④ 容易混进来的「非 LangChain 废弃」**（依赖库升级或教程笔误，性质不同）
+
+| 资料写法 | 当前写法 | 性质 | 出处 |
+|---|---|---|---|
+| `@custom_serve` 装饰器 | `Runnable.with_types(input_type=..., output_type=...)` | 教程自定义装饰器，**从来不是官方 API** | `06` §三 |
+| `Query(regex=)` / `pydantic.BaseSettings` / `sqlalchemy.ext.declarative` / `__get_validators__` | `pattern=` / `pydantic-settings` + `SettingsConfigDict` / `sqlalchemy.orm` / `__get_pydantic_core_schema__` | Pydantic v2、SQLAlchemy 2.x 升级 | `06` §三 |
+| `FROM python:3.9-slim` | **Python 3.10+**（课程 3.11） | V1.0 放弃 3.9 | `00` §五、`06` §三 |
+| `/invoke` 请求体两种写法冲突 | 以 `/docs` 自动生成的 schema 为准 | 讲义与 LangServe 指南互相矛盾 | `06` §2.3 |
+
+> [!tip] 查旧 API 用哪个文档站
+> V1.0 下内置链已迁到 `langchain_classic`，day02 课件给的地址 `https://reference.langchain.com/python/langchain_classic/chains/` 比讲义里的旧地址更贴切；两份都提醒**标在 `Deprecated classes` / `Deprecated functions` 里的不要用**。见 `03` §四、`07` §4.6。
+
 ---
 
 ## 六、环境与约定
@@ -180,4 +237,4 @@ client = ChatOpenAI(
 
 ## 七、一句提醒
 
-课程里有大量「已废弃但值得学」的内容（LCEL、内置 Chain、MessageHistory），day02 与 day03 的 V0.3 课件里尤其集中。**学的是思想，不是 import 路径**：链的思想是数据流动，RAG 的思想是检索增强，Agent 的思想是把决策权交给模型。真正写新代码时，入口只有一个——`create_agent`。
+课程里有大量「旧版写法但值得学」的内容，day02 与 day03 的 V0.3 课件里尤其集中。准确说法见 **§5.1**：真正废弃的是**预制 Chain 类、旧 Agent 入口、Memory 组件**；`LCEL` 与 `MessageHistory` 并没有废弃，前者是 V1.0 的地基，后者是「会话状态由应用注入」的教学路径。**学的是思想，不是 import 路径**：链的思想是数据流动，RAG 的思想是检索增强，Agent 的思想是把决策权交给模型。真正写新代码时，Agent 的入口只有一个——`create_agent`；简单组合仍然用 LCEL。
