@@ -11,20 +11,6 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "18-LangChain/00-LangChain V1.0 学习总览.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "00-LangChain V1.0 学习总览"
-            }
-          },
-          {
-            "id": "97d20a0baed94c80",
-            "type": "leaf",
-            "state": {
               "type": "smm",
               "state": {
                 "file": "18-LangChain/00-LangChain V1.0 学习总览.smm.md"
@@ -32,9 +18,22 @@
               "icon": "smm-icon",
               "title": "00-LangChain V1.0 学习总览.smm"
             }
+          },
+          {
+            "id": "97d20a0baed94c80",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/0-LLM/13-LLM-as-a-Judge 评测与监控脚手架.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "13-LLM-as-a-Judge 评测与监控脚手架"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -326,8 +325,9 @@
   "active": "16c2e0848578d55c",
   "lastOpenFiles": [
     "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
-    "6-ai/0-LLM/13-LLM-as-a-Judge 评测与监控脚手架.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
+    "6-ai/0-LLM/13-LLM-as-a-Judge 评测与监控脚手架.md",
+    "6-ai/0-LLM/0-LLM.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/03-链与 LCEL.md",
@@ -356,7 +356,6 @@
     "6-ai/01-python/08-专题-Python 内存管理与垃圾回收（对比 JVM）.md",
     "6-ai/01-python/07-专题-Python 的分布式能力边界（对比 Java 生态）.md",
     "6-ai/01-python/09-Python基础课-总索引.md",
-    "6-ai/01-python/10-基础课01-04-语法与流程控制.md",
     "18-LangChain",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
