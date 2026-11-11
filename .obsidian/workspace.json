@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "18-LangChain/00-LangChain V1.0 学习总览_1.smm.md"
+                "file": "18-LangChain/09-LangChain 1.0 API 速查菜单.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "00-LangChain V1.0 学习总览_1.smm"
+              "icon": "lucide-file",
+              "title": "09-LangChain 1.0 API 速查菜单"
             }
           },
           {
@@ -322,12 +324,12 @@
       }
     ]
   },
-  "active": "16c2e0848578d55c",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "18-LangChain/09-LangChain 1.0 API 速查菜单.md",
     "18-LangChain/00-LangChain V1.0 学习总览_1.smm.md",
-    "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
+    "18-LangChain/09-LangChain 1.0 API 速查菜单.md",
+    "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
     "6-ai/0-LLM/13-LLM-as-a-Judge 评测与监控脚手架.md",
     "6-ai/0-LLM/0-LLM.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
