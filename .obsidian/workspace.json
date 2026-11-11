@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "14-AI agent/1-LangChain/0-LangChain.drawio"
+                "file": "18-LangChain/01-V1.0 重构与整体体系.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "0-LangChain"
+              "icon": "lucide-file",
+              "title": "01-V1.0 重构与整体体系"
             }
           }
         ]
@@ -271,12 +273,15 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
+    "18-LangChain/03-链与 LCEL.md",
+    "18-LangChain/00-LangChain V1.0 学习总览.md",
+    "18-LangChain/07-Day02 课堂复盘 LCEL 与会话记忆.md",
+    "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
+    "14-AI agent/1-LangChain/0-LangChain.drawio",
     "18-LangChain/08-Day03 课堂复盘 RAG 实战与工具中间件.md",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
-    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
-    "18-LangChain/00-LangChain V1.0 学习总览.md",
-    "18-LangChain/07-Day02 课堂复盘 LCEL 与会话记忆.md",
     "14-AI agent/1-LangChain/3-RAG进阶.vector.drawio",
     "14-AI agent/1-LangChain/2-LangGraph进阶.vector.drawio",
     "英文学习/01-每日训练SOP.md",
@@ -300,8 +305,6 @@
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
     "6-ai/01-python/14-基础课12-13-面向对象.md",
     "6-ai/01-python/13-基础课10-11-模块与文件IO.md",
-    "6-ai/01-python/12-基础课08-10-函数与函数式.smm.md",
-    "6-ai/01-python/12-基础课08-10-函数与函数式.md",
     "18-LangChain",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
     "17-FastAPI",
@@ -316,7 +319,6 @@
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage_1.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_3.png",
     "16-职业成长",
-    "6-ai/Agent 面试八站作战地图.drawio",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
