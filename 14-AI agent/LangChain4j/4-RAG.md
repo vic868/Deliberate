@@ -16,7 +16,7 @@ aliases:
 > [!info] 这份笔记管什么
 > LangChain4j 的 RAG 抽象：**内容检索器 → 查询改写 → 多路路由 → 融合 → 注入**，以及怎么把这一套接到 Milvus。
 > 代码在 **1.23.0** 编译通过；⭐ 处是实跑过的（本地 embedding + 内存向量库，不需要 Key）。
-> 概念基础：[[2-核心概念#4. 检索层：`EmbeddingStore` + `ContentRetriever`]] · 向量库侧：[[14-AI agent /3-Milvus/4-AI中的用法|Milvus 在 AI 中的用法]]
+> 概念基础：[[2-核心概念#4. 检索层：`EmbeddingStore` + `ContentRetriever`]] · 向量库侧：[[4-AI中的用法|Milvus 在 AI 中的用法]]
 
 ---
 
@@ -127,7 +127,7 @@ String answer = assistant.ask(prompt);
 - 引用编号由你掌控，回查原文非常直接
 - 之后想升级成 `DefaultRetrievalAugmentor`（多路/改写/路由），业务接口不变
 
-> 这与 [[14-AI agent /3-Milvus/4-AI中的用法#3.1 完整骨架（可直接改造成生产脚本）⭐|Milvus 笔记里的 RAG 骨架]]是同一思路：**框架是脚手架，不是黑盒**。
+> 这与 [[4-AI中的用法#3.1 完整骨架（可直接改造成生产脚本）⭐|Milvus 笔记里的 RAG 骨架]]是同一思路：**框架是脚手架，不是黑盒**。
 
 ---
 
@@ -217,7 +217,7 @@ raw content=DefaultContent { textSegment = TextSegment {...metadata = {source=bi
 | 明确知道哪路更可信 | 自定义 `ContentAggregator` 加权（要先归一化；LangChain4j 未内置加权融合，需要自己写） |
 | 只一路 | 别上聚合器，直接 `contentRetriever(...)` |
 
-> 与 Milvus 侧 `RRFRanker` / `WeightedRanker` 的结论完全一致，见 [[14-AI agent /3-Milvus/1-基础介绍#2.2 三种相似度度量（metric type）|Milvus 基础 §2.2]]。
+> 与 Milvus 侧 `RRFRanker` / `WeightedRanker` 的结论完全一致，见 [[1-基础介绍#2.2 三种相似度度量（metric type）|Milvus 基础 §2.2]]。
 
 ---
 
@@ -250,7 +250,7 @@ LangChain4j 只是把链路标准化，**召回质量仍取决于四件事**：
 | 召回池 / 阈值 | `maxResults` / `minScore` / 聚合器 | 看"够不够 + 噪音多不多" |
 | 融合 / 改写 / 过滤 | Augmentor 各组件 | 每加一个组件都要出对比 |
 
-> 评估方法论与 Milvus 侧相同，见 [[14-AI agent /3-Milvus/4-AI中的用法#3.4 离线评估（RAG 的硬门槛）|RAG 离线评估]]。
+> 评估方法论与 Milvus 侧相同，见 [[4-AI中的用法#3.4 离线评估（RAG 的硬门槛）|RAG 离线评估]]。
 
 > [!important] 一个和 LangChain4j 强相关、但常被忽略的坑
 > **`minScore` 的阈值没有普适值**：COSINE 下 0.7 在 bge-m3 上可能刚好，在 `text-embedding-v4` 上可能全过滤掉。
@@ -313,7 +313,7 @@ public class MilvusHybridRetriever implements ContentRetriever {
 - **metric**：建库与检索一致（COSINE/L2 不可互改）
 - **模型版本**：写进 metadata，别只写在心里
 - **过滤器**：LangChain4j 的 `Filter` 对象不能直接丢给 Milvus，需要转换；转换层要单测
-- 以上都是 [[14-AI agent /3-Milvus/5-避坑与排障|Milvus 避坑]] §2 的同一批坑
+- 以上都是 [[5-避坑与排障|Milvus 避坑]] §2 的同一批坑
 
 ---
 

@@ -228,7 +228,7 @@ System.out.println(model.chat("用一句话解释 RAG"));
 | 已经在用 LangChain4j 的老项目 / 要维护别人的代码 | 必须会 |
 | 需要它的 RAG/Agent 抽象（QueryTransformer、ContentAggregator）开箱即用 | LangChain4j 模型更完整 |
 | 只需要"调个模型 + 简单对话" | 两个框架都算重，直接 HTTP 都行 |
-| 复杂多 Agent 图编排 | 都不是强项，看 LangGraph / 自研状态机（见 [[14-AI agent /1-LangChain/2-LangChain学习地图\|LangChain 学习地图]]） |
+| 复杂多 Agent 图编排 | 都不是强项，看 LangGraph / 自研状态机（见 [[2-LangChain学习地图\|LangChain 学习地图]]） |
 
 详细对比和面试讲法 → [[7-选型对比与面试]]
 

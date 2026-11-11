@@ -87,7 +87,7 @@ flowchart LR
 - **多路召回 + RRF 融合**：`DefaultQueryRouter` + `DefaultContentAggregator`
 - 元数据过滤 / 最小相似度 / **相似度分数藏在 `content.metadata().get(ContentMetadata.SCORE)`** ⭐（`get("SCORE")` 返回 null）
 - 接 Milvus：`langchain4j-milvus` 与其他方式
-- 和 [[14-AI agent /3-Milvus/0-Milvus-AI知识库索引|Milvus 系列]] 的路线对照：**召回质量是同一个战场**
+- 和 [[0-Milvus-AI知识库索引|Milvus 系列]] 的路线对照：**召回质量是同一个战场**
 
 ### [[5-Agent工具调用]] — 让模型会动手
 - `@Tool` / `@P`：工具描述是**写给模型看的 prompt**
@@ -182,11 +182,11 @@ flowchart LR
 
 | 笔记 | 关系 |
 |---|---|
-| [[14-AI agent /2-spring ai/RuoYi-AI-技术栈全景\|RuoYi AI 技术栈全景]] | 用 Spring AI 的完整项目；本套笔记的**对照对象** |
-| [[14-AI agent /2-spring ai/Ruoyi RAG 全链路排障手册\|RuoYi RAG 全链路排障手册]] | 真实 RAG 事故；LangChain4j 会踩同样的坑（维度、metric、outFields） |
-| [[14-AI agent /2-spring ai/RuoYi-Spring-AI-面试题\|RuoYi × Spring AI 面试题]] | Spring AI 侧答题骨架 |
-| [[14-AI agent /3-Milvus/0-Milvus-AI知识库索引\|Milvus × AI 知识库]] | 向量库侧完整整理 |
-| [[14-AI agent /1-LangChain/2-LangChain学习地图\|LangChain 学习地图]] | Python 侧对照（切分、评估、LangGraph） |
+| [[RuoYi-AI-技术栈全景\|RuoYi AI 技术栈全景]] | 用 Spring AI 的完整项目；本套笔记的**对照对象** |
+| [[Ruoyi RAG 全链路排障手册\|RuoYi RAG 全链路排障手册]] | 真实 RAG 事故；LangChain4j 会踩同样的坑（维度、metric、outFields） |
+| [[RuoYi-Spring-AI-面试题\|RuoYi × Spring AI 面试题]] | Spring AI 侧答题骨架 |
+| [[0-Milvus-AI知识库索引\|Milvus × AI 知识库]] | 向量库侧完整整理 |
+| [[2-LangChain学习地图\|LangChain 学习地图]] | Python 侧对照（切分、评估、LangGraph） |
 | [[6-ai/AI 学习规划/03-Java开发阶段\|学习规划 · 阶段二]] | 技术选型出处（Spring AI 为主） |
 | [[面试准备/专业技能/01-AI应用工程化\|面试 · AI 应用工程化]] | 面试主线（含"LangChain4j 是另一个项目"的提醒） |
 

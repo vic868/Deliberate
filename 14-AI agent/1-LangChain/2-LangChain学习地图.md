@@ -287,7 +287,7 @@ results = client.evaluate(
 - langchain-milvus（BM25 / Hybrid）：<https://docs.langchain.com/oss/python/integrations/vectorstores/milvus>
 - Anthropic Contextual Retrieval（切分与混合检索的实测数据）：<https://www.anthropic.com/research/contextual-retrieval>
 - Milvus 3.0 发布说明（湖原生方向）：<https://zilliz.com.cn/blog/milvus-3-0-release>
-- Milvus 笔记：[[3-Milvus/0-Milvus.drawio]]
+- Milvus 笔记：[[0-Milvus.drawio]]
 
 ## 7. 进度记录
 

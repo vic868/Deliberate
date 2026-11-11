@@ -337,7 +337,7 @@ AI-SERVICE-BEAN-TYPE = demo.$Proxy60
 | 单元 | 脚本化假模型（[[3-契约式开发#9. 用"假模型"做单元测试 ⭐]]）验证编排 |
 | 装配 | 起 `ApplicationContext` 断言关键 Bean 存在（本节 §6.3 的做法），无需 Key |
 | 集成 | Testcontainers 起 Milvus/Redis，用假模型跑通全链路 |
-| 效果 | 30~100 条评测集，真实模型打分（见 [[14-AI agent /3-Milvus/4-AI中的用法#3.4 离线评估（RAG 的硬门槛）]]） |
+| 效果 | 30~100 条评测集，真实模型打分（见 [[4-AI中的用法#3.4 离线评估（RAG 的硬门槛）]]） |
 
 ---
 

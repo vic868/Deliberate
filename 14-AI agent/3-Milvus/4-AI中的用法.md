@@ -367,13 +367,13 @@ print("Hit@5 =", hit_at_k([json.loads(l) for l in open("evalset.jsonl")], 5))
 | 引用是否支持结论 | 生成 | 抽查，比"看起来对"靠谱 |
 | p95 延迟 / Token 成本 | 体验 | 检索耗时也要算进去 |
 
-> 规则：**没有指标对比的"优化"不算优化**。详见 [[1-LangChain/2-LangChain学习地图|LangChain 学习地图]] 第 1.6 节「先自建评估」。
+> 规则：**没有指标对比的"优化"不算优化**。详见 [[2-LangChain学习地图|LangChain 学习地图]] 第 1.6 节「先自建评估」。
 
 ---
 
 ## 4. Spring AI 集成
 
-> 本仓库 [[2-spring ai/RuoYi-Spring-AI-面试题|RuoYi × Spring AI 面试题]] 与 [[2-spring ai/Ruoyi RAG 全链路排障手册|RAG 全链路排障手册]] 是这套链路的**真实踩坑记录**，本节只给结构和要点。
+> 本仓库 [[RuoYi-Spring-AI-面试题|RuoYi × Spring AI 面试题]] 与 [[Ruoyi RAG 全链路排障手册|RAG 全链路排障手册]] 是这套链路的**真实踩坑记录**，本节只给结构和要点。
 
 ### 4.1 两条常见路线
 
