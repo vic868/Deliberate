@@ -1,6 +1,5 @@
 [
   "hybrid-git-sync",
-  "obsidian-excalidraw-plugin",
   "obsidian-latex-suite",
   "drawio-editor",
   "obsidian-git",
@@ -14,5 +13,7 @@
   "table-editor-obsidian",
   "obsidian-icon-folder",
   "obsidian-style-settings",
-  "editing-toolbar"
+  "editing-toolbar",
+  "excalidraw-extras",
+  "obsidian-excalidraw-plugin"
 ]

@@ -11,14 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "18-LangChain/00-LangChain V1.0 学习总览.md",
-                "mode": "preview",
-                "source": true
+                "file": "18-LangChain/00-LangChain-V1.0.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "00-LangChain V1.0 学习总览"
+              "icon": "excalidraw-icon",
+              "title": "00-LangChain-V1.0.excalidraw"
             }
           }
         ]
@@ -181,16 +179,6 @@
             }
           },
           {
-            "id": "8963ab70719a7bd9",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw-sidepanel",
-              "state": {},
-              "icon": "excalidraw-icon",
-              "title": "Excalidraw 侧边面板"
-            }
-          },
-          {
             "id": "691fc47be85d9973",
             "type": "leaf",
             "state": {
@@ -271,50 +259,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "floating": {
-    "id": "883a46483cb8d416",
-    "type": "floating",
-    "children": [
-      {
-        "id": "966835d6bfdc8127",
-        "type": "window",
-        "children": [
-          {
-            "id": "b0523e56f6a9105a",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "c3859282048f47a5",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "18-LangChain/00-LangChain-V1.0.excalidraw.md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "00-LangChain-V1.0.excalidraw"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 678,
-        "y": -1420,
-        "width": 2167,
-        "height": 1400,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "e7a7b303c61786dc",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
-    "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
+    "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
+    "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/00-LangChain V1.0 学习总览_1.smm.md",
-    "18-LangChain/00-LangChain V1.0 学习总览.md",
     "6-ai/0-LLM/2-RAG.md",
     "6-ai/AI 学习规划/Agent 开发七步学习路线（视频笔记）.md",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
