@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/0-LLM/1.1-提示工程实战演练（L1_day04）.md",
+                "file": "6-ai/AI 学习规划/Agent 开发七步学习路线（视频笔记）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1.1-提示工程实战演练（L1_day04）"
+              "title": "Agent 开发七步学习路线（视频笔记）"
             }
           }
         ]
@@ -273,6 +273,8 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
+    "6-ai/0-LLM/1.1-提示工程实战演练（L1_day04）.md",
     "6-ai/AI 学习规划/Agent 开发七步学习路线（视频笔记）.md",
     "6-ai/0-LLM/1-提示词工程.md",
     "file:/Volumes/新加卷/学习/往期录播/视频/L2阶段/07-Langchain框架答疑课-26.8.3/LangChain常用API总结.md",
@@ -299,8 +301,6 @@
     "18-LangChain/00-LangChain V1.0 学习总览_1.smm.md",
     "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
     "6-ai/0-LLM/13-LLM-as-a-Judge 评测与监控脚手架.md",
-    "6-ai/0-LLM/0-LLM.md",
-    "18-LangChain/03-链与 LCEL.md",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
