@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/0-LLM/1.1-提示工程实战演练（L1_day04）.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "1.1-提示工程实战演练（L1_day04）"
             }
           }
         ]
@@ -269,6 +273,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0-LLM/1-提示词工程.md",
     "file:/Volumes/新加卷/学习/往期录播/视频/L2阶段/07-Langchain框架答疑课-26.8.3/LangChain常用API总结.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "upwork-jobscan/runs/2026-11-12.md",
@@ -301,7 +306,6 @@
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent/1-LangChain/3-RAG进阶.vector.drawio",
     "14-AI agent/1-LangChain/2-LangGraph进阶.vector.drawio",
-    "英文学习/01-每日训练SOP.md",
     "14-AI agent/1-LangChain/4-生产化改造.vector.drawio",
     "18-LangChain",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
