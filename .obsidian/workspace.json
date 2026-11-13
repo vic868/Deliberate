@@ -278,7 +278,7 @@
                   "type": "markdown",
                   "state": {
                     "file": "18-LangChain/03-链与 LCEL.md",
-                    "mode": "preview",
+                    "mode": "source",
                     "source": true
                   },
                   "icon": "lucide-file",
