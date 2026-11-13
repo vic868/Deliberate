@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "smm",
+              "type": "markdown",
               "state": {
-                "file": "18-LangChain/00-LangChain V1.0 学习总览.smm.md"
+                "file": "18-LangChain/00-LangChain V1.0 学习总览.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "smm-icon",
-              "title": "00-LangChain V1.0 学习总览.smm"
+              "icon": "lucide-file",
+              "title": "00-LangChain V1.0 学习总览"
             }
           }
         ]
@@ -306,7 +308,7 @@
       }
     ]
   },
-  "active": "c3859282048f47a5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
