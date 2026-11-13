@@ -280,7 +280,7 @@
                   "type": "markdown",
                   "state": {
                     "file": "18-LangChain/03-链与 LCEL.md",
-                    "mode": "source",
+                    "mode": "preview",
                     "source": true
                   },
                   "icon": "lucide-file",
@@ -300,10 +300,10 @@
       }
     ]
   },
-  "active": "e7a7b303c61786dc",
+  "active": "71bd8d97d0705962",
   "lastOpenFiles": [
-    "18-LangChain/03.1-RunnableLambda.md",
     "18-LangChain/03.2-RunnableParallel.md",
+    "18-LangChain/03.1-RunnableLambda.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
