@@ -58,6 +58,22 @@ chat_template.format(**kwargs)           # → str，纯文本
 chat_template.format_messages(**kwargs)  # → list[BaseMessage]，可直接喂给模型
 chat_template.format_prompt(**kwargs)    # → ChatPromptValue；.to_messages() / .to_string()
 ```
+# Chat prompt template，3 种取值方法的区别。
+
+```python
+from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate
+
+chat_template = ChatPromptTemplate.from_messages([
+    SystemMessagePromptTemplate.from_template("请将以下的内容翻译成 {language}"),
+    ("human", "{text}"),          # 元组简写，等价 HumanMessagePromptTemplate
+])
+
+kwargs = {"language": "意大利文", "text": "朋友啊再见！"}
+
+chat_template.format(**kwargs)           # → str，纯文本
+chat_template.format_messages(**kwargs)  # → list[BaseMessage]，可直接喂给模型
+chat_template.format_prompt(**kwargs)    # → ChatPromptValue；.to_messages() / .to_string()
+```
 
 # Excalidraw Data
 
@@ -298,8 +314,6 @@ FewShotPromptTemplate
 3wLyCHzL: [[18-LangChain/00-LangChain-V1.0.excalidraw.md#ChatOpenAI]]
 
 7Fq0MOW7: [[18-LangChain/00-LangChain-V1.0.excalidraw.md#PromptTemplate 两种创建方式]]
-
-x0QOjSoL: [[18-LangChain/00-LangChain-V1.0.excalidraw.md#ChatPromptTemplate:三种取值方法的区别]]
 
 %%
 ## Drawing
@@ -1052,7 +1066,7 @@ gs+OTsXPjznSMTQviyGEwfGkUy+OEKWyBK+Or4mUFrAGGUL0AV+OjhYfiW+MLoMfi/1Sn45bAu+PH4wf
 
 hhYj+0L9pSwPAEqtD2LKtUm4zl53b0qIFxEPDMv5S9kS2QF9TuEDQEztC4inveQSs+KNYnDLBgZD3taCyKJDZshMEr50/kjZTKsOiPXMjY10LM9ekfgF8YfOj15iNYAygh7KuwAtpY8GuaKwy+yJcUg+E21JiUjtSyYUjABwBOPzh46yQLBAaRGVApFGf9JrQeKJu3P6xhYlMU5xTjrJuiYGzQbPBsogjA/mus/HjPrMJ4ncjieJz0zwJZgAPMw+
 
-E2AGCYyGz36OagJOzYbJ/0YSNCsF8ICyo9j0YuIEV7HEAsJowCTTFuLLQ/5T0/VDRB7ReUidY8bN5TAmzUSCJs1Xj1uzJs0RCO9K/MqpBqbLdgMGJt7MTMjOQp7zPIKpA2bMAXb8TLOJt41UhgNGFsj3iveJ9416l/eO9wQPicAGD4zwAKADD4iPjZNOG0irSEAGQAI09zCUAANeViJObRTwkd0EAALmVAAGolDWyF9W1smmZBRLL0+OhmACNsxr
+E2AGCYyGz36OagJOzYbJ/0YSNCsF8ICyo9j0YuIEV7HEAsJowCTTFuLLQ/5T0/VDRB7ReUidY8bN5TAmzUSCJs1Xj1uzJs0RCO9K/MqpBqbLdgMGJt7MxbAQZ+9BNkNmzdbCqQfukdQi5s6IUNFGFsj3iveJ9416l/eO9wQPicAGD4zwAKADD4iPjZNOG0irSEAGQAI09zCUAANeViJObRTwkd0EAALmVAAGolDWyF9W1smmZBRLL0+OhmACNsxr
 
 QTbOpcM2yDAAts9Cwi+Ots0virAJ1mCvjL6g9s2viXbOTsv9Uw7Nb4iOzo4WjsoGB/bIM0Cfig7P4gGcAJ+LScr2yMnNycwfisnOmOMhR47IX41gAk7IzsjQ1U7I34qLQ3bIagLOy9+OsAA/j87OP47Dg2uFickzZ++NScx2yknPr4kBx3bMds8OyrM0yckTQu+LKc3viKnlPQ4ohCnNDs8Zz0nMmc2ZzJ+JE0LHBZ+NBdGpyl+KRAFfiGnI2oJp
 
