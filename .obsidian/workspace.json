@@ -298,10 +298,10 @@
       }
     ]
   },
-  "active": "e7a7b303c61786dc",
+  "active": "71bd8d97d0705962",
   "lastOpenFiles": [
-    "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
+    "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
