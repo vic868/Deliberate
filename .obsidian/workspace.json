@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "18-LangChain/00-LangChain-V1.0.excalidraw.md"
+                "file": "18-LangChain/03.2-RunnableParallel.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "00-LangChain-V1.0.excalidraw"
+              "icon": "lucide-file",
+              "title": "03.2-RunnableParallel"
             }
           }
         ]
@@ -298,8 +300,10 @@
       }
     ]
   },
-  "active": "71bd8d97d0705962",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/03.1-RunnableLambda.md",
+    "18-LangChain/03.2-RunnableParallel.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
@@ -325,8 +329,6 @@
     "6-ai/01-python/02-阶段二-数据模型与工程化.md",
     "6-ai/01-python/01-阶段一-语法速通（Java 对照）.md",
     "6-ai/01-python/00-Python 学习计划总览.md",
-    "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
-    "14-AI agent/LangChain4j/0-LangChain4j-知识库索引.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
