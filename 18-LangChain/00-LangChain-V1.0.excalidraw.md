@@ -98,6 +98,15 @@ d = {'name': '小明', 'age': 18}
 greet(d)          # ❌ 报错：参数个数不对
 greet(**d)        # ✅ 正常：等同于 greet(name='小明', age=18)
 ```
+# 为什么要用**
+
+```python
+SystemMessagePromptTemplate.from_template("请将以下内容翻译成 {language}。")
+#                                              ^^^^^^^^^^
+
+("human", "{input}")
+#          ^^^^^^
+```
 
 # Excalidraw Data
 
@@ -367,6 +376,8 @@ PxmC7uj3: [[18-LangChain/00-LangChain-V1.0.excalidraw.md#没有**的情况。]]
 B6bcMGSP: [[18-LangChain/00-LangChain-V1.0.excalidraw.md#有**的情况。]]
 
 pW2hw5QW: [[18-LangChain/00-LangChain-V1.0.excalidraw.md#直接对比]]
+
+2mi5fWMn: [[18-LangChain/00-LangChain-V1.0.excalidraw.md#为什么要用**]]
 
 %%
 ## Drawing
@@ -1185,14 +1196,16 @@ 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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 
-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
+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
 ```
 %%
