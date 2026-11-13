@@ -107,6 +107,34 @@ SystemMessagePromptTemplate.from_template("请将以下内容翻译成 {language
 ("human", "{input}")
 #          ^^^^^^
 ```
+# 少样本模板 FewShortPromptTemplate.
+
+```python
+from langchain_core.prompts import PromptTemplate
+from langchain_core.prompts.few_shot import FewShotPromptTemplate
+
+examples = [
+    {"input": "2+2", "output": "4", "description": "加法运算"},
+    {"input": "5-2", "output": "3", "description": "减法运算"},
+]
+
+# 单个示例的格式
+example_prompt = PromptTemplate.from_template(
+    "算式：{input} 值：{output} 类型：{description}"
+)
+
+prompt = FewShotPromptTemplate(
+    examples=examples,
+    example_prompt=example_prompt,
+    prefix="你是一个数学专家, 能够准确说出算式的类型，",
+    suffix="现在给你算式: {input} ， 值: {output} ，告诉我类型：",
+    input_variables=["input", "output"],
+)
+
+print(prompt.format(input="2*5", output="10"))
+result = client.invoke(prompt.format(input="2*5", output="10"))
+print(result.content)   # 乘法运算
+```
 
 # Excalidraw Data
 
@@ -1253,10 +1281,10 @@ Ka4WsPKJPQEpqlUoZ65LiM+uZ6jRqs+vZ6onrc+tJ6nJr/Gvyat+BCmq8asJqImtcii+joUpiatbqJeq
 
 /69IBtHGyYoAbX+pS0iUBzAExAJ6JcTA0IBTKv+pmvYAb9JCgGnnpiIBoS4Dg3EKy0oYAIBpAG/QAP+uxAd8xL4CgQEUBlsABKPygnZDwG1Ab3+v2q5/qUBtNwFLS4XTcxagbGBvSAQyru/FYGt/qmZDPagoAuBpS09pU/pn4G9IBb4At4cXrABuQGyAbaBpBk3bBhBv0AOcA7MgBKuII5BpEYRaBKU1jgXAbJBvwGt8BYXXhdFaguYB2gfEAXfK
 
-eIKAIUrCl+aTYXGBCwAwaMQFFAIfwfpUXsV4EmkRqcACQeCAgAVwjyfGQYBgAgOtqwfjM7/jesMSA5BuYG07xtulwGhkASACTnFYRwhtHAThBmHmv6sIbURDioBQbz90pEUFQSAFudeqBwrHwAKSBKShpARF4wcChq/IaBVChq6IxMXgFAT+A5fMI4PxAchtwARF5BsxnUBsB6huKGk4BSht2INsQ2QDbTCUUYBsCxI1VCBtQCo1V/+rM4HRgyZ0
+eISnBRZg6hKUh6zIMGjEBRQCH8C3IdZHdheODfGkuECABXCPJ8ZBgGACA62rB+Mzv+N6wxIDkG5gbTvG26XAaGQBIAJOcVhFCG0cBOEGYea/qQhtREOKgFBvP3SkRQVBIAW516oHCsfAApIEpKGkBEXjBwKGrchoFUKGrojExeAUBP4Dl8wjg/ECyG3ABEXkGzGdQGwFqGwoaTgGKG3Yg2xDZANtMJRRgGwLEjVUIG1AKjVX/6szgdGDJnSaA51A
 
-mgOdQEkCRiGAaYADbAUcBehvGGukBJhvgGgYawkE/kKrgw4o6GhaU6QD6mVgbehr4LSPhNho+kT+AowBxU2uV4GGSGj1V8IlLsD1VQXQ9VPG5AEA9VbYdSAGxAGkow0DuG3kBHhqSGuA8oGVaGuwAoRF6AS/B6MDgADwZ3huCAFIbbR3x8JHZwlEDGMIBggFiTHqSH8rUGmiBF4uksM1F98GhG7Po9gTfOFEcwRvxAZYaAhscAMKc4D2iTUeA9pl
+SQJGIYBpgANsBRwG6G0Ya6QHGG+Aa+hrCQT+QquDDitoaFpTpAPqZWBu6GvgtI+HWGj6RP4CjAHFTa5XgYRIaPVXwiUuwPVVBdD1U8bkAQD1Vth1IAbEAaSjDQG4beQHuGhIa4DygZZoa7AChEXoBL8HowOAAPBleG4IAkhttHfHwkdnCUQMYwgGCAWJMepIfytQaaIEXi6SwzUX3wSEbs+j2BN84URxBG/EBFhr8GxwAwpzgPaJNR4D2mUMB4BH
 
-DAeAR5FEQYVxC51L5AZZATho+G3AaYiC+OYgAdFDFAf4aaYn6AIEbN5QM0GMo0gBhGrAraYzpGvlLhwDMAaka1lUwgbCBZ+JTAYFBswCAAA=
+kURBhXELnUvkBlkCOGt4bcBpiIL45iAB0UMUBfhppifoAARs3lAzQYyjSAKEasCtpjGka+UuHAMwBKRrWVTCBsIFn4lMBgUGzAIAA===
 ```
 %%
