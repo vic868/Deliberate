@@ -213,6 +213,37 @@ print(chain.invoke({"language": "意大利文", "text": "朋友啊再见！"}))
 from langchain_core.runnables import RunnableSequence
 chain2 = RunnableSequence(chat_template, client, parser)
 ```
+# RunableLambda
+
+```python
+from operator import itemgetter
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnableLambda, chain
+
+chat_template = ChatPromptTemplate.from_template("{a} + {b}是多少？")
+chain1 = chat_template | client
+
+def length_function(text):
+    return len(text)
+
+def _multiple_length_function(text1, text2):
+    return len(text1) * len(text2)
+
+@chain     # @chain 装饰器也能把函数变成 Runnable
+def multiple_length_function(_dict):
+    return _multiple_length_function(_dict["text1"], _dict["text2"])
+
+# itemgetter 从输入 dict 里取字段；字典字面量会自动变成 RunnableParallel
+chain = (
+    {
+        "a": itemgetter("foo") | RunnableLambda(length_function),
+        "b": {"text1": itemgetter("foo"), "text2": itemgetter("bar")}
+             | multiple_length_function,
+    }
+    | chain1
+)
+print(chain.invoke({"foo": "abc", "bar": "abcd"}))
+```
 
 # Excalidraw Data
 
@@ -673,6 +704,10 @@ RunnableParallel        多个任务同时执行        同时取检索结果与
 RunnablePassthrough
 原样透传 / assign 增强数据
 RAG 链里把 {question, context} 拼齐 ^sHajb6Tq
+
+RunnableWithMessageHistory
+自动管理多轮会话历史
+多用户聊天机器人 ^yoxMwZMb
 
 ## Element Links
 3wLyCHzL: [[18-LangChain/00-LangChain-V1.0.excalidraw.md#ChatOpenAI]]
@@ -1956,16 +1991,18 @@ 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
 
-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
+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
 
-B0KTVaDbhPUwTX813U1+sry9vt+fI+5yvlZZ1Chh6u71f+F/KdE+JT1tft8+l7wRw/42fr4RfjZ+tRzyxbR/rgAjg7QyQSebfc8tqPSDEod+m3yd1wbiA3ytHmj2g32Mfp3e971Mfubcur6tH9FyVI+RKuIBm7fOfIg5zb9Pvj/elaXPvGycL72ufxsEbnyAPVgvgANTAnkBwAHAAkoDaCbfQ0ABnQKszH5gtkHsADAC/bBQAge4qxqzcM/PlECI
+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
 
-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
+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
 
-Zk6if33ff4D9SKMu6q7o1UNNlmIBigL9w47h50IocmB+QC93fkz10P2IUSfwjW6jzwsBp0D3YEAB34YwEk+gfAyBvhwAxkAQ/K7op5l80U9+MgCQAtCfG6HI/Y4BQIJvw3d+yP8BILuC4P77uo2gKP4YsbUBV2PgA0kBEVLSA77za0yA45lWmP6F498PpgFPAMPmsCHIgRj+4AO+8BNvCkE2ALj/mVZY/2TkFAFVI7IDgZrBK5gACR0nI5nKn31x
+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
 
-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
+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
 
-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
+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
 ```
 %%
