@@ -295,11 +295,45 @@
         "height": 800,
         "maximize": true,
         "zoom": 0
+      },
+      {
+        "id": "c726806eafccdce3",
+        "type": "window",
+        "children": [
+          {
+            "id": "e0858a6f7697ef3b",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "afb864aea1e1b997",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "02-Model I-O 模型提示词与输出解析"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 388,
+        "y": 121,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
       }
     ]
   },
-  "active": "61cddc8624367f25",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
@@ -312,7 +346,6 @@
     "6-ai/0-LLM/1.1-提示工程实战演练（L1_day04）.md",
     "6-ai/0-LLM/1-提示词工程.md",
     "file:/Volumes/新加卷/学习/往期录播/视频/L2阶段/07-Langchain框架答疑课-26.8.3/LangChain常用API总结.md",
-    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "upwork-jobscan/runs/2026-11-12.md",
     "14-AI agent/1-LangChain/1-LangChain进阶.drawio",
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
