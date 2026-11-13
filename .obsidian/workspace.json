@@ -81,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 348.625,
-    "collapsed": true
+    "width": 348.625
   },
   "right": {
     "id": "a9504c882bd2a911",
@@ -265,78 +264,46 @@
     "type": "floating",
     "children": [
       {
-        "id": "7393c605eb22fe0d",
+        "id": "86f328bcd25c856b",
         "type": "window",
         "children": [
           {
-            "id": "17e47964b12007dd",
+            "id": "e21a4276bbbac251",
             "type": "tabs",
             "children": [
               {
-                "id": "61cddc8624367f25",
+                "id": "36dfa25c0bba579f",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "18-LangChain/01-V1.0 重构与整体体系.md",
+                    "file": "18-LangChain/05-Agent 工具调用与中间件.md",
                     "mode": "preview",
                     "source": true
                   },
                   "icon": "lucide-file",
-                  "title": "01-V1.0 重构与整体体系"
+                  "title": "05-Agent 工具调用与中间件"
                 }
               }
             ]
           }
         ],
         "direction": "vertical",
-        "x": 1450,
-        "y": -1410,
-        "width": 1440,
-        "height": 1410,
-        "maximize": true,
-        "zoom": 0
-      },
-      {
-        "id": "c726806eafccdce3",
-        "type": "window",
-        "children": [
-          {
-            "id": "e0858a6f7697ef3b",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "afb864aea1e1b997",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
-                    "mode": "preview",
-                    "source": true
-                  },
-                  "icon": "lucide-file",
-                  "title": "02-Model I-O 模型提示词与输出解析"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 1450,
-        "y": -1410,
-        "width": 1440,
-        "height": 1410,
-        "maximize": true,
+        "x": -1275,
+        "y": -431,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "afb864aea1e1b997",
+  "active": "36dfa25c0bba579f",
   "lastOpenFiles": [
+    "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
-    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
+    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/09-LangChain 1.0 API 速查菜单.md",
     "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
@@ -361,7 +328,6 @@
     "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
     "14-AI agent/LangChain4j/0-LangChain4j-知识库索引.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
-    "18-LangChain/07-Day02 课堂复盘 LCEL 与会话记忆.md",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
