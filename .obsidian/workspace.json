@@ -291,11 +291,11 @@
           }
         ],
         "direction": "vertical",
-        "x": 388,
-        "y": 121,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
+        "x": -880,
+        "y": -1410,
+        "width": 1440,
+        "height": 1410,
+        "maximize": false,
         "zoom": 0
       },
       {
@@ -324,11 +324,11 @@
           }
         ],
         "direction": "vertical",
-        "x": 387,
-        "y": 121,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
+        "x": -880,
+        "y": -1410,
+        "width": 1440,
+        "height": 1410,
+        "maximize": false,
         "zoom": 0
       },
       {
@@ -357,19 +357,19 @@
           }
         ],
         "direction": "vertical",
-        "x": -1245,
-        "y": -709,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
+        "x": -880,
+        "y": -1410,
+        "width": 1440,
+        "height": 1410,
+        "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "e7a7b303c61786dc",
+  "active": "24d2594a78f92f86",
   "lastOpenFiles": [
-    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
+    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "18-LangChain/Clash.Verge_2.5.10_aarch64.dmg",
     "18-LangChain/Clash.Verge_2.5.10_aarch64.dmg.crdownload",
     "18-LangChain/04.2-检索器.md",
