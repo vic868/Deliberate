@@ -300,10 +300,10 @@
       }
     ]
   },
-  "active": "e7a7b303c61786dc",
+  "active": "71bd8d97d0705962",
   "lastOpenFiles": [
-    "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/03.4-RunnableWithMessageHistory.md",
+    "18-LangChain/03-链与 LCEL.md",
     "upwork-jobscan/runs/2026-11-14.md",
     "18-LangChain/03.3-RunnablePassthrough.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
