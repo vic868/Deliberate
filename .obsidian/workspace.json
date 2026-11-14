@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
+                "file": "18-LangChain/04-RAG 数据连接与检索.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "03.5-RunnableWithMessageHistory多轮记忆"
+              "title": "04-RAG 数据连接与检索"
             }
           }
         ]
@@ -300,11 +300,11 @@
       }
     ]
   },
-  "active": "71bd8d97d0705962",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
-    "18-LangChain/03.4-RunnableWithMessageHistory.md",
     "18-LangChain/03-链与 LCEL.md",
+    "18-LangChain/03.4-RunnableWithMessageHistory.md",
     "upwork-jobscan/runs/2026-11-14.md",
     "18-LangChain/03.3-RunnablePassthrough.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
