@@ -13,10 +13,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "6-ai/0.1-langchain/1-Embedding 与向量检索全景.drawio"
+                "file": "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "1-Embedding 与向量检索全景"
+              "title": "2-Retriever 检索器全景"
             }
           }
         ]
@@ -364,15 +364,15 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "6-ai/0.1-langchain/3-LangGraph 状态机与 Graph API 全景.drawio",
     "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
+    "6-ai/0.1-langchain/1-Embedding 与向量检索全景.drawio",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
-    "6-ai/0.1-langchain/1-Embedding 与向量检索全景.drawio",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/Agent 面试总挂？8 站打通关.md",
     "6-ai/deepseek-herness.drawio",
