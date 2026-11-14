@@ -11,14 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "drawio-file-view",
               "state": {
-                "file": "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
-                "mode": "preview",
-                "source": true
+                "file": "6-ai/0.1-langchain/0-LangChain 1.0 知识体系全景.drawio"
               },
-              "icon": "lucide-file",
-              "title": "9-AdvancedRAG一-七个故障点与高级索引技术"
+              "icon": "pencil-ruler",
+              "title": "0-LangChain 1.0 知识体系全景"
             }
           }
         ]
@@ -366,8 +364,9 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
     "6-ai/0.1-langchain/0-LangChain 1.0 知识体系全景.drawio",
     "6-ai/0.1-langchain",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
@@ -405,7 +404,6 @@
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent/1-LangChain/3-RAG进阶.vector.drawio",
-    "14-AI agent/1-LangChain/2-LangGraph进阶.vector.drawio",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_4.png",

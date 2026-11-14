@@ -1,160 +1,428 @@
-<mxfile host="embed.diagrams.net" agent="codebuddy" version="24.7.17">
-<diagram id="p1" name="① 知识体系全景">
-<mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="940" math="0" shadow="0">
-<root>
-<mxCell id="0" />
-<mxCell id="1" parent="0" />
-<mxCell id="p11" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=21;fontStyle=1;fontColor=#1F3864;" value="LangChain 1.0 知识体系全景" vertex="1"><mxGeometry height="40" width="1520" x="40" y="20" as="geometry" /></mxCell>
-<mxCell id="p12" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" value="对应 18-LangChain 学习笔记 ｜ 讲义 P35–P45 ｜ V1.0 包结构 · 六大模块 · 学习路径" vertex="1"><mxGeometry height="26" width="1520" x="40" y="62" as="geometry" /></mxCell>
-<mxCell id="p13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#7F8C8D;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="① 包结构 / import 分层（V1.0 重构重点）" vertex="1"><mxGeometry height="580" width="430" x="40" y="100" as="geometry" /></mxCell>
-<mxCell id="p14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="langchain_core&#xa;Document · Runnable · Prompt · Parser · Messages · VectorStore 抽象" vertex="1"><mxGeometry height="76" width="390" x="60" y="140" as="geometry" /></mxCell>
-<mxCell id="p15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=11;align=center;verticalAlign=middle;" value="langchain&#xa;Agent · @tool · create_agent · Message · Middleware" vertex="1"><mxGeometry height="76" width="390" x="60" y="226" as="geometry" /></mxCell>
-<mxCell id="p16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=11;align=center;verticalAlign=middle;" value="langchain_community&#xa;第三方集成：document_loaders / embeddings / vectorstores" vertex="1"><mxGeometry height="76" width="390" x="60" y="312" as="geometry" /></mxCell>
-<mxCell id="p17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="合作伙伴包（独立安装）&#xa;langchain_openai · langchain_chroma · langchain_text_splitters" vertex="1"><mxGeometry height="76" width="390" x="60" y="398" as="geometry" /></mxCell>
-<mxCell id="p18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D06060;fontSize=11;align=center;verticalAlign=middle;" value="langchain_classic（v0.3 遗留）&#xa;create_retrieval_chain / create_stuff_documents_chain" vertex="1"><mxGeometry height="76" width="390" x="60" y="484" as="geometry" /></mxCell>
-<mxCell id="p19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="V0.3 → V1.0：RAG 章逐字未改，变化集中在 Agent + Middleware；&#xa;旧式 Chain 全部搬去 langchain_classic，新项目优先 LCEL 手写。" vertex="1"><mxGeometry height="60" width="390" x="60" y="585" as="geometry" /></mxCell>
-<mxCell id="p110" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="② Model I/O" vertex="1"><mxGeometry height="180" width="340" x="500" y="100" as="geometry" /></mxCell>
-<mxCell id="p111" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="Chat Model&#xa;ChatOpenAI / init_chat_model / DashScope" vertex="1"><mxGeometry height="36" width="300" x="520" y="144" as="geometry" /></mxCell>
-<mxCell id="p112" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="Prompt&#xa;ChatPromptTemplate · MessagesPlaceholder · partial" vertex="1"><mxGeometry height="36" width="300" x="520" y="188" as="geometry" /></mxCell>
-<mxCell id="p113" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="OutputParser&#xa;StrOutputParser · JsonOutputParser · content_blocks" vertex="1"><mxGeometry height="36" width="300" x="520" y="232" as="geometry" /></mxCell>
-<mxCell id="p114" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E9FA;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="③ LCEL / Runnable" vertex="1"><mxGeometry height="180" width="340" x="860" y="100" as="geometry" /></mxCell>
-<mxCell id="p115" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="统一接口&#xa;invoke / stream / batch / astream_events" vertex="1"><mxGeometry height="36" width="300" x="880" y="144" as="geometry" /></mxCell>
-<mxCell id="p116" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="Runnable 家族&#xa;Lambda · Parallel · Passthrough · WithMessageHistory" vertex="1"><mxGeometry height="36" width="300" x="880" y="188" as="geometry" /></mxCell>
-<mxCell id="p117" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="组合原语&#xa;| 管道 · bind · assign（透传 + 追加）" vertex="1"><mxGeometry height="36" width="300" x="880" y="232" as="geometry" /></mxCell>
-<mxCell id="p118" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="④ RAG 数据连接" vertex="1"><mxGeometry height="180" width="340" x="1220" y="100" as="geometry" /></mxCell>
-<mxCell id="p119" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="离线建库&#xa;Loader → Splitter → Embeddings → VectorStore" vertex="1"><mxGeometry height="36" width="300" x="1240" y="144" as="geometry" /></mxCell>
-<mxCell id="p120" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="在线问答&#xa;Query → Retriever → context → Prompt → LLM" vertex="1"><mxGeometry height="36" width="300" x="1240" y="188" as="geometry" /></mxCell>
-<mxCell id="p121" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="数据单元&#xa;Document(page_content, metadata)" vertex="1"><mxGeometry height="36" width="300" x="1240" y="232" as="geometry" /></mxCell>
-<mxCell id="p122" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDE9D9;strokeColor=#D79B00;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑤ Agent 与中间件" vertex="1"><mxGeometry height="180" width="340" x="500" y="300" as="geometry" /></mxCell>
-<mxCell id="p123" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=10;align=center;verticalAlign=middle;" value="工具&#xa;@tool / bind_tools" vertex="1"><mxGeometry height="36" width="300" x="520" y="344" as="geometry" /></mxCell>
-<mxCell id="p124" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=10;align=center;verticalAlign=middle;" value="create_agent&#xa;模型自主决定调用几次工具" vertex="1"><mxGeometry height="36" width="300" x="520" y="388" as="geometry" /></mxCell>
-<mxCell id="p125" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=10;align=center;verticalAlign=middle;" value="Middleware&#xa;6 个钩子，工具调用前后插逻辑" vertex="1"><mxGeometry height="36" width="300" x="520" y="432" as="geometry" /></mxCell>
-<mxCell id="p126" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑥ 记忆与多轮" vertex="1"><mxGeometry height="180" width="340" x="860" y="300" as="geometry" /></mxCell>
-<mxCell id="p127" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="RunnableWithMessageHistory&#xa;LCEL 老写法" vertex="1"><mxGeometry height="36" width="300" x="880" y="344" as="geometry" /></mxCell>
-<mxCell id="p128" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="checkpointer&#xa;InMemorySaver() + thread_id" vertex="1"><mxGeometry height="36" width="300" x="880" y="388" as="geometry" /></mxCell>
-<mxCell id="p129" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="MessagesPlaceholder&#xa;prompt 里留历史消息槽位" vertex="1"><mxGeometry height="36" width="300" x="880" y="432" as="geometry" /></mxCell>
-<mxCell id="p130" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑦ 服务化与可观测" vertex="1"><mxGeometry height="180" width="340" x="1220" y="300" as="geometry" /></mxCell>
-<mxCell id="p131" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="add_routes / RemoteRunnable / with_types" vertex="1"><mxGeometry height="36" width="300" x="1240" y="344" as="geometry" /></mxCell>
-<mxCell id="p132" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="FastAPI + LangServe&#xa;把链变成 HTTP 接口" vertex="1"><mxGeometry height="36" width="300" x="1240" y="388" as="geometry" /></mxCell>
-<mxCell id="p133" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="LangSmith&#xa;trace / 评估 / 调试" vertex="1"><mxGeometry height="36" width="300" x="1240" y="432" as="geometry" /></mxCell>
-<mxCell id="p134" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDECEC;strokeColor=#D06060;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑧ 三大模型包装器" vertex="1"><mxGeometry height="180" width="340" x="500" y="500" as="geometry" /></mxCell>
-<mxCell id="p135" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D06060;fontSize=10;align=center;verticalAlign=middle;" value="Chat Model：对话生成（ChatOpenAI）" vertex="1"><mxGeometry height="36" width="300" x="520" y="544" as="geometry" /></mxCell>
-<mxCell id="p136" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D06060;fontSize=10;align=center;verticalAlign=middle;" value="Embeddings：文本→向量（DashScopeEmbeddings）" vertex="1"><mxGeometry height="36" width="300" x="520" y="588" as="geometry" /></mxCell>
-<mxCell id="p137" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D06060;fontSize=10;align=center;verticalAlign=middle;" value="RAG 里两个都要用，模型名与计费互不相同" vertex="1"><mxGeometry height="36" width="300" x="520" y="632" as="geometry" /></mxCell>
-<mxCell id="p138" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E9FA;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑨ 检索器（重点）" vertex="1"><mxGeometry height="180" width="340" x="860" y="500" as="geometry" /></mxCell>
-<mxCell id="p139" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="retriever = vector_store.as_retriever()" vertex="1"><mxGeometry height="36" width="300" x="880" y="544" as="geometry" /></mxCell>
-<mxCell id="p140" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="检索器 = 向量库的统一包装器（Runnable）" vertex="1"><mxGeometry height="36" width="300" x="880" y="588" as="geometry" /></mxCell>
-<mxCell id="p141" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="search_type：similarity / mmr / threshold" vertex="1"><mxGeometry height="36" width="300" x="880" y="632" as="geometry" /></mxCell>
-<mxCell id="p142" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#7F8C8D;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑩ 版本与踩坑" vertex="1"><mxGeometry height="180" width="340" x="1220" y="500" as="geometry" /></mxCell>
-<mxCell id="p143" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F8C8D;fontSize=10;align=center;verticalAlign=middle;" value="Chroma L2 距离：分数越小越相似" vertex="1"><mxGeometry height="36" width="300" x="1240" y="544" as="geometry" /></mxCell>
-<mxCell id="p144" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F8C8D;fontSize=10;align=center;verticalAlign=middle;" value="bs4.SoupStrainer 圈正文，别把广告塞进上下文" vertex="1"><mxGeometry height="36" width="300" x="1240" y="588" as="geometry" /></mxCell>
-<mxCell id="p145" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F8C8D;fontSize=10;align=center;verticalAlign=middle;" value="context 的值必须是 Runnable → 03.2 / 03.3" vertex="1"><mxGeometry height="36" width="300" x="1240" y="632" as="geometry" /></mxCell>
-<mxCell id="p146" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDE9D9;strokeColor=#D79B00;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑪ 学习路径（对应 18-LangChain 笔记）" vertex="1"><mxGeometry height="180" width="1520" x="40" y="710" as="geometry" /></mxCell>
-<mxCell id="p147" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="00 学习总览" vertex="1"><mxGeometry height="40" width="280" x="60" y="752" as="geometry" /></mxCell>
-<mxCell id="p148" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="01 V1.0 重构与体系" vertex="1"><mxGeometry height="40" width="280" x="360" y="752" as="geometry" /></mxCell>
-<mxCell id="p149" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="02 Model I/O" vertex="1"><mxGeometry height="40" width="280" x="660" y="752" as="geometry" /></mxCell>
-<mxCell id="p150" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="03 链与 LCEL" vertex="1"><mxGeometry height="40" width="280" x="960" y="752" as="geometry" /></mxCell>
-<mxCell id="p151" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="03.1–03.5 Runnable 专题" vertex="1"><mxGeometry height="40" width="280" x="1260" y="752" as="geometry" /></mxCell>
-<mxCell id="p152" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="04 RAG 数据连接" vertex="1"><mxGeometry height="40" width="280" x="60" y="804" as="geometry" /></mxCell>
-<mxCell id="p153" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="04-RAG 知识点梳理" vertex="1"><mxGeometry height="40" width="280" x="360" y="804" as="geometry" /></mxCell>
-<mxCell id="p154" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="04.1 Retriever 检索器" vertex="1"><mxGeometry height="40" width="280" x="660" y="804" as="geometry" /></mxCell>
-<mxCell id="p155" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="04.2 create_retrieval_chain" vertex="1"><mxGeometry height="40" width="280" x="960" y="804" as="geometry" /></mxCell>
-<mxCell id="p156" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="05 Agent 与中间件" vertex="1"><mxGeometry height="40" width="280" x="1260" y="804" as="geometry" /></mxCell>
-<mxCell id="p157" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="续：06 服务化 · 07 Day02 复盘 · 08 Day03 复盘 · 09 API 速查菜单 ｜ 另见 Milvus 学习文档 / pgvector vs Milvus 选型对比" vertex="1"><mxGeometry height="28" width="1440" x="60" y="852" as="geometry" /></mxCell>
-</root>
-</mxGraphModel>
-</diagram>
-<diagram id="p2" name="② RAG 数据连接与检索">
-<mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
-<root>
-<mxCell id="0" />
-<mxCell id="1" parent="0" />
-<mxCell id="p21" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=21;fontStyle=1;fontColor=#1F3864;" value="RAG 数据连接与检索：离线建库 + 在线问答" vertex="1"><mxGeometry height="40" width="1520" x="40" y="20" as="geometry" /></mxCell>
-<mxCell id="p22" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" value="对应 04-RAG 数据连接与检索 / 04-RAG 知识点梳理 / 04.1 Retriever 检索器" vertex="1"><mxGeometry height="26" width="1520" x="40" y="62" as="geometry" /></mxCell>
-<mxCell id="p23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDE9D9;strokeColor=#D79B00;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="离线 · 建库（前半段）" vertex="1"><mxGeometry height="210" width="1520" x="40" y="100" as="geometry" /></mxCell>
-<mxCell id="p24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="数据源&#xa;txt / pdf / html / md / db / 网页" vertex="1"><mxGeometry height="90" width="270" x="70" y="160" as="geometry" /></mxCell>
-<mxCell id="p25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="DocumentLoader&#xa;load() → list[Document]" vertex="1"><mxGeometry height="90" width="270" x="360" y="160" as="geometry" /></mxCell>
-<mxCell id="p26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="TextSplitter&#xa;RecursiveCharacterTextSplitter&#xa;chunk_size / chunk_overlap" vertex="1"><mxGeometry height="90" width="270" x="650" y="160" as="geometry" /></mxCell>
-<mxCell id="p27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="Embeddings&#xa;DashScopeEmbeddings&#xa;文本 → 向量" vertex="1"><mxGeometry height="90" width="270" x="940" y="160" as="geometry" /></mxCell>
-<mxCell id="p28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="VectorStore&#xa;Chroma.from_documents()&#xa;FAISS / Milvus" vertex="1"><mxGeometry height="90" width="270" x="1230" y="160" as="geometry" /></mxCell>
-<mxCell id="p29" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;strokeWidth=1;" edge="1" source="p24" target="p25"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p210" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;strokeWidth=1;" edge="1" source="p25" target="p26"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p211" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;strokeWidth=1;" edge="1" source="p26" target="p27"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p212" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;strokeWidth=1;" edge="1" source="p27" target="p28"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p213" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="统一接口 load()；WebBaseLoader 配 bs4.SoupStrainer 只抓正文。切分两步：① 切分 ② 转成 Document 对象。" vertex="1"><mxGeometry height="26" width="1440" x="70" y="262" as="geometry" /></mxCell>
-<mxCell id="p214" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1F3864;" value="↕ 两边共用同一个 Embeddings（否则不在同一向量空间）；VectorStore 通过相似度检索把 Document 交给 Retriever。" vertex="1"><mxGeometry height="24" width="1520" x="40" y="316" as="geometry" /></mxCell>
-<mxCell id="p215" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="在线 · 问答（后半段）" vertex="1"><mxGeometry height="210" width="1520" x="40" y="340" as="geometry" /></mxCell>
-<mxCell id="p216" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="用户问题 Q" vertex="1"><mxGeometry height="90" width="270" x="70" y="400" as="geometry" /></mxCell>
-<mxCell id="p217" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="同一 Embeddings&#xa;问题 → 向量" vertex="1"><mxGeometry height="90" width="270" x="360" y="400" as="geometry" /></mxCell>
-<mxCell id="p218" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="Retriever&#xa;as_retriever() → list[Document]" vertex="1"><mxGeometry height="90" width="270" x="650" y="400" as="geometry" /></mxCell>
-<mxCell id="p219" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="Prompt&#xa;question + context&#xa;不知道就说不知道" vertex="1"><mxGeometry height="90" width="270" x="940" y="400" as="geometry" /></mxCell>
-<mxCell id="p220" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="LLM → answer" vertex="1"><mxGeometry height="90" width="270" x="1230" y="400" as="geometry" /></mxCell>
-<mxCell id="p221" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p216" target="p217"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p222" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p217" target="p218"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p223" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p218" target="p219"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p224" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p219" target="p220"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p225" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="Document 全链路流通：page_content 拿去嵌入；metadata 存来源/页码/章节，检索结果可回溯出处。" vertex="1"><mxGeometry height="26" width="1440" x="70" y="502" as="geometry" /></mxCell>
-<mxCell id="p226" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="检索器参数与四种创建方式" vertex="1"><mxGeometry height="300" width="750" x="40" y="580" as="geometry" /></mxCell>
-<mxCell id="p227" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="search_type：similarity（默认） / mmr / similarity_score_threshold" vertex="1"><mxGeometry height="52" width="710" x="60" y="622" as="geometry" /></mxCell>
-<mxCell id="p228" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="search_kwargs：k · score_threshold · fetch_k · lambda_mult · filter(metadata)" vertex="1"><mxGeometry height="52" width="710" x="60" y="682" as="geometry" /></mxCell>
-<mxCell id="p229" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="四种创建：FAISS / Chroma 语义 · BM25 关键词 · EnsembleRetriever 混合" vertex="1"><mxGeometry height="52" width="710" x="60" y="742" as="geometry" /></mxCell>
-<mxCell id="p230" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="四种「查」：similarity_search / with_score / RunnableLambda.bind(k) / retriever.invoke" vertex="1"><mxGeometry height="52" width="710" x="60" y="802" as="geometry" /></mxCell>
-<mxCell id="p231" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E9FA;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="两条链与踩坑清单" vertex="1"><mxGeometry height="300" width="750" x="810" y="580" as="geometry" /></mxCell>
-<mxCell id="p232" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="LCEL：{context: retriever, question: RunnablePassthrough()} | prompt | model | parser" vertex="1"><mxGeometry height="52" width="710" x="830" y="622" as="geometry" /></mxCell>
-<mxCell id="p233" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="classic：create_stuff_documents_chain + create_retrieval_chain（langchain_classic）" vertex="1"><mxGeometry height="52" width="710" x="830" y="682" as="geometry" /></mxCell>
-<mxCell id="p234" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="坑：Chroma L2 分数越小越像；切换向量库统一用 as_retriever()" vertex="1"><mxGeometry height="52" width="710" x="830" y="742" as="geometry" /></mxCell>
-<mxCell id="p235" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="坑：把「检索结果」当 context 不行，值必须是 Runnable（RunnableParallel）" vertex="1"><mxGeometry height="52" width="710" x="830" y="802" as="geometry" /></mxCell>
-<mxCell id="p236" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#7F8C8D;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="一句话与笔记索引" vertex="1"><mxGeometry height="140" width="1520" x="40" y="910" as="geometry" /></mxCell>
-<mxCell id="p237" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#1F3864;" value="检索器 = 向量库的包装器：底层换成 Milvus 或 FAISS，查询代码一个字不改；它本身是 Runnable，才能直接进 LCEL / 被 EnsembleRetriever 组合。" vertex="1"><mxGeometry height="30" width="1440" x="60" y="950" as="geometry" /></mxCell>
-<mxCell id="p238" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="对应笔记：04-RAG 数据连接与检索 · 04-RAG 知识点梳理 · 04.1 Retriever 检索器 · 04.2 create_retrieval_chain 执行原理 · 09 API 速查菜单 §4.4–4.5" vertex="1"><mxGeometry height="30" width="1440" x="60" y="990" as="geometry" /></mxCell>
-</root>
-</mxGraphModel>
-</diagram>
-<diagram id="p3" name="③ LCEL 与两条链的原理">
-<mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="980" math="0" shadow="0">
-<root>
-<mxCell id="0" />
-<mxCell id="1" parent="0" />
-<mxCell id="p31" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=21;fontStyle=1;fontColor=#1F3864;" value="LCEL / Runnable 与两条 RAG 链：重建 dict vs 累积 dict" vertex="1"><mxGeometry height="40" width="1520" x="40" y="20" as="geometry" /></mxCell>
-<mxCell id="p32" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" value="对应 03-链与 LCEL（03.1–03.5）/ 04.2 create_retrieval_chain 执行原理" vertex="1"><mxGeometry height="26" width="1520" x="40" y="62" as="geometry" /></mxCell>
-<mxCell id="p33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E9FA;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="Runnable 家族" vertex="1"><mxGeometry height="520" width="520" x="40" y="100" as="geometry" /></mxCell>
-<mxCell id="p34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=13;align=center;verticalAlign=middle;fontStyle=1;" value="Runnable 基类（LCEL 一等公民）" vertex="1"><mxGeometry height="50" width="480" x="60" y="145" as="geometry" /></mxCell>
-<mxCell id="p35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnableLambda&#xa;把普通函数包成 Runnable：docs_find = RunnableLambda(...)" vertex="1"><mxGeometry height="56" width="480" x="60" y="215" as="geometry" /></mxCell>
-<mxCell id="p36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnableParallel&#xa;字典字面量自动变并行分支，每个值必须是 Runnable" vertex="1"><mxGeometry height="56" width="480" x="60" y="281" as="geometry" /></mxCell>
-<mxCell id="p37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnablePassthrough&#xa;原样透传；.assign() = 透传 + 追加字段" vertex="1"><mxGeometry height="56" width="480" x="60" y="347" as="geometry" /></mxCell>
-<mxCell id="p38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnableWithMessageHistory&#xa;多轮会话记忆包装" vertex="1"><mxGeometry height="56" width="480" x="60" y="413" as="geometry" /></mxCell>
-<mxCell id="p39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnableBinding&#xa;.bind(k=1) / with_types / with_config(run_name)" vertex="1"><mxGeometry height="56" width="480" x="60" y="479" as="geometry" /></mxCell>
-<mxCell id="p310" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="统一接口：invoke / stream / batch / astream_events；所有组件都能用 | 串联。" vertex="1"><mxGeometry height="44" width="480" x="60" y="560" as="geometry" /></mxCell>
-<mxCell id="p311" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="两条组装 RAG 链的路" vertex="1"><mxGeometry height="520" width="980" x="580" y="100" as="geometry" /></mxCell>
-<mxCell id="p312" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#1F3864;" value="A · 讲义 §6 手写 LCEL：RunnableParallel 重建 dict" vertex="1"><mxGeometry height="26" width="940" x="600" y="140" as="geometry" /></mxCell>
-<mxCell id="p313" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="{&quot;question&quot;: RunnablePassthrough(),&#xa;&quot;context&quot;: docs_find}" vertex="1"><mxGeometry height="70" width="290" x="600" y="172" as="geometry" /></mxCell>
-<mxCell id="p314" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="| prompt_template" vertex="1"><mxGeometry height="70" width="290" x="910" y="172" as="geometry" /></mxCell>
-<mxCell id="p315" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="| client → AIMessage" vertex="1"><mxGeometry height="70" width="290" x="1220" y="172" as="geometry" /></mxCell>
-<mxCell id="p316" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p313" target="p314"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p317" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p314" target="p315"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p318" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="输出：AIMessage（可再接 StrOutputParser）；context 被 prompt 消费，不留在结果里。" vertex="1"><mxGeometry height="26" width="940" x="600" y="250" as="geometry" /></mxCell>
-<mxCell id="p319" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#1F3864;" value="B · 讲义 §7 classic：两次 assign 累积 dict（create_retrieval_chain）" vertex="1"><mxGeometry height="26" width="940" x="600" y="290" as="geometry" /></mxCell>
-<mxCell id="p320" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="assign(context=...)&#xa;(λx: x[&quot;input&quot;]) | retriever" vertex="1"><mxGeometry height="70" width="290" x="600" y="322" as="geometry" /></mxCell>
-<mxCell id="p321" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="assign(answer=...)&#xa;整个 dict → stuff 文档链" vertex="1"><mxGeometry height="70" width="290" x="910" y="322" as="geometry" /></mxCell>
-<mxCell id="p322" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="返回 {input, context, answer}" vertex="1"><mxGeometry height="70" width="290" x="1220" y="322" as="geometry" /></mxCell>
-<mxCell id="p323" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p320" target="p321"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p324" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p321" target="p322"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p325" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="输出：dict；resp[&quot;answer&quot;] 是答案，resp[&quot;context&quot;] 仍保留原始 List[Document]，可溯源。" vertex="1"><mxGeometry height="26" width="940" x="600" y="400" as="geometry" /></mxCell>
-<mxCell id="p326" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="共同点：两者都是纯 LCEL Runnable；create_retrieval_chain 只是工厂函数，构造阶段零 IO，检索发生在 .invoke()。" vertex="1"><mxGeometry height="34" width="940" x="600" y="440" as="geometry" /></mxCell>
-<mxCell id="p327" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="差异：RunnableParallel 重建 dict（只留字面量里写的键）；assign 保留全部原始键并追加新键。" vertex="1"><mxGeometry height="34" width="940" x="600" y="480" as="geometry" /></mxCell>
-<mxCell id="p328" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="坑：值必须是 Runnable 或可调用对象；文档列表 / 裸方法不会被自动执行 → 见 03.2 / 03.3。" vertex="1"><mxGeometry height="34" width="940" x="600" y="520" as="geometry" /></mxCell>
-<mxCell id="p329" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="版本：create_stuff_documents_chain / create_retrieval_chain 在 V1.0 已移到 langchain_classic。" vertex="1"><mxGeometry height="34" width="940" x="600" y="560" as="geometry" /></mxCell>
-<mxCell id="p330" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="create_retrieval_chain 逐帧推演（源码 10 行）" vertex="1"><mxGeometry height="280" width="1520" x="40" y="650" as="geometry" /></mxCell>
-<mxCell id="p331" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="输入 dict&#xa;{&quot;input&quot;: &quot;张成刚是谁？&quot;}" vertex="1"><mxGeometry height="80" width="300" x="70" y="710" as="geometry" /></mxCell>
-<mxCell id="p332" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="① assign(context=...)&#xa;取 x[&quot;input&quot;] → retriever → List[Document]" vertex="1"><mxGeometry height="80" width="300" x="430" y="710" as="geometry" /></mxCell>
-<mxCell id="p333" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="② assign(answer=...)&#xa;整个 dict → combine_docs_chain → str" vertex="1"><mxGeometry height="80" width="300" x="790" y="710" as="geometry" /></mxCell>
-<mxCell id="p334" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="输出 dict&#xa;{&quot;input&quot;, &quot;context&quot;, &quot;answer&quot;}" vertex="1"><mxGeometry height="80" width="300" x="1150" y="710" as="geometry" /></mxCell>
-<mxCell id="p335" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" value="+ context" edge="1" source="p331" target="p332"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p336" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" value="+ answer" edge="1" source="p332" target="p333"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p337" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p333" target="p334"><mxGeometry relative="1" as="geometry" /></mxCell>
-<mxCell id="p338" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1F3864;" value="源码核心：if isinstance(retriever, BaseRetriever) → (λx: x[&quot;input&quot;]) | retriever；否则整个 dict 原样传入（history-aware retriever 走这条）。" vertex="1"><mxGeometry height="32" width="1440" x="70" y="810" as="geometry" /></mxCell>
-<mxCell id="p339" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="stuff 子链内部把 context 从 List[Document] 拍平成字符串，只改自己的副本、不回写外层 —— 这就是能溯源的原因。" vertex="1"><mxGeometry height="32" width="1440" x="70" y="852" as="geometry" /></mxCell>
-</root>
-</mxGraphModel>
-</diagram>
+<mxfile host="embed.diagrams.net" agent="codebuddy" pages="3">
+  <diagram id="p1" name="① 知识体系全景">
+    <mxGraphModel dx="1869" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="940" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p11" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=21;fontStyle=1;fontColor=#1F3864;" value="LangChain 1.0 知识体系全景" vertex="1">
+          <mxGeometry height="40" width="1520" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="p12" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" value="对应 18-LangChain 学习笔记 ｜ 讲义 P35–P45 ｜ V1.0 包结构 · 六大模块 · 学习路径" vertex="1">
+          <mxGeometry height="26" width="1520" x="40" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#7F8C8D;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="① 包结构 / import 分层（V1.0 重构重点）" vertex="1">
+          <mxGeometry height="580" width="430" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="langchain_core&#xa;Document · Runnable · Prompt · Parser · Messages · VectorStore 抽象" vertex="1">
+          <mxGeometry height="76" width="390" x="60" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=11;align=center;verticalAlign=middle;" value="langchain&#xa;Agent · @tool · create_agent · Message · Middleware" vertex="1">
+          <mxGeometry height="76" width="390" x="60" y="226" as="geometry" />
+        </mxCell>
+        <mxCell id="p16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=11;align=center;verticalAlign=middle;" value="langchain_community&#xa;第三方集成：document_loaders / embeddings / vectorstores" vertex="1">
+          <mxGeometry height="76" width="390" x="60" y="312" as="geometry" />
+        </mxCell>
+        <mxCell id="p17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="合作伙伴包（独立安装）&#xa;langchain_openai · langchain_chroma · langchain_text_splitters" vertex="1">
+          <mxGeometry height="76" width="390" x="60" y="398" as="geometry" />
+        </mxCell>
+        <mxCell id="p18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D06060;fontSize=11;align=center;verticalAlign=middle;" value="langchain_classic（v0.3 遗留）&#xa;create_retrieval_chain / create_stuff_documents_chain" vertex="1">
+          <mxGeometry height="76" width="390" x="60" y="484" as="geometry" />
+        </mxCell>
+        <mxCell id="p19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="V0.3 → V1.0：RAG 章逐字未改，变化集中在 Agent + Middleware；&#xa;旧式 Chain 全部搬去 langchain_classic，新项目优先 LCEL 手写。" vertex="1">
+          <mxGeometry height="60" width="390" x="60" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="p110" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="② Model I/O" vertex="1">
+          <mxGeometry height="180" width="340" x="500" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p111" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="Chat Model&#xa;ChatOpenAI / init_chat_model / DashScope" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="p112" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="Prompt&#xa;ChatPromptTemplate · MessagesPlaceholder · partial" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="p113" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="OutputParser&#xa;StrOutputParser · JsonOutputParser · content_blocks" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="p114" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E9FA;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="③ LCEL / Runnable" vertex="1">
+          <mxGeometry height="180" width="340" x="860" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p115" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="统一接口&#xa;invoke / stream / batch / astream_events" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="p116" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="Runnable 家族&#xa;Lambda · Parallel · Passthrough · WithMessageHistory" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="p117" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="组合原语&#xa;| 管道 · bind · assign（透传 + 追加）" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="p118" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="④ RAG 数据连接" vertex="1">
+          <mxGeometry height="180" width="340" x="1220" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p119" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="离线建库&#xa;Loader → Splitter → Embeddings → VectorStore" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="p120" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="在线问答&#xa;Query → Retriever → context → Prompt → LLM" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="p121" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="数据单元&#xa;Document(page_content, metadata)" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="p122" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDE9D9;strokeColor=#D79B00;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑤ Agent 与中间件" vertex="1">
+          <mxGeometry height="180" width="340" x="500" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="p123" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=10;align=center;verticalAlign=middle;" value="工具&#xa;@tool / bind_tools" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="344" as="geometry" />
+        </mxCell>
+        <mxCell id="p124" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=10;align=center;verticalAlign=middle;" value="create_agent&#xa;模型自主决定调用几次工具" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="388" as="geometry" />
+        </mxCell>
+        <mxCell id="p125" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=10;align=center;verticalAlign=middle;" value="Middleware&#xa;6 个钩子，工具调用前后插逻辑" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="432" as="geometry" />
+        </mxCell>
+        <mxCell id="p126" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑥ 记忆与多轮" vertex="1">
+          <mxGeometry height="180" width="340" x="860" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="p127" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="RunnableWithMessageHistory&#xa;LCEL 老写法" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="344" as="geometry" />
+        </mxCell>
+        <mxCell id="p128" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="checkpointer&#xa;InMemorySaver() + thread_id" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="388" as="geometry" />
+        </mxCell>
+        <mxCell id="p129" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="MessagesPlaceholder&#xa;prompt 里留历史消息槽位" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="432" as="geometry" />
+        </mxCell>
+        <mxCell id="p130" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑦ 服务化与可观测" vertex="1">
+          <mxGeometry height="180" width="340" x="1220" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="p131" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="add_routes / RemoteRunnable / with_types" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="344" as="geometry" />
+        </mxCell>
+        <mxCell id="p132" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="FastAPI + LangServe&#xa;把链变成 HTTP 接口" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="388" as="geometry" />
+        </mxCell>
+        <mxCell id="p133" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="LangSmith&#xa;trace / 评估 / 调试" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="432" as="geometry" />
+        </mxCell>
+        <mxCell id="p134" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDECEC;strokeColor=#D06060;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑧ 三大模型包装器" vertex="1">
+          <mxGeometry height="180" width="340" x="500" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="p135" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D06060;fontSize=10;align=center;verticalAlign=middle;" value="Chat Model：对话生成（ChatOpenAI）" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="544" as="geometry" />
+        </mxCell>
+        <mxCell id="p136" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D06060;fontSize=10;align=center;verticalAlign=middle;" value="Embeddings：文本→向量（DashScopeEmbeddings）" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="p137" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D06060;fontSize=10;align=center;verticalAlign=middle;" value="RAG 里两个都要用，模型名与计费互不相同" vertex="1">
+          <mxGeometry height="36" width="300" x="520" y="632" as="geometry" />
+        </mxCell>
+        <mxCell id="p138" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E9FA;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑨ 检索器（重点）" vertex="1">
+          <mxGeometry height="180" width="340" x="860" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="p139" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="retriever = vector_store.as_retriever()" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="544" as="geometry" />
+        </mxCell>
+        <mxCell id="p140" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="检索器 = 向量库的统一包装器（Runnable）" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="p141" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="search_type：similarity / mmr / threshold" vertex="1">
+          <mxGeometry height="36" width="300" x="880" y="632" as="geometry" />
+        </mxCell>
+        <mxCell id="p142" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#7F8C8D;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑩ 版本与踩坑" vertex="1">
+          <mxGeometry height="180" width="340" x="1220" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="p143" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F8C8D;fontSize=10;align=center;verticalAlign=middle;" value="Chroma L2 距离：分数越小越相似" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="544" as="geometry" />
+        </mxCell>
+        <mxCell id="p144" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F8C8D;fontSize=10;align=center;verticalAlign=middle;" value="bs4.SoupStrainer 圈正文，别把广告塞进上下文" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="p145" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F8C8D;fontSize=10;align=center;verticalAlign=middle;" value="context 的值必须是 Runnable → 03.2 / 03.3" vertex="1">
+          <mxGeometry height="36" width="300" x="1240" y="632" as="geometry" />
+        </mxCell>
+        <mxCell id="p146" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDE9D9;strokeColor=#D79B00;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="⑪ 学习路径（对应 18-LangChain 笔记）" vertex="1">
+          <mxGeometry height="180" width="1520" x="40" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="p147" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="00 学习总览" vertex="1">
+          <mxGeometry height="40" width="280" x="60" y="752" as="geometry" />
+        </mxCell>
+        <mxCell id="p148" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="01 V1.0 重构与体系" vertex="1">
+          <mxGeometry height="40" width="280" x="360" y="752" as="geometry" />
+        </mxCell>
+        <mxCell id="p149" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="02 Model I/O" vertex="1">
+          <mxGeometry height="40" width="280" x="660" y="752" as="geometry" />
+        </mxCell>
+        <mxCell id="p150" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="03 链与 LCEL" vertex="1">
+          <mxGeometry height="40" width="280" x="960" y="752" as="geometry" />
+        </mxCell>
+        <mxCell id="p151" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="03.1–03.5 Runnable 专题" vertex="1">
+          <mxGeometry height="40" width="280" x="1260" y="752" as="geometry" />
+        </mxCell>
+        <mxCell id="p152" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="04 RAG 数据连接" vertex="1">
+          <mxGeometry height="40" width="280" x="60" y="804" as="geometry" />
+        </mxCell>
+        <mxCell id="p153" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="04-RAG 知识点梳理" vertex="1">
+          <mxGeometry height="40" width="280" x="360" y="804" as="geometry" />
+        </mxCell>
+        <mxCell id="p154" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="04.1 Retriever 检索器" vertex="1">
+          <mxGeometry height="40" width="280" x="660" y="804" as="geometry" />
+        </mxCell>
+        <mxCell id="p155" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="04.2 create_retrieval_chain" vertex="1">
+          <mxGeometry height="40" width="280" x="960" y="804" as="geometry" />
+        </mxCell>
+        <mxCell id="p156" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="05 Agent 与中间件" vertex="1">
+          <mxGeometry height="40" width="280" x="1260" y="804" as="geometry" />
+        </mxCell>
+        <mxCell id="p157" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="续：06 服务化 · 07 Day02 复盘 · 08 Day03 复盘 · 09 API 速查菜单 ｜ 另见 Milvus 学习文档 / pgvector vs Milvus 选型对比" vertex="1">
+          <mxGeometry height="28" width="1440" x="60" y="852" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p2" name="② RAG 数据连接与检索">
+    <mxGraphModel dx="1869" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p21" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=21;fontStyle=1;fontColor=#1F3864;" value="RAG 数据连接与检索：离线建库 + 在线问答" vertex="1">
+          <mxGeometry height="40" width="1520" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="p22" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" value="对应 04-RAG 数据连接与检索 / 04-RAG 知识点梳理 / 04.1 Retriever 检索器" vertex="1">
+          <mxGeometry height="26" width="1520" x="40" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDE9D9;strokeColor=#D79B00;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="离线 · 建库（前半段）" vertex="1">
+          <mxGeometry height="210" width="1520" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="数据源&#xa;txt / pdf / html / md / db / 网页" vertex="1">
+          <mxGeometry height="90" width="270" x="70" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="DocumentLoader&#xa;load() → list[Document]" vertex="1">
+          <mxGeometry height="90" width="270" x="360" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="TextSplitter&#xa;RecursiveCharacterTextSplitter&#xa;chunk_size / chunk_overlap" vertex="1">
+          <mxGeometry height="90" width="270" x="650" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="Embeddings&#xa;DashScopeEmbeddings&#xa;文本 → 向量" vertex="1">
+          <mxGeometry height="90" width="270" x="940" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;align=center;verticalAlign=middle;" value="VectorStore&#xa;Chroma.from_documents()&#xa;FAISS / Milvus" vertex="1">
+          <mxGeometry height="90" width="270" x="1230" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p29" edge="1" parent="1" source="p24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;strokeWidth=1;" target="p25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p210" edge="1" parent="1" source="p25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;strokeWidth=1;" target="p26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p211" edge="1" parent="1" source="p26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;strokeWidth=1;" target="p27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p212" edge="1" parent="1" source="p27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;strokeWidth=1;" target="p28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p213" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="统一接口 load()；WebBaseLoader 配 bs4.SoupStrainer 只抓正文。切分两步：① 切分 ② 转成 Document 对象。" vertex="1">
+          <mxGeometry height="26" width="1440" x="70" y="262" as="geometry" />
+        </mxCell>
+        <mxCell id="p214" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1F3864;" value="↕ 两边共用同一个 Embeddings（否则不在同一向量空间）；VectorStore 通过相似度检索把 Document 交给 Retriever。" vertex="1">
+          <mxGeometry height="24" width="1520" x="40" y="316" as="geometry" />
+        </mxCell>
+        <mxCell id="p215" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="在线 · 问答（后半段）" vertex="1">
+          <mxGeometry height="210" width="1520" x="40" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="p216" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="用户问题 Q" vertex="1">
+          <mxGeometry height="90" width="270" x="70" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p217" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="同一 Embeddings&#xa;问题 → 向量" vertex="1">
+          <mxGeometry height="90" width="270" x="360" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p218" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="Retriever&#xa;as_retriever() → list[Document]" vertex="1">
+          <mxGeometry height="90" width="270" x="650" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p219" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="Prompt&#xa;question + context&#xa;不知道就说不知道" vertex="1">
+          <mxGeometry height="90" width="270" x="940" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p220" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="LLM → answer" vertex="1">
+          <mxGeometry height="90" width="270" x="1230" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p221" edge="1" parent="1" source="p216" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" target="p217">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p222" edge="1" parent="1" source="p217" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" target="p218">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p223" edge="1" parent="1" source="p218" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" target="p219">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p224" edge="1" parent="1" source="p219" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" target="p220">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p225" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="Document 全链路流通：page_content 拿去嵌入；metadata 存来源/页码/章节，检索结果可回溯出处。" vertex="1">
+          <mxGeometry height="26" width="1440" x="70" y="502" as="geometry" />
+        </mxCell>
+        <mxCell id="p226" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="检索器参数与四种创建方式" vertex="1">
+          <mxGeometry height="300" width="750" x="40" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="p227" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="search_type：similarity（默认） / mmr / similarity_score_threshold" vertex="1">
+          <mxGeometry height="52" width="710" x="60" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="p228" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="search_kwargs：k · score_threshold · fetch_k · lambda_mult · filter(metadata)" vertex="1">
+          <mxGeometry height="52" width="710" x="60" y="682" as="geometry" />
+        </mxCell>
+        <mxCell id="p229" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="四种创建：FAISS / Chroma 语义 · BM25 关键词 · EnsembleRetriever 混合" vertex="1">
+          <mxGeometry height="52" width="710" x="60" y="742" as="geometry" />
+        </mxCell>
+        <mxCell id="p230" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="四种「查」：similarity_search / with_score / RunnableLambda.bind(k) / retriever.invoke" vertex="1">
+          <mxGeometry height="52" width="710" x="60" y="802" as="geometry" />
+        </mxCell>
+        <mxCell id="p231" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E9FA;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="两条链与踩坑清单" vertex="1">
+          <mxGeometry height="300" width="750" x="810" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="p232" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="LCEL：{context: retriever, question: RunnablePassthrough()} | prompt | model | parser" vertex="1">
+          <mxGeometry height="52" width="710" x="830" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="p233" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="classic：create_stuff_documents_chain + create_retrieval_chain（langchain_classic）" vertex="1">
+          <mxGeometry height="52" width="710" x="830" y="682" as="geometry" />
+        </mxCell>
+        <mxCell id="p234" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="坑：Chroma L2 分数越小越像；切换向量库统一用 as_retriever()" vertex="1">
+          <mxGeometry height="52" width="710" x="830" y="742" as="geometry" />
+        </mxCell>
+        <mxCell id="p235" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="坑：把「检索结果」当 context 不行，值必须是 Runnable（RunnableParallel）" vertex="1">
+          <mxGeometry height="52" width="710" x="830" y="802" as="geometry" />
+        </mxCell>
+        <mxCell id="p236" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F3F5;strokeColor=#7F8C8D;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="一句话与笔记索引" vertex="1">
+          <mxGeometry height="140" width="1520" x="40" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="p237" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#1F3864;" value="检索器 = 向量库的包装器：底层换成 Milvus 或 FAISS，查询代码一个字不改；它本身是 Runnable，才能直接进 LCEL / 被 EnsembleRetriever 组合。" vertex="1">
+          <mxGeometry height="30" width="1440" x="60" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="p238" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="对应笔记：04-RAG 数据连接与检索 · 04-RAG 知识点梳理 · 04.1 Retriever 检索器 · 04.2 create_retrieval_chain 执行原理 · 09 API 速查菜单 §4.4–4.5" vertex="1">
+          <mxGeometry height="30" width="1440" x="60" y="990" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p3" name="③ LCEL 与两条链的原理">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="980" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p31" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=21;fontStyle=1;fontColor=#1F3864;" value="LCEL / Runnable 与两条 RAG 链：重建 dict vs 累积 dict" vertex="1">
+          <mxGeometry height="40" width="1520" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="p32" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" value="对应 03-链与 LCEL（03.1–03.5）/ 04.2 create_retrieval_chain 执行原理" vertex="1">
+          <mxGeometry height="26" width="1520" x="40" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E9FA;strokeColor=#9B6BC7;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="Runnable 家族" vertex="1">
+          <mxGeometry height="520" width="520" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=13;align=center;verticalAlign=middle;fontStyle=1;" value="Runnable 基类（LCEL 一等公民）" vertex="1">
+          <mxGeometry height="50" width="480" x="60" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="p35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnableLambda&#xa;把普通函数包成 Runnable：docs_find = RunnableLambda(...)" vertex="1">
+          <mxGeometry height="56" width="480" x="60" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="p36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnableParallel&#xa;字典字面量自动变并行分支，每个值必须是 Runnable" vertex="1">
+          <mxGeometry height="56" width="480" x="60" y="281" as="geometry" />
+        </mxCell>
+        <mxCell id="p37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnablePassthrough&#xa;原样透传；.assign() = 透传 + 追加字段" vertex="1">
+          <mxGeometry height="56" width="480" x="60" y="347" as="geometry" />
+        </mxCell>
+        <mxCell id="p38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnableWithMessageHistory&#xa;多轮会话记忆包装" vertex="1">
+          <mxGeometry height="56" width="480" x="60" y="413" as="geometry" />
+        </mxCell>
+        <mxCell id="p39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9B6BC7;fontSize=10;align=center;verticalAlign=middle;" value="RunnableBinding&#xa;.bind(k=1) / with_types / with_config(run_name)" vertex="1">
+          <mxGeometry height="56" width="480" x="60" y="479" as="geometry" />
+        </mxCell>
+        <mxCell id="p310" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="统一接口：invoke / stream / batch / astream_events；所有组件都能用 | 串联。" vertex="1">
+          <mxGeometry height="44" width="480" x="60" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="p311" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FF;strokeColor=#4A90D9;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="两条组装 RAG 链的路" vertex="1">
+          <mxGeometry height="520" width="980" x="580" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p312" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#1F3864;" value="A · 讲义 §6 手写 LCEL：RunnableParallel 重建 dict" vertex="1">
+          <mxGeometry height="26" width="940" x="600" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p313" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="{&quot;question&quot;: RunnablePassthrough(),&#xa;&quot;context&quot;: docs_find}" vertex="1">
+          <mxGeometry height="70" width="290" x="600" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="p314" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="| prompt_template" vertex="1">
+          <mxGeometry height="70" width="290" x="910" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="p315" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="| client → AIMessage" vertex="1">
+          <mxGeometry height="70" width="290" x="1220" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="p316" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p313" target="p314">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p317" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p314" target="p315">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p318" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="输出：AIMessage（可再接 StrOutputParser）；context 被 prompt 消费，不留在结果里。" vertex="1">
+          <mxGeometry height="26" width="940" x="600" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="p319" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#1F3864;" value="B · 讲义 §7 classic：两次 assign 累积 dict（create_retrieval_chain）" vertex="1">
+          <mxGeometry height="26" width="940" x="600" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="p320" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="assign(context=...)&#xa;(λx: x[&quot;input&quot;]) | retriever" vertex="1">
+          <mxGeometry height="70" width="290" x="600" y="322" as="geometry" />
+        </mxCell>
+        <mxCell id="p321" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="assign(answer=...)&#xa;整个 dict → stuff 文档链" vertex="1">
+          <mxGeometry height="70" width="290" x="910" y="322" as="geometry" />
+        </mxCell>
+        <mxCell id="p322" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="返回 {input, context, answer}" vertex="1">
+          <mxGeometry height="70" width="290" x="1220" y="322" as="geometry" />
+        </mxCell>
+        <mxCell id="p323" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p320" target="p321">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p324" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p321" target="p322">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p325" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="输出：dict；resp[&quot;answer&quot;] 是答案，resp[&quot;context&quot;] 仍保留原始 List[Document]，可溯源。" vertex="1">
+          <mxGeometry height="26" width="940" x="600" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p326" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="共同点：两者都是纯 LCEL Runnable；create_retrieval_chain 只是工厂函数，构造阶段零 IO，检索发生在 .invoke()。" vertex="1">
+          <mxGeometry height="34" width="940" x="600" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="p327" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="差异：RunnableParallel 重建 dict（只留字面量里写的键）；assign 保留全部原始键并追加新键。" vertex="1">
+          <mxGeometry height="34" width="940" x="600" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="p328" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="坑：值必须是 Runnable 或可调用对象；文档列表 / 裸方法不会被自动执行 → 见 03.2 / 03.3。" vertex="1">
+          <mxGeometry height="34" width="940" x="600" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="p329" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=10;align=center;verticalAlign=middle;" value="版本：create_stuff_documents_chain / create_retrieval_chain 在 V1.0 已移到 langchain_classic。" vertex="1">
+          <mxGeometry height="34" width="940" x="600" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="p330" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF7EA;strokeColor=#5AA469;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;fontColor=#333333;" value="create_retrieval_chain 逐帧推演（源码 10 行）" vertex="1">
+          <mxGeometry height="280" width="1520" x="40" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="p331" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="输入 dict&#xa;{&quot;input&quot;: &quot;张成刚是谁？&quot;}" vertex="1">
+          <mxGeometry height="80" width="300" x="70" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="p332" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="① assign(context=...)&#xa;取 x[&quot;input&quot;] → retriever → List[Document]" vertex="1">
+          <mxGeometry height="80" width="300" x="430" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="p333" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="② assign(answer=...)&#xa;整个 dict → combine_docs_chain → str" vertex="1">
+          <mxGeometry height="80" width="300" x="790" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="p334" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="输出 dict&#xa;{&quot;input&quot;, &quot;context&quot;, &quot;answer&quot;}" vertex="1">
+          <mxGeometry height="80" width="300" x="1150" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="p335" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" value="+ context" edge="1" source="p331" target="p332">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p336" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" value="+ answer" edge="1" source="p332" target="p333">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p337" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p333" target="p334">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p338" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1F3864;" value="源码核心：if isinstance(retriever, BaseRetriever) → (λx: x[&quot;input&quot;]) | retriever；否则整个 dict 原样传入（history-aware retriever 走这条）。" vertex="1">
+          <mxGeometry height="32" width="1440" x="70" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="p339" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="stuff 子链内部把 context 从 List[Document] 拍平成字符串，只改自己的副本、不回写外层 —— 这就是能溯源的原因。" vertex="1">
+          <mxGeometry height="32" width="1440" x="70" y="852" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 </mxfile>
