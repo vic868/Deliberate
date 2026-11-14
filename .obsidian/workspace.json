@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "18-LangChain/03.3-RunnablePassthrough.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "03.3-RunnablePassthrough"
             }
           }
         ]
@@ -296,12 +300,13 @@
       }
     ]
   },
-  "active": "71bd8d97d0705962",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "18-LangChain/03.2-RunnableParallel.md",
-    "18-LangChain/03-链与 LCEL.md",
-    "18-LangChain/03.1-RunnableLambda.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
+    "18-LangChain/03.3-RunnablePassthrough.md",
+    "18-LangChain/03-链与 LCEL.md",
+    "18-LangChain/03.2-RunnableParallel.md",
+    "18-LangChain/03.1-RunnableLambda.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
@@ -324,7 +329,6 @@
     "6-ai/01-python/05-阶段五-项目实战与验收.md",
     "6-ai/01-python/02-阶段二-数据模型与工程化.md",
     "6-ai/01-python/01-阶段一-语法速通（Java 对照）.md",
-    "6-ai/01-python/00-Python 学习计划总览.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
