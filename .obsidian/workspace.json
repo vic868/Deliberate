@@ -13,10 +13,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "14-AI agent/1-LangChain/0-LangChain.drawio"
+                "file": "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "0-LangChain"
+              "title": "2-Retriever 检索器全景"
             }
           }
         ]
@@ -364,8 +364,9 @@
       }
     ]
   },
-  "active": "69b72e3490e469f5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "14-AI agent/1-LangChain/0-LangChain.drawio",
     "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
@@ -398,7 +399,6 @@
     "18-LangChain/04-RAG 知识点梳理.md",
     "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
     "18-LangChain/CrommaCode-macos-arm64.dmg",
-    "18-LangChain/CrommaCode-macos-arm64.dmg.crdownload",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/03.4-RunnableWithMessageHistory.md",
