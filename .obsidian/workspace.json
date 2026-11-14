@@ -361,13 +361,14 @@
         "y": -709,
         "width": 1024,
         "height": 800,
-        "maximize": false,
+        "maximize": true,
         "zoom": 0
       }
     ]
   },
-  "active": "24d2594a78f92f86",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
     "18-LangChain/Clash.Verge_2.5.10_aarch64.dmg",
     "18-LangChain/Clash.Verge_2.5.10_aarch64.dmg.crdownload",
@@ -376,7 +377,6 @@
     "18-LangChain/05-Agent 工具调用与中间件.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/03-链与 LCEL.md",
-    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "18-LangChain/04.1-RAG（检索增强生成，Retrieval-Augmented Generation.md",
     "18-LangChain/04.1-Retriever 检索器.md",
     "18-LangChain/04-RAG 知识点梳理.md",
