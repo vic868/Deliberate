@@ -13,10 +13,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "6-ai/0.1-langchain/0-LangChain 1.0 知识体系全景.drawio"
+                "file": "6-ai/Agent 面试八站作战地图.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "0-LangChain 1.0 知识体系全景"
+              "title": "Agent 面试八站作战地图"
             }
           }
         ]
@@ -366,8 +366,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
+    "6-ai/0.1-langchain/1-Embedding 与向量检索全景.drawio",
+    "6-ai/Agent 面试总挂？8 站打通关.md",
+    "6-ai/deepseek-herness.drawio",
     "6-ai/0.1-langchain/0-LangChain 1.0 知识体系全景.drawio",
+    "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
     "6-ai/0.1-langchain",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
@@ -396,14 +399,11 @@
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/03.4-RunnableWithMessageHistory.md",
     "upwork-jobscan/runs/2026-11-14.md",
-    "18-LangChain/03.3-RunnablePassthrough.md",
-    "18-LangChain/03.2-RunnableParallel.md",
     "14-AI agent/1-LangChain/1-LangChain进阶.drawio",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
-    "14-AI agent/1-LangChain/3-RAG进阶.vector.drawio",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_4.png",
