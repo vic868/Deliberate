@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/04-RAG 数据连接与检索.md",
+                "file": "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "04-RAG 数据连接与检索"
+              "title": "9-AdvancedRAG一-七个故障点与高级索引技术"
             }
           }
         ]
@@ -291,7 +291,7 @@
           }
         ],
         "direction": "vertical",
-        "x": -880,
+        "x": -1021,
         "y": -1410,
         "width": 1440,
         "height": 1410,
@@ -324,7 +324,7 @@
           }
         ],
         "direction": "vertical",
-        "x": -880,
+        "x": -1021,
         "y": -1410,
         "width": 1440,
         "height": 1410,
@@ -357,7 +357,7 @@
           }
         ],
         "direction": "vertical",
-        "x": -880,
+        "x": -1021,
         "y": -1410,
         "width": 1440,
         "height": 1410,
@@ -366,8 +366,17 @@
       }
     ]
   },
-  "active": "24d2594a78f92f86",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "6-ai/0.1-langchain",
+    "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
+    "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/专题-AI应用工程化与交付.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/专题-Agent工具与工作流安全.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/06-每日学习模板.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/05-RAG评测与复盘.md",
+    "6-ai/AI 学习规划/12周AI应用开发路线/04-项目实践手册.md",
+    "6-ai/AI 学习规划/1-AI 工具/AI编程工具与订阅总览.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
     "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "18-LangChain/Clash.Verge_2.5.10_aarch64.dmg",
@@ -389,14 +398,6 @@
     "upwork-jobscan/runs/2026-11-14.md",
     "18-LangChain/03.3-RunnablePassthrough.md",
     "18-LangChain/03.2-RunnableParallel.md",
-    "18-LangChain/03.1-RunnableLambda.md",
-    "18-LangChain/00-LangChain V1.0 学习总览.md",
-    "18-LangChain/09-LangChain 1.0 API 速查菜单.md",
-    "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
-    "18-LangChain/00-LangChain V1.0 学习总览_1.smm.md",
-    "6-ai/0-LLM/2-RAG.md",
-    "6-ai/AI 学习规划/Agent 开发七步学习路线（视频笔记）.md",
-    "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "14-AI agent/1-LangChain/1-LangChain进阶.drawio",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
