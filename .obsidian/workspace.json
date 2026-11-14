@@ -368,6 +368,7 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "6-ai/0.1-langchain/0-LangChain 1.0 知识体系全景.drawio",
     "6-ai/0.1-langchain",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
@@ -405,7 +406,6 @@
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent/1-LangChain/3-RAG进阶.vector.drawio",
     "14-AI agent/1-LangChain/2-LangGraph进阶.vector.drawio",
-    "14-AI agent/1-LangChain/4-生产化改造.vector.drawio",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_4.png",
