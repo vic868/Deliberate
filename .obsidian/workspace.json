@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/03.3-RunnablePassthrough.md",
+                "file": "18-LangChain/03.4-RunnableWithMessageHistory.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "03.3-RunnablePassthrough"
+              "title": "03.4-RunnableWithMessageHistory"
             }
           }
         ]
@@ -302,8 +302,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "18-LangChain/03-链与 LCEL.md",
+    "upwork-jobscan/runs/2026-11-14.md",
     "18-LangChain/03.3-RunnablePassthrough.md",
+    "18-LangChain/03.4-RunnableWithMessageHistory.md",
+    "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/03.2-RunnableParallel.md",
     "18-LangChain/03.1-RunnableLambda.md",
@@ -327,8 +329,6 @@
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
     "6-ai/01-python/09-Python基础课-总索引.md",
     "6-ai/01-python/05-阶段五-项目实战与验收.md",
-    "6-ai/01-python/02-阶段二-数据模型与工程化.md",
-    "6-ai/01-python/01-阶段一-语法速通（Java 对照）.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
