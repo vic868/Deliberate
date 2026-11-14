@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/05-Agent 工具调用与中间件.md",
+                "file": "18-LangChain/04.1-RAG（检索增强生成，Retrieval-Augmented Generation.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "05-Agent 工具调用与中间件"
+              "title": "04.1-RAG（检索增强生成，Retrieval-Augmented Generation"
             }
           }
         ]
@@ -302,20 +302,22 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "18-LangChain/00-LangChain-V1.0.excalidraw.md",
+    "18-LangChain/04-RAG 知识点梳理.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
+    "18-LangChain/04.1-RAG（检索增强生成，Retrieval-Augmented Generation.md",
+    "18-LangChain/03-链与 LCEL.md",
+    "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
+    "18-LangChain/05-Agent 工具调用与中间件.md",
+    "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/CrommaCode-macos-arm64.dmg",
     "18-LangChain/CrommaCode-macos-arm64.dmg.crdownload",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
-    "18-LangChain/03-链与 LCEL.md",
-    "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
     "18-LangChain/03.4-RunnableWithMessageHistory.md",
     "upwork-jobscan/runs/2026-11-14.md",
     "18-LangChain/03.3-RunnablePassthrough.md",
     "18-LangChain/03.2-RunnableParallel.md",
     "18-LangChain/03.1-RunnableLambda.md",
-    "18-LangChain/05-Agent 工具调用与中间件.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/09-LangChain 1.0 API 速查菜单.md",
     "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
@@ -329,7 +331,6 @@
     "upwork-jobscan/runs/2026-11-12.md",
     "14-AI agent/1-LangChain/1-LangChain进阶.drawio",
     "6-ai/01-python/11-基础课05-07-容器与字符串.md",
-    "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
