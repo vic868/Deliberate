@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "18-LangChain/00-LangChain-V1.0.excalidraw.md"
+                "file": "18-LangChain/05-Agent 工具调用与中间件.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "00-LangChain-V1.0.excalidraw"
+              "icon": "lucide-file",
+              "title": "05-Agent 工具调用与中间件"
             }
           }
         ]
@@ -300,10 +302,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/00-LangChain-V1.0.excalidraw.md",
+    "18-LangChain/04-RAG 数据连接与检索.md",
     "18-LangChain/CrommaCode-macos-arm64.dmg",
     "18-LangChain/CrommaCode-macos-arm64.dmg.crdownload",
-    "18-LangChain/04-RAG 数据连接与检索.md",
-    "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
     "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/03-链与 LCEL.md",
@@ -337,7 +339,6 @@
     "14-AI agent/1-LangChain/4-生产化改造.vector.drawio",
     "18-LangChain",
     "17-FastAPI/FastApiAdmin-架构图集.drawio",
-    "17-FastAPI",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_4.png",
