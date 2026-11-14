@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio"
+                "file": "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "2-Retriever 检索器全景"
+              "icon": "lucide-file",
+              "title": "0-Agent 面试通关：8 站通关作战地图"
             }
           }
         ]
@@ -366,8 +368,8 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "14-AI agent/1-LangChain/0-LangChain.drawio",
     "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
+    "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "6-ai/0.1-langchain/1-Embedding 与向量检索全景.drawio",
