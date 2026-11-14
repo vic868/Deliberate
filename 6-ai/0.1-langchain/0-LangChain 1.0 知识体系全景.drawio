@@ -301,7 +301,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="p3" name="③ LCEL 与两条链的原理">
-    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="980" math="0" shadow="0">
+    <mxGraphModel dx="1869" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="980" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -350,10 +350,10 @@
         <mxCell id="p315" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A90D9;fontSize=11;align=center;verticalAlign=middle;" value="| client → AIMessage" vertex="1">
           <mxGeometry height="70" width="290" x="1220" y="172" as="geometry" />
         </mxCell>
-        <mxCell id="p316" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p313" target="p314">
+        <mxCell id="p316" edge="1" parent="1" source="p313" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" target="p314">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p317" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" edge="1" source="p314" target="p315">
+        <mxCell id="p317" edge="1" parent="1" source="p314" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#4A90D9;strokeWidth=1;" target="p315">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="p318" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="输出：AIMessage（可再接 StrOutputParser）；context 被 prompt 消费，不留在结果里。" vertex="1">
@@ -371,10 +371,10 @@
         <mxCell id="p322" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="返回 {input, context, answer}" vertex="1">
           <mxGeometry height="70" width="290" x="1220" y="322" as="geometry" />
         </mxCell>
-        <mxCell id="p323" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p320" target="p321">
+        <mxCell id="p323" edge="1" parent="1" source="p320" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" target="p321">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p324" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p321" target="p322">
+        <mxCell id="p324" edge="1" parent="1" source="p321" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" target="p322">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="p325" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;" value="输出：dict；resp[&quot;answer&quot;] 是答案，resp[&quot;context&quot;] 仍保留原始 List[Document]，可溯源。" vertex="1">
@@ -407,13 +407,13 @@
         <mxCell id="p334" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5AA469;fontSize=10;align=center;verticalAlign=middle;" value="输出 dict&#xa;{&quot;input&quot;, &quot;context&quot;, &quot;answer&quot;}" vertex="1">
           <mxGeometry height="80" width="300" x="1150" y="710" as="geometry" />
         </mxCell>
-        <mxCell id="p335" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" value="+ context" edge="1" source="p331" target="p332">
+        <mxCell id="p335" edge="1" parent="1" source="p331" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" target="p332" value="+ context">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p336" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" value="+ answer" edge="1" source="p332" target="p333">
+        <mxCell id="p336" edge="1" parent="1" source="p332" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" target="p333" value="+ answer">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p337" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" edge="1" source="p333" target="p334">
+        <mxCell id="p337" edge="1" parent="1" source="p333" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#5AA469;strokeWidth=1;" target="p334">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="p338" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#1F3864;" value="源码核心：if isinstance(retriever, BaseRetriever) → (λx: x[&quot;input&quot;]) | retriever；否则整个 dict 原样传入（history-aware retriever 走这条）。" vertex="1">
