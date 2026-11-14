@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
+                "file": "18-LangChain/05-Agent 工具调用与中间件.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "04.2-create_retrieval_chain 执行原理"
+              "title": "05-Agent 工具调用与中间件"
             }
           }
         ]
@@ -302,9 +302,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "18-LangChain/04.1-RAG（检索增强生成，Retrieval-Augmented Generation.md",
     "18-LangChain/04.1-Retriever 检索器.md",
-    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "18-LangChain/04.2-检索器.md",
     "18-LangChain/04-RAG 知识点梳理.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
