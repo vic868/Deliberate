@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "18-LangChain/00-LangChain-V1.0.excalidraw.md"
+                "file": "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "excalidraw-icon",
-              "title": "00-LangChain-V1.0.excalidraw"
+              "icon": "lucide-file",
+              "title": "06-服务化部署 FastAPI 与 LangServe"
             }
           }
         ]
@@ -331,10 +333,10 @@
       }
     ]
   },
-  "active": "f640e378ebf29936",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
+    "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "18-LangChain/04.1-RAG（检索增强生成，Retrieval-Augmented Generation.md",
