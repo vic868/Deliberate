@@ -11,14 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "18-LangChain/04-RAG 数据连接与检索.md",
-                "mode": "preview",
-                "source": true
+                "file": "18-LangChain/00-LangChain-V1.0.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "04-RAG 数据连接与检索"
+              "icon": "excalidraw-icon",
+              "title": "00-LangChain-V1.0.excalidraw"
             }
           }
         ]
@@ -300,20 +298,20 @@
       }
     ]
   },
-  "active": "58a01bea359ca064",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
+    "18-LangChain/00-LangChain-V1.0.excalidraw.md",
+    "18-LangChain/01-V1.0 重构与整体体系.md",
+    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
+    "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
     "18-LangChain/03.4-RunnableWithMessageHistory.md",
     "upwork-jobscan/runs/2026-11-14.md",
     "18-LangChain/03.3-RunnablePassthrough.md",
-    "18-LangChain/00-LangChain-V1.0.excalidraw.md",
     "18-LangChain/03.2-RunnableParallel.md",
     "18-LangChain/03.1-RunnableLambda.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
-    "18-LangChain/01-V1.0 重构与整体体系.md",
-    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "18-LangChain/00-LangChain V1.0 学习总览.md",
     "18-LangChain/09-LangChain 1.0 API 速查菜单.md",
     "18-LangChain/00-LangChain V1.0 学习总览.smm.md",
