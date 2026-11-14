@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/03.4-RunnableWithMessageHistory.md",
+                "file": "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "03.4-RunnableWithMessageHistory"
+              "title": "03.5-RunnableWithMessageHistory多轮记忆"
             }
           }
         ]
@@ -302,6 +302,7 @@
   },
   "active": "71bd8d97d0705962",
   "lastOpenFiles": [
+    "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
     "18-LangChain/03.4-RunnableWithMessageHistory.md",
     "18-LangChain/03-链与 LCEL.md",
     "upwork-jobscan/runs/2026-11-14.md",
@@ -328,7 +329,6 @@
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.md",
     "6-ai/01-python/15-基础课14-15-异常与虚拟环境.smm.md",
     "6-ai/01-python/09-Python基础课-总索引.md",
-    "6-ai/01-python/05-阶段五-项目实战与验收.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
