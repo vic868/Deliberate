@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "18-LangChain/04.2-检索器.md",
+                "file": "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "04.2-检索器"
+              "title": "04.2-create_retrieval_chain 执行原理"
             }
           }
         ]
@@ -302,9 +302,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "18-LangChain/04.1-Retriever 检索器.md",
-    "18-LangChain/04.2-检索器.md",
     "18-LangChain/04.1-RAG（检索增强生成，Retrieval-Augmented Generation.md",
+    "18-LangChain/04.1-Retriever 检索器.md",
+    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
+    "18-LangChain/04.2-检索器.md",
     "18-LangChain/04-RAG 知识点梳理.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
     "18-LangChain/03-链与 LCEL.md",
@@ -329,7 +330,6 @@
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "6-ai/0-LLM/1.1-提示工程实战演练（L1_day04）.md",
     "6-ai/0-LLM/1-提示词工程.md",
-    "file:/Volumes/新加卷/学习/往期录播/视频/L2阶段/07-Langchain框架答疑课-26.8.3/LangChain常用API总结.md",
     "14-AI agent/1-LangChain/1-LangChain进阶.drawio",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
