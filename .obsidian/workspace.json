@@ -291,10 +291,10 @@
           }
         ],
         "direction": "vertical",
-        "x": -1021,
-        "y": -1410,
+        "x": 214,
+        "y": 39,
         "width": 1440,
-        "height": 1410,
+        "height": 1130,
         "maximize": false,
         "zoom": 0
       },
@@ -324,10 +324,10 @@
           }
         ],
         "direction": "vertical",
-        "x": -1021,
-        "y": -1410,
+        "x": 214,
+        "y": 39,
         "width": 1440,
-        "height": 1410,
+        "height": 1130,
         "maximize": false,
         "zoom": 0
       },
@@ -357,16 +357,16 @@
           }
         ],
         "direction": "vertical",
-        "x": -1021,
-        "y": -1410,
+        "x": 214,
+        "y": 39,
         "width": 1440,
-        "height": 1410,
+        "height": 1130,
         "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "e7a7b303c61786dc",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
     "6-ai/0.1-langchain/4-AI Agent 组成与执行步骤全景.drawio",
     "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
