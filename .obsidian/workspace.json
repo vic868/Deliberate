@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio"
+                "file": "1-java/4-jvm/0-JVM总览.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "pencil-ruler",
-              "title": "2-Retriever 检索器全景"
+              "icon": "lucide-file",
+              "title": "0-JVM总览"
             }
           }
         ]
@@ -366,10 +368,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0.1-langchain/4-AI Agent 组成与执行步骤全景.drawio",
+    "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
     "6-ai/0.1-langchain/3-LangGraph 状态机与 Graph API 全景.drawio",
     "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
     "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
-    "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
     "6-ai/0.1-langchain/1-Embedding 与向量检索全景.drawio",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
@@ -390,7 +393,6 @@
     "6-ai/AI 学习规划/12周AI应用开发路线/04-项目实践手册.md",
     "6-ai/AI 学习规划/1-AI 工具/AI编程工具与订阅总览.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
-    "18-LangChain/Clash.Verge_2.5.10_aarch64.dmg",
     "18-LangChain/04.2-检索器.md",
     "18-LangChain/06-服务化部署 FastAPI 与 LangServe.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
