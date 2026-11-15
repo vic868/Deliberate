@@ -368,6 +368,7 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "6-ai/01-python/20-专题-Python 包与 import 全景.md",
     "6-ai/01-python/19-专题-async 与 await 全景.md",
     "6-ai/01-python/18-专题-Pydantic 全景.md",
     "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
@@ -404,7 +405,6 @@
     "18-LangChain/03-链与 LCEL.md",
     "18-LangChain/04.1-RAG（检索增强生成，Retrieval-Augmented Generation.md",
     "18-LangChain/04.1-Retriever 检索器.md",
-    "18-LangChain/04-RAG 知识点梳理.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
