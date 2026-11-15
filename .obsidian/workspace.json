@@ -11,10 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "drawio-file-view",
+              "state": {
+                "file": "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio"
+              },
+              "icon": "pencil-ruler",
+              "title": "2-Retriever 检索器全景"
             }
           }
         ]
@@ -364,9 +366,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/0.1-langchain/3-LangGraph 状态机与 Graph API 全景.drawio",
+    "6-ai/2.3-Hermes Agent/HermesAgent.drawio",
     "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
-    "6-ai/0.1-langchain/3-LangGraph 状态机与 Graph API 全景.drawio",
     "6-ai/0.1-langchain/1-Embedding 与向量检索全景.drawio",
     "6-ai/0-Agent 面试通关：8 站通关作战地图.md",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
