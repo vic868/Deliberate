@@ -368,6 +368,7 @@
   },
   "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
     "6-ai/01-python/17-专题-pyproject.toml 全景.md",
     "1-java/4-jvm/0-JVM总览.md",
     "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
@@ -404,7 +405,6 @@
     "18-LangChain/04-RAG 知识点梳理.md",
     "18-LangChain/03.5-RunnableWithMessageHistory多轮记忆.md",
     "18-LangChain/01-V1.0 重构与整体体系.md",
-    "18-LangChain/02-Model I-O 模型提示词与输出解析.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
