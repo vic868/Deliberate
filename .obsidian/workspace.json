@@ -366,12 +366,13 @@
       }
     ]
   },
-  "active": "24d2594a78f92f86",
+  "active": "69b72e3490e469f5",
   "lastOpenFiles": [
+    "6-ai/01-python/18-专题-Pydantic 全景.md",
+    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "6-ai/01-python/17-专题-pyproject.toml 全景.md",
     "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
     "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
-    "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
     "1-java/4-jvm/0-JVM总览.md",
     "6-ai/0.1-langchain/4-AI Agent 组成与执行步骤全景.drawio",
     "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
