@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/01-python/20-专题-Python 包与 import 全景.md",
+                "file": "6-ai/01-python/21-专题-Python 常用框架全景.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "20-专题-Python 包与 import 全景"
+              "title": "21-专题-Python 常用框架全景"
             }
           }
         ]
@@ -263,12 +263,12 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/01-python/20-专题-Python 包与 import 全景.md",
     "6-ai/01-python/21-专题-Python 常用框架全景.md",
     "6-ai/01-python/17-专题-pyproject.toml 全景.md",
     "18-LangChain/04-RAG 数据连接与检索.md",
     "18-LangChain/05-Agent 工具调用与中间件.md",
     "18-LangChain/04.2-create_retrieval_chain 执行原理.md",
-    "6-ai/01-python/20-专题-Python 包与 import 全景.md",
     "6-ai/01-python/19-专题-async 与 await 全景.md",
     "6-ai/01-python/18-专题-Pydantic 全景.md",
     "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
