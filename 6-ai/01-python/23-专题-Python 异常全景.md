@@ -241,20 +241,31 @@ Python 会自动把「处理异常期间又抛出的异常」串成链，这是 
 | 裸 `raise` | 在 except 里原样重抛 | — | — | **保留原 traceback**，不新增栈帧噪音 |
 
 ```python
-# 实测：隐式链
+# 隐式链（实测）
 try:
     try: 1/0
     except ZeroDivisionError: raise ValueError('转换失败')
 except ValueError as e:
-    e.__context__           # ZeroDivisionError('division by zero')
-    e.__cause__             # None
-    e.__suppress_context__  # False
+    print(type(e.__context__).__name__, e.__cause__, e.__suppress_context__)
+    # → ZeroDivisionError None False
 
-# 显式链：语义是「我把底层错误包装成业务错误，因果关系明确」
-raise ValueError('包装') from orig     # e.__cause__ = orig, __suppress_context__ = True
+# 显式链：包装成业务错误并保留因果关系
+try:
+    try: 1/0
+    except ZeroDivisionError as orig:
+        raise ValueError('包装') from orig
+except ValueError as e:
+    print(type(e.__cause__).__name__, e.__suppress_context__)
+    # → ZeroDivisionError True
 
-# 想给用户看干净报错
-raise ValueError('干净') from None     # traceback 里不再出现 "During handling"
+# 隐藏上下文：给用户看干净报错
+try:
+    try: 1/0
+    except ZeroDivisionError:
+        raise ValueError('干净') from None
+except ValueError as e:
+    print(e.__suppress_context__, e.__cause__)
+    # → True None（traceback 里不再出现 "During handling"）
 ```
 
 > **实践建议**：做异常转译（DB 错误 → 业务错误）时一律用 `raise ... from e`，让日志保留根因；只在「底层异常纯属实现细节、暴露出去会误导」时才用 `from None`。
@@ -312,8 +323,15 @@ class Suppress:
         print(et.__name__, ev)      # 实测收到 ValueError: boom
         return self.suppress
 
-with Suppress(True):  raise ValueError('boom')   # 被吞掉，代码继续
-with Suppress(False): raise ValueError('boom')   # 正常上抛
+with Suppress(True):
+    raise ValueError('boom')           # 被吞掉，代码继续
+print('suppress=True  → 未崩')
+
+try:
+    with Suppress(False):
+        raise ValueError('boom')       # 正常上抛
+except ValueError:
+    print('suppress=False → 被外层接住')
 ```
 
 | 工具 | 作用 |
