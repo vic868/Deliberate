@@ -75,7 +75,7 @@ flowchart TD
 | # | 说法 | 实测结论 |
 |---|---|---|
 | 1 | 「在某个包下」 | ❌ **不是包**。`hasattr(builtins, '__path__') == False`，包必须有 `__path__` 才能有子模块 |
-| 2 | 「在标准库某个 `.py` 文件里」 | ❌ **没有源文件**。`builtins.__file__` 是 `None`；`__spec__` 显示 `origin='built-in'`、loader 是 `_frozen_importlib.BuiltinImporter` —— 它编译在解释器二进制里 |
+| 2 | 「在标准库某个 `.py` 文件里」 | ❌ **没有源文件**。实测 `builtins.__file__` **属性根本不存在**（直接访问抛 `AttributeError`，只有 `getattr(builtins,'__file__',None)` 才给 `None`）；`__spec__` 显示 `origin='built-in'`、loader 是 `_frozen_importlib.BuiltinImporter` —— 它编译在解释器二进制里 |
 | 3 | 「要 import 才能用」 | ❌ **不需要**。解释器启动时把 `builtins` 的名字挂到每个模块的查找链末端；当然你**可以** `import builtins` 显式访问（用于恢复被遮蔽的名字） |
 | 4 | 「`__builtins__` 就是这个模块」 | ⚠️ **是实现细节**。实测：在 `__main__` 里 `__builtins__` 是 **module 对象**；在被导入的 `json` 模块里是 **dict**。别依赖它，用 `import builtins` |
 
@@ -88,8 +88,8 @@ len.__module__               # 'builtins'
 inspect.signature(len)       # (obj, /)
 len.__doc__.splitlines()[0]  # 'Return the number of items in a container.'
 
-builtins.__file__            # None
-hasattr(builtins, '__path__')# False
+getattr(builtins, '__file__', None)   # None —— 属性不存在，直接访问 builtins.__file__ 会 AttributeError
+hasattr(builtins, '__path__')         # False
 builtins.__spec__            # ModuleSpec(name='builtins', loader=BuiltinImporter, origin='built-in')
 ```
 
@@ -124,7 +124,7 @@ builtins.len([1, 2])         # 即使全局被遮蔽，也能这样拿到真身 
 
 | 类别 | 3.10.22 | 3.13.12 | 说明 |
 |---|---|---|---|
-| **纯内置函数** | **43** | **43** | `inspect.isbuiltin()` 为真，`builtin_function_or_method` |
+| **纯内置函数** | **43** | **43** | `inspect.isbuiltin()` 或 `inspect.isfunction()` 为真（42 个 C 函数 + 1 个 Python 层函数 `open`） |
 | **内置类型（非异常类）** | 26 | 26 | `int`/`str`/`list`/`dict`/`type`/`object`… 可调用的构造器 |
 | **内置异常类** | 67 | **71** | 3.13 多了 4 个 |
 | **其他名字** | 11 | 11 | 5 个真常量 + 6 个 `site` 注入对象 |
@@ -135,12 +135,13 @@ builtins.len([1, 2])         # 即使全局被遮蔽，也能这样拿到真身 
 > 官方文档 `docs.python.org/3/library/functions.html` 把 **26 个内置类型构造器**（`int()`、`list()`、`dict()`…）也算进「内置函数」页，因为它们同样可调用、同样不用 import。
 > **43 + 26 = 69 个可调用对象**，再加上 `__import__` 和交互式用的 `help`，就接近常见的「~71 个」说法。
 > 本文按 `inspect` 的真实对象类型分开统计，口径更精确：**43 个是纯函数，26 个是类**。
+> ⚠️ 自查时注意：其中 `open` 其实是 `io.open`（**Python 层函数**），`inspect.isbuiltin(open)` 为假。所以「只用 `isbuiltin` 数」会得到 **42**，要加上 `inspect.isfunction()` 才是 43。
 
 ---
 
 ## 三、⭐ 43 个内置纯函数 · 8 类完整清单
 
-> 下面 8 张表覆盖全部 43 个函数，**不重不漏**（用脚本按 `inspect.isbuiltin` 校验过：遗漏 `[]`、重复 `[]`）。
+> 下面 8 张表覆盖全部 43 个函数，**不重不漏**（脚本按 `inspect.isbuiltin` + `isfunction` 双判定校验：遗漏 `[]`、重复 `[]`）。
 > 签名取自 `inspect.signature()`；`无签名` 表示该函数用 C 的 `METH_VARARGS` 实现，`signature()` 拿不到，要查 `__doc__`。
 
 ### 3.1 数值与聚合（7 个）
@@ -406,7 +407,7 @@ len(b), next(iter(b)), repr(b), bool(b), b[0], f'{b}'
 > 不是。`builtins` 是正式的模块名；`__builtins__` 是 CPython 的**实现细节**，在 `__main__` 里是 module 对象、在被导入模块里通常是 dict，别依赖它。
 
 > **Q3：Python 3 有多少个内置函数？**
-> 按 `inspect.isbuiltin()` 严格算 **43 个纯函数**（3.10 与 3.13 完全一致）；官方文档把 26 个内置类型构造器也算进「内置函数」页，合计 **69 个可调用对象**，加上 `__import__`、`help` 就是常见的「~71 个」说法。此外还有 67/71 个内置异常类和 5 个真常量。
+> 按 `inspect.isbuiltin()` + `inspect.isfunction()` 严格算 **43 个纯函数**（3.10 与 3.13 完全一致；其中 42 个是 C 内置函数，`open` 是 Python 层函数）；官方文档把 26 个内置类型构造器也算进「内置函数」页，合计 **69 个可调用对象**，加上 `__import__`、`help` 就是常见的「~71 个」说法。此外还有 67/71 个内置异常类和 5 个真常量。
 
 > **Q4：为什么 `len(x)` 不是 `x.len()`？**
 > 内置函数统一调用对象上的特殊方法协议（`len` → `__len__`），能在 C 层做快速路径、跳过属性查找，同时给自定义类一个统一钩子。自定义类只要实现 `__len__`，`len(obj)` 就能工作。
@@ -425,8 +426,11 @@ len(b), next(iter(b)), repr(b), bool(b), b[0], f'{b}'
 # ① 查「有哪些内置函数」—— 本机自查，不用背清单
 import builtins, inspect
 funcs = [n for n in dir(builtins)
-         if not n.startswith('__') and inspect.isbuiltin(getattr(builtins, n))]
+         if not n.startswith('__')
+         and (inspect.isbuiltin(getattr(builtins, n))
+              or inspect.isfunction(getattr(builtins, n)))]
 print(len(funcs), funcs)                 # 3.10 / 3.13 都是 43 个
+# 只用 isbuiltin 会得到 42：open 是 io.open，Python 层函数
 
 # ② 看签名 / 文档
 inspect.signature(len)                   # (obj, /)
