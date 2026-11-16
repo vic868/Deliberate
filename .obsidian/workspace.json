@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/3-IO/2-装饰器与流组合.md",
+                "file": "1-java/4-jvm/深入理解JVM GC：G1与ZGC实战（详细整理版）.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2-装饰器与流组合"
+              "title": "深入理解JVM GC：G1与ZGC实战（详细整理版）"
             }
           }
         ]
@@ -263,9 +263,15 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "1-java/3-IO/0-IO.excalidraw.md",
-    "1-java/4-jvm/2-GC机制深度.md",
     "1-java/4-jvm/1-JVM内存区域与对象布局.md",
+    "1-java/4-jvm/0-JVM总览.md",
+    "1-java/3-IO/0-IO.excalidraw.md",
+    "1-java/2-collection/1-HashMap全解.md",
+    "1-java/1-juc/0-juc.excalidraw.md",
+    "1-java/1-juc/0.1-JUC核心类结构总览图.md.md",
+    "1-java/1-juc/1-AQS.drawio",
+    "1-java/3-IO/2-装饰器与流组合.md",
+    "1-java/4-jvm/2-GC机制深度.md",
     "6-ai/01-python/19-专题-async 与 await 全景.md",
     "6-ai/01-python/23-专题-Python 异常全景.md",
     "6-ai/01-python/22-专题-Python 内置函数与 builtins 全景.md",
@@ -278,7 +284,6 @@
     "6-ai/01-python/18-专题-Pydantic 全景.md",
     "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
     "1-java/4-jvm/OOM事故血泪史！彻底搞懂Java本地缓存所有坑.md",
-    "1-java/4-jvm/0-JVM总览.md",
     "6-ai/0.1-langchain/4-AI Agent 组成与执行步骤全景.drawio",
     "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
     "6-ai/0.1-langchain/3-LangGraph 状态机与 Graph API 全景.drawio",
@@ -290,16 +295,11 @@
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "6-ai/Agent 面试八站作战地图.drawio",
     "6-ai/Agent 面试总挂？8 站打通关.md",
-    "6-ai/deepseek-herness.drawio",
     "6-ai/0-LLM/9-AdvancedRAG一-七个故障点与高级索引技术.md",
     "6-ai/0-LLM/7-向量化与向量检索-Embedding相似度与向量数据库.md",
     "6-ai/0-LLM/6-NaiveRAG构建流程与文档分块.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/专题-AI应用工程化与交付.md",
     "6-ai/AI 学习规划/12周AI应用开发路线/专题-Agent工具与工作流安全.md",
-    "6-ai/AI 学习规划/12周AI应用开发路线/06-每日学习模板.md",
-    "6-ai/AI 学习规划/12周AI应用开发路线/05-RAG评测与复盘.md",
-    "6-ai/AI 学习规划/12周AI应用开发路线/04-项目实践手册.md",
-    "6-ai/AI 学习规划/1-AI 工具/AI编程工具与订阅总览.md",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
