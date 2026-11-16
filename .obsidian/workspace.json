@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-java/0-知识点/13-Spring源码骨架.md",
+                "file": "6-ai/01-python/18-专题-Pydantic 全景.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "13-Spring源码骨架"
+              "title": "18-专题-Pydantic 全景"
             }
           }
         ]
@@ -263,6 +263,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "1-java/0-知识点/13-Spring源码骨架.md",
     "1-java/0-知识点/10-面试高频题.md",
     "1-java/0-知识点/0-Java进化论.md",
     "1-java/1-juc/1-AQS.drawio",
@@ -293,7 +294,6 @@
     "6-ai/01-python/23-专题-Python 异常全景.md",
     "6-ai/01-python/22-专题-Python 内置函数与 builtins 全景.md",
     "6-ai/01-python/21-专题-Python 常用框架全景.md",
-    "6-ai/01-python/20-专题-Python 包与 import 全景.md",
     "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
     "6-ai/0.1-langchain/4-AI Agent 组成与执行步骤全景.drawio",
     "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
