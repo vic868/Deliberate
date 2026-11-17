@@ -13,10 +13,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "6-ai/01-python/17-专题-pyproject.toml 全景.drawio"
+                "file": "6-ai/02-深入理解 AI Agent/12-全书知识地图.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "17-专题-pyproject.toml 全景"
+              "title": "12-全书知识地图"
             }
           }
         ]
@@ -261,8 +261,14 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/02-深入理解 AI Agent/12-全书知识地图.drawio",
+    "6-ai/02-深入理解 AI Agent/02-第2章 上下文工程.md",
+    "6-ai/02-深入理解 AI Agent/01-第1章 AI Agent 入门.md",
+    "6-ai/02-深入理解 AI Agent/_原文/01-第1章 AI Agent 入门.md",
+    "6-ai/02-深入理解 AI Agent/_原文/00-前置与引言.md",
     "6-ai/02-深入理解 AI Agent/00-全书总览与阅读导航.md",
+    "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
+    "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
+    "6-ai/02-深入理解 AI Agent/12-全书知识地图.drawio",
     "6-ai/02-深入理解 AI Agent/11-后记.md",
     "6-ai/02-深入理解 AI Agent/10-第10章 多 Agent 协作.md",
     "6-ai/02-深入理解 AI Agent/09-第9章 Agent 的持续进化.md",
@@ -272,8 +278,6 @@
     "6-ai/02-深入理解 AI Agent/05-第5章 Coding Agent 与通用 Agent.md",
     "6-ai/02-深入理解 AI Agent/04-第4章 工具.md",
     "6-ai/02-深入理解 AI Agent/03-第3章 用户记忆和知识库.md",
-    "6-ai/02-深入理解 AI Agent/02-第2章 上下文工程.md",
-    "6-ai/02-深入理解 AI Agent/01-第1章 AI Agent 入门.md",
     "6-ai/02-深入理解 AI Agent/_原文/11-后记.md",
     "6-ai/02-深入理解 AI Agent/_原文/10-第10章 多 Agent 协作.md",
     "6-ai/02-深入理解 AI Agent/_原文/09-第9章 Agent 的持续进化.md",
@@ -284,9 +288,7 @@
     "6-ai/02-深入理解 AI Agent/_原文/04-第4章 工具.md",
     "6-ai/02-深入理解 AI Agent/_原文/03-第3章 用户记忆和知识库.md",
     "6-ai/02-深入理解 AI Agent/_原文/02-第2章 上下文工程.md",
-    "6-ai/02-深入理解 AI Agent/_原文/01-第1章 AI Agent 入门.md",
     "6-ai/02-深入理解 AI Agent/_原文/11-Agent = LLM + 上下文 + 工具.md",
-    "6-ai/02-深入理解 AI Agent/_原文/10-10 章 多 Agent 协作.md",
     "6-ai/02-深入理解 AI Agent/_原文",
     "6-ai/02-深入理解 AI Agent",
     "1-java/1-juc/1-AQS.drawio",
@@ -294,9 +296,7 @@
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
     "7-分布式/0-分布式事务/分布式事务.drawio",
     "6-ai/0.1-langchain/0-LangChain 1.0 知识体系全景.drawio",
-    "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
     "6-ai/0.1-langchain/4-AI Agent 组成与执行步骤全景.drawio",
-    "6-ai/0.1-langchain/2-Retriever 检索器全景.drawio",
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
