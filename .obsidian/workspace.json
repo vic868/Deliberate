@@ -261,6 +261,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/02-深入理解 AI Agent/01-第1章 AI Agent 入门.md",
     "6-ai/02-深入理解 AI Agent/_原文/11-后记.md",
     "6-ai/02-深入理解 AI Agent/_原文/10-第10章 多 Agent 协作.md",
     "6-ai/02-深入理解 AI Agent/_原文/09-第9章 Agent 的持续进化.md",
@@ -288,7 +289,6 @@
     "6-ai/02-深入理解 AI Agent",
     "6-ai/01-python/18-专题-Pydantic 全景.md",
     "1-java/0-知识点/13-Spring源码骨架.md",
-    "1-java/0-知识点/10-面试高频题.md",
     "1-java/1-juc/1-AQS.drawio",
     "14-AI agent/1-LangChain/0-LangChain.drawio",
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
