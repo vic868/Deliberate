@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/02-深入理解 AI Agent/07-第7章 Agent 的评估.md",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/03-第三章-LangChain与LangGraph.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "07-第7章 Agent 的评估"
+              "title": "03-第三章-LangChain与LangGraph"
             }
           }
         ]
@@ -263,6 +263,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "6-ai/LLM大模型Agent应用开发实战课程/02-第二章-提示词工程.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/01-第一章-大模型应用开发概述.md",
+    "6-ai/02-深入理解 AI Agent/07-第7章 Agent 的评估.md",
     "6-ai/LLM大模型Agent应用开发实战课程/12-第十二章-总结与项目架构.md",
     "6-ai/LLM大模型Agent应用开发实战课程/11-第十一章-工程化部署.md",
     "6-ai/LLM大模型Agent应用开发实战课程/10-第十章-成本优化.md",
@@ -273,8 +276,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/05-第五章-MCP协议.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第四章-FunctionCall.md",
     "6-ai/LLM大模型Agent应用开发实战课程/03-第三章-LangChain与LangGraph.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/02-第二章-提示词工程.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/01-第一章-大模型应用开发概述.md",
     "6-ai/LLM大模型Agent应用开发实战课程/13-实战与视频模块索引.md",
     "6-ai/LLM大模型Agent应用开发实战课程/00-课程总览.md",
     "6-ai/LLM大模型Agent应用开发实战课程",
@@ -291,7 +292,6 @@
     "6-ai/02-深入理解 AI Agent/10-第10章 多 Agent 协作.md",
     "6-ai/02-深入理解 AI Agent/09-第9章 Agent 的持续进化.md",
     "6-ai/02-深入理解 AI Agent/08-第8章 模型后训练.md",
-    "6-ai/02-深入理解 AI Agent/07-第7章 Agent 的评估.md",
     "6-ai/02-深入理解 AI Agent/_原文",
     "6-ai/02-深入理解 AI Agent",
     "1-java/1-juc/1-AQS.drawio",
