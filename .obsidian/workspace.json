@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/未命名.md",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/第13章 大模型API原理.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "第13章 大模型API原理"
             }
           }
         ]
@@ -263,7 +263,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/未命名.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第13章 大模型API原理.md",
     "6-ai/LLM大模型Agent应用开发实战课程/03-第三章-LangChain与LangGraph.md",
     "6-ai/LLM大模型Agent应用开发实战课程/02-第二章-提示词工程.md",
     "6-ai/LLM大模型Agent应用开发实战课程/01-第一章-大模型应用开发概述.md",
