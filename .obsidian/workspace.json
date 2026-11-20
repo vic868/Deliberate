@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1eacdad64975ba8f",
+        "id": "78deed609fb43145",
         "type": "tabs",
         "children": [
           {
-            "id": "e974153f1b87647b",
+            "id": "4ec5a1d9c22af790",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "file:/Users/vic/PyCharmMiscProject/deepseek-harness/AGENTS.md",
-                "mode": "preview",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "AGENTS"
+              "title": "新标签页"
             }
           }
         ]
@@ -260,8 +256,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e974153f1b87647b",
+  "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
+    "file:/Users/vic/PyCharmMiscProject/deepseek-harness/AGENTS.md",
     "file:/Users/vic/Desktop/ai.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第13章 大模型API原理.md",
     "6-ai/LLM大模型Agent应用开发实战课程/03-第三章-LangChain与LangGraph.md",
@@ -290,7 +287,6 @@
     "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
     "6-ai/02-深入理解 AI Agent/11-后记.md",
-    "6-ai/02-深入理解 AI Agent/10-第10章 多 Agent 协作.md",
     "6-ai/02-深入理解 AI Agent/_原文",
     "6-ai/02-深入理解 AI Agent",
     "1-java/1-juc/1-AQS.drawio",
