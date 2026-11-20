@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/前19章代码&总结.md",
-                "mode": "source",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "前19章代码&总结"
+              "title": "第 13 章｜大模型 API 原理"
             }
           }
         ]
@@ -262,20 +262,24 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/第 19 章｜项目一：AI Chat 聊天系统.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 14 章｜统一 LLM Provider 架构未命名.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-01.png",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 23 章｜LangChain Prompt.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 22 章｜LangChain Model 与 Message.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 21 章｜LangChain 核心架构.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 20 章｜为什么需要 LangChain.md",
     "6-ai/LLM大模型Agent应用开发实战课程/前19章代码&总结.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 19 章｜项目一：AI Chat 聊天系统.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 18 章｜Function Calling 与 Tool Calling -base.py说明.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 18 章｜Function Calling 与 Tool Calling.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 17 章｜Structured Output 结构化输出.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 16 章｜Streaming 流式输出.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 15 章｜Prompt Engineering 工程化实战.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 14 章｜统一 LLM Provider 架构未命名 -代码注释.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 14 章｜统一 LLM Provider 架构未命名.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-3.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-02.png",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-01.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-02.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-01.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 02 章 ｜ Python 开发环境搭建：uv 安装与使用教程 .png",
@@ -293,11 +297,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/11-第十一章-工程化部署.md",
     "6-ai/LLM大模型Agent应用开发实战课程/10-第十章-成本优化.md",
     "6-ai/LLM大模型Agent应用开发实战课程/09-第九章-长期记忆.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/08-第八章-Workflow工作流.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/07-第七章-Agent智能体.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/06-第六章-RAG.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/05-第五章-MCP协议.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第四章-FunctionCall.md",
     "6-ai/LLM大模型Agent应用开发实战课程",
     "6-ai/02-深入理解 AI Agent/12-全书知识地图.drawio",
     "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
