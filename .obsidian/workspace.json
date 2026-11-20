@@ -11,10 +11,12 @@
             "id": "4ec5a1d9c22af790",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "image",
+              "state": {
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png"
+              },
+              "icon": "lucide-image",
+              "title": "第 03 章｜Python AI 开发快速入门-04"
             }
           }
         ]
@@ -256,8 +258,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
+    "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-02.png",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-01.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 02 章 ｜ Python 开发环境搭建：uv 安装与使用教程 .png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 02 章｜Python AI 开发环境搭建.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言3.png",
@@ -301,9 +306,6 @@
     "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
     "14-AI agent/1-LangChain/5-可观测与评估.png",
     "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
-    "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage.png",
-    "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_4.png",
-    "6-ai/01-python/pic/14-基础课12-13-面向对象_pasteImage_1.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
