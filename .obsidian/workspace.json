@@ -11,12 +11,14 @@
             "id": "4ec5a1d9c22af790",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png"
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 15 章｜Prompt Engineering 工程化实战.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "lucide-image",
-              "title": "第 03 章｜Python AI 开发快速入门-04"
+              "icon": "lucide-file",
+              "title": "第 15 章｜Prompt Engineering 工程化实战"
             }
           }
         ]
@@ -260,14 +262,20 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
+    "6-ai/LLM大模型Agent应用开发实战课程/第 14 章｜统一 LLM Provider 架构未命名 -代码注释.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 15 章｜Prompt Engineering 工程化实战.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 14 章｜统一 LLM Provider 架构未命名.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-3.png",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-02.png",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-01.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-02.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-01.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 02 章 ｜ Python 开发环境搭建：uv 安装与使用教程 .png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 02 章｜Python AI 开发环境搭建.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言3.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言2.png",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言.png",
     "file:/Users/vic/PyCharmMiscProject/deepseek-harness/AGENTS.md",
     "file:/Users/vic/Desktop/ai.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第13章 大模型API原理.md",
@@ -292,9 +300,6 @@
     "6-ai/02-深入理解 AI Agent/12-全书知识地图.drawio",
     "6-ai/02-深入理解 AI Agent/02-第2章 上下文工程.md",
     "6-ai/02-深入理解 AI Agent/_原文/01-第1章 AI Agent 入门.md",
-    "6-ai/02-深入理解 AI Agent/_原文/00-前置与引言.md",
-    "6-ai/02-深入理解 AI Agent/00-全书总览与阅读导航.md",
-    "6-ai/2.1-AI 概念/0.1-ai.excalidraw.md",
     "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
     "6-ai/02-深入理解 AI Agent/_原文",
     "6-ai/02-深入理解 AI Agent",
@@ -303,9 +308,6 @@
     "14-AI agent/1-LangChain/0-LangChain.vector.drawio",
     "7-分布式/0-分布式事务/分布式事务.drawio",
     "6-ai/0.1-langchain/0-LangChain 1.0 知识体系全景.drawio",
-    "14-AI agent/1-LangChain/1-LangChain-全景与8周路线.png",
-    "14-AI agent/1-LangChain/5-可观测与评估.png",
-    "6-ai/01-python/pic/15-基础课14-15-异常与虚拟环境_pasteImage.png",
     "8-spring/spring-logback/未命名.canvas",
     "未命名.canvas"
   ]
