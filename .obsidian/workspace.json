@@ -11,10 +11,14 @@
             "id": "4ec5a1d9c22af790",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 01 章：为什么 Python 是 AI Agent 开发的核心语言 - TypeScript|Python |Java 三种语言横向对比.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "第 01 章：为什么 Python 是 AI Agent 开发的核心语言 - TypeScript|Python |Java 三种语言横向对比"
             }
           }
         ]
@@ -256,8 +260,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "69b72e3490e469f5",
+  "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
+    "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 01 章：为什么 Python 是 AI Agent 开发的核心语言.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 39 章｜RAG 原理.md",
     "6-ai/LLM大模型Agent应用开发实战课程/99-待确认重复文件/第13章 大模型API原理.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 39 章｜RAG 原理.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 38 章｜项目二：LangGraph 电商客服 Agent.md",
@@ -282,8 +288,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -补充小节：Alembic 数据库迁移入门.md",
     "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -SQLAlchemy.md",
     "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 10 章｜Middleware、异常处理与日志.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 09 章｜FastAPI Dependency Injection 依赖注入.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 08 章｜FastAPI Router 与项目工程化.md",
     "6-ai/LLM大模型Agent应用开发实战课程/99-待确认重复文件",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph",
