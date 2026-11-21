@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 37 章｜LangGraph Multi-Agent.md",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 39 章｜RAG 原理.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "第 37 章｜LangGraph Multi-Agent"
+              "title": "第 39 章｜RAG 原理"
             }
           }
         ]
@@ -262,8 +262,11 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/第 36 章｜LangGraph Agent Memory -@dataclass的使用.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 38 章｜项目二：LangGraph 电商客服 Agent -Langchain和LangGraph总结.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 39 章｜RAG 原理.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 38 章｜项目二：LangGraph 电商客服 Agent.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 37 章｜LangGraph Multi-Agent.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 36 章｜LangGraph Agent Memory -@dataclass的使用.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 36 章｜LangGraph Agent Memory -trim_messages使用.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 36 章｜LangGraph Agent Memory.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 35 章｜LangGraph Human-in-the-loop.md",
@@ -285,9 +288,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/第 24 章｜LangChain Structured Output.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 12 章｜Redis 在 AI 应用中的使用.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -SQLAlchemy.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -补充小节：Alembic 数据库迁移入门.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 10 章｜Middleware、异常处理与日志.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-01.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-3.png",
