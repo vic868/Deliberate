@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 35 章｜LangGraph Human-in-the-loop.md",
-                "mode": "preview",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 37 章｜LangGraph Multi-Agent.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "第 35 章｜LangGraph Human-in-the-loop"
+              "title": "第 37 章｜LangGraph Multi-Agent"
             }
           }
         ]
@@ -262,8 +262,12 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/第 34 章｜LangGraph Persistence.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 36 章｜LangGraph Agent Memory -@dataclass的使用.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 37 章｜LangGraph Multi-Agent.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 36 章｜LangGraph Agent Memory -trim_messages使用.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 36 章｜LangGraph Agent Memory.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 35 章｜LangGraph Human-in-the-loop.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 34 章｜LangGraph Persistence.md",
     "6-ai/LLM大模型Agent应用开发实战课程/06-第六章-RAG.md",
     "6-ai/LLM大模型Agent应用开发实战课程/13-实战与视频模块索引.md",
     "6-ai/LLM大模型Agent应用开发实战课程/02-第二章-提示词工程.md",
@@ -284,10 +288,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -补充小节：Alembic 数据库迁移入门.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 10 章｜Middleware、异常处理与日志.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 09 章｜FastAPI Dependency Injection 依赖注入.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 08 章｜FastAPI Router 与项目工程化.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 07 章｜Pydantic 请求参数与响应模型.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 06 章｜FastAPI 快速入门 -FastAPI 和 Express ｜ NestJS ｜Spring Boot 对比.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-01.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-3.png",
