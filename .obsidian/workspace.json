@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 04 章｜Python 类型系统与 Pydantic 深入.md",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 24 章｜LangChain Structured Output.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "第 04 章｜Python 类型系统与 Pydantic 深入"
+              "title": "第 24 章｜LangChain Structured Output"
             }
           }
         ]
@@ -262,8 +262,20 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 12 章｜Redis 在 AI 应用中的使用.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 24 章｜LangChain Structured Output.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -SQLAlchemy.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -补充小节：Alembic 数据库迁移入门.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 10 章｜Middleware、异常处理与日志.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 09 章｜FastAPI Dependency Injection 依赖注入.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 08 章｜FastAPI Router 与项目工程化.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 07 章｜Pydantic 请求参数与响应模型.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 06 章｜FastAPI 快速入门 -FastAPI 和 Express ｜ NestJS ｜Spring Boot 对比.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 06 章｜FastAPI 快速入门.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 05 章｜Python 异步编程 async ｜ await.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 04 章｜Python 类型系统与 Pydantic 深入.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 02 章｜Python AI 开发环境搭建 - Python 开发环境搭建：uv 安装与使用教程.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 02 章｜Python AI 开发环境搭建.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言 - TypeScript|Python |Java 三种语言横向对比.md",
@@ -278,12 +290,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/第 20 章｜为什么需要 LangChain.md",
     "6-ai/LLM大模型Agent应用开发实战课程/前19章代码&总结.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 19 章｜项目一：AI Chat 聊天系统.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 18 章｜Function Calling 与 Tool Calling -base.py说明.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 18 章｜Function Calling 与 Tool Calling.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 17 章｜Structured Output 结构化输出.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 16 章｜Streaming 流式输出.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 15 章｜Prompt Engineering 工程化实战.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 14 章｜统一 LLM Provider 架构未命名 -代码注释.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-3.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-02.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-02.png",
@@ -292,12 +298,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/第 02 章｜Python AI 开发环境搭建.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言3.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言2.png",
-    "file:/Users/vic/PyCharmMiscProject/deepseek-harness/AGENTS.md",
-    "file:/Users/vic/Desktop/ai.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第13章 大模型API原理.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第三章-LangChain与LangGraph.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/02-第二章-提示词工程.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/01-第一章-大模型应用开发概述.md",
     "6-ai/LLM大模型Agent应用开发实战课程",
     "6-ai/02-深入理解 AI Agent/12-全书知识地图.drawio",
     "6-ai/01-python/17-专题-pyproject.toml 全景.drawio",
