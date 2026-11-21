@@ -3,7 +3,7 @@ title: "第 02 章补充｜uv 安装与使用教程"
 chapter: "02"
 source: "第 02 章｜Python AI 开发环境搭建 - Python 开发环境搭建：uv 安装与使用教程.md"
 type: obsidian-note
-created: 2026-11-21
+created: 2026-11-22
 status: 整理中
 tags:
   - course/llm-agent
@@ -1707,4 +1707,4 @@ AI Agent
 
 > [!quote] 关于本文档
 > 由原始讲义 `第 02 章｜Python AI 开发环境搭建 - Python 开发环境搭建：uv 安装与使用教程.md` 转换为 Obsidian 风格笔记；原文完整保留，未做任何删改。
-> 整理日期：2026-11-21
+> 整理日期：2026-11-22

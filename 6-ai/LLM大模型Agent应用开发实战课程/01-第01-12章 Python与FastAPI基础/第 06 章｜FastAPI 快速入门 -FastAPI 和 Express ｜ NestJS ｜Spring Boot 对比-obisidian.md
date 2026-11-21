@@ -3,7 +3,7 @@ title: "第 06 章补充｜FastAPI 与 Express / NestJS / Spring Boot 对比"
 chapter: "06"
 source: "第 06 章｜FastAPI 快速入门 -FastAPI 和 Express ｜ NestJS ｜Spring Boot 对比.md"
 type: obsidian-note
-created: 2026-11-21
+created: 2026-11-22
 status: 整理中
 tags:
   - course/llm-agent
@@ -558,4 +558,4 @@ Multi-Agent
 
 > [!quote] 关于本文档
 > 由原始讲义 `第 06 章｜FastAPI 快速入门 -FastAPI 和 Express ｜ NestJS ｜Spring Boot 对比.md` 转换为 Obsidian 风格笔记；原文完整保留，未做任何删改。
-> 整理日期：2026-11-21
+> 整理日期：2026-11-22

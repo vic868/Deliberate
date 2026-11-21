@@ -3,7 +3,7 @@ title: "第 05 章｜Python 异步编程 async / await"
 chapter: "05"
 source: "第 05 章｜Python 异步编程 async ｜ await.md"
 type: obsidian-note
-created: 2026-11-21
+created: 2026-11-22
 status: 整理中
 tags:
   - course/llm-agent
@@ -3681,4 +3681,4 @@ async for chunk in llm.stream():
 
 > [!quote] 关于本文档
 > 由原始讲义 `第 05 章｜Python 异步编程 async ｜ await.md` 转换为 Obsidian 风格笔记；原文完整保留，未做任何删改。
-> 整理日期：2026-11-21
+> 整理日期：2026-11-22
