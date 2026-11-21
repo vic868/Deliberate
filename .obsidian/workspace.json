@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 24 章｜LangChain Structured Output.md",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 30 章｜LangGraph 核心概念.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "第 24 章｜LangChain Structured Output"
+              "title": "第 30 章｜LangGraph 核心概念"
             }
           }
         ]
@@ -262,8 +262,15 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/第 12 章｜Redis 在 AI 应用中的使用.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 29 章｜为什么需要 LangGraph.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 30 章｜LangGraph 核心概念.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 28 章｜LangChain Agent + RAG.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 27 章补充｜chromadb、langchain-chroma、langchain-text-splitters 介绍与使用.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 27 章｜LangChain RAG.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 26 章｜LangChain Agent.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 25 章｜LangChain Tool.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 24 章｜LangChain Structured Output.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 12 章｜Redis 在 AI 应用中的使用.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -SQLAlchemy.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -补充小节：Alembic 数据库迁移入门.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发.md",
@@ -281,15 +288,8 @@
     "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言 - TypeScript|Python |Java 三种语言横向对比.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 14 章｜统一 LLM Provider 架构未命名.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-01.png",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 23 章｜LangChain Prompt.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 22 章｜LangChain Model 与 Message.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 21 章｜LangChain 核心架构.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 20 章｜为什么需要 LangChain.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/前19章代码&总结.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 19 章｜项目一：AI Chat 聊天系统.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-3.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-02.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-02.png",
