@@ -19,11 +19,11 @@ tags:
 > - ==装饰器对标注解== — FastAPI 的 @app.get 类似 Spring Boot 的 @GetMapping。
 > - ==Pydantic 对标 DTO / class-validator== — 都是用类型描述请求和响应长什么样。
 > - ==依赖注入对标 Spring DI / NestJS Provider== — 公共逻辑交给框架注入，而不是每个接口手写一遍。
->
+
 > [!note] 大白话
 >
 > - **Swagger**：自动生成的可点接口文档，FastAPI 自带。
->
+
 > [!info] 导航与来源
 > - 原始讲义：[[第 06 章｜FastAPI 快速入门 -FastAPI 和 Express ｜ NestJS ｜Spring Boot 对比|打开原始讲义]]
 > - [[第 05 章｜Python 异步编程 async ｜ await|上一章｜第 05 章]]
@@ -34,7 +34,6 @@ tags:
 
 - [[#十、07｜FastAPI 和 Express / NestJS / Spring Boot 对比]]
 
----
 ## 十、07｜FastAPI 和 Express / NestJS / Spring Boot 对比
 ### 【展示】
 | <font style="color:#FFFFFF;">后端能力</font> | <font style="color:#FFFFFF;">Express</font> | <font style="color:#FFFFFF;">NestJS</font> | <font style="color:#FFFFFF;">Spring Boot</font> | <font style="color:#FFFFFF;">FastAPI</font> |

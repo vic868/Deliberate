@@ -21,18 +21,17 @@ tags:
 > - ==Python 用 None 统一空值== — TS 里的 null 和 undefined，Python 只有一个 None。
 > - ==异步语法几乎同名== — 两边都是 async / await，前端经验可以直接搬过来。
 > - ==self 对应 this== — 类里定义方法时，Python 把 self 显式写成第一个参数。
->
+
 > [!note] 大白话
 >
 > - **Type Hint**：给变量标个类型，主要给人看、给工具检查，运行时默认不管。
 > - **snake_case**：Python 习惯下划线命名，JS/TS 习惯小驼峰。
->
+
 > [!info] 导航与来源
 > - 原始讲义：`第 01 章：为什么 Python 是 AI Agent 开发的核心语言 - TypeScript|Python |Java 三种语言横向对比.md`
 > - [[第 02 章｜Python AI 开发环境搭建|下一章｜第 02 章]]
 > - 本章所有内容均保留，未删改原文。
 
----
 | **概念 / 场景** | **TypeScript** | **Python** | **Java** |
 | --- | --- | --- | --- |
 | **字符串** | `**string**` | `**str**` | `**String**` |

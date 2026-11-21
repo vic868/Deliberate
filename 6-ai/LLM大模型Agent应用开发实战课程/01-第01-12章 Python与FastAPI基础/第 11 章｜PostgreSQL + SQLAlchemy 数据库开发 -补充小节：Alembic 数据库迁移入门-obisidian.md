@@ -21,11 +21,11 @@ tags:
 > - ==数据库地址别写死在 alembic.ini== — 统一从 Settings 读，避免维护两份配置。
 > - ==alembic revision 生成版本，upgrade head 执行== — 一个写变更脚本，一个真正改库。
 > - ==alembic_version 记录当前版本== — 靠它知道库现在跑到第几版。
->
+
 > [!note] 大白话
 >
 > - **迁移 migration**：给数据库结构变化留的一份可回滚的变更记录。
->
+
 > [!info] 导航与来源
 > - 原始讲义：[[第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -补充小节：Alembic 数据库迁移入门|打开原始讲义]]
 > - [[第 10 章｜Middleware、异常处理与日志|上一章｜第 10 章]]
@@ -49,7 +49,6 @@ tags:
 - [[#十一、08｜配置 alembic/env.py]]
 - [[#十二、09｜确认 app/models/**init**.py 正确导入模型]]
 
----
 ---
 
 ## 一、本小节定位

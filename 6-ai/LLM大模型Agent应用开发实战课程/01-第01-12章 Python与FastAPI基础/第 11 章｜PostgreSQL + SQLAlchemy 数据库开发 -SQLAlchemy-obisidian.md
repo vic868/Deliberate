@@ -17,18 +17,17 @@ tags:
 >
 > - ==ORM 让代码用对象操作表== — 不用手写 SQL 也能增删改查。
 > - ==NestJS 常用 TypeORM / Prisma== — Python 这边对应的就是 SQLAlchemy。
->
+
 > [!note] 大白话
 >
 > - **ORM**：把数据库表翻译成编程语言里的类。
->
+
 > [!info] 导航与来源
 > - 原始讲义：[[第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -SQLAlchemy|打开原始讲义]]
 > - [[第 10 章｜Middleware、异常处理与日志|上一章｜第 10 章]]
 > - [[第 12 章｜Redis 在 AI 应用中的使用|下一章｜第 12 章]]
 > - 本章所有内容均保留，未删改原文。
 
----
 SQLAlchemy
 **SQLAlchemy 是 Python 生态中最著名、功能最强大的对象关系映射（ORM）框架。** 它允许开发者使用 Python 代码来操作数据库（如 MySQL、PostgreSQL、SQLite），而无需编写原生的 SQL 语句。
 

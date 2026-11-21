@@ -20,12 +20,12 @@ tags:
 > - ==装完找不到命令，先查 PATH== — command not found 多半不是没装好，而是终端没找到可执行文件。
 > - ==pyproject.toml 相当于 package.json== — 项目名、依赖、Python 版本都写在这一个文件里。
 > - ==macOS 用官方脚本，Windows 用 WinGet== — 不同系统装法不同，按对应步骤走最省事。
->
+
 > [!note] 大白话
 >
 > - **PATH**：系统找命令时翻的通讯录，没登记就喊不到人。
 > - **uv**：用 Rust 写的超快 Python 包与环境管理器。
->
+
 > [!info] 导航与来源
 > - 原始讲义：[[第 02 章｜Python AI 开发环境搭建 - Python 开发环境搭建：uv 安装与使用教程|打开原始讲义]]
 > - [[第 01 章：为什么 Python 是 AI Agent 开发的核心语言|上一章｜第 01 章]]
@@ -49,7 +49,6 @@ tags:
 - [[#14. 查看 uv 是否已经安装]]
 - [[#15. macOS 手动配置 PATH]]
 
----
 ### 1. uv 是什么？
 在正式学习 Python 之前，我们先把 Python 的开发环境搭建好。
 

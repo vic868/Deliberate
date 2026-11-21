@@ -20,12 +20,12 @@ tags:
 > - ==Python + FastAPI 负责后端这一层== — 模型和前端之间的服务，用 FastAPI 来写。
 > - ==LangChain 管组件，LangGraph 管流程== — 前者把模型、工具、提示拼起来，后者控制多步流程怎么走、怎么回退。
 > - ==RAG / Tool / MCP / Multi-Agent== — 分别解决：查资料、调外部函数、工具协议、多个 Agent 分工协作。
->
+
 > [!note] 大白话
 >
 > - **AI Agent**：让大模型自己决定下一步干什么，必要时调用工具，直到把事情办完。
 > - **DeepAgents**：在 LangGraph 之上再封一层，用于更长、更复杂的任务规划。
->
+
 > [!info] 导航与来源
 > - 原始讲义：[[第 01 章：为什么 Python 是 AI Agent 开发的核心语言|打开原始讲义]]
 > - [[第 02 章｜Python AI 开发环境搭建|下一章｜第 02 章]]
@@ -48,7 +48,6 @@ tags:
 - [[#Retrieval Augmented Generation]]
 - [[#1-9 Tool Calling 是什么？]]
 
----
 **“我为什么要学 Python？Python 和 AI 到底是什么关系？这门课最终能让我做到什么？”**
 
 ---

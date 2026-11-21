@@ -21,12 +21,12 @@ tags:
 > - ==asyncio.gather 并发跑多个任务== — 批量等大模型返回时，总耗时约等于最慢的那一个。
 > - ==create_task 提前启动，gather 统一收结果== — 想让任务先跑起来、后面再收，就用 create_task。
 > - ==事件循环是调度员== — 谁在等 I/O 就先让出，CPU 不空等。
->
+
 > [!note] 大白话
 >
 > - **协程 coroutine**：一个可以中途暂停、等会儿再继续的函数。
 > - **I/O 密集**：时间主要花在等网络或磁盘，不是在算 CPU。
->
+
 > [!info] 导航与来源
 > - 原始讲义：[[第 05 章｜Python 异步编程 async ｜ await|打开原始讲义]]
 > - [[第 04 章｜Python 类型系统与 Pydantic 深入|上一章｜第 04 章]]
@@ -50,7 +50,6 @@ tags:
 - [[#十一、08｜正确执行 coroutine]]
 - [[#十二、09｜常见错误：await 写在普通函数里]]
 
----
 已经掌握 Python 基础语法、Type Hint、Pydantic，准备进入 FastAPI、LLM、RAG、Agent 开发的学员。
 
 ---

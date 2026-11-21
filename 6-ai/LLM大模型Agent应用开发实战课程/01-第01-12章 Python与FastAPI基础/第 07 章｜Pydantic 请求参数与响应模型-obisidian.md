@@ -20,12 +20,12 @@ tags:
 > - ==用泛型做统一响应结构== — code / message / data 外壳固定，data 里装什么都行。
 > - ==Path + Query + Body 可以同时用== — 一个接口里三种来源的参数各写各的。
 > - ==Schema 是企业项目和 Demo 的分水岭== — 数据结构定清楚，后面 RAG、会话管理才好接。
->
+
 > [!note] 大白话
 >
 > - **TokenUsage**：记一次调用花了多少输入/输出 token，用来算成本和排查。
 > - **SourceDocument**：RAG 回答里引用的原文出处。
->
+
 > [!info] 导航与来源
 > - 原始讲义：[[第 07 章｜Pydantic 请求参数与响应模型|打开原始讲义]]
 > - [[第 06 章｜FastAPI 快速入门|上一章｜第 06 章]]
@@ -49,7 +49,6 @@ tags:
 - [[#十二、09｜完整代码：app/schemas/chat.py]]
 - [[#十三、10｜升级 ChatService]]
 
----
 适合人群：已经完成 FastAPI 快速入门，准备系统设计 AI Chat / RAG / Agent 接口结构的学员。
 
 ---

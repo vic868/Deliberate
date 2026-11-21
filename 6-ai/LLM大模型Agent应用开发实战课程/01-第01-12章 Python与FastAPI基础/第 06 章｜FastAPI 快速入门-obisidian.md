@@ -22,11 +22,11 @@ tags:
 > - ==POST 用 Pydantic 模型接请求体== — 字段不合规自动返回 422，不用手写判断。
 > - ==response_model 约束返回形状== — 多返回的字段会被自动过滤掉。
 > - ==Controller / Service 分层== — 接口只管收参返参，业务逻辑放到 Service。
->
+
 > [!note] 大白话
 >
 > - **422**：请求参数没通过校验时，FastAPI 返回的状态码。
->
+
 > [!info] 导航与来源
 > - 原始讲义：[[第 06 章｜FastAPI 快速入门|打开原始讲义]]
 > - [[第 05 章｜Python 异步编程 async ｜ await|上一章｜第 05 章]]
@@ -50,7 +50,6 @@ tags:
 - [[#十二、09｜添加健康检查接口 /health]]
 - [[#十三、10｜Path 参数]]
 
----
 适合人群：已经完成 Python 基础、Pydantic、async / await，准备正式进入 Python AI 后端开发的学员。
 
 ---
