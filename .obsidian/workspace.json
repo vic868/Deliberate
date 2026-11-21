@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/第 30 章｜LangGraph 核心概念.md",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/未命名.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "第 30 章｜LangGraph 核心概念"
+              "title": "未命名"
             }
           }
         ]
@@ -262,8 +262,17 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/第 29 章｜为什么需要 LangGraph.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 34 章｜LangGraph Persistence.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/未命名.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/06-第六章-RAG.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/13-实战与视频模块索引.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/02-第二章-提示词工程.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 33 章｜LangGraph Conditional Routing.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 32 章｜LangGraph Node 与 Edge.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 31 章｜LangGraph State.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第13章 大模型API原理.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 30 章｜LangGraph 核心概念.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/第 29 章｜为什么需要 LangGraph.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 28 章｜LangChain Agent + RAG.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 27 章补充｜chromadb、langchain-chroma、langchain-text-splitters 介绍与使用.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 27 章｜LangChain RAG.md",
@@ -279,15 +288,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/第 08 章｜FastAPI Router 与项目工程化.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 07 章｜Pydantic 请求参数与响应模型.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 06 章｜FastAPI 快速入门 -FastAPI 和 Express ｜ NestJS ｜Spring Boot 对比.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 06 章｜FastAPI 快速入门.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 05 章｜Python 异步编程 async ｜ await.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 04 章｜Python 类型系统与 Pydantic 深入.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 02 章｜Python AI 开发环境搭建 - Python 开发环境搭建：uv 安装与使用教程.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 02 章｜Python AI 开发环境搭建.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言 - TypeScript|Python |Java 三种语言横向对比.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 01 章：为什么 Python 是 AI Agent 开发的核心语言.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理.md",
     "6-ai/LLM大模型Agent应用开发实战课程/第 03 章｜Python AI 开发快速入门-04.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-01.png",
     "6-ai/LLM大模型Agent应用开发实战课程/第 13 章｜大模型 API 原理-3.png",
