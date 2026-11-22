@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -SQLAlchemy-obisidian.md",
-                "mode": "preview",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 41 章｜Chunk 文档切分.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -SQLAlchemy-obisidian"
+              "title": "第 41 章｜Chunk 文档切分"
             }
           }
         ]
@@ -262,9 +262,23 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 12 章｜Redis 在 AI 应用中的使用-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 39 章｜RAG 原理  企业 RAG 数据表设计详解.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 39 章｜RAG 原理（Retrieval-Augmented Generation：从原理到 Mini RAG 实战）.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 41 章｜Chunk 文档切分.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 40 章｜企业文档解析-框架版本（Document Loader 实战）.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 40 章｜企业文档解析.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 39 章｜RAG 原理-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 38 章｜项目二：LangGraph 电商客服 Agent-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 29 章｜为什么需要 LangGraph-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 21 章｜LangChain 核心架构-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 20 章｜为什么需要 LangChain-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/02-第13-19章 LLM API与工程化/第 19 章｜项目一：AI Chat 聊天系统-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/02-第13-19章 LLM API与工程化/第 18 章｜Function Calling 与 Tool Calling -base.py说明-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/02-第13-19章 LLM API与工程化/第 17 章｜Structured Output 结构化输出-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/02-第13-19章 LLM API与工程化/第 14 章｜统一 LLM Provider 架构未命名-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/02-第13-19章 LLM API与工程化/第 14 章｜统一 LLM Provider 架构未命名 -代码注释-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 11 章｜PostgreSQL + SQLAlchemy 数据库开发 -SQLAlchemy-obisidian.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/01-第01-12章 Python与FastAPI基础/第 12 章｜Redis 在 AI 应用中的使用-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 38 章｜项目二：LangGraph 电商客服 Agent -Langchain和LangGraph总结-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 37 章｜LangGraph Multi-Agent-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 36 章｜LangGraph Agent Memory-obisidian.md",
@@ -274,20 +288,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 34 章｜LangGraph Persistence-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 33 章｜LangGraph Conditional Routing-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 32 章｜LangGraph Node 与 Edge-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 31 章｜LangGraph State-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 30 章｜LangGraph 核心概念-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 29 章｜为什么需要 LangGraph-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 28 章｜LangChain Agent + RAG-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 27 章｜LangChain RAG-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 27 章补充｜chromadb、langchain-chroma、langchain-text-splitters 介绍与使用-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 26 章｜LangChain Agent-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 25 章｜LangChain Tool-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 24 章｜LangChain Structured Output-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 23 章｜LangChain Prompt-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 22 章｜LangChain Model 与 Message-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 21 章｜LangChain 核心架构-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/03-第20-28章 LangChain/第 20 章｜为什么需要 LangChain-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/02-第13-19章 LLM API与工程化/第 19 章｜项目一：AI Chat 聊天系统-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/99-待确认重复文件",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph",
