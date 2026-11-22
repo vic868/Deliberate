@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 42 章｜Embedding 与 Vector Database-(框架版本)（向量化与向量数据库实战）.md",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 43 章｜高级 Retrieval 实战：LangChain + LangGraph + Cohere Rerank 企业级检索优化.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "第 42 章｜Embedding 与 Vector Database-(框架版本)（向量化与向量数据库实战）"
+              "title": "第 43 章｜高级 Retrieval 实战：LangChain + LangGraph + Cohere Rerank 企业级检索优化"
             }
           }
         ]
@@ -262,8 +262,10 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
-    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 42 章｜Embedding 与 Vector Database.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 43 章｜高级 Retrieval.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 43 章｜高级 Retrieval 实战：LangChain + LangGraph + Cohere Rerank 企业级检索优化.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 42 章｜Embedding 与 Vector Database-(框架版本)（向量化与向量数据库实战）.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 42 章｜Embedding 与 Vector Database.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 41 章｜Chunk 文档切分-框架版本（企业级 Chunking 实战）.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 41 章｜Chunk 文档切分.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 39 章｜RAG 原理  企业 RAG 数据表设计详解.md",
@@ -286,8 +288,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 37 章｜LangGraph Multi-Agent-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 36 章｜LangGraph Agent Memory-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 36 章｜LangGraph Agent Memory -trim_messages使用-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 36 章｜LangGraph Agent Memory -@dataclass的使用-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 35 章｜LangGraph Human-in-the-loop-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/99-待确认重复文件",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph",
