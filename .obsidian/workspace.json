@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 41 章｜Chunk 文档切分.md",
+                "file": "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 42 章｜Embedding 与 Vector Database-(框架版本)（向量化与向量数据库实战）.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "第 41 章｜Chunk 文档切分"
+              "title": "第 42 章｜Embedding 与 Vector Database-(框架版本)（向量化与向量数据库实战）"
             }
           }
         ]
@@ -262,9 +262,12 @@
   },
   "active": "4ec5a1d9c22af790",
   "lastOpenFiles": [
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 42 章｜Embedding 与 Vector Database.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 42 章｜Embedding 与 Vector Database-(框架版本)（向量化与向量数据库实战）.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 41 章｜Chunk 文档切分-框架版本（企业级 Chunking 实战）.md",
+    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 41 章｜Chunk 文档切分.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 39 章｜RAG 原理  企业 RAG 数据表设计详解.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 39 章｜RAG 原理（Retrieval-Augmented Generation：从原理到 Mini RAG 实战）.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 41 章｜Chunk 文档切分.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 40 章｜企业文档解析-框架版本（Document Loader 实战）.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 40 章｜企业文档解析.md",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库/第 39 章｜RAG 原理-obisidian.md",
@@ -285,9 +288,6 @@
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 36 章｜LangGraph Agent Memory -trim_messages使用-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 36 章｜LangGraph Agent Memory -@dataclass的使用-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 35 章｜LangGraph Human-in-the-loop-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 34 章｜LangGraph Persistence-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 33 章｜LangGraph Conditional Routing-obisidian.md",
-    "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph/第 32 章｜LangGraph Node 与 Edge-obisidian.md",
     "6-ai/LLM大模型Agent应用开发实战课程/99-待确认重复文件",
     "6-ai/LLM大模型Agent应用开发实战课程/05-第39章起 RAG企业知识库",
     "6-ai/LLM大模型Agent应用开发实战课程/04-第29-38章 LangGraph",
